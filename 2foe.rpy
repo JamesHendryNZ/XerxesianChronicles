@@ -129,6 +129,18 @@ init python:
                     trooperSquad.append( copy.copy( self.summoningPool[ renpy.random.randint( 0 , len( self.summoningPool ) -1 ) ] ) )
 
 
+    class ChariotFoe( Foe ):
+        transportFoes = [ ] 
+
+        def __init__(self , foeImage, name, hitpoints, attack, armor , speed , armorPen, rangedFoe , diffculty , transportFoes ):
+            super().__init__( foeImage, name, hitpoints, attack, armor , speed , armorPen, rangedFoe , diffculty )
+            self.transportFoes = transportFoes
+
+        def spawnTransportTroopers( self , transportFoes , trooperSqaud ):
+            for trooper in transportFoes:
+                trooperSqaud.append( copy.copy( trooper) )
+
+
     class PatterenFoe( Foe ):
 
         attackPattern = [ "m" , "m" , "r" ]
@@ -318,8 +330,8 @@ define faronianNakedAx = Foe( Transform( child="images/Enemies/astartes goons/Fa
 #faronianNakedSpear becuase cutscene
 #balatianNekkedWarrior - foe
 
-define ordonianScutariSword = Foe( Transform( child="images/Enemies/astartes goons/Ordonian Scutarii low Level.webp", zoom=0.25 ) , "Ordonian Scutarii" , 36 , 10, 5 , 2.8 , 6 , False , "easy" )
-define ordonianScutariSword2 = Foe( Transform( child="images/Enemies/astartes goons/Ordonian Kaetratii Male nekomini v1.webp", zoom=0.25 ), "Ordonian Scutarii" , 36 , 10, 5 , 2.8 , 6  , False , "easy" )
+define ordonianScutariSword = Foe( Transform( child="images/Enemies/astartes goons/Ordonian Scutarii low Level.webp", zoom=0.25 ) , "Ordonian Scutarius" , 36 , 10, 5 , 2.8 , 6 , False , "easy" )
+define ordonianScutariSword2 = Foe( Transform( child="images/Enemies/astartes goons/Ordonian Kaetratii Male nekomini v1.webp", zoom=0.25 ), "Ordonian Scutarius" , 36 , 10, 5 , 2.8 , 6  , False , "easy" )
 #kaetratii spear F because of cutscene
 define ordonianKaetratiiJavelin = Foe( Transform( child="images/Enemies/astartes goons/Ordonian Kaetratii Javelin Low Level v1.webp", zoom=0.25 ) , "Ordonian Skirmisher" , 34 , 10 , 2 , 2.8 , 6 , True , "easy" )
 
@@ -355,8 +367,8 @@ define heavyOstrich = PatterenFoe( Transform (child="images/antagonists/Astart O
 define shataSpear = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shata Speardude Attack.webp", zoom=0.25 ), "Shata Spear Warrior" , 32 , 8 , 3 , 3.2 , 5 , False , "easy" )
 define shataSpearGirl = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shata Speargirl Attack.webp", zoom =0.25 ), "Shata Spear Warrior" , 32 , 8 , 3 , 3.2 , 5 , False , "easy" )
 define shataJavelins = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shata Speardude2 Yeah.webp", zoom = 0.25 ), "Shata Skimisher" , 30 , 9 , 3 , 3.0 , 5 , True , "medium" ) 
-define shataArcher = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shata archer.webp", zoom = 0.25 ), "Shata Archer" , 31 , 8 , 1 , 3.5 , 4 , True , "easy" )
-define shataMace = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shata Macelady.webp", zoom = 0.25 ), "Shata Mace Warrior" , 26 , 5 , 4 , 2.8 , 9 , False , "medium" )
+define shataArcher = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shata archer.webp", zoom = 0.25 ), "Shata Archer" , 26 , 8 , 1 , 3.5 , 4 , True , "easy" )
+define shataMace = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shata Macelady.webp", zoom = 0.25 ), "Shata Mace Warrior" , 31 , 5 , 4 , 2.8 , 9 , False , "medium" )
 define shataSlings = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shata slinger.webp", zoom = 0.25 ), "Shata Slinger" , 24 , 4 , 2 , 2.8 , 9 , True , "easy" )
 
 #armored shata troopers
@@ -372,8 +384,8 @@ define ssatuBanditGlave = Foe( Transform( child="images/Enemies/Shata and Ssatu/
 define ssatuBanditJavelin = Foe( Transform( child="images/Enemies/Shata and Ssatu/Ssatu Bandit Javelins.webp", zoom = 0.25 ), "Ssatu Bandit Skimisher" , 42 , 4 , 3 , 2.5 , 9 , True , "medium" )
 define ssatuBanditSlings = Foe( Transform( child="images/Enemies/Shata and Ssatu/Ssatu Bandit Slinger.webp", zoom = 0.25 ), "Ssatu Bandit Slinger" , 38 , 6 , 3 , 2.3 , 10 , True , "medium" )
 
-define ssatuLongbow = Foe( Transform( child="images/Enemies/Shata and Ssatu/ssatu longbow dude.webp", zoom = 0.25 ), "Ssatu Longbow" , 52 , 14 , 2 , 1.5 , 9 , True , "4width2" )
-define ssatuLongBowGirl = Foe( Transform( child="images/Enemies/Shata and Ssatu/Ssatu longbow lady.webp", zoom = 0.25 ), "Ssatu Longbow" , 52 , 14 , 2 , 1.5 , 9 , True , "4width2" ) 
+define ssatuLongbow = Foe( Transform( child="images/Enemies/Shata and Ssatu/ssatu longbow dude.webp", zoom = 0.25 ), "Ssatu Longbow" , 48 , 14 , 2 , 1.5 , 9 , True , "4width2" )
+define ssatuLongBowGirl = Foe( Transform( child="images/Enemies/Shata and Ssatu/Ssatu longbow lady.webp", zoom = 0.25 ), "Ssatu Longbow" , 48 , 14 , 2 , 1.5 , 9 , True , "4width2" ) 
 
 #Gilgamorium Ssatu
 define ssatuGlave = PatterenFoe( Transform( child="images/Enemies/Shata and Ssatu/ssatu glave male attack.webp" , zoom = 0.25 ), "Ssatu Glaive" , 57 , 7 , 12 , 3.3 , 10 , "medium4" , False , ["m","M","m"] , { "m":[ Transform( child= "images/Enemies/Shata and Ssatu/ssatu glave male attack.webp" , zoom = 0.25) , 7 , 3.0 , 10 , "medium4" , False ] ,"M" : [ Transform( child= "images/Enemies/Shata and Ssatu/ssatu glave male slash.webp" , zoom = 0.25) , 12 , 2.3 , 10 ,"medium6" , False ] })
@@ -395,9 +407,9 @@ define jakalbitePadKhopesh = Foe(Transform( child="images/Enemies/astartes goons
 define jakalbitePadPealtast = PatterenFoe( Transform( child="images/Enemies/astartes goons/jakalbite heavy peltast ranged.webp", zoom=0.25) , "Jakalbite Heavy Peltast" , 35 , 8 , 5 , 2.5 , 6 , True , "medium4" , [ "r" , "r" , "r" , "m", "m" , "r" , "m" ] , { "m" : [ Transform( child="images/Enemies/astartes goons/jakalbite heavy peltast melee.webp" , zoom=0.25 ) , 8 , 2.5 , 6 , "medium4" , False ] , "r" : [Transform( child="images/Enemies/astartes goons/jakalbite heavy peltast ranged.webp" , zoom=0.25 ) , 10 , 3.0 , 7 , "medium" , True  ] })
 define falcobitePadSpear = Foe( Transform( child="images/Enemies/astartes goons/falcobite padded infantry spear.webp", zoom=0.25), "Falcobite Padded Warrior", 40, 10, 4 , 2.5 , 5 , False , "medium4")
 
-define thiaKhopesh = Foe( Transform( child="images/Enemies/astartes goons/Astarto-Thia Khopesh Female v1.webp", zoom=0.25 ) , "Astarto-Thia Khopesh Warrior" , 72 , 14 , 9 , 2.6 , 6 , False , "medium4" )
-#define armoredThiaSpear = Foe
-#define armoredThiaMace = Foe
+define thiaKhopesh = Foe( Transform( child="images/Enemies/astartes goons/Astarto-Thia Khopesh Female v1.webp", zoom=0.25 ) , "Astarto-Thia Khopesh Warrior" , 72 , 14 , 9 , 2.8 , 6 , False , "medium4" )
+define armoredThiaSpear = Foe( Transform( child = "images/Enemies/astartes goons/Thia Armored Spear male.webp", zoom=0.25 ), "Thia Armored Spear" , 60 , 15 , 12 , 2.6 , 5 , False , "medium4" )
+define armoredThiaMace = Foe( Transform( child = "images/Enemies/astartes goons/Thia Mace Infantry Female.webp", zoom=0.25 ), "Thia Armored Mace" , 60 , 13 , 12 , 2.6 , 8 , False , "medium4" )
 
 define astartCommonInfantryF = Foe( Transform( child="images/Enemies/astartes goons/Astart Common Infantry Female1 v1.webp", zoom=0.25 ) , "Astart Common Infantry" , 35 , 11 , 8 , 2.0 , 6 , False , "medium")
 define astartCommonInfantryM = Foe( Transform( child="images/Enemies/astartes goons/Astart Common Infantry Male1 v1.webp", zoom=0.25 ) , "Astart Common Infantry" , 35 , 11 , 8 , 2.0 , 6 , False , "medium")
@@ -405,10 +417,15 @@ define astartCommonInfantryM = Foe( Transform( child="images/Enemies/astartes go
 define astartHopliteF = Foe( Transform( child="images/Enemies/astartes goons/Astart Hoplite Female 1 v1.webp", zoom=0.25 ) , "Astart Hoplite" , 70 , 13 , 10 , 2.5 , 7 , False , "medium4" )
 define astartHopliteM = Foe( Transform( child="images/Enemies/astartes goons/Astart Hoplite Male1 v1.webp", zoom=0.25 ) , "Astart Hoplite" , 70 , 13 , 10 , 2.5 , 7 , False , "medium4" )
 define astartHopliteM2 = Foe( Transform( child="images/Enemies/astartes goons/Astart Hoplite Male2.webp", zoom=0.25 ) , "Astart Hoplite" , 70 , 13 , 10 , 2.5 , 7 , False , "medium4" )
-#define armoredScutarius = Foe
+
+define armoredScutarius = Foe( Transform( child="images/Enemies/astartes goons/Astarto-Ordonian Scutarii.webp", zoom=0.25 ) , "Astarto-Ordonian Scutarius" , 56 , 12, 5 , 3.1 , 7 , False , "medium4" )
+define hekaAxeWoman = Foe( Transform( child="images/Enemies/astartes goons/Heka Valley Axwoman.webp", zoom=0.25 ) , "Astarto-Ordonian Scutarius" , 56 , 12, 5 , 2.9 , 10 , False , "medium4" )
 #define armoredSwords = Foe
-define suzumiteSpear = Foe(  Transform( child="images/Enemies/astartes goons/Heavy Spear inf Suzumite Female Shield.webp", zoom=0.25 ) , "Suzumite Heavy Spear" , 80 , 9 , 11 , 2.3 , 6 , False , "hard" ) 
+define suzumiteSpear = Foe(  Transform( child="images/Enemies/astartes goons/Heavy Spear inf Suzumite Female Shield.webp", zoom=0.25 ) , "Suzumite Heavy Spear" , 80 , 9 , 11 , 2.7 , 8 , False , "hard" ) 
+define balatianHeavyAxe = Foe(  Transform( child="images/Enemies/astartes goons/Balatian Axe Armored Female v1.webp", zoom=0.25 ) , "Balatian Armored Axe" , 80 , 15 , 11 , 3.0 , 12 , False , "hard" ) 
+define suzumiteKaetarius = PatterenFoe( Transform( child="images/Enemies/Shata and Ssatu/Suzumite Kaetratius Melee.webp" , zoom = 0.25 ), "Suzumite Kaetratius" , 56 , 8 , 7 , 2.3 , 10 , True , "3width2" , ["r","m"] , { "r" : [ Transform( child= "images/Enemies/Shata and Ssatu/Suzumite Kaetratius Ranged.webp", zoom = 0.25 ), 12 , 2.5 , 12 , "3width2" , True ] , "m" : [ Transform( child ="images/Enemies/Shata and Ssatu/Suzumite Kaetratius Melee.webp" , zoom = 0.25)  , 12 , 2.8 , 8 , "mixed3" , False ] })
 #suzumiteSpearM used for cutscene
+define faronianNakedWarrior = PatterenFoe( Transform( child="images/Enemies/Shata and Ssatu/Faronian Axe Naked Female v1 sfw.webp" , zoom = 0.25 ), "Faronian Naked Warrior" , 84 , 12 , 1 , 2.7 , 10 , True , "3width2" , ["r","m"] , { "r" : [ Transform( child= "images/Enemies/Shata and Ssatu/Faronian Javelin Naked Female.webp", zoom = 0.25 ), 10 , 2.7 , 10 , "3width2" , True ] , "m" : [ Transform( child ="images/Enemies/Shata and Ssatu/Faronian Axe Naked Female v1 sfw.webp" , zoom = 0.25)  , 12 , 2.8 , 8 , "mixed4" , False ] })
 #define FaronianSpearM used for cutscenes
 #define FaronianSpearG used in cutscene
 #define BalatianSpearM used in cutscene
@@ -417,8 +434,9 @@ define suzumiteSpear = Foe(  Transform( child="images/Enemies/astartes goons/Hea
 
 #define ashtatebaArcher = Foe( Transform( child="images/Enemies/astartes goons/Astateba archer.webp" , zoom = 0.25) , "Ashteba Archer" , 42 , 8 , 1 , 1.5 , 8 , True , "4width2" )
 define minobiteArcher = Foe( Transform( child="images/Enemies/astartes goons/Minobite Archer.webp" , zoom = 0.25) , "Minobite Archer" , 60 , 15 , 4 , 1.2 , 12 , True , "3width2" )
-define BalatianArcherM = Foe( Transform( child="images/Enemies/astartes goons/Balatian Archer.webp" , zoom = 0.25) , "Balatian Archer" , 70 , 15 , 3 , 1.5 , 10 , True , "3width2" )
-
+define BalatianArcherM = Foe( Transform( child="images/Enemies/astartes goons/Balatian Archer.webp" , zoom = 0.25) , "Balatian Archer" , 70 , 15 , 3 , 2.2 , 10 , True , "3width2" )
+define hekaArcher = Foe( Transform( child="images/Enemies/astartes goons/Astateba archer.webp", zoom = 0.25 ), "Heka Valley Archer" , 38 , 12 , 2 , 2.8 , 9 , True , "4width2" ) 
+define orodianArcher = Foe( Transform( child="images/Enemies/astartes goons/Orodian Archer.webp", zoom = 0.25 ), "Orodian Archer" , 45 , 15 , 12 , 2.4 , 9 , True , "4width2" )
 #define ishtawitaArmoredPeltast = PatterenFoe
 #define nakedPeltast = PatterenFoe
 
@@ -426,6 +444,7 @@ define BalatianArcherM = Foe( Transform( child="images/Enemies/astartes goons/Ba
 
 #medium mounties
 
+define OrodianChariot = ChariotFoe( Transform ( child = Composite( ( 3100 , 2000 ), ( 0,0 ), "images/Enemies/astartes goons/Orodian Archer.webp" , ( -500,800 ) , "images/animals/Astart chariot.webp" ), zoom=0.2 ), "Chariot Archer" , 160 , 15 , 12 , 3.2 , 12 , True , "4width2" , [ orodianArcher ])
 #based on cutscen and fight
 #Faronian Heavy Cav
 #Balatian Heavy CavM1
@@ -511,6 +530,13 @@ define thiatsetuArcherLand = Foe( Transform( child="images/Enemies/astartes goon
 #define tsetulingWarrior        = FlyingFoe
 #define tsetulingWarriorLand    = Foe
 
+
+#crab people
+define tsetulingFighterLand = Foe( Transform( child="images/Enemies/astartes goons/Tsetuling Fighter.webp", zoom=0.25 ) , "Tsetuling Fighter" , 92 , 16 , 15 , 2.8 , 14 , True , "medium6" ) 
+#
+define tsetulingFighterMLand = Foe( Transform( child="images/Enemies/astartes goons/Tsetuling Fighter Male.webp", zoom=0.25 ) , "Tsetuling Fighter" , 92 , 16 , 15 , 2.8 , 14 , True , "medium6" ) 
+#
+
 define snakebite = FlyingFoe( Transform( child="images/Enemies/astartes goons/Snakebite Swimming.webp", zoom=0.25 ) , "Snakebite" , 42 , 10 , 4 , 1.8 , 5 , True , "hard" , Transform( child="images/Enemies/astartes goons/Snakebite Swimming.webp", zoom=0.25 ) , Transform( child="images/Enemies/astartes goons/Snakebite.webp", zoom=0.25 ) , True , 3 )
 define snakebiteLand = Foe( Transform( child="images/Enemies/astartes goons/Snakebite.webp", zoom=0.25 ) , "Snakebite" , 42 , 10 , 4 , 1.8 , 5 , True , "hard" ) 
 
@@ -529,6 +555,9 @@ define captianGadiz = Foe( Transform( child="images/antagonists/Astart Officers/
 define captainHuksos = PatterenFoe( Transform (child="images/antagonists/Astart Officers/Huksos Angry Commanding.webp", zoom=0.25 ) , "Captain Huksos" , 250 , 18 , 6 , 2.5 ,  8 , False , "medium4" , ["m","r","r"], { "m" : [Transform (child="images/antagonists/Astart Officers/Huksos Angry Commanding.webp", zoom=0.25 ) , 18 , 2.5 , 6 , "medium4" , False] , "r" : [Transform (child="images/antagonists/Astart Officers/Huksos Angry Javelin.webp", zoom=0.25 ) , 12 , 2.2 , 6 , "3width2" , True]} )
 
 define captainBelgius = Foe( Transform( child = "images/antagonists/Astart Officers/Balatian Heavy Sword Cavarly Attack.webp" , zoom = 0.18 ) , "Captain Belgius" , 300 , 18 , 10 , 2.5 , 10 , False , "medium6" )
+#define captainBelgiusFoot = Foe
+define commanderMwejya = PatterenFoe( Transform ( child="images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Fighting.webp" , zoom = 0.25 ) , "Commander Mwejya" , 240 , 16 , 12 , 3.0 , 8 , False , "medium4" , ["m","m","r"] , { "m" : [Transform (child="images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Fighting.webp", zoom=0.25 ) , 16 , 3.0 , 8 , "medium4" , False] , "r" : [Transform (child="images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Throwing.webp", zoom=0.25 ) , 15 , 3.5 , 12  , "4width2" , True , [ False ] , [ [] , 0 , False ] , [ False , "Fish Rods" , 0 , False , False ], [ [ "Burning" , "Flaming Spear." , 16 , 4 , 40 ] ] ]} ) 
+#define commanderMwejyaChariot = PatterenFoe
 #foes with weaknesses
 
 
@@ -544,8 +573,8 @@ define BigCrayfish = Foe( Transform( child="images/Enemies/astartes goons/Zwotia
 #medium level monsters
 define pythonDaSwimmer = FlyingFoe( Transform( child="images/Enemies/astartes goons/Python.webp", zoom=0.3 ) , "Python" , 66 , 12 , 4 , 2 , 12 , False , "medium" , Transform( child="images/Enemies/astartes goons/Python Swimming.webp", zoom=0.3 ) , Transform( child="images/Enemies/astartes goons/Python.webp", zoom=0.3 ) , False , 2 )
 define pythonDaSnake = Foe( Transform( child="images/Enemies/astartes goons/Python.webp", zoom=0.3 ) , "Python" , 66 , 12 , 4 , 2 , 12 , False , "medium")
-define nitricAcidSpittingCobra = PatterenFoe( Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom=0.4 ) , "Nitroacidic Cobra" , 28 , 6 , 1 , 3 , 0 , True , "4width3" , ["r"] , { "r" : [ Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom=0.4 ) , 8 , 2.5 , 0 , "4width2" , True , [ False ]  , [ Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom=0.4 ) , 0 , False ] , [ False , "nothing" , 0 , False , False ] , [ [ "Burning" , "Nitric Acid Spit" , 8 , 4 , 40 ] ] ] } )
-define nitricAcidSpittingCobraSwimming = PatterenFoe( Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra Swimming.webp" , zoom=0.4 ) , "Nitroacidic Cobra" , 28 , 6 , 1 , 3 , 0 , True , "4width3" , ["r"] , { "r" : [ Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra Swimming.webp" , zoom=0.4 ) , 8 , 2.5 , 0 , "4width2" , True , [ True ,  Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra Swimming.webp" , zoom=0.4 ) , Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom = 0.4 )] , [ Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom=0.4 ) , 0 , False ] , [ False , "nothing" , 0 , False , False ] , [ [ "Burning" , "Nitric Acid Spit" , 8 , 4 , 40 ] ] ] } )
+define nitricAcidSpittingCobra = PatterenFoe( Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom=0.4 ) , "Nitroacidic Cobra" , 28 , 6 , 1 , 3 , 0 , True , "4width3" , ["r"] , { "r" : [ Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom=0.4 ) , 8 , 2.5 , 0 , "shotgun" , True , [ False ]  , [ Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom=0.4 ) , 0 , False ] , [ False , "nothing" , 0 , False , False ] , [ [ "Burning" , "Nitric Acid Spit" , 8 , 4 , 40 ] ] ] } )
+define nitricAcidSpittingCobraSwimming = PatterenFoe( Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra Swimming.webp" , zoom=0.4 ) , "Nitroacidic Cobra" , 28 , 6 , 1 , 3 , 0 , True , "4width3" , ["r"] , { "r" : [ Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra Swimming.webp" , zoom=0.4 ) , 8 , 2.5 , 0 , "shotgun" , True , [ True ,  Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra Swimming.webp" , zoom=0.4 ) , Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom = 0.4 )] , [ Transform( child="images/Enemies/astartes goons/Nitroacidic Cobra.webp" , zoom=0.4 ) , 0 , False ] , [ False , "nothing" , 0 , False , False ] , [ [ "Burning" , "Nitric Acid Spit" , 8 , 4 , 40 ] ] ] } )
 define sulfuricViper = PatterenFoe( Transform( child="images/Enemies/astartes goons/Sulfuric Viper.webp" , zoom=0.4 ) , "Sulfuric Viper" , 28 , 6 , 1 , 3 , 0 , False , "medium" , ["m"] , { "m" : [ Transform( child="images/Enemies/astartes goons/Sulfuric Viper.webp" , zoom=0.4 ) , 10 , 3 , 0 , "medium" , False , [ False ] , [ Transform( child="images/Enemies/astartes goons/Sulfuric Viper.webp" , zoom=0.4 ) , 0 , False ] , [ False , "nothing" , 0 , False , False ] , [ [ "Burning" , "Sulfuric Acid Vemon" , 8 , 5 , 30 ] ] ] } )
 define sulfuricViperSwimming = PatterenFoe( Transform( child="images/Enemies/astartes goons/Sulfuric Viper Swimming.webp" , zoom=0.4 ) , "Sulfuric Viper" , 28 , 6 , 1 , 3 , 0 , False , "medium" , ["m"] , { "m" : [ Transform( child="images/Enemies/astartes goons/Sulfuric Viper Swimming.webp" , zoom=0.4 ) , 10 , 3 , 0 , "medium" , False , [ True , Transform( child="images/Enemies/astartes goons/Sulfuric Viper Swimming.webp" , zoom=0.4 ) , Transform( child="images/Enemies/astartes goons/Sulfuric Viper.webp" , zoom=0.4 ) ] , [ Transform( child="images/Enemies/astartes goons/Sulfuric Viper.webp" , zoom=0.4 ) , 0 , False ] , [ False , "nothing" , 0 , False , False ] , [ [ "Burning" , "Sulfuric Acid Vemon" , 8 , 4 , 30 ] ] ] } )
 #Low Level Flyers
@@ -555,6 +584,7 @@ define biterBat = FlyingFoe( Transform( child="images/Enemies/astartes goons/Ssy
 
 #high level humanoids
 #ssatuWhipWarrior / pattern foe with steel whip
+define astartWhipWarrior = PatterenFoe( Transform( child = "images/Enemies/Shata and Ssatu/Balato-Astart Slaver.webp" , zoom=0.25 ) , "Astart Whip Warrior" , 100 , 12 , 0 , 2.1 , 12 , False , "medium4" , [ "e"] , { "e" : [ Transform( child="images/Enemies/Shata and Ssatu/Balato-Astart Slaver.webp" , zoom = 0.25 ) , 10 , 3.0 , 4 , "medium6" , False , [ False ] , [ [] , 0 , False ] , [ False , "Nothing" , 0 , False , False ] , [ [ "Entangled" , "Steel Tooth Whip" , 0 , 1 ] ] ] } )
 define ssatuWhipWarrior = PatterenFoe( Transform( child = "images/Enemies/Shata and Ssatu/ssatu slaver whipping.webp" , zoom=0.25 ) , "Ssatu Whip Warrior" , 100 , 12 , 0 , 2.1 , 12 , False , "medium4" , [ "e"] , { "e" : [ Transform( child="images/Enemies/Shata and Ssatu/ssatu slaver whipping.webp" , zoom = 0.25 ) , 10 , 3.0 , 4 , "medium6" , False , [ False ] , [ [] , 0 , False ] , [ False , "Nothing" , 0 , False , False ] , [ [ "Entangled" , "Steel Tooth Whip" , 0 , 1 ] ] ] } )
 define minobiteGreatAx = Foe( Transform( child="images/Enemies/eliete goons/Minobite Great Axe.webp", zoom=0.25 ) , "Minobite Great Ax", 120 , 18 , 2 , 2.2 , 12 , False , "hard" )
 define minobiteGreatAxArmored = Foe( Transform( child="images/Enemies/eliete goons/Minobite Great Axe Armored.webp", zoom=0.25 ) , "Armored Minobite Great Ax", 150 , 18 , 10 , 2.5 , 12 , False , "medium4" )
