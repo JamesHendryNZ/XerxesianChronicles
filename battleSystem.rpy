@@ -608,6 +608,9 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                                 if len( alternativeTargets ) < originalNumber:
                                     $ alternativeTargets2Kill -= 1
 
+                                if isinstance( enemyTroopers[badNumber] , ChariotFoe ):
+                                    
+                                    $ enemyTroopers[badNumber].spawnTransportTroopers( enemyTroopers[badNumber].transportFoes , enemyTroopers )
                                 $ enemyTroopers.pop(badNumber)
 
 
@@ -767,12 +770,16 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                         if len( alternativeTargets ) < originalNumber:
                             $ alternativeTargets2Kill -= 1
 
+                        if isinstance( currentFoe , ChariotFoe ):
+                            $ currentFoe.spawnTransportTroopers( currentFoe.transportFoes , enemyTroopers )
 
                         $ enemyTroopers.pop(i)
                         $ i -= 1
                         if len(enemyTroopers) <= 0:
                             $ badTroopersAlive = False
             else:
+                if isinstance( enemyTroopers[ i ] , ChariotFoe ):
+                    $ enemyTroopers[ i ].spawnTransportTroopers( enemyTroopers[ i ].transportFoes , enemyTroopers )
                 $ enemyTroopers.pop(i)
                 $ i -= 1 
                 if len(enemyTroopers) <= 0:
