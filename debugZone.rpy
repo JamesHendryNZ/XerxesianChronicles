@@ -217,8 +217,28 @@ label testBattles:
 
 label testNewAsstarts:
     
-    $ enemyTroopers = [ copy.copy( OrodianChariot ) ]
+    #test for return 2 takurium( Fall of Zardonia ) foes
+    "The new foes."
+    "Krokkosnek's goon(er)s!"
+    play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+    queue music fightingCommon
 
+    $ enemyTroopers = [ copy.copy( OrodianChariot ) , copy.copy( OrodianChariot ) , copy.copy( OrodianChariot ) ]
+    call screen playerActions( "The new chariot enemies." , False , False , False , 1 )
+
+    $ enemyTroopers = [ copy.copy( faronianNakedWarrior ) , copy.copy( faronianNakedWarrior ) , copy.copy( captainBelgiusFoot )  ,  copy.copy( suzumiteSpear ) , copy.copy( astartHopliteM2 ) ] 
+    call screen playerActions( "Captain Belgius lost his horse." , False , False , False , 1 )
+
+    $ enemyTroopers = [ copy.copy( tsetulingFighterLand ) , copy.copy( orodianArcher ) , copy.copy( hekaArcher ) , copy.copy( BalatianArcherM ) , copy.copy( tsetulingFighterMLand ) , copy.copy( nitricAcidSpittingCobra )]
+    call screen playerActions( "Tsetulings supported by archers." , False , False , False , 1 )
+
+    $ enemyTroopers = [ copy.copy( astartHopliteF ) , copy.copy( astartHopliteM ) , copy.copy( armoredScutarius ) , copy.copy( hekaAxeWoman ) , copy.copy( armoredThiaSpear ) , copy.copy( armoredThiaMace ) , copy.copy( thiaKhopesh ) ]
+    call screen playerActions( "Mid tier melee infantry" , False , False , False , 1 )
+
+    $ enemyTroopers = [ copy.copy( krokkosnekLand1st ) , copy.copy( balatianHeavyAxe ) , copy.copy( commanderMwejya ) ] 
+    call screen playerActions( "Another commander and a high tier warrior" , False , False , False , 1 )
+
+    return
 #this is for testing crafting
 label testMenu:
 

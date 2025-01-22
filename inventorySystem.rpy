@@ -264,6 +264,10 @@ label ammoSelection( rangedWeapon , inBattle = True ):
             $ deadDude = enemyTroopers[dude2AttackNumber]
             play sound drop2DaFloor
             play extraSound punchy
+
+            if isinstance( deadDude , ChariotFoe ):                    
+                $ deadDude.spawnTransportTroopers( deadDude.transportFoes , enemyTroopers )
+            
             "[deadDude.name] is defeated!"
 
             $ originalNumber = len( ringLeaders )        
@@ -374,6 +378,10 @@ label throwableSelection( inBattle = True ):
                         
                         elif currentDude.health <= 0:
                             play sound meatEplosion
+                            
+                            if isinstance( currentDude , ChariotFoe ):                    
+                                $ currentDude.spawnTransportTroopers( currentDude.transportFoes , enemyTroopers )
+
                             "[currentDude.name] GOT BLASTED TO BITS!!"
 
                             $ originalNumber = len( ringLeaders )        
@@ -412,6 +420,10 @@ label throwableSelection( inBattle = True ):
                     $ deadDude = enemyTroopers[splashCenter]
                     play sound drop2DaFloor
                     play extraSound punchy
+
+                    if isinstance( deadDude , ChariotFoe ):                    
+                        $ deadDude.spawnTransportTroopers( deadDude.transportFoes , enemyTroopers )
+
                     "[deadDude.name] is defeated!"
 
                     $ originalNumber = len( ringLeaders )        
