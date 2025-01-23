@@ -10,69 +10,10 @@ label minonaAndBalatiusAtKworitx:
     if IsDaytime:
         scene map2: #might use the small up close map
             zoom 0.6
-            xpos -0.2
+            xpos -0.28
             ypos -0.4
             blur 3
             matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#FFF")
-
-            linear 1 matrixcolor TintMatrix("#FFF")
-            linear 1 matrixcolor TintMatrix("#ffd2a1")
-            linear 2 matrixcolor TintMatrix("#0600bc")
-            linear 2 matrixcolor TintMatrix("#ffd2a1")
-
-        show xerx3HorseHappy:
-            zoom 0.05
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.56
-            ypos 0.41
-
-            linear 2 xpos 0.493 ypos 0.317
-            linear 2 xpos 0.46 ypos 0.272
-            linear 2 xpos 0.46 ypos 0.272
-        
-        show minona inChariot meanEyebrows:
-            zoom 0.05
-            xzoom -1.0
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.926
-            ypos 0.508
-
-            linear 1 xpos 0.817 ypos 0.542
-            linear 1 xpos 0.792 ypos 0.483
-            linear 3 xpos 0.616 ypos 0.282
-
-        show astartHopliteMale:
-            zoom 0.05
-            xanchor 0.5
-            yanchor 0.5
-            xzoom -1.0
-            xpos 0.758
-            ypos 0.296
-
-            linear 3 xpos 0.709 ypos 0.205
-        
-        show jakaCamelLancer:
-            zoom 0.05
-            xanchor 0.5
-            yanchor 0.5
-            xzoom -1.0
-            xpos 0.807
-            ypos 0.45
-
-            linear 3 xpos 0.665 ypos 0.602
-        show lakatinuFrontFly:
-            zoom 0.04
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.845
-            ypos 0.372
-        
-            linear 1 xpos 0.817 ypos 0.53
-            linear 1 xpos 0.662 ypos 0.74
-            linear 2 xpos 0.35 ypos 0.764
-            linear 2 xpos 0.35 ypos 0.764    
     else:
         scene map2:
             zoom 0.6
@@ -81,62 +22,59 @@ label minonaAndBalatiusAtKworitx:
             blur 5
             matrixcolor SaturationMatrix( 0.6 ) * TintMatrix("#0600bc")
 
-            linear 2 matrixcolor TintMatrix("#0600bc")
-            linear 2 matrixcolor TintMatrix("#ffd2a1")
-            linear 2 matrixcolor TintMatrix("#FFF")
+    
+    show minona inChariot meanEyebrows:
+        zoom 0.05
+        xzoom -1.0
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.31
+
+        linear 2 xpos 0.67 ypos 0.21
+        linear 2 xpos 0.53 ypos 0.24
+        #linear 3 xpos 0.53 ypos 0.23
+    
+    show xerx3HorseHappy:
+        zoom 0.05
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.49
+        ypos 0.3
+
+        linear 2 xpos 0.59 ypos 0.35
+    
+
+    show astartHopliteMale:
+        zoom 0.05
+        xanchor 0.5
+        yanchor 0.5
+        xzoom -1.0
+        xpos 0.69
+        ypos 0.25
+
+        linear 2 xpos 0.63 ypos 0.23
+    
+    show jakaCamelLancer:
+        zoom 0.05
+        xanchor 0.5
+        yanchor 0.5
+        xzoom -1.0
+        xpos 0.666
+        ypos 0.493
+
+        linear 3 xpos 0.587 ypos 0.583
+    show lakatinuFrontFly:
+        zoom 0.04
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.766
+        ypos 0.326
+    
+        linear 2 xpos 0.63 ypos 0.76
+        linear 2 xpos 0.26 ypos 0.71  
+
             
-
-        show xerx3HorseHappy:
-            zoom 0.05
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.56
-            ypos 0.41
-
-            linear 1 xpos 0.46 ypos 0.272
-            linear 3 xpos 0.46 ypos 0.272
-            linear 2 xpos 0.46 ypos 0.272
-        
-        show minona inChariot:
-            zoom 0.05
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.926
-            ypos 0.508
-
-            linear 1 xpos 0.817 ypos 0.542
-            linear 1 xpos 0.792 ypos 0.483
-            linear 3 xpos 0.616 ypos 0.282
-    
-        show astartHopliteMale:
-            zoom 0.05
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.758
-            ypos 0.296
-
-            linear 3 xpos 0.709 ypos 0.205
-    
-        show jakaCamelLancer:
-            zoom 0.05
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.807
-            ypos 0.45
-
-            linear 3 xpos 0.665 ypos 0.602
-
-        show lakatinuFrontFly:
-            zoom 0.04
-            xanchor 0.5
-            yanchor 0.5
-            xpos 0.845
-            ypos 0.372
-        
-            linear 1 xpos 0.817 ypos 0.53
-            linear 1 xpos 0.662 ypos 0.74
-            linear 2 xpos 0.35 ypos 0.764
-            linear 2 xpos 0.35 ypos 0.764
 
     with fade
     pause 6
@@ -413,17 +351,23 @@ label minonaAndBalatiusAtKworitx:
     show belgius happyMouth at thridSize:
         xzoom 1.0
     with dissolve
-    balaCavOf "I want to hunt Xerxes in Zarat!" # happy mouth 3/4
+    balaCavOf "I want to hunt Xerxes!" # happy mouth 3/4
+    balaCavOf "Scouts report him heading to Takurium."
     show minona deltaMouth at thridSize with dissolve: 
         xpos 0.5 ypos 0.0
-    mino "He'll come here when we put enough pressure on his homeland."
+    mino "Krokkosnek will deal with him."
+    mino "You stay here."
     show minona annoyedMouth meanEyebrows at thridSize with dissolve: 
         xpos 0.5 ypos 0.0
     show belgius neutralHappyMouth at thridSize:
         xzoom 1.0
     with dissolve
-    balaCavOf "I can bring him here quicker if I attack him." # neutral happy mouth
-    balaCavOf "Plus it will scare the Zaratians too." 
+    balaCavOf "No he won't." # neutral happy mouth
+    if takuriumOwner == "Jamesians":
+        balaCavOf "He couldn't even keep Takurium."
+    else:
+        balaCavOf "Not since his giant pet monster got killed."
+    balaCavOf "Plus it will cover our rear." 
     show belgius meanEyebrows at thridSize with dissolve:
         xzoom 1.0
     balaCavOf "{i}Also get that artifact of power Xerxes has." #mean eyebrows
@@ -438,12 +382,19 @@ label minonaAndBalatiusAtKworitx:
     mino "Fine then." #mean eyes - mini angry mouth
     show minona pointAndSpear at thridSize with dissolve: 
         xpos 0.5 ypos 0.0
+    #stop music fadeout 1.0
+    if takuriumOwner == "Jamesians":
+        mino "Go to Yemeh."
+    else:
+        mino "Go to Takurium."
+    mino "You can help Krokkosnek keep the Jamesians in place while I raid and attack their towns and bases."
     mino "You can take your warband but nobody else."
     show minona -pointAndSpear at thridSize with dissolve: 
         xpos 0.5 ypos 0.0
     mino "I need the rest here."
     balaCavOf "Understood." 
 
+    
     hide belgius
     show belgiusCharge at thridSize , flipped:
         xpos 0.0 ypos 0.2
@@ -454,7 +405,7 @@ label minonaAndBalatiusAtKworitx:
     window hide dissolve
     #balaCavOff rides off with his warband
     
-
+    #modify to going east
     if kwortixEntranceOpened == True:
         scene kwortixMineFrontExplodedRocksMorning at center, fullFit
     else:
@@ -463,31 +414,31 @@ label minonaAndBalatiusAtKworitx:
     play sound horseGallop loop
 
     show belgiusCharge at thridSize , flipped with dissolve:
-        xpos 1.4 ypos 0.3
-        easein 3 xpos -0.5
+        xpos -0.5 ypos 0.3 xzoom -1.0
+        easein 3 xpos 1.4
     show jakaCamelLancer at thridSize , flipped with dissolve:
         
-        xpos 1.4 ypos 0.3
-        easein 3 xpos -0.5
+        xpos -0.5 ypos 0.3 xzoom -1.0
+        easein 3 xpos 1.4
     pause 0.01
     show captainHuksosAngryCommanding at thridSize , flipped with dissolve:
-        xpos 1.4 ypos 0.3
-        easein 3 xpos -0.7
+        xpos -0.5 ypos 0.3 xzoom -1.0
+        easein 3 xpos 1.4
     pause 0.01
     show astartCommonCavarlyFemale at thridSize , flipped with dissolve:
-        xpos 1.4 ypos 0.3
-        easein 3 xpos -0.5
+        xpos -0.5 ypos 0.3 xzoom -1.0
+        easein 3 xpos 1.4
     pause 0.01
     show ordonianCavarly at thridSize , flipped with dissolve:
-        xpos 1.4 ypos 0.1
-        easein 3 xpos -0.5
+        xpos -0.5 ypos 0.1 xzoom -1.0
+        easein 3 xpos 1.4
     pause 0.01
     show orodianCavarly at thridSize with dissolve:
-        xpos 1.4 ypos 0.3
-        easein 3 xpos -0.5
+        xpos -0.5 ypos 0.3 xzoom -1.0
+        easein 3 xpos 1.4
     show astartBalatianLancerCharge at halfSize , flipped with dissolve:
-        xpos 1.4 ypos 0.3
-        easein 3 xpos -0.5 
+        xpos -0.5 ypos 0.3 xzoom -1.0
+        easein 3 xpos 1.4
     show dustCloud at fullFit with Dissolve(2)
     stop sound fadeout 3
 
@@ -506,28 +457,50 @@ label minonaAndBalatiusAtKworitx:
         
         linear 1 matrixcolor TintMatrix("#fff")
 
-    show xerx3HorseHappy:
-        zoom 0.05
-        xanchor 0.5
-        yanchor 0.5
-        xpos 0.338
-        ypos 0.272
+    if takuriumOwner == "Jamesians":
+        show xerx3HorseHappy:
+            zoom 0.05
+            xanchor 0.5
+            yanchor 0.5
+            xpos 0.67
+            ypos 0.37
 
-        linear 2 xpos 0.338 ypos 0.272
-        linear 2 xpos 0.327 ypos 0.18
+            linear 2 xpos 0.71 ypos 0.42
+            linear 1 xpos 0.74 ypos 0.36
         
-    show belgiusCharge:
-        zoom 0.05
-        xanchor 0.5
-        yanchor 0.5
-        xpos 0.616 
-        ypos 0.282
+        show belgiusCharge:
+            zoom 0.05
+            xanchor 0.5
+            yanchor 0.5
+            xpos 0.63 
+            ypos 0.24
 
-        # start from mines - 0.582 , 0.15 - 0.256 , 0.07 - 0.4, 0.09
-        linear 2 xpos 0.582 ypos 0.15
-        linear 1 xpos 0.512 ypos 0.07
-        linear 1 xpos 0.4 ypos 0.09
+            # start from mines - 0.582 , 0.15 - 0.256 , 0.07 - 0.4, 0.09
+            linear 2 xpos 0.76 ypos 0.23
+            linear 1 xpos 0.72 ypos 0.35
 
+    else:
+        show belgiusCharge:
+            zoom 0.05
+            xanchor 0.5
+            yanchor 0.5
+            xpos 0.63 
+            ypos 0.24
+
+            # start from mines - 0.582 , 0.15 - 0.256 , 0.07 - 0.4, 0.09
+            linear 2 xpos 0.76 ypos 0.23
+            linear 1 xpos 0.77 ypos 0.34
+            linear 1 xpos 0.74 ypos 0.36
+
+        show xerx3HorseHappy:
+            zoom 0.05
+            xanchor 0.5
+            yanchor 0.5
+            xpos 0.67
+            ypos 0.37
+
+            linear 2 xpos 0.71 ypos 0.42
+        
     show minobiteSpear:
         zoom 0.05
         xanchor 0.5
@@ -559,8 +532,8 @@ label minonaAndBalatiusAtKworitx:
         zoom 0.05
         xanchor 0.5
         yanchor 0.5
-        xpos 0.616 
-        ypos 0.282
+        xpos 0.64
+        ypos 0.24
     
     
 
@@ -568,7 +541,7 @@ label minonaAndBalatiusAtKworitx:
         zoom 0.05
         xanchor 0.5
         yanchor 0.5
-        xpos 0.709 ypos 0.205
+        xpos 0.71 ypos 0.21
 
         
     show jakaCamelLancer:
@@ -592,15 +565,7 @@ label minonaAndBalatiusAtKworitx:
     #then he tries to break the desert curse by striking the boarder with the charge SoAm
     #he fails and is dissapointed 
     pause 6
-    stop music fadeout 1.0
-    if takuriumOwner == "Jamesians":
-        mino "Go to Yemeh."
-    else:
-        mino "Go to Takurium."
-    mino "You can help Krokkosnek keep the Jamesians in place while I raid and attack their towns and bases."
-    mino "You can onl"
-    balaCavOf "Understood."
-
+    
     #usuall goons and gallop but going left to right instead of right to left
     return
 

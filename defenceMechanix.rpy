@@ -96,12 +96,12 @@ init python:
     
 
 #and speed could controll speed.
-screen defenceDodgeMiniGame ( pattern , shieldOrDodge , targetTrooper , character , position , timeSpeed , positionalGraphic ):
+screen defenceDodgeMiniGame ( pattern , targetTrooper , character , position , timeSpeed , positionalGraphic ):
 
     if renpy.mobile:
-        timer 0.125 repeat True action If(times > 0, true=SetVariable('times', times - timeSpeed ), false=[ Return(False) , Hide('defenceDodgeMiniGame')])
+        timer 0.05 repeat True action If(times > 0, true=SetVariable('times', times - timeSpeed ), false=[ Return(False) , Hide('defenceDodgeMiniGame')])
     else:
-        timer 0.1 repeat True action If(times > 0, true=SetVariable('times', times - timeSpeed ), false=[ Return(False) , Hide('defenceDodgeMiniGame')])
+        timer 0.04 repeat True action If(times > 0, true=SetVariable('times', times - timeSpeed ), false=[ Return(False) , Hide('defenceDodgeMiniGame')])
 
     $ playerOuch.checkHurtGraphics ( )
     $ foeOuch.checkHurtGraphics ( ) 
@@ -322,7 +322,7 @@ label defenceTime ( pattern , shieldOrDodge , targetTrooper , character , durati
     $ originalCharacterHealth = character.health
     $ position = 1
     $ times = duration
-    $ timeSpeed = targetTrooper.speed * 0.08
+    $ timeSpeed = targetTrooper.speed * 0.1
 
     $ positionalGraphic = "-"
     if shieldOrDodge is True:
@@ -335,7 +335,7 @@ label defenceTime ( pattern , shieldOrDodge , targetTrooper , character , durati
 
         $ countinue = True
 
-        call screen defenceDodgeMiniGame ( pattern , shieldOrDodge , targetTrooper , character , position , timeSpeed , positionalGraphic )
+        call screen defenceDodgeMiniGame ( pattern , targetTrooper , character , position , timeSpeed , positionalGraphic )
 
         $ renpy.block_rollback() #stops the cheezing
         $ countinue = _return

@@ -740,10 +740,10 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                         #will call from a list from somewhere else
                         if currentFoe.rangedFoe:
                             $ defencePattern = getRangedPatterns( currentFoe.diffculty )
-                            call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , False , currentFoe , targetPlayer , 0.3) from _call_defenceTime
+                            #call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , not currentFoe.rangedFoe , currentFoe , targetPlayer , 1.0) from _call_defenceTime
                         else:
                             $ defencePattern = getMeleeDefencePatterns( currentFoe.diffculty )
-                            call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , True , currentFoe , targetPlayer , 0.36) from _call_defenceTime_1
+                        call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , not currentFoe.rangedFoe , currentFoe , targetPlayer , 1.0) from _call_defenceTime_1
 
                         show screen statusScreen
 
