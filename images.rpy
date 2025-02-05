@@ -75,6 +75,8 @@
         #krokkosnek
             #Krokkosnek's GirlFriends
         #Balatius
+        #Minona
+        #Astart Officers
         #Ahrimaniom
         #Cult of Ahriman
         #Zardossatu
@@ -103,8 +105,11 @@
 
         #Volkara
 
+        #Megabazus
+
         #Regius
             #fatima
+            #kabiwa
             
 #NPCs
     #Jameisa
@@ -116,7 +121,8 @@
         #Kworix Mine
             #Cooking Lady
         #Kworix City
-    
+    #Jamesian Troopers
+
     #Zarat
         #Gilgamorium
         #Yimians
@@ -800,6 +806,23 @@ image forestShop = "images/Locations/Takurium/Forest Shop.webp"
 image forestLobby = "images/Locations/Takurium/Forest Village Mess Hall Hotel.webp"
 image forestLobbyDoor = "images/Locations/Takurium/Forest Village Mess Hall Lobby.webp"
 
+image niitwanwaEstablishing = "images/Locations/Niitwanwa/Niitwanwa Establishing foz.web"
+image niitwanwaEstablishingNight = "images/Locations/Niitwanwa/Niitwanwa Establishing foz Night.web"
+image niitwanwaOutsideGate = "images/Locations/Niitwanwa/Niitwanwa Outside Gate.web"
+image niitwanwaOutside = "images/Locations/Niitwanwa/Niitwanwa Outside Gate Facing Out.web"
+image niitwanwaOutsideNight = "images/Locations/Niitwanwa/Niitwanwa Outside Gate Facing Out Night.web"
+image niitwanwaOutsideDock = "images/Locations/Niitwanwa/Niitwanwa court and docks.web"
+image niitwanwaInside = "images/Locations/Niitwanwa/Niitwanwa inside.web"
+image niitwanwaCortDock = "images/Locations/Niitwanwa/Niitwanwa court and docks.web"
+image niitwanwaPlatform = "images/Locations/Niitwanwa/Niitwanwa Platform.web"
+
+image lakeTakuraShore = "images/Locations/Takurium/Take Takura Shoreline.webp"
+image oldWallFacingWall = "images/Locations/Takurium/Old Wall South.webp"
+image oldWallAwayFromWall = "images/Locations/Takurium/Old Wall south from wall.webp"
+image takuraRoadBend = "images/Locations/Takurium/Takurium road Bend.webp"
+
+image yemehEstablishing = "images/Locations/Yemeh/Yemeh Establishing.webp"
+
 #Takurium
 image takuriumEstablishing = "images/Locations/Takurium/Takurium City Establshing 1.webp"
 image takuriumEstablishingSutsshak = "images/Locations/Takurium/Takurium City Establshing 1 Sutsshak night.webp"
@@ -1000,6 +1023,7 @@ image zwotiDoor = "images/Location Accessories/Zwoti side up door.webp"
 image bloodyPlatform = "images/Location Accessories/platform bloody.webp"
 image platform = "images/Location Accessories/platform.webp"
 image platformWithDoor = "images/Location Accessories/platform2.webp"
+image platformWithBend = "images/Location Accessories/platfrom 3.webp"
 image roomButton = "images/Location Accessories/room button red.webp"
 image shopCounter = "images/Location Accessories/Shop Counter.webp"
 image shopCounter2 = "images/Location Accessories/Shop Counter 2.webp"
@@ -1469,6 +1493,15 @@ image zardonianBoatFrontDown = "images/antagonists/Mini-Bosses/Zardonian WarShip
 image zardonianBoatFrontNoRamp = "images/antagonists/Mini-Bosses/Zardonian WarShip Ramside.webp"
 image zardonianBoatSide = "images/antagonists/Mini-Bosses/Zardonian WarShip Broadside.webp"
 
+image astartTriremeFront = "images/antagonists/Mini-Bosses/Astart Trireme Ramside.webp"
+image astartTriremeSide = "images/antagonists/Mini-Bosses/Astart Trireme Broadside.webp"
+
+image astartLandingBoatFront = "images/antagonists/Mini-Bosses/Astart Landing Craft Front.webp"
+image astartLandingBoatSide = "images/antagonists/Mini-Bosses/Astart Landing Craft Side.webp"
+image astartLandingBoatMast = "images/antagonists/Mini-Bosses/Astart Sail.webp"
+image astartLandingBoatRampUp = "images/antagonists/Mini-Bosses/Astart Landing Craft Ramp up.webp"
+image astartLandingBoatRampDown = "images/antagonists/Mini-Bosses/Astart Landing Craft ramp down.webp"
+
 #Makkabians
 image makkabianArmoredLongbowFemale = "images/Enemies/Makkabians/Makkabian Longbow Female.webp"
 
@@ -1798,7 +1831,117 @@ layeredimage belgius:
         attribute meanEyebrows: 
             "images/antagonists/Astart Officers/Balatian Heavy Sword Cavarly Mean Eyes.webp"
 
+image begliusGroundAttack = "images/antagonists/Astart Officers/Balatian Heavy Sword Attack.webp"
+layeredimage belgius34Ground:
+    always:
+        "images/antagonists/Astart Officers/Balatian Heavy Sword Foot.webp"
+    group eyes:
+        attribute neutralEyes default:
+            "images/antagonists/Astart Officers/Balatian Heavy Sword Neutral Eyes.webp"
+        attribute meanEyes:
+            "images/antagonists/Astart Officers/Balatian Heavy Sword Mean Eyes.webp"
+    group mouths:
+        attribute neutralHappyMouth default:
+            "images/antagonists/Astart Officers/Balatian Heavy Sword Neutral Happy.webp"
+        attribute happyMouth:
+            "images/antagonists/Astart Officers/Balatian Heavy Sword Happy Mouth.webp"
+        attribute annoyedMouth:
+            "images/antagonists/Astart Officers/Balatian Heavy Sword Frown.webp"
+        attribute angryMouth:
+            "images/antagonists/Astart Officers/Balatian Heavy Sword Foot.webp"
 
+#Commander Mwejya/ Flame Hypaspist
+layeredimage mwejya:
+    group poses:
+        attribute basic default:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
+        attribute suprizedPose:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Suprized.webp"
+        attribute crossarms:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Annoyed.webp"
+        attribute chuckingPose:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Throwing.webp"
+        attribute commanding:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Commanding.webp"
+        attribute commnadingShield:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Fighting.webp"
+
+    group eyes:
+        attribute neutralEyes default if_any["basic"]: #430 left 2 nose
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
+        attribute neutralEyes default if_any["suprizedPose", "crossarms"]: #600 left edge 2 nose
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
+            xpos 170
+        attribute neutralEyes default if_any["commanding","commnadingShield","chuckingPose"]: #800 left 2 nose
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
+            xpos 370
+        
+        attribute meanEyes if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
+            xpos -370
+        attribute meanEyes if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
+            xpos -200
+        attribute meanEyes if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
+
+        
+        attribute SadEyes if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
+        attribute SadEyes if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
+            xpos 170
+        attribute SadEyes if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
+            xpos 370
+
+    group mouths:
+        attribute neutralHappyMouth default if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Happy Mouth.webp"
+        attribute neutralHappy default if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Happy Mouth.webp"
+            xpos 170
+        attribute neutralHappy default if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Happy Mouth.webp"
+            xpos 370
+
+        attribute happyMouth if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Happy Mouth.webp"
+        attribute happyMouth if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Happy Mouth.webp"
+            xpos 170
+        attribute happyMouth if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Happy Mouth.webp"   
+            xpos 370 
+        
+        attribute annoyedMouth if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Frown.webp"
+            xpos -170
+        attribute annoyedMouth if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Frown.webp"
+        attribute annoyedMouth if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Frown.webp"  
+            xpos 200  
+        
+        attribute oMouth if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist OMouth.webp"
+            xpos -170
+        attribute oMouth if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist OMouth.webp"
+        attribute oMouth if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist OMouth.webp"
+            xpos 200
+        
+        attribute angryMouth if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Mouth.webp"
+            xpos -370
+        attribute angryMouth if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Mouth.webp"
+            xpos -200
+        attribute angryMouth if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Mouth.webp"
+
+    
 
 #MiniBosses
     #Seige Ladder Astart
@@ -3139,7 +3282,74 @@ layeredimage volkaraHorsey: #1200-2500
         attribute happyMouth: 
             "images/Protagonists/Volkara/Volkara Happy Mouth.webp" #800 #1400
             xpos 290 ypos 83
-            
+
+#Megabazus
+layeredimage megabazus:
+    group poses:
+        attribute base default:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute armored:
+            "images/Protagonists/Megabazus/Megabazus Armored Based.webp"
+        attribute base34:
+            "images/Protagonists/Megabazus/Megabazus 3-4.webp"
+        attribute armored34:
+            "images/Protagonists/Megabazus/Megabazus 3-4 Armored.webp"
+        attribute item34Armored:
+            "images/Protagonists/Megabazus/Megabazus 3-4 Armored Item.webp"
+        attribute point34Armored:
+            "images/Protagonists/Megabazus/Megabazus 3-4 Armored Point.webp"
+        attribute horse:
+            "images/Protagonists/Megabazus/Megabazus Armored Based Horse.webp"
+        attribute horseCommand:
+            "images/Protagonists/Megabazus/Megabazus Armored Commanding Horse.webp"
+
+    group eyes:
+        attribute neutralEyes default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute neutralEyes default if_any["base34","armored34","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute neutralEyes default if_any["horse","horseCommand"]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        
+        attribute meanEyes if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored"  ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute meanEyes if_any["base34","armored34","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute meanEyes if_any["horse","horseCommand"]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        
+        attribute SadEyes if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored"  ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute SadEyes if_any["base34","armored34","point34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute SadEyes if_any["horse","horseCommand"]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        
+        
+    group mouths:
+        attribute neutralHappyMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute neutralHappyMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp" 
+        attribute neutralHappyMouth default if_any["horse","horseCommand"]
+
+        attribute happyMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute happyMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp" 
+        attribute happyMouth default if_any["horse","horseCommand"]
+
+        attribute OMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute OMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp" 
+        attribute OMouth default if_any["horse","horseCommand"]
+
+        attribute angryMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute angryMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
+            "images/Protagonists/Megabazus/Megabazus Based.webp" 
+        attribute angryMouth default if_any["horse","horseCommand"]
 
 #Regius
 
@@ -3551,12 +3761,131 @@ image keimdakItem = "images/NPCs/Takuria/Keimdak item.webp"
 image keimdakNope = "images/NPCs/Takuria/Keimdak Nope.webp"
 image keimdakSad = "images/NPCs/Takuria/Keimdak Sad.webp"
 image keimdakGTFO = "images/NPCs/Takuria/Keimdak GTFO.webp"
-    
+
+    #mauhin
+layeredimage mauhin:
+    group poses:
+        attribute basic default:
+            "images/NPCs/Takuria/Mauhin.webp"
+        attribute greeting:
+            "images/NPCs/Takuria/Mauhin Greeting.webp"
+        attribute arms2Side:
+            "images/NPCs/Takuria/Mauhin Spreadstand.webp"
+        attribute onOstrich:
+            "images/NPCs/Takuria/Mauhin on Ostrich.webp"
+
+    group eyes:
+        attribute neutralEyes default if_not["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Nuetral Eyes.webp"
+        attribute neutralEyes default if_any["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Nuetral Eyes.webp"
+            xpos 200 ypos 60
+
+        attribute meanEyes if_not["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Mean Eyes.webp"
+        attribute MeanEyes if_any["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Mean Eyes.webp"
+            xpos 200 ypos 60
+
+        attribute sadEyes if_not["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Sad Eyes.webp"
+        attribute sadEyes if_any["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Sad Eyes.webp"
+            xpos 200 ypos 60
+
+    group mouths:
+        attribute neutralHappyMouth default if_not["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Neutral happy Mouth.webp"
+        attribute neutralHappyMouth default if_any["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Neutral happy Mouth.webp"
+            xpos 200 ypos 60
+
+        attribute happyMouth if_not["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Happy Mouth.webp"
+        attribute happyMouth if_any["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Happy Mouth.webp"
+            xpos 200 ypos 60
+
+        attribute oMouth if_not["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Spreadstand OMouth.webp"
+        attribute oMouth if_any["onOstrich"]:
+            "images/NPCs/Takuria/Mauhin Spreadstand OMouth.webp"
+            xpos 200 ypos 60
+
+    #takurium shopkeep
+
+    #zarato-takurian shopkeep
+
+#Jamesian Troopers
+image jamesianHeavySpearDude = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Boy.webp"
+image jamesianHeavySpearGirl = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Girl.webp"
+image jamesianHeavySpearGirlGreeting = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Girl greeting.webp"
+
+
+
+
+############################################################################################################################################
+
 #Astarts
     #Bardaiya's Realm
 image astartDude1 = "images/NPCs/Astart Cilivians/astart dude1.webp"
 image astartDude1Side = "images/NPCs/Astart Cilivians/astart dude1 Side.webp"
 image astartLady1 = "images/NPCs/Astart Cilivians/astart lady1.webp"
+        #koitha
+image koithaChillaxing = "images/NPCs/Astart Cilivians/Koitha Chillaxing.webp"
+layeredimage koitha:
+    group poses:
+        attribute base default:
+            "images/NPCs/Astart Cilivians/Koitha.webp"
+        attribute crossArms:
+            "images/NPCs/Astart Cilivians/Koitha Crossarms.webp"
+    group eyes:
+        attribute neutralEyes default:
+            "images/NPCs/Astart Cilivians/Koitha Neutral Eyes.webp"
+        attribute meanEyes:
+            "images/NPCs/Astart Cilivians/Koitha Mean Eyes.webp"
+        attribute sadEyes:
+            "images/NPCs/Astart Cilivians/Koitha Sad Eyes.webp"
+
+    group mouths:
+        attribute neutralHappyMouth default:
+            "images/NPCs/Astart Cilivians/Koitha Neutral Happy Mouth.webp"
+        attribute happyMouth:
+            "images/NPCs/Astart Cilivians/Koitha happy mouth.webp"
+        attribute annoyedMouth:
+            "images/NPCs/Astart Cilivians/Koitha Annoyed Mouth.webp"
+        attribute oMouth:
+            "images/NPCs/Astart Cilivians/Koitha OMouth.webp"
+        #vimekkus
+layeredimage vimekkus:
+    group poses:
+        attribute base default:
+            "images/NPCs/Astart Cilivians/Vimekkus.webp"
+        attribute crossarms:
+            "images/NPCs/Astart Cilivians/Vimekkus Crossarms.webp"
+        attribute point:
+            "images/NPCs/Astart Cilivians/Vimekkus Poiting.webp"
+    
+    group eyes:
+        attribute neutralEyes default:
+            "images/NPCs/Astart Cilivians/Vimekkus Neutral Eyes.webp"
+        attribute meanEyes default:
+            "images/NPCs/Astart Cilivians/Vimekkus MeanEyes.webp"
+        attribute sadEyes default:
+            "images/NPCs/Astart Cilivians/Vimekkus Sad Eyes.webp"
+
+    group mouths:
+        attribute neutralHappyMouth default:
+            "images/NPCs/Astart Cilivians/Vimekkus Neutral Happy Mouth.webp"
+        attribute happyMouth:
+            "images/NPCs/Astart Cilivians/Vimekkus Happy Mouth.webp"
+        attribute oMouth:
+            "images/NPCs/Astart Cilivians/Vimekkus OMouth.webp"
+        attribute angryMouth:
+            "images/NPCs/Astart Cilivians/Vimekkus angry mouth.webp"
+        attribute annoyedMouth:
+            "images/NPCs/Astart Cilivians/Vimekkus Annoyed Mouth.webp"
+    
     #Imperial Core
     #Ssyayans
 

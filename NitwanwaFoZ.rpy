@@ -571,7 +571,7 @@ label minonaAndBalatiusAtKworitx:
 
 label NiitwanwaFoZ:
 
-    "Niitwanwa"
+    
     #forgot to add at ectbanaVisit2 and it's easer to implement here because some users may have saved after
     #the last viable place in ectabanaVisit2
     $ xerxesCharacter.updateMount( cataphractHorseXerx )  
@@ -594,12 +594,31 @@ label NiitwanwaFoZ:
     #go to Niitwana fortress 
     call minonaAndBalatiusAtKworitx
     if IsDaytime:
-        "Day time"
-        "Niitwanwa fotress"
+        scene niitwanwaEstablishing at fullFit with fade
     else:
-        "darkness da waifu"
-        "Heheh"
+        scene niitwanwaEstablishingNight at fullFit with fade
     
+    pause 6
+
+    if IsDaytime:
+        scene niitwanwaOutsideGate at center 
+        show jamesianHeavySpearDude at left , halfSize
+        show jamesianHeavySpearGirl at right , halfSize
+    else:
+        scene niitwanwaOutsideGate at center , flameLight 
+        show jamesianHeavySpearDude at left , halfSize , flameLight
+        show jamesianHeavySpearGirl at right , halfSize , flameLight
+    
+    with fade
+    pause 2
+
+    hide jamesianHeavySpearGirl
+    if IsDaytime:
+        show jamesianHeavySpearGirlGreeting at middleStand , size2Thrid 
+    else:
+        show jamesianHeavySpearGirlGreeting at middleStand , size2Thrid , flameLight
+    with dissolve
+
     #establishing , take from comic page 143 - editied
     #talking to girl at front - Jamesian Heavy Spear girl tyattu
     hvySprF "Hello Xerxes."
@@ -607,7 +626,13 @@ label NiitwanwaFoZ:
     #moving
     #usual stuff
     #talk to megabazus
-    mega "Hello Xerxes"
+    if IsDaytime:
+        scene niitwanwaOutsideDock at right , size2Thrid
+    else:
+        scene niitwanwaOutsideDock at right , size2Thrid , lightCrystalLights
+
+    with fade
+    mega "Hello Xerxes" #greeting
     xerx "Hello General Megabazus."
     xerx "How are things going?"
     mega "So far, great."
@@ -617,7 +642,7 @@ label NiitwanwaFoZ:
     tesi "We can explode the aquatics."
     volk "We and the locals will eat the aquatics if they attack us."
 
-    mega "Yeah, but I would like to have naval support and not need to fight the aquatics."
+    mega "Yeah, but I would like to have naval support and not need to fight the aquatics." #pointy 34
     mega "So far I've only managed to get some of them to be neutral towards us."
 
     #if nightime go to bed - then talk to Koitha and Vimekkus
@@ -751,7 +776,7 @@ label afterKoithaFoz:
     "Megabazus gives you 12 metal arrows. They will penetrate most armor."
     #xerxes gets given armored arrows despite convidence
     #they then organize and go
-    mega "To Takurium!!"
+    mega "To Takurium!!" #put him on horse
     #they leave Niitwanwa
     jump march2TakuriumFoz # will have it's own .rpy file
 
@@ -775,9 +800,9 @@ label krokkosnekInTakurium:
             krok "The left the Astarte statue alone."
             krok "Do these mutanted hairless rats even hate Astarte."
             #he gets dicplined for bastfamy
-            flameChucka "Lord Bardaiya must be desperate for elite goon commanders if he gives positions of power to blastfemers like you."
+            flameChucka "Lord Bardaiya must be desperate for elite goon commanders if he gives positions of power to blasphemers like you."
             flameChucka "What did you do."
-            flameChucka "Turn into a girl and boink him or something?"
+            flameChucka "Turn into a girl and boink him or something?" #maybe be a scene?
             krok "No!"
             krok "It's just the jamesians hate Astarte but left her statue alone."
     else:
