@@ -593,6 +593,7 @@ label NiitwanwaFoZ:
     #call minonaAndBalatiusAtKworitx
     #go to Niitwana fortress 
     call minonaAndBalatiusAtKworitx
+    play music happyAtoTheme fadein 1.0 fadeout 1.0
     if IsDaytime:
         scene niitwanwaEstablishing at fullFit with fade
     else:
@@ -628,34 +629,126 @@ label NiitwanwaFoZ:
     #talk to megabazus
     if IsDaytime:
         scene niitwanwaOutsideDock at right , size2Thrid
+        show megabazus armoredGreet happyMouth at middleStand , size08
     else:
         scene niitwanwaOutsideDock at right , size2Thrid , lightCrystalLights
+        show megabazus armoredGreet happyMouth at middleStand , size08 , lightCrystalLights
 
     with fade
     mega "Hello Xerxes" #greeting
+
+    if IsDaytime:
+        scene clearDayTime at fullFit
+        show niitwanwaOutsideDock at left , size2Thrid
+        show xerxHappyGreetArmored at xerxLeftLeft
+        show tesipizGreetingArmored at tesiRight
+        show volkaraArmored greeting happyMouth at middleStand , size2Thrid
+    else:
+        scene starNightTime at fullFit , movingSky , darkNight
+        show niitwanwaOutsideDock at left , size2Thrid , lightCrystalLights
+        show xerxHappyGreetArmored at xerxLeftLeft , lightCrystalLights
+        show tesipizGreetingArmored at tesiRight , lightCrystalLights
+        show volkaraArmored greeting happyMouth at middleStand , size2Thrid ,lightCrystalLights
+
+    with dissolve
     xerx "Hello General Megabazus."
+    
+    hide tesipizGreetingArmored
+    if IsDaytime:
+        show tesipizNeutralHappyArmored at tesiRight
+        show volkara basic neutralHappyMouth
+    else:
+        show tesipizNeutralHappyArmored at tesiRight , lightCrystalLights
+        show volkara basic neutralHappyMouth
+    with dissolve
     xerx "How are things going?"
+    
+    if IsDaytime:
+        scene niitwanwaOutsideDock at right , size2Thrid
+        show megabazus armored happyMouth at middleStand , size08
+    else:
+        scene niitwanwaOutsideDock at right , size2Thrid , lightCrystalLights
+        show megabazus armored happyMouth at middleStand , size08 , lightCrystalLights
+    with dissolve
+
     mega "So far, great."
     mega "The local Takura Korkins despise Astart rule."
-    mega "Although negotiations with the local aquatics have been a bit rough."
-    xerx "The south walls are still damged and it doesn't have a gate."
-    tesi "We can explode the aquatics."
-    volk "We and the locals will eat the aquatics if they attack us."
 
+    #hopefully I don't need to have IsDytime and it should just rememeber
+    show megabazus sadEyes OMouth with dissolve
+    mega "Although negotiations with the local aquatics have been a bit rough."
+
+    if IsDaytime:
+        scene clearDayTime at fullFit
+        show niitwanwaOutsideDock at left , size2Thrid
+        show xerxPointBackArmored at xerxLeftLeft
+        show tesipizNeutralHappyArmored at tesiRight
+        show volkaraArmored at middleStand , size2Thrid
+    else:
+        scene starNightTime at fullFit , movingSky , darkNight
+        show niitwanwaOutsideDock at left , size2Thrid , lightCrystalLights
+        show xerxPointBackArmored at xerxLeftLeft , lightCrystalLights
+        show tesipizNeutralHappyArmored at tesiRight , lightCrystalLights
+        show volkaraArmored at middleStand , size2Thrid , lightCrystalLights
+    with dissolve
+
+    xerx "The south walls are still damged and it doesn't have a gate."
+    hide xerxPointBackArmored
+    hide tesipizNeutralHappyArmored
+
+    if IsDaytime:
+        show neutralHappyXerxesArmored at xerxLeftLeft
+        show tesipizBombAndFist at tesiRight
+    else:
+        show neutralHappyXerxesArmored at xerxLeftLeft , lightCrystalLights
+        show tesipizBombAndFist at tesiRight , lightCrystalLights
+
+    tesi "We can explode the aquatics."
+
+    hide tesipizBombAndFist
+    #volkara needs armored yeah pose
+    show volkaraArmored yeah happyMouth meanEyes with dissolve
+    volk "We and the locals will eat the aquatics if they attack us."
+    
+    if IsDaytime:
+        scene niitwanwaOutsideDock at right , size2Thrid
+        show megabazus armored OMouth meanEyes at middleStand , size08
+    else:
+        scene niitwanwaOutsideDock at right , size2Thrid , lightCrystalLights
+        show megabazus armored OMouth meanEyes at middleStand , size08 , lightCrystalLights
+    with dissolve
     mega "Yeah, but I would like to have naval support and not need to fight the aquatics." #pointy 34
+    show megabazus armored sadEyes at middleStand , size08 , lightCrystalLights
     mega "So far I've only managed to get some of them to be neutral towards us."
 
     #if nightime go to bed - then talk to Koitha and Vimekkus
     #else talk to Koitha and Vimekkus now
     #maybe a rest here?
+    show megabazus point34Armored neutralEyes happyMouth with dissolve
     if IsDaytime:
         mega "Maybe you can help us convince them Xerxes."
+
+        scene niitwanwaInside at center
+        show happyXerxArmored at xerxLeftLeft
+        show megabazus armoredGreet at tesiRight
+        with fade
         mega "Koissa and Vimekkus."
+        hide happyXerxArmored
+        show xerxHappyGreetArmored at xerxLeftLeft
+        show megabazus point34Armored
+        with dissolve
         meag "Xerxes is with us, will you leave us alone now?"
     else:
+
         mega "We'll rest first then you can try convincing them Xerxes."
-        "Sleeps"
+        stop music fadeout 1.0
+        scene xerxSleepsNiitwanwa at fullFit with Fade(3)
+        play sound sleepss
+        pause 3
         #extablish morning
+        scene niitwanwaEstablishing at fullFit , duskLights with Fade(3)
+        pause 2
+        scene niitwanwaInside at left with Fade(3)
         #heal the group
         $ IsDaytime = True
         $ xerxesCharacter.resurrect()
@@ -664,30 +757,86 @@ label NiitwanwaFoZ:
     
     
     #the negoitations will work like a game
+    play music planingTime fadein 1 fadeout 1
+    scene niitwanwaInside at center
+    show koitha crossArms oMouth meanEyes
+    show vimekkus crossarms meanEyes annoyedMouth
+    with dissolve
     koit "Oh great."
+    show koitha annoyedMouth with dissolve
     koit "You got Xerxes with you."
     koit "Unless we have an ahrite problem."
-    koit "I don't want you here either."
+    show koitha base oMouth with dissolve
+    koit "I don't want him here either."
+    show koitha neutralEyes
+    show vimekkus point angryMouth
+    with dissolve
     vimk "CAREFUL Lady Koitha!"
+    show koitha annoyedMouth
+    show vimekkus base
+    with dissolve
     vink "We need the Jamesians to let us live long enough for the Astarts to burn their rat-king nests."
+
+    scene niitwanwaInside at left
+    show xerxAnnoyedAmored at middleStand , size08
+    with dissolve
     xerx "We'll let you live {b}only{/b} if you leave us alone."
+    hide xerxAnnoyedAmored
+    show xerx3quatPointHappyArmored at xerxLeft
+    with dissolve
+    show volkaraArmored armoredClever meanEyes at tesiRight with dissolve
     xerx "Volkara and the Takura Korkins seem keen on eating you."
 
+    scene niitwanwaInside at right
+    show koitha crossArms annoyedMouth meanEyes
+    show vimekkus crossarms meanEyes annoyedMouth
+    with dissolve
     menu:
         "Leave us alone and you can stay in Lake Takura.": 
             koit "Sure you will. Mr Knight man."
+            show vimekkus point angryMouth with dissolve
             vemk "I know you have tastsetus in Zarat you want to replace us with."
             
+            scene niitwanwaInside at left
+            show xerx1ArmOutHappyArmored at middleStand , size08
+            with dissolve
             xerx "Do you see any tastsetu or even tastsetrotu here?"
+
+            scene niitwanwaInside at right
+            show koitha base annoyedMouth neutralEyes
+            show vimekkus crossarms meanEyes annoyedMouth
+            with dissolve
             koit "..."
+
+            show koitha base oMouth meanEyes with dissolve
             koit "No.."
+            show koitha crossArms oMouth meanEyes with dissolve
             koit "But there'll be nothing to stop them comming here."
+
+            scene niitwanwaInside at left
+            show xerx3quatHappyCrossArmsArmored at middleStand , size08
+            with dissolve
             xerx "They haven't even spread to Lake Zwoti."
+            hide xerx3quatHappyCrossArmsArmored
+            show xerxNoWeGoodArmored at middleStand , size08
+            with dissolve
             xerx "You're fine."
+
+            hide xerxNoWeGoodArmored
+            show xerx3quatPointHappyArmored at middleStand , size08
+            with dissolve
             xerx "And your people can move into Lake Zwoti."
+
+            scene niitwanwaInside at left
+            scene niitwanwaInside at right
+            show koitha base annoyedMouth meanEyes
+            show vimekkus annoyedMouth
+            with dissolve
             koit "Why would I want to get closer to you."
-            xerx "If that's true."
-            xerx "Why are on in Lake Takurium."
+
+            show happyXerxArmored at middleStand , size08
+            with dissolve
+            xerx "Why are you living in Lake Takura."
             koit "Astarte promised us the sand cursed lands."
             vimk "Koitha!"
             vimk "The Jamesians don't care about what Astarte says or wants."

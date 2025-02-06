@@ -369,6 +369,8 @@ image xerxBedWithAtossa = "images/xerxes sleeping in his bed and atossa.webp"
 image xerxBedWithAtossa2 = "images/atossa covered sleeping on Xerxes in his bed.webp"
 image xerxBedInAtossa = "images/atossa sleeping on Xerxes in his bed.webp"
 
+image xerxSleepsNiitwanwa = "images/Niitwanwa Sleeps.webp"
+
 image bardaiyaBedWithLakatinu = "images/Bardaiya and Lakatinu Cuddling.webp"
 
 image bardaiyaVZyarya = "images/Bardaiya v Zyarya.webp"
@@ -2373,6 +2375,7 @@ image neutralHappyXerxes = "images/Protagonists/Xerxes/Neutral Happy Xerxes.webp
 image happyXerx = "images/Protagonists/Xerxes/Happy Xerxes.webp"
 image happyXerxArmored = "images/Protagonists/Xerxes/Happy Xerxes Armored.webp"
 image xerxArmsOutHappyArmored = "images/Protagonists/Xerxes/Happy Xerxes armored Arms out.webp"
+image xerx1ArmOutHappyArmored = "images/Protagonists/Xerxes/Happy Xerxes armored one hand out.webp"
 image slightlyHappyXerxes = "images/Protagonists/Xerxes/Slightly Happy Xerxes.webp"
 image xerxNoWeGoodArmored = "images/Protagonists/Xerxes/No we good Happy Xerxes Armored.webp"
 
@@ -3070,11 +3073,15 @@ layeredimage volkaraArmored:
             "images/Protagonists/Volkara/Volkara Happy Greeting armored.webp" # 900-1500
         attribute armred:
             "images/Protagonists/Volkara/Volkara armored armed.webp" # 1000-1500
+        attribute yeah:
+            "images/Protagonists/Volkara/Volkara Yeah armored.webp" # 900-1500
+        attribute armoredClever:
+            "images/Protagonists/Volkara/Volkara armored Dagger and Cleaver.webp" # 900-1500
 
     group mouths:
         attribute neutralHappyMouth default if_any ["basic"]: #800-1500
             "images/Protagonists/Volkara/Volkara Neutral Happy mouth.webp"
-        attribute neutralHappyMouth default if_any ["greeting"]:
+        attribute neutralHappyMouth default if_any ["greeting","yeah","armoredClever"]:
             "images/Protagonists/Volkara/Volkara Neutral Happy mouth.webp"
             xpos 100
         attribute neutralHappyMouth default if_any ["armred"]:
@@ -3084,14 +3091,14 @@ layeredimage volkaraArmored:
         attribute happyMouth if_any ["basic"]: #800-1400
             "images/Protagonists/Volkara/Volkara Happy Mouth.webp"
             ypos 100
-        attribute happyMouth if_any ["greeting","armred"]:
+        attribute happyMouth if_any ["greeting","armred","yeah","armoredClever"]:
             "images/Protagonists/Volkara/Volkara Happy Mouth.webp"
             ypos 100 xpos 100
         
         attribute deltaMouth if_any["basic"]:# 1000-1500
             "images/Protagonists/Volkara/Volkara Delta Mouth.webp"
             xpos 200 
-        attribute deltaMouth if_any["greeting"]:
+        attribute deltaMouth if_any["greeting","yeah","armoredClever"]:
             "images/Protagonists/Volkara/Volkara Delta Mouth.webp"
             xpos 100
         attribute deltaMouth if_any["armred"]:
@@ -3101,13 +3108,13 @@ layeredimage volkaraArmored:
     group eyes:
         attribute heheh if_any["basic"]: #800-1500
             "images/Protagonists/Volkara/Volkara armored Heheh Eyes.webp"
-        attribute heheh if_any["greeting","armred"]:
+        attribute heheh if_any["greeting","armred","yeah","armoredClever"]:
             "images/Protagonists/Volkara/Volkara armored Heheh Eyes.webp"
             xpos 100
 
         attribute meanEyes if_any["basic"]: #800-1500
             "images/Protagonists/Volkara/Volkara armored Mean Eyes.webp"
-        attribute meanEyes if_any["greeting"]:
+        attribute meanEyes if_any["greeting","yeah","armoredClever"]:
             "images/Protagonists/Volkara/Volkara armored Mean Eyes.webp"
             xpos 100
         attribute meanEyes if_any["armred"]:
@@ -3290,6 +3297,8 @@ layeredimage megabazus:
             "images/Protagonists/Megabazus/Megabazus Based.webp"
         attribute armored:
             "images/Protagonists/Megabazus/Megabazus Armored Based.webp"
+        attribute armoredGreet:
+            "images/Protagonists/Megabazus/Megabazus Armored Greeting.webp"
         attribute base34:
             "images/Protagonists/Megabazus/Megabazus 3-4.webp"
         attribute armored34:
@@ -3304,52 +3313,63 @@ layeredimage megabazus:
             "images/Protagonists/Megabazus/Megabazus Armored Commanding Horse.webp"
 
     group eyes:
-        attribute neutralEyes default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
-        attribute neutralEyes default if_any["base34","armored34","point34Armored","item34Armored" ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+        attribute neutralEyes default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]: #420 from top 390 from side
+            "images/Protagonists/Megabazus/Megabazus Neutral Eyes.webp"
+        attribute neutralEyes default if_any["base34","armored34","point34Armored","item34Armored" ]: #different image
+            "images/Protagonists/Megabazus/Megabazus 3-4 Neutral Eyes.webp"
         attribute neutralEyes default if_any["horse","horseCommand"]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+            "images/Protagonists/Megabazus/Megabazus Neutral Eyes.webp" #340 from top 630 from side
+            ypos -80 xpos 240
         
         attribute meanEyes if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored"  ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+            "images/Protagonists/Megabazus/Megabazus Mean Eyes.webp"
         attribute meanEyes if_any["base34","armored34","point34Armored","item34Armored" ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+            "images/Protagonists/Megabazus/Megabazus 3-4 Mean Eyes.webp"
         attribute meanEyes if_any["horse","horseCommand"]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+            "images/Protagonists/Megabazus/Megabazus Mean Eyes.webp"
+            ypos -80 xpos 240
         
         attribute SadEyes if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored"  ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+            "images/Protagonists/Megabazus/Megabazus Sad Face.webp"
         attribute SadEyes if_any["base34","armored34","point34Armored" ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+            "images/Protagonists/Megabazus/Megabazus 3-4 Sad Eyes.webp"
         attribute SadEyes if_any["horse","horseCommand"]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+            "images/Protagonists/Megabazus/Megabazus Sad Face.webp"
+            ypos -80 xpos 240
         
         
     group mouths:
         attribute neutralHappyMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
+            "images/Protagonists/Megabazus/Megabazus Neutral Happy Mouth.webp"
         attribute neutralHappyMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp" 
+            "images/Protagonists/Megabazus/Megabazus 3-4 Neutral Happy Mouth.webp" 
         attribute neutralHappyMouth default if_any["horse","horseCommand"]
+            "images/Protagonists/Megabazus/Megabazus Neutral Happy Mouth.webp"
+            ypos -80 xpos 240
 
-        attribute happyMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
-        attribute happyMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp" 
-        attribute happyMouth default if_any["horse","horseCommand"]
+        attribute happyMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Happy Mouth.webp"
+        attribute happyMouth if_any["base34","armored34","point34Armored","item34Armored"]:
+            "images/Protagonists/Megabazus/Megabazus 3-4 Happy Mouth.webp" 
+        attribute happyMouth if_any["horse","horseCommand"]:
+            "images/Protagonists/Megabazus/Megabazus Happy Mouth.webp"
+            ypos -80 xpos 240
 
-        attribute OMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
-        attribute OMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp" 
-        attribute OMouth default if_any["horse","horseCommand"]
+        attribute OMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus OMouth.webp"
+        attribute OMouth if_any["base34","armored34","point34Armored","item34Armored"]:
+            "images/Protagonists/Megabazus/Megabazus 3-4 OMouth.webp" 
+        attribute OMouth if_any["horse","horseCommand"]:
+            "images/Protagonists/Megabazus/Megabazus OMouth.webp"
+            ypos -80 xpos 240
 
-        attribute angryMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp"
-        attribute angryMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
-            "images/Protagonists/Megabazus/Megabazus Based.webp" 
-        attribute angryMouth default if_any["horse","horseCommand"]
+        attribute angryMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Angry Mouth.webp"
+        attribute angryMouth if_any["base34","armored34","point34Armored","item34Armored"]:
+            "images/Protagonists/Megabazus/Megabazus 3-4 Angry Mouth.webp" 
+        attribute angryMouth if_any["horse","horseCommand"]:
+            "images/Protagonists/Megabazus/Megabazus Angry Mouth.webp"
+            ypos -80 xpos 240
 
 #Regius
 
