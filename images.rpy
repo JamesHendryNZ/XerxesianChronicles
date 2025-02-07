@@ -2450,6 +2450,8 @@ image xerxLitteMadArmed = "images/Protagonists/Xerxes/Xerxes slingly Angry Armed
 image xerxLitteMadArmed2 = "images/Protagonists/Xerxes/Xerxes slingly Angry Armed v2.webp"
 
 image xerxAngry = "images/Protagonists/Xerxes/Angry Xerxes Armored.webp"
+image xerxAngrier = "images/Protagonists/Xerxes/Angrier Xerxes Armored.webp"
+image xerxAngryMouthOpen = Composite( (660,1400) ,(0,0), "images/Protagonists/Xerxes/Angry Xerxes Armored.webp", (-50,0) , "images/Protagonists/Xerxes/Xerxes Angry Armored Armed v2.webp" )
 
 image xerxRunningConsuredArmored = "images/Protagonists/Xerxes/Xerxes running consured armored.webp"
 image xerxRunningScaredArmored = "images/Protagonists/Xerxes/Xerxes running scared armored.webp"
@@ -2541,6 +2543,7 @@ image xerx3quatPointCommandingArmored = Composite ( (600,1400) ,  (0,0) , "image
 image xerx3quatWash = "images/Protagonists/Xerxes/Xerxes 3-4 washing.webp"
 image xerx3quatHappyCrossArms = "images/Protagonists/Xerxes/Xerxes 3-4 happy crossarms.webp"
 image xerx3quatHappyCrossArmsArmored = "images/Protagonists/Xerxes/Xerxes 3-4 Neutral Happy Crossarms Armored.webp"
+image xerx3quatHappyerCrossArmsArmored = Composite( ( 600 , 1400 ), (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 Neutral Happy Crossarms Armored.webp" , (0,0), "images/Protagonists/Xerxes/Xerxes 3-4 Happy Face.webp" )
 image xerx3quatPoint = "images/Protagonists/Xerxes/Xerxes 3-4 pointing.webp"
 image xerx3quatPointArmored = Composite( (600, 1400) , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Happy Armored.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 annoyed face.webp")
 image xerx3quatPointHappyArmored = "images/Protagonists/Xerxes/Xerxes 3-4 pointing Happy Armored.webp"
@@ -3370,6 +3373,14 @@ layeredimage megabazus:
         attribute angryMouth if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus Angry Mouth.webp"
             ypos -80 xpos 240
+        
+        attribute frown if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+            "images/Protagonists/Megabazus/Megabazus Frown.webp"
+        attribute frown if_any["base34","armored34","point34Armored","item34Armored"]:
+            "images/Protagonists/Megabazus/Megabazus 3-4 Frown.webp" 
+        attribute frown if_any["horse","horseCommand"]:
+            "images/Protagonists/Megabazus/Megabazus Frown.webp"
+            ypos -80 xpos 240
 
 #Regius
 
@@ -3889,9 +3900,9 @@ layeredimage vimekkus:
     group eyes:
         attribute neutralEyes default:
             "images/NPCs/Astart Cilivians/Vimekkus Neutral Eyes.webp"
-        attribute meanEyes default:
+        attribute meanEyes:
             "images/NPCs/Astart Cilivians/Vimekkus MeanEyes.webp"
-        attribute sadEyes default:
+        attribute sadEyes:
             "images/NPCs/Astart Cilivians/Vimekkus Sad Eyes.webp"
 
     group mouths:

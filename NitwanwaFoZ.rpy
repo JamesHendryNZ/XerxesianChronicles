@@ -827,77 +827,220 @@ label NiitwanwaFoZ:
             with dissolve
             xerx "And your people can move into Lake Zwoti."
 
-            scene niitwanwaInside at left
+            
             scene niitwanwaInside at right
             show koitha base annoyedMouth meanEyes
             show vimekkus annoyedMouth
             with dissolve
             koit "Why would I want to get closer to you."
 
+            scene niitwanwaInside at left
             show happyXerxArmored at middleStand , size08
             with dissolve
             xerx "Why are you living in Lake Takura."
+
+            scene niitwanwaInside at right
+            show koitha crossArms annoyedMouth meanEyes
+            show vimekkus crossarms meanEyes annoyedMouth
+            with dissolve
             koit "Astarte promised us the sand cursed lands."
+            show koitha base OMouth neutralEyes
+            show vimekkus angryMouth
+            with dissolve
             vimk "Koitha!"
+            show vimekkus base with dissolve
             vimk "The Jamesians don't care about what Astarte says or wants."
+            show koitha annoyedMouth
+            show vimekkus point
+            with dissolve
             vimk "{b}{i}If{/i}{/b} you win."
+            show vimekkus oMouth with dissolve
             vimk "We'll return to the sea."
+            show vimekkus base sadEyes with dissolve
             vimk "Your tastsetu can live here."
+            show vimekkus annoyedMouth with dissolve
             vimk "I don't want to get involved with this."
+
+            show koitha crossArms meanEyes oMouth with dissolve
             koit "I won't let you."
             koit "Next time we meet."
+            show koitha base with dissolve
             koit "We won't be talking."
 
+            scene clearDayTime at fullFit
+            show niitwanwaPlatform at center
+            show xerx3quatAnnoyed at xerxLeft
+            show megabazus armored34 SadEyes OMouth at tesiRight
+            with fade
             mega "Sometimes I think we should encourage tastsetu, tastsetrotu and shatseta to live here."
+
+            show megabazus neutralEyes neutralHappyMouth with dissolve
             mega "They're alot nicer to us."
+            show megabazus meanEyes angryMouth with dissolve
             mega "Why do they want to live in a desert anyway?"
             mega "They've got the entire Pela Sea."
+
+            hide xerx3quatAnnoyed
+            show xerx3quatPointArmored at xerxLeft
+            show megabazus frown neutralEyes
+            with dissolve
             xerx "Because Astarte wants them to."
             xerx "They think like Ahrites sometimes."
+            hide xerx3quatPointArmored
+            show xerx3quatAnnoyed at xerxLeft
+            with dissolve
             mega "Integrating them is going to be a pain."
             jump afterKoithaFoz
 
         "There are plenty of Jamesians who like Thiatsetu. And even tsetulings":
+            show koitha oMouth with dissolve
             koit "I don't like them."
             koit "I don't want sand monkeys trying to flirt with me."
+
+            scene niitwanwaInside at left
+            show happyXerxArmored at middleStand , size08
+            with dissolve
             xerx "Other thiatsetu might."
+            
+            hide happyXerxArmored
+            show xerx3quatPointCommandingArmored  at middleStand , size08
+            with dissolve
             xerx "You hate us."
+            hide xerx3quatPointCommandingArmored
+            show xerx3quatPointHappyArmored at middleStand ,size08
+            with dissolve
             xerx "We just see you as an obstacle."
-            xerx "Don't be an obstacle and you can sit at the bottom of the lake."
+            hide xerx3quatPointHappyArmored
+            show xerxNoWeGoodArmored at middleStand ,size08
+            with dissolve
+            xerx "Don't be an obstacle and you can hang out in your lake palace."
+
+            scene niitwanwaInside at right
+            show koitha crossArms oMouth meanEyes
+            show vimekkus crossarms meanEyes annoyedMouth
+            with dissolve
             koit "You hate Astarte."
+
+            scene niitwanwaInside at left
+            show happyXerxArmored at middleStand , size08
+            with dissolve
             xerx "You're not Astarte."
+            hide happyXerxArmored
+            show xerxNoWeGoodArmored at middleStand ,size08
+            with dissolve
             xerx "Calm your titties."
+
+            scene niitwanwaInside at right
+            show koitha crossArms oMouth meanEyes
+            show vimekkus crossarms meanEyes annoyedMouth
+            with dissolve
             koit "But Astarte is our Goddess."
+            show koitha base with dissolve
             koit "And you want to end her."
-            koit "I won't let you do that."
+            koit "I won't let you do that!"
+            show koitha annoyedMouth neutralEyes
+            show vimekkus base oMouth
+            with dissolve
             vimk "While I know some thiatsetu and tseulings who like to hang out with the forest snakehairs."
+            show vimekkus angryMouth with dissolve
             vimk "I won't be."
+            show vimekkus point with dissolve
             vimk "This is the last time we'll talk."
             vimk "Goodbye."
 
+            scene clearDayTime at fullFit
+            show niitwanwaPlatform at center
+            show xerx3quatHappyerArmored at xerxLeft
+            show megabazus armored34 at tesiRight
+            with fade
             xerx "Maybe we can find freindlier aquatics in forest."
+            hide xerx3quatHappyerArmored
+            show xerx3quatHappyArmored at xerxLeft
+            show megabazus happyMouth
+            with dissolve
             mega "There are."
+            show megabazus sadEyes frown with dissolve
             mega "Just not enough to fight out in the open lake."
+            hide xerx3quatHappyArmored
+            show xerx34LookDownArmoredAnnoyed at xerxLeft
+            with dissolve
             xerx "If the Zaratians weren't busy with the Zardonians we could transport our own aquatics here."
             jump afterKoithaFoz
 
         "What are you scared of?":
+            show vimekkus point with dissolve
             vimk "You."
+            show koitha base oMouth
+            show vimekkus base
+            with dissolve
             koit "You won't let us worship Astarte."
+            
+            scene niitwanwaInside at left
+            show xerxAngryMouthOpen at middleStand , size08
+            with dissolve
             xerx "Astarte is evil."
+            scene dustCloud with dissolve
+            scene clearDayTime
+            show astaJamesianBoarderModular at left , size2Thrid
+            with dissolve
             xerx "Don't you see the sands around you."
+            scene niitwanwaInside at left
+            show xerxAngryMouthOpen at middleStand , size08
+            with dissolve
             xerx "If it wasn't for her curse."
+
+            scene niitwanwaInside at right
+            show koitha crossArms oMouth meanEyes
+            show vimekkus meanEyes annoyedMouth
             koit "You deserve to be cursed."
-            xerx "{b}What did you say!?"
+
+            scene niitwanwaInside at left
+            show xerxAngrier at middleStand , size08
+            with dissolve
+            xerx "{b}What did you say!?" with vpunch
+            
+            scene niitwanwaInside at left
+            show koitha oMouth meanEyes
+            show vimekkus meanEyes annoyedMouth
+            with dissolve
             koit "You heard me!"
-            vimk "KOITHA!!"
+            show koitha neutralEyes
+            show vimekkus point Omouth
+            with dissolve
+            vimk "KOITHA!!" with vpunch
+            show vimekkus base angryMouth with dissolve
             vimk "I will stand by."
+            show vimekkus point oMouth with dissolve
             vimk "But stay out of our lake."
+
+            show vimekkus base annoyedMouth
+            show koitha oMouth crossArms
+            with dissolve
             koit "I hope Bardaiya defeats you like last time."
 
+            scene clearDayTime at fullFit
+            show niitwanwaPlatform at center
+            show xerx3quatHappyArmored at xerxLeft
+            show megabazus armored34 OMouth at tesiRight
+            with fade
             mega "Guess we'll be keeping our feet on dry land then."
+            
+            hide xerx3quatHappyArmored
+            show xerx3quatHappyerCrossArmsArmored 
+            show megabazus neutralHappyMouth
+            with dissolve
+
             xerx "There's rivers and swamps in the forest."
+            hide xerx3quatHappyerCrossArmsArmored 
+            show xerx3quatPointHappyArmored at xerxLeft
+            with dissolve
             xerx "And we just need to drive the land Astarts out."
+
+            hide xerx3quatPointHappyArmored
+            show xerx3quatHappyArmored
+            show megabazus happyMouth
+            with dissolve
+
             mega "It was worth trying."
             jump afterKoithaFoz
 
@@ -907,6 +1050,14 @@ label afterKoithaFoz:
     call krokkosnekInTakurium
 
     #jamesians prepare to battle them
+    
+    scene clearDayTime at fullFit
+    show niitwanwaOutsideDock:
+        xalign 0.0
+        linear 10 xalign 1.0
+    #show jamesian troop types assembled in a line
+    #a mix of jamesians and korkins
+    scene clearDayTime at fullFit
     #scouts the korkin ostrich lady report only some of the old furry giants and
     mega "Oh look."
     mega "What did you see and smell Mauhin?"
