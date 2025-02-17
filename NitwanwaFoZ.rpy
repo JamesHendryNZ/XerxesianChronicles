@@ -1057,25 +1057,159 @@ label afterKoithaFoz:
         linear 10 xalign 1.0
     #show jamesian troop types assembled in a line
     #a mix of jamesians and korkins
+    show takuraLightCavarly at halfSize:
+        xpos 0.5
+        linear 10 xpos -0.5
+    show zwotiCavarly at halfSize:
+        xpos 0.7
+        linear 10 xpos -0.3
+    show jamesianCataphract at halfSize:
+        xpos 1.3
+        linear 10 xpos 0.3
+    show zamburak at halfSize:
+        xpos 1.5
+        linear 10 xpos 0.5
+    show jamesianHeavyHorseArcher at halfSize:
+        xpos 1.8
+        linear 10 xpos 0.8 
+
+    show zwotiInfantryDude at halfSize:
+        xpos 0.1
+        linear 10 xpos -0.9
+    show zwotiInfantryLady at halfSize:
+        xpos 0.3
+        linear 10 xpos -0.7
+    show takuraSnakeArcher at halfSize:
+        xpos 0.2
+        linear 10 xpos -0.8
+    show takuraKardakes at halfSize:
+        xpos 0.6
+        linear 10 xpos -0.4
+    
+    show jamesianHeavySpearDude at halfSize:
+        xpos 0.9
+        linear 10 xpos -0.1
+    show axerianInfantry at halfSize:
+        xpos 0.8
+        linear 10 xpos -0.2
+    
+    show jamesianSparabaraDude at halfSize:
+        xpos 1.3
+        linear 10 xpos 0.3
+    show jamesianHeavySpearGirl at halfSize:
+        xpos 1.1
+        linear 10 xpos 0.1
+    show jamesianLongsword at halfSize:
+        xpos 1.7
+        linear 10 xpos 0.7
+
+    show jamesianSparabaraGirl at halfSize:
+        xpos 1.4
+        linear 10 xpos 0.4
+    show jamesianHeavyArcher at halfSize:
+        xpos 1.5
+        linear 10 xpos 0.5
+    show jamesianTakabara at halfSize:
+        xpos 1.8
+        linear 10 xpos 0.8
+    show jamesianSlinger at halfSize:
+        xpos 1.9 
+        linear 10 xpos 0.9
+    with fade
+    pause 11
+
     scene clearDayTime at fullFit
+    show niitwanwaOutside at fullFit
+    show mauhin onOstrich at halfSize, flipped:
+        xpos 1.5
+        easein 2 xpos 0.4
+        linear 1 xzoom -1.0
+    with dissolve
+    pause 3
     #scouts the korkin ostrich lady report only some of the old furry giants and
+    
+    scene clearDayTime at fullFit
+    show niitwanwaOutsideDock:
+        xalign 0.5
+    show megabazus armoredGreet happyMouth at size2Thrid , middleStand
+    with dissolve
     mega "Oh look."
+    show megabazus neutralHappyMouth with dissolve
     mega "What did you see and smell Mauhin?"
+
+    scene clearDayTime at fullFit
+    show niitwanwaOutside at fullFit
+    show mauhin onOstrich oMouth at size2Thrid , middleStand
+    with dissolve
     mhn "They are staying in Takurium."
+
+    scene clearDayTime at fullFit
+    show niitwanwaOutsideDock:
+        xalign 0.5
+    show megabazus armored happyMouth at size2Thrid , middleStand
+    with dissolve
     mega "What's their forces like."
+    show megabazus point34Armored OMouth with dissolve
     mega "Any giants?"
     #no armored giants only furry ones and not that many or just one.
+
+    scene clearDayTime at fullFit
+    show niitwanwaOutside at fullFit
+    show mauhin onOstrich happyMouth at halfSize , middleStand
+    with dissolve
     mhn "No."
+
+    show mauhin oMouth with dissolve
     mhn "But they have lots of tsetulings though."
+
+    scene clearDayTime at fullFit
+    show niitwanwaOutsideDock:
+        xalign 0.5
+    show megabazus armored frown at size2Thrid , middleStand
+    with dissolve
     mega "I see."
+
+    show megabazus armored34 angryMouth at flipped with dissolve
+    with dissolve
+    show xerx3quatHappyArmored at size2Thrid:
+        xpos 1.5
+        easein 2 xpos 0.7
+
     mega "Xerxes."
+
+    show megabazus item34Armored neutralHappyMouth with dissolve
     mega "Takes these metal arrows."
+    show metalArrows at halfsize with dissolve
     mega "They should penitrate the tough exoskeletons of the tseulings."
 
+
     $ changeItemAmount( inventory , metalArrow , 12 )
+    scene clearDayTime at fullFit
+    show niitwanwaOutsideDock:
+        xalign 0.5
+    show metalArrows with dissolve:
+        yalign 0.5 xpos 0.3
+    show metalArrows with dissolve:
+        yalign 0.5 xpos 0.3
+    show metalArrows with dissolve:
+        yalign 0.5 xpos 0.3
     "Megabazus gives you 12 metal arrows. They will penetrate most armor."
     #xerxes gets given armored arrows despite convidence
     #they then organize and go
+
+    scene niitwanwaOutsideGate
+    #xerxes with sword
+    show xerxHorseWithSoAM at thridSize:
+        xpos 0.3
+    #Tesipiz with maceaxe
+    show tesipizHorseMace at thridSize:
+        xpos 0.3
+    #volkara with Sword
+    show volkaraHorsey armedSword at thridSize:
+        xpos 0.7
+    show megabazus horseCommand meanEyes happyMouth:
+        xpos 0.5
+    with dissolve
     mega "To Takurium!!" #put him on horse
     #they leave Niitwanwa
     jump march2TakuriumFoz # will have it's own .rpy file
@@ -1088,30 +1222,81 @@ label afterKoithaFoz:
 label krokkosnekInTakurium:
     
     #establishing shot showing Astarts in Takurium ruins(maybe)
+    scene takuriumEstablishing at centerAlignment:
+        ypos 0.0
+        xpos 0.5
+        zoom 0.4
+        easein 8 ypos 0.9
+    if not freedTakura:
+        show astarteStatueIcon at centerAlignment , astarteStatueIconPlacement:
+            xpos 0.412
+            ypos -0.44
+            zoom 0.5
+            easein 8 astarteStatueIconPlacement 
     #krokkosnek reacts if his idol has been stolen and/or the astarte statue has been destroyed.
     #the suzume hyspapist lady who chucks flaming jevilns shows up here
+    scene takuriumInisdeSutsshakWest with fade
     if stolenDaIdolOfSutsshak:
+        show krokkosnekSad at middleStand , size08 with dissolve
         krok "They stole my Sutsshak statue!!"
         if freedTakura:
             krok "I can understand them destroying the Astarte statue."
+            hide krokkosnekSad
+            show krokkosnekScared at middleStand , size08 
+            with dissolve
             krok "But my beloved Sutsshak!!"
+            hide krokkosnekScared
+            show krokkosnekAngry at middleStand , size08
+            with dissolve
             krok "Demonic barbarians."
         else:
             krok "The left the Astarte statue alone."
-            krok "Do these mutanted hairless rats even hate Astarte."
+            hide krokkosnekSad
+            show krokkosnekAngry at middleStand , size08 
+            with dissolve
+            krok "Do these mutated hairless rats even hate Astarte."
             #he gets dicplined for bastfamy
+            hide krokkosnekAngry
+            show krokkosnekAnnoyed at middleStand , size08:
+                linear 1 xpos 0.3
+            with dissolve
+            show mwejya crossarms meanEyes oMouth at size08:
+                xpos 1.5
+                easein 1 xpos 0.6
             flameChucka "Lord Bardaiya must be desperate for elite goon commanders if he gives positions of power to blasphemers like you."
-            flameChucka "What did you do."
+            show mwejya annoyedMouth with dissolve
+            flameChucka "What did you do?"
             flameChucka "Turn into a girl and boink him or something?" #maybe be a scene?
+
+            hide krokkosnekAnnoyed
+            show krokkosnekSuprized at xerxLeftLeft
+            with dissolve
             krok "No!"
+            hide krokkosnekSuprized
+            show krokkosnekAngry at middleStand , size08 
+            with dissolve
             krok "It's just the jamesians hate Astarte but left her statue alone."
     else:
+        show krokkosnekHappy at middleStand , size08 with dissolve
         krok "My Sutsshak!!"
         if freedTakura:
+            
+            hide krokkosnekHappy
+            show krokkosnekGrand at middleStand , size08:
+            with dissolve
             krok "As expected they destroyed the Astarte statue but left my Sutsshak alone."
+            show krokkosnekSuprized at middleStand , size08:
+                linear 1 xpos 0.3
+            with dissolve
+            show mwejya crossarms meanEyes oMouth at size08:
+                xpos 1.5
+                easein 1 xpos 0.6
             flameChucka "Lord Bardaiya must be desperate for elite goon commanders if he gives positions of power to blastfemers like you."
-            flameChucka "What did you do."
+            show mwejya annoyedMouth with dissolve
+            flameChucka "What did you do?"
             flameChucka "Turn into a girl and boink him or something?" #maybe have a spicy image for this - also forshadowing for bala-axerium.
+            
+            
             krok "No!"
             krok "It's just nice that even the desert demons have standards."
             krok "Unlike those ahrite scum from 8 years ago."
@@ -1135,8 +1320,8 @@ label krokkosnekInTakurium:
     #wants to salvage potential transformation tubes that could be there
     #krokkosnek is annoyed that he doesn't have armored giants 
     krok "I wish Lord Bardaiya would let me have armored giants."
-    krok "I might give the flooded tunnels a look."
-    krok "Their might be old transformation tubes there."
+    krok "I might give the flooded tunnels a look." #ahrite tunnels
+    krok "Their might be old transformation tubes there." #ahrite base ruined and flooded
     flameChucka "I don't think you should do that."
     flameChucka "Those tubes are tainted."
     tip "We can clean them now."
@@ -1161,5 +1346,11 @@ label krokkosnekInTakurium:
     flameChucka "Heheh!"
 
     #beglius doesn't like krokkosnek's defensive stratergy but is smart enough to know fight the jamesian army would be suiside.
+
+    #need takurium gate front
+    #forest2
+    #bushes
+    #mauhin snoops around and sees astart forces
+    #then dissapears into the woodss
 
     return

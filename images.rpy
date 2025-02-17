@@ -808,15 +808,15 @@ image forestShop = "images/Locations/Takurium/Forest Shop.webp"
 image forestLobby = "images/Locations/Takurium/Forest Village Mess Hall Hotel.webp"
 image forestLobbyDoor = "images/Locations/Takurium/Forest Village Mess Hall Lobby.webp"
 
-image niitwanwaEstablishing = "images/Locations/Niitwanwa/Niitwanwa Establishing foz.web"
-image niitwanwaEstablishingNight = "images/Locations/Niitwanwa/Niitwanwa Establishing foz Night.web"
-image niitwanwaOutsideGate = "images/Locations/Niitwanwa/Niitwanwa Outside Gate.web"
-image niitwanwaOutside = "images/Locations/Niitwanwa/Niitwanwa Outside Gate Facing Out.web"
-image niitwanwaOutsideNight = "images/Locations/Niitwanwa/Niitwanwa Outside Gate Facing Out Night.web"
-image niitwanwaOutsideDock = "images/Locations/Niitwanwa/Niitwanwa court and docks.web"
-image niitwanwaInside = "images/Locations/Niitwanwa/Niitwanwa inside.web"
-image niitwanwaCortDock = "images/Locations/Niitwanwa/Niitwanwa court and docks.web"
-image niitwanwaPlatform = "images/Locations/Niitwanwa/Niitwanwa Platform.web"
+image niitwanwaEstablishing = "images/Locations/Niitwanwa/Niitwanwa Establishing foz.webp"
+image niitwanwaEstablishingNight = "images/Locations/Niitwanwa/Niitwanwa Establishing foz Night.webp"
+image niitwanwaOutsideGate = "images/Locations/Niitwanwa/Niitwanwa Outside Gate.webp"
+image niitwanwaOutside = "images/Locations/Niitwanwa/Niitwanwa Outside Gate Facing Out.webp"
+image niitwanwaOutsideNight = "images/Locations/Niitwanwa/Niitwanwa Outside Gate Facing Out Night.webp"
+image niitwanwaOutsideDock = "images/Locations/Niitwanwa/Niitwanwa court and docks.webp"
+image niitwanwaInside = "images/Locations/Niitwanwa/Niitwanwa inside.webp"
+image niitwanwaCortDock = "images/Locations/Niitwanwa/Niitwanwa court and docks.webp"
+image niitwanwaPlatform = "images/Locations/Niitwanwa/Niitwanwa Platform.webp"
 
 image lakeTakuraShore = "images/Locations/Takurium/Take Takura Shoreline.webp"
 image oldWallFacingWall = "images/Locations/Takurium/Old Wall South.webp"
@@ -1135,6 +1135,7 @@ image chariotFigue = "images/Location Accessories/Chariot Figurine.webp"
 #projectiles and items
 image roundRock = "images/items/ballStone.webp"
 image arrows = "images/items/arrow.webp"
+image metalArrows = "images/items/arrowBoltShort.webp"
 image javelins = "images/items/javelinBasic.webp"
 image ironJavelins = "images/items/javelinIron.webp"
 image daricCoin = "images/items/daric.webp"
@@ -1259,9 +1260,15 @@ image tesipizHorseArmored = "images/animals/Full Armored Horse Front1.webp"
 image axerianInfAttackSpear = "images/Enemies/astartes goons/Astarto-Axerian Spear Attack.webp"
 image axerianInfSuprizedSpear = "images/Enemies/astartes goons/Astarto-Axerian Spear Suprizeds.webp"
 image axerianInfJavelins = "images/Enemies/astartes goons/Astarto-Axerian Javelin Attack.webp"
+image axerianInfantry = "images/Enemies/astartes goons/Astarto-Axerian Spear.webp"
 
 image zwotiInfantryDude = "images/NPCs/Takuria/Zwoti Infantry Male.webp"
 image zwotiInfantryLady = "images/NPCs/Takuria/Zwoti Black Armor Infantry Female.webp"
+
+image takuraSnakeArcher = "images/NPCs/Takuria/Takurian Snake Archer.webp"
+image takuraKardakes = "images/NPCs/Takuria/Light Kardakes.webp"
+image takuraLightCavarly = "images/NPCs/Takuria/Light Cavarly.webp"
+image zwotiCavarly = "images/NPCs/Takuria/Zwoti Cavarly Male.webp"
 
 #Neutral villagers
 image astartLady1 = "images/NPCs/Astart Cilivians/astart lady1.webp"
@@ -1693,6 +1700,7 @@ image lakatinuFrontFlyYeah:
 image krokkosnekAngryAround = "images/antagonists/Krokkosnek/Krokkosnek Angry around.webp"
 image krokkosnekAngryWater = "images/antagonists/Krokkosnek/Krokkosnek Angry Swimming.webp"
 image krokkosnekAngry = "images/antagonists/Krokkosnek/Krokkosnek Angry.webp"
+image krokkosnekSad = Composite( (1300, 1500) , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Angry.webp" , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Sad Eyes.webp")
 image krokkosnekAnnoyed = "images/antagonists/Krokkosnek/Krokkosnek Annoyed.webp"
 image krokkosnekZappingU = "images/antagonists/Krokkosnek/Krokkosnek Battle Land Ranged.webp"
 image krokkosnekZappingUNWater = "images/antagonists/Krokkosnek/Krokkosnek Battle Water Ranged.webp"
@@ -1708,6 +1716,7 @@ image krokkosnekHappy = "images/antagonists/Krokkosnek/Krokkosnek Happy.webp"
 image krokkosnekNeutralHappy = "images/antagonists/Krokkosnek/Krokkosnek Neutral Happy.webp"
 image krokkosnekNeutralHappyWater = "images/antagonists/Krokkosnek/Krokkosnek Neutral Happy swimming.webp"
 image krokkosnekScared = "images/antagonists/Krokkosnek/Krokkosnek Scared.webp"
+image krokkosnekSuprized = Composite( (1300, 1500) , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Neutral Happy.webp" , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek OMouth.webp" )
 image krokkosnekSlitheringAway = "images/antagonists/Krokkosnek/Krokkosnek Slivering Away.webp"
 image krokkosnekSwimmingAway = "images/antagonists/Krokkosnek/Krokkosnek Swimming Away.webp"
 
@@ -2583,6 +2592,7 @@ image xerxHorseMiniMad = Composite( ( 1200,2200 ) , ( 0,0 ), "images/Protagonist
 
 image xerxHorseYeah = "images/Protagonists/Xerxes/Xerxes Yeah Armored on Horse.webp"
 image xerxHorseYeahSoAM = "images/Protagonists/Xerxes/Xerxes Yeah Armored on Horse with soam.webp"
+image xerxHorseWithSoAM = Composite( (1200,2500) , (0,0) , "images/Protagonists/Xerxes/Xerxes Yeah Armored on Horse with soam.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes Neutral Happy Armored on Horse with soam.webp"  )
 image xerxHorseSwordUp = "images/Protagonists/Xerxes/Xerxes 3-4 Horse Sword Up.webp"
 image xerxHorseSwordDown = "images/Protagonists/Xerxes/Xerxes 3-4 Horse Sword Down.webp"
 image xerxHorseSwordSteam = "images/Protagonists/Xerxes/Xerxes 3-4 Horse Sword Mini Sad Stream.webp"
@@ -2826,6 +2836,7 @@ image tesipizHorseAnnoyed = "images/Protagonists/Tesipiz/Tesipiz Annoyed Armored
 image tesipizHorseAngry = "images/Protagonists/Tesipiz/Tesipiz angry Armored on Horse.webp"
 image tesipizHorseAngryJavelin = "images/Protagonists/Tesipiz/Tesipiz Annoyed with javelin Armored on Horse.webp"
 image tesipizHorseAngryMace = "images/Protagonists/Tesipiz/Tesipiz Angry with Mace Armored on Horse No Bomb.webp"
+image tesipizHorseMace = Composite ( (1300,2200) , (0,0) , "images/Protagonists/Tesipiz/Tesipiz Angry with Mace Armored on Horse No Bomb.webp", (0,0) , "images/Protagonists/Tesipiz/Tesipiz with Mace Armored on Horse No Bomb.webp" )
 image tesipizHorseAngryMaceBomb = "images/Protagonists/Tesipiz/Tesipiz Angry with Mace Armored on Horse.webp"
 image tesipizHorseBombExictedTaunght = "images/Protagonists/Tesipiz/Tesipiz exicted taunting with bomb Armored on Horse.webp"
 image tesipizHorseBombExicted = "images/Protagonists/Tesipiz/Tesipiz exicted with bomb Armored on Horse.webp"
@@ -3281,6 +3292,8 @@ layeredimage volkaraHorsey: #1200-2500
             "images/Protagonists/Volkara/Volkara Neutral Happy armored on horse.webp"
         attribute greeting: 
             "images/Protagonists/Volkara/Volkara Neutral Happy armored on horse greeting.webp"
+        attribute armedSword:
+            "images/Protagonists/Volkara/Volkara Armed armored on horse.webp"
     group eyes:
         attribute heheh: #800-1500
             "images/Protagonists/Volkara/Volkara armored Heheh Eyes.webp" 
@@ -3851,6 +3864,18 @@ layeredimage mauhin:
 image jamesianHeavySpearDude = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Boy.webp"
 image jamesianHeavySpearGirl = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Girl.webp"
 image jamesianHeavySpearGirlGreeting = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Girl greeting.webp"
+image jamesianSparabaraDude = "images/NPCs/Jamesia/Troopers/Ssatrotu Sparabara Dude(Jamesian).webp"
+image jamesianSparabaraGirl = "images/NPCs/Jamesia/Troopers/Ssatrotu Sparabara Lady(Jamesian).webp"
+image jamesianHeavyArcher = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer.webp"
+image jamesianHeavyHorseArcher = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Horse Archer.webp"
+image jamesianLongsword = "images/NPCs/Jamesia/Troopers/Jamesian Longsword Trooper.webp"
+image jamesianTakabara = "images/NPCs/Jamesia/Troopers/Takabara.webp"
+image jamesianSlinger = "images/NPCs/Jamesia/Troopers/Jamesossian Slinger.webp"
+image jamesianCataphract = "images/NPCs/Jamesia/Troopers/Jamesian Cataphract Dude.webp"
+image zamburak = "images/NPCs/Jamesia/Troopers/Camel Zamburak.webp"
+image zamburakDismounted = "images/NPCs/Jamesia/Troopers/Zamburak Lady Unmounted.webp"
+image zamburakLady = "images/NPCs/Jamesia/Troopers/Zamburak Lady.webp"
+
 
 
 
