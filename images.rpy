@@ -1714,6 +1714,7 @@ image krokkosnekGrand  = "images/antagonists/Krokkosnek/Krokkosnek Grand.webp"
 image krokkosnekGrandWater = "images/antagonists/Krokkosnek/Krokkosnek Grand Water.webp"
 image krokkosnekHappy = "images/antagonists/Krokkosnek/Krokkosnek Happy.webp"
 image krokkosnekNeutralHappy = "images/antagonists/Krokkosnek/Krokkosnek Neutral Happy.webp"
+image krokkosnekNeutralHappyPoint = "images/antagonists/Krokkosnek/Krokkosnek Neutral Happy around.webp"
 image krokkosnekNeutralHappyWater = "images/antagonists/Krokkosnek/Krokkosnek Neutral Happy swimming.webp"
 image krokkosnekScared = "images/antagonists/Krokkosnek/Krokkosnek Scared.webp"
 image krokkosnekSuprized = Composite( (1300, 1500) , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Neutral Happy.webp" , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek OMouth.webp" )
@@ -1728,6 +1729,7 @@ image tipuaShocked = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipu
 image tipuaSliveringAway = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua Slivering Away.webp"
 image tipuaHappyCoiled = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua Slivering Away.webp"#astart
 image tipuaStandingHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua standing Happy.webp" 
+image tipuaExtraHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua Extra Happy.webp"
 
 image yeni34Happy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni 34 lying happy.webp"
 image yeniAngry = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Angry.webp"
@@ -1736,6 +1738,7 @@ image yeniScared = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni S
 image yeniShocked = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Shocked.webp"
 image yeniSliveringAway = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Slivering Away.webp"
 image yeniStandingHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Standing Happy.webp"
+image yeniExtraHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Extra Happy.webp"
 
 
 #Balatius
@@ -1877,35 +1880,6 @@ layeredimage mwejya:
         attribute commnadingShield:
             "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Fighting.webp"
 
-    group eyes:
-        attribute neutralEyes default if_any["basic"]: #430 left 2 nose
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
-        attribute neutralEyes default if_any["suprizedPose", "crossarms"]: #600 left edge 2 nose
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
-            xpos 170
-        attribute neutralEyes default if_any["commanding","commnadingShield","chuckingPose"]: #800 left 2 nose
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
-            xpos 370
-        
-        attribute meanEyes if_any["basic"]:
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
-            xpos -370
-        attribute meanEyes if_any["suprizedPose", "crossarms"]:
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
-            xpos -200
-        attribute meanEyes if_any["commanding","commnadingShield","chuckingPose"]:
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
-
-        
-        attribute SadEyes if_any["basic"]:
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
-        attribute SadEyes if_any["suprizedPose", "crossarms"]:
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
-            xpos 170
-        attribute SadEyes if_any["commanding","commnadingShield","chuckingPose"]:
-            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
-            xpos 370
-
     group mouths:
         attribute neutralHappyMouth default if_any["basic"]:
             "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Happy Mouth.webp"
@@ -1951,6 +1925,45 @@ layeredimage mwejya:
             xpos -200
         attribute angryMouth if_any["commanding","commnadingShield","chuckingPose"]:
             "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Mouth.webp"
+
+    group eyes:
+        attribute neutralEyes default if_any["basic"]: #430 left 2 nose
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
+        attribute neutralEyes default if_any["suprizedPose", "crossarms"]: #600 left edge 2 nose
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
+            xpos 170
+        attribute neutralEyes default if_any["commanding","commnadingShield","chuckingPose"]: #800 left 2 nose
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Neutral Eyes.webp"
+            xpos 370
+        
+        attribute meanEyes if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
+            xpos -370
+        attribute meanEyes if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
+            xpos -200
+        attribute meanEyes if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Angry Eyes.webp"
+
+        
+        attribute sadEyes if_any["basic"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
+        attribute sadEyes if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
+            xpos 170
+        attribute sadEyes if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist.webp"
+            xpos 370
+        
+        attribute closedEyes if_any["basic"]: #same as neutral eyes
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Closed Eyes.webp"
+        attribute closedEyes if_any["suprizedPose", "crossarms"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Closed Eyes.webp"
+            xpos 170
+        attribute closedEyes if_any["commanding","commnadingShield","chuckingPose"]:
+            "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Closed Eyes.webp"
+            xpos 370
+    
 
     
 

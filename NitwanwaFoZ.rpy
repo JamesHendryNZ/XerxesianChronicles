@@ -1292,26 +1292,66 @@ label krokkosnekInTakurium:
                 xpos 1.5
                 easein 1 xpos 0.6
             flameChucka "Lord Bardaiya must be desperate for elite goon commanders if he gives positions of power to blastfemers like you."
-            show mwejya annoyedMouth with dissolve
+            show mwejya annoyedMouth 
+            hide krokkosnekSuprized
+            show krokkosnekAnnoyed  at xerxLeftLeft
+            with dissolve
             flameChucka "What did you do?"
             flameChucka "Turn into a girl and boink him or something?" #maybe have a spicy image for this - also forshadowing for bala-axerium.
             
-            
+            hide krokkosnekAnnoyed
+            show krokkosnekSuprized at xerxLeftLeft
+            with dissolve
             krok "No!"
+
+            hide krokkosnekSuprized
+            show krokkosnekNeutralHappy at xerxLeftLeft
+            with dissolve
             krok "It's just nice that even the desert demons have standards."
+            hide krokkosnekNeutralHappy
+            show krokkosnekAnnoyed at xerxLeftLeft
+            with dissolve
             krok "Unlike those ahrite scum from 8 years ago."
+            show mwejya oMouth with dissolve
             flameChucka "You're beginning to sound like Atazera before she turned."
+            hide krokkosnekAnnoyed
+            show krokkosnekNeutralHappyPoint at xerxLeftLeft
+            show mwejya basic annoyedMouth 
+            with dissolve
             krok "Don't worry."
+            hide krokkosnekNeutralHappyPoint
+            show krokkosnekGrand at xerxLeftLeft
+            show mwejya suprizedPose neutralEyes happyMouth
             krok 'I knew Dargon was a treachorus self-sucker.'
         else:
+
             krok "And the Astarte statue is still up."
+            hide krokkosnekHappy
+            show krokkosnekNeutralHappyPoint at middleStand , size08
+            with dissolve
             krok "The desert demons have standards."
+            hide krokkosnekNeutralHappyPoint
+            show krokkosnekNeutralHappy at middleStand , size08:
+                linear 2 xpos 0.3
+            with dissolve
+            show mwejya suprizedPose meanEyes happyMouth:
+                xpos 1.5
+                easein 2 xpos 0.7
             flameChucka "They fear her power."
             flameChucka "Unlike those ahrite fools."
             flameChucka "And that treasonus Atazera."
     #this is to show krokkosneks reaction and that he doesn't have accesss to high teir astart trooper types.
 
+    scene clearDayTime
+    show takuriumHyengshinStreet at center
+    show krokkosnekNeutralHappy at xerxLeftLeft
+    show mwejya oMouth at tesiRight
+    with dissolve
     flameChucka "What's the plan Krokkosnek?"
+    hide krokkosnekNeutralHappy
+    show krokkosnekNeutralHappyPoint at xerxLeftLeft
+    show mwejya neutralHappyMouth 
+    with dissolve
     krok "Hold the ruins until Minona wrecks the Jamesians."
     krok "If she fails She'll most likely join us."
     krok "We need to fix the south wall as soon as possible."
@@ -1319,30 +1359,123 @@ label krokkosnekInTakurium:
     #thinks about the flooded ahirte tunnels
     #wants to salvage potential transformation tubes that could be there
     #krokkosnek is annoyed that he doesn't have armored giants 
+    scene takuriumGround0 at center
+    show krokkosnekAnnoyed at xerxLeftLeft
+    show mwejya at tesiRight
+    with fade
     krok "I wish Lord Bardaiya would let me have armored giants."
     krok "I might give the flooded tunnels a look." #ahrite tunnels
     krok "Their might be old transformation tubes there." #ahrite base ruined and flooded
+    scene takuriumGround0 at center
+    show krokkosnekAnnoyed at xerxLeftLeft
+    show mwejya crossArms meanEyes annoyedMouth at tesiRight
+    with fade
     flameChucka "I don't think you should do that."
+    show mwejya suprizedPose angryMouth with dissolve
     flameChucka "Those tubes are tainted."
+
+    show yeniExtraHappy at size08:
+        xpos -0.5
+        easein 2 xpos 0.5
+    with dissolve
+    show tipuaStandingHappy at size08:
+        xpos -0.7 
+        easein 2 xpos 0.3
+    hide krokkosnekAnnoyed
+    show krokkosnekHappy at xerxLeftLeft:
+        easein 2 xpos 0.1
+    show mwejya basic annoyedMouth
+    with dissolve
     tip "We can clean them now."
+    hide yeniExtraHappy
+    hide tipuaStandingHappy
+    show tipuaStandingHappy at size08:
+        xpos 0.3
+    show yeniExtraHappy at size08:
+        xpos 0.5
+    with dissolve
     yeni "That's why where here."
     
+    hide krokkosnekHappy
+    show krokkosnekGrand at xerxLeftLeft:
+        xpos 0.1
+    krok "I've been finding ways to scrub ahrite from this place."
 
     #belgius shows up and wants to join krokkosnek in killing Xerxes
+    scene clearDayTime
+    show takuriumHyengshinStreet at left
+    show krokkosnekNeutralHappy at xerxLeftLeft
+    show belgius34Ground happyMouth at size08:
+        xpos 1.5
+        easein 2 xpos 0.7
     balaCavOf "Summoner Krokkosnek!"
+    hide krokkosnekNeutralHappy
+    show krokkosnekHappy at xerxLeftLeft
+    with dissolve
+    show belgius34Ground neutralHappyMouth with dissolve
     krok "Yes?"
+    show belgius34Ground happyMouth meanEyes
+    hide krokkosnekHappy
+    show krokkosnekNeutralHappy at xerxLeftLeft
+    with dissolve
     balaCavOf "Where's Xerxes?"
     balaCavOf "I heard he's here."
+    hide krokkosnekNeutralHappy
+    show krokkosnekAnnoyed at xerxLeftLeft
+    with dissolve
     balaCavOf "I want to hunt him."
+    hide krokkosnekAnnoyed
+    show krokkosnekAngryAround at xerxLeftLeft
+    show belgius34Ground angryMouth neutralEyes
+    with dissolve
     krok "That's a bad idea."
+    hide krokkosnekAngryAround
+    show krokkosnekAngry at xerxLeftLeft
+    show belgius34Ground annoyedMouth
+    with dissolve
     krok "If he's around. He would be with the Jamesian Army."
+    hide krokkosnekAngry
+    show krokkosnekAnnoyed at xerxLeftLeft:
+        easein 1 xpos 0.5
+    with dissolve
+    show mwejya suprizedPose happyMouth at size08:
+        xpos -0.5
+        easein 1 xpos 0.2
     flameChucka "Is Xerxes here?!"
+    hide krokkosnekAnnoyed
+    show krokkosnekNeutralHappyPoint at middleStand , size08
+    show mwejya neutralHappyMouth
+    show belgius34Ground neutralHappyMouth
+    with dissolve
     krok "Yes. My scouts saw him moving to the south."
     krok "He'll come here."
+    
+    hide krokkosnekNeutralHappyPoint
+    show krokkosnekCommanding at middleStand , size08
+    with dissolve
     krok "He killed Sakuna. He's dangerous."
+    hide krokkosnekCommanding
+    show krokkosnekAngryAround at middleStand , size08
+    show mwejya basic oMouth sadEyes
+    show belgius34Ground annoyedMouth
+    with dissolve
     krok "Don't go after him."
+    hide krokkosnekAngryAround
+    show krokkosnekAnnoyed at middleStand , size08
+    show belgius34Ground angryMouth neutralEyes
+    show mwejya neutralEyes neutralhappyMouth
+    with dissolve
     balaCavOf "But his artifact."
+    hide krokkosnekAngryAround
+    show krokkosnekAngryAround at middleStand , size08
+    show belgius34Ground annoyedMouth
+    with dissolve
     krok "No! Stay here silly goon."
+    hide krokkosnekAngryAround
+    show krokkosnekAnnoyed at middleStand , size08
+    #need eyes closed mwejya
+    show mwejya suprizedPose closedEyes happyMouth
+    with dissolve
     flameChucka "Heheh!"
 
     #beglius doesn't like krokkosnek's defensive stratergy but is smart enough to know fight the jamesian army would be suiside.
