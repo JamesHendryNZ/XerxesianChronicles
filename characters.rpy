@@ -109,7 +109,7 @@ define shataGoons = Character("Shata Goons", color = "#000")
 define jakabite = Character("Jakabite" , color = "#000" )
 
 define astartOstrichRider = Character("Astart Ostrich Rider" , color = "#900062")
-define thiatseArch = Character( "ThiatsetuArcher" , color = "#00998c")
+define thiatseArch = Character( "Thiatsetu Archer" , color = "#00998c")
 define captainHuksosy = Character("Captain Huksos" , color = "#6c2800")
 
 define astaSlaver = Character("Astart Pillager" , color = "#000000")

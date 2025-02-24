@@ -45,6 +45,7 @@ init:
     define alertTime = "audio/music/Under Attack.ogg" #James Hendry
     define gettingAttacked = "audio/music/Under Attack loop.ogg" #James Hendry
     define OnDaAttack = "audio/music/On the Assult Loop.ogg" #James Hendry
+    define OnDaMarch = "audio/music/On the March.ogg" #James Hendry
 
     define weGotOwned = "audio/music/Defeat.ogg" #James Hendry
     define weOwnedThem = "audio/music/Victory.ogg" #James Hendry
@@ -94,6 +95,9 @@ init:
     define littleRockets = "audio/sound effects/rocket-loop-99748.ogg"
     define littleRocketFire = "audio/sound effects/Rocket Shoot 4 Speed.ogg"
     define keyDrops = "audio/sound effects/keyDrop.ogg"
+
+    define bushOut = "audio/sound effects/086374_shaken-bush-40116.ogg"
+    define bushin = "audio/sound effects/086374_shaken-bush-40116 Backwards.ogg"
 
     define targetLock = "audio/sound effects/targeted.ogg"
 

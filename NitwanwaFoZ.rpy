@@ -3,7 +3,7 @@
 #Nitwana to Takurium Battle
 
 label minonaAndBalatiusAtKworitx:
-    "Minona and balatius do the doody"
+    #"Minona and balatius do the doody"
     #the same whipping whip
     #minona does the same orders with summoner
     #Belgius asks about xerxes near lake takuria
@@ -639,15 +639,21 @@ label NiitwanwaFoZ:
 
     if IsDaytime:
         scene clearDayTime at fullFit
-        show niitwanwaOutsideDock at left , size2Thrid
-        show xerxHappyGreetArmored at xerxLeftLeft
-        show tesipizGreetingArmored at tesiRight
+        show flatWater1 at center:
+            yzoom 0.5
+        show niitwanwaOutsideDock at left , size2Thrid:
+            yzoom 0.7
+        show xerxArmoredHappyGreet at xerxLeftLeft , size08
+        show tesipizGreetingArmored at tesiRight , size08
         show volkaraArmored greeting happyMouth at middleStand , size2Thrid
     else:
         scene starNightTime at fullFit , movingSky , darkNight
-        show niitwanwaOutsideDock at left , size2Thrid , lightCrystalLights
-        show xerxHappyGreetArmored at xerxLeftLeft , lightCrystalLights
-        show tesipizGreetingArmored at tesiRight , lightCrystalLights
+        show flatWater1 at center , flameLights:
+            yzoom 0.5
+        show niitwanwaOutsideDock at left , size2Thrid , lightCrystalLights:
+            yzoom 0.7
+        show xerxArmoredHappyGreet at xerxLeftLeft , lightCrystalLights , size08
+        show tesipizGreetingArmored at tesiRight , lightCrystalLights , size08
         show volkaraArmored greeting happyMouth at middleStand , size2Thrid ,lightCrystalLights
 
     with dissolve
@@ -655,11 +661,11 @@ label NiitwanwaFoZ:
     
     hide tesipizGreetingArmored
     if IsDaytime:
-        show tesipizNeutralHappyArmored at tesiRight
-        show volkara basic neutralHappyMouth
+        show tesipizNeutralHappyArmored at tesiRight , size08
+        show volkaraArmored basic neutralHappyMouth
     else:
-        show tesipizNeutralHappyArmored at tesiRight , lightCrystalLights
-        show volkara basic neutralHappyMouth
+        show tesipizNeutralHappyArmored at tesiRight , lightCrystalLights , size08
+        show volkaraArmored basic neutralHappyMouth
     with dissolve
     xerx "How are things going?"
     
@@ -675,20 +681,26 @@ label NiitwanwaFoZ:
     mega "The local Takura Korkins despise Astart rule."
 
     #hopefully I don't need to have IsDytime and it should just rememeber
-    show megabazus sadEyes OMouth with dissolve
+    show megabazus armored sadEyes OMouth with dissolve
     mega "Although negotiations with the local aquatics have been a bit rough."
 
     if IsDaytime:
         scene clearDayTime at fullFit
-        show niitwanwaOutsideDock at left , size2Thrid
-        show xerxPointBackArmored at xerxLeftLeft
-        show tesipizNeutralHappyArmored at tesiRight
+        show flatWater1 at center:
+            yzoom 0.5
+        show niitwanwaOutsideDock at left , size2Thrid:
+            yzoom 0.7 
+        show xerxPointBackArmored at xerxLeftLeft , size08
+        show tesipizNeutralHappyArmored at tesiRight , size08
         show volkaraArmored at middleStand , size2Thrid
     else:
         scene starNightTime at fullFit , movingSky , darkNight
-        show niitwanwaOutsideDock at left , size2Thrid , lightCrystalLights
-        show xerxPointBackArmored at xerxLeftLeft , lightCrystalLights
-        show tesipizNeutralHappyArmored at tesiRight , lightCrystalLights
+        show flatWater1 at center , flameLights:
+            yzoom 0.5
+        show niitwanwaOutsideDock at left , size2Thrid , lightCrystalLights:
+            yzoom 0.7
+        show xerxPointBackArmored at xerxLeftLeft , lightCrystalLights , size08
+        show tesipizNeutralHappyArmored at tesiRight , lightCrystalLights , size08
         show volkaraArmored at middleStand , size2Thrid , lightCrystalLights
     with dissolve
 
@@ -697,17 +709,23 @@ label NiitwanwaFoZ:
     hide tesipizNeutralHappyArmored
 
     if IsDaytime:
-        show neutralHappyXerxesArmored at xerxLeftLeft
-        show tesipizBombAndFist at tesiRight
+        show neutralHappyXerxesArmored at xerxLeftLeft , size08
+        show tesipizBombAndFist at tesiRight , size08
     else:
-        show neutralHappyXerxesArmored at xerxLeftLeft , lightCrystalLights
-        show tesipizBombAndFist at tesiRight , lightCrystalLights
+        show neutralHappyXerxesArmored at xerxLeftLeft , lightCrystalLights , size08
+        show tesipizBombAndFist at tesiRight , lightCrystalLights , size08
 
+    with dissolve
     tesi "We can explode the aquatics."
 
     hide tesipizBombAndFist
+    if IsDaytime:
+        show tesipizNeutralHappyArmored at tesiRight , size08 behind volkaraArmored
+    else:
+        show tesipizNeutralHappyArmored at tesiRight , size08 , lightCrystalLights behind volkaraArmored
     #volkara needs armored yeah pose
-    show volkaraArmored yeah happyMouth meanEyes with dissolve
+    show volkaraArmored yeah happyMouth meanEyes 
+    with dissolve
     volk "We and the locals will eat the aquatics if they attack us."
     
     if IsDaytime:
@@ -718,7 +736,7 @@ label NiitwanwaFoZ:
         show megabazus armored OMouth meanEyes at middleStand , size08 , lightCrystalLights
     with dissolve
     mega "Yeah, but I would like to have naval support and not need to fight the aquatics." #pointy 34
-    show megabazus armored sadEyes at middleStand , size08 , lightCrystalLights
+    show megabazus armored sadEyes with dissolve
     mega "So far I've only managed to get some of them to be neutral towards us."
 
     #if nightime go to bed - then talk to Koitha and Vimekkus
@@ -737,7 +755,7 @@ label NiitwanwaFoZ:
         show xerxHappyGreetArmored at xerxLeftLeft
         show megabazus point34Armored
         with dissolve
-        meag "Xerxes is with us, will you leave us alone now?"
+        mega "Xerxes is with us, will you leave us alone now?"
     else:
 
         mega "We'll rest first then you can try convincing them Xerxes."
@@ -757,10 +775,11 @@ label NiitwanwaFoZ:
     
     
     #the negoitations will work like a game
-    play music planingTime fadein 1 fadeout 1
-    scene niitwanwaInside at center
-    show koitha crossArms oMouth meanEyes
-    show vimekkus crossarms meanEyes annoyedMouth
+    play music bardaiyaBeMad fadein 1 fadeout 1
+    scene niitwanwaInside:
+        xalign 0.15 yalign 1.0
+    show vimekkus meanEyes annoyedMouth crossarms at lakatinuRight , size2Thrid
+    show koitha crossArms oMouth meanEyes at bardaiyaLeft , size2Thrid
     with dissolve
     koit "Oh great."
     show koitha annoyedMouth with dissolve
@@ -769,42 +788,50 @@ label NiitwanwaFoZ:
     show koitha base oMouth with dissolve
     koit "I don't want him here either."
     show koitha neutralEyes
-    show vimekkus point angryMouth
+    show vimekkus point angryMouth:
+        linear 1 xzoom -1.0 xalign 0.9
     with dissolve
     vimk "CAREFUL Lady Koitha!"
     show koitha annoyedMouth
     show vimekkus base
     with dissolve
-    vink "We need the Jamesians to let us live long enough for the Astarts to burn their rat-king nests."
+    vimk "We need the Jamesians to let us live long enough for the Astarts to burn their rat-king nests."
 
-    scene niitwanwaInside at left
+    scene niitwanwaInside:
+        xalign 0.75 yalign 1.0
     show xerxAnnoyedAmored at middleStand , size08
     with dissolve
     xerx "We'll let you live {b}only{/b} if you leave us alone."
     hide xerxAnnoyedAmored
     show xerx3quatPointHappyArmored at xerxLeft
     with dissolve
-    show volkaraArmored armoredClever meanEyes at tesiRight with dissolve
+    show volkaraArmored armoredClever meanEyes happyMouth at tesiRight with dissolve
     xerx "Volkara and the Takura Korkins seem keen on eating you."
 
-    scene niitwanwaInside at right
-    show koitha crossArms annoyedMouth meanEyes
-    show vimekkus crossarms meanEyes annoyedMouth
+    scene niitwanwaInside:
+        xalign 0.15 yalign 1.0
+    show vimekkus meanEyes annoyedMouth crossarms at lakatinuRight , size2Thrid
+    show koitha crossArms annoyedMouth meanEyes at bardaiyaLeft , size2Thrid
+    
     with dissolve
     menu:
         "Leave us alone and you can stay in Lake Takura.": 
             koit "Sure you will. Mr Knight man."
-            show vimekkus point angryMouth with dissolve
-            vemk "I know you have tastsetus in Zarat you want to replace us with."
+            show vimekkus point angryMouth with dissolve:
+                xalign 1.4
+            vimk "I know you have tastsetus in Zarat you want to replace us with."
             
-            scene niitwanwaInside at left
+            scene niitwanwaInside:
+                xalign 0.75 yalign 1.0
             show xerx1ArmOutHappyArmored at middleStand , size08
             with dissolve
             xerx "Do you see any tastsetu or even tastsetrotu here?"
 
-            scene niitwanwaInside at right
-            show koitha base annoyedMouth neutralEyes
-            show vimekkus crossarms meanEyes annoyedMouth
+            scene niitwanwaInside :
+                xalign 0.15 yalign 1.0
+            show vimekkus meanEyes annoyedMouth crossarms at lakatinuRight , size2Thrid
+            show koitha base annoyedMouth neutralEyes at bardaiyaLeft , size2Thrid
+            
             with dissolve
             koit "..."
 
@@ -813,7 +840,8 @@ label NiitwanwaFoZ:
             show koitha crossArms oMouth meanEyes with dissolve
             koit "But there'll be nothing to stop them comming here."
 
-            scene niitwanwaInside at left
+            scene niitwanwaInside:
+                xalign 0.75 yalign 1.0
             show xerx3quatHappyCrossArmsArmored at middleStand , size08
             with dissolve
             xerx "They haven't even spread to Lake Zwoti."
@@ -828,30 +856,35 @@ label NiitwanwaFoZ:
             xerx "And your people can move into Lake Zwoti."
 
             
-            scene niitwanwaInside at right
-            show koitha base annoyedMouth meanEyes
-            show vimekkus annoyedMouth
+            scene niitwanwaInside :
+                xalign 0.15 yalign 1.0
+            show vimekkus annoyedMouth at lakatinuRight , size2Thrid
+            show koitha base annoyedMouth meanEyes at bardaiyaLeft , size2Thrid
             with dissolve
             koit "Why would I want to get closer to you."
 
-            scene niitwanwaInside at left
+            scene niitwanwaInside:
+                xalign 0.75 yalign 1.0
             show happyXerxArmored at middleStand , size08
             with dissolve
-            xerx "Why are you living in Lake Takura."
+            xerx "Why are you living in Lake Takura then?"
 
-            scene niitwanwaInside at right
-            show koitha crossArms annoyedMouth meanEyes
-            show vimekkus crossarms meanEyes annoyedMouth
+            scene niitwanwaInside:
+                xalign 0.15 yalign 1.0
+            show vimekkus  meanEyes annoyedMouth crossarms at lakatinuRight , size2Thrid
+            show koitha crossArms annoyedMouth meanEyes at bardaiyaLeft , size2Thrid
+            
             with dissolve
             koit "Astarte promised us the sand cursed lands."
-            show koitha base OMouth neutralEyes
+            show koitha base oMouth neutralEyes
             show vimekkus angryMouth
             with dissolve
             vimk "Koitha!"
             show vimekkus base with dissolve
             vimk "The Jamesians don't care about what Astarte says or wants."
             show koitha annoyedMouth
-            show vimekkus point
+            show vimekkus point:
+                xalign 1.4
             with dissolve
             vimk "{b}{i}If{/i}{/b} you win."
             show vimekkus oMouth with dissolve
@@ -867,10 +900,11 @@ label NiitwanwaFoZ:
             show koitha base with dissolve
             koit "We won't be talking."
 
+            play music dariusTheme fadein 1.0 fadeout 1.0
             scene clearDayTime at fullFit
-            show niitwanwaPlatform at center
-            show xerx3quatAnnoyed at xerxLeft
-            show megabazus armored34 SadEyes OMouth at tesiRight
+            show niitwanwaPlatform at center , size2Thrid
+            show xerx3quatAnnoyedArmored at xerxLeft
+            show megabazus armored34 sadEyes OMouth at tesiRight
             with fade
             mega "Sometimes I think we should encourage tastsetu, tastsetrotu and shatseta to live here."
 
@@ -882,12 +916,13 @@ label NiitwanwaFoZ:
 
             hide xerx3quatAnnoyed
             show xerx3quatPointArmored at xerxLeft
-            show megabazus frown neutralEyes
+            show megabazus neutralEyes frown
             with dissolve
             xerx "Because Astarte wants them to."
-            xerx "They think like Ahrites sometimes."
+            xerx "They think like ahrites sometimes."
             hide xerx3quatPointArmored
-            show xerx3quatAnnoyed at xerxLeft
+            show xerx3quatAnnoyedArmored at xerxLeft
+            show megabazus meanEyes
             with dissolve
             mega "Integrating them is going to be a pain."
             jump afterKoithaFoz
@@ -897,7 +932,8 @@ label NiitwanwaFoZ:
             koit "I don't like them."
             koit "I don't want sand monkeys trying to flirt with me."
 
-            scene niitwanwaInside at left
+            scene niitwanwaInside:
+                xalign 0.75 yalign 1.0
             show happyXerxArmored at middleStand , size08
             with dissolve
             xerx "Other thiatsetu might."
@@ -915,13 +951,16 @@ label NiitwanwaFoZ:
             with dissolve
             xerx "Don't be an obstacle and you can hang out in your lake palace."
 
-            scene niitwanwaInside at right
-            show koitha crossArms oMouth meanEyes
-            show vimekkus crossarms meanEyes annoyedMouth
+            scene niitwanwaInside:
+                xalign 0.15 yalign 1.0
+            show vimekkus meanEyes annoyedMouth crossarms at lakatinuRight , size2Thrid
+            show koitha crossArms oMouth meanEyes at bardaiyaLeft , size2Thrid
+            
             with dissolve
             koit "You hate Astarte."
 
-            scene niitwanwaInside at left
+            scene niitwanwaInside:
+                xalign 0.75 yalign 1.0
             show happyXerxArmored at middleStand , size08
             with dissolve
             xerx "You're not Astarte."
@@ -930,9 +969,11 @@ label NiitwanwaFoZ:
             with dissolve
             xerx "Calm your titties."
 
-            scene niitwanwaInside at right
-            show koitha crossArms oMouth meanEyes
-            show vimekkus crossarms meanEyes annoyedMouth
+            scene niitwanwaInside:
+                xalign 0.15 yalign 1.0
+            show vimekkus meanEyes annoyedMouth crossarms at lakatinuRight , size2Thrid
+            show koitha crossArms oMouth meanEyes at bardaiyaLeft , size2Thrid
+            
             with dissolve
             koit "But Astarte is our Goddess."
             show koitha base with dissolve
@@ -944,12 +985,14 @@ label NiitwanwaFoZ:
             vimk "While I know some thiatsetu and tseulings who like to hang out with the forest snakehairs."
             show vimekkus angryMouth with dissolve
             vimk "I won't be."
-            show vimekkus point with dissolve
+            show vimekkus point with dissolve:
+                xalign 1.4
             vimk "This is the last time we'll talk."
             vimk "Goodbye."
 
+            play music dariusTheme fadein 1.0 fadeout 1.0
             scene clearDayTime at fullFit
-            show niitwanwaPlatform at center
+            show niitwanwaPlatform at center , size2Thrid
             show xerx3quatHappyerArmored at xerxLeft
             show megabazus armored34 at tesiRight
             with fade
@@ -968,49 +1011,60 @@ label NiitwanwaFoZ:
             jump afterKoithaFoz
 
         "What are you scared of?":
-            show vimekkus point with dissolve
+            show vimekkus point with dissolve:
+                xalign 1.5
             vimk "You."
             show koitha base oMouth
             show vimekkus base
             with dissolve
             koit "You won't let us worship Astarte."
             
-            scene niitwanwaInside at left
+            scene niitwanwaInside:
+                xalign 0.75 yalign 1.0
+
             show xerxAngryMouthOpen at middleStand , size08
             with dissolve
-            xerx "Astarte is evil."
-            scene dustCloud with dissolve
+            xerx "Astarte is evil!" with vpunch
+            scene dustCloud at fullFit with Dissolve(1.0)
             scene clearDayTime
             show astaJamesianBoarderModular at left , size2Thrid
-            with dissolve
+            with Dissolve(1.0)
             xerx "Don't you see the sands around you."
-            scene niitwanwaInside at left
+            scene niitwanwaInside:
+                xalign 0.75 yalign 1.0
             show xerxAngryMouthOpen at middleStand , size08
             with dissolve
             xerx "If it wasn't for her curse."
 
-            scene niitwanwaInside at right
-            show koitha crossArms oMouth meanEyes
-            show vimekkus meanEyes annoyedMouth
+            scene niitwanwaInside:
+                xalign 0.15 yalign 1.0
+            show vimekkus meanEyes annoyedMouth at lakatinuRight , size2Thrid
+            show koitha crossArms oMouth meanEyes at bardaiyaLeft , size2Thrid
             koit "You deserve to be cursed."
 
-            scene niitwanwaInside at left
-            show xerxAngrier at middleStand , size08
+            play music tentionTime fadein 1.0 fadeout 1.0
+            scene niitwanwaInside:
+                xalign 0.75 yalign 1.0
+            show xerxAngrier at middleStand , size08 , angryColored
             with dissolve
             xerx "{b}What did you say!?" with vpunch
             
-            scene niitwanwaInside at left
-            show koitha oMouth meanEyes
-            show vimekkus meanEyes annoyedMouth
+            scene niitwanwaInside:
+                xalign 0.15 yalign 1.0
+            show vimekkus meanEyes annoyedMouth at lakatinuRight , size2Thrid
+            show koitha oMouth meanEyes at bardaiyaLeft , size2Thrid
             with dissolve
             koit "You heard me!"
             show koitha neutralEyes
-            show vimekkus point Omouth
+            show vimekkus point oMouth at angryColored:
+                linear 0.5 xalign 1.0 xzoom -1.0
             with dissolve
+            stop music
             vimk "KOITHA!!" with vpunch
-            show vimekkus base angryMouth with dissolve
+            show vimekkus base angryMouth at defaultTint with dissolve
             vimk "I will stand by."
-            show vimekkus point oMouth with dissolve
+            show vimekkus point oMouth with dissolve:
+                xalign 1.4 xzoom 1.0
             vimk "But stay out of our lake."
 
             show vimekkus base annoyedMouth
@@ -1018,15 +1072,16 @@ label NiitwanwaFoZ:
             with dissolve
             koit "I hope Bardaiya defeats you like last time."
 
+            play music dariusTheme fadein 1.0 fadeout 1.0
             scene clearDayTime at fullFit
-            show niitwanwaPlatform at center
+            show niitwanwaPlatform at center , size2Thrid
             show xerx3quatHappyArmored at xerxLeft
             show megabazus armored34 OMouth at tesiRight
             with fade
             mega "Guess we'll be keeping our feet on dry land then."
             
             hide xerx3quatHappyArmored
-            show xerx3quatHappyerCrossArmsArmored 
+            show xerx3quatHappyerCrossArmsArmored at xerxLeft
             show megabazus neutralHappyMouth
             with dissolve
 
@@ -1034,10 +1089,10 @@ label NiitwanwaFoZ:
             hide xerx3quatHappyerCrossArmsArmored 
             show xerx3quatPointHappyArmored at xerxLeft
             with dissolve
-            xerx "And we just need to drive the land Astarts out."
+            xerx "And we just need to drive the land astarts out."
 
             hide xerx3quatPointHappyArmored
-            show xerx3quatHappyArmored
+            show xerx3quatHappyArmored at xerxLeft
             show megabazus happyMouth
             with dissolve
 
@@ -1050,73 +1105,86 @@ label afterKoithaFoz:
     call krokkosnekInTakurium
 
     #jamesians prepare to battle them
-    
+    play music planingTime fadein 1.0 fadeout 1.0
     scene clearDayTime at fullFit
+    show flatWater1 at center:
+        yzoom 0.5
     show niitwanwaOutsideDock:
-        xalign 0.0
-        linear 10 xalign 1.0
+        xalign 0.0 yalign 1.0 yzoom 0.75
+        linear 15 xalign 1.0
     #show jamesian troop types assembled in a line
     #a mix of jamesians and korkins
-    show takuraLightCavarly at halfSize:
-        xpos 0.5
-        linear 10 xpos -0.5
-    show zwotiCavarly at halfSize:
-        xpos 0.7
-        linear 10 xpos -0.3
-    show jamesianCataphract at halfSize:
-        xpos 1.3
-        linear 10 xpos 0.3
-    show zamburak at halfSize:
-        xpos 1.5
-        linear 10 xpos 0.5
-    show jamesianHeavyHorseArcher at halfSize:
-        xpos 1.8
-        linear 10 xpos 0.8 
-
-    show zwotiInfantryDude at halfSize:
-        xpos 0.1
-        linear 10 xpos -0.9
-    show zwotiInfantryLady at halfSize:
-        xpos 0.3
-        linear 10 xpos -0.7
-    show takuraSnakeArcher at halfSize:
-        xpos 0.2
-        linear 10 xpos -0.8
-    show takuraKardakes at halfSize:
-        xpos 0.6
-        linear 10 xpos -0.4
+    show takuraLightCavarly at thridSize:
+        xpos 0.3 yalign 0.7
+        linear 15 xpos -0.7
+    show zwotiCavarly at thridSize:
+        xpos 0.7 ypos -0.1
+        linear 15 xpos -0.3
+    show zamburak:
+        xpos 1.22 ypos -0.2 zoom 0.3
+        linear 15 xpos 0.22
+    show jamesianCataphract at thridSize:
+        xpos 1.0 yalign 0.7
+        linear 15 xpos 0.0
     
-    show jamesianHeavySpearDude at halfSize:
-        xpos 0.9
-        linear 10 xpos -0.1
-    show axerianInfantry at halfSize:
-        xpos 0.8
-        linear 10 xpos -0.2
-    
-    show jamesianSparabaraDude at halfSize:
-        xpos 1.3
-        linear 10 xpos 0.3
-    show jamesianHeavySpearGirl at halfSize:
-        xpos 1.1
-        linear 10 xpos 0.1
-    show jamesianLongsword at halfSize:
-        xpos 1.7
-        linear 10 xpos 0.7
+    show jamesianHeavyHorseArcher:
+        xpos 1.7 ypos -0.0 zoom 0.3
+        linear 15 xpos 0.7 
 
-    show jamesianSparabaraGirl at halfSize:
-        xpos 1.4
-        linear 10 xpos 0.4
-    show jamesianHeavyArcher at halfSize:
-        xpos 1.5
-        linear 10 xpos 0.5
-    show jamesianTakabara at halfSize:
-        xpos 1.8
-        linear 10 xpos 0.8
-    show jamesianSlinger at halfSize:
-        xpos 1.9 
-        linear 10 xpos 0.9
+    
+    show zwotiInfantryLady at thridSize:
+        xpos 0.35 yalign 1.1
+        linear 15 xpos -0.65
+    
+    
+    show takuraSnakeArcher at thridSize:
+        xpos 0.25 yalign 1.1
+        linear 15 xpos -0.75
+    show zwotiInfantryDude at thridSize:
+        xpos 0.1 yalign 1.0
+        linear 15 xpos -0.9
+    
+    show jamesianHeavySpearGirl at thridSize:
+        xpos 0.95 yalign 0.9
+        linear 15 xpos -0.05
+    
+    show axerianInfantry at thridSize:
+        xpos 0.8 yalign 1.0
+        linear 15 xpos -0.2
+    show jamesianHeavySpearDude at thridSize:
+        xpos 0.7 yalign 1.0
+        linear 15 xpos -0.3
+    show takuraKardakes at thridSize:
+        xpos 0.5 yalign 1.2
+        linear 15 xpos -0.5
+    
+    show jamesianHeavyArcher at thridSize:
+        xpos 1.54 yalign 0.9
+        linear 15 xpos 0.54
+    show jamesianSparabaraDude at thridSize:
+        xpos 1.35 yalign 1.0
+        linear 15 xpos 0.35
+    
+    
+    
+    show jamesianSparabaraGirl at thridSize:
+        xpos 1.2 yalign 1.0
+        linear 15 xpos 0.2
+    
+    
+    show jamesianTakabara at thridSize behind jamesianHeavyArcher:
+        xpos 1.72 yalign 1.1
+        linear 15 xpos 0.72
+    show jamesianSlinger at thridSize behind jamesianTakabara:
+        xpos 1.85 yalign 1.0
+        linear 15 xpos 0.85
+    
+    show jamesianLongsword at thridSize:
+        xpos 1.1 yalign 1.4
+        linear 15 xpos 0.1
+    
     with fade
-    pause 11
+    pause 16
 
     scene clearDayTime at fullFit
     show niitwanwaOutside at fullFit
@@ -1125,12 +1193,14 @@ label afterKoithaFoz:
         easein 2 xpos 0.4
         linear 1 xzoom -1.0
     with dissolve
+
     pause 3
     #scouts the korkin ostrich lady report only some of the old furry giants and
     
     scene clearDayTime at fullFit
-    show niitwanwaOutsideDock:
-        xalign 0.5
+    show flatWater1 at center:
+        yzoom 0.5
+    show niitwanwaOutsideDock at right , size2Thrid
     show megabazus armoredGreet happyMouth at size2Thrid , middleStand
     with dissolve
     mega "Oh look."
@@ -1144,8 +1214,7 @@ label afterKoithaFoz:
     mhn "They are staying in Takurium."
 
     scene clearDayTime at fullFit
-    show niitwanwaOutsideDock:
-        xalign 0.5
+    show niitwanwaOutsideDock at right , size2Thrid
     show megabazus armored happyMouth at size2Thrid , middleStand
     with dissolve
     mega "What's their forces like."
@@ -1163,13 +1232,12 @@ label afterKoithaFoz:
     mhn "But they have lots of tsetulings though."
 
     scene clearDayTime at fullFit
-    show niitwanwaOutsideDock:
-        xalign 0.5
+    show niitwanwaOutsideDock at right , size2Thrid
     show megabazus armored frown at size2Thrid , middleStand
     with dissolve
     mega "I see."
 
-    show megabazus armored34 angryMouth at flipped with dissolve
+    show megabazus armored34 angryMouth at middleStand , flipped with dissolve
     with dissolve
     show xerx3quatHappyArmored at size2Thrid:
         xpos 1.5
@@ -1179,35 +1247,40 @@ label afterKoithaFoz:
 
     show megabazus item34Armored neutralHappyMouth with dissolve
     mega "Takes these metal arrows."
-    show metalArrows at halfsize with dissolve
+    show metalArrows at halfSize with dissolve:
+        xpos 0.57 ypos 0.47
     mega "They should penitrate the tough exoskeletons of the tseulings."
 
 
     $ changeItemAmount( inventory , metalArrow , 12 )
     scene clearDayTime at fullFit
-    show niitwanwaOutsideDock:
-        xalign 0.5
+    show flatWater1 at center:
+        yzoom 0.7
+    show niitwanwaOutsideDock at center :
+        yzoom 0.5
+    with dissolve
     show metalArrows with dissolve:
+        yalign 0.5 xpos 0.1
+    show metalArrows as extraArrow with dissolve:
         yalign 0.5 xpos 0.3
-    show metalArrows with dissolve:
-        yalign 0.5 xpos 0.3
-    show metalArrows with dissolve:
-        yalign 0.5 xpos 0.3
+    show metalArrows as moarArrows with dissolve:
+        yalign 0.5 xpos 0.5
     "Megabazus gives you 12 metal arrows. They will penetrate most armor."
     #xerxes gets given armored arrows despite convidence
     #they then organize and go
 
+    play music OnDaMarch fadein 1.0 fadeout 1.0
     scene niitwanwaOutsideGate
     #xerxes with sword
     show xerxHorseWithSoAM at thridSize:
-        xpos 0.3
+        xpos 0.0 ypos -0.2
     #Tesipiz with maceaxe
     show tesipizHorseMace at thridSize:
-        xpos 0.3
+        xpos 0.18
     #volkara with Sword
     show volkaraHorsey armedSword at thridSize:
-        xpos 0.7
-    show megabazus horseCommand meanEyes happyMouth:
+        xpos 0.4
+    show megabazus horseCommand meanEyes happyMouth at halfSize:
         xpos 0.5
     with dissolve
     mega "To Takurium!!" #put him on horse
@@ -1222,6 +1295,7 @@ label afterKoithaFoz:
 label krokkosnekInTakurium:
     
     #establishing shot showing Astarts in Takurium ruins(maybe)
+    play music eeerieRuins fadein 1.0 fadeout 1.0
     scene takuriumEstablishing at centerAlignment:
         ypos 0.0
         xpos 0.5
@@ -1233,16 +1307,19 @@ label krokkosnekInTakurium:
             ypos -0.44
             zoom 0.5
             easein 8 astarteStatueIconPlacement 
+    with fade
+    pause 9
     #krokkosnek reacts if his idol has been stolen and/or the astarte statue has been destroyed.
     #the suzume hyspapist lady who chucks flaming jevilns shows up here
-    scene takuriumInisdeSutsshakWest with fade
+    scene takuriumInisdeSutsshakWest at backgroundSetPlace with fade
     if stolenDaIdolOfSutsshak:
+        play music bardaiyaBeMad fadein 1.0 fadeout 1.0
         show krokkosnekSad at middleStand , size08 with dissolve
-        krok "They stole my Sutsshak statue!!"
+        krok "They stole my Sutsshak statue!!" with vpunch
         if freedTakura:
             krok "I can understand them destroying the Astarte statue."
             hide krokkosnekSad
-            show krokkosnekScared at middleStand , size08 
+            show krokkosnekScared at middleStand , size2Thrid
             with dissolve
             krok "But my beloved Sutsshak!!"
             hide krokkosnekScared
@@ -1250,208 +1327,300 @@ label krokkosnekInTakurium:
             with dissolve
             krok "Demonic barbarians."
         else:
+            
+            scene clearDayTime
+            show takuriumOldTempleWest at centerAlignment:
+                zoom 0.7
+                xpos 1.2
+                ypos 0.7
+                xzoom 1.5
+            show sandStatueBase at centerAlignment:
+                zoom 0.5
+                yzoom 2.5
+                #xzoom 0.7
+                ypos 1.22
+                xpos 0.47
+                
+            show astarteStatue at centerAlignment:
+                zoom 0.4
+                ypos 0.4
+                xpos 0.47
+            with dissolve
             krok "The left the Astarte statue alone."
-            hide krokkosnekSad
+            scene takuriumInisdeSutsshakWest at backgroundSetPlace with fade
             show krokkosnekAngry at middleStand , size08 
             with dissolve
             krok "Do these mutated hairless rats even hate Astarte."
             #he gets dicplined for bastfamy
             hide krokkosnekAngry
             show krokkosnekAnnoyed at middleStand , size08:
+                xpos 0.5
                 linear 1 xpos 0.3
             with dissolve
             show mwejya crossarms meanEyes oMouth at size08:
-                xpos 1.5
-                easein 1 xpos 0.6
+                xpos 1.5 yalign 0.4
+                easein 1 xpos 0.4
             flameChucka "Lord Bardaiya must be desperate for elite goon commanders if he gives positions of power to blasphemers like you."
             show mwejya annoyedMouth with dissolve
             flameChucka "What did you do?"
+            scene takuriumInsideSutsshakEastLights at center
+            show krokkosnekGenderBentBoink at lightCrystalLights:
+                zoom 0.5 xalign 0.5 yalign 0.75
+            with dissolve
             flameChucka "Turn into a girl and boink him or something?" #maybe be a scene?
 
-            hide krokkosnekAnnoyed
+            scene takuriumInisdeSutsshakWest at backgroundSetPlace
             show krokkosnekSuprized at xerxLeftLeft
+            show mwejya crossarms meanEyes annoyedMouth at size08 , mwejyaRight
+            with dissolve
+            show krokkosnekSuprized at bardaiyaLeft , size08
             with dissolve
             krok "No!"
             hide krokkosnekSuprized
-            show krokkosnekAngry at middleStand , size08 
+            show krokkosnekAngry at middleStand , size08 behind mwejya
             with dissolve
             krok "It's just the jamesians hate Astarte but left her statue alone."
     else:
         show krokkosnekHappy at middleStand , size08 with dissolve
+        show wholeAssTable at centerAlignment:
+            zoom 0.5
+            xzoom 1.5
+            ypos 1.0
+        show sutsshakIdol at centerAlignment:
+            zoom 0.5
+            ypos 0.5
+        with dissolve
+        play music ratThonking fadein 1.0 fadeout 1.0
         krok "My Sutsshak!!"
         if freedTakura:
             
+            hide wholeAssTable
+            hide sutsshakIdol
             hide krokkosnekHappy
             show krokkosnekGrand at middleStand , size08:
             with dissolve
             krok "As expected they destroyed the Astarte statue but left my Sutsshak alone."
+            hide krokkosnekGrand
             show krokkosnekSuprized at middleStand , size08:
-                linear 1 xpos 0.3
+                linear 2 xalign -0.4
             with dissolve
             show mwejya crossarms meanEyes oMouth at size08:
-                xpos 1.5
-                easein 1 xpos 0.6
+                xalign 1.8 yalign 0.4
+                easein 2 xalign 0.9
             flameChucka "Lord Bardaiya must be desperate for elite goon commanders if he gives positions of power to blastfemers like you."
             show mwejya annoyedMouth 
             hide krokkosnekSuprized
             show krokkosnekAnnoyed  at xerxLeftLeft
             with dissolve
             flameChucka "What did you do?"
+
+            scene takuriumInsideSutsshakEastLights at center
+            show krokkosnekGenderBentBoink at lightCrystalLights:
+                zoom 0.5 xalign 0.5 yalign 0.75
+            with dissolve
             flameChucka "Turn into a girl and boink him or something?" #maybe have a spicy image for this - also forshadowing for bala-axerium.
             
-            hide krokkosnekAnnoyed
+            scene takuriumInisdeSutsshakWest at backgroundSetPlace
             show krokkosnekSuprized at xerxLeftLeft
+            show mwejya crossarms meanEyes annoyedMouth at size08 , mwejyaRight
+            with dissolve
+            show krokkosnekSuprized at bardaiyaLeft , size08
             with dissolve
             krok "No!"
 
             hide krokkosnekSuprized
-            show krokkosnekNeutralHappy at xerxLeftLeft
+            show krokkosnekNeutralHappy at bardaiyaLeft , size08
             with dissolve
             krok "It's just nice that even the desert demons have standards."
             hide krokkosnekNeutralHappy
-            show krokkosnekAnnoyed at xerxLeftLeft
+            show krokkosnekAnnoyed at bardaiyaLeft , size08
             with dissolve
             krok "Unlike those ahrite scum from 8 years ago."
             show mwejya oMouth with dissolve
             flameChucka "You're beginning to sound like Atazera before she turned."
             hide krokkosnekAnnoyed
-            show krokkosnekNeutralHappyPoint at xerxLeftLeft
+            show krokkosnekNeutralHappyPoint at bardaiyaLeft , size08:
+                linear 0.5 xzoom -1.0
             show mwejya basic annoyedMouth 
             with dissolve
             krok "Don't worry."
             hide krokkosnekNeutralHappyPoint
-            show krokkosnekGrand at xerxLeftLeft
+            show krokkosnekGrand at bardaiyaLeft , size08
             show mwejya suprizedPose neutralEyes happyMouth
+            with dissolve
             krok 'I knew Dargon was a treachorus self-sucker.'
         else:
 
+            scene clearDayTime
+            show takuriumOldTempleWest at centerAlignment:
+                zoom 0.7
+                xpos 1.2
+                ypos 0.7
+                xzoom 1.5
+            show sandStatueBase at centerAlignment:
+                zoom 0.5
+                yzoom 2.5
+                #xzoom 0.7
+                ypos 1.22
+                xpos 0.47
+                
+            show astarteStatue at centerAlignment:
+                zoom 0.4
+                ypos 0.4
+                xpos 0.47
+            with dissolve
             krok "And the Astarte statue is still up."
-            hide krokkosnekHappy
+            
+            scene takuriumInisdeSutsshakWest at backgroundSetPlace with fade
             show krokkosnekNeutralHappyPoint at middleStand , size08
             with dissolve
             krok "The desert demons have standards."
             hide krokkosnekNeutralHappyPoint
             show krokkosnekNeutralHappy at middleStand , size08:
-                linear 2 xpos 0.3
+                linear 2 xalign -0.4
             with dissolve
-            show mwejya suprizedPose meanEyes happyMouth:
-                xpos 1.5
-                easein 2 xpos 0.7
+            show mwejya suprizedPose meanEyes happyMouth at size08:
+                xalign 1.5 yalign 0.4
+                easein 2 xalign 0.9
             flameChucka "They fear her power."
             flameChucka "Unlike those ahrite fools."
             flameChucka "And that treasonus Atazera."
     #this is to show krokkosneks reaction and that he doesn't have accesss to high teir astart trooper types.
 
     scene clearDayTime
-    show takuriumHyengshinStreet at center
-    show krokkosnekNeutralHappy at xerxLeftLeft
-    show mwejya oMouth at tesiRight
-    with dissolve
+    play music planingTime fadein 1.0 fadeout 1.0
+    show takuriumHyengshinStreet at center , size08
+    show krokkosnekNeutralHappy at bardaiyaLeft , size08
+    show mwejya oMouth at mwejyaRight
+    with fade
     flameChucka "What's the plan Krokkosnek?"
     hide krokkosnekNeutralHappy
-    show krokkosnekNeutralHappyPoint at xerxLeftLeft
-    show mwejya neutralHappyMouth 
+    show krokkosnekNeutralHappyPoint behind mwejya:
+        xpos -0.105 yalign 0.4 zoom 0.8
+    show mwejya neutralHappyMouth:
+        xalign 1.25 
     with dissolve
     krok "Hold the ruins until Minona wrecks the Jamesians."
-    krok "If she fails She'll most likely join us."
+    krok "If she fails. She'll most likely join us."
+    hide krokkosnekNeutralHappyPoint
+    show krokkosnekAngryAround behind mwejya:
+        xpos -0.105 yalign 0.4 zoom 0.8
+    with dissolve
     krok "We need to fix the south wall as soon as possible."
     
     #thinks about the flooded ahirte tunnels
     #wants to salvage potential transformation tubes that could be there
     #krokkosnek is annoyed that he doesn't have armored giants 
-    scene takuriumGround0 at center
-    show krokkosnekAnnoyed at xerxLeftLeft
-    show mwejya at tesiRight
+    play music ahriteCavess fadein 1.0 fadeout 1.0
+    scene takuriumGround0 at center , size08
+    show krokkosnekAnnoyed at size08:
+        xpos -0.105 yalign 0.0 zoom 0.8
+    show mwejya at size08:
+        xalign 1.0 yalign 0.4
     with fade
     krok "I wish Lord Bardaiya would let me have armored giants."
+    scene ahriteCave at fullFit , underWaterTint
+    with fade
     krok "I might give the flooded tunnels a look." #ahrite tunnels
-    krok "Their might be old transformation tubes there." #ahrite base ruined and flooded
+    scene ahriteLair4Now at fullFit with fade
+    krok "There might be old transformation tubes there." #ahrite base ruined and flooded
     scene takuriumGround0 at center
-    show krokkosnekAnnoyed at xerxLeftLeft
-    show mwejya crossArms meanEyes annoyedMouth at tesiRight
+    show krokkosnekAnnoyed at size08:
+        xpos -0.105 yalign 0.0 zoom 0.8
+    show mwejya crossarms meanEyes annoyedMouth at size08:
+        xalign 1.0 yalign 0.4
     with fade
     flameChucka "I don't think you should do that."
     show mwejya suprizedPose angryMouth with dissolve
     flameChucka "Those tubes are tainted."
 
-    show yeniExtraHappy at size08:
-        xpos -0.5
-        easein 2 xpos 0.5
+    play music heroicssss fadein 1.0 fadeout 1.0
+    show yeniStandingHappy at size2Thrid behind mwejya:
+        xpos -0.5 yalign -0.2
+        easein 2 xpos 0.05
     with dissolve
-    show tipuaStandingHappy at size08:
-        xpos -0.7 
-        easein 2 xpos 0.3
+    show tipuaExtraHappy at size2Thrid behind mwejya:
+        xpos -0.7 yalign -0.2
+        easein 2 xpos 0.2
     hide krokkosnekAnnoyed
-    show krokkosnekHappy at xerxLeftLeft:
-        easein 2 xpos 0.1
-    show mwejya basic annoyedMouth
+    show krokkosnekHappy at bardaiyaLeft , size08:
+        xpos 0.3
+        easein 2 xpos 0.2
+    show mwejya basic annoyedMouth at size2Thrid:
+        easein 2 xalign 1.3
     with dissolve
     tip "We can clean them now."
-    hide yeniExtraHappy
-    hide tipuaStandingHappy
-    show tipuaStandingHappy at size08:
-        xpos 0.3
-    show yeniExtraHappy at size08:
-        xpos 0.5
+    hide yeniStandingHappy
+    hide tipuaExtraHappy 
+    show tipuaStandingHappy behind mwejya:
+        xpos 0.3 yalign 0.1 zoom 0.6
+    show yeniExtraHappy at size2Thrid behind mwejya:
+        xpos 0.05 yalign -0.2
     with dissolve
     yeni "That's why where here."
     
     hide krokkosnekHappy
-    show krokkosnekGrand at xerxLeftLeft:
-        xpos 0.1
+    show krokkosnekGrand at bardaiyaLeft , size08
+    with dissolve
     krok "I've been finding ways to scrub ahrite from this place."
 
+    play music bardaiyaBeMad fadein 1.0 fadeout 1.0
     #belgius shows up and wants to join krokkosnek in killing Xerxes
     scene clearDayTime
     show takuriumHyengshinStreet at left
     show krokkosnekNeutralHappy at xerxLeftLeft
-    show belgius34Ground happyMouth at size08:
-        xpos 1.5
-        easein 2 xpos 0.7
+    show belgius34Ground happyMouth at size2Thrid , flipped:
+        xpos 1.5 yalign 0.3
+        easein 2 xpos 0.3
+    with fade
     balaCavOf "Summoner Krokkosnek!"
     hide krokkosnekNeutralHappy
-    show krokkosnekHappy at xerxLeftLeft
+    show krokkosnekHappy at xerxLeftLeft behind belgius34Ground
     with dissolve
     show belgius34Ground neutralHappyMouth with dissolve
     krok "Yes?"
     show belgius34Ground happyMouth meanEyes
     hide krokkosnekHappy
-    show krokkosnekNeutralHappy at xerxLeftLeft
+    show krokkosnekNeutralHappy at xerxLeftLeft behind belgius34Ground
     with dissolve
     balaCavOf "Where's Xerxes?"
     balaCavOf "I heard he's here."
     hide krokkosnekNeutralHappy
-    show krokkosnekAnnoyed at xerxLeftLeft
+    show krokkosnekAnnoyed at xerxLeftLeft behind belgius34Ground
     with dissolve
     balaCavOf "I want to hunt him."
     hide krokkosnekAnnoyed
-    show krokkosnekAngryAround at xerxLeftLeft
+    show krokkosnekAngryAround at bardaiyaLeft , size08 , flipped:
+        yalign 0.5
     show belgius34Ground angryMouth neutralEyes
     with dissolve
     krok "That's a bad idea."
     hide krokkosnekAngryAround
-    show krokkosnekAngry at xerxLeftLeft
-    show belgius34Ground annoyedMouth
+    show krokkosnekAngry at xerxLeftLeft behind belgius34Ground
+    show belgius34Ground annoyedMouth 
     with dissolve
     krok "If he's around. He would be with the Jamesian Army."
     hide krokkosnekAngry
     show krokkosnekAnnoyed at xerxLeftLeft:
-        easein 1 xpos 0.5
-    with dissolve
-    show mwejya suprizedPose happyMouth at size08:
-        xpos -0.5
         easein 1 xpos 0.2
+    with dissolve
+    show belgius34Ground at size2Thrid , flipped:
+        easein 1 xpos 0.6
+    show mwejya suprizedPose happyMouth at size08:
+        xpos -0.5 yalign 0.4
+        easein 1 xpos -0.2
     flameChucka "Is Xerxes here?!"
     hide krokkosnekAnnoyed
     show krokkosnekNeutralHappyPoint at middleStand , size08
-    show mwejya neutralHappyMouth
+    show mwejya -happyMouth
     show belgius34Ground neutralHappyMouth
     with dissolve
     krok "Yes. My scouts saw him moving to the south."
     krok "He'll come here."
     
     hide krokkosnekNeutralHappyPoint
-    show krokkosnekCommanding at middleStand , size08
+    show krokkosnekCommanding at middleStand , size08:
+        yalign 0.4
     with dissolve
     krok "He killed Sakuna. He's dangerous."
     hide krokkosnekCommanding
@@ -1463,16 +1632,18 @@ label krokkosnekInTakurium:
     hide krokkosnekAngryAround
     show krokkosnekAnnoyed at middleStand , size08
     show belgius34Ground angryMouth neutralEyes
-    show mwejya neutralEyes neutralhappyMouth
+    show mwejya neutralEyes neutralHappyMouth
     with dissolve
     balaCavOf "But his artifact."
-    hide krokkosnekAngryAround
-    show krokkosnekAngryAround at middleStand , size08
+    hide krokkosnekAnnoyed
+    show krokkosnekAngryAround at middleStand , size08 behind mwejya:
+        yalign 0.5
+        easein 0.5 xzoom -1.0
     show belgius34Ground annoyedMouth
     with dissolve
-    krok "No! Stay here silly goon."
+    krok "No! Stay here silly goon." with vpunch
     hide krokkosnekAngryAround
-    show krokkosnekAnnoyed at middleStand , size08
+    show krokkosnekAnnoyed at middleStand , size08 behind mwejya
     #need eyes closed mwejya
     show mwejya suprizedPose closedEyes happyMouth
     with dissolve
@@ -1485,5 +1656,47 @@ label krokkosnekInTakurium:
     #bushes
     #mauhin snoops around and sees astart forces
     #then dissapears into the woodss
+    play music eeerieRuins fadein 3.0 fadeout 3.0
+    scene clearDayTime
+    show takruriumSouthGate:
+        xalign 0.7 yalign 0.25 yzoom 0.7
+    # 3-4 tsetulings and some thia/thiatsetu in guard mode
+    # they should be on guard or chillaxed - default images are angry moving and swimming
+    show astartCommonInfantryFemale:
+        zoom 0.15 xpos 0.52 ypos 0.26
+    show astartHopliteMale:
+        zoom 0.15 xpos 0.71 ypos 0.3
+    show minobiteSpear:
+        zoom 0.15 xpos 0.62 ypos 0.24
+    show tsetulingGuardF at quatSize:
+        xpos 0.57 ypos 0.28
+    show tsetulingGuardM2 at quatSize:
+        xpos 0.3 ypos 0.23
+    show tsetulingGuardM2 as moarKrabz at quatSize:
+        xpos 0.79 ypos 0.25
+    show tsetulingGuardM at thridSize:
+        xpos 0.36 ypos 0.24
+    show tsetulingGuardF as extraCrabgirl at thridSize:
+        xpos 0.7 ypos 0.3
+    with fade
+    pause 5
+    scene forestRepeatable:
+        xalign 0.5 yalign 0.75
+    show mauhin arms2Side at center , halfSize:
+        ypos 1.5
+        easeout 1 ypos 1.6
+        linear 3 ypos 1.45
+        easein 1 ypos 1.8
+    show bushBushy at darkGrassTint:
+        zoom 1.5 xpos 0.5 ypos 0.17
+    show bushRound at darkGrassTint:
+        zoom 1.5 xpos -0.15 ypos 0.17
+    show bushRound as extraBushs at grassTint:
+        zoom 1.5 xpos 0.18 ypos 0.18
+    with dissolve
+    play sound bushOut 
+    pause 4
+    play sound bushin
+    pause 2
 
     return
