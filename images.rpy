@@ -379,6 +379,7 @@ image shataSleepOver2 = "images/Shata Sleepover2.webp"
 image takuraSleepOver1 = "images/Takura and Tesipiz Sleeping1.webp"
 image takuraSleepOver2 = "images/Takura and Tesipiz Sleeping2.webp"
 image tesipizInTakura = "images/Takura and Tesipiz Together.webp"
+image tesipizINTakura2 = "images/Takura and Tesipiz Together2.webp"
 image takuriumAssult1 = "images/Takurium City Old Attacked.webp"
 image astartVTarminians1 = "images/Astarts vs Tarminians1.webp"
 image astartVTarminians2 = "images/Astarts vs Tarminians2.webp"
@@ -397,6 +398,9 @@ image xerxBedWithAtossa2 = "images/atossa covered sleeping on Xerxes in his bed.
 image xerxBedInAtossa = "images/atossa sleeping on Xerxes in his bed.webp"
 
 image xerxSleepsNiitwanwa = "images/Niitwanwa Sleeps.webp"
+image xerxSleepsTakurium = "images/Arena Box Sleeps.webp"
+
+image krokkosleeps = "images/Krokkosnek Sleeps.webp"
 
 image bardaiyaBedWithLakatinu = "images/Bardaiya and Lakatinu Cuddling.webp"
 
@@ -846,12 +850,16 @@ image niitwanwaInside = "images/Locations/Niitwanwa/Niitwanwa inside.webp"
 image niitwanwaCortDock = "images/Locations/Niitwanwa/Niitwanwa court and docks.webp"
 image niitwanwaPlatform = "images/Locations/Niitwanwa/Niitwanwa Platform.webp"
 
+image keudbisRoadAway = "images/Locations/Niitwanwa/Niitwanwa Platform.webp"
 image lakeTakuraShore = "images/Locations/Takurium/Take Takura Shoreline.webp"
 image oldWallFacingWall = "images/Locations/Takurium/Old Wall South.webp"
 image oldWallAwayFromWall = "images/Locations/Takurium/Old Wall south from wall.webp"
 image takuraRoadBend = "images/Locations/Takurium/Takurium road Bend.webp"
 
 image yemehEstablishing = "images/Locations/Yemeh/Yemeh Establishing.webp"
+image yemehMainStreet = "images/Locations/Yemeh/Yemeh Main Street.webp"
+image krokkosnekRoom = "images/Locations/Yemeh/Inside Yemeh Temple.webp"
+image krokkosnekBed = "images/Locations/Yemeh/Krokkosnek Bed.webp"
 
 #Takurium
 image takuriumEstablishing = "images/Locations/Takurium/Takurium City Establshing 1.webp"
@@ -1336,6 +1344,8 @@ image ostrichRider2Fleeing = "images/Enemies/astartes goons/Ostrich Raider 2 fle
 
 image astartMediumCvarly = "images/Enemies/astartes goons/Astart Medium Cavarly.webp"
 image astartMediumCvarlyFlee = "images/Enemies/astartes goons/Astart Medium Cavarly Fleeing.webp"
+
+image astartWarChariot = Composite( ( 3100 , 2000 ), (500,0) , "images/Enemies/astartes goons/Balato-Astart Slaver Whip up.webp" ,( 0,0 ), "images/Enemies/astartes goons/Orodian Archer.webp" , ( -500,400 ) , "images/animals/Astart chariot.webp" )
 #Jaka
 image jakaKhopesh = "images/Enemies/astartes goons/Jaka Khopesh low-level v1.webp"
 image jakaArcher = "images/Enemies/astartes goons/Jaka Archer Low Level.webp"
@@ -1570,6 +1580,7 @@ image lizardbiteArcher = "images/Enemies/astartes goons/Lizardbite archer.webp"
 image jakalbiteKhopeshMedium = "images/Enemies/astartes goons/Jakalbite Khopesh medium-level v1.webp"
 image minobiteSpear = "images/Enemies/astartes goons/Minobite Low level v1.webp"
 image minobiteAxe = "images/Enemies/eliete goons/Minobite Great Axe.webp"
+image minobiteArmoredAxe = "images/Enemies/eliete goons/Minobite Great Axe Armored.webp"
 
 image minobiteFallingSide = "images/Enemies/astartes goons/Minobite Archer Falling.webp" 
 
@@ -1584,9 +1595,24 @@ image ratasUnmounted = "images/Enemies/astartes goons/ratas unmounted.webp"
 image ssyayanBiterBat = "images/Enemies/astartes goons/Ssyayan Biter Bat.webp"
 image jamesianWolf = "images/Enemies/Shata and Ssatu/Jamesian Wolf Unmounted.webp"
 
+#thiatsetu
+image thiatsetuArcherAlerted = "images/Enemies/astartes goons/Thiatsetu Bow Fisher Alerted.webp"
+image thiatsetuArcherSwim = "images/Enemies/astartes goons/Thiatsetu Bow Fisher Swimming No Wata.webp"
+image thiatsetuJavelinLady = "images/Enemies/astartes goons/Thiatsetu Peltast.webp"
+image thiatsetuJavelinLadySwim = "images/Enemies/astartes goons/Thiatsetu Peltast Swimming No Wata.webp"
+
 #tsetulings
 image tsetulingGuardF = "images/Enemies/astartes goons/Tsetuling Fighter Guard.webp"
+image tsetulingGuardFAttack = "images/Enemies/astartes goons/Tsetuling Fighter.webp"
+image tsetulingGuardFSwimWet = "images/Enemies/astartes goons/tsetulingGuardFSwim.webp"
+image tsetulingGuardFSwim = "images/Enemies/astartes goons/Tsetuling Fighter Swimming No Wata.webp"
+image tsetulingGuardFSwimAway = "images/Enemies/astartes goons/Tsetuling Fighter Swim away.webp"
+
 image tsetulingGuardM = "images/Enemies/astartes goons/Tsetuling Fighter Male Guarding.webp"
+image tsetulingGuardMAttack = "images/Enemies/astartes goons/Tsetuling Fighter Male.webp"
+image tsetulingGuardMSwimWet = "images/Enemies/astartes goons/Tsetuling Fighter Male Swimming.webp"
+image tsetulingGuardMSwim = "images/Enemies/astartes goons/Tsetuling Fighter Male Swimming No Wata.webp"
+image tsetulingGuardMSwimAway = "images/Enemies/astartes goons/Tsetuling Fighter Male Swimming Away.webp"
 image tsetulingGuardM2 = "images/Enemies/astartes goons/Tsetuling Fighter Male Guarding Qhekka.webp"
 
 # Bardaiya's eleite guard
@@ -1739,10 +1765,12 @@ image krokkosnekAngryWater = "images/antagonists/Krokkosnek/Krokkosnek Angry Swi
 image krokkosnekAngry = "images/antagonists/Krokkosnek/Krokkosnek Angry.webp"
 image krokkosnekSad = Composite( (1300, 1500) , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Angry.webp" , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Sad Eyes.webp")
 image krokkosnekAnnoyed = "images/antagonists/Krokkosnek/Krokkosnek Annoyed.webp"
+image krokkosnekAnnoyedOpen = Composite( ( 1300 , 1500) , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Annoyed.webp" , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Annoyed Open Mouth.webp" )
 image krokkosnekZappingU = "images/antagonists/Krokkosnek/Krokkosnek Battle Land Ranged.webp"
 image krokkosnekZappingUNWater = "images/antagonists/Krokkosnek/Krokkosnek Battle Water Ranged.webp"
 image krokkosnekSummon = "images/antagonists/Krokkosnek/Krokkosnek Battle Land.webp"
 image krokkosnekSummonShield = "images/antagonists/Krokkosnek/Krokkosnek Battle Land Shield.webp"
+image krokkosnekLeadShield = "images/antagonists/Krokkosnek/Krokkosnek Battle Swimming.webp"
 image krokkosnekSummonNWater = "images/antagonists/Krokkosnek/Krokkosnek Grand Water Summoning.webp"
 image krokkosnekSummonShieldNWater = "images/antagonists/Krokkosnek/Krokkosnek Battle Water.webp"
 image krokkosnekCommanding = "images/antagonists/Krokkosnek/Krokkosnek Commanding.webp"
@@ -1770,6 +1798,23 @@ image tipuaHappyCoiled = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/
 image tipuaStandingHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua standing Happy.webp" 
 image tipuaExtraHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua Extra Happy.webp"
 
+layeredimage tipuaOnYou:
+    group poses:
+        attribute basic default:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua on You.webp"
+    group eyes:
+        attribute hornyEyes default:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua on You Horny Eyes.webp"
+        attribute closedEyes:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua on You Closed Eyes.webp"
+    group mouths:
+        attribute neutralHappy default:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua on You Neutral Happy Mouth.webp"
+        attribute happyMouth:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua on You Horny Mouth.webp"
+        attribute OMouth:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Tipua on You OMouth.webp"
+
 image yeni34Happy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni 34 lying happy.webp"
 image yeniAngry = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Angry.webp"
 image yeniCoiledHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Coiled Happy.webp"
@@ -1779,6 +1824,22 @@ image yeniSliveringAway = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends
 image yeniStandingHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Standing Happy.webp"
 image yeniExtraHappy = "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/Yeni Extra Happy.webp"
 
+layeredimage youOnYeni:
+    group poses:
+        attribute basic default:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/You on Yeni.webp"
+    group eyes:
+        attribute hornyEyes default:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/You on Yeni Horny Eyes.webp"
+        attribute closedEyes:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/You on Yeni Closed Eyes.webp"
+    group mouths:
+        attribute neutralHappy default:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/You on Yeni Neutral Happy Mouth.webp"
+        attribute happyMouth:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/You on Yeni Happy Mouth.webp"
+        attribute OMouth:
+            "images/antagonists/Krokkosnek/Krokkosneks Girlfriends/You on Yeni OMouth.webp"
 
 #Balatius
 image balatiusHappy = "images/antagonists/King Balatius/Balatius Happy.webp"
@@ -2645,6 +2706,7 @@ image xerxHorseMiniMad = Composite( ( 1200,2200 ) , ( 0,0 ), "images/Protagonist
 image xerxHorseYeah = "images/Protagonists/Xerxes/Xerxes Yeah Armored on Horse.webp"
 image xerxHorseYeahSoAM = "images/Protagonists/Xerxes/Xerxes Yeah Armored on Horse with soam.webp"
 image xerxHorseWithSoAM = Composite( (1200,2500) , (0,0) , "images/Protagonists/Xerxes/Xerxes Yeah Armored on Horse with soam.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes Neutral Happy Armored on Horse with soam.webp"  )
+image xerxHorseAngrySoAM = Composite( (1200,2500) , (0,0) , "images/Protagonists/Xerxes/Xerxes Yeah Armored on Horse with soam.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes Yeah Armored on Horse with soam Angry Face.webp"  )
 image xerxHorseSwordUp = "images/Protagonists/Xerxes/Xerxes 3-4 Horse Sword Up.webp"
 image xerxHorseSwordDown = "images/Protagonists/Xerxes/Xerxes 3-4 Horse Sword Down.webp"
 image xerxHorseSwordSteam = "images/Protagonists/Xerxes/Xerxes 3-4 Horse Sword Mini Sad Stream.webp"
@@ -3104,6 +3166,143 @@ image takuraWhatSitSide = "images/Protagonists/Takura/Takura Side Sitting What.w
 image takuraTesipizSnuggle1 = "images/Protagonists/Takura/Takura Tesipiz Snuggling.webp"
 image takuraTesipizSnuggle2 = "images/Protagonists/Takura/Takura Tesipiz Snuggling 2.webp"
 
+image takuraSemiCorrupted = "images/Protagonists/Takura/Takura semiCourrupted.webp"
+
+layeredimage ladyTakura:
+    group poses:
+        attribute basic default: #her arms to da side - 608 , 420
+            "images/Protagonists/Takura/Takura Neutral Happy Standing2.webp"
+        #attribute semiNekked: #basic with less clothes
+
+        attribute armsDown: #her arms coving her crotch.
+            "images/Protagonists/Takura/Takura Neutral Happy Standing.webp"
+        attribute seductive:
+            "images/Protagonists/Takura/Takura Happy Seductive.webp"
+        
+        attribute semiNekkedSective: #seductive with less clothes
+            "images/Protagonists/Takura/Takura Seminekked Seductive.webp"
+        attribute armored: #1006 , 920
+            "images/Protagonists/Takura/Takura armored.webp"
+        attribute yeah: #based on page 192
+            "images/Protagonists/Takura/Takura Yeah.webp"
+        attribute armoredYeah: #similar pose to 192 but in her old armor
+            "images/Protagonists/Takura/Takura armored Yeah.webp"
+        attribute armedArmored:
+            "images/Protagonists/Takura/Takura Fighting Scared.webp"
+
+    #xpos 402 ypos 500
+    group eyes:
+        attribute neutralEyes default if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Neutral eyes.webp"
+        attribute neutralEyes default if_any["yeah"]:
+            "images/Protagonists/Takura/Takura Neutral eyes.webp"
+            xpos 402 ypos 500
+        attribute neutralEyes default if_any["armedArmored","armoredYeah","armored"]:
+            "images/Protagonists/Takura/Takura Armored Neutral Eyes.webp"
+
+
+        attribute sadEyes if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Sad Eyes UnArmored.webp"
+        attribute sadEyes if_any["yeah"]:
+            "images/Protagonists/Takura/Takura Sad Eyes UnArmored.webp"
+            xpos 402 ypos 500
+        attribute sadEyes if_any["armedArmored","armoredYeah","armored"]:
+            "images/Protagonists/Takura/Takura Sad Eyes.webp"
+
+        
+        attribute meanEyes if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Mean Eyes.webp"
+        attribute meanEyes if_any["yeah"]:
+            "images/Protagonists/Takura/Takura Mean Eyes.webp"
+            xpos 402 ypos 500
+        attribute meanEyes if_any["armedArmored","armoredYeah","armored"]:
+            "images/Protagonists/Takura/Takura armored Mean Eyes.webp"
+
+        
+        attribute hornyEyes if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Horny Eyes.webp"
+        attribute hornyEyes if_any["yeah"]:
+            "images/Protagonists/Takura/Takura Horny Eyes.webp"
+            xpos 402 ypos 500
+        attribute hornyEyes if_any["armedArmored","armoredYeah","armored"]:
+            "images/Protagonists/Takura/Takura armored Horny Eyes.webp"
+
+        
+        attribute closedEyes if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Closed Eyes.webp"
+        attribute closedEyes if_any["yeah"]:
+            "images/Protagonists/Takura/Takura Closed Eyes.webp"
+            xpos 402 ypos 500
+        attribute closedEyes if_any["armedArmored","armoredYeah","armored"]:
+            "images/Protagonists/Takura/Takura armored Eyes Closed.webp"
+
+
+    group mouths:
+        attribute neutralHappyMouth if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Neutral Happy Mouth.webp"
+        attribute neutralHappyMouth if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Neutral Happy Mouth.webp"
+            xpos 402 ypos 500
+        attribute neutralHappyMouthLipstick if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Neutral Happy lipstick.webp"
+        attribute neutralHappyMouthLipstick if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Neutral Happy lipstick.webp"
+            xpos 402 ypos 500
+
+
+        attribute happyMouth if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Happy Mouth.webp"
+        attribute happyMouth if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Happy Mouth.webp"
+            xpos 402 ypos 500
+        attribute happyMouthLipstick if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Happy Lipstick.webp"
+        attribute happyMouthLipstick if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Happy Lipstick.webp"
+            xpos 402 ypos 500
+
+        attribute hornyMouth if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Horny Mouth.webp"
+        attribute hornyMouth if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Horny Mouth.webp"
+            xpos 402 ypos 500
+        attribute hornyMouthLipstick if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Horny Lipstick.webp"
+        attribute hornyMouthLipstick if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Horny Lipstick.webp"
+            xpos 402 ypos 500
+
+        attribute oMouth if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura OMouth.webp"
+        attribute oMouth if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura OMouth.webp"
+            xpos 402 ypos 500
+        attribute oMouthLipstick if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura OLipstick.webp"
+        attribute oMouthLipstick if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura OLipstick.webp"
+            xpos 402 ypos 500
+
+        #is based on armored so it should be inverted/ negative
+        attribute angryMouth if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Angry Mouth.webp"
+            xpos -402 ypos -500 #needs testing
+        attribute angryMouth if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Angry Mouth.webp"
+        attribute angryMouthLipstick if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Angry Lipstick.webp"
+            xpos -402 ypos -500
+        attribute angryMouthLipstick if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Angry Lipstick.webp"
+    
+    group blushes:
+        attribute blush if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Blush.webp"
+        attribute blush if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura Blush.webp"
+            xpos 402 ypos 500
+
+
 image takuraTesipizSnuggleStand:
     "images/Protagonists/Takura/Takura Tesipiz Snuggling.webp" with Dissolve( 0.1 )
     pause 0.25
@@ -3247,6 +3446,8 @@ layeredimage volkara3quat:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Nighttiem pointy.webp"
         attribute pointy:#900-1400
             "images/Protagonists/Volkara/Volkara Neutral Happy hand 3quat.webp"
+        attribute armsOut: #50 - 300
+            "images/Protagonists/Volkara/Volkara arms out 3quat.webp"
         #attribute bent:
     
     
@@ -3255,41 +3456,75 @@ layeredimage volkara3quat:
             "images/Protagonists/Volkara/Volkara 3quat neutral eyes.webp"
         attribute normalEyes default if_any["nightOutfit", "nightOutfitPointy"]:
             "images/Protagonists/Volkara/Volkara 3quat neutral eyes hood.webp"
+        attribute normalEyes default if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara 3quat neutral eyes hood.webp"
+            xpos 300
 
         attribute sadEyes if_any["basic","pointy"]:
             "images/Protagonists/Volkara/Volkara 3quat sad eyes.webp"
         attribute sadEyes if_any["nightOutfit", "nightOutfitPointy"]:
             "images/Protagonists/Volkara/Volkara 3quat sad eyes hood.webp"
+        attribute sadEyes if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara 3quat sad eyes hood.webp"
+            xpos 300
 
         attribute meanEyes if_any["basic","pointy"]:
             "images/Protagonists/Volkara/Volkara 3quat Mean Eyes.webp"
         attribute meanEyes if_any["nightOutfit", "nightOutfitPointy"]:
             "images/Protagonists/Volkara/Volkara 3quat mean eyes Hood.webp"
+        attribute meanEyes if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara 3quat mean eyes Hood.webp"
+            xpos 300
 
         attribute lineEyes if_any["basic","pointy"]:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Line Eyes.webp"
         attribute lineEyes if_any["nightOutfit", "nightOutfitPointy"]:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat line eyes hood.webp"
+        attribute lineEyes if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara Neutral Happy 3quat line eyes hood.webp"
+            xpos 300
         
         attribute closedEyes if_any["basic","pointy"]:
             "images/Protagonists/Volkara/Volkara 3quat eyes closed.webp"
         attribute closedEyes if_any["nightOutfit", "nightOutfitPointy"]:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Closed eyes hood.webp"
+        attribute closedEyes if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Closed eyes hood.webp"
+            xpos 300
 
     group mouths:
-        attribute neutralHappyMouth default:
+        attribute neutralHappyMouth default if_not["armsOut"]:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Mouth.webp"
             ypos -100
-        attribute happyMouth:
+        attribute neutralHappyMouth default if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Mouth.webp"
+            ypos -100 xpos 300
+
+        attribute happyMouth if_not["armsOut"]:
             "images/Protagonists/Volkara/Volkara 3-4 Happy Mouth.webp"
-        attribute OMouth:
+        attribute happyMouth if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara 3-4 Happy Mouth.webp"
+            xpos 300
+
+        attribute OMouth if_not["armsOut"]:
             "images/Protagonists/Volkara/Volkara 3quat Armored Omouth.webp"
             ypos -100
-        attribute OMegaMouth:
+        attribute OMouth if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara 3quat Armored Omouth.webp"
+            ypos -100 xpos 300
+
+        attribute OMegaMouth if_not["armsOut"]:
             "images/Protagonists/Volkara/Volkara 3-4 OmegaMouth.webp"
-        attribute deltaMouth:
+        attribute OMegaMouth if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara 3-4 OmegaMouth.webp"
+            xpos 300
+
+        attribute deltaMouth if_not["armsOut"]:
             "images/Protagonists/Volkara/Volkara Delta mouth 3quat.webp"
             ypos -100
+        attribute deltaMouth if_any["armsOut"]:
+            "images/Protagonists/Volkara/Volkara Delta mouth 3quat.webp"
+            ypos -100 xpos 300
             
 
 image volkara34SittingHappy = "images/Protagonists/Volkara/Volkara Sitting 3quat Neutral Happy.webp"
@@ -3364,6 +3599,10 @@ layeredimage volkaraHorsey: #1200-2500
         attribute happyMouth: 
             "images/Protagonists/Volkara/Volkara Happy Mouth.webp" #800 #1400
             xpos 290 ypos 83
+        attribute deltaMouth:
+            "images/Protagonists/Volkara/Volkara Delta Mouth.webp"
+            xpos -193 ypos 16
+
 
 #Megabazus
 layeredimage megabazus:
@@ -3378,6 +3617,8 @@ layeredimage megabazus:
             "images/Protagonists/Megabazus/Megabazus 3-4.webp"
         attribute armored34:
             "images/Protagonists/Megabazus/Megabazus 3-4 Armored.webp"
+        attribute armed34:
+            "images/Protagonists/Megabazus/Megabazus 3-4 Armored Armed.webp"
         attribute item34Armored:
             "images/Protagonists/Megabazus/Megabazus 3-4 Armored Item.webp"
         attribute point34Armored:
@@ -3388,25 +3629,25 @@ layeredimage megabazus:
             "images/Protagonists/Megabazus/Megabazus Armored Commanding Horse.webp"
 
     group eyes:
-        attribute neutralEyes default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]: #420 from top 390 from side
+        attribute neutralEyes default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored","armed34" ]: #420 from top 390 from side
             "images/Protagonists/Megabazus/Megabazus Neutral Eyes.webp"
-        attribute neutralEyes default if_any["base34","armored34","point34Armored","item34Armored" ]: #different image
+        attribute neutralEyes default if_any["base34","armored34","point34Armored","item34Armored","armed34" ]: #different image
             "images/Protagonists/Megabazus/Megabazus 3-4 Neutral Eyes.webp"
         attribute neutralEyes default if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus Neutral Eyes.webp" #340 from top 630 from side
             ypos -83 xpos 230
         
-        attribute meanEyes if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored"  ]:
+        attribute meanEyes if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored","armed34"  ]:
             "images/Protagonists/Megabazus/Megabazus Mean Eyes.webp"
-        attribute meanEyes if_any["base34","armored34","point34Armored","item34Armored" ]:
+        attribute meanEyes if_any["base34","armored34","point34Armored","item34Armored","armed34" ]:
             "images/Protagonists/Megabazus/Megabazus 3-4 Mean Eyes.webp"
         attribute meanEyes if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus Mean Eyes.webp"
             ypos -83 xpos 230
         
-        attribute sadEyes if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored"  ]:
+        attribute sadEyes if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored","armed34"  ]:
             "images/Protagonists/Megabazus/Megabazus Sad Face.webp"
-        attribute sadEyes if_any["base34","armored34","point34Armored" ]:
+        attribute sadEyes if_any["base34","armored34","point34Armored","armed34" ]:
             "images/Protagonists/Megabazus/Megabazus 3-4 Sad Eyes.webp"
         attribute sadEyes if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus Sad Face.webp"
@@ -3414,41 +3655,41 @@ layeredimage megabazus:
         
         
     group mouths:
-        attribute neutralHappyMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+        attribute neutralHappyMouth default if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored","armed34" ]:
             "images/Protagonists/Megabazus/Megabazus Neutral Happy Mouth.webp"
-        attribute neutralHappyMouth default if_any["base34","armored34","point34Armored","item34Armored"]:
+        attribute neutralHappyMouth default if_any["base34","armored34","point34Armored","item34Armored","armed34"]:
             "images/Protagonists/Megabazus/Megabazus 3-4 Neutral Happy Mouth.webp" 
         attribute neutralHappyMouth default if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus Neutral Happy Mouth.webp"
             ypos -84 xpos 230
 
-        attribute happyMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+        attribute happyMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored","armed34" ]:
             "images/Protagonists/Megabazus/Megabazus Happy Mouth.webp"
-        attribute happyMouth if_any["base34","armored34","point34Armored","item34Armored"]:
+        attribute happyMouth if_any["base34","armored34","point34Armored","item34Armored","armed34"]:
             "images/Protagonists/Megabazus/Megabazus 3-4 Happy Mouth.webp" 
         attribute happyMouth if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus Happy Mouth.webp"
             ypos -84 xpos 230
 
-        attribute OMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+        attribute OMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored","armed34" ]:
             "images/Protagonists/Megabazus/Megabazus OMouth.webp"
-        attribute OMouth if_any["base34","armored34","point34Armored","item34Armored"]:
+        attribute OMouth if_any["base34","armored34","point34Armored","item34Armored","armed34"]:
             "images/Protagonists/Megabazus/Megabazus 3-4 OMouth.webp" 
         attribute OMouth if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus OMouth.webp"
             ypos -84 xpos 230
 
-        attribute angryMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+        attribute angryMouth if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored","armed34" ]:
             "images/Protagonists/Megabazus/Megabazus Angry Mouth.webp"
-        attribute angryMouth if_any["base34","armored34","point34Armored","item34Armored"]:
+        attribute angryMouth if_any["base34","armored34","point34Armored","item34Armored","armed34"]:
             "images/Protagonists/Megabazus/Megabazus 3-4 Angry Mouth.webp" 
         attribute angryMouth if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus Angry Mouth.webp"
             ypos -84 xpos 230
         
-        attribute frown if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored" ]:
+        attribute frown if_not["base34","armored34","horse","horseCommand","point34Armored","item34Armored","armed34" ]:
             "images/Protagonists/Megabazus/Megabazus Frown.webp"
-        attribute frown if_any["base34","armored34","point34Armored","item34Armored"]:
+        attribute frown if_any["base34","armored34","point34Armored","item34Armored","armed34" ]:
             "images/Protagonists/Megabazus/Megabazus 3-4 Frown.webp" 
         attribute frown if_any["horse","horseCommand"]:
             "images/Protagonists/Megabazus/Megabazus Frown.webp"
@@ -3916,8 +4157,40 @@ layeredimage mauhin:
             xpos 207 ypos 70
 
     #takurium shopkeep
+layeredimage dyonisisngwa:
+    group poses:
+        attribute basic default:
+            "images/NPCs/Takuria/Dyonisisngwa.webp"
+        attribute item:
+            "images/NPCs/Takuria/Dyonisisngwa Item.webp"
+        attribute claws:
+            "images/NPCs/Takuria/Dyonisisngwa Mad.webp"
+        attribute greet:
+            "images/NPCs/Takuria/Dyonisisngwa Greeting.webp"
+        attribute snekDown:
+            "images/NPCs/Takuria/Dyonisisngwa Sad.webp"
 
-    #zarato-takurian shopkeep
+    group eyes:
+        attribute neutralEyes default:
+            "images/NPCs/Takuria/Dyonisisngwa Neutral Eyes.webp"
+        attribute meanEyes:
+            "images/NPCs/Takuria/Dyonisisngwa Mean Eyes.webp"
+        attribute sadEyes:
+            "images/NPCs/Takuria/Dyonisisngwa Sad Eyes.webp"
+
+    group mouthes:
+        attribute neutralHappyMouth default:
+            "images/NPCs/Takuria/Dyonisisngwa Neutral Happy Mouth.webp"
+        attribute happyMouth:
+            "images/NPCs/Takuria/Dyonisisngwa Happy Mouth.webp"
+        attribute OMouth:
+            "images/NPCs/Takuria/Dyonisisngwa OMouth.webp"
+        attribute angryMouth:
+            "images/NPCs/Takuria/Dyonisisngwa Angry Mouth.webp"
+        attribute frown:
+            "images/NPCs/Takuria/Dyonisisngwa.webp"
+
+    #zarato-takurian shopkeep do when doing the AST version of the Return to Takurium
 
 #Jamesian Troopers
 image jamesianHeavySpearDude = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Boy.webp"
@@ -3926,6 +4199,9 @@ image jamesianHeavySpearGirlGreeting = "images/NPCs/Jamesia/Troopers/Jamesian He
 image jamesianSparabaraDude = "images/NPCs/Jamesia/Troopers/Ssatrotu Sparabara Dude(Jamesian).webp"
 image jamesianSparabaraGirl = "images/NPCs/Jamesia/Troopers/Ssatrotu Sparabara Lady(Jamesian).webp"
 image jamesianHeavyArcher = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer.webp"
+image jamesianHeavyArcherHappy = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Neutral Happy.webp"
+image jamesianHeavyArcherSuprized = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Suprized.webp"
+image jamesianHeavyArcherAlerted = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Alerted.webp"
 image jamesianHeavyHorseArcher = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Horse Archer.webp"
 image jamesianLongsword = "images/NPCs/Jamesia/Troopers/Jamesian Longsword Trooper.webp"
 image jamesianTakabara = "images/NPCs/Jamesia/Troopers/Takabara.webp"

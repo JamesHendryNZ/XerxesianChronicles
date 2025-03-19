@@ -18,21 +18,7 @@ label ToZarat:
     #mabe some flames to show pillaging
     #call middleJamesosRealmMap
     
-    #done here because 
-    $ xerxesCharacter.updateMount( cataphractHorseXerx )  
-    $ tesipizCharacter.updateMount( cataphractHorseTesipiz )  
-    $ volkaraCharacter.updateMount( cataphractHorseXerx ) 
-
-    $ xerxesCharacter.updateArmor( 1 )
-    $ tesipizCharacter.updateArmor( 1 )
-    $ volkaraCharacter.updateArmor( 1 )
-
-    $ changeItemAmount ( inventory , tesiDoll , 1 )#tesipiz finds another doll somewhere
-    $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ]
-
-    #forgot to give Volkara her weapons - placed here so that the players won't notice
-    $ volkaraCharacter.rangedWeapon = compositeBow
-    $ volkaraCharacter.weapon = jamesianSword
+    call setUpgradeAfterSoAM #sets up variables that I forgot to before getting to the the label jump
 
     play music wonderStars fadein 3
     window hide dissolve
