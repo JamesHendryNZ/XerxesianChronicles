@@ -1,5 +1,25 @@
 
 
+label takuriumWinsFoZFromNiitwana:
+    $ enteringFrom = "TakuriumStay"
+    #victory celebrations
+    #xerxes' moment
+    #shop and crafting time
+    #talking about their next moves
+    #They mention atazera and her rebellion
+    jamesTroopas "YEAH!!"
+    jamesTroopas "VICTORY!!"
+    
+    if freedTakura:
+        tesi "Let free Lady Takura"
+        scene takuraFreedAST at center , size2Thrid
+    else:
+        jamesTroopas "There is someone stuck in a hole on Temple hill."
+        tesi "What really?"
+        tesi "Let's see."
+        scene takuraFreedAST at center , size2Thrid
+    #they free lady Takura
+
 label takuriumWinsFoZ:
     
     $ enteringFrom = "TakuriumStay"
@@ -273,7 +293,7 @@ label TakuriumFozEvening:
         taku "They're filled with water and have teeth."
         taku "I'll take you too them."
 
-        #go to ahrite hole
+        #go to ahrite hole - the one on main street with the teeth
 
         taku "See that purple spots and veins."
         taku "It looked like that but with glowing purple sludge."
@@ -358,34 +378,24 @@ label TakuriumFozEvening:
         if freedTakura:
             taku "Want to share a bed with me Tesipiz and Xerxes?"
             menu:
-                "Tesipiz and Xerxes yes" if headPatCounter < 10:
-                    xerx "I guess I can make Ato'ssa a little jelous."#maybe out of character?
-                    tesi "I get to hug the 8-foot korkin lady?"
-                    tesi "Of corse I would."
-                    $ takuraCuddles += 4
-                "Just Tesipiz yes":
+                "Yes":
                     tesi "I get to hug the 8-foot korkin lady?"
                     tesi "Of corse I would."
                     xerx "I'll sleep in my own bed."
 
                     $ takuraCuddles += 3
+                    jump aftaMenuTakuraAndDuoAsk
                 "No. We're fine":
                     if muwaCuddleCounter >= takuraCuddles:
                         tesi "I'm saving myself for Muwa."
                         tesi "I like fluffy girls now."
                         taku "Oah. O.K"
-                        taku "Xerxes?"
-                        if headPatCounter > 13 or atoBoinks > 0:
-                            xerx "I have got girl already."
-                            xerx "I want her to be happy."
-                            xerx "She's fun to hang around with."
-                        elif headPatCounter > 6:
-                            xerx "I have got a girl already."
-                            xerx "She's fun to hang around with."
-                        else:
-                            xerx "I'm not interested Takura."
-                    taku "Oah."
-                    taku "Suit yourself."
+label aftaMenuTakuraAndDuoAsk:            
+    taku "Xerxes?"
+
+    xerx "I'm not interested Takura."
+    taku "Oah."
+    taku "Suit yourself."
     call gilgamoriumRebelsWin
 
     #another shop time/craft - maybe
@@ -418,6 +428,8 @@ label krokkosnekDeafeatFoz:
     tip "Hopefully Minona will slay them all."
     krok "I hope so."
 
+    #krokkosnek inside yemeh temple
+    #minona is in kwortix mine living quaters (muwa room)
     mino "I hope Takurium is back in your hands."
     krok "..."
     mino "Rats!!"
@@ -456,6 +468,8 @@ label krokkosnekDeafeatFoz:
     menu: #this is most liekly to get cut if time starts running thin.
         "Boink Tipua":
             "Boinkboibkboibk"
+            # horny eyes - closed eyes
+            # happy mouth - OMouth - neutral happy
         "Boink Yeni":
             "Boinkboibkboibk"
         "Just cuddles":

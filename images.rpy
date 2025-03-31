@@ -412,6 +412,9 @@ image zaratVsZardonia = "images/Zardonians vs Zaratians.webp"
 image tastsetuVsZardonians = "images/Zardonians vs ZaraTastsetu.webp"
 image underwaterBattle1 = "images/Underwater battle.webp"
 image gilgamoriumParty = "images/Gilgamorium Party.webp"
+
+image takuraFreedAST = "images/Freeing Takura AST Version.webp"
+image takuraFreedFoZ = "images/Freeing Takura FoZ Version.webp"
 #skyboxes
 
 image clearDayTime = "images/Location Accessories/Day Sky Plain.webp"
@@ -1303,6 +1306,7 @@ image axerianInfJavelins = "images/Enemies/astartes goons/Astarto-Axerian Javeli
 image axerianInfantry = "images/Enemies/astartes goons/Astarto-Axerian Spear.webp"
 
 image zwotiInfantryDude = "images/NPCs/Takuria/Zwoti Infantry Male.webp"
+image zwotiInfantryDudeYeah = "images/NPCs/Takuria/Zwoti Infantry Male Yeah.webp"
 image zwotiInfantryLady = "images/NPCs/Takuria/Zwoti Black Armor Infantry Female.webp"
 
 image takuraSnakeArcher = "images/NPCs/Takuria/Takurian Snake Archer.webp"
@@ -1324,11 +1328,13 @@ image kazwiianSpear = "images/Enemies/astartes goons/Heavy Spear inf Kazwiian Fe
 
 image astartCommonInfantryMale = "images/Enemies/astartes goons/Astart Common Infantry Male1 v1.webp"
 image astartCommonInfantryFemale = "images/Enemies/astartes goons/Astart Common Infantry Female1 v1.webp"
+image astartCommonInfantryFemaleFlee = "images/Enemies/astartes goons/Astart Common Infantry Female1 Fleeing.webp"
 image astartCommonCavarlyMale = "images/Enemies/astartes goons/Astart Common Cavarly.webp"
 image astartCommonCavarlyFemale = "images/Enemies/astartes goons/Astart Common Cavarly Female.webp"
 
 image astartHopliteFemale = "images/Enemies/astartes goons/Astart Hoplite Female 1 v1.webp"
 image astartHopliteMale = "images/Enemies/astartes goons/Astart Hoplite Male1 v1.webp"
+image astartHopliteMaleFlee = "images/Enemies/astartes goons/Astart Hoplite Male1 Flee.webp"
 image astartHopliteMale2 = "images/Enemies/astartes goons/Astart Hoplite Male2.webp"
 image astartHopliteMale2Back = "images/Enemies/astartes goons/Astart Hoplite Male2 Back.webp"
 image astartSlinger = "images/Enemies/astartes goons/Astart Slinger Low Level v1.webp"
@@ -1359,6 +1365,8 @@ image faronianAxNakedFemale = "images/Enemies/astartes goons/Faronian Axe Naked 
 #Balatians
 image balatianNekkedAxeWoman = "images/Enemies/astartes goons/Balatian Axe Naked Female v1.webp"
 #image balatianAmoredAx = "images/Enemies/astartes goons/Balatian Axe Armored Female v1.webp"
+image balatianArcher = "images/Enemies/astartes goons/Balatian Archer.webp"
+image balatianArcherFlee = "images/Enemies/astartes goons/Balatian Archer Flee.webp"
 image balaAstartWhippa = "images/Enemies/astartes goons/Balato-Astart Slaver.webp"
 image balaAstartWhippaWhipping: 
     "images/Enemies/astartes goons/Balato-Astart Slaver Whip up.webp"
@@ -1372,6 +1380,7 @@ image astartBalatianLancerCharge = "images/Enemies/astartes goons/balatian light
 
 #Suzumites
 image heavySuzumiteFemaleSpear = "images/Enemies/astartes goons/Heavy Spear inf Suzumite Female Shield.webp"
+image suzumiteKaetratius = "images/Enemies/astartes goons/Suzumite Kaetratius Melee.webp"
 
 #Ordoians
 image ordonianKaetratiiMaleNeko = "images/Enemies/astartes goons/Ordonian Kaetratii Male nekomini v1.webp"
@@ -1385,7 +1394,10 @@ image orodianCavarly = "images/Enemies/astartes goons/Orodian Light Cavarly.webp
 #Thians
 image thiaMaceMale = "images/Enemies/astartes goons/Thia mace male v1.webp"
 image thiaSpear = "images/Enemies/astartes goons/Thia Spear Infantry Female low level v1.webp"
+image thiaSpearMale = "images/Enemies/astartes goons/Thia Armored Spear male.webp"
 image astartoThiaKhopeshFemale = "images/Enemies/astartes goons/Astarto-Thia Khopesh Female v1.webp"
+image thiamaceFemale = "images/Enemies/astartes goons/Thia Mace Infantry Female.webp"
+image thiaMaceFemaleFlee = "images/Enemies/astartes goons/Thia Mace Infantry Female Flee.webp"
 
 #Shata
 image shataSpear = "images/Enemies/Shata and Ssatu/Shata Speardude Yeah.webp"
@@ -1598,8 +1610,10 @@ image jamesianWolf = "images/Enemies/Shata and Ssatu/Jamesian Wolf Unmounted.web
 #thiatsetu
 image thiatsetuArcherAlerted = "images/Enemies/astartes goons/Thiatsetu Bow Fisher Alerted.webp"
 image thiatsetuArcherSwim = "images/Enemies/astartes goons/Thiatsetu Bow Fisher Swimming No Wata.webp"
+image thiatsetuArcherSwimAway = "images/Enemies/astartes goons/Thiatsetu Bow Fisher Swimming Away.webp"
 image thiatsetuJavelinLady = "images/Enemies/astartes goons/Thiatsetu Peltast.webp"
 image thiatsetuJavelinLadySwim = "images/Enemies/astartes goons/Thiatsetu Peltast Swimming No Wata.webp"
+image thiatsetuJavelinLadySwimAway = "images/Enemies/astartes goons/Thiatsetu Peltast Swimming Away.webp"
 
 #tsetulings
 image tsetulingGuardF = "images/Enemies/astartes goons/Tsetuling Fighter Guard.webp"
@@ -2894,6 +2908,7 @@ image tesipiz34PointingForward = "images/Protagonists/Tesipiz/Tesipiz 3-4 pointi
 image tesipiz34MiniSmugArmored = "images/Protagonists/Tesipiz/Tesipiz armored.webp"
 image tesipiz34MiniHappyArmored = "images/Protagonists/Tesipiz/Tesipiz 3-4 slightly happy armored.webp"
 image tesipiz34HappyArmored = "images/Protagonists/Tesipiz/Tesipiz armored 3-4 Happy.webp"
+image tesipiz34MeanHappyArmored = "images/Protagonists/Tesipiz/Tesipiz armored 3-4 100-70.webp"
 image tesipiz34Commanding = "images/Protagonists/Tesipiz/Tesipiz 3-4 Commanding.webp"
 image tesipiz34MiniCommanding = "images/Protagonists/Tesipiz/Tesipiz 3-4 Mini Commanding.webp"
 image tesipiz34MiniCommandingArmored = "images/Protagonists/Tesipiz/Tesipiz armored 3-4 Mini Commanding.webp"
@@ -2934,6 +2949,7 @@ image tesipizEyeDollIn:
 image tesipiz34LookingDown = "images/Protagonists/Tesipiz/Tesipiz 3-4 unarmored Looking Down.webp"
 image tesipiz34LookingDownArmored = "images/Protagonists/Tesipiz/Tesipiz looking down armored.webp"
 image tesipiz34LookingDownSad = "images/Protagonists/Tesipiz/Tesipiz 3-4 unarmored Looking Down Sad.webp"
+image tesipiz34LookingDownSadArmored = Composite( ( 600,1400 ) , ( 0,0 ) , "images/Protagonists/Tesipiz/Tesipiz looking down armored.webp" , ( 0,0 ) , "images/Protagonists/Tesipiz/Tesipiz looking down armored Sad.webp" )
 image tesipiz34LookingDownAnnoyed = "images/Protagonists/Tesipiz/Tesipiz 3-4 unarmored Looking Down Annoyed.webp"
 image tesipiz34LookingDownAnnoyedArmored = "images/Protagonists/Tesipiz/Tesipiz looking down armored annoyed.webp"
 
@@ -3172,13 +3188,18 @@ layeredimage ladyTakura:
     group poses:
         attribute basic default: #her arms to da side - 608 , 420
             "images/Protagonists/Takura/Takura Neutral Happy Standing2.webp"
-        #attribute semiNekked: #basic with less clothes
-
+      
         attribute armsDown: #her arms coving her crotch.
             "images/Protagonists/Takura/Takura Neutral Happy Standing.webp"
         attribute seductive:
             "images/Protagonists/Takura/Takura Happy Seductive.webp"
+        attribute greeting:
+            "images/Protagonists/Takura/Takura Greeting.webp"
+        attribute pointing:
+            "images/Protagonists/Takura/Takura Point.webp"
         
+        attribute semiNekked: #basic with less clothes
+            "images/Protagonists/Takura/Takura Neutral Happy Standing SemiNekked.webp"
         attribute semiNekkedSective: #seductive with less clothes
             "images/Protagonists/Takura/Takura Seminekked Seductive.webp"
         attribute armored: #1006 , 920
@@ -3294,6 +3315,17 @@ layeredimage ladyTakura:
             xpos -402 ypos -500
         attribute angryMouthLipstick if_any["armedArmored","armoredYeah","armored","yeah"]:
             "images/Protagonists/Takura/Takura Angry Lipstick.webp"
+
+        attribute aMouth if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura AMouth.webp"
+        attribute aMouth if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura AMouth.webp"
+            xpos 402 ypos 500
+        attribute aMouthLipstick if_not["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura AMouth Lipstick.webp"
+        attribute aMouthLipstick if_any["armedArmored","armoredYeah","armored","yeah"]:
+            "images/Protagonists/Takura/Takura AMouth Lipstick.webp"
+            xpos 402 ypos 500
     
     group blushes:
         attribute blush if_not["armedArmored","armoredYeah","armored","yeah"]:
@@ -3307,6 +3339,13 @@ image takuraTesipizSnuggleStand:
     "images/Protagonists/Takura/Takura Tesipiz Snuggling.webp" with Dissolve( 0.1 )
     pause 0.25
     "images/Protagonists/Takura/Takura Tesipiz Snuggling 2.webp" with Dissolve( 0.1 )
+    pause 0.25
+    repeat
+
+image takuraTesipizSnuggleStandLipstick:
+    "images/Protagonists/Takura/Takura Tesipiz Snuggling L.webp" with Dissolve( 0.1 )
+    pause 0.25
+    "images/Protagonists/Takura/Takura Tesipiz Snuggling 2L.webp" with Dissolve( 0.1 )
     pause 0.25
     repeat
 
@@ -3412,6 +3451,8 @@ layeredimage volkara3quatArmored:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat armored.webp"
         attribute bentStand:
             "images/Protagonists/Volkara/Volkara arms forward 3quat armored.webp"
+        attribute pointy:
+            "images/Protagonists/Volkara/Volkara pointy 3quat armored.webp"
     
     group eyes:
         attribute normalEyes default:
@@ -3420,6 +3461,8 @@ layeredimage volkara3quatArmored:
             "images/Protagonists/Volkara/Volkara Sad Eyes 3quat armored.webp"
         attribute meanEyes:
             "images/Protagonists/Volkara/Volkara Mean Eyes 3quat armored.webp"
+        attribute closedEyes:
+            "images/Protagonists/Volkara/Volkara Closed Eyes armored.webp"
 
     group mouths:
         attribute neutralHappyMouth default:
@@ -3623,6 +3666,8 @@ layeredimage megabazus:
             "images/Protagonists/Megabazus/Megabazus 3-4 Armored Item.webp"
         attribute point34Armored:
             "images/Protagonists/Megabazus/Megabazus 3-4 Armored Point.webp"
+        attribute pointBackArmored:
+            "images/Protagonists/Megabazus/Megabazus Armored Point Back.webp"
         attribute horse:
             "images/Protagonists/Megabazus/Megabazus Armored Based Horse.webp"
         attribute horseCommand:
@@ -4196,7 +4241,9 @@ layeredimage dyonisisngwa:
 image jamesianHeavySpearDude = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Boy.webp"
 image jamesianHeavySpearGirl = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Girl.webp"
 image jamesianHeavySpearGirlGreeting = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Girl greeting.webp"
+image jamesianHeavySpearGirlYeah = Composite( ( 900,1800 ), ( 0,0 ) , "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Girl greeting.webp" , ( 0,0 ) , "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Girl Yeah Face.webp")
 image jamesianSparabaraDude = "images/NPCs/Jamesia/Troopers/Ssatrotu Sparabara Dude(Jamesian).webp"
+image jamesianSparabaraDudeYeah = "images/NPCs/Jamesia/Troopers/Ssatrotu Sparabara Dude(Jamesian) Yeah.webp"
 image jamesianSparabaraGirl = "images/NPCs/Jamesia/Troopers/Ssatrotu Sparabara Lady(Jamesian).webp"
 image jamesianHeavyArcher = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer.webp"
 image jamesianHeavyArcherHappy = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Neutral Happy.webp"
@@ -4230,6 +4277,8 @@ layeredimage koitha:
             "images/NPCs/Astart Cilivians/Koitha.webp"
         attribute crossArms:
             "images/NPCs/Astart Cilivians/Koitha Crossarms.webp"
+        attribute suprized:
+            "images/NPCs/Astart Cilivians/Koitha Suprized Pose.webp"
     group eyes:
         attribute neutralEyes default:
             "images/NPCs/Astart Cilivians/Koitha Neutral Eyes.webp"
@@ -4247,6 +4296,8 @@ layeredimage koitha:
             "images/NPCs/Astart Cilivians/Koitha Annoyed Mouth.webp"
         attribute oMouth:
             "images/NPCs/Astart Cilivians/Koitha OMouth.webp"
+        attribute gritteeth:
+            "images/NPCs/Astart Cilivians/Koitha Grit Teeth.webp"
         #vimekkus
 layeredimage vimekkus:
     group poses:

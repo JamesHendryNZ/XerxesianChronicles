@@ -500,6 +500,13 @@ label march2TakuriumFoz:
     $ enemyTroopers.append( balatianHeavyAxe )
     $ enemyTroopers.append( suzumiteSpear )
 
+    $ xerxesCharacter.updateMount( noMount )
+    $ tesipizCharacter.updateMount( noMount )
+    $ volkaraCharacter.updateMount( noMount )
+
+    $ xerxesCharacter.updateStats(  )
+    $ tesipizCharacter.updateStats(  )
+    $ volkaraCharacter.updateStats(  )
     show mwejya commnadingShield angryMouth meanEyes at xerxLeftLeft , thridSize with dissolve
     show krokkosnekZappingU at tesiRight , thridSize , flipped with dissolve
     flameChucka "They've pushed through!!"
@@ -612,15 +619,103 @@ label march2TakuriumFoz:
     
     #fleeing infantry - swimmig infantry.
     #who should be the fleers? 
-    #think of the troopers deployed - thia mace female (she talks to minona) - the 2 thiatsetus (jav and bow) and the tsetulings.
-    #land infantry present
-    #land troopers flee by boat.
+    #use gilgamorium boat flee as basis
+    #so for flee grafics
+    #thia mace lady
+    #astart hoplite dude
+    #astart common infantry lady
+    #balatian archer
+    #the 2 thiatsetu units
+
+    scene clearDayTime
+    show flatWater1 at halfSize , center
+    show astartLandingBoatFront at center , thridSize
+    show astartLandingBoatMast at center , thridSize
+    show takuriumDocks at right , size2Thrid
+
+    show thiaMaceFemaleFlee:
+        xpos -0.5 ypos 0.5 matrixcolor OpacityMatrix(1.0)
+        easein 2 xpos 0.4 ypos 0.25 zoom 0.5
+        easeout 1 ypos 0.2 zoom 0.01 xanchor 0.5 xpos 0.5 ypos 0.3  matrixcolor OpacityMatrix(0.0)
+    pause 0.25
+    show astartHopliteMaleFlee:
+        xpos 0.5 ypos 0.5 matrixcolor OpacityMatrix(1.0)
+        easein 2 xpos 0.4 ypos 0.25 zoom 0.5
+        easeout 1 ypos 0.2 zoom 0.01 xanchor 0.5 xpos 0.5 ypos 0.3  matrixcolor OpacityMatrix(0.0)
+    pause 0.25
+    show balatianArcherFlee:
+        xpos 1.5 ypos 0.5 matrixcolor OpacityMatrix(1.0)
+        easein 2 xpos 0.4 ypos 0.25 zoom 0.5
+        easeout 1 ypos 0.2 zoom 0.01 xanchor 0.5 xpos 0.5 ypos 0.3  matrixcolor OpacityMatrix(0.0)
+    pause 0.25
+    show astartCommonInfantryFemaleFlee:
+        xpos -0.5 ypos 0.5 matrixcolor OpacityMatrix(1.0)
+        easein 2 xpos 0.4 ypos 0.25 zoom 0.5
+        easeout 1 ypos 0.2 zoom 0.01 xanchor 0.5 xpos 0.5 ypos 0.3 matrixcolor OpacityMatrix(0.0)
+    pause 2.5
+
+    show astartLandingBoatRampUp at center , thridSize behind takuriumDocks with dissolve
+    hide astartCommonInfantryFemaleFlee
+    hide balatianArcherFlee
+    hide astartHopliteMaleFlee
+    hide thiaMaceFemaleFlee
+
+    pause 0.5
+
+    show astartLandingBoatFront at center , thridSize:
+        easein 10 yalign 0.5 ypos 0.5 zoom 0.01 matrixcolor OpacityMatrix(1.0)
+        linear 1 matrixcolor OpacityMatrix(0.0)
+    show astartLandingBoatMast at center , thridSize:
+        easein 10 yalign 0.5 ypos 0.5 zoom 0.01 matrixcolor OpacityMatrix(1.0)
+        linear 1 matrixcolor OpacityMatrix(0.0)
+    show astartLandingBoatRampUp at center , thridSize:
+        easein 10 yalign 0.5 ypos 0.5 zoom 0.01 matrixcolor OpacityMatrix(1.0)
+        linear 1 matrixcolor OpacityMatrix(0.0)
+    show tsetulingGuardFSwimAway at center , thridSize behind takuriumDocks:
+        xpos 0.3
+        easein 10 yalign 0.5 ypos 0.5 zoom 0.01 matrixcolor OpacityMatrix(1.0)
+        linear 1 matrixcolor OpacityMatrix(0.0)
+    show tsetulingGuardMSwimAway at center , thridSize behind takuriumDocks:
+        xpos 0.3
+        easein 10 yalign 0.5 ypos 0.5 zoom 0.01 matrixcolor OpacityMatrix(1.0)
+        linear 1 matrixcolor OpacityMatrix(0.0)
+
+    pause 12
 
     scene clearDayTime
     show takuriumMainStreet at backgroundSetPlace
     with dissolve
-    #winning - need yeah poses for jamesian troopers - sparabara lady , infantry and 2 other types
-
+    if deafeatedKrokkosnek:
+        show xerxMadArmed2Armored at size08:
+            xpos -0.5 yalign 0.4
+            easeout 2 xpos 0.75
+        xerx "Curses."
+        xerx "He got away again."
+        show volkaraArmored armoredClever deltaMouth at size08:
+            xpos -0.5 yalign 0.4
+            easeout 2 xpos 0.3
+        volk "Shame."
+        hide xerxMadArmed2Armored
+        show xerx3quatHappy at tesiRight
+        show volkaraArmored happyMouth
+        with dissolve
+        volk "Well at least there are plenty of dead monsters to eat."
+    else:
+        show tesipizHehehArmoredArmed at size08:
+            xpos -0.5 yalign 0.4
+            easeout 2 xpos 0.75
+        tesi "Heheh!"
+        hide tesipizHehehArmoredArmed
+        show tesipizArmoredSwing2 at tesiRight
+        tesi "Slither away you serpantine coward."
+        hide tesipizArmoredSwing2
+        show tesipiz34HappyArmored at tesiRight
+        show volkaraArmored armoredClever happyMouth at size08:
+            xpos -0.5 yalign 0.4
+            easeout 2 xpos 0.3        
+        with dissolve
+        volk "Thanks for giving us lots of monsters to eat."
+    #winning - need yeah poses for jamesian troopers - sparabara lady , lady infantry, korkin spear dude and takabara 
     #krokkosnek flees as usual - he will always flee to fight another day
 
     #push through the city
@@ -628,96 +723,656 @@ label march2TakuriumFoz:
 
     #$ takuriumOwner = "Jamesians&Krokkosnek" # no need , it will be more linilar
     
-    "winna winna ostrich dinner (got takurium from niitwanwa" #remove after unit testing
+    "winna winna ostrich dinner (got takurium from niitwanwa)" #remove after unit testing
 
     $ takuriumOwner = "Jamesians" #needed for A Personal Curse stoyline split (Ahrites attack the city in Episode 3)
-    jump takuriumWinsFoZ
+    jump takuriumWinsFoZFromNiitwana
 
 label takuriumFozPart1:
 
     call setUpgradeAfterSoAM
     
     call minonaAndBalatiusAtKworitx
-    "The jamesians are here"
+
+
+    #show megabazus saving Lady Takura
+    scene takuraFreedFoZ at top , size2Thrid with Fade:
+        linear 10 center
+    pause 10
+    scene clearDayTime
+    show takuriumOldTempleWest at centerAlignment:
+        zoom 0.7
+        xpos 1.2
+        ypos 0.7
+        xzoom 1.5
+    show megabazus armored34 at xerxLeft
+    show ladyTakura yeah happyMouth at tesiRight
+    with dissolve
+    taku "I'm free!!"
+    
+    if freedTakura:
+        show ladyTakura armsDown with dissolve
+        taku "You must have gotten Xerxes and Tesipiz's message."
+        show ladyTakura -happyMouth
+        show megabazus point34Armored happyMouth
+        with dissolve 
+        mega "Yes Lady Takura."
+        show megabazus armored34 -happyMouth
+        show ladyTakura -armsDown oMouth
+        with dissolve
+        taku "Are they going to return?"
+        show megabazus happyMouth
+        show ladyTakura -oMouth
+        with dissolve
+        mega "Maybe."
+        show megabazus point34Armored frown with dissolve
+        mega "We need to fortify Takurium before the Astarts attack."     
+        #messanger is sent out.
+
+    else:
+        show ladyTakura armsDown oMouth with dissolve
+        taku "Who are you Jamesians?"
+        show megabazus happyMouth
+        show ladyTakura -oMouth
+        with dissolve
+        mega "I'm General Megabazus"
+        show megabazus point34Armored OMouth with dissolve
+        mega "Are you who I think you are?"
+        show ladyTakura -armsDown oMouth
+        show megabazus armored34 -OMouth
+        with dissolve
+        taku "Who?"
+        show megabazus point34Armored happyMouth with dissolve
+        mega "Lady Takura."
+        show megabazus armored34 -happyMouth
+        show ladyTakura happyMouth
+        with dissolve
+        taku "Yes."
+        show megabazus point34Armored OMouth
+        show ladyTakura armsDown -happyMouth
+        with dissolve
+        mega "We thought you died 3 centeries ago."
+        show megabazus armored34 -OMouth
+        show ladyTakura oMouth sadEyes
+        with dissolve
+        taku "The Astarts pushed me into my palace and sealed the exits."
+        show ladyTakura happyMouth with dissolve
+        taku "But you freed me."
+        show ladyTakura hornyEyes hornyMouth seductive with dissolve
+        taku "So I'll do whatever you want."
+        show megabazus point34Armored frown with dissolve
+        mega "We need to fortify Takurium before the Astarts attack."
+        show ladyTakura -hornyEyes oMouth with dissolve
+        taku "'o'"
+    
+    show ladyTakura armsDown oMouth
+    show megabazus armored34
+    with dissolve
+    taku "Send messangers to my people in the forest."
+    show megabazus -frown
+    show ladyTakura happyMouth
+    with dissolve
+    taku "They'll help us."      
+
+    scene clearDayTime
+    show takruriumSouthGate:
+        xalign 0.7 yalign 0.25 yzoom 0.7
+    show jamesianHeavySpearDude:
+        zoom 0.15 xpos 0.52 ypos 0.26
+    show jamesianHeavySpearGirl:
+        zoom 0.15 xpos 0.71 ypos 0.3
+    show zwotiInfantryDude at quatSize:
+        xpos 0.3 ypos 0.3
+    show jamesianSparabaraGirl at quatSize:
+        xpos 0.7 ypos 0.3
+    show mauhin onOstrich:
+        zoom 0.15 xpos 0.62 ypos 0.24
+        linear 3 zoom 1.0 ypos 2.0
+    pause 3
+
+    if IsDaytime:    
+        scene clearDayTime
+        show takruriumSouthGate:
+            xalign 0.7 yalign 0.25 zoom 3.0
+        show jamesianHeavySpearGirlGreeting at xerxLeftLeft
+        show jamesianHeavySpearDude at tesiRight
+    else:
+        scene starNightTime at darkNight
+        show takuriumEntraceSutsshakNight
+        show jamesianHeavySpearGirlGreeting at xerxLeftLeft , flameLight
+        show jamesianHeavySpearDude at tesiRight , flameLight
+    with fade
+
+    hvySprF "Hello Xerxes."
+    hvySprF "General Megabazus will be glad that you've came to help!"
     #Xerxes goes to Takurium
     #Xerxes is meeted by Megabzus
+    if IsDaytime:
+        scene clearDayTime 
+        show takuriumSutsshakNorth at backgroundSetPlace:
+            xpos 0.0
+    else:
+        scene starNightTime at darkNight
+        show takuriumSutsshakNorthLights at backgroundSetPlace:
+            xpos 0.0
+
     #Takura will show up and react based on if she has been recued before
     if freedTakura:
+        #need greeting pose for Takura
+        if IsDaytime:
+            show megabazus armoredGreet at xerxLeftLeft
+            show ladyTakura greeting happyMouthLipstick at tesiRight
+        else:
+            show megabazus armoredGreet at xerxLeftLeft , lightCrystalLights
+            show ladyTakura greeting happyMouthLipstick at tesiRight ,lightCrystalLights
+
         taku "Hello Tesipiz."
         #Takura's reaction is based on how the play has interacted with her
         if takuraBoinks > 0:
+            show megabazus armored
+            show ladyTakura seductive hornyEyes hornyMouthLipstick
+            with dissolve
             taku "Look who came back for some more of me."
+            if IsDaytime:
+                scene clearDayTime
+                show takuriumDaHill at centerAlignment:
+                    xpos 2.2
+                    ypos -2.0
+                    zoom 1.5
+                show xerx3quatHappyArmored at xerxLeft
+                show tesipizYeahArmored at tesiRight
+                show volkara3quatArmored at middleStand , size2Thrid
+            else:
+                scene starNightTime:
+                    fit "cover"
+                show takuriumDaHillLights at centerAlignment:
+                    xpos 2.2
+                    ypos -2.0
+                    zoom 1.5
+                show xerx3quatHappyArmored at xerxLeft , lightCrystalLights
+                show tesipizYeahArmored at tesiRight , lightCrystalLights
+                show volkara3quatArmored at middleStand , size2Thrid , lightCrystalLights
+            with dissolve
             tesi "Yes."
+
+            if IsDaytime:
+                scene clearDayTime 
+                show takuriumSutsshakNorth at backgroundSetPlace:
+                    xpos 0.0
+                show takuraTesipizSnuggleStandLipstick at middleStand , size2Thrid
+            else:
+                scene starNightTime at darkNight
+                show takuriumSutsshakNorthLights at backgroundSetPlace:
+                    xpos 0.0
+                show takuraTesipizSnuggleStandLipstick at middleStand , size2Thrid , lightCrystalLights
+            with dissolve
             #snuggling time
+            hide takuraTesipizSnuggleStand
+            if IsDaytime:
+                show tesipiz34MiniHappyArmored at xerxLeftLeft
+                show ladyTakura oMouthLipstick pointing at tesiRight
+            else:
+                show tesipiz34MiniHappyArmored at xerxLeftLeft , lightCrystalLights
+                show ladyTakura oMouthLipstick pointing at tesiRight
             taku "Who is that girl Tesipiz?"
+            hide tesipiz34MiniHappyArmored 
+            show ladyTakura neutralHappyMouthLipstick armsDown
+            if IsDaytime:
+                show tesipiz34HappyArmored at xerxLeftLeft:
+                    linear 2 xpos 0.5 xzoom -1.0
+                show volkara3quatArmored at size2Thrid:
+                    xpos -0.5 yalign 0.4
+                    easein 2 xpos 0.25
+            else:
+                show tesipiz34HappyArmored at xerxLeftLeft , lightCrystalLights:
+                    linear 2 xpos 0.5 xzoom -1.0
+                show volkara3quatArmored at size2Thrid , lightCrystalLights:
+                    xpos -0.5 yalign 0.4
+                    easein 2 xpos 0.25
+                with dissolve
             tesi "Volkara."
+
             tesi "She just works with me."
+            show ladyTakura seductive with dissolve
             tesi "You need to worry."
+            hide tesipiz34HappyArmored
+            if IsDaytime:
+                show tesipiz34MiniHappyArmored at middleStand , size2Thrid
+            else:
+                show tesipiz34MiniHappyArmored at middleStand , size2Thrid , lightCrystalLights
+            show ladyTakura happyMouthLipstick
+            with dissolve
             taku "It's O.K"
+            show ladyTakura hornyMouthLipstick pointing with dissolve
             taku "Want to hangout with us Volkara and Xerxes."
+
         elif takuraSleepOvered:
+
+            show megabazus armored
+            show ladyTakura pointing hornyMouthLipstick
+            with dissolve
             taku "Want to sleep at my place Tesipiz?"
+
+            if IsDaytime:
+                scene clearDayTime
+                show takuriumDaHill at centerAlignment:
+                    xpos 2.2
+                    ypos -2.0
+                    zoom 1.5
+                show xerx3quatHappyArmored at xerxLeft
+                show tesipizYeahArmored at tesiRight
+                show volkara3quatArmored at middleStand , size2Thrid
+            else:
+                scene starNightTime:
+                    fit "cover"
+                show takuriumDaHillLights at centerAlignment:
+                    xpos 2.2
+                    ypos -2.0
+                    zoom 1.5
+                show xerx3quatHappyArmored at xerxLeft , lightCrystalLights
+                show tesipizYeahArmored at tesiRight , lightCrystalLights
+                show volkara3quatArmored at middleStand , size2Thrid , lightCrystalLights
+            with dissolve
+
             tesi "Yes."
+        
+            if IsDaytime:
+                scene clearDayTime 
+                show takuriumSutsshakNorth at backgroundSetPlace:
+                    xpos 0.0
+                show megabazus armored34 at xerxLeftLeft
+                show ladyTakura seductive hornyEyes happyMouthLipstick at tesiRight
+            else:
+                scene starNightTime at darkNight
+                show takuriumSutsshakNorthLights at backgroundSetPlace:
+                    xpos 0.0
+                show megabazus armored34 at xerxLeftLeft , lightCrystalLights
+                show ladyTakura seductive hornyEyes happyMouthLipstick at tesiRight , lightCrystalLights
+            with dissolve
             taku "How about you Xerxes and the lady you're with."
+
+            if IsDaytime:
+                scene clearDayTime
+                show takuriumDaHill at centerAlignment:
+                    xpos 2.2
+                    ypos -2.0
+                    zoom 1.5
+                show xerxNoWeGoodArmored at xerxLeftLeft
+                show tesipiz34MiniHappyArmored at tesiRight
+                show volkara3quatArmored at middleStand , size2Thrid
+            else:
+                scene starNightTime:
+                    fit "cover"
+                show takuriumDaHillLights at centerAlignment:
+                    xpos 2.2
+                    ypos -2.0
+                    zoom 1.5
+                show xerxNoWeGoodArmored at xerxLeftLeft , lightCrystalLights
+                show tesipiz34MiniHappyArmored at tesiRight , lightCrystalLights
+                show volkara3quatArmored at middleStand , size2Thrid , lightCrystalLights
+            with dissolve
             xerx "Maybe at your place but not in the same bed."
+            hide xerxNoWeGoodArmored
+            hide volkara3quatArmored
+            if IsDaytime:
+                show xerx3quatHappyArmored at xerxLeft
+                show volkaraArmored greeting happyMouth at middleStand , size2Thrid
+            else:
+                show xerx3quatHappyArmored at xerxLeft , lightCrystalLights
+                show volkaraArmored greeting happyMouth at middleStand , size2Thrid , lightCrystalLights
+            with dissolve
             volk "I'm Volkara Takura."
+
+            if IsDaytime:
+                scene clearDayTime 
+                show takuriumSutsshakNorth at backgroundSetPlace:
+                    xpos 0.0
+                show megabazus armored34 at xerxLeftLeft
+                show ladyTakura sadEyes oMouthLipstick at tesiRight
+            else:
+                scene starNightTime at darkNight
+                show takuriumSutsshakNorthLights at backgroundSetPlace:
+                    xpos 0.0
+                show megabazus armored34 at xerxLeftLeft , lightCrystalLights
+                show ladyTakura sadEyes oMouthLipstick at tesiRight , lightCrystalLights
+            with dissolve
             taku "I'm guessing you want to hang out with Xerxes?"
+            
+            if IsDaytime:
+                scene clearDayTime
+                show takuriumDaHill at centerAlignment:
+                    xpos 2.2
+                    ypos -2.0
+                    zoom 1.5
+                show xerxNoWeGoodArmored at xerxLeftLeft
+                show tesipiz34MiniHappyArmored at tesiRight
+                show volkaraArmored happyMouth heheh at middleStand , size2Thrid
+            else:
+                scene starNightTime:
+                    fit "cover"
+                show takuriumDaHillLights at centerAlignment:
+                    xpos 2.2
+                    ypos -2.0
+                    zoom 1.5
+                show xerxNoWeGoodArmored at xerxLeftLeft , lightCrystalLights
+                show tesipiz34MiniHappyArmored at tesiRight , lightCrystalLights
+                show volkaraArmored happyMouth heheh at middleStand , size2Thrid , lightCrystalLights
+            with dissolve
             volk "I don't mind."
 
         else:
+            show megabazus armored
+            show ladyTakura armsDown happyMouthLipstick
+            with dissolve
             taku "I glad you're back."
             taku "And you brought help as well."
         
 
-        if deafeatedKrokkosnek:
-            taku "Is she girl you already got Xerxes?"
-            if headPatCounter > 13 or ahrimaniomNightmare > 0:
-                xerx "No."
-                if atoBoinks > 0:
-                    xerx "Princess Ato'ssa is my girl."
-                    xerx "She won't like me being in other ladies."
-                    taku "Heheh!"
-                    taku "I hope you make Ato'ssa happy."
-                else:
-                    xerx "The girl I've already got is Princess Ato'ssa."
-                    xerx "She's gotten nice over time."
-                    taku "I see."
+        if IsDaytime:
+            scene clearDayTime 
+            show takuriumSutsshakNorth at backgroundSetPlace:
+                xpos 0.0
+            show megabazus armored34 at xerxLeftLeft
+            show ladyTakura pointing hornyMouthLipstick at tesiRight
+        else:
+            scene starNightTime at darkNight
+            show takuriumSutsshakNorthLights at backgroundSetPlace:
+                xpos 0.0
+            show megabazus armored34 at xerxLeftLeft , lightCrystalLights
+            show ladyTakura pointing hornyMouthLipstick at tesiRight , lightCrystalLights
+        with dissolve
+        taku "Is she girl you already got Xerxes?"
+
+        if IsDaytime:
+            scene clearDayTime
+            show takuriumDaHill at centerAlignment:
+                xpos 2.2
+                ypos -2.0
+                zoom 1.5
+            show xerxNoWeGoodArmored at xerxLeft
+            show tesipizYeahArmored at tesiRight
+            show volkara3quatArmored at middleStand , size2Thrid
+        else:
+            scene starNightTime:
+                fit "cover"
+            show takuriumDaHillLights at centerAlignment:
+                xpos 2.2
+                ypos -2.0
+                zoom 1.5
+            show xerxNoWeGoodArmored at xerxLeft , lightCrystalLights
+            show tesipizYeahArmored at tesiRight , lightCrystalLights
+            show volkara3quatArmored at middleStand , size2Thrid , lightCrystalLights
+        with dissolve
+        if headPatCounter > 13 or ahrimaniomNightmare > 0:
+            xerx "No."
+            hide xerxNoWeGoodArmored
+            if IsDaytime:
+                show xerxPointBackArmored at xerxLeft
             else:
-                xerx "No."
-                xerx "That would be Princess Ato'ssa."
-                xerx "I saved her from the Ahrimaniom."
-                xerx "So I let her hang out with me."
-                taku "Understandable."
+                show xerxPointBackArmored at xerxLeft , lightCrystalLights
+            if atoBoinks > 0:
+                xerx "Princess Ato'ssa is my girl."
+                hide xerxPointBackArmored
+                if IsDaytime:
+                    show happyXerxArmored at xerxLeft
+                else:
+                    show happyXerxArmored at xerxLeft , lightCrystalLights
+                with dissolve
+                xerx "She won't like me being in other ladies."
+
+                if IsDaytime:
+                    scene clearDayTime 
+                    show takuriumSutsshakNorth at backgroundSetPlace:
+                        xpos 0.0
+                    show megabazus armored34 at xerxLeftLeft
+                    show ladyTakura pointing happyMouthLipstick at tesiRight
+                else:
+                    scene starNightTime at darkNight
+                    show takuriumSutsshakNorthLights at backgroundSetPlace:
+                        xpos 0.0
+                    show megabazus armored34 at xerxLeftLeft , lightCrystalLights
+                    show ladyTakura closedEyes happyMouthLipstick at tesiRight , lightCrystalLights
+                with dissolve
+                taku "Heheh!"
+                show ladyTakura -closedEyes hornyMouthLipstick with dissolve
+                taku "I hope you make Ato'ssa happy."
+            else:
+                xerx "The girl I've already got is Princess Ato'ssa."
+                hide xerxPointBackArmored
+                if IsDaytime:
+                    show happyXerxArmored at xerxLeft
+                else:
+                    show happyXerxArmored at xerxLeft , lightCrystalLights
+                with dissolve
+                xerx "She's gotten nice over time."
+                if IsDaytime:
+                    scene clearDayTime 
+                    show takuriumSutsshakNorth at backgroundSetPlace:
+                        xpos 0.0
+                    show megabazus armored34 at xerxLeftLeft
+                    show ladyTakura happyMouthLipstick at tesiRight
+                else:
+                    scene starNightTime at darkNight
+                    show takuriumSutsshakNorthLights at backgroundSetPlace:
+                        xpos 0.0
+                    show megabazus armored34 at xerxLeftLeft , lightCrystalLights
+                    show ladyTakura happyMouthLipstick at tesiRight , lightCrystalLights
+                with dissolve
+                taku "I see."
+        else:
+            xerx "No."
+            hide xerxNoWeGoodArmored
+            if IsDaytime:
+                show xerxPointBackArmored at xerxLeft
+            else:
+                show xerxPointBackArmored at xerxLeft , lightCrystalLights
+            xerx "That would be Princess Ato'ssa."
+            scene ahriteSky:
+            fit "cover"
+            show takuriumEntraceAhrites at backgroundSetPlace
+            show xerxCarryingAhriteAtossa at middleStand , size08 , ahriteBright
+            with dissolve
+            xerx "I saved her from the Ahrimaniom."
+            scene etcabanaStoneBench at fullFit
+            show ato3quatMiniExict at atoRight
+            show xerx3quatPointHappy at xerxLeft
+            with dissolve
+            xerx "So I let her hang out with me."
+            if IsDaytime:
+                scene clearDayTime 
+                show takuriumSutsshakNorth at backgroundSetPlace:
+                    xpos 0.0
+                show megabazus armored34 at xerxLeftLeft
+                show ladyTakura armsDown happyMouthLipstick at tesiRight
+            else:
+                scene starNightTime at darkNight
+                show takuriumSutsshakNorthLights at backgroundSetPlace:
+                    xpos 0.0
+                show megabazus armored34 at xerxLeftLeft , lightCrystalLights
+                show ladyTakura armsDown happyMouthLipstick  at tesiRight , lightCrystalLights
+            with dissolve
+            taku "Understandable."
 
     else:
+        if IsDaytime:
+            show megabazus point34Armored at xerxLeftLeft
+            show ladyTakura greeting happyMouthLipstick at tesiRight
+        else:
+            show megabazus point34Armored at xerxLeftLeft , lightCrystalLights
+            show ladyTakura greeting happyMouthLipstick at tesiRight ,lightCrystalLights
+        with dissolve
         mega "Look who we found after destroying that new Astarte statue on Temple hill."
+        if IsDaytime:
+            scene clearDayTime
+            show takuriumDaHill at centerAlignment:
+                xpos 2.2
+                ypos -2.0
+                zoom 1.5
+            show happyXerxArmored at xerxLeft
+            show tesipizHappyArmored at hiddenLegs , hornyAura , size08
+            show volkara3quatArmored at middleStand , size2Thrid
+        else:
+            scene starNightTime:
+                fit "cover"
+            show takuriumDaHillLights at centerAlignment:
+                xpos 2.2
+                ypos -2.0
+                zoom 1.5
+            show happyXerxArmored at xerxLeft , lightCrystalLights
+            show tesipizHappyArmored at hiddenLegs , hornyAura , size08
+            show volkara3quatArmored at middleStand , size2Thrid , lightCrystalLights
+        with dissolve
         tesi "Hi"
         tesi "I like.."
         tesi "Big 8 foot tall korkin girls."
+        show volkara3quatArmored meanEyes deltaMouth with dissolve
         volk "Really Tesipiz."
+
+        if IsDaytime:
+            scene clearDayTime 
+            show takuriumSutsshakNorth at backgroundSetPlace:
+                xpos 0.0
+            show megabazus armored34 at xerxLeftLeft
+            show ladyTakura armsDown oMouthLipstick at tesiRight
+        else:
+            scene starNightTime at darkNight
+            show takuriumSutsshakNorthLights at backgroundSetPlace:
+                xpos 0.0
+            show megabazus armored34 at xerxLeftLeft , lightCrystalLights
+            show ladyTakura armsDown oMouthLipstick at tesiRight , lightCrystalLights
+        with dissolve
         taku "Good for you."
+
+        if IsDaytime:
+            scene clearDayTime
+            show takuriumDaHill at centerAlignment:
+                xpos 2.2
+                ypos -2.0
+                zoom 1.5
+            show happyXerxArmored at xerxLeft
+            show tesipizPointingHappyArmored at hiddenLegs , hornyAura , size08
+            show volkara3quatArmored at middleStand , size2Thrid
+        else:
+            scene starNightTime:
+                fit "cover"
+            show takuriumDaHillLights at centerAlignment:
+                xpos 2.2
+                ypos -2.0
+                zoom 1.5
+            show happyXerxArmored at xerxLeft , lightCrystalLights
+            show tesipizPointingHappyArmored at hiddenLegs , hornyAura , size08
+            show volkara3quatArmored at middleStand , size2Thrid , lightCrystalLights
+        with dissolve
         tesi "Can I hang out with you."
-        taku "Nope."
-        taku "Hang out with the lady you're already with." #maybe point pose?
+
+        if IsDaytime:
+            scene clearDayTime 
+            show takuriumSutsshakNorth at backgroundSetPlace:
+                xpos 0.0
+            show megabazus armored34 at xerxLeftLeft
+            show ladyTakura armsDown aMouthLipstick meanEyes at tesiRight
+        else:
+            scene starNightTime at darkNight
+            show takuriumSutsshakNorthLights at backgroundSetPlace:
+                xpos 0.0
+            show megabazus armored34 at xerxLeftLeft , lightCrystalLights
+            show ladyTakura armsDown aMouthLipstick meanEyes at tesiRight , lightCrystalLights 
+        with dissolve
+        taku "Nope." #need frown mouth and delta mouth
+        show ladyTakura pointing with dissolve
+        taku "Hang out with the lady you're already with." 
+        show ladyTakura -pointing neutralHappyMouthLipstick
+        show megabazus:
+            linear 2 xpos 0.5
+        show volkara3quatArmored closedEyes happyMouth at size2Thrid:
+            xpos -0.5 
+            easein 2 xpos 0.25
         volk "Heheh!"
         #Tesipiz has his moment but Takura isn't as interested because he didn't free her.
         #This locks the player out of Boinking Takura.
+        if IsDaytime:
+            scene clearDayTime
+            show takuriumDaHill at centerAlignment:
+                xpos 2.2
+                ypos -2.0
+                zoom 1.5
+            show happyXerxArmored at xerxLeft
+            
+            show volkara3quatArmored at middleStand , size2Thrid
+        else:
+            scene starNightTime:
+                fit "cover"
+            show takuriumDaHillLights at centerAlignment:
+                xpos 2.2
+                ypos -2.0
+                zoom 1.5
+            show happyXerxArmored at xerxLeft , lightCrystalLights
+            
+            show volkara3quatArmored at middleStand , size2Thrid , lightCrystalLights
+        
         if muwaCuddleCounter > 0:
+            if IsDaytime:
+                show tesipiz34LookingDownArmored at hiddenLegs , size08
+            else:
+                show tesipiz34LookingDownArmored at hiddenLegs , size08 , lightCrystalLights
+            with dissolve
             tesi "Eh."
+            hide tesipiz34LookingDownArmored
+            if IsDaytime:
+                show tesipizPointingUpArmored at hiddenLegs , size08
+            else:
+                show tesipizPointingUpArmored at hiddenLegs , size08 , lightCrystalLights
+            with dissolve
             tesi "I've got a fluffy shata lady in Kwortix mine." #he doesn't know yet
         else:
+            if IsDaytime:
+                show tesipizOoahArmored at hiddenLegs , size0
+            else:
+                show tesipizOoahArmored at hiddenLegs , size08 , lightCrystalLights
+            with dissolve
             tesi "Oah!"
+            hide tesipizOoahArmored
+            if IsDaytime:
+                show tesipiz34LookingDownSadArmored at hiddenLegs , size0
+            else:
+                show tesipiz34LookingDownSadArmored at hiddenLegs , size08 , lightCrystalLights
+            with dissolve
             tesi "{i}Worth a shot."
     
     #they go to sutsshak temple
     if IsDaytime:
-        mega "Come to the temple of Sutsshak."
+        scene clearDayTime 
+        show takuriumSutsshakNorth at backgroundSetPlace:
+            xpos 0.0
+    else:
+        scene starNightTime at darkNight
+        show takuriumSutsshakNorthLights at backgroundSetPlace:
+            xpos 0.0
+
+    if IsDaytime:
+        if IsDaytime:
+            show megabazus pointBackArmored at xerxLeftLeft
+            show ladyTakura armsDown neutralHappyMouthLipstick at tesiRight
+        else:
+            show megabazus pointBackArmored at xerxLeftLeft , lightCrystalLights
+            show ladyTakura armsDown neutralHappyMouthLipstick  at tesiRight , lightCrystalLights
+        with dissolve
+        mega "Come inside Temple of Sutsshak."
         mega "We'll dicuss our next move there."
         taku "I heard their are aquatics in the lake."
         taku "We might be able to get them to our side."
     else:
+        if IsDaytime:
+            show megabazus pointBackArmored at xerxLeftLeft
+            show ladyTakura seductive neutralHappyMouthLipstick at tesiRight
+        else:
+            show megabazus pointBackArmored at xerxLeftLeft , lightCrystalLights
+            show ladyTakura seductive neutralHappyMouthLipstick  at tesiRight , lightCrystalLights
+        with dissolve
         taku "It's dark."
+        show ladyTakura pointing hornyMouthLipstick with dissolve
         taku "We'll disscuss our plans tomorrow."
+        show ladyTakura greeting with dissolve
         taku "We'll get your beds"
         #sleeps
         $ IsDaytime = True
@@ -729,83 +1384,318 @@ label takuriumFozPart1:
         if freedTakura:
             $ takuraSleepOvered = True
             if takuraBoinks > 0 or takuraCuddles > 2:
+                play sound sleepss
+                scene takuraSleepOver1 at centerAlignment with fade:
+                    zoom 0.7
+                    ypos 0.0
+                    linear 3 ypos 0.7
+                pause 5
                 $ takuraCuddles += 1
                 "Tesi with saucy Takura" #takura and tesipiz sleeps2
             else:
+                play sound cuddles 
+                scene takuraSleepOver2 at centerAlignment with Fade(2,3,1):
+                    zoom 0.7
+                    ypos 0.0
+                    linear 2 ypos 0.0
+                    linear 10 ypos 0.7 
+                pause 9
                 $ takuraCuddles += 1
                 "Tesi with Takura" #takura and tesipiz sleeps1
         else:
+            play sound sleepss
+            scene xerxSleepsTakurium at fullFit with Fade( 1 , 1 , 3)
+            pause 5
             "No Takura in the room." #Tesipiz, Volkara and Xerxes sleeps
-        
+
+        $ IsDaytime = True 
         #morning times
-    #go to the docks with boats
-    #koitha and Vimekkus arrive
+        scene takuriumEstablishing at centerAlignment with Fade(1,1,3):
+            ypos 0.0
+            xpos 0.5
+            zoom 0.4
+            easein 8 ypos 0.9
+        pause 10
+    #go to the temple of sutsshak
+    scene takuriumInisdeSutsshakWest at backgroundSetPlace
+    show happyXerxArmored at xerxLeftLeft
+    show megabazus armoredGreet at tesiRight
+    show ladyTakura neutralHappyMouthLipstick at middleStand , size2Thrid
+    with fade
+    mega "Koissa and Vimekkus."
+    show megabazus point34Armored with dissolve
+    mega "We have Xerxes and Lady Takura."
+
+    #taku "Will you leave us alone?"
+    #taku "We'll leave you alone."
+    play music bardaiyaBeMad fadein 1 fadeout 1
+    scene takuriumInsideSutsshakEast at backgroundSetPlace
+    show vimekkus meanEyes annoyedMouth crossarms at lakatinuRight , size2Thrid
+    show koitha crossArms oMouth meanEyes at bardaiyaLeft , size2Thrid
+    with dissolve
     koit "Oh great."
+    show koitha annoyedMouth with dissolve
     koit "You got Xerxes with you."
     koit "Unless we have an ahrite problem."
+
+    stop music
+    show koitha suprized oMouth -meanEyes:
+        easein 0.5 yzoom 1.2
+        easeout 0.5 yzoom 1.0
+    show vimekkus base -meanEyes oMouth
     koit "I ...."
     koit "Lady Takura!?"
+
+    scene takuriumInisdeSutsshakWest at backgroundSetPlace
+    show happyXerxArmored at xerxLeftLeft
+    show megabazus armoredGreet at tesiRight
+    show ladyTakura greeting happyMouthLipstick at middleStand , size2Thrid
+    with dissolve
     taku "Hello Thiatsetu lady."
+
+    play music bardaiyaBeMad fadein 1 fadeout 1
+    scene takuriumInsideSutsshakEast at backgroundSetPlace
+    show vimekkus oMouth point at lakatinuRight , size2Thrid , flipped
+    show koitha crossArms annoyedMouth meanEyes at bardaiyaLeft , size2Thrid
+    with dissolve
     vimk "Who's Lady Takura Koitha?"
+
+    show koitha -meanEyes -crossArms oMouth
+    show vimekkus -point:
+        xzoom 1.0
+    with dissolve
     koit "She's the forest korkin deity."
+    show koitha annoyedMouth meanEyes 
+    show vimekkus happyMouth
+    with dissolve
     vimk "Well, Krokkosnek has his Sutsshak."
+    show vimekkus -happyMouth
+    show koitha crossArms oMouth
+    with dissolve
     koit "I kind of wish he only have Astarte."
+
+    show vimekkus happyMouth point:
+        xzoom 1.0
+        linear 1 xzoom -1.0
+    show koitha annoyedMouth
+    with dissolve
     vimk "There's a reason Astarte lets people have other gods."
+    show vimekkus -point at flipped with dissolve:
+        xzoom -1.0
+        linear 1 xzoom 1.0
     vimk "What do you want. Lady Takura of the Forest Krokins."
+
+    scene takuriumInisdeSutsshakWest at backgroundSetPlace
+    show happyXerxArmored at xerxLeftLeft
+    show megabazus armoredGreet at tesiRight
+    show ladyTakura armsDown happyMouthLipstick at middleStand , size2Thrid
+    with dissolve
     taku "Megabazus , Xerxes and the Jamesians want you to leave them alone while they deal with Krokkosnek and the Astarts of Yemeh."
+    show ladyTakura hornyMouthLipstick
     taku "The Jamesians will only be allowed in the forest, sands and the rivers and swamps."
+    show ladyTakura pointing happyMouth with dissolve
     taku "But only if you agree to leave us alone."
+
+    play music bardaiyaBeMad fadein 1 fadeout 1
+    scene takuriumInsideSutsshakEast at backgroundSetPlace
+    show vimekkus at lakatinuRight , size2Thrid
+    show koitha crossArms annoyedMouth meanEyes at bardaiyaLeft , size2Thrid
+    with dissolve
     vimk "{i}I guess that could help the Astarts if they can't use the lake."
     vimk "{i}I'm playing for time so it should work."
+    show koitha oMouth 
+    show vimekkus oMouth
+    with dissolve 
+    with vpunch
     koit "No. Jamesians!"
+    show koitha -crossArms with dissolve
     koit "Not even in the woods."
+
+    show koitha suprizedPose oMouth -meanEyes
+    show vimekkus point angryMouth:
+        linear 1 xzoom -1.0 xalign 0.9
+    with dissolve
     vimk "You don't even visit the woods Koitha."
     vimk "And we {b}all{/b} know the forest korkins don't even pretend to worship Astarte."
     vimk "The Astarts will deal with them later."
+
+    #need grit teeth
+    show koitha -suprizedPose gritteeth meanEyes with dissolve
     koit "Gyarrrh!"
+    show koitha oMouth suprized with dissolve
     koit "Fine then."
+    show koitha -suprized with dissolve
     koit "We'll leave you alone."
+    show koitha crossArms with dissolve
     koit "But I can't stop aquatics loyal to Krokkosnek from attacking you."
     #they leave
 
     #meanwhile to Yemeh
     call yemehFoz
     #go to temple of sutsshak
+    scene takuriumInisdeSutsshakWest at backgroundSetPlace
+    show xerx3quatAnnoyedArmored at xerxLeftLeft
+    show megabazus armoredPointing at tesiRight
+    with fade
     mega "We need to get rid of Krokkosnek."
+    hide xerx3quatAnnoyedArmored
+    show xerx3quatPointCommandingArmored at xerxLeftLeft
+    show megabazus armored
+    with dissolve
     xerx "Do you need me here?"
-    xerx "Are there any Anti-Stealth Tablet nearby?"
+    hide xerx3quatPointCommandingArmored
+    show xerx3quatPointHappyArmored at xerxLeftLeft
+    with dissolve
+    xerx "Are there any Anti-Stealth Tablet pieces nearby?"
+    hide xerx3quatPointHappyArmored
+    show xerx3quatAnnoyed at xerxLeftLeft
+    show megabazus frown
+    with dissolve
     mega "No."
+    hide xerx3quatAnnoyed
+    show xerx3quatHappyerArmored at xerxLeftLeft
+    show megabazus happyMouth
+    with dissolve
     mega "Genral Atazera of Axeria knows."
+    hide xerx3quatHappyerArmored
+    show megabazus armoredPointy meanEyes frown
+    show xerx3quatAnnoyedArmored at xerxLeftLeft
+    with dissolve
     mega "But we need to secure the area before I let you go there."
+    show megabazus armored
     if freedTakura:
         if takuraBoinks > 0:
+            show tesipizYeahArmored at size2Thrid:
+                xpos -0.5 yalign 0.4
+                easeout 2 xpos 0.45
+            with dissolve
             tesi "I also want get up close with Takura again."
         else:
+            show tesipiz34MeanHappyArmored at size2Thrid:
+                xpos -0.5
+                easeout 2 xpos 0.45
+            with dissolve
             tesi "I want to hang out with Takura."
-    volk "Do you know what the anti-stealth tablet pieces look like?"
-    mega "Not really."
-    taku "I need to meet up with my stone casters and my forces."
-    tesi "You have stone casters?"
-    taku "Yeah."
-    taku "Hopefully they are still hiding in my forest."
-    taku "I'll let you go if you can reunite them with me."
-    taku "Scout lady."
-    mhn "Yes?"
-    taku "Send a message to the Takura Korkins that Takura is alive , free and in Takurium."
-    mhn "Understood."
-
-    xerx "How are we going to deal with Krokkosnek?"
-    mega "We'll take over the towns and cities around the lake"
-    taku "Stone casters will batter Yemeh's walls down."
-    tesi "I can explode their gates open."
-    volk "Should we fix Takurium's south walls before attacking Krokkosnek?"
-    mega "Good idea."
-    mega "We attack when Takura Korkins boost our forces."
-    mega "You're dissmissed."
-
-    #add in store and crafting?
     
-    jump battleOfLakeTakuraFoz
+    hide tesipizYeahArmored
+    hide tesipiz34MeanHappyArmored
+    show tesipizHappyArmored at size2Thrid:
+        xpso 0.45 yalign 0.4
+        easein 2 xpos -0.5
+    show volkara3quatArmored pointy OMouth at size2Thrid: #should we pointy her
+        xpos -0.5 yalign 0.4
+        easeout 2 xpos 0.45
+    volk "Do you know what the anti-stealth tablet pieces look like?"
+    show megabazus OMouth sadEyes with dissolve
+    mega "Not really."
+
+    show megabazus -sadEyes:
+        xpos 0.75
+        easein 2 xpos 0.88
+    show ladyTakura pointing meanEyes oMouthLipstick at size2Thrid:
+        xpos -0.5 yalign 0.3
+        easein 2 xpos 0.4
+    show xerx3quatAnnoyedArmored at size2Thrid:
+        xpos 0.4 yalign 0.2
+        easein 2 xpos 0.1
+    with dissolve
+    taku "I need to meet up with my stone casters and my forces."
+    show ladyTakura armsDown neutralHappyMouthLipstick:
+        easein 1 xpos 0.5
+    show tesipizHappyArmored at size2Thrid:
+        xpos -0.5 yalign 0.5
+        easeout 2 xpos 0.3
+    with dissolve
+    tesi "You have stone casters?"
+    show ladyTakura happyMouthLipstick -armsDown with dissolve
+    taku "Yeah."
+
+    #use yiwatysoh and dyonisisngwa as placeholders until graphics of takura stone casters are made in the AST version of events
+    #have their dagdza pop out if the bushes
+    scene forest1 at fullFit:
+        matrixcolor TintMatrix("#666")
+    show dyonisisngwa claws meanEyes at halfSize:
+        yalign 0.7 xpos 0.33
+    show yiwatsyohWink at halfSize:
+        yalign 0.7 xpos 0.67
+    show bushBushy at grassTint:
+        xpos 0.3
+    show bushRound at darkGrassTint:
+        xpos 0.6
+    show bushBushy as extraBushy at darkGrassTint:
+        xpos 0.2
+    show bushRound as extraRound at grassTint:
+        xpos 0.8
+    show bushBushy as daBush as grassTint:
+        xpos 0.5
+    with dissolve
+    taku "Hopefully they are still hiding in my forest."
+
+    scene takuriumInisdeSutsshakWest at backgroundSetPlace
+    show ladyTakura armsDown happyMouthLipstick at size2Thrid:
+        yalign 0.5 xpos 0.4
+    show megabazus armored at size2Thrid:
+        xpos 0.88 yalign 0.5
+    show xerx3quatHappy at size2Thrid:
+        xpos 0.1 yalign 0.5
+    show tesipizHappyArmored at size2Thrid:
+        yalign 0.4 xpso 0.3
+    show volkara3quatArmored at size2Thrid: #should we pointy her
+        xpos 0.45 yalign 0.5
+    with dissolve
+    taku "I'll let you go once they reunite with me."
+
+    hide xerx3quatHappy
+    show xerx3quatPointArmored at size2Thrid:
+        xpos 0.1 yalign 0.5
+    with dissolve
+    xerx "How are we going to deal with Krokkosnek?"
+    hide xerx3quatPointArmored
+    show xerx3quatHappy at size2Thrid:
+        xpos 0.1 yalign 0.5
+    show megabazus armoredPointing meanEyes happyMouth
+    with dissolve
+    mega "We'll take over the towns and cities around the lake"
+    show megabazus armored -meanEyes -happyMouth
+    show ladyTakura yeah meanEyes happyMouthLipstick
+    with dissolve
+    taku "Stone casters will batter Yemeh's walls down."
+    show ladyTakura seductive
+    hide tesipizHappyArmored
+    show tesipizBombAndFist at size2Thrid:
+        yalign 0.4 xpos 0.3
+    with dissolve
+    tesi "I can explode their gates open."
+    hide tesipizBombAndFist
+    show tesipiz34MiniHappyArmored at size2Thrid:
+        yalign 0.4 xpso 0.3
+    show volkara3quatArmored pointy deltaMouth
+    with dissolve 
+    volk "Should we fix Takurium's south walls before attacking Krokkosnek?"
+    show volkara3quatArmored bent -deltaMouth
+    show megabazus happyMouth
+    with dissolve
+    mega "Good idea."
+    mega "We attack when the Takura Korkins boost our forces."
+    show megabazus armoredPointing with dissolve
+    mega "You're dissmissed."
+    show tesipizBombAndFist at size2Thrid:
+        yalign 0.4 xpos 0.3
+        easein 2 xpos -0.5
+    pause 0.25
+    show volkara3quatArmored at size2Thrid: #should we pointy her
+        xpos 0.45 yalign 0.5
+        easein 2 xpos -0.5
+    pause 0.25
+    show xerx3quatHappy at size2Thrid:
+        xpos 0.1 yalign 0.5
+        easein 2 xpos -0.5
+    pause 1.5
+    
+
+    #add in store and crafting? no because the crafting is at ectabana and the shop and crating happens after.
+    
+    jump battleOfLakeTakuraFoz 
     
     #sleepy times.
 
@@ -816,7 +1706,7 @@ label takuriumFozPart1:
     #it fails and they swim away
     
 
-label battleOfLakeTakuraFoz:
+label battleOfLakeTakuraFoz: #do after yemehFoZ is done
     "Water time"
     #jamesian Heavy archer dude with telescope sees boats
 
@@ -883,9 +1773,23 @@ label battleOfLakeTakuraFoz:
 label yemehFoz:
     
     #build up for takurium assult
-
+    scene yemehEstablishing with fade
+    pause 4
     #yemeh establishing shot
-    #krokkosnek is talking to his goons
+    #krokkosnek is talking to his goons - krokko to the left and 4 goons to the right
+    scene clearDayTime
+    show yemehMainStreet at right
+    show krokkosnekNeutralHappyPoint at flipped , bardaiyaLeft , size2Thrid
+    show tsetulingGuardF at halfSize , flipped:
+        yalign 0.6 xpos 0.6
+    show astartHopliteMale at halfSize , flipped:
+        yalign 0.6 xpos 0.8
+    show thiaSpearMale at size2Thrid , flipped:
+        yalign 0.4 xpos 0.7
+    show jakaArcher at size2Thrid , flipped:
+        yalign 0.4 xpos 0.5
+
+    with fade
     krok "Now we just need to hold out until Minona does her thing."
     #simlar to Krokkosnek in Takurium but in Yemeh
     #the beats are similar
