@@ -436,6 +436,10 @@ image sandTexture = Tile("images/Location Accessories/sand texture.webp")
 
 image flatWater1 = "images/Location Accessories/Flat Water.webp"
 
+#frontground
+image telescopeInside = "images/Telescope Inside.webp"
+#image telescopeInsideMovable
+
 #effects
 
 image animeAngryRed = "images/angry cross red.webp"
@@ -1359,6 +1363,8 @@ image jakaCamelLancer = "images/Enemies/astartes goons/Jaka Camel Lancer.webp"
 image jakaCamelLancerFlee = "images/Enemies/astartes goons/Jaka Camel Lancer Fleeing.webp"
 image jakaCamelArcher = "images/Enemies/astartes goons/Jaka Camel Archer.webp"
 
+image hekaAxeLady = "images/Enemies/astartes goons/Heka Valley Axwoman.webp"
+
 #Faronians
 image faronianAxNakedFemale = "images/Enemies/astartes goons/Faronian Axe Naked Female v1 sfw.webp"
 
@@ -1780,6 +1786,7 @@ image krokkosnekAngry = "images/antagonists/Krokkosnek/Krokkosnek Angry.webp"
 image krokkosnekSad = Composite( (1300, 1500) , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Angry.webp" , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Sad Eyes.webp")
 image krokkosnekAnnoyed = "images/antagonists/Krokkosnek/Krokkosnek Annoyed.webp"
 image krokkosnekAnnoyedOpen = Composite( ( 1300 , 1500) , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Annoyed.webp" , (0,0) , "images/antagonists/Krokkosnek/Krokkosnek Annoyed Open Mouth.webp" )
+image krokkosnekAnnoyedAround = Composite( ( 1600 , 1900 ) , ( 0,0 ) , "images/antagonists/Krokkosnek/Krokkosnek Angry around.webp" , ( 0,0 ) , "images/antagonists/Krokkosnek/Krokkosnek Annoyed around.webp" )
 image krokkosnekZappingU = "images/antagonists/Krokkosnek/Krokkosnek Battle Land Ranged.webp"
 image krokkosnekZappingUNWater = "images/antagonists/Krokkosnek/Krokkosnek Battle Water Ranged.webp"
 image krokkosnekSummon = "images/antagonists/Krokkosnek/Krokkosnek Battle Land.webp"
@@ -4249,6 +4256,8 @@ image jamesianHeavyArcher = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer.
 image jamesianHeavyArcherHappy = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Neutral Happy.webp"
 image jamesianHeavyArcherSuprized = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Suprized.webp"
 image jamesianHeavyArcherAlerted = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Alerted.webp"
+image jamesianHeavyArcherTelescope = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Telescope.webp"
+image jamesianHeavyArcherTelescopeSee = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Archer Telescope see.webp"
 image jamesianHeavyHorseArcher = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Horse Archer.webp"
 image jamesianLongsword = "images/NPCs/Jamesia/Troopers/Jamesian Longsword Trooper.webp"
 image jamesianTakabara = "images/NPCs/Jamesia/Troopers/Takabara.webp"

@@ -1580,7 +1580,7 @@ label takuriumFozPart1:
     hide tesipizYeahArmored
     hide tesipiz34MeanHappyArmored
     show tesipizHappyArmored at size2Thrid:
-        xpso 0.45 yalign 0.4
+        xpos 0.45 yalign 0.4
         easein 2 xpos -0.5
     show volkara3quatArmored pointy OMouth at size2Thrid: #should we pointy her
         xpos -0.5 yalign 0.4
@@ -1626,7 +1626,7 @@ label takuriumFozPart1:
         xpos 0.2
     show bushRound as extraRound at grassTint:
         xpos 0.8
-    show bushBushy as daBush as grassTint:
+    show bushBushy as daBush at grassTint:
         xpos 0.5
     with dissolve
     taku "Hopefully they are still hiding in my forest."
@@ -1639,7 +1639,7 @@ label takuriumFozPart1:
     show xerx3quatHappy at size2Thrid:
         xpos 0.1 yalign 0.5
     show tesipizHappyArmored at size2Thrid:
-        yalign 0.4 xpso 0.3
+        yalign 0.4 xpos 0.3
     show volkara3quatArmored at size2Thrid: #should we pointy her
         xpos 0.45 yalign 0.5
     with dissolve
@@ -1668,7 +1668,7 @@ label takuriumFozPart1:
     tesi "I can explode their gates open."
     hide tesipizBombAndFist
     show tesipiz34MiniHappyArmored at size2Thrid:
-        yalign 0.4 xpso 0.3
+        yalign 0.4 xpos 0.3
     show volkara3quatArmored pointy deltaMouth
     with dissolve 
     volk "Should we fix Takurium's south walls before attacking Krokkosnek?"
@@ -1709,30 +1709,234 @@ label takuriumFozPart1:
 label battleOfLakeTakuraFoz: #do after yemehFoZ is done
     "Water time"
     #jamesian Heavy archer dude with telescope sees boats
+    scene clearDayTime
+    show takuriumOutOfArena at fullFit
+    show jamesianHeavyArcherTelescopeSee at  middleStand , size2Thrid  , flipped
+    with fade
+    pause 2.0
 
+    scene clearDayTime
+    show flatWater1 at center:
+        yzoom 0.75
+    show flatWater1 as transparentWata at center:
+        yzoom 0.75 matrixcolor OpacityMatrix(0.5)
+
+    
+    show astartTriremeSide at quatSize:
+        yalign 0.45 xpos -0.4
+        linear 20 xpos 1.4
+    show snakeMan at thridSize behind transparentWata:
+        yalign 0.4 xpos -0.4
+        linear 20 xpos 3.6
+    show snakeMan as extraHisser at thridSize behind transparentWata:
+        yalign 0.2 xpos -0.8
+        linear 20 xpos 3.2
+    show snakeMan at thridSize as hissmaster behind transparentWata:
+        yalign 0.4 xpos -1.8
+        linear 20 xpos 2.2
+    show snakeMan at thridSize as hissyFit behind transparentWata:
+        yalign 0.4 xpos -1.9
+        linear 20 xpos 2.1
+    show tsetulingGuardMSwim at thridSize behind transparentWata:
+        yalign 0.2 xpos -1.4
+        linear 20 xpos 2.6
+    show tsetulingGuardFSwim at thridSize behind transparentWata:
+        yalign 0.2 xpos -1.3
+        linear 20 xpos 2.7
+    show krokkosnekLeadShield at thridSize behind transparentWata:
+        yalign 0.3 xpos -1.5
+        linear 20 xpos 2.5
+    show tsetulingGuardFSwim at thridSize as extraCrabgirl behind transparentWata:
+        yalign 0.2 xpos -1.7
+        linear 20 xpos 2.3
+    show tsetulingGuardMSwim at thridSize as extraCrabboy behind transparentWata:
+        yalign 0.4 xpos -1.2
+        linear 20 xpos 2.8
+    show thiatsetuJavelinLadySwim at thridSize behind transparentWata:
+        yalign 0.2 xpos -2.1
+        linear 20 xpos 1.9
+    show thiatsetuArcherSwim at thridSize behind transparentWata:
+        yalign 0.2 xpos -2.8
+        linear 20 xpos 1.2
+    show thiatsetuJavelinLadySwim as extraNagaGirl at thridSize behind transparentWata:
+        yalign 0.2 xpos -2.4
+        linear 20 xpos 1.6
+    show thiatsetuJavelinLadySwim as moreNagaHarem at thridSize behind transparentWata:
+        yalign 0.3 xpos -2.9
+        linear 20 xpos 1.1
+    show thiatsetuArcherSwim as extraBowNaga at thridSize behind transparentWata:
+        yalign 0.4 xpos -3.1
+        linear 20 xpos 0.9
+    
+    show telescopeInside
+    with dissolve
+
+    pause 7
+    scene clearDayTime
+    show flatWater1 at center:
+        yzoom 0.75
+    show flatWater1 as transparentWata at center:
+        yzoom 0.75 matrixcolor OpacityMatrix(0.5)
+    show astartTriremeSide at quatSize , flipped:
+        xpos 0.25 ypos 0.3
+        linear 20 xpos 1.25
+    show astartLandingBoatSide at thridSize , flipped:
+        xpos 0.3 ypos 0.2
+        linear 20 xpos 1.3
+    show astartTriremeSide as extraRamming at thridSize , flipped:
+        xpos 0.5 ypos 0.5
+        linear 20 xpos 1.5
+    show astartLandingBoatSide as axtraBoaty at thridSize , flipped:
+        xpos 0.6 ypos 0.7
+        linear 20 xpos 1.6
+
+    show telescopeInside
+    with dissolve
+
+    pause 7
     #they are alerted
     #heavy archer alerted
+    
+    scene clearDayTime
+    show takuriumOutOfArena at fullFit
+    show jamesianHeavyArcherTelescope at middleStand , size2Thrid , flipped
+    with dissolve
     hvyArchM "ASTART FORCES APPROCHING FROM THE LAKE!"
+    hide jamesianHeavyArcherTelescope
+    show jamesianHeavyArcherAlerted at middleStand , size2Thrid  , flipped
+    with dissolve
     hvyArchM "THEY HAVE BOATS AND AQUATICS!!"
     #they prepare for battle
 
-    mega "PREPARE FOR BATTLE!!"
+    show jamesianHeavyArcherAlerted:
+        linear 2 xpos -0.25
+    show megabazus armed34 meanEyes angryMouth at size2Thrid:
+        xpos 1.5
+        easeout 2 xpos 0.7
+    mega "PREPARE FOR BATTLE!!" with vpunch
     #fight wait to land.
     #boats sail past.
-    krok "Aquatics!!"
-    krok "Attack the Takurium Docks."
+
     #horse archers, zamburaks and jav-cav go out to harrass any astarts who land
+    scene clearDayTime
+    show takuriumEntrance1 at backgroundSetPlace
+
+    show jamesianHeavyHorseArcher at thridSize , left
+    show takuraLightCavarly at thridSize:
+        xpos 0.3
+    show zwotiCavarly at thridSize:
+        xpos 0.1
+    show zamburak at thridSize:
+        xpos 0.4
+
+    show megabazus horse meanEyes frown at thridSize , right
+
+    with dissolve
+
+    mega "The Astarts have landing craft and may attempt a landing."
+    mega "Attack and harass them if they do."
+    mega "Also send somebody to inform me on where they have landed and with how many boats."
+
+    jamesCavalreez "Understood General Megabazus!!"
+
+
+    scene clearDayTime
+    show takruriumSouthGate:
+        xalign 0.7 yalign 0.25 yzoom 0.7
+    # copied from the astart version buyt with jamesians
+    show jamesianHeavySpearDude:
+        zoom 0.15 xpos 0.52 ypos 0.26
+        easein 1 xpos 0.9
+    show jamesianHeavySpearGirl:
+        zoom 0.15 xpos 0.71 ypos 0.3
+        easein 1.0 xpos 0.85
+    show zwotiInfantryDude at quatSize:
+        xpos 0.3 ypos 0.3
+        easein 1.2 xpos 0.09
+    show jamesianSparabaraGirl at quatSize:
+        xpos 0.7 ypos 0.3
+        easein 2.0 xpos 0.95
+
+    with fade
+    pause 0.5
+    show zamburak with dissolve:
+        xpos 0.57 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    pause 0.5
+    show jamesianCataphract:
+        xpos 0.48 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    show jamesianCataphract as extraHorse: #replace with camel lancer dude 
+        xpos 0.65 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    pause 0.5
+    with dissolve
+    show jamesianHeavyHorseArcher:
+        xpos 0.48 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    show jamesianHeavyHorseArcher as extraHun: #replace with light horse archer from p150
+        xpos 0.65 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    pause 0.5
+    with dissolve
+    show zwotiCavarly:
+        xpos 0.48 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    show zwotiCavarly as extraZwoti: #replace with zwoti cavarly lady or the jamesian longsword lady on a camel?
+        xpos 0.65 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    pause 0.5
+    with dissolve
+    show takuraLightCavarly:
+        xpos 0.48 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    show takuraLightCavarly as extraLight:
+        xpos 0.65 zoom 0.125 ypos 0.2
+        easein 2 zoom 1.0 ypos 2.0
+    pause 0.5
+    with dissolve
+    #add in 
+    pause 1.5
+    #show aquatics and krokkosnek swimming in the wata
+
+    scene clearDayTime
+    show flatWater1:
+        yzoom 0.75
+    
+    show krokkosnekCommanding at middleStand , halfSize
+    show tsetulingGuardFSwim at atoRight , size2Thrid
+    show snakeManInWater at xerxLeft , size2Thrid
+    show flatWater1 as transparentWata:
+        yzoom 0.67
+        matrixcolor OpacityMatrix(0.8)
+    with fade
+    krok "Aquatics!!"
+    hide krokkosnekCommanding
+    show krokkosnekZappingUNWater at middleStand , halfSize behind transparentWata
+    with dissolve
+    krok "Attack the Takurium Docks."
+    
 
     #fight off the aquatics.
+
     #this is why male-tsetulings - to help with filling out the ranks.
 
-    zamburakF "They're landing in the south!" #use zamburak lady because she will show up
+
+    #show forces landing on the south
+    zamburakF "They're landing in the south!" #use zamburak lady because she will show up in AST and maybe aPCL version
 
     mega "Xerxes, Tesipiz and Volkara"
     mega "Join the cavarly and camels in dealing with southern forces!"
-    mega "We'll handle this."
+    mega "We can handle this."
     taku "I'm not letting them take over my city and imprison me {b}AGAIN!!"
     
+    $ xerxesCharacter.updateMount( cataphractHorseXerx )  
+    $ tesipizCharacter.updateMount( cataphractHorseTesipiz )  
+    $ volkaraCharacter.updateMount( cataphractHorseXerx ) 
+
+    $ xerxesCharacter.updateArmor( 1 )
+    $ tesipizCharacter.updateArmor( 1 )
+    $ volkaraCharacter.updateArmor( 1 )
     #cavalry run out 
     #boats start landing.
     #first cavarly v cavalry
@@ -1798,36 +2002,143 @@ label yemehFoz:
     #krokkosnek is scared and sad but has a plan.
 
     #mwejya and belgius show up - yemeh shore front
+    scene clearDayTime
+    show yemehMainStreet at center
+    show krokkosnekNeutralHappy at lakatinuRight  , size2Thrid
+    show mwejya happyMouth at bardaiyaLeft  , size2Thrid
+    with fade
     flameChucka "Hello Krokkosnek."
+    
+    show mwejya crossarms annoyedMouth meanEyes
+    hide krokkosnekNeutralHappy 
+    show krokkosnekAnnoyed at lakatinuRight , size2Thrid
+    with dissolve
     flameChucka "Aren't you suposed to be in Takurium?"
+    show mwejya angryMouth with dissolve
     flameChucka "When are you going to drive the Jamesians out and retake the city?"
+    hide krokkosnekAnnoyed
+    show krokkosnekAnnoyedAround at lakatinuRight  , size2Thrid
+    show mwejya annoyedMouth
+    with dissolve
     krok "When Minona forces them to defend their homeland."
+    hide krokkosnekAnnoyedAround
+    show krokkosnekAnnoyed at lakatinuRight
+    show mwejya angryMouth suprizedPose
+    with dissolve
     flameChucka "We need to attack now. Before they fix the south wall. before the Forest and Sand Korkins reinforce them."
+    show mwejya commanding happyMouth with dissolve
     flameChucka "My forces will help you out."
+    hide krokkosnekAnnoyed
+    show krokkosnekAngryAround at lakatinuRight , size2Thrid
+    show mwejya -commanding annoyedMouth
+    with dissolve
     krok "Those jamesians killed Sakuna."
     krok "They're a lot thougher."
+    show mwejya crossArms happyMouth
+    hide krokkosnekAngryAround
+    show krokkosnekAnnoyed at lakatinuRight  , size2Thrid
+    with dissolve
+    show tsetulingGuardF at halfSize behind mwejya:
+        yalign 0.4 xpos -0.5
+        easeout 2 xpos 0.3
+    show tsetulingGuardM at size2Thrid:
+        yalign 0.4 xpos -0.5
+        easeout 2 xpos 0.5
     flameChucka "Well your new tsetuling collection will help deal with them."
+    show mwejya suprizedPose with dissolve
     flameChucka "Don't worry"
+    show mwejya commanding with dissolve
+    show suzumiteKaetratius at halfSize behind mwejya:
+        yalign 0.4 xpos -0.5
+        easeout 2 xpos 0.25
+    show hekaAxeLady at size2Thrid:
+        yalign 0.4 xpos -0.5
+        easeout 2 xpos 0.15
     flameChucka "My forces will help."
 
+    show mwejya -happyMouth
+    hide krokkosnekAnnoyed
+    show krokkosnekAngryAround at lakatinuRight  , size2Thrid
+    with dissolve
     krok "I hope so."
+    hide krokkosnekAngryAround
+    show krokkosnekCommanding at lakatinuRight  , size2Thrid
+    show mwejya commnadingShield:
+        linear 2 xpos 0.6
+    with dissolve
     flameChucka "Goons!"
     flameChucka "Get on the boats."
+    show hekaAxeLady:
+        linear 1 xzoom -1.0
+        easein 2 xpos -0.5
+    pause 0.25
+    show suzumiteKaetratius:
+        linear 1 xzoom -1.0
+        easein 2 xpos -0.5
+    pause 0.25
+    show tsetulingGuardM:
+        easein 2 xpos 1.5
+    pause 0.25
+    show tsetulingGuardF:
+        easein 2 xpos 1.5
+    pause 0.25
+    show mwejya -commnadingShield with dissolve:
+        linear 1 xpos 0.2
     flameChucka "Krokkosnek."
-    flameChucka "Just keep summoning monsters and send to Takurium docks." #have a takurium assult section
+    show mwejya suprizedPose with dissolve
+    flameChucka "Just keep summoning monsters and send them to Takurium Docks." #have a takurium assult section
     #belgius arrives
+    show mwejya -suprizedPose -happyMouth -meanEyes:
+        linear 2 xpos 0.4
+    show belgius34Ground meanEyebrows angryMouth at size2Thrid:
+        yalign 0.5 xpos -0.5
+        easeout 2 xpos 0.2
+    with dissolve
     balaCavOf "Where's Xerxes?"
+    hide tsetulingGuardF
+    hide tsetulingGuardM
+    hide suzumiteKaetratius
+    hide hekaAxeLady
+    show belgius happyMouth with dissolve
     balaCavOf "I want to kill him."
+    
+    hide krokkosnekCommanding
+    show krokkosnekAnnoyedAround at lakatinuRight  , size2Thrid
+    with dissolve
     krokkosnek "If he's anywhere."
     krokkosnek "He'll be in Takurium with the Jamesians."
+    
+    hide krokkosnekAnnoyedAround
+    show krokkosnekNeutralHappy at lakatinuRight  , size2Thrid
+    show belgius -happyMouth
+    show mwejya crossArms happyMouth
+    with dissolve
     flameChucka "You heard him."
+    show mwejya commnadingShield meanEyes with dissolve
     flameChucka "You and your warband get on a boat."
+    show belgius:
+        easein 2 xpos -0.5
+    show mwejya -commnadingShield -meanEyes - happyMouth:
+        linear 2 xpos 0.2
+    hide krokkosnekNeutralHappy
+    show krokkosnekAnnoyedOpen at lakatinuRight  , size2Thrid
+    with dissolve
     krok "Are you sure this is a good idea?"
+    hide krokkosnekAnnoyedOpen
+    show krokkosnekAnnoyed at lakatinuRight  , size2Thrid
+    show mwejya closedEyes happyMouth suprizedPose
+    with dissolve
     flameChucka "Yes!"
+    show mwejya -closedEyes -suprizedPose with dissolve
     flameChucka "Minona will have an easier time if the Jamesians are pressured everywhere."
+    
+    show mwejya:
+        easein 2 xpos -0.5
+    hide krokkosnekAnnoyed
+    show krokkosnekSad at lakatinuRight , size2Thrid:
+    with dissolve
     krok "{i}I hope my Sutsshak idol is alright."
     krok "{i}General Minona and King Balatius do want me to drive the Jamesians out."
-
     #mwejya and beglius try pressuring krokkosnek to attack Takurium.
     #krokkosnek want's to wait for minona to do her thing or for Xerxes to leave
     #mwejya wants to follow orders and occupy takurium
