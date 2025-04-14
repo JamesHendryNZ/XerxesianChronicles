@@ -28,6 +28,8 @@ define lifo = Character( "Lifomuna" , color = "#002747")
 define hwassak = Character("Hwassak" , color = "#383500")
 define keimdak = Character("Keimdak" , color = "#214000")
 define yiwatsyoh = Character("Yiwatsyoh" , color = "#002a69")
+define Dyonisisngwa = Character("Dyonisisngwa" , color = "#817900")
+define uruklo = Character("Uruklo" , color="#006600")
 #need a shop for Takura - korkin or jamesian.
 
 #minor characters
@@ -40,7 +42,7 @@ define camelMage = Character("Chuwos" , color="#008800")
 define zarCamLan = Character("Zaratian Camel Lancer" , color="#008800")
 define sparagirl = Character("Zaratian Sparabara Girl" , color="#008800")
 define yimiGirl = Character("Yimi-ri'in Lady" , color="#008800")
-define uruklo = Character("Uruklo" , color="#006600")
+
 
 define tastScout = Character("Tastsetu Scout", color="#1a8100")
 
@@ -57,6 +59,7 @@ define hvyArchM = Character( "Jamesian Heavy Archer" , color="#55a")
 define horsAcha = Character( "Horse Archer" , color="#8a3333")
 define zamburakF = Character( "Kina" , color="#700")
 define jamesTroopas = Character( "Jamesian Troopers" , color="#900")
+define jamesCavalreez = Character( "Jamesian Cavalry" , color="#900")
 #antagonists
 #Astarts
     #Imperial Core
@@ -93,7 +96,7 @@ define balaCavOf = Character("Captain Belgius" , color = "#474600")
 define flameChucka = Character("Commander Mwejya" , color = "#474600")
 define krokGoon = Character("Krokkosnek's Goons" , color="#009faa")
 define gilgamataDuck = Character("Gilgamata" , color = "#014521")
-define astartFemSum1 = Character("Lukina" , color = "#510035")
+define astartFemSum1 = Character("Lukina" , color = "#000c51")
 define astartFemSumG = Character("Astart Summoner" , color = "#510035")
 define chwitaza = Character("Chwitaza" , color = "#000" )
 define muwa = Character( "Muwa" , color = "#004400")

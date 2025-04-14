@@ -63,6 +63,7 @@ init:
 
     define spoosh = "audio/sound effects/water-blast.ogg" #Wesnoth version 1.16 under Attribution-ShareAlike 4.0 International - pitched down by an octive 
     define horseGallop = "audio/sound effects/Horse Gallop.ogg" #James Hendry - the classic coconut apporch
+    define ostrichRun = "audio/sound effects/Bipeadal run.ogg" #James Hendry - a more meatier cocnut - can be used for timers and walking dogs
     define ahrimaniomHisskttktk = "audio/sound effects/Ahrimaniom.ogg" #a mix of cat hiss and insect wing beat
     define ratSqueek = "audio/sound effects/rat sqeek.ogg" #
 
@@ -108,6 +109,7 @@ init:
     define meatEplosion = "audio/sound effects/meatPlosion.ogg"
     define seaSounds = "audio/sound effects/ocean-sea-soft-waves-121349.ogg" #Pixabay SoundsForYou
     define slamSound = "audio/sound effects/Slam.ogg" #James Hendry
+    define sandySlam = "audio/sound effects/Sand Slam.ogg" # rememer snow is more crunchy souding than sand
     define bloodySlam = "audio/sound effects/BigSlam.ogg" #James Hendry
     define drop2DaFloor = "audio/sound effects/drop2DaFloor.ogg" #james hendry
     define pizyu = "audio/sound effects/Pizyu.ogg" #James hendry
