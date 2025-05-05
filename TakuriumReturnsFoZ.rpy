@@ -1,5 +1,5 @@
 
-
+default krokkoYemeh = False
 #Takurium returns
 
 label march2TakuriumFoz:
@@ -589,7 +589,7 @@ label march2TakuriumFoz:
     hide mwejya
     hide krokkosnekZappingU
 
-    #TODO - fix bug that makes the ringleaders not appear in the enemy party
+    
     if ringLeader.health > 0:
         $ ringLeader = copy.copy( captainBelgiusFoot )
         $ enemyTroopers.append ( ringLeader )
@@ -816,7 +816,7 @@ label march2TakuriumFoz:
 
     #$ takuriumOwner = "Jamesians&Krokkosnek" # no need , it will be more linilar
     
-    "winna winna ostrich dinner (got takurium from niitwanwa)" #remove after unit testing
+    #"winna winna ostrich dinner (got takurium from niitwanwa)" #remove after unit testing
 
     $ takuriumOwner = "Jamesians" #needed for A Personal Curse stoyline split (Ahrites attack the city in Episode 3)
     jump takuriumWinsFoZFromNiitwana
@@ -2595,13 +2595,14 @@ label takuriumDefence1Finshthem:
 
     #they flee
     #because takura is freed if the player goes down this route (Megabazus' troopa find her.)
-    $ freedTakura = True
+    #$ freedTakura = True
     jump takuriumWinsFoZ
 
 
 
 label yemehFoz:
     
+    $ krokkoYemeh = True
     #build up for takurium assult
     play music villageTheme fadein 1.0 fadeout 1.0
     scene yemehEstablishing at fullFit with fade

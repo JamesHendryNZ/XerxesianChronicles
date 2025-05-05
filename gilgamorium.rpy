@@ -831,28 +831,36 @@ label zardonianaLandingGilgamorium:
     hide zardonianBoatFrontUp
     show zardonianBoatFrontNoRamp at center , halfSize
     show zardonianBoatFrontDown at center , halfSize
+    play sound [ slamSound  ]
     with dissolve
     show zardonianAxeDude at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos -0.5
+    play sound sandySlam
     show zardonianAxeGirl at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos 1.5
+    play sound sandySlam
     show zardonianSwordsMan at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos -0.5
+    play sound sandySlam
     show zardonianSwordsWoahMan at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos 1.5
+    play sound sandySlam
     show zardonianDartBoy at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos -0.5
+    play sound sandySlam
     show zardonianDartGirl at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos 1.5
+    play sound sandySlam
     show zardonianHarpoonDude at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos -0.5
+    play sound sandySlam
     
     return
 #works just like takurium and kwortix mine

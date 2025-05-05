@@ -2861,7 +2861,7 @@ label leaveEctabana2:
     if goingEast:
         if takuriumOwner == "Jamesians":
             "To Takurium"
-            #jump TakuriumEarlyJamesians
+            jump takuriumFozPart1
         else:
             "To Niitwana fortress."
             jump NiitwanwaFoZ
@@ -2869,5 +2869,6 @@ label leaveEctabana2:
         #"Zaratianss"
         jump ToZarat
     
-    "{b}THIS IS THE END OF PART 1 \n PART 2 COMMING SOON"
+    "{i}You somehow skipped a if/else statement"
+    "{i}Well dumb."
     return

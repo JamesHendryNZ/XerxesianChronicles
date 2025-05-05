@@ -86,7 +86,7 @@ label versanizOnABoatWithLakatinu:
         zoom 1.0
     with dissolve
     vers "Go and help, King Zagzhino of Gilgamorium."
-    vers "He'll let you search for it after you help him defeated the Zaratians."
+    vers "He'll let you search for it after you help him defeat the Zaratians."
 
     show versaniz armoredPointy happyMouth at tesiRight
     show lakatinuFront armored meanEyes happyMouth at bardaiyaLeft:
