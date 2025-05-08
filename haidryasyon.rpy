@@ -385,7 +385,7 @@ label runAroundDaArena:
     #stop sound fadeout 2.0
     $ ogHealth = xerxesCharacter.health
     $ defencePattern = getRangedPatterns( "hydrasyon" )
-    call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , False , enemyTroopers[0] , xerxesCharacter , 0.7 ) from _call_defenceTime_2
+    call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , False , enemyTroopers[0] , xerxesCharacter , 1.0 ) from _call_defenceTime_2
     if xerxesCharacter.health <= 0:
         $ renpy.music.set_volume(0, delay=0.5, channel='dynamicMusic')
         $ renpy.music.set_volume(1, delay=0.5, channel='music')

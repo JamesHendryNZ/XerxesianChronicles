@@ -1242,7 +1242,7 @@ label gilgaNorthGate:
         show zaratoJamesianAxeLady:
             ypos 0.45 xpos 0.35 zoom 0.05
             easeout 10 zoom 2.0 ypos 1.0 xpos 0.2
-        show camelLady meanEyebrows OMouth:
+        show camelLady meanEyes OMouth:
             ypos 0.45 xpos 0.3 zoom 0.05
             easeout 10 zoom 2.0 ypos 1.0 xpos -0.3
         
@@ -2096,7 +2096,7 @@ label gettingKingZagzhino:
         show volkaraArmored armred happyMouth at tesiRight , size08
         with dissolve
         volk "We might hold you in the Temple of Ahura-Mazda if you tell us where the Anti-Stealth Tablet piece is."
-        show volkaraArmored armred happyMouth heheh at tesiRight , size08 with dissolve
+        show volkaraArmored heheh at tesiRight , size08 with dissolve
         volk "We're nicer than the Zaratians, we promise."
 
         scene clearDayTime 

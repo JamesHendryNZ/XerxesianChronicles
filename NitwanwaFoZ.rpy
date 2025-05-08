@@ -569,9 +569,7 @@ label minonaAndBalatiusAtKworitx:
     #usuall goons and gallop but going left to right instead of right to left
     return
 
-label NiitwanwaFoZ:
-
-    
+label setUpgradeAfterSoAM: #sets needed variables I 
     #forgot to add at ectbanaVisit2 and it's easer to implement here because some users may have saved after
     #the last viable place in ectabanaVisit2
     $ xerxesCharacter.updateMount( cataphractHorseXerx )  
@@ -589,10 +587,17 @@ label NiitwanwaFoZ:
     $ volkaraCharacter.rangedWeapon = compositeBow
     $ volkaraCharacter.weapon = jamesianSword
 
+    return
+
+label NiitwanwaFoZ:
+
+    
+    call setUpgradeAfterSoAM from _call_setUpgradeAfterSoAM
+
     #map showing everyone moving about.
     #call minonaAndBalatiusAtKworitx
     #go to Niitwana fortress 
-    call minonaAndBalatiusAtKworitx
+    call minonaAndBalatiusAtKworitx from _call_minonaAndBalatiusAtKworitx
     play music happyAtoTheme fadein 1.0 fadeout 1.0
     if IsDaytime:
         scene niitwanwaEstablishing at fullFit with fade
@@ -1102,86 +1107,86 @@ label NiitwanwaFoZ:
 label afterKoithaFoz:
     
     
-    call krokkosnekInTakurium
+    call krokkosnekInTakurium from _call_krokkosnekInTakurium
 
     #jamesians prepare to battle them
     play music planingTime fadein 1.0 fadeout 1.0
     scene clearDayTime at fullFit
     show flatWater1 at center:
-        yzoom 0.5
+        yzoom 0.75
     show niitwanwaOutsideDock:
-        xalign 0.0 yalign 1.0 yzoom 0.75
-        linear 15 xalign 1.0
+        xalign 0.0 yalign 1.0 yzoom 0.67
+        linear 30 xalign 1.0
     #show jamesian troop types assembled in a line
     #a mix of jamesians and korkins
     show takuraLightCavarly at thridSize:
         xpos 0.3 yalign 0.7
-        linear 15 xpos -0.7
+        linear 20 xpos -0.7
     show zwotiCavarly at thridSize:
         xpos 0.7 ypos -0.1
-        linear 15 xpos -0.3
+        linear 20 xpos -0.3
     show zamburak:
         xpos 1.22 ypos -0.2 zoom 0.3
-        linear 15 xpos 0.22
+        linear 20 xpos 0.22
     show jamesianCataphract at thridSize:
         xpos 1.0 yalign 0.7
-        linear 15 xpos 0.0
+        linear 20 xpos 0.0
     
     show jamesianHeavyHorseArcher:
         xpos 1.7 ypos -0.0 zoom 0.3
-        linear 15 xpos 0.7 
+        linear 20 xpos 0.7 
 
     
     show zwotiInfantryLady at thridSize:
         xpos 0.35 yalign 1.1
-        linear 15 xpos -0.65
+        linear 20 xpos -0.65
     
     
     show takuraSnakeArcher at thridSize:
         xpos 0.25 yalign 1.1
-        linear 15 xpos -0.75
+        linear 20 xpos -0.75
     show zwotiInfantryDude at thridSize:
         xpos 0.1 yalign 1.0
-        linear 15 xpos -0.9
+        linear 20 xpos -0.9
     
     show jamesianHeavySpearGirl at thridSize:
         xpos 0.95 yalign 0.9
-        linear 15 xpos -0.05
+        linear 20 xpos -0.05
     
     show axerianInfantry at thridSize:
         xpos 0.8 yalign 1.0
-        linear 15 xpos -0.2
+        linear 20 xpos -0.2
     show jamesianHeavySpearDude at thridSize:
         xpos 0.7 yalign 1.0
-        linear 15 xpos -0.3
+        linear 20 xpos -0.3
     show takuraKardakes at thridSize:
         xpos 0.5 yalign 1.2
-        linear 15 xpos -0.5
+        linear 20 xpos -0.5
     
     show jamesianHeavyArcher at thridSize:
         xpos 1.54 yalign 0.9
-        linear 15 xpos 0.54
+        linear 20 xpos 0.54
     show jamesianSparabaraDude at thridSize:
         xpos 1.35 yalign 1.0
-        linear 15 xpos 0.35
+        linear 20 xpos 0.35
     
     
     
     show jamesianSparabaraGirl at thridSize:
         xpos 1.2 yalign 1.0
-        linear 15 xpos 0.2
+        linear 20 xpos 0.2
     
     
     show jamesianTakabara at thridSize behind jamesianHeavyArcher:
         xpos 1.72 yalign 1.1
-        linear 15 xpos 0.72
+        linear 20 xpos 0.72
     show jamesianSlinger at thridSize behind jamesianTakabara:
         xpos 1.85 yalign 1.0
-        linear 15 xpos 0.85
+        linear 20 xpos 0.85
     
     show jamesianLongsword at thridSize:
         xpos 1.1 yalign 1.4
-        linear 15 xpos 0.1
+        linear 20 xpos 0.1
     
     with fade
     pause 16

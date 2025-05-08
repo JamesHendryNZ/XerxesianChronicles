@@ -210,7 +210,7 @@ label ectabanaAfterGettingDaSoAM:
     darius "We can't Xerxes."
     darius "Astarte's armies and navies prevent us."
     scene bardaiyaVZyarya at fullFit with dissolve
-    darius "And Bardaiya has defeated us many time before."
+    darius "And Bardaiya has defeated us many times before."
     darius "He needs to die."
 
     call jamesosRealmSmollAndWholl from _call_jamesosRealmSmollAndWholl
@@ -237,7 +237,7 @@ label ectabanaAfterGettingDaSoAM:
     with Dissolve(1)
 
     
-    darius "This stone artifact is currently Shattered."
+    darius "This stone artifact is currently shattered."
     
     hide stoneTabletGil
     hide stoneTabletZard
@@ -1646,13 +1646,13 @@ label atoMorningAfterSoAMNight:
             scene clearDayTime
             show atossaBedroom at fullFit
             with fade
-            show xerx3quatGreet at xerxLeftLeft
+            show xerx3quatGreet at xerxLeft
             show ato3quatHappy at atoRight
             with dissolve
             xerx "Morning Ato'ssa."
             hide xerx3quatGreet
             hide ato3quatHappy
-            show xerx3quatHappy at xerxLeftLeft
+            show xerx3quatHappy at xerxLeft
             show ato3quatGreet at atoRight
             with dissolve
             ato "Morning Xerxes."
@@ -1736,8 +1736,8 @@ label atoMorningAfterSoAMNight:
             xerx "Bye."
             hide xerx3quatGreet
             hide ato3quatHappy2
-            show xerx3quatHappy
-            show ato3quatGreet
+            show xerx3quatHappy at xerxLeft
+            show ato3quatGreet at atoRight
             with dissolve
             ato "Bye."
             stop music fadeout 2.0
@@ -2860,10 +2860,10 @@ label leaveEctabana2:
     
     if goingEast:
         if takuriumOwner == "Jamesians":
-            "To Takurium"
+            #"To Takurium"
             jump takuriumFozPart1
         else:
-            "To Niitwana fortress."
+            #"To Niitwana fortress."
             jump NiitwanwaFoZ
     else:
         #"Zaratianss"

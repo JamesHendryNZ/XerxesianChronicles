@@ -823,9 +823,9 @@ label march2TakuriumFoz:
 
 label takuriumFozPart1:
 
-    call setUpgradeAfterSoAM
+    call setUpgradeAfterSoAM from _call_setUpgradeAfterSoAM_1
     
-    call minonaAndBalatiusAtKworitx
+    call minonaAndBalatiusAtKworitx from _call_minonaAndBalatiusAtKworitx_1
 
     play music sandHero fadein 1.0 fadeout 1.0
 
@@ -882,8 +882,8 @@ label takuriumFozPart1:
         show ladyTakura happyMouth
         with dissolve
         taku "Yes."
-        show megabazus point34Armored OMouth
-        show ladyTakura armsDown -happyMouth
+        show megabazus point34Armored OMouth 
+        show ladyTakura armsDown -happyMouth 
         with dissolve
         mega "We thought you died 3 centeries ago."
         show megabazus armored34 -OMouth
@@ -1700,7 +1700,7 @@ label takuriumFozPart1:
     show ladyTakura greeting happyMouthLipstick at center , halfSize:
         ypos 1.25
     with dissolve
-    taku "Hello Thiatsetu lady."
+    taku "Hello thiatsetu lady."
 
     play music templeOfGrandness fadein 1 fadeout 1
     scene takuriumInsideSutsshakEast at backgroundSetPlace
@@ -1797,7 +1797,7 @@ label takuriumFozPart1:
     #they leave
 
     #meanwhile to Yemeh
-    call yemehFoz
+    call yemehFoz from _call_yemehFoz
     #go to temple of sutsshak
     play music planingTime fadein 1.0 fadeout 1.0
     scene takuriumInisdeSutsshakWest at backgroundSetPlace
@@ -1859,7 +1859,7 @@ label takuriumFozPart1:
         xpos -0.5 ypos 1.3
         easein 2 xpos 0.0
     with dissolve
-    volk "Do you know what the anti-stealth tablet pieces look like?"
+    volk "Do you know what the Anti-Stealth Tablet pieces look like?"
     show megabazus OMouth sadEyes with dissolve
     mega "Not really."
 
@@ -2233,6 +2233,14 @@ label battleOfLakeTakuraFoz: #do after yemehFoZ is done
         hide grapplePointer1 with dissolve
         taku "It'll pull the aquatics out of the water were we can finish them off."
         $ changeItemAmount( inventory , grapplePointShooter , 1 )
+
+    $ xerxesCharacter.updateMount( noMount )
+    $ tesipizCharacter.updateMount( noMount )
+    $ volkaraCharacter.updateMount( noMount )
+
+    $ xerxesCharacter.updateStats(  )
+    $ tesipizCharacter.updateStats(  )
+    $ volkaraCharacter.updateStats(  )
 
     #fight off the aquatics for 10 turns or kill 16 of them. (maybe reduce to 8 turns)
     $ extraGoonPool = [ snakebite , pythonDaSwimmer , nitricAcidSpittingCobraSwimming , sulfuricViperSwimming , pythonDaSwimmer , thiatsetuPeltast , thiatsetuArcher , tsetulingFighter , tsetulingFighterM ]
@@ -2619,7 +2627,7 @@ label yemehFoz:
     show thiaSpearMale at right , flipped:
         xpos 0.65 ypos 0.8 zoom 0.3
     show astartCommonInfantryFemale at right , thridSize , flipped:
-        xpos 0.8 ypos 0.9
+        xpos 0.8 ypos 0.95
     show krokkosnekNeutralHappyPoint at flipped , left , thridSize
 
     with fade
@@ -2656,7 +2664,7 @@ label yemehFoz:
     show krokkosnekAnnoyed at lakatinuRight , size2Thrid
     show mwejya angryMouth suprizedPose
     with dissolve
-    flameChucka "We need to attack now. Before they fix the south wall. before the Forest and Sand Korkins reinforce them."
+    flameChucka "We need to attack now. Before they fix the south wall, before the Forest and Sand Korkins reinforce them."
     show mwejya commanding happyMouth with dissolve
     flameChucka "My forces will help you out."
     hide krokkosnekAnnoyed
@@ -2694,7 +2702,7 @@ label yemehFoz:
     stop music fadeout 3.0
     show mwejya -happyMouth
     hide krokkosnekAnnoyed
-    show krokkosnekAngryAround at lakatinuRight  , halfSize behind tsetulingGuardM:
+    show krokkosnekAngryAround at lakatinuRight  , halfSize behind tsetulingGuardM , mwejya:
         xpos 0.7
     with dissolve
     krok "I hope so."
@@ -2705,6 +2713,8 @@ label yemehFoz:
         xpos 0.95
     show mwejya commnadingShield oMouth:
         linear 2 xpos 0.3
+    show tsetulingGuardM at halfSize , left behind mwejya:
+        xpos 0.55 ypos 1.25
     with dissolve
     flameChucka "Goons!"
     flameChucka "Get on the boats."

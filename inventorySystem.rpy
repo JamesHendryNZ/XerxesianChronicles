@@ -179,7 +179,7 @@ label useItemScreen( ):
             $ dude2Revive.resurrect()
             
             play extraSound ressurection
-            "[dude2Heal.name] got revived."
+            "[dude2Revive.name] got revived."
 
             $ changeItemAmount( inventory , usedItem.item , -1 )
             #$ usedItem.amountOf -= 1
@@ -466,9 +466,9 @@ screen showItemOptions( useableItems , showMoney , hasBackButton = False ):
         vbox:
             vpgrid :
                 if renpy.mobile:
-                    rows 1
-                else:
                     rows 2
+                else:
+                    rows 3
                 spacing 2
                 draggable True
                 mousewheel True
@@ -486,7 +486,7 @@ screen showItemOptions( useableItems , showMoney , hasBackButton = False ):
                             yminimum 300
                         else:
                             xminimum 200
-                            yminimum 200
+                            yminimum 180
                         
                         background Frame( "/gui/frame_Xerx.png" )
 

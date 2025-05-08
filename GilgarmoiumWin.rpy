@@ -1166,8 +1166,8 @@ label gilgamoriumPalaceParty1:
         yanchor 1.0 xanchor 0.5 xpos 0.5 ypos 1.0
         linear 15 yanchor 0.0 ypos 0.0
     pause 16
-    scene gilgamoriumPartyRoom at lightCrystalLights:
-        yanchor 0.5 xanchor 0.5 xpos 0.5 ypos 0.5
+    scene gilgamoriumPartyRoom at lightCrystalLights , truecenter:
+        zoom 1.5 ypos 0.7
     show regius at xerxLeftLeft , lightCrystalLights
     show neutralHappyXerxes at tesiRight , lightCrystalLights
     with fade
@@ -1205,8 +1205,8 @@ label gilgamoriumPalaceParty1:
     pause 2
     scene gilgamoriumZaratDay at fullFit with Dissolve(2)
     xerx "Jamesia used to look like Zarat before Astarte's curse."
-    scene gilgamoriumPartyRoom at lightCrystalLights:
-        yanchor 0.5 xanchor 0.5 xpos 0.5 ypos 0.5
+    scene gilgamoriumPartyRoom at lightCrystalLights, truecenter:
+        zoom 1.5 ypos 0.7
     show xerx3quatDetermined at tesiRight , lightCrystalLights
     show regius34 meanEyes at xerxLeftLeft , lightCrystalLights
     with dissolve
@@ -1390,7 +1390,8 @@ label leaveGilgamorium:
     show chuwos34 happyMouth
     with dissolve
     camelMage "O.K Regius."
-    show zagzhino:
+    hide zagzhino
+    show zagzhino  sadEyes frown captured at middleStand , size2Thrid:
         linear 0.5 xzoom -1.0
         linear 1 xpos 1.5
     show regius34 at tesiRight , size08:

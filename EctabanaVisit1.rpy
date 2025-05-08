@@ -645,8 +645,8 @@ label dinnerWithAtossaFromDay:
                     with dissolve
                     xerx "There's still some Ahrite Courruption left though."
                     
-                    scene missraOut at centerAlignment , halfSize:
-                        ypos 0.1
+                    scene etcabanaPalaceEntrance:
+                        fit "cover"
                     show happyDarius at middleStand , size08
                     with dissolve
                     darius "That's good."
@@ -2794,7 +2794,7 @@ label sleepAtXerxesHouse1:
                 hide tesipiz34CuriousPointing
                 hide ato3quatHappy
                 show ato3quatHappyer at xerxLeftLeft , lightCrystalLights
-                show tesipiz34NeutralHappy
+                show tesipiz34NeutralHappy at tesiRight , lightCrystalLights
                 with dissolve
                 ato "Yeah."
 
@@ -2816,7 +2816,7 @@ label sleepAtXerxesHouse1:
 
                 hide ato3quatHappyer 
                 show ato3quatHappy2 at xerxLeftLeft , lightCrystalLights:
-                    linear 4 xpos 0.4
+                    linear 4 xpos 0.1
                 with dissolve
                 ato "I survived."
                 ato "Riigggght Xerxes?"#maybe ato leaning over with both hands back?
@@ -2827,12 +2827,12 @@ label sleepAtXerxesHouse1:
                 xerx "Yes Ato'ssa."
                 hide ato3quatHappy2
                 show ato3quatHehe at xerxLeftLeft , lightCrystalLights:
-                    xpos 0.4
+                    xpos 0.1
                 with dissolve
                 ato "Heheh."
                 hide ato3quatHehe
                 show ato3quatExicted at xerxLeftLeft , lightCrystalLights:
-                    xpos 0.4
+                    xpos 0.1
                 with dissolve 
                 ato "Hopefully the Ahrimaniom is just a silly fear by now."
 
@@ -4967,6 +4967,7 @@ label xerxesSleepOver2ndVisit:
     elif atossaCharacter in currentParty and killedRatsWithAtossa is True:
         #"Xerxes will get nightmare if headpats > 10"
         #this can only happen at night
+        play music happyAtoTheme if_changed fadein 1.0 fadeout 1.0
         scene xerxesHouseInisdeNight at fullFit
         show atoExcited at middleStand , lightCrystalLights , size08
         with fade
@@ -5161,9 +5162,11 @@ label xerxesSleepOver2ndVisit:
                 $ IsDaytime = True
                 $ timeTime = 0
 
+                
                 scene xerxBedInAtossa at fullFit with fade
                 pause 3
 
+                play music happyAtoTheme fadein 1.0 fadeout 1.0
                 scene xerxesBed at fullFit:
                     ypos -0.5
                 show atoHalfNekkedOnXerxes at fullFit

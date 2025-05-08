@@ -556,7 +556,7 @@ define snakebiteLand = Foe( Transform( child="images/Enemies/astartes goons/Snak
 #Zardonian and ssatu Swimboiz
 define shatsetaArcherLand = Foe ( Transform( child="images/Enemies/Shata and Ssatu/Shatseta archer.webp" , zoom =0.25), "Shatseta Archer" , 41 , 8 , 1 , 3.5 , 8 , True , "medium")
 define shatsetaArcherSwim = Foe ( Transform( child="images/Enemies/Shata and Ssatu/Shatseta archer swimming.webp" , zoom =0.25), "Shatseta Archer" , 41 , 8 , 1 , 3.5 , 8 , True , "medium")
-define shatseaWarriorLand = Foe (  Transform( child="images/Enemies/Shata and Ssatu/Shatseta Warrior Girl.webp", zoom =0.25 ), "Shatseta Warrior" , 62 , 10 , 3 , 3.5 , 5 , False , "mixed3" )
+define shatseaWarriorLand = Foe (  Transform( child="images/Enemies/Shata and Ssatu/Shatseta Warrior Girl.webp", zoom =0.25 ), "Shatseta Warrior" , 62 , 10 , 3 , 3 , 5 , False , "mixed3" )
 define shatsetaWarriorSwim  = Foe (  Transform( child="images/Enemies/Shata and Ssatu/Shatseta Warrior Swimming.webp", zoom =0.25 ), "Shatseta Warrior" , 62 , 10 , 3 , 3.0 , 5 , False , "mixed3" )
 define shatsetaEliteLand = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shtseta Armored Speardude.webp", zoom=0.25 ), "Shatseta Spear Warrior" , 62 , 12 , 8 , 3.2 , 7 , False , "medium4" )
 define shatsetaEliteSwim = Foe( Transform( child="images/Enemies/Shata and Ssatu/Shtseta Armored Speardude Swiimin.webp", zoom=0.25 ), "Shatseta Spear Warrior" , 62 , 12 , 8 , 3.2 , 7 , False , "medium4" )
@@ -655,4 +655,4 @@ define lakatinuRound2 = PatterenFoe( Transform( child = "images/antagonists/Laka
 
 #chariots
 define OrodianChariot = ChariotFoe( Transform ( child = Composite( ( 3100 , 2000 ), (500,0) , "images/Enemies/astartes goons/Balato-Astart Slaver Whip up.webp" ,( 0,0 ), "images/Enemies/astartes goons/Orodian Archer.webp" , ( -500,400 ) , "images/animals/Astart chariot.webp" ), zoom=0.2 ), "Chariot Archer" , 80 , 15 , 12 , 2.8 , 12 , False , "mixed4" , [ orodianArcher , astartWhipWarrior ])
-define mwejyaOnChariot = EffectingChariotFoe( Transform ( child = Composite( ( 3100 , 2000 ), (500,0) , "images/Enemies/astartes goons/Balato-Astart Slaver Whip up.webp" ,( -500,0 ), "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Throwing.webp" , ( -500,400 ) , "images/animals/Astart chariot.webp" ), zoom=0.2 ), "Commander Mwejya" , 120 , 15 , 12 , 3.0 , 12 , False , "mixed4" , [ commanderMwejya , astartWhipWarrior ] , [ "Burning" , "Flaming Spear." , 16 , 4 , 40 ] )
+define mwejyaOnChariot = EffectingChariotFoe( Transform ( child = Composite( ( 3100 , 2000 ), (500,0) , "images/Enemies/astartes goons/Balato-Astart Slaver Whip up.webp" ,( -500,0 ), "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Throwing.webp" , ( -500,400 ) , "images/animals/Astart chariot.webp" ), zoom=0.2 ), "Commander Mwejya" , 120 , 15 , 12 , 3.0 , 12 , False , "mixed4" , [ commanderMwejya , astartWhipWarrior ] , [ [ "Burning" , "Flaming Spear" , 16 , 4 , 40 ] ] )

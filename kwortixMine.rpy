@@ -1437,7 +1437,7 @@ label shataKitchen:
 
             show shataCookingLadyScared at hiddenLegs , lightCrystalLights:
                 zoom 0.8
-            show tesipizSwing at right , tesiRight , lightCrystalLights
+            show tesipizArmoredSwing at right , tesiRight , lightCrystalLights
             show xerxHehehArmoredArmed1 at left , xerxLeftLeft , lightCrystalLights        
             with dissolve
             xerx "How about I turn you into dinner and a fur coat!"
@@ -1968,7 +1968,7 @@ label fightTheShataFurbals:
     show xerxHehehArmoredArmed1 at xerxLeftLeft , lightCrystalLights:
         zoom 0.9 
     with dissolve
-    xerx "You aren't eating us. You little Hairy Idiots!!"
+    xerx "You aren't eating us. You little hairy idiots!!"
     
     scene kwortixLivingBenchUsed:
         xpos -0.5
@@ -2131,7 +2131,7 @@ label fightTheShataFurbals:
             show tesipizHappyArmored at hiddenLegs , lightCrystalLights:
                 zoom 0.8
             with dissolve
-            tesi "Fair Enough."
+            tesi "Fair enough."
 
             scene kwortixLivingBenchUsed:
                 zoom 0.7
@@ -3898,11 +3898,12 @@ label kwortixCrafta:
     $ canVisitShopKwortix = True
     call carftTime from _call_carftTime_7
     $ timeTime += _return
-    if timeTime > 50:
+    if timeTime > time2Night:
+            $ IsDaytime = False
+            $ isDusk = False
+    elif timeTime > 50:
             $ IsDaytime = False
             $ isDusk = True
-    elif timeTime > time2Night:
-            $ isDusk = False
 
     jump kwortixCityMenu
 

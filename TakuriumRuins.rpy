@@ -403,7 +403,7 @@ label takuriumSutshakOutsideNorth:
                     xpos 0.9
                     zoom 0.7
 
-            "Thier's alot of meat on these minobites."
+            "Thier's a lot of meat on these minobites."
             $ changeItemAmount( inventory , lizardMeat , 10 )
 
             if IsDaytime:
@@ -424,7 +424,7 @@ label takuriumSutshakOutsideNorth:
                 show xerx3quatHappyArmored at xerxLeft , lightCrystalLights
                 show tesipiz34HappyArmored at tesiRight , lightCrystalLights
             with dissolve
-            tesi "That was alot of beef."
+            tesi "That was a lot of beef."
 
             hide tesipiz34HappyArmored
             if IsDaytime:
@@ -614,7 +614,7 @@ label takuriumSutshakOutsideSouth:
                     xpos 0.9
                     zoom 0.7
 
-            "There's alot of meat on these minobites."
+            "There's a lot of meat on these minobites."
             $ changeItemAmount( inventory , lizardMeat , 10 )
 
             if IsDaytime:
@@ -632,7 +632,7 @@ label takuriumSutshakOutsideSouth:
                 show xerx3quatHappyArmored at xerxLeft , lightCrystalLights
                 show tesipiz34HappyArmored at tesiRight , lightCrystalLights
             with dissolve
-            tesi "That was alot of beef."
+            tesi "That was a lot of beef."
 
             hide tesipiz34HappyArmored
             if IsDaytime:

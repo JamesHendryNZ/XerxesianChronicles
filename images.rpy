@@ -3521,7 +3521,7 @@ layeredimage volkaraArmored:
     group eyes:
         attribute heheh if_any["basic"]: #800-1500
             "images/Protagonists/Volkara/Volkara armored Heheh Eyes.webp"
-        attribute heheh if_any["greeting","armred","yeah","armoredClever"]:
+        attribute heheh if_any["greeting","yeah","armoredClever"]:
             "images/Protagonists/Volkara/Volkara armored Heheh Eyes.webp"
             xpos 50
         attribute heheh if_any["armred"]:
@@ -4064,15 +4064,15 @@ layeredimage fatima:
             "images/Protagonists/Regius/Regiuss gf/Fatima angry eyes.webp" # 900 - 1500
             xpos 322 ypos 74
         
-        attribute sadEyes if_any["onFoot"] default:  # 800 - 1400
+        attribute sadEyes if_any["onFoot"]:  # 800 - 1400
             "images/Protagonists/Regius/Regiuss gf/Fatima Sad Eyes.webp"
-        attribute sadEyes if_any["onFootArmored"] default:  # 800 - 1400
+        attribute sadEyes if_any["onFootArmored"]:  # 800 - 1400
             "images/Protagonists/Regius/Regiuss gf/Fatima Sad Eyes.webp"
             ypos 100    
-        attribute sadEyes if_any["onFootGreet"] default:  # 800 - 1400
+        attribute sadEyes if_any["onFootGreet"]:  # 800 - 1400
             "images/Protagonists/Regius/Regiuss gf/Fatima Sad Eyes.webp"
             ypos 100 xpos 100
-        attribute sadEyes if_any["onCamel","onCamelGreet" , "onCamelAttack" ] default:  # 800 - 1400
+        attribute sadEyes if_any["onCamel","onCamelGreet" , "onCamelAttack" ]:  # 800 - 1400
             "images/Protagonists/Regius/Regiuss gf/Fatima Sad Eyes.webp"
             xpos 322 ypos 174
 
@@ -4115,15 +4115,15 @@ layeredimage fatima:
             "images/Protagonists/Regius/Regiuss gf/Fatima supang mouth.webp" # 900 - 1500
             xpos 322 ypos 174
         
-        attribute deltaMouth if_any["onFoot"] default: # 800 - 1400
+        attribute deltaMouth if_any["onFoot"]: # 800 - 1400
             "images/Protagonists/Regius/Regiuss gf/Fatima Delta Mouth.webp"
-        attribute deltaMouth if_any["onFootArmored"] default: # 800 - 1400
+        attribute deltaMouth if_any["onFootArmored"]: # 800 - 1400
             "images/Protagonists/Regius/Regiuss gf/Fatima Delta Mouth.webp"
             ypos 100
-        attribute deltaMouth if_any["onFootGreet"] default: # 800 - 1400
+        attribute deltaMouth if_any["onFootGreet"]: # 800 - 1400
             "images/Protagonists/Regius/Regiuss gf/Fatima Delta Mouth.webp"
             ypos 100 xpos 100
-        attribute deltaMouth if_any["onCamel","onCamelGreet", "onCamelAttack"] default: # 800 - 1400
+        attribute deltaMouth if_any["onCamel","onCamelGreet", "onCamelAttack"]: # 800 - 1400
             "images/Protagonists/Regius/Regiuss gf/Fatima Delta Mouth.webp"
             xpos 322 ypos 174
 
