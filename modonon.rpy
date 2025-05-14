@@ -379,7 +379,7 @@ label bullRideDaLizardYEEHAA:
         with dissolve
         play sound bloodySlam
         play music weOwnedThem
-        queue music fire
+        queue music campfire
         jump afterModonon
 
     if facingFront:
