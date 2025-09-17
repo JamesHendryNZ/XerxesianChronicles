@@ -259,3 +259,193 @@ label testMenu:
             jump testMenu
         "Stop crafting":
             return
+
+label configureNewImages:
+    scene cloudyDayTime
+    show lakeBeach at lakeBeachBackground
+    with fade
+    "New images to be configured here."
+
+    
+    show chuwos angryEyes annoyedMouth at right , thridSize:
+        ypos 1.3
+    with fade
+    zarCamLan "The gate has opened!"
+
+    hide zaraSsatuCamel
+    show zaraSsatuCamelNeutral at left , thridSize behind chuwos:
+        ypos 1.35
+    show chuwos angryMouth at right , thridSize:
+        ypos 1.3
+    with dissolve
+    camelMage "That our sign!"
+    show chuwos onCamelAttack at center , halfSize with dissolve:
+        ypos 1.8
+    with dissolve
+    with hpunch
+    camelMage "ATTACK!!"
+
+    scene cloudyDayTime
+    show lakeBeach at lakeBeachBackground
+    with fade
+    "luna da spooda"
+    show lunaDaJuna onBack angryMouth hornyEyes at thridSize with dissolve:
+        ypos 0.2 xalign 0.3
+    ""
+    show lunaDaJuna armred OMouth sadEyes blush with dissolve 
+    "on legss"
+    show lunaDaJuna sitting annoyedMouth hornyEyes blush with dissolve 
+    "sitting"
+    "versaniz on luna da spooda"
+    hide lunaDaJuna
+    show versanizOnLuna VmeanEyes VhappyMouth Vblush blush hornyMouth hornyEyes at thridSize:
+        xalign 0.5 ypos 0.0
+    with dissolve
+    "horny tofgether lol"
+    hide versanizOnLuna
+    show jemesis yeahSword happyMouth meanEyes at halfSize , center
+    with dissolve
+    "jemesis"
+    
+    show jemesis -yeahSword with dissolve
+    "No blade"
+    
+    hide jemesis
+
+    show versaniz battle meanEyes angryMouth at halfSize , center 
+    with dissolve
+    "versaniz battle flame"
+
+    hide versaniz
+    show muiba onSpooda blush thinPupils at size2Thrid:
+        xalign 0.3 ypos -0.5
+    with dissolve
+
+    "mubia on da spooda"
+    show muiba  happy meanEyes battle with dissolve:
+        xalign 0.3 ypos -0.3
+    "muiba battle foot"
+
+    hide muiba
+    show siayusi onSpooda hornyEyes happyMouth blush at size2Thrid:
+        xalign 0.3 ypos -0.2
+    with dissolve
+    "Siayusi on da spooda"
+
+    show siayusi battle
+    "Siayusi Battle"
+
+    hide siayusi
+    show astarte at truecenter , halfSize
+    with dissolve
+    "astarte"
+    show astarte halfNekkedBooba happyMouth hornyEyes leaking blush charming
+    with dissolve
+    "astart goons got gooned"
+    "testing the x crusafixes."
+    #use the 
+    hide astarte
+    
+    show balatianArcherCrusufied:
+        zoom 0.3 xpos 0.67 ypos 0.18
+    
+    show jakaArcherCrusufied:
+        zoom 0.3 xpos 0.031 ypos 0.21 
+
+
+    "add in the stakes"
+    show woodSpikeRack at halfSize , left , flipped
+    show woodSpikeRack as extraRack at halfSize , right
+    "Tsekrei be fighting"
+    scene cloudyDayTime
+    show lakeBeach at lakeBeachBackground
+    show tsekrei battle34 at halfSize , truecenter
+    "sss"
+    "will level soon"
+    hide tsekrei
+    with dissolve
+
+label testVersanizFight:
+
+    play music zarodnianBattle fadein 1.0 fadeout 1.0
+    call addTesipiz 
+    call addVolkara 
+    call setDebugStatsMiddle
+    $ changeItemAmount( inventory , clearingJuice , 3 )
+
+    "fight the zardonian goons"
+
+    $ enemyTroopers = [ copy.copy( ostrichArcherM ) , copy.copy( ostrichArcherF ) , copy.copy( ostrichFighter ) , copy.copy( zardonainAxeCav ) ]
+    call screen playerActions( "The basic ostrichies and a horse" , False , False , False , 1  )    
+
+    $ enemyTroopers = [ copy.copy( junatuLegion ) , copy.copy( junatuSlinger ) , copy.copy(zardonianCataphractM) , copy.copy(zardonianCataphractF) ]
+    call screen playerActions( "Dude spooders and emeny knights" , False , False , False , 1  )    
+    "get the overcharge"
+
+    $ xerxCanOverCharge = True
+    $ addEffects( "OverCharged" , xerxesCharacter , 3 , 10 , "Sword of Ahura-Mazda" )
+    $ xerxChargeLevel = 2
+
+    $ enemyTroopers = [ copy.copy( zardonianAxInfM ) , copy.copy( zardonianAxInfF ) , copy.copy( zardonainLegionaryM ) , copy.copy( zardonianGrapplePointMarine ), copy.copy(muibaFoot) , copy.copy( zardonianAxInfF ) , copy.copy( zardonainLegionaryF ) , copy.copy( zardonianAxInfM ) ]
+    
+    call screen playerActions( "Test the overcharge" , False , False , False , 1  )    
+
+    play music "<to 4>audio/music/versaniz.ogg"
+    queue music fightVersaniz
+    "fight versaniz and gfs"
+    $ versanizDaUnit = copy.copy( versanizJunatu )
+    $ siayusiDaUnit = copy.copy( siayusiJunatu )
+    $ muibaDaUnit = copy.copy( muibaJunatu )
+    $ enemyTroopers = [  muibaDaUnit , versanizDaUnit , siayusiDaUnit ]
+    $ inDaVersanizBossFight = True
+    $ alternativeTargets = [ siayusiDaUnit , muibaDaUnit ]
+    while inDaVersanizBossFight:
+        $ slaysNeeded = len( alternativeTargets )
+        if slaysNeeded <= 0:
+            $ slaysNeeded = -1
+
+        call screen playerActions( "Take out Prince Versaniz" , False , False , False , 1 , ringLeaders = [ versanizDaUnit ] , alternativeTargets = alternativeTargets , ringLeaders2Kill = 1 , alternativeTargets2Kill = slaysNeeded )
+        if versanizDaUnit not in enemyTroopers and getFoeTypeByName( enemyTroopers , "Prince Versaniz III" ) != False:
+            $ versanizDaUnit = getFoeTypeByName( enemyTroopers , "Prince Versaniz III" )
+
+        if muibaDaUnit not in enemyTroopers and getFoeTypeByName( enemyTroopers , "Muiba" ) != False:
+            $ muibaDaUnit = getFoeTypeByName( enemyTroopers , "Muiba" )
+            $ alternativeTargets.append(muibaDaUnit)
+        
+        if siayusiDaUnit not in enemyTroopers and getFoeTypeByName( enemyTroopers , "Princess Siayusi" ) != False:
+            $ siayusiDaUnit = getFoeTypeByName( enemyTroopers , "Princess Siayusi" )
+            $ alternativeTargets.append(siayusiDaUnit)
+        
+        if len( alternativeTargets ) > 0:
+            $ slaysNeeded = len( alternativeTargets )
+        else:
+            $ slaysNeeded = -1
+
+        if versanizDaUnit in enemyTroopers and isinstance ( versanizDaUnit , PatterenFoe ) and ( muibaDaUnit in enemyTroopers or siayusiDaUnit in enemyTroopers ) :
+
+            call screen playerActions( "Versaniz fell of his Junatu. {b}SLAY HIM BEFORE HE GETS BACK ON!!(in 3 turns)" , False , True , True , 3 , ringLeaders = [ versanizDaUnit ] , alternativeTargets = alternativeTargets , ringLeaders2Kill = 1 , alternativeTargets2Kill = slaysNeeded )
+            if getFoeTypeByName( enemyTroopers , "Luna" ) and versanizDaUnit in enemyTroopers:
+                vers "I got back on my Luna!"
+                play sound PowerUp
+                vers "Good thing I stuffed her with healing potions!"
+                $ enemyTroopers.remove( getFoeTypeByName( enemyTroopers , "Luna" ) ) 
+                $ enemyTroopers.remove( versanizDaUnit )
+                $ versanizDaUnit = copy.copy( versanizJunatu )
+                $ enemyTroopers.append( versanizDaUnit )
+            elif getFoeTypeByName( enemyTroopers , "Luna" ):
+                "Versaniz is ded by Luna is alive"
+                $ lunaAlive = True
+            else:
+                $ lunaAlive = False
+
+        if lunaAlive is False:
+            "Luna got shrekt"
+            "It's all orge now."
+        if versanizDaUnit in enemyTroopers and muibaDaUnit not in enemyTroopers and siayusiDaUnit not in enemyTroopers:
+            "Versaniz's gfs got owned"
+            $ inDaVersanizBossFight = False
+        elif versanizDaUnit not in enemyTroopers:
+            $ versanizAlive = False
+            $ inDaVersanizBossFight = False
+            "Versaniz is ded lol."
+        

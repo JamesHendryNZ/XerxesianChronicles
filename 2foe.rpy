@@ -152,7 +152,7 @@ init python:
             self.effects2Give = effects2Give
 
         def __copy__( original ):
-            return EffectingChariotFo( original.foeImage , original.name, original.hitpoints , original.attack , original.armor , original.speed , original.armorPen , original.rangedFoe , original.diffculty , original.transportFoes )
+            return EffectingChariotFoe( original.foeImage , original.name, original.hitpoints , original.attack , original.armor , original.speed , original.armorPen , original.rangedFoe , original.diffculty , original.transportFoes )
 
     class PatterenFoe( Foe ):
 
@@ -496,35 +496,34 @@ define zardonainLegionaryF = Foe ( Transform( child="images/Enemies/Zardonians/z
 
 #define zardonianMinobite
 #define zardoKorkinArcher
-#define StoneCaster = PatternFoe
+#define StoneCaster = PatterenFoe
 
 #zardonian mounties
 
-#define ostrichArcherM
-#define ostrichArcherF
-#define ostrichFighter
+define ostrichArcherM = Foe( Transform( child="images/Enemies/Zardonians/Ostrich Archer Dude.webp", zoom=0.2 ) , "Zardonian Ostrich Archer" , 50 , 8 , 4 , 3.2 , 8 , True , "hard")
+define ostrichArcherF = Foe( Transform( child="images/Enemies/Zardonians/Ostrich Archer Lady.webp", zoom=0.2 ) , "Zardonian Ostrich Archer" , 50 , 8 , 4 , 3.2 , 8 , True , "hard")
+define ostrichFighter = Foe( Transform( child="images/Enemies/Shata and Ssatu/Ssatu Ostrich FIghter.webp" , zoom =0.2 ) , "Ssatu Ostrich Warrior" , 66 , 12 , 10 , 3.2 , 8 , False , "hard")
 #define zardonainSwordCav = PatterenFoe
-#define zardonainAxeCav = PatterenFoe
+define zardonainAxeCav = Foe(  Transform( child="images/Enemies/Zardonians/Zardonian Axe Cavarly.webp", zoom=0.17 ) , "Zardonian Axe Cavarly" , 72 , 10 , 8 , 2.5 , 10 , False , "mixed4")
 #define zardonianArmoredSwordCav
 #define zardonianArmoredAxCav
-#define zardonianCataphractM
-#define zardonianCataphractF
+define zardonianCataphractM = Foe( Transform ( child = "images/Enemies/eliete goons/Zardonian Cataphract Dude.webp" , zoom = 0.2 ) , "Zardonain Cataphract" , 96 , 16 , 12 , 3.2 , 12 , False , "medium6" )
+define zardonianCataphractF = Foe( Transform ( child = "images/Enemies/eliete goons/Zardonian Cataphract Lady.webp" , zoom = 0.2 ) , "Zardonain Cataphract" , 96 , 16 , 12 , 3.2 , 12 , False , "medium6" )
 #define royalCataphract
 
 
 #A bad case of Arachnophillia
 
-# junatuSkimisher = patternFoe
-# junatuSlinger = PatternFoe
+define junatuLegion = PatterenFoe( Transform( child="images/Enemies/Zardonians/Junatu Javelin.webp" , zoom = 0.25 ), "Junatu Legionary" , 123 , 12 , 12 , 3.5 , 14 , True , "3width2" , ["r","m","r"] , { "r" : [ Transform( child= "images/Enemies/Zardonians/Junatu Javelin Commandinf.webp", zoom = 0.25 ), 12 , 3.5 , 14 , "3width2" , True ] , "m" : [ Transform( child ="images/Enemies/Zardonians/Junatu Sword.webp" , zoom = 0.25)  , 16 , 3.6 , 10 , "hard" , False ] } )
+define junatuSlinger = Foe ( Transform( child="images/Enemies/Zardonians/Junatu Web Rocka.webp" , zoom = 0.25 ), "Junatu Web Rocker" , 123 , 12 , 12 , 3.2 , 20 , False , "mixed4")
 # junatuCataphract
-# junatuJavelinWithGirl
-# junatuWarrior
+define junatuCatapharct = Foe( Transform ( child = "images/Enemies/eliete goons/Junatu Cataphract.webp" , zoom = 0.2 ), "Junatu Cataphract" , 188 , 12 , 15 , 2.8 , 12 , False , "mixed5" ) #maybe mixed5
+define junatuSwordKnight = Foe( Transform ( child = "images/Enemies/eliete goons/Junatu Sword Cataphract.webp" , zoom = 0.2 ), "Junatu Knight" , 188 , 10 , 15 , 3.6 , 10 , False , "medium6" ) #mabe haidra7
 # junatuWarriowithBoy
 
 # junatuPartHopliteM
 # junatuPartHopliteF
 
-#ov course the 3 junatu ladies (but they're bosses)
 
 #statues shouldn't move
 
@@ -609,8 +608,8 @@ define minobiteGreatAxArmored = Foe( Transform( child="images/Enemies/eliete goo
 #define lizardSuitM
 #define LizardSuitF
 #define rhomphaia
-#define bardaiyaGuardM = patternFoe
-#define bardaiyaGuardF = patternFoe
+#define bardaiyaGuardM = PatterenFoe
+#define bardaiyaGuardF = PatterenFoe
 #defelaut BardaiyaSpringCannonTrooperM
 #define BardaiyaSpringCannonTrooperF
 #define bardaiyaPioneerM = PatterenFoe "Swing Stab Grapple"
@@ -652,6 +651,19 @@ define hydrasyonCrab = Foe( Transform( child="images/antagonists/Sword Guardian/
 #Main Antagonists
 define lakatinuMelee = FlyingFoe( Transform( child = "images/antagonists/Lakatinu/Lakatinu Sword Grounded.webp", zoom= 0.2 ) , "Lakatinu" , 360 , 12 , 10 , 3 , 6 , False , "lakatinu1" , Transform( child = "images/antagonists/Lakatinu/Lakatinu Feet Flying.webp", zoom=0.2 ) , Transform( child = "images/antagonists/Lakatinu/Lakatinu Sword Grounded.webp", zoom=0.2 ) , True , 2 )
 define lakatinuRound2 = PatterenFoe( Transform( child = "images/antagonists/Lakatinu/Lakatinu Gun Armored.webp" , zoom = 0.2 ) , "Lakatinu" , 480 , 10 , 10 , 2, 20 , True , "shotgun" , ["s","f","m"] , { "s": [ Transform( child = "images/antagonists/Lakatinu/Lakatinu Gun Flying.webp" ,zoom = 0.2) , 10 , 3 , 20 , "shotgun" , True , [ True , Transform( child = "images/antagonists/Lakatinu/Lakatinu Gun Flying.webp" ,zoom = 0.2) , Transform( child = "images/antagonists/Lakatinu/Lakatinu Gun Armored.webp" ,zoom = 0.2)] ], "f" : [  Transform( child = "images/antagonists/Lakatinu/Lakatinu Feet Flying.webp" ,zoom = 0.2) , 12 , 3.5 , 7 , "lakatinu1" , False , [ True , Transform( child = "images/antagonists/Lakatinu/Lakatinu Feet Flying.webp" ,zoom = 0.2) , Transform( child = "images/antagonists/Lakatinu/Lakatinu Sword Grounded.webp" ,zoom = 0.2)]], "m" : [ Transform( child = "images/antagonists/Lakatinu/Lakatinu Sword Grounded.webp" , zoom = 0.2 ),  12 , 3.5 , 7 , "lakatinu1" , False ]})
+
+#versaniz and gfs
+define lunaFight = Foe( Transform ( child = "images/antagonists/Versaniz III/Vasanizs gfs/Luna Armored.webp" , zoom = 0.2 ), "Luna" , 188 , 12 , 15 , 2.8 , 12 , False , "medium6" )
+define versanizFoot = PatterenFoe( Transform( child = Composite ( ( 1200 , 1600 ) , ( 0,0 ) , "images/antagonists/Versaniz III/Versaniz Armored Battle.webp" , (150,0) , "images/antagonists/Versaniz III/Versaniz Arngry Mouth.webp" , (150,0) , "images/antagonists/Versaniz III/Versaniz Armored Mean Eyes.webp" ), zoom = 0.25), "Prince Versaniz III" , 202 , 12 , 12 , 3.2 , 15 , False , "mixed4" , ["h"] ,  { "h" : [ Transform( child = Composite ( ( 1200 , 1600 ) , ( 0,0 ) , "images/antagonists/Versaniz III/Versaniz Armored Battle.webp" , (150,0) , "images/antagonists/Versaniz III/Versaniz Arngry Mouth.webp" , (150,0) , "images/antagonists/Versaniz III/Versaniz Armored Mean Eyes.webp" ), zoom = 0.25 ) , 8 , 3.6 , 15 , "mixed4" , False , [ False ] , [ [] , 0 , False ] , [ False , "Nothing" , 0 , False , False ] , [ [ "Burning" , "Flaming Plumbata" , 16 , 4 , 40 ] ] ] })
+define versanizJunatu = ChariotFoe( Transform ( child = Composite( ( 2600 , 2600 ), (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Luna Mounted.webp" , ( 631 , 210 ) , "images/antagonists/Versaniz III/Versaniz Arngry Mouth.webp" , ( 631 , 210 ) , "images/antagonists/Versaniz III/Versaniz Armored Mean Eyes.webp" ) , zoom = 0.2 ) , "Prince Versaniz III" , 240 , 20 , 30 , 3.0 , 30 , False , "mixed4" , [ versanizFoot , lunaFight ] )
+
+
+
+define muibaFoot = PatterenFoe( Transform( child = Composite( ( 1300 , 1700 ) , ( 0,0 ) ,"images/antagonists/Versaniz III/Vasanizs gfs/Muiba Battle.webp"  , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Muiba Battle Mean Eyes.webp" , (200,200) , "images/antagonists/Versaniz III/Vasanizs gfs/Muiba OMouth.webp" ) , zoom = 0.25), "Muiba" , 184 , 10 , 10 , 3.2 , 6 , False , "mixed4" , ["h"] ,  { "h" : [ Transform( child = Composite( ( 1300 , 1700 ) , ( 0,0 ) ,"images/antagonists/Versaniz III/Vasanizs gfs/Muiba Battle.webp"  , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Muiba Battle Mean Eyes.webp" , (200,200) , "images/antagonists/Versaniz III/Vasanizs gfs/Muiba OMouth.webp"  ) , zoom = 0.25 ) , 10 , 2.6 , 10 , "mixed4" , False , [ False ] , [ [] , 0 , False ] , [ False , "Nothing" , 0 , False , False ] , [ [ "Entangled" , "Roped Harpoon" , 0 , 1 ] ] ] })
+define muibaJunatu = ChariotFoe( Transform ( child = "images/antagonists/Versaniz III/Vasanizs gfs/Muiba Mounted.webp" , zoom = 0.2 ) , "Muiba" , 240 , 20 , 30 , 3.0 , 30 , False , "mixed4" , [ muibaFoot , junatuCatapharct ] )
+
+define siayusiFoot = Foe( Transform ( child = Composite ( ( 1200 , 1700 ) , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 battle.webp" , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 battle Mean Eyes.webp" , (299 , 13) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 back O Mouth.webp" ) , zoom = 0.25 ), "Princess Siayusi" , 224 , 8 , 12 , 3.8 , 12 , False , "mixed4" )
+define siayusiJunatu = ChariotFoe( Transform ( child = Composite( (2600 , 2600) , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi Mounted.webp" , (269 , 277) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 battle Mean Eyes.webp" , (569 , 289) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 Happy Mouth.webp" ), zoom = 0.2 ) , "Princess Siayusi" , 240 , 20 , 30 , 3.0 , 30 , False , "mixed4" , [ siayusiFoot , junatuSwordKnight ] )
 
 #chariots
 define OrodianChariot = ChariotFoe( Transform ( child = Composite( ( 3100 , 2000 ), (500,0) , "images/Enemies/astartes goons/Balato-Astart Slaver Whip up.webp" ,( 0,0 ), "images/Enemies/astartes goons/Orodian Archer.webp" , ( -500,400 ) , "images/animals/Astart chariot.webp" ), zoom=0.2 ), "Chariot Archer" , 80 , 15 , 12 , 2.8 , 12 , False , "mixed4" , [ orodianArcher , astartWhipWarrior ])

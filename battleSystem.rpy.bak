@@ -24,21 +24,6 @@ init python:
                 return True
         #---------------------------
         return False
-    
-    def getFoeTypeByName( enemyTroopers , nameOfFoe , howMany = 1 ):
-
-        extraFoes = []
-        for foe in enemyTroopers:
-            if foe.name == nameOfFoe and howMany < 2:
-                return foe
-            elif foe.name == nameOfFoe:
-                howmany -= 1
-                extraFoes.add(foe)
-        #---------------------------
-        if len(extraFoes) > 0:
-            return extraFoes
-        else:
-            return False
 
     def fillEnemyPartyRandom( dudes , goonAddPool , enemyTroopers ):
 
@@ -92,7 +77,7 @@ init python:
         
 
 
-    def checkIfBelong( dude2Check , spcecialGroup , doesItMatter ):#This method may be removed due to not being needed
+    def checkIfBelong( dude2Check , spcecialGroup , doesItMatter ):
 
         if doesItMatter:
             pointer = 0
@@ -105,46 +90,20 @@ init python:
         return spcecialGroup
     
 
-    def enemyPartyUpdate( foes ):
-        for foe in foes:
-            if ( isinstance( foe , FlyingFoe ) ) or isinstance( foe , PatterenFoe ):
-                foe.updateGraphic()
-
-    def removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled ):
-        for foe in enemyTroopers:
-            
-            if foe.health <= 0:
-                if foe in ringLeaders and endOnRingLeadersGone:
-                    ringLeaders.remove(foe)
-                    
-
-                elif foe in alternativeTargets and winWhenAlternativeTargetsKilled:
-                    
-                    alternativeTargets.remove(foe)
-
-                if isinstance( foe , ChariotFoe ):                
-                    foe.spawnTransportTroopers( foe.transportFoes , enemyTroopers )
-                
-                enemyTroopers.remove(foe)
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 screen statusScreen:
 
+    #Will be put into an object.
     
-
-    $ enemyPartyUpdate( enemyTroopers )# this is so that foes that have multiple images always use the right one and to prevent reverting back to the base foe image
-
+#    $ thiaDude = im.FactorScale("images/Enemies/astartes goons/Thia mace male v1.png" , 0.25)
     hbox:
-        if renpy.mobile:
-            xalign 0.50 yalign 0.92
-        else:
-            xalign 0.5 yalign 0.95
+        xalign 0.5 yalign 0.95
         for partyMember in currentParty:
 
             frame:
-                
                 xalign 0.50 yalign 1.0
                 xminimum 180 xmaximum 212
                 vbox:
@@ -152,8 +111,6 @@ screen statusScreen:
                     hbox:
                         xalign 0.5
                         text partyMember.name size 20 xalign 0.5
-                        if partyMember.mount.mountArmor != "":
-                            image Transform( "/gui/Mounted.png" , zoom = 0.33 )
                         if check4Effect( "Burning" , partyMember.effects ):
                             image Transform( "/gui/burningStatus.png" , zoom = 0.33 )
                         if check4Effect( "Heals" , partyMember.effects ):
@@ -164,12 +121,6 @@ screen statusScreen:
                             image Transform( "/gui/attackUp.png" , zoom = 0.33)
                         if check4Effect( "HardSkinned" , partyMember.effects ):
                             image Transform( "/gui/armorUp.png" , zoom = 0.33)
-                        if check4Effect( "Charged" , partyMember.effects ):
-                            image Transform( "/gui/Charged.png" , zoom = 0.33 )
-                        if check4Effect( "OverCharged" , partyMember.effects ):
-                            image Transform( "/gui/OverCharged.png" , zoom = 0.33 )
-                        if check4Effect( "Clears" , partyMember.effects ):
-                            image Transform( "/gui/Clearing.png" , zoom = 0.33 )
 
                     if percentHealth >= 0.7:
                         image Transform( partyMember.armors[partyMember.currentArmor].health100 , zoom = 0.8 , crop=(0 , 70 , 200 , 120 ) )
@@ -245,118 +196,81 @@ screen statusScreen:
 screen choose2Attack( attackType ):
 
     $ trooperNumber = 0
-
-    side "c t":
-        xalign 0.5
-        viewport id "AttackChoosevp":
-            xfill False
-            
-            draggable True
-            #mousewheel True
-            #xmaximum 1280
-            xalign 0.5 yalign 0.0 
-            #scrollbars "horizontal"
-            #scrollbar_
-            
-
-
-            hbox:
-                xalign 0.5 #yalign 0.0 
-                #xminimum 100 xmaximum 250
-                #xmaximum 1280
-                #order_reverse True
-
-            #for implementation in version 0.2.1 - too close to release for version 0.2.0
-            #maybe next week 30/12/24 because of rules about backups
-            #vpgrid:
-            #    rows 1
-            #    spacing 1
-            #    draggable True
-            #    mousewheel True
-            #    xmaximum 1280
-                #xminimum 1280
-            #    xalign 0.5 yalign 0.0 xpos 0.5
-                #scrollbars "horizontal"
-
-                for badTrooper in enemyTroopers:
-                    frame:
-                        #xmaximum 250
-                        background None
-                        vbox:
-                            xalign 0.5 yalign 0.0
-                            #xmaximum 250
-                            frame:
-                                xalign 0.5 yalign 0.0
-                                
-                                xminimum 100 xmaximum 250
-                            
-                                vbox:
-
-                                    hbox:
-                                        xalign 0.5
-                                        text badTrooper.name size 15 xalign 0.5 layout "nobreak"
-                                        if check4Effect( "Burning" , badTrooper.effects ):
-                                            image Transform( "/gui/burningStatus.png" , zoom = 0.33 )
-                                        if check4Effect( "Heals" , badTrooper.effects ):
-                                            image Transform( "/gui/healing.png" , zoom = 0.33 )
-                                        if check4Effect( "Entangled" , badTrooper.effects ):
-                                            image Transform( "/gui/spider weeb.png" , zoom = 0.33)
-                                        
-
-                                    hbox:
-                                        bar:
-                                            xmaximum 100
-                                            ymaximum 12 yminimum 1
-                                            value badTrooper.health
-                                            range badTrooper.hitpoints
-                                            left_gutter 0
-                                            right_gutter 0
-                                            thumb None
-                                            thumb_shadow None
-                                            left_bar Frame("gui/bar/leftBlue.png", 10, 0)
-
-
-                                        null width 2
-
-                                        text "[badTrooper.health] / [badTrooper.hitpoints]" size 15 layout "nobreak"
-                        
-                        #check for attackings
-                            if ( isinstance( badTrooper , FlyingFoe ) or isinstance( badTrooper , PatterenFoe ) ) and attackType == "melee":
-                                if badTrooper.isFlying:
-                                    imagebutton:
-                                        idle Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ff6767') * BrightnessMatrix(-0.3))
-                                        hover Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ff6767') * BrightnessMatrix(-0.3))
-                                        #action badTrooper.trooperDamge( currentParty[i].attack )
-                                        #action Null
-                                        focus_mask True       
-                                else:
-                                    imagebutton:
-                                        idle Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.0))
-                                        hover Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.5))
-                                        #action badTrooper.trooperDamge( currentParty[i].attack )
-                                        focus_mask True  
-                                        action [ Return(trooperNumber) ]            
-
-                            else:
-                                imagebutton:
-                                    idle Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.0))
-                                    hover Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.5))
-                                    #action badTrooper.trooperDamge( currentParty[i].attack )
-                                    focus_mask True  
-                                    action [ Return(trooperNumber) ]
-                    #----------------------------------------------------------
-                    $ trooperNumber += 1
-            #-----------------------------------------------------------------------
-        bar value XScrollValue("AttackChoosevp"):
-            unscrollable "hide"
-            yminimum 12 ymaximum 12
-            
-    #----------------------------------------------------------------------------------------------
     hbox:
-        if renpy.mobile:
-            xalign 0.50 yalign 0.92
-        else:
-            xalign 0.5 yalign 0.95
+        xalign 0.5 yalign 0.0
+        xminimum 100 xmaximum 250
+        order_reverse True
+
+        for badTrooper in enemyTroopers:
+            frame:
+                xmaximum 250
+                background None
+                vbox:
+                    xalign 0.5 yalign 0.0
+                    xmaximum 250
+                    frame:
+                        xalign 0.5 yalign 0.0
+                        xminimum 100 xmaximum 250
+                    
+                        vbox:
+
+                            hbox:
+                                xalign 0.5
+                                text badTrooper.name size 15 xalign 0.5 layout "nobreak"
+                                if check4Effect( "Burning" , badTrooper.effects ):
+                                    image Transform( "/gui/burningStatus.png" , zoom = 0.33 )
+                                if check4Effect( "Heals" , badTrooper.effects ):
+                                    image Transform( "/gui/healing.png" , zoom = 0.33 )
+                                if check4Effect( "Entangled" , badTrooper.effects ):
+                                    image Transform( "/gui/spider weeb.png" , zoom = 0.33)
+                                
+
+                            hbox:
+                                bar:
+                                    xmaximum 100
+                                    ymaximum 12 yminimum 1
+                                    value badTrooper.health
+                                    range badTrooper.hitpoints
+                                    left_gutter 0
+                                    right_gutter 0
+                                    thumb None
+                                    thumb_shadow None
+                                    left_bar Frame("gui/bar/leftBlue.png", 10, 0)
+
+
+                                null width 2
+
+                                text "[badTrooper.health] / [badTrooper.hitpoints]" size 15 layout "nobreak"
+                
+                #check for attackings
+                    if ( isinstance( badTrooper , FlyingFoe ) or isinstance( badTrooper , PatterenFoe ) ) and attackType == "melee":
+                        if badTrooper.isFlying:
+                            imagebutton:
+                                idle Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ff6767') * BrightnessMatrix(-0.3))
+                                hover Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ff6767') * BrightnessMatrix(-0.3))
+                                #action badTrooper.trooperDamge( currentParty[i].attack )
+                                #action Null
+                                focus_mask True       
+                        else:
+                            imagebutton:
+                                idle Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.0))
+                                hover Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.5))
+                                #action badTrooper.trooperDamge( currentParty[i].attack )
+                                focus_mask True  
+                                action [ Return(trooperNumber) ]            
+
+                    else:
+                        imagebutton:
+                            idle Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.0))
+                            hover Transform(child = badTrooper.foeImage , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.5))
+                            #action badTrooper.trooperDamge( currentParty[i].attack )
+                            focus_mask True  
+                            action [ Return(trooperNumber) ]
+            #----------------------------------------------------------
+            $ trooperNumber += 1
+        #----------------------------------------------------------------------
+    hbox:
+        xalign 0.5 yalign 0.95
         for partyMember in currentParty:
             frame:
                 xalign 0.50 yalign 1.0
@@ -367,8 +281,6 @@ screen choose2Attack( attackType ):
                     hbox:
                         xalign 0.5
                         text partyMember.name size 20 xalign 0.5
-                        if partyMember.mount.mountArmor != "":
-                            image Transform( "/gui/Mounted.png" , zoom = 0.33 )
                         if check4Effect( "Burning" , partyMember.effects ):
                             image Transform( "/gui/burningStatus.png" , zoom = 0.33 )
                         if check4Effect( "Heals" , partyMember.effects ):
@@ -379,12 +291,6 @@ screen choose2Attack( attackType ):
                             image Transform( "/gui/attackUp.png" , zoom = 0.33)
                         if check4Effect( "HardSkinned" , partyMember.effects ):
                             image Transform( "/gui/armorUp.png" , zoom = 0.33)
-                        if check4Effect( "Charged" , partyMember.effects ):
-                            image Transform( "/gui/Charged.png" , zoom = 0.33 )
-                        if check4Effect( "OverCharged" , partyMember.effects ):
-                            image Transform( "/gui/OverCharged.png" , zoom = 0.33 )
-                        if check4Effect( "Clears" , partyMember.effects ):
-                            image Transform( "/gui/Clearing.png" , zoom = 0.33 )
                     
                     if percentHealth >= 0.7:
                         image Transform( partyMember.armors[partyMember.currentArmor].health100 , zoom = 0.8 , crop=(0 , 70 , 200 , 120 ) )
@@ -417,10 +323,7 @@ screen partySelect ( reviving ):
     $ selectedCharacterNumber = 0
 
     hbox:
-        if renpy.mobile:
-            xalign 0.50 yalign 0.92
-        else:
-            xalign 0.5 yalign 0.95
+        xalign 0.5 yalign 0.95
         for partyMember in currentParty:
             frame:
                 xalign 0.50 yalign 1.0
@@ -431,8 +334,6 @@ screen partySelect ( reviving ):
                     hbox:
                         xalign 0.5
                         text partyMember.name size 20 xalign 0.5
-                        if partyMember.mount.mountArmor != "":
-                            image Transform( "/gui/Mounted.png" , zoom = 0.33 )
                         if check4Effect( "Burning" , partyMember.effects ):
                             image Transform( "/gui/burningStatus.png" , zoom = 0.33 )
                         if check4Effect( "Heals" , partyMember.effects ):
@@ -443,12 +344,6 @@ screen partySelect ( reviving ):
                             image Transform( "/gui/attackUp.png" , zoom = 0.33)
                         if check4Effect( "HardSkinned" , partyMember.effects ):
                             image Transform( "/gui/armorUp.png" , zoom = 0.33)
-                        if check4Effect( "Charged" , partyMember.effects ):
-                            image Transform( "/gui/Charged.png" , zoom = 0.33 )
-                        if check4Effect( "OverCharged" , partyMember.effects ):
-                            image Transform( "/gui/OverCharged.png" , zoom = 0.33 )
-                        if check4Effect( "Clears" , partyMember.effects ):
-                            image Transform( "/gui/Clearing.png" , zoom = 0.33 )
                     
                     if reviving:
 
@@ -465,7 +360,7 @@ screen partySelect ( reviving ):
                                 action [ Return(selectedCharacterNumber) ]
                     
                     else:
-                        if percentHealth > 0.0:
+                        if percentHealth >= 0.0:
                             imagebutton:
                                 if percentHealth >= 0.7:
                                     idle Transform(partyMember.armors[partyMember.currentArmor].health100 , zoom = 0.8 , crop=(0 , 70 , 200 , 120 ) , matrixcolor=TintMatrix('#ffffff') * BrightnessMatrix(0.0) )
@@ -550,7 +445,7 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
 
         $ targetiblePlayers = []
 
-        $ removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled )
+       
         $ counter = 0
 
         while counter < len(enemyTroopers):
@@ -560,9 +455,12 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                 
                 if isinstance( enemyTroopers[counter] , PatterenFoe ):
                     $ enemyTroopers[counter].updateStats()
-                    $ enemyTroopers[counter].check4Flying()
                 
                 if isinstance( enemyTroopers[counter] , FlyingFoe ):
+                    $ enemyTroopers[counter].check4Flying()
+
+                if isinstance( enemyTroopers[counter] , FlyingFoe ):
+                    #if enemyTroopers[counter].canFly:  Flying/swimming foes have a always grounded variant
                     $ enemyTroopers[counter].check4Flying()
 
             $ counter += 1
@@ -578,7 +476,6 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
         while i < len(currentParty):
 
             $ currentName = currentParty[i].name
-            
 
             if len(enemyTroopers) > 0:
 
@@ -589,7 +486,6 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
 
                 
                 $ statusMessage = applyEffect( currentParty[ i ].effects , currentParty[ i ] )
-                #"[statusMessage]"
                 $ statusMessageCount = 0
                 if statusMessage is not None:
                     while statusMessageCount < len(statusMessage):
@@ -610,15 +506,12 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                     $ currentPlayer.isDefending = False
                     $ currentPlayer.updateStats()
 
-                    $ downAmount = 1              
+                    $ downAmount = 1
 
                     menu:
                         "Melee Attack" if checkIfPossible2Melee( enemyTroopers ):
                             "[currentPlayer.name] attacks"
-
-                            hide screen statusScreen
                             call screen choose2Attack( "melee" )
-                            show screen statusScreen
 
                             $ badNumber = _return
                             #damage calulations
@@ -635,25 +528,33 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                             hide screen statusScreen
 
                             $ rythmPattern = getMeleePatterns( enemyTroopers[badNumber].diffculty )
-                            call rythmAttack (rythmPattern[renpy.random.randint(0, len(rythmPattern)-1)] , enemyTroopers[badNumber] , currentPlayer , 1.2) from _call_rythmAttack_1
+                            call rythmAttack (rythmPattern[renpy.random.randint(0, len(rythmPattern)-1)] , enemyTroopers[badNumber] , currentPlayer , 1.2)
 
                             show screen statusScreen
                             #$ enemyTroopers[_return].health -= damage
                             $ targetName = enemyTroopers[badNumber].name
 
                             if enemyTroopers[badNumber].health <= 0:
-                                play sound drop2DaFloor
-                                play extraSound punchy
+
                                 "[targetName] is defeated!"
 
                                 #if enemyTroopers[ badNumber ]. in ringLeaders:
                                 #    ringLeaders
 
-                            $ removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled )
+                                $ originalNumber = len( ringLeaders )        
+                                $ ringLeaders = checkIfBelong( enemyTroopers[badNumber] , ringLeaders , endOnRingLeadersGone )
+                                if len( ringLeaders ) < originalNumber:
+                                    $ ringLeaders2Kill -= 1
+
+                                $ originalNumber = len( alternativeTargets )
+                                $ alternativeTargets = checkIfBelong( enemyTroopers[badNumber] , alternativeTargets , winWhenAlternativeTargetsKilled )
+                                if len( alternativeTargets ) < originalNumber:
+                                    $ alternativeTargets2Kill -= 1
+
+                                $ enemyTroopers.pop(badNumber)
+
 
                             if currentPlayer.health <= 0:
-                                play sound drop2DaFloor
-                                play extraSound bloodySlam
                                 "OOF!!"
                                 "[currentPlayer.name] got defeated by the [targetName] in a counter attack!!"
 
@@ -661,14 +562,14 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                         "Ranged Attack" if currentPlayer.rangedWeapon.type != "None" :
                                 "[currentPlayer.name] started to shoot"
                                 $ useableItems = []
-                                call ammoSelection( currentPlayer.rangedWeapon ) from _call_ammoSelection
+                                call ammoSelection( currentPlayer.rangedWeapon )
                                 $ downAmount = _return
                         
                         #--------------------------------------------------------------------------
                         "Throw Attack":
                             "[currentPlayer.name] looked for something to throw."
                             $ useableItems = []
-                            call throwableSelection( ) from _call_throwableSelection
+                            call throwableSelection( )
                             $ downAmount = _return
 
 
@@ -676,7 +577,7 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                         "Items":
                             "[currentPlayer.name] went into the bag of things"
                             $ useableItems = []
-                            call useItemScreen from _call_useItemScreen
+                            call useItemScreen
                             $ downAmount = _return
                             #call useItemScreen
                         #-------------------------------------------------------------------------------
@@ -684,94 +585,9 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                             "[currentPlayer.name] Holds steadfast against the enemy"
                             $ currentPlayer.isDefending = True
                         #-------------------------------------------------------------------------------
-                        "Overcharge the Sword of Ahura-Mazda (Costs 40 Helath)" if currentPlayer.weapon.type == "SoAM" and not check4Effect( "OverCharged" , currentPlayer.effects ) and xerxCanOverCharge and currentPlayer.health > 50:
-                            $ addEffects( "Charged" , currentPlayer , 1 , 10 , "Sword of Ahura-Mazda" )
-                            $ currentPlayer.health -= 40
-                            play sound PowerUp
-                            "[currentPlayer.name] starts charging up the Sword of Ahura-Mazda costing them 40 health points." # 20+10 = 30 so 40 gives the player at least 10 points
-                            
-                        #--------------------------------------------------------------------------------
-                        "Unlesh the Power!" if currentPlayer.weapon.type == "SoAM" and check4Effect( "OverCharged" , currentPlayer.effects ):
-                            menu:
-                                "Chop (Single Target)":
-                                    "Who will feel the Power of Ahura-Mazda?"
-                                    hide screen statusScreen
-                                    call screen choose2Attack( "Chop Overcharge" )
-                                    show screen statusScreen
-                                    $ theTarget = _return
-                                    $ foe2Die = enemyTroopers[theTarget]
-                                    $ damageNumber = foe2Die.health
-                                    $ rythmAttacking ( enemyTroopers[theTarget] , currentPlayer , 5.0 )
-                                    $ damageNumber = damageNumber - foe2Die.health 
-                                    queue sound flameSlice
-                                    play extraSound foeHit
-                                    "[foe2Die.name] took [damageNumber] damage"
-                                    if foe2Die.health <= 0:
-                                        play sound meatEplosion
-                                        play extraSound magicAttackUnchmabered
-                                        "[foe2Die.name] was OBLITERATED!!"
-                                        $ removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled )
-                                    
-
-                                "Slice (Area of Effect/Multiple enemies)":
-                                    "Aim the Center of the Slice"
-                                    hide screen statusScreen
-                                    call screen choose2Attack( "Slice Overcharge" )
-                                    show screen statusScreen
-                                    #$ dude2Attack = enemyTroopers[_return]
-                                    
-                                    #show screen statusScreen
-                                    play sound PowerUp
-                                    queue sound flameSlice 
-
-                                    $ splash = 0
-                                    $ splashCenter = _return
-                                
-                                    while splash < len(enemyTroopers):
-                                    
-                                        $ splashDistance = abs( splashCenter - splash )
-                                        $ splashFactor = 2.0 - (0.5 * splashDistance )
-
-                                        #damage should be more then the bombs (or maybe the same?)
-                                        # 2.0 - 1.5 - 1.0 - 0.5 - -0.0=0.0
-                                        #2*2*3 = 2 4 12 - 12 * 10 = 120 dmg 10 ap
-                                        #1.5*2 = 3 3*3 = 9*10 = 90 dmg 10 ap
-                                        #1*2*3 = 6*10 = 60 dmg 10 ap
-                                        #0.5*2*3 = 3*10 = 30 dmg 10 ap
-                                        #120 + 90 + 60 + 30 = 120 + 180 = 300
-                                        #300/10 = 30
-
-                                        #"[splashFactor] and [splashDistance]"
-                                        $ originalHealth = enemyTroopers[splash].health
-
-                                        if splashFactor < 0:
-                                            $ splashFactor = 0
-                                        if splashFactor > 0:
-                                            $ rythmAttacking ( enemyTroopers[splash] , currentPlayer , splashFactor * 1.5 )
-                                        $ currentDude = enemyTroopers[splash]
-                                        if originalHealth > currentDude.health:
-                                            if currentDude.health > 0:
-                                                $ blasted4 = originalHealth - currentDude.health
-                                                play sound flameSlice
-                                                play extraSound foeHit
-                                                "[currentDude.name] got sliced for [blasted4] damage"
-                                            
-                                            elif currentDude.health <= 0:
-                                                play sound meatEplosion
-                                                play extraSound magicAttackUnchmabered
-
-                                                "[currentDude.name] SLICED IN HALF!!"
-                                                $ removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled )
-                                                $ splash -= 1
-                                                $ splashCenter -= 1
-                                        $ splash += 1
-                            $ removeEffectType( "OverCharged" , currentPlayer.effects )
-                        #-------------------------------------------------------------------------------
                         "Leave" if canPussyOut:
                             hide screen statusScreen
                             return("pussy")
-
-
                     
                     #label battleMenuEnd:
                     #---------------------------------------------------
@@ -798,15 +614,12 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
         #bad troopers turn.
         while i < len(enemyTroopers):
 
-            $ removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled )
+
             #apply effects to the foes
             #$ applyEffect( enemyTroopers[ i ].effects , enemyTroopers[ i ] )
-            $ canTurn = True
-            if check4Effect( "Entangled" , enemyTroopers[ i ].effects ):
-                $ canTurn = False
+
             $ statusMessage = applyEffect( enemyTroopers[ i ].effects , enemyTroopers[ i ] )
             $ statusMessageCount = 0
-            
             if statusMessage is not None:
                 while statusMessageCount < len(statusMessage):
                     $ currentStatusEffect = statusMessage[statusMessageCount]
@@ -819,19 +632,18 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                 $ currentFoe = enemyTroopers[i]
                 if len(targetiblePlayers) > 0:
 
-                    if canTurn is False:
-                        "[currentFoe.name] is entangled and cannot move."
+                    if check4Effect( "Entangled" , currentFoe.effects ):
+                        "[currentFoe.name] ia entangled and cannot move."
 
 
                     elif ( isinstance( enemyTroopers[ i ] , SummonerFoe ) or isinstance( enemyTroopers[ i ] , PatterenFoe ) ) and len(enemyTroopers) < goonsAllowed and enemyTroopers[ i ].canSummon:
                         $ enemyTroopers[ i ].summonTroopers( goonsAllowed , enemyTroopers )
-                        play sound bigPizyu
                         "[currentFoe.name] Summons new troops."
 
                     else:
                         $ targetNumber = renpy.random.randint( 0 , len(targetiblePlayers)-1)
                         $ targetPlayer = targetiblePlayers[ targetNumber ]
-                        
+
                         $ armorReduction = targetPlayer.armorPoints - currentFoe.armorPen
 
                         if armorReduction < 0:
@@ -840,7 +652,6 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                         if targetPlayer.isDefending:
                             if check4Effect( "HardSkinned" , targetPlayer.effects  ):
                                 $ damage = currentFoe.attack * 0.35 - armorReduction
-                                
                             else:
                                 $ damage = currentFoe.attack * 0.7 - armorReduction
                         else:
@@ -862,32 +673,39 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                         #will call from a list from somewhere else
                         if currentFoe.rangedFoe:
                             $ defencePattern = getRangedPatterns( currentFoe.diffculty )
-                            #call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , not currentFoe.rangedFoe , currentFoe , targetPlayer , 1.0) from _call_defenceTime
+                            call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , False , currentFoe , targetPlayer , 0.45)
                         else:
                             $ defencePattern = getMeleeDefencePatterns( currentFoe.diffculty )
-                        call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , not currentFoe.rangedFoe , currentFoe , targetPlayer , 1.0) from _call_defenceTime_1
+                            call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , True , currentFoe , targetPlayer , 0.6)
 
                         show screen statusScreen
 
-                        #$ targetPlayer.health -= damage
+                    #$ targetPlayer.health -= damage
 
-                        if targetPlayer.health <= 0:
-                            play sound drop2DaFloor
-                            play extraSound bloodySlam
-                            "[targetPlayer.name] is defeated!!"
-                            $ targetiblePlayers.pop(targetNumber)
+                    if targetPlayer.health <= 0:
+                        "[targetPlayer.name] is defeated!!"
+                        $ targetiblePlayers.pop(targetNumber)
                     
                     if currentFoe.health <= 0:
-                        play sound drop2DaFloor
-                        play extraSound punchy
                         "[currentFoe.name] was defeated in a counterattack!!"
 
-                        $ removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled )
+                        $ originalNumber = len( ringLeaders )        
+                        $ ringLeaders = checkIfBelong( currentFoe , ringLeaders , endOnRingLeadersGone )
+                        if len( ringLeaders ) < originalNumber:
+                            $ ringLeaders2Kill -= 1
+
+                        $ originalNumber = len( alternativeTargets )
+                        $ alternativeTargets = checkIfBelong( currentFoe , alternativeTargets , winWhenAlternativeTargetsKilled )
+                        if len( alternativeTargets ) < originalNumber:
+                            $ alternativeTargets2Kill -= 1
+
+
+                        $ enemyTroopers.pop(i)
                         $ i -= 1
                         if len(enemyTroopers) <= 0:
                             $ badTroopersAlive = False
             else:
-                $ removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled )
+                $ enemyTroopers.pop(i)
                 $ i -= 1 
                 if len(enemyTroopers) <= 0:
                     $ badTroopersAlive = False
@@ -955,9 +773,6 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
 
         elif foesLeft <= 0 and winWhenFoeAmountKilled:
             $ badTroopersAlive = False
-        
-        $ ringLeaders2Kill = len(ringLeaders)
-        $ alternativeTargets2Kill = len( alternativeTargets )
         #check if ringLeaders are dead.
         if ( endOnRingLeadersGone and ringLeaders2Kill <= 0 ) or ( winWhenAlternativeTargetsKilled and alternativeTargets2Kill <= 0 ):
             $ badTroopersAlive = False
@@ -981,13 +796,9 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
     if playerAlive and badTroopersAlive is False or winOnTimeOut and playerAlive:
         #"You kicked their asses"
         
-        
         return turns
     else:
     #Game Over Yeah
-        #play defeated music once
-        stop music fadeout 0.5
-        play sound weGotOwned fadein 0.5
         "Game Over Yeeeeaaahhhh!"
         # jump GameOver whatever
         #show screen goon1Fight("images/Enemies/astartes goons/Thia mace male v1.png")
@@ -1015,7 +826,8 @@ screen playerActions( daMessage , canPussyOut , isTimed , winOnTimeOut , turns ,
                 xmaximum 250
                 background None            
             
-                $ enemyPartyUpdate( enemyTroopers )
+                if isinstance( badTrooper , FlyingFoe ):
+                    $ badTrooper.updateGraphic() 
                 image badTrooper.foeImage
 
 

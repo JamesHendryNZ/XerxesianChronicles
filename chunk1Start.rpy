@@ -574,7 +574,7 @@ label contiuneAtoLong:
     scene battle ball1 with dissolve:
         zoom 0.8
 
-    ato "And then play some battle ball after woulds."
+    ato "And then play some battle ball afterwards."
     ato "Or before."
 
     scene bathhouseOut:
@@ -819,7 +819,7 @@ label meetDarius1:
             zoom 0.8
         with dissolve
         darius "Follow me."
-        darius "You'll like my plans to rid of Astarte's curse."
+        darius "You'll like my plans to get rid of Astarte's curse."
         jump dariusMeeting1
         ##---------------------------------------------------------------
     else:

@@ -49,3 +49,11 @@ label jamesosRealmSmollAndWholl:
     
 
     return
+
+label jamesosWestSide:
+        scene map2:
+            zoom 0.5
+            xpos -0.00
+            ypos -0.37
+
+        return

@@ -33,6 +33,9 @@ init:
     define sleepss = "audio/music/Sleeps.ogg" #James Hendry
 
     define fightingCommon = "audio/music/Xerxesian Battle1 loop.ogg" #James Hendry
+    define zarodnianBattle = "audio/music/zardonians.ogg"
+    define fightVersaniz = "audio/music/versaniz loop.ogg"
+#   define fightJemesis / simialr but with astarte leymotif
     define fightingDaBoss = "audio/music/Xerxesian Battle2 loop.ogg" #James Hendry
     define fightingDaLakatinu1 = "audio/music/LakatinuBattle loop.ogg" #James Hendry
 #    define fightingDaLakatinu2
@@ -135,5 +138,6 @@ init:
     define ressurection = "audio/sound effects/clear.ogg" #James Hendry
     define clearMyMind = "audio/sound effects/resurection.ogg" #James Hendry
     define PowerUp = "audio/sound effects/PowerUp.ogg" #james hendry
+    define flameSlice ="audio/sound effects/Flame Slice.ogg"
     define PowerDown = "audio/sound effects/PowerDown.ogg"
     define grinder = "audio/sound effects/stoneblockdragwoodgrind-82327 Long.ogg" #pixabay

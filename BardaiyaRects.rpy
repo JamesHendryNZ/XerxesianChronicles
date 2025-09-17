@@ -1,16 +1,6 @@
 
 
-transform lakatinuRight:
-    xalign 0.5
-    yalign 0.5
-    xpos 0.9
-    ypos 0.65
 
-transform bardaiyaLeft:
-    xalign 0.5
-    yalign 0.5
-    xpos 0.2
-    ypos 0.7
 
 label bardaiyaMad1:
     

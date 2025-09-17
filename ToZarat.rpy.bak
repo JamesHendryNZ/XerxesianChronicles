@@ -18,7 +18,7 @@ label ToZarat:
     #mabe some flames to show pillaging
     #call middleJamesosRealmMap
     
-    call setUpgradeAfterSoAM from _call_setUpgradeAfterSoAM_2 #sets up variables that I forgot to before getting to the the label jump
+    call setUpgradeAfterSoAM #sets up variables that I forgot to before getting to the the label jump
 
     play music wonderStars fadein 3
     window hide dissolve

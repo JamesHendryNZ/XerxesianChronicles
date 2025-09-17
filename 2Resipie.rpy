@@ -22,7 +22,7 @@ define tanBomResipie = Resipie( [ [ tanBombMakitKit , 1 ] ] , [ [ tanBomb , 1 ] 
 
 define cookedFishes = Resipie( [ [ floodFish , 1 ] ] , [ [ cookedfish , 1 ] ] , "Cook the Fish", 4 )
 define spicyDaFish = Resipie( [ [ floodFish , 1 ] , [ redSpice , 1 ] ] , [ [ spicycookedfish , 1 ] ] , "Spice up the Fish", 5 )
-define cookedMeat = Resipie( [ [ lizardMeat , 1 ] ] , [ [ cookedMeat , 1 ] ] , "Cook the Meat", 5 )
+define cookedMeat = Resipie( [ [ lizardMeat , 1 ] ] , [ [ cookedMeatItem , 1 ] ] , "Cook the Meat", 5 )
 define spicyCookedMeats = Resipie( [ [ redSpice , 1 ] , [ lizardMeat , 1 ]  ] , [ [ spicyMeat , 1 ] ] , "Spice up the Meat", 6 )
 define cookedAsMussel = Resipie( [ [ musselz , 1 ] ] , [ [ cookedMussel , 1 ] ] , "Cook the Mussels", 4 )
 define flamedCrayfish = Resipie( [ [ crayfish , 1 ] ] , [ [ cookedcrayfish , 1 ] ] , "Cook the Crayfish", 4 )

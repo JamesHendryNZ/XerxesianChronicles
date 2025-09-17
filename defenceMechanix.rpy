@@ -315,7 +315,9 @@ screen defenceDodgeMiniGame ( pattern , targetTrooper , character , position , t
 #----------------------------------------------
 label defenceTime ( pattern , shieldOrDodge , targetTrooper , character , duration ):
 
-    $ visionLength = 6
+    #$ visionLength = 6
+    #$ visionLength = int(2.5 * targetTrooper.speed )
+    $ visionLength = int(8 - ( 5 / targetTrooper.speed ) )
     $ addBlankBuffer( pattern , visionLength )
     $ counter = 0
     $ originalTargetTrooperHealth = targetTrooper.health
