@@ -729,7 +729,7 @@ label yarakWins:
         show zaratoJamesianAxeLady sadEyes
         with dissolve
         zarjam "Xerxes seems to have become frozen." #sad eyes
-        showregius34 OMouth
+        show regius34 OMouth
         show zaratoJamesianAxeLady frown
         with dissolve
         regs "What!?"
