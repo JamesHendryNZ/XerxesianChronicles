@@ -1013,7 +1013,7 @@ label versanizBossBattleAST:
             show siayusi at left , size2Thrid:
                 ypos 2.0
                 easein 2 xpos 2.0
-        else
+        else:
             show lunaDaJuna armredDefeated sadEyes OMouth at left , size2Thrid:
                 ypos 2.0
                 

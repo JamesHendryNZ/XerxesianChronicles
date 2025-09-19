@@ -1694,6 +1694,7 @@ image zardonianCataphractLadyFlee = "images/Enemies/eliete goons/Zardonian Catap
     #Junatu
 image junatuWebRocka = "images/Enemies/Zardonians/Junatu Web Rocka.webp"
 image junatuWebRockaSad = "images/Enemies/Zardonians/Junatu Web Rocka.webp"
+image junatuWebRockaFlee = "images/Enemies/Zardonians/Junatu Web Rocka Flee.webp"
 
 image junatuSwordDude = "images/Enemies/Zardonians/Junatu Sword.webp"
 image junatuJavelinDude = "images/Enemies/Zardonians/Junatu Javelin.webp"
@@ -1703,6 +1704,7 @@ image junatuCataphractSpear = "images/Enemies/eliete goons/Junatu Cataphract.web
 image junatuCataphractSword = "images/Enemies/eliete goons/Junatu Sword Cataphract.webp"
 image junatuCataphractSwordAngry = Composite( ( 2600 , 2200 ) , (0,0) , "images/Enemies/eliete goons/Junatu Sword Cataphract.webp" , (0,0) , "images/Enemies/eliete goons/Junatu Sword Cataphract Angry Mouth.webp")
 image junatuCataphractSwordSad = Composite( ( 2600 , 2200 ) , (0,0) , "images/Enemies/eliete goons/Junatu Sword Cataphract.webp" , (0,0) , "images/Enemies/eliete goons/Junatu Sword Cataphract Sad Face.webp")
+image junatuCatapharctSwordFlee = "images/Enemies/eliete goons/Junatu Sword Cataphract Flee.webp"
     #Half-Junatu
 
 #boats
@@ -2558,6 +2560,7 @@ layeredimage versaniz:
 image versanizBoinkingSiayusi = "images/antagonists/Versaniz III/Versaniz boinking Siayusi.webp"
 image versanizBeheaded = "images/antagonists/Versaniz III/Versaniz Headless.webp"
 image versanizHead = "images/items/Dead Versaniz.webp"
+image versanizHelmet = "images/items/Versaniz Helmet.webp"
     #Versaniz's GirlFriends
 #siayusi
 layeredimage siayusi:
@@ -3256,6 +3259,7 @@ image xerx34RockArmored = "images/Protagonists/Xerxes/Xerxes holding rock Armore
 image xerx34Rock = "images/Protagonists/Xerxes/Xerxes Holding rock.webp"
 
 image xerx34LookDownArmored = "images/Protagonists/Xerxes/Xerxes 3-4 Armored looking down.webp"
+image xerx34LookDownArmoredMad = Composite( ( 600, 1400 ) , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 Armored looking down.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 Armored looking down angry.webp")
 image xerx34LookDown = "images/Protagonists/Xerxes/Xerxes 3-4 looking down.webp"
 image xerx34LookDownSad = "images/Protagonists/Xerxes/Xerxes 3-4 looking down sad.webp"
 image xerx34LookDownSadNoHat = "images/Protagonists/Xerxes/Xerxes 3-4 looking down sad No hat.webp"
@@ -4176,30 +4180,67 @@ layeredimage volkara3quatArmored:
             "images/Protagonists/Volkara/Volkara arms forward 3quat armored.webp"
         attribute pointy:
             "images/Protagonists/Volkara/Volkara pointy 3quat armored.webp"
+        attribute armsOut:
+            "images/Protagonists/Volkara/Volkara Neutral Happy 3quat armored arms out.webp"
     
     group eyes:
-        attribute normalEyes default:
+        attribute normalEyes default if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Neutral Eyes 3quat armored.webp"
-        attribute sadEyes:
+        attribute normalEyes default if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara Neutral Eyes 3quat armored.webp"
+            xpos 350
+
+        attribute sadEyes if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Sad Eyes 3quat armored.webp"
-        attribute meanEyes:
+        attribute sadEyes if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara Sad Eyes 3quat armored.webp"
+            xpos 350
+
+        attribute meanEyes if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Mean Eyes 3quat armored.webp"
-        attribute closedEyes:
+        attribute meanEyes if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara Mean Eyes 3quat armored.webp"
+            xpos 350
+
+        attribute closedEyes if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Closed Eyes armored.webp"
+        attribute closedEyes if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara Closed Eyes armored.webp"
+            xpos 350
+
 
     group mouths:
-        attribute neutralHappyMouth default:
+        attribute neutralHappyMouth default if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Mouth.webp"
-        attribute happyMouth:
+        attribute neutralHappyMouth default if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Mouth.webp"
+            xpos 350
+
+        attribute happyMouth if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara 3-4 Happy Mouth.webp"
             ypos 100
-        attribute OMouth:
+        attribute happyMouth if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara 3-4 Happy Mouth.webp"
+            ypos 100 xpos 350
+
+        attribute OMouth if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara 3quat Armored Omouth.webp"
-        attribute OMegaMouth:
+        attribute OMouth if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara 3quat Armored Omouth.webp"
+            xpos 350
+
+        attribute OMegaMouth if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara 3-4 OmegaMouth.webp"
             ypos 100
-        attribute deltaMouth:
+        attribute OMegaMouth if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara 3-4 OmegaMouth.webp"
+            ypos 100 xpos 350
+
+        attribute deltaMouth if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Delta mouth 3quat.webp"
+        attribute deltaMouth if_any['armsOut']:
+            "images/Protagonists/Volkara/Volkara Delta mouth 3quat.webp"
+            xpos 350
 
 #this will be implemented soon
 layeredimage volkara3quat:
@@ -5637,6 +5678,26 @@ layeredimage zaratoJamesianAxeLady:
             "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl.webp"
         attribute mountedAttack:
             "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Mounted.webp"
+    group eyes:
+        attribute meanEyes default if_any['unmounted']:
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Mean Eyes.webp"
+        attribute neutraEyes if_any['unmounted']:
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Neutral Eyes.webp"
+        attribute sadEyes if_any['unmounted']:
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Sad Eyes.webp"
+
+    group mouths:
+        attribute deltaMouth default if_any['unmounted']:
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Delta Mouthl.webp"
+        attribute oMouth if_any['unmounted']:
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl OMouth.webp"
+        attribute frown if_any['unmounted']:
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Frown.webp"
+        attribute happyMouth if_any['unmounted']:
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Happy.webp"
+        attribute neutralHappy if_any['unmounted']:
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl neutral happy Mouth.webp"
+
 
 
 #shata mace lady

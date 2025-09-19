@@ -635,37 +635,156 @@ label yarakWins:
     scene cloudyDayTime at fullFit
     show yarakBattlefield at truecenter
     with dissolve
-    pause 10
+    play sound weOwnedThem
+    show junatuWebRockaFlee at size2Thrid:
+        ypos 1.5 xpos -0.2 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    pause 0.1
+    show junatuCatapharctSwordFlee at size2Thrid:
+        ypos 1.5 xpos 0.75 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    pause 0.1
+    show zardonianCataphractLadyFlee at size2Thrid:
+        ypos 1.5 xpos 0.3 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    show zardonianCataphractDudeFlee at size2Thrid:
+        ypos 1.5 xpos 0.8 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+
+    pause 0.2
+    show zardonianAxeGirlFlee at size2Thrid:
+        ypos 1.5 xpos 0.1 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    show zardonianSwordsManFlee at size2Thrid:
+        ypos 1.5 xpos 0.5 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    pause 0.1
+    show zardonianSwordsManFlee as extraMan at size2Thrid:
+        ypos 1.5 xpos 0.0 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    show zardonianDartGirlLeave at size2Thrid:
+        ypos 1.5 xpos 1.0 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    show zardonianSwordsManFlee as extratraMan at size2Thrid:
+        ypos 1.5 xpos 0.5 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    pause 0.1
+    show zardonianDartGirlLeave as extraLady at size2Thrid:
+        ypos 1.5 xpos 0.2 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    show zardonianAxeGirlFlee as extratraLady at size2Thrid:
+        ypos 1.5 xpos 0.8 zoom 1.0
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    pause 3
     scene dustcloud at fullFit with Dissolve(5)
     pause 6
     show yarakBattlefield:
         xpan 180
     with Dissolve(5)
+    show yimiOxaYeah at left , halfSize:
+        ypos 1.25 xpos 0.35
+    show zaratSlingYeah at left , halfSize:
+        ypos 1.25 xpos 0.1
+    show zaraSsatuSpearYeah at left , halfSize:
+        ypos 1.25 xpos 0.25
+    show ssatrotuSparabaraLady yeah at right , halfSize:
+        ypos 1.25 xpos 0.6
+    show shataSlingDudeZarat at right , halfSize:
+        ypos 1.25 xpos 0.8
+    show camelLady onFootYeah meanEyes happyMouth at right , halfSize:
+        ypos 1.25 xpos 0.9
+    show regius camelYeah meanEyes happyMouth at center , halfSize:
+        ypos 1.25 xpos 0.45
     regs "WE HAVE DEFEATED THE ZARDONIANS!!"
+
+    scene cloudyDayTime at fullFit
+    show yarakBattlefield:
+        xpan 90
+    with dissolve
     if versanizAlive:
-        zarjam "Regius"
-        zarjam "Xerxes seems to have become frozen."
+
+        #zarato jamesian axe lady
+        #sad neutral and mean eyes
+        #delta , neutral happy , frown and OMouth
+        #maybe a year pose and a axe down pose
+        show zaratoJamesianAxeLady meanEyes oMouth at size2Thrid , left:
+            ypos 1.25 xpos -0.5
+            easeout 2 xpos 0.2
+        show regius34 armored at flipped , size2Thrid , right:
+            ypos 1.25
+        with dissolve
+        zarjam "Regius" #delta mouth can stay 
+        show regius34 annoyedMouth sadEyes
+        show zaratoJamesianAxeLady sadEyes
+        with dissolve
+        zarjam "Xerxes seems to have become frozen." #sad eyes
+        showregius34 OMouth
+        show zaratoJamesianAxeLady frown
+        with dissolve
         regs "What!?"
-        regs "Have the Zardonians invented ice magic!?"
+        show regius34 armoredPointing meanEyes with dissolve
+        regs "Have the Zardonians invented ice magic!?" with vpunch
+
+        show regius34 armored lineEyes annoyedMouth
+        show zaratoJamesianAxeLady deltaMouth
+        with dissolve
         zarjam "No."
-        zarjam "He's just standing there."
+        show zaratoJamesianAxeLady oMouth with dissolve
+        zarjam "He's just standing there." #omouht sad-eyes
         zarjam "Not responding to anyone."
-        regs "Oh that."
+
+        show zaratoJamesianAxeLady frown
+        show regius34 OMouth -lineEyes
+        with dissolve
+        regs "Oh.. "
+
+        regs "That."
+        show regius34 armoredPointing frown with dissolve
         regs "I'll go see him."
 
+        scene cloudyDayTime at fullFit
+        show yarakBattlefield at truecenter
+        show regius34 armoredPointing meanEyes oMouth at right , flipped , size2Thrid:
+            ypos 1.25 xpos 1.3
+            easeout 2 xpos 1.0
+        show xerx34LookDownArmoredMad at left , flipped , size2Thrid:
+            ypos 1.25
+        with dissolve
         regs "Xerxes!"
-        regs "Xerxes!"
+        regs "Xerxes!" with hpunch
+        show regius34 sadEyes with dissolve 
         regs "I heared you let Versaniz escape!"
 
+        show regius34 armored with dissolve
         pause 3
 
         regs "You can't just stand here."
+        show regius34 armoredPointing with dissolve
         regs "We need to get you washed up."
-
+        show regius34 armored with dissolve
+        
+        show volkara3quatArmored pointy sadEyes deltaMouth at size2Thrid , right , flipped:
+            ypos 1.25 xpos 1.5
+            easeout 3 xpos 0.4
         pause 3
-        volk "Do you want a hug Xerxes?"
+
+        show volkara3quatArmored happyMouth with dissolve
+        volk "Do you want a hug Xerxes?" #armored volkara arms out
         pause 3
         if headPatCounter > 12 or atoBoinks > 0:
+            hide xerx34LookDownArmoredMad
+            #looking down armored sad xerxes
             xerx "Ato'ssa."
             volk "She'll be fine."
             volk "You know that."
@@ -690,6 +809,13 @@ label yarakWins:
         regs "Yeah!"
         regs "We should return to camp!"
         regs "We need to discuss our next move."
+
+        show versanizHelmet
+        #get versaniz' helmet as loot
+    
+    #get magicannon as loot
+    #get 300 darics of loot
+    #get 30 plumbata as loot
 
     jump zaratCampWinning
 
