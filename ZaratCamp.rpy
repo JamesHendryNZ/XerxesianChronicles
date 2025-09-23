@@ -136,6 +136,9 @@ label zaratianCamp:
 
     with Fade(1,0,0.5)
     pause 10
+    
+    #music for zarat camp
+    play music villageTheme fadein 1.0 fadeout 1.0
 
     scene cloudyDayTime at movingSky
     show royalZaratCampOutside at center , halfSize:
@@ -291,6 +294,7 @@ label zaratianCamp:
     show regius34 meanEyes annoyedMouth
     show zagzhino sadEyes sadMouth
     with dissolve
+    stop music fadeout 1
     Urlius "Now execute the rebel King." 
 
     show zagzhino:
@@ -308,6 +312,7 @@ label zaratianCamp:
     show zagzhino closedEyes angryMouth at angryColored:
         xpos 0.45
         easeout 2 xpos 2.0 ypos 2.0 rotate 90
+    play sound foeHit
     pause 1.5
     play extraSound bloodySlam
     pause 2
@@ -315,6 +320,7 @@ label zaratianCamp:
     #hack
 
     #meanwhile at tsekrei's tent
+    play music villageTheme fadein 1.0 fadeout 1.0
     scene tsekreiTent at fullFit with Fade(2,0,0.5)
     show tsekrei itemArmored at right , size2Thrid:
         ypos 1.2
@@ -507,7 +513,7 @@ label zaratianCamp:
         show tesipiz34NeutralHappy at left , flipped , size2Thrid:
             ypos 1.25
         with dissolve
-        volk "And the survivers slain by Shuumen." #maybe eg of shuumen and mibi in the succ room
+        volk "And the uncourrupted survivers were all slain by Shuumen." #maybe eg of shuumen and mibi in the succ room
         if takuraBoinks > 0:
             hide tesipiz34NeutralHappy
             show tesipiz2Fingers at left , flipped , size2Thrid:
@@ -519,7 +525,7 @@ label zaratianCamp:
             show tesipiz34NeutralHappy at left , flipped , size2Thrid:
                 ypos 1.25
             show volkara3quat -happyMouth armsFoward
-            show tsekrei armored34 happyMouth:
+            show tsekrei armored34 XEyes happyMouth:
                 xzoom 1.0
                 linear 0.5 xzoom -1.0
             with dissolve
@@ -711,10 +717,13 @@ label zaratCampShoppings:
 
 label zaratCampMenu:
     
+
     if IsDaytime:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0
         scene cloudyDayTime at movingSky
         show royalZaratCampInside at fullFit
     else:
+        play music wonderStars if_changed fadein 1.0 fadeout 1.0
         scene cloudyNightTime at movingSky
         show royalZaratCampInside at fullFit
         #royalZaratCampInsideNight
@@ -740,6 +749,7 @@ label zaratCampMenu:
             jump tsekreiSleepOver1
         "Leave the Camp" if enteringFrom == "leavingTown":
 
+            play music sandHero fadein 1.0 fadeout 1.0
             if IsDaytime:
                 scene cloudyDayTime at movingSky
                 show royalZaratCampInside at fullFit
@@ -792,7 +802,7 @@ label zaratCampNighttime:
 
     #"night time"
     $ IsDaytime = False
-    
+    play music ratThonking fadein 1.0 fadeout 1.0
     #estalishing shot of table
     #zaratian jug item. - maybe colorable
     #figurges should be touable
@@ -976,7 +986,7 @@ label zaratCampNighttime:
     show regius34 happyMouth pointing with dissolve
     regs "But you and Xerxes seem keen to start."
 
-
+    play music planingTime fadein 1.0 fadeout 1.0
     scene cloudyDayTime at movingSky
     show yarakBattlefield:
         ypos -0.5 xalign 0.65
@@ -1166,7 +1176,7 @@ label zaratCampNighttime:
     show tesipizYeah at left , halfSize, lightCrystalLights , flipped behind wholeAssTable , plateTanX , plateTanA , zaratianMug ,  foodSeedyLeaves , spicedUpMeat , royalFalxInfantryDude , xerx3quatYeah:
         xpos 0.4 ypos 1.15
     with dissolve
-    urli "We Royal Zaratians do."
+    urli "But we Royal Zaratians do."
     show urlius base34 -meanEyes -happyMouth
     show regius34 pointing -annoyedEyes happyMouth at left , lightCrystalLights , flipped:
         xpos 0.7 ypos 1.3 zoom 0.55
@@ -1520,17 +1530,14 @@ label zaratCampNighttime:
     with dissolve
     urli "I hope for all Zarat that we win!!"
 
-    #rewrite because regius contradicts himself
-    #this part from page 80 needs to be re-wrtten.
-    #regs "Zaratians aren't as heavily armored though."
-    #regs "We need to get you and some Zarato-Jamesians to kill Versaniz."
-    #xerx "I'm sure you have armoured camels."
-    #regs 'Yes. they will counter the cataphracts.'
-    #should volkara ask about the karutu/karanyash?
+    #rewritten so that Regius doesn't contradict himself
+    #Regius is of the Yimi-ri'in who don't have armored camels/cav or Royal Falxes (They do have Shatrotu longbows(Both foot and camel))
+    #arguably the elete tastsetrotus would also count.
 
     #do a move to tsekrei tent.
 
-
+    #maybe night ambiance?
+    play music nightAmbiance fadein 1.0 fadeout 1.0
     scene cloudyNightTime at fullFit , movingSky
     show royalZaratCampInsideNight at right:
         linear 5 center
@@ -1604,6 +1611,7 @@ label zaratCampNighttime:
     volk "That would be stupid."
 
     #sleep grphic
+    stop music fadeout 1.0
     play sound sleepss
     scene zaratSleeps at fullFit with Fade(1,0,2)
     pause 7
@@ -1622,6 +1630,7 @@ label zaratCampNighttime:
     with fade (1,0,1)
     #yuufia is half nekked
     #"Urlius is pacing in stress."
+    play music bardaiyaBeMad fadein 1.0 fadeout 1.0
     urli "We almost lost Gilgamorium and Astarte's goons are now in our lands."
     urli "Hopefully the Jamesians don't fall."
     show urlius OMouth base34 with dissolve
@@ -1699,6 +1708,7 @@ label zaratCampNighttime:
         ypos 1.4
     show urlius worried34 sadEyes at right , flameLight , size2Thrid:
     with dissolve
+    play music sandHero fadein 1.0 fadeout 1.0
     yuuf "Then we kill them all."
     show urlius -worried34
     show yuufia semiNekked34 -meanEyes
@@ -1715,6 +1725,7 @@ label zaratCampNighttime:
     yuuf "Kya. Hmmm."
     menu:
         "Boink Yuufia":
+            play music about2Boink fadein 1.0 fadeout 1.0
             show yuufia ass blush closedEyes with dissolve
             yuuf "Hmmm."
             scene kingZaratTent at truecenter , darkLight
@@ -1723,6 +1734,7 @@ label zaratCampNighttime:
             show yuufia asss hornyEyes happyMouth blush at center:
                 ypos 1.6 matrixcolor TintMatrix("#ff94b4") * SaturationMatrix (0.7)
             with Fade(2,0,1)
+            stop music fadeout 6
             pause 6
             scene kingZaratTent at truecenter , darkLight:
                 easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7)
@@ -1882,6 +1894,7 @@ label zaratCampNighttime:
             pause 6
             jump versanizBeforeYarak
         "Just Cuddles":
+            stop music fadeout 3
             yuuf "O.K Urlius."
             yuuf "We'll be O.K."
             play sound cuddles
@@ -1896,6 +1909,7 @@ label zaratCampWinning:
 
     $ enteringFrom = "lastNight"
     #trimdius shows up
+    play music grassWindAmbiance fadein 1.0 fadeout 1.0
     scene clearDayTime at size08 , movingSky
     show royalZaratCampOutside:
         xpan 180
@@ -1920,6 +1934,7 @@ label zaratCampWinning:
     show tsekrei armed meanEyes madMouth at halfSize , center:
         ypos 1.2
     with dissolve
+    play music gettingAttacked fadeout 1.0 fadein 1.0
     tsek "{b}RHHAAARHH!!!" with vpunch
     show tsekrei battle34 with dissolve
     tsek "ZARDONIAN ASSASS.."
@@ -1932,11 +1947,14 @@ label zaratCampWinning:
         ypos 1.25
     with dissolve
     with hpunch
+    stop music
+    play sound punchy
     urli "{b}Tsekrei!!" with vpunch
 
     show urlius -punch34 
     show tsekrei frontArmsArmored34 -XEyes
     with dissolve
+    play music villageTheme fadein 1.0 fadeout 1.0
     urli "He is my double agent."
 
     show urlius greet happy -meanEyes
@@ -2042,6 +2060,7 @@ label zaratCampWinning:
             ypos 1.4
     with dissolve
     trim "I'll show you why."
+    stop music fadeout 6
 
     scene kingZaratTent at fullFit
     show kingsPlatform at center , size08:
@@ -2065,6 +2084,7 @@ label zaratCampWinning:
     pause 2
     #they set up image crystal
     #show scene miidos throne room 2 angles
+    play sound bardaiyaBeMad fadein 1.0 fadeout 1.0
     scene jemesisThroneRoom at size2Thrid:
         xpan 180
     show astarte happyMouth
@@ -2104,6 +2124,7 @@ label zaratCampWinning:
     astar "Time for some fun."
     show astarte halfNekkedBooba hornyEyes charming with dissolve
     astar "Khekhekhekhekhekh!!"
+    stop music fadeout 1
 
     #this might get cut depedning on time
 #    menu:
@@ -2155,6 +2176,7 @@ label zaratCampWinning:
         linear 2 xpos 0.5
     show imageCrystalStandActive at center
     with dissolve 
+    play music planingTime fadein 1.0 fadeout 1.0
     trim "Enough of that."
     hide imageCrystalStandActive with dissolve
     show trimdius item OMouth
@@ -2212,6 +2234,7 @@ label zaratCampWinning:
         with dissolve
         trim "Go and hang out with your friends."
 
+    play sound villageTheme fadein 1.0 fadeout 1.0
     scene tsekreiTent
     show tsekrei item34Armored happyMouth at left , size2Thrid:
         ypos 1.4 
@@ -2230,6 +2253,7 @@ label zaratCampWinning:
     with dissolve
     pause 0.5
     hide nueBook with dissolve
+    $ addItemAmount( inventory , bookGift , 1 )
     show volkara3quat -armsOut happyMouth with dissolve
     volk "Thank you Tsekrei."
     show volkara3quat  -happyMouth
@@ -2246,6 +2270,7 @@ label zaratCampWinning:
     show tsekrei handChestArmored34 happyMouth
     tsek "Look what I managed to get for you."
     show tsekrei itemArmored with dissolve
+    $ changeItemAmount( inventory , korkinDoll , 1 )
     show doll3 at left , size2Thrid
     hide tesipiz34NeutralHappy
     show tesipiz34HappyArmoredPointing at right , size2Thrid:
@@ -2345,6 +2370,7 @@ label zaratCampWinning:
     #ahrimaniom mk3 casting - done - he dissapears after getting defeated.
     #xerdza armored scale - done - what armor damaged by transformation
     #xerdza armored ahhh!! - done - looking at hand or feeling self
+    play music ahrimaniomPhase1 fadein 1.0 fadeout 1.0
     scene zwotiArenaBattleOutNight at center , ahriteLights
     show xerxMadArmedArmored at left , size2Thrid:
         xpos 1.4
@@ -2368,6 +2394,7 @@ label zaratCampWinning:
         xpos 1.4
         easeout 4 xpos 0.5 xalign 0.5
     with Fade(0.5,0.5,1,color="FF48E9")
+    stop music fadeout 3
     pause 2
     hide xerdzaJustMade
     show xerdzaImGirlNow at center , size2Thrid:
@@ -2385,6 +2412,7 @@ label zaratCampWinning:
     #need Ahrimaniom Xerxes sprite - he gets a mordern design
     trim "Pranked him" 
 
+    play music eeerieRuins fadein 1.0 fadeout 1.0
     scene ashurChanber at fullFit
     show femdius at left , size2Thrid , lightCrystalLights:
         ypos 1.4
@@ -2409,7 +2437,7 @@ label zaratCampWinning:
 
 label dateWithTsekrei1:
     
-    
+    play msuic grassWindAmbiance fadein 1.0 fadeout 1.0
     #will need a bit of refining
     scene cloudyDayTime at halfSize , movingSky
     show royalZaratCampInside at center , size08
@@ -2877,6 +2905,7 @@ label dateWithTsekrei1:
 
 label tsekreiSleepOver1:
     #tsekrei shows Xerxes his tent
+    play music grassWindAmbiance fadein 1.0 fadeout 1.0 if_changed
     scene cloudyDayTime at halfSize , movingSky
     show oldZaratTentOutside at center
     with Fade(2,0,2)
@@ -2893,9 +2922,10 @@ label tsekreiSleepOver1:
     show xerx3quatHappyer at right , size2Thrid :
         ypos 1.25
     with dissolve
-    xerx "Thanks Tsekrei."
+    xerx "Thanks Regius."
 
     #back at tsekrei's tent
+    play music nightAmbiance fadein 1.0 fadeout 1.0
     show tsekreiTent at flameLights , trueCenter
     with Fade(1,0,1)
     show volkara3quat nightOutfit at left , size2Thrid , lightCrystalLights with dissolve:
@@ -2991,6 +3021,7 @@ label tsekreiSleepOver1:
     show volkara34Happy nightOutfit -deltaMouth -lineEyes
     with dissolve
     #xerxsleeps
+    stop music fadeout 7
     play sound sleepss
     scene xerxSleepsOldTent at fullFit with Fade(3,0,3)
     pause 7

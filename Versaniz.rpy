@@ -207,6 +207,7 @@ label versanizOnABoatMuiba:
 
 label versanizBeforeYarak:
     $ doingLuna = False
+    play music happyAtoTheme fadein 1.0 fadeout 1.0
     scene mizheiumEstablishingNight at fullFit with Fade(1,0,2)
     pause 3
     "Zardonian Occupided Mizheim"
@@ -344,11 +345,13 @@ label versanizBeforeYarak:
         show versaniz nekked1Finger meanEyes meanHappyMouth blush  at center , size08 , lightCrystalLights:
             ypos 1.5
         vers "Fluffy spider is going to get blasted."
+        stop music fadeout 1.0
         jump doingLunaPart2
         
         
     else:
         #the other two show up
+        stop music fadeout 1.0
         show lunaDaJuna hornyEyes blush -OMouth
         show versaniz nekkedYeah happyMouth at left , halfSize:
             ypos 1.25
@@ -367,19 +370,21 @@ label versanizBeforeYarak:
             "Siayusi should learn so she can liberate Gilgarmorium (Sex with Siayusi)":
                 jump doingSiayusiAgian
             "Fluffy spider is going to get her insides webbed (Sex with Luna)":
+                play music about2Boink fadein 1.0 fadeout 1.0
                 lun "Ahh."
                 lun "So you just wanted to talk first."
                 lum "Hmm."
+                stop music fadeout 5
                 jump doingLunaPart1
             "The lessions will start tomorrow (Just cuddles)":
-                muib "Remeber."
+                muib "Remember."
                 siay "We got to learn soon."
                 lun "Heheh."
                 jump versanizCuddles
 
 
 label doingLunaPart1:
-
+    
     scene cloudyNightTime at fullFit
     show versanizsBedTowards at flameLights , trueCenter
     show lunaDaJuna onBack hornyEyes blush at center , size2Thrid , lightCrystalLights:
@@ -625,11 +630,13 @@ label versanizBossBattleAST:
     show magicShot at summonnerLights:
         ypos 1.5 xpos 0.3 rotate 180
         linear 0.8 ypos 0.5 #1.0
+    play sound magicannonShot
     pause 0.2 #0.4
     
     show magicShot as shot2 at summonnerLights:
         ypos 1.5 xpos 0.7 rotate 180
         linear 0.8 ypos 0.5 #1.2
+    play extraSound magicannonShot
     pause 0.1 #0.5
     
     show zaratoJamesianAxeLady mountedAttack as extraAxe at halfSize , right:
@@ -638,14 +645,17 @@ label versanizBossBattleAST:
     show magicShot as shot3 at summonnerLights:
         ypos 1.5 xpos 0.4 rotate 180
         linear 0.8 ypos 0.5 #1.3
+    play sound magicannonShot
     show magicShot as shot4 at summonnerLights:
         ypos 1.5 xpos 0.1 rotate 180
         linear 0.8 ypos 0.5 #1.3
+    play extraSound magicannonShot
     pause 0.2 #0.7
     
     show magicShot as shot5 at summonnerLights:
         ypos 1.5 xpos 0.6 rotate 180
         linear 0.8 ypos 0.4 #1.5
+    play sound magicannonShot
     show zaratianHeavyHorseArcher at halfSize , left:
         xpos -0.5 ypos 1.6
         linear 1 xpos 0.25 #1.7
@@ -659,6 +669,7 @@ label versanizBossBattleAST:
     show magicShot as shot7 at summonnerLights:
         ypos 1.5 xpos 0.25 rotate 180
         linear 0.8 ypos 0.5 #1.7
+    play extraSound magicannonShot
     show zaratianHorseArcher at halfSize , left:
         xpos -0.5 ypos 1.3
         linear 1 xpos 0.5 #1.9
@@ -674,7 +685,7 @@ label versanizBossBattleAST:
     show magicShot as shot8 at summonnerLights:
         ypos 1.5 xpos 0.9 rotate 180
         linear 0.8 ypos 0.5 #1.9
-    
+    play sound magicannonShot
     pause 0.1 #1.2
     #dude got blasted 1
     play sound playerHit
@@ -686,9 +697,11 @@ label versanizBossBattleAST:
     show magicShot as shot9 at summonnerLights:
         ypos 1.5 xpos 0.1 rotate 180
         linear 0.8 ypos 0.5 #2.0
+    play extraSound magicannonShot
     show magicShot as shot10 at summonnerLights:
         ypos 1.5 xpos 0.3 rotate 180
         linear 0.8 ypos 0.5 #2.0
+    play sound magicannonShot
     
     pause 0.1 #1.3
     show magicShot as shot3 at summonnerLights:
@@ -717,6 +730,7 @@ label versanizBossBattleAST:
     show magicShot as shot12 at summonnerLights:
         ypos 1.5 xpos 0.3 rotate 180
         linear 0.8 ypos 0.5 #2.3
+    play sound magicannonShot
     
     pause 0.1 #1.6
     show magicShot as shot6 at summonnerLights:
@@ -726,6 +740,7 @@ label versanizBossBattleAST:
     show magicShot as shot13 at summonnerLights:
         ypos 1.5 xpos 0.6 rotate 180
         linear 0.8 ypos 0.6 #2.4
+    play extraSound magicannonShot
 
     pause 0.1 #1.7
     play sound playerHit
@@ -774,42 +789,53 @@ label versanizBossBattleAST:
     show xerxHorseSoAMDefend at left , size2Thrid:
         ypos 1.7 matrixcolor TintMatrix ("#fff") * BrightnessMatrix ( 0.0 )
     with dissolve
+    play sound magicannonShot
     show magicShot at right:
         xpos 1.5 ypos 0.7
         linear 1 xpos 0.25 #1.0
     pause 0.25 #0.25
+    play extraSound magicannonShot
     show magicShot as shot2 at right:
         xpos 1.5 ypos 0.3
         linear 1 xpos 0.25 # 1.25
+    play sound magicannonShot
     pause 0.05 #0.3
     show magicShot as shot3 at right:
         xpos 1.5 ypos 0.6
         linear 1 xpos 0.25 # 1.3
+    play extraSound magicannonShot
     pause 0.1 #0.4
     show magicShot as shot4 at right:
         xpos 1.5 ypos 0.2
         linear 1 xpos 0.25 #1.4
+    play sound magicannonShot
     pause 0.05 #0.45
     show magicShot as shot5 at right:
         xpos 1.5 ypos 0.1
         linear 1 xpos 0.25 #1.45
+    play extraSound magicannonShot
     pause 0.05 #0.5
     show magicShot as shot6 at right:
         xpos 1.5 ypos 0.4
         linear 1 xpos 0.25 #1.5
+    play sound magicannonShot
     pause 0.2 #1.7
     show magicShot as shot7 at right:
         xpos 1.5 ypos 0.8
         linear 1 xpos 0.25 #1.7
+    play extraSound magicannonShot
     pause 0.1 #0.8
     show magicShot as shot8 at right:
         xpos 1.5 ypos 0.9
         linear 1 xpos 0.25 #1.8
+    play sound magicannonShot
     pause 0.1 #0.9
     show magicShot as shot9 at right:
         xpos 1.5 ypos 0.3
         linear 1 xpos 0.25 #1.9
+    play extraSound magicannonShot
     pause 0.1 #1.0
+    play sound PowerUp
     hide magicShot with dissolve
     show xerxHorseSoAMDefend at left , size2Thrid:
         ypos 1.7 matrixcolor TintMatrix ("#fff") * BrightnessMatrix ( 0.0 )
@@ -818,36 +844,53 @@ label versanizBossBattleAST:
     show magicShot as shot10 at right:
         xpos 1.5 ypos 0.1
         linear 1 xpos 0.25 #2.1
+    play sound magicannonShot
     pause 0.05 #1.15
     show magicShot as shot11 at right:
         xpos 1.5 ypos 0.4
         linear 1 xpos 0.25 #2.15
+    play extraSound magicannonShot
     pause 0.05 #1.2
+    play sound PowerUp
     hide shot2 with dissolve
     show magicShot as shot12 at right:
         xpos 1.5 ypos 0.5
         linear 1 xpos 0.25 #2.2
+    play sound magicannonShot
     pause 0.05 #1.3
+    play sound PowerUp
     hide shot3 with dissolve
     pause 0.1 #1.4
+    play sound PowerUp
     hide shot4 with dissolve
     pause 0.05 #1.45
+    play sound PowerUp
     hide shot5 with dissolve
     pause 0.05 #1.5
+    play sound PowerUp
     hide shot6 with dissolve
     pause 0.2 #1.7
+    play sound PowerUp
     hide shot7 with dissolve
     pause 0.1 #1.8
+    play sound PowerUp
     hide shot8 with dissolve
     pause 0.1 #1.9
+    play sound PowerUp
     hide shot9 with dissolve
     pause 0.2 #2.1
+    play sound PowerUp
     hide shot10 with dissolve
     pause 0.05 #2.15
+    play sound PowerUp
     hide shot11 with dissolve
     pause 0.05 #2.2
+    play sound PowerUp
     hide shot12 with dissolve
     pause 0.1 #2.3
+    play sound PowerUp
+    play extraSound cookingWithAss loop
+    
     hide xerxHorseSoAMDefend
     show xerxHorseSoAMOvergared at left , size2Thrid:
         ypos 1.7 matrixcolor TintMatrix ("#ff0") * BrightnessMatrix( 1.8 )
@@ -874,6 +917,7 @@ label versanizBossBattleAST:
     $ addEffects( "OverCharged" , xerxesCharacter , 3 , 10 , "Sword of Ahura-Mazda" )
     $ xerxChargeLevel = 2
 
+    stop extraSound fadeout 3
     $ enemyTroopers = [ copy.copy( zardonianAxInfM ) , copy.copy( zardonianAxInfF ) , copy.copy( zardonainLegionaryM ) , copy.copy( zardonianGrapplePointMarine ), copy.copy(muibaFoot) , copy.copy( zardonianAxInfF ) , copy.copy( zardonainLegionaryF ) , copy.copy( zardonianAxInfM ) ]
     
     call screen playerActions( "Unleash the Excess Engery!" , False , False , False , 1  )    
@@ -1002,6 +1046,7 @@ label versanizBossBattleAST:
             show muiba at left , size2Thrid:
                 ypos 2.0
                 easein 2 xpos 2.0
+            play sound giantSpiderRun loop
         elif siayusiAlive:
             show siayusi onSpooda meanEyes OMouth at left , size2Thrid:
                 ypos 2.0
@@ -1013,6 +1058,7 @@ label versanizBossBattleAST:
             show siayusi at left , size2Thrid:
                 ypos 2.0
                 easein 2 xpos 2.0
+            play sound giantSpiderRun loop
         else:
             show lunaDaJuna armredDefeated sadEyes OMouth at left , size2Thrid:
                 ypos 2.0
@@ -1023,6 +1069,7 @@ label versanizBossBattleAST:
             show lunaDaJuna closedEyes at left , size2Thrid:
                 ypos 2.0
                 easein 2 xpos 2.0
+            play sound giantSpiderRun loop
             lun "HWAAAAAHH!!!" with hppunch
     elif not siayusiAlive and not muibaAlive:
         if lunaAlive:
@@ -1038,12 +1085,14 @@ label versanizBossBattleAST:
         if lunaAlive:
             vers "THE ZARATIANS ARE SOURROUNDING US!!"
             vers "RETREAT!!" with vpunch
+            play sound giantSpiderRun loop
             show versanizOnLuna sadEyes OMouth VsadEyes VOMouth at center , size2Thrid:
                 ypos 2.0
                 easein 2 xpos 2.0
             pause 1.5
             #xerxes is reminded by his dead girlfriends so he cannot chase versaniz as it causes him to have an episode
             scene ahriteCave at fullFit , ahriteDarkness
+            play sound [ playerHit , meatEplosion ]
             show keioziaPossessedKilled at truecenter
             with Fade( 0.5 , 0 , 0.5 , color="#f0c")
             scene ahriteSky at fullFit
@@ -1103,6 +1152,7 @@ label versanizBossBattleAST:
             with dissolve
             junatus "THEY'VE KILLED ALL OUR LEADERS!!"
             junatus "RETREAT!"
+            play sound giantSpiderRun loop
         #need flee grafphic for junatu
         #web rocka and sword knight
     #zardonains retreat or are attacked from behind and are slaughted
@@ -1111,6 +1161,7 @@ label versanizBossBattleAST:
 
 
 label afterMarthAST: #this might be cut due to time contraints or just not fitting.
+    #At least 1 of the Named Versaniz crew would need to be alive for this to play
     "Versaniz is ded"
     "Lol"
     #check for survivors

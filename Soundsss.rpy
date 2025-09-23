@@ -58,14 +58,17 @@ init:
     define flameAmbiance = "audio/sound effects/gas-burning-stove-loop-123665.ogg" #Pixabay
     define campfire = "audio/sound effects/campfire.ogg" # Wesnoth
     define deadCaves = "audio/music/Dead Caves.ogg" #James Hendry
-    define windAmbiance = "audio/sound effects/wind-in-trees-117477.ogg"
+    define windAmbiance = "audio/sound effects/wind-in-trees-117477.ogg" # for foresty zones
+    define grassWindAmbiance = "audio/sound effects/wind-rustling-grass-339094.ogg" #DRAGON STUDIO #for grassy zones
     define cookingWithAss = "audio/sound effects/frying-steak-74556.ogg" #pixabay
     define rainAmbiace = "audio/sound effects/rain-sound-188158.ogg"
+    define nightAmbiance = "audio/sound effects/night-ambience-17064.ogg" #pixabay
     define steaming = "audio/sound effects/steam-2-36231.ogg"
     #sound effectsss
 
     define spoosh = "audio/sound effects/water-blast.ogg" #Wesnoth version 1.16 under Attribution-ShareAlike 4.0 International - pitched down by an octive 
     define horseGallop = "audio/sound effects/Horse Gallop.ogg" #James Hendry - the classic coconut apporch
+    define giantSpiderRun = "audio/sound effects/giant spider run.ogg" #James Hendry - I just played random keys on the c scale for 5 seconds
     define ostrichRun = "audio/sound effects/Bipeadal run.ogg" #James Hendry - a more meatier cocnut - can be used for timers and walking dogs
     define ahrimaniomHisskttktk = "audio/sound effects/Ahrimaniom.ogg" #a mix of cat hiss and insect wing beat
     define ratSqueek = "audio/sound effects/rat sqeek.ogg" #

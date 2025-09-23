@@ -3,6 +3,7 @@
 label morningOfYarak:
     #"The battle"
     #regius gets armor for his camel - nope for now
+    play music windAmbiance fadein 1.0 fadeout 1.0
     scene cloudyDayTime at halfSize , movingSky, lightYellowTint
     show royalZaratCampOutside at center , size2Thrid, lightYellowTint
     show jakaArcherCrusufied at halfSize , right ,lightYellowTint:
@@ -245,7 +246,7 @@ label battleOfYarak:
     with dissolve
 
     vers "HEAVY CAVARLY CHARGE!!" with vpunch
-
+    play music zarodnianBattle fadein 1.0 fadeout 1.0
     #animate or show a sereese of battles
 
     #the hevay cavalry charge
@@ -259,6 +260,9 @@ label battleOfYarak:
         xpos 0.75
         easeout 3 xpos 1.3 ypos 2.0 zoom 3.0
     with dissolve
+    play sound horseGallop loop
+    pause 0.1
+    play extraSound horseGallop loop
     pause 0.5
     show zardonianCataphractDude as extraHorse at thridSize , left behind zardonianCataphractDude , zardonianCataphractLady:
         xpos 0.4
@@ -340,6 +344,8 @@ label battleOfYarak:
     with dissolve
     pause 2.5
 
+    play sound [ playerHit , thong , bloodySlam , armorProtected , foeHit , thong ] loop
+    play extraSound [ bloodySlam , thong , playerHit , bloodySlam , armorProtected, armorProtected ] loop
     show zaratianEliteSpear at size3quat  , right , angryColored:
         xpos 0.6
         ypos 1.25
@@ -396,6 +402,9 @@ label battleOfYarak:
     show yarakBattlefield:
         ypos -0.5 xalign 0.65
 
+    play sound horseGallop loop
+    pause 0.1
+    play extraSound horseGallop loop
     show zardonianAxeGirl at center , sixthSize
     show zardonianSwordsMan at center , sixthSize
     show zardonianSwordsMan as extraSword2 at center , sixthSize
@@ -416,6 +425,8 @@ label battleOfYarak:
     #legionaiers attack
     #make attack animation for zardonian legionaries and have animations loop
     scene dustCloud at fullFit with Dissolve(5)
+    play sound [ thong , armorProtected , hackIT , thong , characterHit , slashMiss , whippingMySlaves ] loop
+    play extraSound [ armorProtected , thong , foeHit , slamSound , thong , slicey , slashMiss ] loop
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
         ypos -0.5 xalign 0.65
@@ -530,6 +541,9 @@ label battleOfYarak:
         ypos 1.4
     
     with dissolve
+    
+    stop sound fadeout 10
+    stop extraSound fadeout 10
 
     xerx "Tesipiz, Volkara!"
     xerx "The Zarato-Jamesian Cavarly!"
@@ -592,6 +606,7 @@ label yarakLeft:
     show yarakBattlefield:
         ypos -0.5 xpan 270
     with dissolve
+    
     #korkin gurl axe cav
     #ssatu boy ostrich fighter
     #junatu slinga
@@ -635,6 +650,7 @@ label yarakWins:
     scene cloudyDayTime at fullFit
     show yarakBattlefield at truecenter
     with dissolve
+    stop music fadeout 1.0
     play sound weOwnedThem
     show junatuWebRockaFlee at size2Thrid:
         ypos 1.5 xpos -0.2 zoom 1.0 matrixcolor OpacityMatrix(1.0)
@@ -708,6 +724,7 @@ label yarakWins:
         ypos 1.25 xpos 0.45
     regs "WE HAVE DEFEATED THE ZARDONIANS!!"
 
+    play music grassWindAmbiance fadein 1 fadeout 1
     scene cloudyDayTime at fullFit
     show yarakBattlefield:
         xpan 90
@@ -785,34 +802,128 @@ label yarakWins:
         if headPatCounter > 12 or atoBoinks > 0:
             hide xerx34LookDownArmoredMad
             #looking down armored sad xerxes
+            show xerx34LookDownSadArmored at left , flipped , size2Thrid:
+                ypos 1.25
+            with dissolve
             xerx "Ato'ssa."
+            show volkara3quatArmored bentStand -sadEyes OMouth with dissolve
             volk "She'll be fine."
+            show volkara3quatArmored happyMouth with dissolve
             volk "You know that."
+        show volkara3quatArmored bentStand -sadEyes -happyMouth -deltaMouth
+        show regius34 armoredPointing -sadEyes happyMouth
+        with dissolve
         regs "How about I get you our own bed?"
+        show regius34 armored -happyMouth with dissolve
         pause 3
+        hide xerx34LookDownArmoredMad
+        hide xerx34LookDownArmoredMad
+        show xerx3quatHappyerArmored at left , flipped , size2Thrid:
+            ypos 1.25
+        with dissolve
         xerx "Yes."
 
 
     else:
+        show tesipizWooArmored at left , halfSize:
+            ypos 1.2
+        show xerx3quatHappyArmored at center , halfSize:
+            ypos 1.2
+        show volkara3quatArmored happyMouth at right , halfSize:
+            ypos 1.2 xpos 0.75
+        with dissolve
         tesi "Five hells!"
+
+        hide tesipizWooArmored
+        show tesipizYeahArmored at left , halfSize:
+            ypos 1.2
         tesi "That was something!"
+
         #tesi has Xerxe and Volkara's horses if the battle went that way
+        hide tesipizYeahArmored
+        show tesipiz34MiniHappyArmored at left , halfSize , flipped:
+            ypos 1.2
+        show volkara3quatArmored bentStand meanEyes
+        with dissolve
         volk "Yes it was."
+        show volkara3quatArmored pointy -meanEyes with dissolve
         volk "Look what I got!"
+        #TODO configure to right size, position and rotation
+        show magicannon at truecenter with dissolve
+        pause 2
+        hide tesipiz34MiniHappyArmored
+        show tesipiz34HappyArmored at left , halfSize , flipped:
+            ypos 1.2
+        with dissolve
         tesi "A magi-cannon!"
+        hide tesipiz34HappyArmored
+        show tesipiz34HappyArmoredPointing at left , halfSize , flipped:
+            ypos 1.2
         tesi "Those are ransom worthy!"
         tesi "We can end the war with that."
+
+        hide tesipiz34HappyArmoredPointing
+        show tesipiz34MiniHappyArmored at left , halfSize , flipped:
+            ypos 1.2
+        show volkara3quatArmored -bentStand -happyMouth:
+            xzoom 1.0
+            linear 1 xzoom -1.0
+        hide magicannon with dissolve
+        show xerx3quatHappyArmored:
+            xzoom 1.0
+            linear 1 xzoom -1.0
+        show regius34 armoredFists meanEyes happyMouth at right , halfSize:
+            ypos 1.2 xpos 1.5
+            linear 1 xpos 1.0
+        with dissolve
         regs "Great!!"
+        show regius34 armoredPointy with dissolve
         regs "I can't wait to tell King Urlius about this."
+        show regius armoredFists with dissolve
         regs "Hopefully Urlius will allow the Yimi-ri'in to keep Gilamorium."
+
+        show regius34 armored -happyMouth
+        hide xerx3quatHappyArmored
+        show xerx3quatPointHappyArmored at center , halfSize , flipped:
+            ypos 1.2
+        with dissolve
         xerx "And King Jemesis is gonna hate this."
+        show versanizHelmet at truecenter with dissolve
+
+        show regius armoredFists meanEyes happyMouth with dissolve
         regs "Yeah!"
+
+        show regius armoredPointy -meanEyes with dissolve
         regs "We should return to camp!"
         regs "We need to discuss our next move."
 
-        show versanizHelmet
+        hide versanizHelmet
         #get versaniz' helmet as loot
     
+    show daricCoin at truecenter with dissolve:
+        xpos 0.2
+    show daricCoin as extraMoney at truecenter with dissolve:
+        xpos 0.3
+    show plumbata at truecenter with dissolve:
+        xpos 0.7
+    show plumbata at truecenter as extraDart with dissolve:
+        xpos 0.8
+    show plumbata at truecenter as extraDart with dissolve:
+        xpos 0.9
+    $ money += 300
+    $ changeItemAmount( inventory , plumbata , 30 )
+    "Xerxes and Friends loot 300 dariks and 30 plumbata from the battlefield"
+    $ changeItemAmount( inventory , magicannonLoot , 1 )
+    show magicannon at truecenter with dissolve:
+        xpos 0.4
+    "As well as a magicannon with a depleated enery crystal."
+    if not versanizAlive:
+        show versanizHelmet  at truecenter with dissolve:
+            xpos 0.6
+        $ changeItemAmount( inventory , versanizLoot , 1 )
+        "Prince Versaniz' helmet will be kept as a trophy and delivered to King Jemesis."
+
+
     #get magicannon as loot
     #get 300 darics of loot
     #get 30 plumbata as loot

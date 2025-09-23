@@ -134,9 +134,13 @@ define harpoonLauncher = Item("Harpoon Laucher" , "images/items/Harpoon Launcher
 define tabletDocument = Item("Anti-Stealth Tablet Document" , "images/items/tabletDocument.webp" , "quest" , 0 , 0 , "Lore" , 0 , "A document showing information of the Anti-Stealth Tablet. The Anti-Stealth Tablet is of ahrite construction, it was created around the time of the 2nd Subversion in 552. It seems to show the general area that the Bardaiya-Shahneh is. The emblem in the middle is a press activator. The Astarts had obtained it with out knowing what it does. They had lost it in an ambush raid where it shattered. The Knights of Ahura-Mazda found out when they found documentation in the ahrite ruins in Azerinyih in 554." , 2000 )
 define bookGift = Item("The Kinzrama From Heian" , "images/items/tsekrei gift.webp" , "quest" , 0 , 0 , "Lore" , 0 , "A story about a Kinzrama called Nu-eh who came from a place called Heian that is beyond the Sky Above the Sky. She arrived and helped the Karutu led by Herakiliz defeat the Katanian Empire by placing misfortune on the Katanians in 404. Herakiliz was able to get within the Katanian Captial of Kagotasha and force the Emperor to sue for peace. She was made a Kashgyim protector diety and name also became Nweh Kota-Heyan and took on a more Karutu-esque appearance." , 1209)
 
+#idols
 define idolOfFazanit = Item( "Idol of Fazanit" , "images/items/Fazanit Idol.webp" , "quest" , 0 , 0 , "loot" , 0 , "An Idol of the Zaratian god of rain, clouds , water , snow , ice and steam. Given to Xerxes by Tsekrei to help him with the magic water system." , 500)
 define idolOfSutsshak = Item( "Idol of Sutsshak" , "images/items/Sutsshak Item.webp"  , "loot" , 0 , 0 , "loot" , 0 , "An Idol of the goddess Sutsshak. Looted form the Temple from Takurium." , 1200 )
 
+#other story based loot
+define magicannonLoot = Item( "Magicannon" , "images/items/magicannon.webp" , "quest" , 0 , 0 , "loot" , 0 , "A powerful cannon that shoots out magical lasers. Currently out of magic." , 5000) #could turn into a powerful weapon with limited shots used by Volkara later
+define versanizLoot = Item( "Versaniz' Helmet" , "images/items/Versaniz Helmet.webp" , "quest" , 0 , 0 , "loot" , 0 , "Versaniz's helmet. He won't be needing it anymore." , 500)
 # def __init__( self , name , image , itemType , effectPower , effectDuration , effectType , effectArmorPower , description , cost ):
 
 define deadFalcobite = Item( "Dead Falcobite" , "images/items/Dead Lizardbite.webp" , "Dead Animal" , 0 , 0 , "Dead Animal" , 0 , "A dead falcobite corspe that can be used for many things." , 10)

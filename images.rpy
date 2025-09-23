@@ -3262,6 +3262,7 @@ image xerx34LookDownArmored = "images/Protagonists/Xerxes/Xerxes 3-4 Armored loo
 image xerx34LookDownArmoredMad = Composite( ( 600, 1400 ) , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 Armored looking down.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 Armored looking down angry.webp")
 image xerx34LookDown = "images/Protagonists/Xerxes/Xerxes 3-4 looking down.webp"
 image xerx34LookDownSad = "images/Protagonists/Xerxes/Xerxes 3-4 looking down sad.webp"
+image xerx34LookDownSadArmored = Composite( ( 600, 1400 ) , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 Armored looking down.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 looking down sad Face.webp")
 image xerx34LookDownSadNoHat = "images/Protagonists/Xerxes/Xerxes 3-4 looking down sad No hat.webp"
 image xerx34LookDownArmoredAnnoyed = "images/Protagonists/Xerxes/Xerxes 3-4 Armored looking down annoyed.webp"
 image xerx34LookDownAnnoyed = "images/Protagonists/Xerxes/Xerxes 3-4 looking down annoyed.webp"
