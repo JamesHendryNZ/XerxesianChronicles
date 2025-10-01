@@ -211,54 +211,71 @@ label versanizBeforeYarak:
     scene mizheiumEstablishingNight at fullFit with Fade(1,0,2)
     pause 3
     "Zardonian Occupided Mizheim"
+    #can show city street if extra development time allows for it
     #show establsihng shot of whole city because it will show up in the Fall of Zardonia Timeline.
     #both night and day
     #it seems obivous from the comic that Versaniz is boinking the junatu lady while talking.
     #maybe have an option to have her just sit on him with out ridding him like a cowboy.
     #she needs a name.   luna
     scene cloudyNightTime at fullFit
-    show versanizsBedTowards at flameLights , fullFit
+    show versanizsBedTowards at flameLight , fullFit
     with fade
     show lunaDaJuna inviting hornyEyes happyMouth blush at center , halfSize , lightCrystalLights:
-        ypos 1.6
+        ypos 2.0
+    with dissolve
     lun "Want to celebrate our arrival with a little boinking?"
+
     menu:
         "Yes (Sex with Luna during the convisation.)":
-            show lunaDaJuna sitting hornyEyes with dissolve
+            show lunaDaJuna sitting hornyEyes -happyMouth at truecenter , halfSize with dissolve:
+                ypos 0.7
             lun "Hmmhmm!"
             $ doingLuna = True
         "No (She will be on or beside you.)":
-            show lunaDaJuna -blush -inviting OMouth sadEyes with dissolve
-            show lunaDaJuna happyMouth -sadEyes
+            show lunaDaJuna -blush -inviting OMouth sadEyes at center , lightCrystalLights with dissolve:
+                ypos 1.3
+            pause 0.5
+            show lunaDaJuna happyMouth -sadEyes with dissolve
             lun "There's always tomorrow."
     
     scene cloudyNightTime at fullFit
-    show versanizsBedTowards at flameLights , trueCenter
+    show versanizsBedTowards at flameLight , truecenter:
+        zoom 2.0 yalign 0.35
     if doingLuna:
         show lunaDaJuna onBack hornyEyes blush at center , size2Thrid:
-            ypos 2.0 matrixcolor TintMatrix("#ffffd0")
-            linear 5 ypos 2.2 yzoom 0.98 matrixcolor TintMatrix("#ff94b4")
-            linear 5 ypos 2.0 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
+            ypos 2.82 matrixcolor TintMatrix("#ffffd0") xpos 0.4
+            linear 3 ypos 2.88 yzoom 0.98 matrixcolor TintMatrix("#ff94b4")
+            linear 3 ypos 2.82 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
             repeat
         with dissolve
         pause 10
     else:
-        show lunaDaJuna onBack at right , halfSize:
-            ypos 1.5
-        show versaniz nekked at left , halfSize:
-            ypos 1.25
-    
+        show versaniz nekked at center , halfSize , lightCrystalLights:
+            ypos 1.1
+        show lunaDaJuna onBack at right , halfSize , lightCrystalLights:
+            ypos 2.0 xpos 1.2
+        show muiba widePupils at left , halfSize , lightCrystalLights:
+            ypos 1.1 xpos 0.2
+        show siayusi back hornyEyes at left , halfSize , lightCrystalLights:
+            ypos 1.1
+        
+        
+        show versanizBlanketOverlay at center , lightCrystalLights:
+            matrixcolor OpacityMatrix(0.95) yzoom 0.5
+        
+        with dissolve
+
     if doingLuna:
         scene cloudyNightTime at fullFit
-        show versanizsBedAway at center , flameLights
-        show versaniz nekkedYeah hornyEyes meanHappyMouth blush  at center , size08:
-            ypos 1.5
-            linear 5 ypos 1.7 yzoom 0.98 matrixcolor TintMatrix("#ff94b4")
-            linear 5 ypos 1.5 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
+        show versanizsBedAway at center , flameLight
+        show versaniz nekkedYeah hornyEyes meanHappyMouth blush  at center :
+            ypos 2.02
+            linear 3 ypos 2.1 yzoom 0.98 matrixcolor TintMatrix("#ff94b4")
+            linear 3 ypos 2.02 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
             repeat
     else:
         show versaniz nekkedYeah happyMouth nekkedYeah with dissolve
-
+        
     #while doing luna switich to face versaniz's.
     #else have them side by side
     #if doingLuna:
@@ -272,30 +289,34 @@ label versanizBeforeYarak:
     vers "Now that we're no longer bound by Astarte's embago."
     vers "We can now trade with a much more wealthy empire."
     if doingLuna:
-        show versaniz meanEyes nekkedPointy at center , size08 with dissolve:
-            ypos 1.5
-            linear 2.5 ypos 1.75 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")
-            linear 2.5 ypos 1.5 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
+        show versaniz meanEyes nekkedPointy at center  with dissolve:
+            ypos 2.02
+            linear 2.5 ypos 2.1 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")
+            linear 2.5 ypos 2.02 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
             repeat
     else:
-        show versaniz meanEyes nekkedPointy with dissolve
+        show versaniz meanEyes happyMouth nekkedPointy at flipped , center , halfSize , lightCrystalLights with dissolve:
+            ypos 1.1 
     vers "And we get to import junatu ladies like you." #need versaniz naked point
 
     if doingLuna:
         scene cloudyNightTime at fullFit
-        show versanizsBedTowards at flameLights , trueCenter
+        show versanizsBedTowards at flameLight , truecenter:
+            zoom 2.0 yalign 0.35
         show lunaDaJuna onBack sadEyes OMouth blush at center , size2Thrid:
-            ypos 2.0 matrixcolor TintMatrix("#ffffd0")
-            linear 3 ypos 2.25 yzoom 0.97 matrixcolor TintMatrix("#ff94b4")
-            linear 3 ypos 2.0 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
+            ypos 2.82 xpos 0.4 matrixcolor TintMatrix("#ffffd0")
+            linear 2 ypos 2.88 yzoom 0.97 matrixcolor TintMatrix("#ff94b4")
+            linear 2 ypos 2.82 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
             repeat
         with dissolve
-        lun "I've heard that one of the jamesians have a magic swword thaat can cut throuugh anything."
+        lun "I've heaerd that one of the jamesians have a maagic swword thaat can cut throuugh anythinggg."
         show lunaDaJuna angryMouth 
         lun "I don't wanna fiight hiim."
     else:
-        show versaniz nekked -meanEyes -happyMouth
-        show lunaDaJuna sadEyes Omouth 
+        show versaniz -meanEyes -happyMouth
+        show versaniz nekked 
+        show lunaDaJuna onBack sadEyes OMouth
+
         with dissolve
         lun "I've heard that one of the jamesians have a magic sword that can cut through anything."
         show lunaDaJuna angryMouth with dissolve
@@ -303,11 +324,11 @@ label versanizBeforeYarak:
 
     if doingLuna:
         scene cloudyNightTime at fullFit
-        show versanizsBedAway at center , flameLights
-        show versaniz nekkedPointy hornyEyes meanHappyMouth blush  at center , size08:
-            ypos 1.5
-            linear 3 ypos 1.75 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")
-            linear 3 ypos 1.5 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
+        show versanizsBedAway at center , flameLight
+        show versaniz nekkedPointy hornyEyes meanHappyMouth blush  at center:
+            ypos 2.02
+            linear 3 ypos 2.1 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")
+            linear 3 ypos 2.02 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
             repeat
     else:
         show versaniz nekkedPointy meanHappyMouth 
@@ -320,19 +341,22 @@ label versanizBeforeYarak:
     if doingLuna:
         show versaniz nekkedPointy meanEyes meanHappyMouth blush  at center , size08 , lightCrystalLights:
             ypos 1.5
-        show magicannon at center
+        show magicannon at center , flipped:
+            ypos 0.75 xpos 0.3 rotate 45
         
     else:
-        show versaniz nekkedYeah
-        show magicannon at left
+        show versaniz nekkedYeah at center , halfSize , lightCrystalLights:
+            ypos 1.1 
+        show magicannon at left, size08 , lightCrystalLights behind versanizBlanketOverlay , muiba:
+            xpos 0.423 ypos 0.708
         
     with dissolve
     vers "Plus I have got a magic cannon." #magicannon item show
     show versaniz nekked1Finger 
     if doingLuna:
-        show magicannon at center
-    else:
-        show magicannon at left
+        show magicannon at center , flipped:
+            ypos 0.75 xpos 0.3 rotate 45
+    
     with dissolve
     vers "I'll tech you all how to use magic cannons."
 
@@ -346,6 +370,17 @@ label versanizBeforeYarak:
             ypos 1.5
         vers "Fluffy spider is going to get blasted."
         stop music fadeout 1.0
+        show versanizsBedTowards at flameLight , truecenter:
+            zoom 2.0  yalign 0.35 matrixcolor TintMatrix("#ffffd0")
+            easein 2 matrixcolor TintMatrix("#ff94b4")
+            easeout 2 matrixcolor TintMatrix("#ffffd0")
+            repeat
+        show lunaDaJuna onBack meanEyes OMouth blush at center , size2Thrid , lightCrystalLights :
+            ypos 2.82 xpos 0.4 matrixcolor TintMatrix("#ffffd0") 
+            easein 2 ypos 2.92 yzoom 0.97 matrixcolor TintMatrix("#ff94b4")
+            easeout 2 ypos 2.82 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
+            repeat 
+        
         jump doingLunaPart2
         
         
@@ -353,32 +388,35 @@ label versanizBeforeYarak:
         #the other two show up
         stop music fadeout 1.0
         show lunaDaJuna hornyEyes blush -OMouth
-        show versaniz nekkedYeah happyMouth at left , halfSize:
-            ypos 1.25
-            linear 2 xpos 0.6
-        show muiba happy blush meanEyes widePupils at left , halfSize:
-            ypos 1.25 xpos -0.4
-            linear 2 xpos 0.4
-        show siayusi back hornyEyes blush at left , halfSize:
-            ypos 1.25 xpos -0.7
-            linear 2 xpos 0.1
+        show versaniz nekkedYeah happyMouth 
+        show muiba happy blush meanEyes widePupils 
+        show siayusi back hornyEyes blush 
         with dissolve
+        play music about2Boink fadein 1 fadeout 1
         muib "Which one will get the first lesson hmm?"
         menu:
             "You my lovely Muiba (Sex with Muiba)":
+                stop music fadeout 5
                 jump doingMuiba
             "Siayusi should learn so she can liberate Gilgarmorium (Sex with Siayusi)":
+                stop music fadeout 5
                 jump doingSiayusiAgian
             "Fluffy spider is going to get her insides webbed (Sex with Luna)":
-                play music about2Boink fadein 1.0 fadeout 1.0
+                
+                show lunaDaJuna OMouth with dissolve
                 lun "Ahh."
+                show lunaDaJuna happyMouth with dissolve
                 lun "So you just wanted to talk first."
-                lum "Hmm."
+                show lunaDaJuna -happyMouth with dissolve
+                lun "Hmm."
                 stop music fadeout 5
                 jump doingLunaPart1
             "The lessions will start tomorrow (Just cuddles)":
+                stop music fadeout 5
                 muib "Remember."
+                show siayusi happyMouth with dissolve
                 siay "We got to learn soon."
+                show lunaDaJuna happyMouth with dissolve
                 lun "Heheh."
                 jump versanizCuddles
 
@@ -386,57 +424,102 @@ label versanizBeforeYarak:
 label doingLunaPart1:
     
     scene cloudyNightTime at fullFit
-    show versanizsBedTowards at flameLights , trueCenter
+    show versanizsBedTowards at flameLight , truecenter:
+        zoom 2.0 yalign 0.35 
+        
     show lunaDaJuna onBack hornyEyes blush at center , size2Thrid , lightCrystalLights:
-        ypos 2.0
+        ypos 2.82 xpos 0.4
     with Fade(2,0,2)
     pause 7
 
-    show lunaDaJuna onBack hornyEyes blush at center , size2Thrid:
-        ypos 2.0 matrixcolor TintMatrix("#ffffd0")  * BrightnessMatrix(1.0)
-        linear 5 ypos 2.2 yzoom 0.98 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.2)
-        linear 5 ypos 2.0 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")  * BrightnessMatrix(1.0)
+    show versanizsBedTowards at flameLight , truecenter:
+        zoom 2.0 yalign 0.35 matrixcolor TintMatrix("#ffffd0")
+        easein 2 matrixcolor TintMatrix("#ff94b4")
+        easeout 2 matrixcolor TintMatrix("#ffffd0")
+        repeat
+    show lunaDaJuna onBack hornyEyes blush at center , lightCrystalLights:
+        ypos 2.82 xpos 0.4 matrixcolor TintMatrix("#ffffd0")
+        easein 2 ypos 2.88 yzoom 0.97 matrixcolor TintMatrix("#ff94b4")
+        easeout 2 ypos 2.82 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
         repeat
     with dissolve
     pause 10
     jump doingLunaPart2
 
 label doingLunaPart2:
-    show lunaDaJuna onBack sadEyes OMouth blush at center , size2Thrid with dissolve:
-            ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
-            linear 3 ypos 2.25 yzoom 0.97 matrixcolor TintMatrix("#ff94b4")
-            linear 3 ypos 2.0 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
-            repeat
-        
-    pause 8
-    show lunaDaJuna onBack sadEyes happyMouth blush at center , size2Thrid with dissolve:
-        ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
-        linear 1 ypos 2.25 zoom 1.1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (1.3)
-        linear 2 ypos 2.0 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.15)
-        linear 1 ypos 2.25 zoom 1.1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (1.4)
-        linear 2 ypos 2.0 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.0)
+
+    show versanizsBedTowards at flameLight , truecenter:
+        zoom 2.0  yalign 0.35 matrixcolor TintMatrix("#ffffd0")
+        easein 2 matrixcolor TintMatrix("#ff94b4")
+        easeout 2 matrixcolor TintMatrix("#ffffd0")
         repeat
+    show lunaDaJuna onBack meanEyes OMouth blush at center , lightCrystalLights :
+        ypos 2.82 xpos 0.4 matrixcolor TintMatrix("#ffffd0") 
+        easein 2 ypos 2.92 yzoom 0.97 matrixcolor TintMatrix("#ff94b4")
+        easeout 2 ypos 2.82 yzoom 1.0 matrixcolor TintMatrix("#ffffd0")
+        repeat 
+    with dissolve
+    pause 8
+
+    show versanizsBedTowards at flameLight , truecenter:
+        zoom 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.2)
+        easein 0.5 zoom 2.05 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.3)
+        easeout 1 zoom 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.2)
+        easein 0.5 zoom 2.05 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.35)
+        easeout 1 zoom 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.2)
+        repeat
+    show lunaDaJuna onBack hornyEyes happyMouth blush at center , lightCrystalLights :
+        ypos 2.82 xpos 0.4 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3)
+        easein 0.5 ypos 3.2 zoom 1.1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.4)
+        easeout 1 ypos 2.82 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3)
+        easein 0.5 ypos 3.2 zoom 1.1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.45)
+        easeout 1 ypos 2.82 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3)
+        repeat
+    with dissolve
     pause 12
-    show lunaDaJuna onBack hornyEyes hornyMouth blush at center , size08 with dissolve:
-        ypos 2.25 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.2)
-        linear 0.5 ypos 2.5 zoom 1.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (1.4)
-        linear 0.5 ypos 2.25 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.2)
+
+    show versanizsBedTowards at flameLight , truecenter:
+        zoom 2.0 yalign 0.35
+        easein 0.25 zoom 2.1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.4) blur 10
+        easeout 0.25 zoom 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) blur 2
         repeat
+    show lunaDaJuna onBack hornyEyes hornyMouth blush at center with dissolve:
+        ypos 3.86 xpos 0.4 zoom 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.4) blur 1
+        easein 0.25 ypos 4.6 zoom 1.25 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.4) blur 5
+        easeout 0.25 ypos 3.86 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) blur 1
+        repeat
+    with dissolve
     pause 8
-    show lunaDaJuna onBack closedEyes hornyMouth blush at center , size08 with dissolve:
-        ypos 2.25 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 0.5 ypos 2.5 zoom 1.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (1.5)
-        linear 0.5 ypos 2.25 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.4)
-        linear 0.5 ypos 2.7 zoom 1.7 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (1.6)
-        linear 0.5 ypos 2.5 zoom 1.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.4)
-        linear 5 ypos 3.0 zoom 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.8)
-        linear 13 ypos 2.5 zoom 1.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.9)
-        repeat
+
+    show versanizsBedTowards at flameLight , truecenter:
+        zoom 2.0 yalign 0.35 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) blur 10
+        easein 0.5 zoom 2.12 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.7) blur 20
+        easeout 0.5 zoom 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.6) blur 14
+        easein 0.5 zoom 2.17 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.8) blur 24
+        easeout 0.5 zoom 2.02 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) blur 18
+        easein 5 zoom 2.25 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.5) blur 40
+        linear 13 zoom 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) blur 0.01
+        
+    show lunaDaJuna onBack closedEyes hornyMouth blush at center with dissolve:
+        ypos 3.86 xpos 0.4 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 5
+        easein 0.5 ypos 4.6 zoom 1.25 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.7) blur 10
+        easeout 0.5 ypos 3.86 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.6) blur 7
+        easein 0.5 ypos 4.8 zoom 1.35 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.8) blur 12
+        easeout 0.5 ypos 3.9 zoom 1.05 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) blur 9
+        easein 2 ypos 5.5 zoom 1.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.5) blur 20
+        linear 13 ypos 3.82 zoom 1.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) blur 0.01
+        
+    with dissolve
     pause 20
-    show lunaDaJuna -closedEyes happyMouth blush at center , size2Thrid , hornyAura with dissolve:
-        easein 2 zoom 1.1
+
+    show versanizsBedTowards at flameLight , truecenter:
+        zoom 2.0 yalign 0.35
+    show lunaDaJuna onBack happyMouth blush at center , hornyAura with dissolve:
+        ypos 3.82 xpos 0.4
+        easein 2 zoom 1.02
         easeout 2 zoom 1.0
         repeat
+    with dissolve
     pause 5
     jump versanizCuddlesBoned
 
@@ -444,102 +527,183 @@ label doingLunaPart2:
 label doingSiayusiAgian:
     
     scene cloudyNightTime at fullFit
-    show versanizsBedAway at center , flameLights
-    show siayusi back hornyEyes blush at center , size08 , lightCrystalLights:
+    show versanizsBedAway at center , flameLight
+    show siayusi back hornyEyes blush at center , lightCrystalLights:
         ypos 1.7
     with Fade(2,0,2)
-    show siayusi happyMouth at center with dissolve:
-        ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
-        linear 2 yzoom 0.95 ypos 1.8 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 2 yzoom 1.0 ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0)
+        easein 2 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3)
+        easeout 2 yzoom 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0)
         repeat
+    show siayusi happyMouth at center :
+        ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0)
+        easein 2 yzoom 0.95 ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3)
+        easeout 2 yzoom 1.0 ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0)
+        repeat
+    with dissolve
     pause 8
+
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0) blur 1
+        easein 0.5 yzoom 0.95  matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 2
+        easeout 1 yzoom 1.0  matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 1
+        easein 0.5 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 2
+        easeout 1 yzoom 1.0  matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0) blur 1
+        repeat
     show siayusi OMouth at center with dissolve:
-        ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
-        linear 1 yzoom 0.95 ypos 1.8 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 2 yzoom 1.0 ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.15)
-        linear 1 yzoom 0.95 ypos 1.8 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 2 yzoom 1.0 ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
+        ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0) blur 1
+        easein 0.5 yzoom 0.95 ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 2
+        easeout 1 yzoom 1.0 ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 1
+        easein 0.5 yzoom 0.95 ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 2
+        easeout 1 yzoom 1.0 ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0) blur 1
         repeat
+    with dissolve
     pause 8
-    show siayusi meanEyes at center with dissolve:
-        ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.15)
-        linear 1 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.15)
+
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 4
+        easein 0.5 yzoom 0.95  matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 8
+        easeout 1 yzoom 1.0  matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 4
         repeat
+    show siayusi meanEyes happyMouth at center with dissolve:
+        ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 4
+        easein 0.5 yzoom 0.95 ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 8
+        easeout 1 yzoom 1.0 ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 4
+        repeat
+    with dissolve
     pause 9
 
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.3) blur 5
+        easein 0.25 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 10
+        easeout 0.25 yzoom 1.0  matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 5
+        repeat
     show siayusi hornyEyes happyMouth with dissolve:
-        ypos 1.7 matrixcolor TintMatrix("#ff94b4") * TintMatrix (1.3)
-        linear 0.5 yzoom 0.95 ypos 1.85 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.5)
-        linear 0.5 yzoom 1.0 ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
+        ypos 1.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.3) blur 5
+        easein 0.25 yzoom 0.95 ypos 2.05 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 10
+        easeout 0.25 yzoom 1.0 ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 5
         repeat
+    with dissolve
     pause 8
+
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 5
+        easein 0.5 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 10
+        easeout 1 yzoom 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 5
+        easein 2 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.2) blur 15
+        easeout 0.1 yzoom 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3) blur 16
+        easein 0.1 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.2) blur 15
+        easeout 0.1 yzoom 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3) blur 16
+        easein 0.1 yzoom 0.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.4) blur 15
+        linear 10 yzoom 1.0  matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0) blur 0.01
     show siayusi xEyes OMouth at center with dissolve:
-        ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 0.5 yzoom 0.95 ypos 1.8 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 1 yzoom 1.0 ypos 1.7 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.5)
-        linear 5 yzoom 0.95 ypos 1.8 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.8)
-        linear 0.25 yzoom 0.1 ypos 1.75 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.6)
-        linear 0.25 yzoom 0.95 ypos 1.8 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.8)
-        linear 0.25 yzoom 0.1 ypos 1.75 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.6)
-        linear 0.25 yzoom 0.95 ypos 1.8 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.8)
-        linear 10 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)    
+        ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 5
+        easein 0.5 yzoom 0.95 ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 10
+        easeout 1 yzoom 1.0 ypos 1.9 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 5
+        easein 2 yzoom 0.95 ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.2) blur 15
+        easeout 0.1 yzoom 1.0 ypos 1.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3) blur 16
+        easein 0.1 yzoom 0.95 ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.2) blur 15
+        easeout 0.1 yzoom 1.0 ypos 1.95 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3) blur 16
+        easein 0.1 yzoom 0.95 ypos 2.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.4) blur 15
+        linear 10 yzoom 1.0 ypos 1.8 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0) blur 0.01 
+    with dissolve
     pause 20
+
+    show versanizsBedAway at center , flameLight , hornyAura
     show siayusi hornyEyes happyMouth at center , hornyAura with dissolve:
-        ypos 1.7
-        linear 3 zoom 1.1
-        linear 3 zoom 1.0
+        ypos 1.8
+        easein 3 zoom 1.05
+        easeout 3 zoom 1.0
         repeat
+    with dissolve
     pause 8
 
     jump versanizCuddlesBoned
 
 label doingMuiba:
     scene cloudyNightTime at fullFit
-    show versanizsBedAway at center , flameLights
+    show versanizsBedAway at center , flameLight
     show muibaOnU hornyEyes blush at center , lightCrystalLights
     with Fade(2,0,2)
-    show muibaOnU happyMouth at center with dissolve:
-        ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
-        linear 2 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0)
+        easein 2 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3)
+        easeout 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0)
         repeat
-    pause 8
-    show muibaOnU OMouth at center with dissolve:
-        ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
-        linear 1 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.15)
-        linear 1 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
+    show muibaOnU hornyEyes blush happyMouth at center:
+        ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0)
+        easein 2 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3)
+        easeout 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0)
         repeat
+    with dissolve
     pause 8
 
-    show muibaOnU closedEyes at center with dissolve:
-        ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.1)
-        linear 1 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.15)
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 1
+        easein 1 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 2
+        easeout 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 1
+        easein 1 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 2
+        easeout 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 1
         repeat
+    show muibaOnU hornyEyes blush OMouth at center:
+        ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 1
+        easein 1 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 2
+        easeout 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 1
+        easein 1 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 2
+        easeout 2 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.15) blur 1
+        repeat
+    with dissolve
+    pause 8
+
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.2) blur 5
+        easein 0.5 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.4) blur 10
+        easeout 1 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.2) blur 5
+        repeat
+    show muibaOnU closedEyes OMouth blush at center:
+        ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.2) blur 5
+        easein 0.5 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.4) blur 10
+        easeout 1 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.2) blur 5
+        repeat
+    with dissolve
     pause 9
     
-    show muibaOnU hornyEyes happyMouth at center with dissolve:
-        matrixcolor TintMatrix("#ff94b4") * TintMatrix (1.3)
-        linear 0.5 yzoom 0.95 ypos 1.15 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.5)
-        linear 0.5 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.3) blur 7
+        easein 0.25 yzoom 0.95 ypos 1.15 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 10
+        easeout 0.25 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 7
         repeat
+    show muibaOnU hornyEyes happyMouth blush at center:
+        matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix (0.3) blur 7
+        easein 0.25 yzoom 0.95 ypos 1.15 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 10
+        easeout 0.25 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 7
+        repeat
+    with dissolve
     pause 8
-    show muibaOnU closedEyes OMouth at center with dissolve:
-        ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 0.5 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.3)
-        linear 1 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.5)
-        linear 5 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.8)
-        linear 10 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0)
-        repeat    
+
+    show versanizsBedAway at center , flameLight:
+        matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 10
+        easein 0.25 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 12
+        easeout 0.5 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 10
+        easein 0.5 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0) blur 15
+        easeout 10 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0) blur 0.01
+
+    show muibaOnU closedEyes OMouth blush at center:
+        ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 10
+        easein 0.25 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.3) blur 12
+        easeout 0.5 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.5) blur 10
+        easein 0.5 yzoom 0.95 ypos 1.1 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(1.0) blur 15
+        easeout 10 yzoom 1.0 ypos 1.0 matrixcolor TintMatrix("#ff94b4")  * BrightnessMatrix(0.0) blur 0.01
+    with dissolve    
     pause 20
-    show muibaOnU hornyEyes happyMouth at center , hornyAura with dissolve:
-        linear 3 zoom 1.1
+
+    show versanizsBedAway at center , flameLight , hornyAura
+    show muibaOnU hornyEyes happyMouth at center , hornyAura :
+        linear 3 zoom 1.05
         linear 3 zoom 1.0
         repeat
+    with dissolve
     pause 8
     jump versanizCuddlesBoned
 
@@ -561,14 +725,14 @@ label versanizBossBattleAST:
     $ order2Retreat = False 
     
     scene cloudyDayTime at fullFit
-    show yarakBattlefield at truecenter
+    show yarakBattlefield at truecenter:
+        yzoom 0.5
     #need frowing mouths for sia and mui
-    show muiba onSpooda meanEyes happyMouth at halfSize , left:
-        ypos 1.5
-    show siayusi onSpooda meanEyes happyMouth at halfSize , right:
-        ypos 1.5
-    show versanizOnLuna meanEyes annoyedMouth VmeanEyes VhappyMouth at halfSize , center:
-        ypos 1.5
+    show muiba onSpooda meanEyes happy at quatSize , truecenter:
+        ypos 0.467 xpos 0.169
+    show siayusi onSpooda meanEyes happyMouth at quatSize , truecenter:
+        ypos 0.428 xpos 0.836
+    show versanizOnLuna meanEyes annoyedMouth VmeanEyes VhappyMouth at quatSize , truecenter
     with fade
     vers "There's some Zarato-Jamesians trying to flank us."
 
@@ -577,19 +741,22 @@ label versanizBossBattleAST:
     muib "Lets blast them!"
 
     scene cloudyDayTime at fullFit
-    show yarakBattlefield at truecenter
-    show muiba onSpooda meanEyes happyMouth at halfSize , left:
-        ypos 1.5
+    show yarakBattlefield at truecenter:
+        yzoom 0.5
+    show muiba onSpooda meanEyes happy at halfSize , left:
+        ypos 0.467 xpos 0.169
     show siayusi onSpooda meanEyes happyMouth at halfSize , right:
-        ypos 1.5
-    show versanizOnLuna meanEyes annoyedMouth VmeanEyes VangryMouth at halfSize , center:
-        ypos 1.5
+        ypos 0.428 xpos 0.836
+    show versanizOnLuna meanEyes annoyedMouth VmeanEyes VangryMouth at halfSize , center
     with dissolve
     #animate them blasting xerx
-    show screen bossTitleScreen( "#fff" , "#000091" , 35 , "The Prince of Zardonia" , "VERSANIZ III" , 55 , 0.5 , 0.9 )
-    pause
+    show screen bossTitleScreen( "#fff" , "#000091" , 35 , "The Prince of Zardonia" , "VERSANIZ III" , 55 , 0.5 , 0.9 ) with dissolve
+    pause 5
     hide screen bossTitleScreen with dissolve
     $ volleys = 3
+    #muiba cannon = ypos 0.4 xpos 0.137
+    #siayusi cannon = ypos 0.321  xpos 0.836
+    #Versaniz cannon = ypos 0.39 xpos 0.461
     while volleys > 0:
         show magicStart at summonnerLights:
             zoom 0.1 matrixcolor OpacityMatrix(1.0)
@@ -911,7 +1078,8 @@ label versanizBossBattleAST:
 
     #xerx gets the overcharge ability
     scene cloudyDayTime at fullFit
-    show yarakBattlefield at truecenter
+    show yarakBattlefield at truecenter:
+        yzoom 0.5
     with fade
     $ xerxCanOverCharge = True
     $ addEffects( "OverCharged" , xerxesCharacter , 3 , 10 , "Sword of Ahura-Mazda" )

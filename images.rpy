@@ -392,9 +392,10 @@ transform movingSky:
     repeat  
 
 transform summonAssualt:
-    ypos 0.5 matrixcolor TintMatrix("#ffff00")
-    linear 5 ypos 1.5 matrixcolor TintMatrix("#fff")
-    linear 0.1 ypos 0.5 matrixcolor TintMatrix("#ffff00")
+    ypos 0.75 yzoom 0.75 zoom 1.0 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (1.0)
+    linear 1 ypos 0.75 yzoom 0.75 zoom 1.0 matrixcolor TintMatrix("#fff") * BrightnessMatrix (0.0)
+    easeout 5 ypos 2.25 yzoom 1.0 zoom 2.0 
+    linear 0.0 ypos 0.5 yzoom 0.75 zoom 1.0 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (1.0)
     repeat
 
 # images are defined here
@@ -1217,6 +1218,7 @@ image ssatuBoxSmall = "images/Location Accessories/Little Ssatu Box.webp"
 
 image gilgaBlanketOverlay = "images/Location Accessories/GilgaBedBlanket Overlay.webp"
 image tsekreiBlanketOverLay = "images/Location Accessories/TsekreiBlanket Overlay.webp"
+image versanizBlanketOverlay = "images/Location Accessories/VersaBlanket Overlay.webp"
 image mat1 = "images/Location Accessories/mat1.webp"
 
 #I'm on a boat
@@ -2506,7 +2508,7 @@ layeredimage versaniz:
             "images/antagonists/Versaniz III/Versaniz Arngry Mouth.webp"
         attribute angryMouth if_any["nekked", "nekkedYeah" , "nekkedPointy", "nekked1Finger"]:
             "images/antagonists/Versaniz III/Versaniz Arngry Mouth.webp"
-            xpos -200 ypos -200
+            ypos -200
         attribute angryMouth if_any["battle"]:
             "images/antagonists/Versaniz III/Versaniz Arngry Mouth.webp"
             xpos 150
@@ -2515,7 +2517,7 @@ layeredimage versaniz:
             "images/antagonists/Versaniz III/Versaniz Frown Mouth.webp"
         attribute frowning if_any["nekked", "nekkedYeah" , "nekkedPointy", "nekked1Finger"]:
             "images/antagonists/Versaniz III/Versaniz Frown Mouth.webp"
-            xpos -200 ypos -200
+            ypos -200
         attribute frowning if_any["battle"]:
             "images/antagonists/Versaniz III/Versaniz Frown Mouth.webp"
             xpos 150
@@ -2524,7 +2526,7 @@ layeredimage versaniz:
             "images/antagonists/Versaniz III/Versaniz Happy mouth.webp"
         attribute happyMouth if_any["nekked", "nekkedYeah" , "nekkedPointy", "nekked1Finger"]:
             "images/antagonists/Versaniz III/Versaniz Happy mouth.webp"
-            xpos -200 ypos -200
+            ypos -200
         attribute happyMouth if_any["battle"]:
             "images/antagonists/Versaniz III/Versaniz Happy mouth.webp"
             xpos 150  
@@ -2533,7 +2535,7 @@ layeredimage versaniz:
             "images/antagonists/Versaniz III/Versaniz Mean Happy Mouth.webp"
         attribute meanHappyMouth if_any["nekked", "nekkedYeah" , "nekkedPointy", "nekked1Finger"]:
             "images/antagonists/Versaniz III/Versaniz Mean Happy Mouth.webp"
-            xpos -200 ypos -200
+            ypos -200
         attribute meanHappyMouth if_any["battle"]:
             "images/antagonists/Versaniz III/Versaniz Mean Happy Mouth.webp"
             xpos 150
@@ -2542,7 +2544,7 @@ layeredimage versaniz:
             "images/antagonists/Versaniz III/Versaniz O Mouth.webp"
         attribute OMouth if_any["nekked", "nekkedYeah" , "nekkedPointy", "nekked1Finger"]:
             "images/antagonists/Versaniz III/Versaniz O Mouth.webp"
-            xpos -200 ypos -200
+            ypos -200
         attribute OMouth if_any["battle"]:
             "images/antagonists/Versaniz III/Versaniz O Mouth.webp"
             xpos 150
@@ -2552,7 +2554,7 @@ layeredimage versaniz:
             "images/antagonists/Versaniz III/Versaniz Blush.webp"
         attribute blush if_any["nekked", "nekkedYeah" , "nekkedPointy", "nekked1Finger"]:
             "images/antagonists/Versaniz III/Versaniz Blush.webp"
-            xpos -200 ypos -200
+            ypos -200
         attribute blush if_any["battle"]:
             "images/antagonists/Versaniz III/Versaniz Blush.webp"
             xpos 150
@@ -2827,15 +2829,19 @@ layeredimage lunaDaJuna:
             "images/antagonists/Versaniz III/Vasanizs gfs/Luna Inviting Sad Eyes.webp"
         attribute sadEyes if_any['onBack']:
             "images/antagonists/Versaniz III/Vasanizs gfs/Luna Inviting Sad Eyes.webp"
-            ypos -500
+            
 
     group mouths:
         attribute neutralHappyMouth default:
             "images/antagonists/Versaniz III/Vasanizs gfs/Luna neutral happy mounts.webp"
         attribute happyMouth:
             "images/antagonists/Versaniz III/Vasanizs gfs/Luna Inviting Happy Mouth.webp"
-        attribute OMouth:
+        attribute OMouth if_not['onBack']:
             "images/antagonists/Versaniz III/Vasanizs gfs/Luna Inviting OMouth.webp"
+        attribute OMouth if_any['onBack']:
+            "images/antagonists/Versaniz III/Vasanizs gfs/Luna Inviting OMouth.webp"
+            #ypos -500
+
         attribute annoyedMouth:
             "images/antagonists/Versaniz III/Vasanizs gfs/Luna Mounted Annoyed mouth.webp"
             ypos -500
@@ -3444,6 +3450,7 @@ image tesipizCommanding = "images/Protagonists/Tesipiz/Tesipiz commanding.webp"
 image tesipizCommandingHappy = "images/Protagonists/Tesipiz/Tesipiz commanding Happy.webp"
 
 image tesipizPointingHappy = "images/Protagonists/Tesipiz/Neutral Happy Tesipiz Pointing.webp"
+image tesipizPointingHandOverlay = "images/Protagonists/Tesipiz/Tesipiz Pointing Hand.webp"
 image tesipizPointingHappyArmored = "images/Protagonists/Tesipiz/Tesipiz happy pointing.webp"
 image tesipizGreeting = "images/Protagonists/Tesipiz/Tesipiz Greeting.webp"
 image tesipizGreetingArmored = "images/Protagonists/Tesipiz/Tesipiz Greeting Armored.webp"
@@ -4833,7 +4840,7 @@ layeredimage kabiwa:
 
 
 #urlius
-define urliusAndYuufiaCuddles = "images/Protagonists/Urlius and Yuufia/Urlius and Yuufia cuddles.webp"
+image urliusAndYuufiaCuddles = "images/Protagonists/Urlius and Yuufia/Urlius and Yuufia cuddles.webp"
 
 layeredimage urlius:
     group poses:
@@ -4897,6 +4904,10 @@ layeredimage urlius:
             "images/Protagonists/Urlius and Yuufia/Urlius 3-4 OMouth.webp"
         attribute angryMouth if_any['base34','greet34','worried34','pointy34','punch34','sword34']:
             "images/Protagonists/Urlius and Yuufia/Urlius 3-4 Angry Mouth.webp"
+    
+    group cheeks:
+        attribute blush if_any['base34','greet34','worried34','pointy34','punch34','sword34']:
+            "images/Protagonists/Urlius and Yuufia/Urlius 3-4 Blush.webp"
 
 #yuufia
 layeredimage yuufia:
@@ -4952,16 +4963,32 @@ layeredimage yuufia:
         attribute hornyEyes if_any['base34','yeah34','horny34','fowardArms34']:
             "images/Protagonists/Urlius and Yuufia/Yuufia 34 Horny Eyes.webp"
         
-        attribute neutralEyes default if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute neutralEyes default if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward']:
             "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Neutral Eyes.webp"
-        attribute meanEyes if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute meanEyes if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward']:
             "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Mean Eyes.webp"
-        attribute sadEyes if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute sadEyes if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward']:
             "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Sad Eyes.webp"
-        attribute closedEyes if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute closedEyes if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward']:
             "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Closed Eyes.webp"
-        attribute hornyEyes if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute hornyEyes if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward']:
             "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Horny Eyes.webp"
+        
+        attribute neutralEyes default if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Neutral Eyes.webp"
+            xpos 100
+        attribute meanEyes if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Mean Eyes.webp"
+            xpos 100
+        attribute sadEyes if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Sad Eyes.webp"
+            xpos 100
+        attribute closedEyes if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Closed Eyes.webp"
+            xpos 100
+        attribute hornyEyes if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia SemiNekked 34 Horny Eyes.webp"
+            xpos 100
 
     group mouths:
         attribute neutralHappyMouth default if_any["base","greet"]:
@@ -4973,25 +5000,40 @@ layeredimage yuufia:
         attribute OMouth if_any["base","greet"]:
             "images/Protagonists/Urlius and Yuufia/Yuufia OMouth.webp"
         
-        attribute neutralHappyMouth default if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute neutralHappyMouth default if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','fowardArms34','yeah34']:
             "images/Protagonists/Urlius and Yuufia/Yuufia 34 Neutral happy Mouth.webp"
-        attribute happyMouth if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute happyMouth if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','fowardArms34','yeah34']:
             "images/Protagonists/Urlius and Yuufia/Yuufia 34 Happy Mouth.webp"
-        attribute sadMouth if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute sadMouth if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','fowardArms34','yeah34']:
             "images/Protagonists/Urlius and Yuufia/Yuufia 34 Sad Mouths.webp"
-        attribute OMouth if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute OMouth if_any['semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','fowardArms34','yeah34']:
             "images/Protagonists/Urlius and Yuufia/Yuufia 34 OMouth.webp"
+        
+        attribute neutralHappyMouth default if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia 34 Neutral happy Mouth.webp"
+            xpos 100
+        attribute happyMouth if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia 34 Happy Mouth.webp"
+            xpos 100
+        attribute sadMouth if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia 34 Sad Mouths.webp"
+            xpos 100
+        attribute OMouth if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia 34 OMouth.webp"
+            xpos 100
     
     group blushes:
-        attribute blush if_any['base34','yeah34','horny34','fowardArms34','semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward','asss']:
+        attribute blush if_any['base34','yeah34','horny34','fowardArms34','semiNekked34','booba34','semiNekked34Yeah','semiNekked34foward']:
             "images/Protagonists/Urlius and Yuufia/Yuufia 34 Blush.webp"
-
+        attribute blush if_any['asss']:
+            "images/Protagonists/Urlius and Yuufia/Yuufia 34 Blush.webp"
+            xpos 100
 
 #tsekrei
 layeredimage tsekrei:
     group poses:
         attribute base default:
-            "images/Protagonists/Tsekrei/Tsekrei.webp"
+            "images/Protagonists/Tsekrei/Tsekrei Armored.webp"
         attribute armed:
             "images/Protagonists/Tsekrei/Tsekrei Armed.webp"
         attribute greet:
@@ -5024,74 +5066,130 @@ layeredimage tsekrei:
             "images/Protagonists/Tsekrei/Tsekrei 34 Battle.webp"
 
     group eyes:
-        attribute neutralEyes default if_any['base','armed','greet','frontArmsArmored']:
+        attribute neutralEyes default if_any['armed']:
             "images/Protagonists/Tsekrei/Tsekrei Armored Eyes.webp"
+            ypos 200 xpos 100
+        attribute neutralEyes default if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei Armored Eyes.webp"
+        attribute neutralEyes default if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei Armored Eyes.webp"
+            ypos 200 xpos 200
+
         attribute neutralEyes default if_any['base34','yeah34','handChest34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Neutral Eyes.webp"
-        attribute neutralEyes default if_any['armed34','armoredYeah34','frontArmsArmored34','handChestArmored34:','itemArmored','armored34']:
+        attribute neutralEyes default if_any['armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34']:
             "images/Protagonists/Tsekrei/Tsekrei Armored 34 Neutral Eyes.webp"
         attribute neutralEyes default if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei Armored 34 Neutral Eyes.webp"
             xpos 700 ypos 200
 
-        attribute meanEyes if_any['base','armed','greet','frontArmsArmored']:
+        attribute meanEyes if_any['armed']:
             "images/Protagonists/Tsekrei/Tsekrei Armored Mean Eyes.webp"
+            ypos 200 xpos 100
+        attribute meanEyes if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei Armored Mean Eyes.webp"
+        attribute meanEyes if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei Armored Mean Eyes.webp"
+            ypos 200 xpos 200
+
         attribute meanEyes if_any['base34','yeah34','handChest34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Mean Eyes.webp"
-        attribute meanEyes if_any['armed34','armoredYeah34','frontArmsArmored34','handChestArmored34:','itemArmored','armored34']:
+        attribute meanEyes if_any['armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34']:
             "images/Protagonists/Tsekrei/Tsekrei Armored 34 Mean Eyes.webp"
         attribute meanEyes if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei Armored 34 Mean Eyes.webp"
             xpos 700 ypos 200
 
-        attribute sadEyes if_any['base','armed','greet','frontArmsArmored']:
+        attribute sadEyes if_any['armed']:
             "images/Protagonists/Tsekrei/Tsekrei Armored Sad Eyes.webp"
+            ypos 200 xpos 100
+        attribute sadEyes if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei Armored Sad Eyes.webp"
+        attribute sadEyes if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei Armored Sad Eyes.webp"
+            ypos 200 xpos 200
+
         attribute sadEyes if_any['base34','yeah34','handChest34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Sad Eyes.webp"
-        attribute sadEyes if_any['armed34','armoredYeah34','frontArmsArmored34','handChestArmored34:','itemArmored','armored34']:
+        attribute sadEyes if_any['armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34']:
             "images/Protagonists/Tsekrei/Tsekrei Armored 34 Sad Eyes.webp"
         attribute sadEyes if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei Armored 34 Sad Eyes.webp"
             xpos 700 ypos 200
         
-        attribute XEyes if_any['base','armed','greet','frontArmsArmored']:
+        attribute XEyes if_any['armed']:
             "images/Protagonists/Tsekrei/Tsekrei Armored x Eyes.webp"
+            ypos 200 xpos 100
+        attribute XEyes if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei Armored x Eyes.webp"
+        attribute XEyes if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei Armored x Eyes.webp"
+            ypos 200 xpos 200
+            
         attribute XEyes if_any['base34','yeah34','handChest34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 X Eyes.webp"
-        attribute XEyes if_any['armed34','armoredYeah34','frontArmsArmored34','handChestArmored34:','itemArmored','armored34']:
+        attribute XEyes if_any['armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34']:
             "images/Protagonists/Tsekrei/Tsekrei Armored 34 X eyes.webp"
         attribute XEyes if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei Armored 34 X eyes.webp"
             xpos 700 ypos 200
 
     group mouths:
-        attribute neutralHappyMouth default if_any['base','armed','greet','frontArmsArmored']:
-            "images/Protagonists/Tsekrei/Tsekrei 34 Neutral Happy Mouth.webp"
-        attribute neutralHappyMouth default if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34:','itemArmored','armored34','armsForward34','item']:
+        attribute neutralHappyMouth default if_any['armed']:
+            "images/Protagonists/Tsekrei/Tsekrei Neutral Happy Eyes.webp"
+            ypos 200 xpos 100
+        attribute neutralHappyMouth default if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei Neutral Happy Eyes.webp"
+        attribute neutralHappyMouth default if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei Neutral Happy Eyes.webp"
+            ypos 200 xpos 100
+
+        attribute neutralHappyMouth default if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Neutral Happy Mouth.webp"
         attribute neutralHappyMouth default if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Neutral Happy Mouth.webp"
             xpos 700 ypos 200
 
-        attribute happyMouth if_any['base','armed','greet','frontArmsArmored']:
+        attribute happyMouth if_any['armed']:
             "images/Protagonists/Tsekrei/Tsekrei Happy Mouth.webp"
-        attribute happyMouth if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34:','itemArmored','armored34','armsForward34','item']:
+            ypos 200 xpos 100
+        attribute happyMouth if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei Happy Mouth.webp"
+        attribute happyMouth if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei Happy Mouth.webp"
+            ypos 200 xpos 100
+
+        attribute happyMouth if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Happy Mouth.webp"
         attribute happyMouth if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Happy Mouth.webp"
             xpos 700 ypos 200
 
-        attribute OMouth if_any['base','armed','greet','frontArmsArmored']:
+        attribute OMouth if_any['armed']:
             "images/Protagonists/Tsekrei/Tsekrei OMouth.webp"
-        attribute OMouth if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34:','itemArmored','armored34','armsForward34','item']:
+            ypos 200 xpos 100
+        attribute OMouth if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei OMouth.webp"
+        attribute OMouth if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei OMouth.webp"
+            ypos 200 xpos 100  
+
+        attribute OMouth if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 OMouth.webp"
         attribute OMouth if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei 34 OMouth.webp"
             xpos 700 ypos 200
             
-        attribute madMouth if_any['base','armed','greet','frontArmsArmored']:
+        attribute madMouth if_any['armed']:
             "images/Protagonists/Tsekrei/Tsekrei Mad Mouth.webp"
-        attribute madMouth if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34:','itemArmored','armored34','armsForward34','item']:
+            ypos 200 xpos 100
+        attribute madMouth if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei Mad Mouth.webp"
+        attribute madMouth if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei Mad Mouth.webp"
+            ypos 200 xpos 100
+
+        attribute madMouth if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Mad Mouth.webp"
         attribute madMouth if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Mad Mouth.webp"
@@ -5571,7 +5669,7 @@ layeredimage vimekkus:
 image zaratChariot = "images/animals/Zaratian chariot.webp"
 
     #zaratian chariot with dudes in it
-image zaratianWarChariot = Composite( (3000 , 2400) , (500,0) , "images/NPCs/Zarat/Troopers/Royal Falxman.webp" , (0,0) , "images/NPCs/Zarat/Troopers/Royal FalxLady.webp" , (-500,400) , "images/animals/Zaratian chariot.webp")
+image zaratianWarChariot = Composite( (3000 , 2400) , (300,400) , "images/NPCs/Zarat/Troopers/Royal Falxman.webp" , (-200,300) , "images/NPCs/Zarat/Troopers/Royal FalxLady.webp" , (-500,400) , "images/animals/Zaratian chariot.webp")
 
     #camel lady
 layeredimage camelLady:
@@ -5689,7 +5787,7 @@ layeredimage zaratoJamesianAxeLady:
 
     group mouths:
         attribute deltaMouth default if_any['unmounted']:
-            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Delta Mouthl.webp"
+            "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl Delta Mouth.webp"
         attribute oMouth if_any['unmounted']:
             "images/NPCs/Zarat/Troopers/Zarato Jamesian Axe Girl OMouth.webp"
         attribute frown if_any['unmounted']:
@@ -5879,7 +5977,10 @@ layeredimage chyaazi:
             "images/NPCs/Zarat/South/Chyaazi Sad Eyes.webp"
         attribute meanEyes:
             "images/NPCs/Zarat/South/Chyaazi Mean Eyes.webp"
-            
+
+    group fronting:
+        attribute greet:
+            "images/NPCs/Zarat/South/Chyaazi Greeting Hand.webp"         
 
 image zaratoJamesianSad = "images/NPCs/Zarat/North/Zarato-Jamesian Lady Sad.webp"
 image zaratoJamesianYeah = "images/NPCs/Zarat/North/Zarato-Jamesian Lady Yeah.webp"

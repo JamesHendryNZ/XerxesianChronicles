@@ -5,20 +5,20 @@ label morningOfYarak:
     #regius gets armor for his camel - nope for now
     play music windAmbiance fadein 1.0 fadeout 1.0
     scene cloudyDayTime at halfSize , movingSky, lightYellowTint
-    show royalZaratCampOutside at center , size2Thrid, lightYellowTint
-    show jakaArcherCrusufied at halfSize , right ,lightYellowTint:
-        ypos 1.2
-    show balatianArcherCrusufied at halfSize , left ,lightYellowTint:
-        ypos 1.2
-    show woodSpikeRack at halfSize , right ,lightYellowTint:
-        ypos 1.2
-    show woodSpikeRack as extraWood at halfSize , flipped , left, lightYellowTint:
-        ypos 1.2
+    show royalZaratCampOutside at truecenter , halfSize , lightYellowTint
+    show jakaArcherCrusufied at eithSize , left ,lightYellowTint:
+        xpos 0.516 ypos 0.764
+    show balatianArcherCrusufied at eithSize , left ,lightYellowTint:
+        xpos 0.223 ypos 0.75
+    show woodSpikeRack at quatSize , right ,lightYellowTint:
+        xpos 0.719 ypos 0.849
+    show woodSpikeRack as extraWood at quatSize , flipped , left, lightYellowTint:
+        xpos 0.164 ypos 0.842
     with Fade(3,0,1)
     pause 5
 
     scene cloudyDayTime at halfSize , movingSky, lightYellowTint
-    show royalZaratCampInside at halfSize , left , lightYellowTint
+    show royalZaratCampInside at left , lightYellowTint
     show regius34 armored annoyedMouth at left , size2Thrid , lightYellowTint:
         ypos 1.25
     show xerx3quatConsurndArmored at right , size2Thrid ,lightYellowTint:
@@ -29,17 +29,17 @@ label morningOfYarak:
     show regius34 armoredPointing with dissolve
     regs "Here are some resorces that will help you in the battle."
 
-    show metalArrows at halfSize , trueCenter , lightYellowTint with dissolve:
+    show metalArrows at halfSize , truecenter , lightYellowTint with dissolve:
         xpos 0.1
-    show arrows at halfSize , trueCenter , lightYellowTint with dissolve:
-        xpos 0.3
-    show aNet at halfSize , trueCenter , lightYellowTint with dissolve:
-        xpos 0.4
-    show fishCake at halfSize , trueCenter , lightYellowTint with dissolve:
-        xpos 0.6
-    show meatyFishCake at halfSize , trueCenter , lightYellowTint with dissolve:
+    show arrows at halfSize , truecenter , lightYellowTint with dissolve:
+        xpos 0.2
+    show aNet at halfSize , truecenter , lightYellowTint with dissolve:
+        xpos 0.35
+    show fishCake at halfSize , truecenter , lightYellowTint with dissolve:
+        xpos 0.5
+    show meatyFishCake at halfSize , truecenter , lightYellowTint with dissolve:
         xpos 0.7
-    show clearingPotionBottle at halfSize , trueCenter , lightYellowTint with dissolve:
+    show clearingPotionBottle at halfSize , truecenter , lightYellowTint with dissolve:
         xpos 0.9
 
     #place before messages so player can inspect them if they want to early
@@ -50,11 +50,11 @@ label morningOfYarak:
     $ changeItemAmount( inventory , eggMeatCake , 2 )
     $ changeItemAmount( inventory , clearingJuice , 5 )
 
-    "Regius gives you 10 metal arrows and 10 regular arrows for ranged attack."
-    "5 Nets to tangle your foes and make them miss their turns."
-    "2 Fish cakes to boost attacks"
-    "2 Meaty Egg cakes to boost defence"
-    "And 5 Clearing potions to get rid of bad effects"
+    "Regius gives you 10 metal arrows and 10 regular arrows for Xerxes' and Volkara's bows,"
+    "5 Nets to tangle your foes and make them miss their turns,"
+    "2 Fish cakes to boost attacks,"
+    "2 Meaty Egg cakes to boost defence,"
+    "And 5 Clearing potions to get rid of bad effects."
 
     hide clearingPotionBottle with dissolve
     hide meatyFishCake with dissolve
@@ -67,7 +67,7 @@ label morningOfYarak:
     regs "Hope we win."
     hide xerx3quatConsurndArmored
     show xerxMarchFowardSoAM at right , size2Thrid ,lightYellowTint:
-        ypos 1.25
+        ypos 1.4
     show regius34 armed
     with dissolve
     regs "Hope we survive."
@@ -79,68 +79,113 @@ label morningOfYarak:
 
     #show forces leaving the camp
     scene cloudyDayTime at halfSize , movingSky, lightYellowTint
-    show royalZaratCampOutside at center , size2Thrid, lightYellowTint
-    show jakaArcherCrusufied at halfSize , right ,lightYellowTint:
-        ypos 1.2
-    show balatianArcherCrusufied at halfSize , left ,lightYellowTint:
-        ypos 1.2
-    show woodSpikeRack at halfSize , right ,lightYellowTint:
-        ypos 1.2
-    show woodSpikeRack as extraWood at halfSize , flipped , left, lightYellowTint:
-        ypos 1.2
+    show royalZaratCampOutside at truecenter , halfSize , lightYellowTint
+    show jakaArcherCrusufied at eithSize , left ,lightYellowTint:
+        xpos 0.516 ypos 0.764
+    show balatianArcherCrusufied at eithSize , left ,lightYellowTint:
+        xpos 0.223 ypos 0.75
+    show woodSpikeRack at quatSize , right ,lightYellowTint:
+        xpos 0.719 ypos 0.849
+    show woodSpikeRack as extraWood at quatSize , flipped , left, lightYellowTint:
+        xpos 0.164 ypos 0.842
     with fade
     #TODO configure so that they come out of the camp
     play music OnDaMarch fadein 1.0 fadeout 1.0
-    show xerxHorseWithSoAM with dissolve
+    show xerxHorseWithSoAM at tenthSize , truecenter with dissolve:
+        xpos 0.445 ypos 0.55
+        easeout 40 xpos 0.5 ypos 4.0 zoom 10.0
     pause 2
-    show tesipizHorseMace behind xerxHorseWithSoAM
-    show volkaraHorsey armedSword meanEyes deltaMouth behind xerxHorseWithSoAM
+    show tesipizHorseMace at tenthSize , truecenter behind xerxHorseWithSoAM:
+        xpos 0.42 ypos 0.588 
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
+    show volkaraHorsey armedSword meanEyes deltaMouth at tenthSize , truecenter behind xerxHorseWithSoAM:
+        xpos 0.466 ypos 0.604
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
     with dissolve
     pause 2
-    show regius camelArmor meanEyes sadMouth behind xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey with dissolve
+    show regius camelArmor meanEyes sadMouth at tenthSize , truecenter behind xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey with dissolve:
+        xpos 0.457 ypos 0.588
+        easeout 40 xpos 0.5 ypos 4.0 zoom 10.0
     pause 2 
 
-    show zaratianEliteSpear attackCamel behind regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
-    show zaratianEliteCamelLady behind regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
+    show zaratianEliteSpear attackCamel at tenthSize , truecenter behind regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.502 ypos 0.557
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
+    show zaratianEliteCamelLady at tenthSize , truecenter behind regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.43 ypos 0.553
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
     with dissolve
     pause 2
 
-    show camelLady onCamel behind zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
-    show zaraSsatuCamelNeutral behind zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
+    show camelLady onCamel at tenthSize , truecenter behind zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.487 ypos 0.56
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
+    show zaraSsatuCamelNeutral at tenthSize , truecenter behind zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.438 ypos 0.56
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
     with dissolve
     pause 2 
 
-    show zaratoJamesianAxeLady mountedAttack behind camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
-    show zaratoJamesianLancer behind zaraSsatuCamelNeutral , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
+    show zaratoJamesianAxeLady mountedAttack at tenthSize , truecenter behind camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.481 ypos 0.585
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
+    show zaratoJamesianLancer at tenthSize , truecenter behind camelLady , zaraSsatuCamelNeutral , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.419 ypos 0.611
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
     with dissolve
     pause 2
     
-    show zaratianHorseArcher behind zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
-    show zaratianHeavyHorseArcher behind zaratoJamesianLancer , camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
+    show zaratianHorseArcher at tenthSize , truecenter behind zaratoJamesianAxeLady, zaratoJamesianLancer , camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.471 ypos 0.601
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
+    show zaratianHeavyHorseArcher at tenthSize , truecenter behind zaratoJamesianAxeLady,zaratoJamesianLancer , camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.414 ypos 0.599
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
     with dissolve
     pause 2
 
-    show zaratianWarChariot behind zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey with dissolve
+    show zaratianWarChariot at tenthSize , truecenter behind zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey with dissolve:
+        xpos 0.466 ypos 0.564
+        easeout 40 xpos 0.5 ypos 4.0 zoom 10.0
     pause 4
 
-    show shataMaceLadyZarat behind zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
-    show tastsetrotuSwordBoy behind zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey  
+    
+    show tastsetrotuSwordBoy at tenthSize , truecenter behind zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.403 ypos 0.66  
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
+    show shataMaceLadyZarat at tenthSize , truecenter behind zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.455 ypos 0.643 
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
     with dissolve
     pause 1
 
-    show ssatrotuSparabaraLady behind tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
-    show jamesianSparabaraDude behind tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
+    
+    show ssatrotuSparabaraDude at tenthSize , truecenter behind tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.466 ypos 0.639
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
+    show ssatrotuSparabaraLady at tenthSize , truecenter behind tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.426 ypos 0.626
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
     with dissolve
     pause 1
 
-    show camelLady as footSpear behind jamesianSparabaraDude , ssatrotuSparabaraLady , tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
-    show zaraSsatuSpear behind jamesianSparabaraDude , ssatrotuSparabaraLady , tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
+    show camelLady as footSpear at tenthSize , truecenter behind ssatrotuSparabaraDude , ssatrotuSparabaraLady , tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.406 ypos 0.613
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
+    show zaraSsatuSpear at tenthSize , truecenter behind ssatrotuSparabaraDude , ssatrotuSparabaraLady , tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.459 ypos 0.626
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
     with dissolve
     pause 1
 
-    show chiazhuShortSword behind camelLady , zaraSsatuSpear , jamesianSparabaraDude , ssatrotuSparabaraLady , tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
-    show zaratoJamesianAxeLady as extraAxeLady behind camelLady , zaraSsatuSpear , jamesianSparabaraDude , ssatrotuSparabaraLady , tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey
+    show chiazhuShortSword at tenthSize , truecenter behind footSpear , zaraSsatuSpear , ssatrotuSparabaraDude , ssatrotuSparabaraLady , tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.461 ypos 0.64
+        easeout 40 xpos 0.7 ypos 4.0 zoom 10.0
+    show zaratoJamesianAxeLady as extraAxeLady at tenthSize , truecenter behind footSpear , zaraSsatuSpear , ssatrotuSparabaraDude , ssatrotuSparabaraLady , tastsetrotuSwordBoy , shataMaceLadyZarat , zaratianWarChariot , zaratianHorseArcher , zaratianHeavyHorseArcher , zaratoJamesianAxeLady, camelLady , zaratianEliteSpear , zaratianEliteCamelLady , regius , xerxHorseWithSoAM , tesipizHorseMace , volkaraHorsey:
+        xpos 0.41 ypos 0.64
+        easeout 40 xpos 0.3 ypos 4.0 zoom 10.0
     with dissolve
+    
     #fade out after this
 
 
@@ -149,42 +194,77 @@ label battleOfYarak:
 
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
-        ypos -0.5 xpan 180
+        yalign 0.8 xpan 340 yzoom 0.34
 
     #regius and friends
-    show regius onCamel meanEyes sadMouth at fithSize
-    show xerxHorseWithSoAM at fithSize
-    show volkaraHorsey armedSword meanEyes deltaMouth at fithSize
-    show tesipizHorseMace at fithSize
+    
+    show xerxHorseWithSoAM at seventhSize:
+        xpos 0.477 ypos 0.147
+    show regius camelArmor meanEyes sadMouth at seventhSize:
+        xpos 0.35 ypos 0.106
+    show volkaraHorsey armedSword meanEyes deltaMouth at seventhSize:
+        xpos 0.559 ypos 0.222
+    show tesipizHorseMace at seventhSize:
+        xpos 0.641 ypos 0.236
 
     #flanking cavalry
-    show zaratianEliteSpear attackCamel as camelMan at fithSize
-    show zaratoJamesianAxeLady mountedAttack as axeGirl at fithSize
-    show zaratianWarChariot at fithSize
-    show zaratianEliteCamelLady at fithSize
-    show zaraSsatuCamel at fithSize
-    show zaratianHorseArcher at fithSize
-    show zaratianHeavyHorseArcher at fithSize
-    show zaratoJamesianLancer at fithSize
+    show zaratianEliteSpear attackCamel as camelMan at seventhSize:
+        xpos 0.247 ypos 0.111
+    show zaratianWarChariot at seventhSize:
+        xpos 0.8 ypos 0.181
+    show zaratianEliteCamelLady at seventhSize:
+        xpos 0.173 ypos 0.113
+    show camelLady onCamelAttack meanEyes OMouth as extraCamelLady at seventhSize:
+        xpos 0.07 ypos 0.168
+    show zaraSsatuCamel at seventhSize:
+        xpos -0.02 ypos 0.161
+    show zaratianHorseArcher at sixthSize:
+        xpos 0.78 ypos 0.354
+    show zaratianHeavyHorseArcher at fithSize:
+        xpos 0.863 ypos 0.4 
+    
+    
 
     #inaftry dudes
-    show camelLady at fithSize
-    show zaraSsatuSpear at fithSize
-    show zaratianEliteSpear at fithSize
-    show zaratoJamesianAxeLady at fithSize
-    show chiazhuShortSword at fithSize
-    show jamesianSparabaraDude at fithSize
-    show ssatrotuSparabaraLady at fithSize
-    show jamesianSparabaraDude at fithSize
-    show tastsetrotuSwordBoy at fithSize
-    show shataMaceLadyZarat at fithSize
+    show camelLady at fithSize:
+        xpos 0.207 ypos 0.314
+    show zaraSsatuSpear at fithSize:
+        xpos 0.286 ypos 0.333
+    show zaratianEliteSpear at fithSize:
+        xpos 0.177 ypos 0.463
+    show tastsetrotuSwordBoy at fithSize:
+        xpos 0.556 ypos 0.425
+    show zaratoJamesianAxeLady at fithSize:
+        xpos 0.66 ypos 0.472
+    show chiazhuShortSword at fithSize:
+        xpos 0.614 ypos 0.49
+    show ssatrotuSparabaraDude at fithSize:
+        xpos 0.45 ypos 0.444
+    show ssatrotuSparabaraLady at fithSize:
+        xpos 0.34 ypos 0.43
+    show ssatrotuSparabaraDude as extraSquare at fithSize:
+        xpos 0.395 ypos 0.508
+    
+    show shataMaceLadyZarat at fithSize:
+        xpos 0.713 ypos 0.525 
 
     #skims psiloi
-    show wioxaJavelin at fithSize
-    show zaratSlinger at fithSize
-    show shataSlingDudeZarat at fithSize
-    show yimiOxaArcher at fithSize
+    show wioxaJavelin at fithSize:
+        xpos 0.598 ypos 0.618
+    show zaratSlinger at fithSize:
+        xpos 0.428 ypos 0.611    
+    show zaratoJamesianAxeLady mountedAttack as axeGirl at sixthSize:
+        xpos 0.051 ypos 0.39 
+    show yimiOxaArcher at fithSize:
+        xpos 0.169 ypos 0.597 
     
+    show zaratoJamesianLancer at fithSize:
+        xpos -0.08 ypos 0.393
+    show shataSlingDudeZarat at fithSize:
+        xpos 0.273 ypos 0.619
+    
+    with Fade(1,0,2)
+    pause 10
     
     #use the base ilistration from the dinner for now
     scene cloudyDayTime at halfSize , movingSky
@@ -234,6 +314,7 @@ label battleOfYarak:
     show zardonianDartBoy at quatSize:
         xpos 0.74 ypos 0.36
     with fade
+    pause 10
     #show zaratian army
     #show zardonian army
 
@@ -253,216 +334,396 @@ label battleOfYarak:
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
         ypos -0.5 xalign 0.65
-    show zardonianCataphractDude at thridSize , left:
-        xpos 0.25
-        easeout 3 xpos -0.3 ypos 2.0 zoom 3.0
-    show zardonianCataphractLady at thridSize , left:
-        xpos 0.75
-        easeout 3 xpos 1.3 ypos 2.0 zoom 3.0
+    show zardonianCataphractLady at thridSize , truecenter:
+        xpos 0.65 zoom 0.4 ypos 0.5
+        easeout 2 xpos 0.75 ypos 2.0 zoom 2.0
+        repeat
+    show zardonianCataphractDude at thridSize , truecenter:
+        xpos 0.55 zoom 0.4 ypos 0.5
+        easeout 2 xpos 0.35 ypos 2.0 zoom 2.0
+        repeat
     with dissolve
     play sound horseGallop loop
     pause 0.1
     play extraSound horseGallop loop
-    pause 0.5
-    show zardonianCataphractDude as extraHorse at thridSize , left behind zardonianCataphractDude , zardonianCataphractLady:
-        xpos 0.4
-        
-    show zardonianCataphractLady as extraHorse2 at thridSize , left behind zardonianCataphractDude , zardonianCataphractLady:
-        xpos 0.6
-        easeout 3 xpos 1.3 ypos 2.0 zoom 3.0
-
+    pause 0.1
+    show zardonianCataphractLady as extraHorse2 at thridSize , truecenter behind zardonianCataphractDude , zardonianCataphractLady:
+        xpos 0.6 zoom 0.4 ypos 0.5
+        easeout 2 xpos 1.5 ypos 2.0 zoom 2.0
+        repeat
+    show zardonianCataphractDude as extraHorse at thridSize , truecenter behind zardonianCataphractDude , zardonianCataphractLady:
+        xpos 0.5 zoom 0.4 ypos 0.5
+        easeout 2 xpos 0.3 ypos 2.0 zoom 2.0
+        repeat
+    
     with dissolve
-    pause 0.5
-    show zardonianCataphractDude as extraHorse3 at thridSize , left behind zardonianCataphractDude , zardonianCataphractLady , extraHorse , extraHorse2:
-        xpos 0.25
-        easeout 3 xpos -0.3 ypos 2.0 zoom 3.0
-    show zardonianCataphractDude as extraHorse5 at thridSize , left behind zardonianCataphractDude , zardonianCataphractLady , extraHorse , extraHorse2:
-        xpos 0.75
-        easeout 3 xpos 1.3 ypos 2.0 zoom 3.0
+    pause 0.1
+    show zardonianCataphractDude as extraHorse3 at thridSize , truecenter  behind zardonianCataphractDude , zardonianCataphractLady , extraHorse , extraHorse2:
+        xpos 0.25 zoom 0.4 ypos 0.5
+        easeout 2 xpos -0.3 ypos 2.0 zoom 2.0
+        repeat
+    show zardonianCataphractDude as extraHorse5 at thridSize , truecenter behind zardonianCataphractDude , zardonianCataphractLady , extraHorse , extraHorse2:
+        xpos 0.75 zoom 0.4 ypos 0.5
+        easeout 2 xpos 1.8 ypos 2.0 zoom 2.0
+        repeat
     with dissolve
-    pause 0.5
-    show zardonianCataphractLady as extraHorse4 at thridSize , left behind zardonianCataphractDude , zardonianCataphractLady , extraHorse , extraHorse2 , extraHorse3 , extraHorse5:
-        xpos 0.4
-        easeout 3 xpos -0.3 ypos 2.0 zoom 3.0
-    show zardonianCataphractLady as extraHorse6 at thridSize , left behind zardonianCataphractDude , zardonianCataphractLady , extraHorse , extraHorse2 , extraHorse3 , extraHorse5:
-        xpos 0.6
-        easeout 3 xpos 1.3 ypos 2.0 zoom 3.0
-    pause 0.5
-
-    pause #for testing reasons
+    pause 0.1
+    show zardonianCataphractLady as extraHorse4 at thridSize , truecenter behind zardonianCataphractDude , zardonianCataphractLady , extraHorse , extraHorse2 , extraHorse3 , extraHorse5:
+        xpos 0.4 zoom 0.4 ypos 0.5
+        easeout 2 xpos -0.3 ypos 2.0 zoom 2.0
+        repeat
+    show zardonianCataphractLady as extraHorse6 at thridSize , truecenter behind zardonianCataphractDude , zardonianCataphractLady , extraHorse , extraHorse2 , extraHorse3 , extraHorse5:
+        xpos 0.6 zoom 0.4 ypos 0.5
+        easeout 2 xpos 1.5 ypos 2.0 zoom 2.0
+        repeat
+    pause 3
     scene dustCloud at fullFit with Dissolve(5)
     #the zaratian infantry
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
-        ypos -0.5 xpan 180
+        yalign 0.8 xpan 340 yzoom 0.34
 
     #regius and friends
-    show regius onCamel meanEyes sadMouth at quatSize
-    show xerxHorseWithSoAM at quatSize
-    show volkaraHorsey armedSword meanEyes deltaMouth at quatSize
-    show tesipizHorseMace at quatSize
+    
+    show xerxHorseAngrySoAM at quatSize:
+        xpos 0.467
+    show regius camelArmor meanEyes sadMouth at quatSize:
+        xpos 0.248
+    show volkaraHorsey armedSword meanEyes deltaMouth at quatSize:
+        xpos 0.595 ypos 0.125
+    show tesipizHorseAngryMace at quatSize:
+        xpos 0.737 ypos 0.036
 
     #inaftry dudes
-    show camelLady at thridSize
-    show zaraSsatuSpear at thridSize
-    show zaratianEliteSpear at thridSize
-    show zaratoJamesianAxeLady at thridSize
-    show chiazhuShortSword at thridSize
-    show jamesianSparabaraDude at thridSize
-    show ssatrotuSparabaraLady at thridSize
-    show jamesianSparabaraDude at thridSize
-    show tastsetrotuSwordBoy at thridSize
-    show shataMaceLadyZarat at thridSize
+    show shataMaceLadyZarat as extraFwack at thridSize:
+        xpos 0.838 ypos 0.278
+    show royalFalxInfantryLady at thridSize:
+        xpos 0.488 ypos 0.203
+    show zaratianEliteSpear as extraPlater at thridSize:
+        xpos 0.2 ypos 0.224
+    show ssatrotuSparabaraDude as backDude at quatSize:
+        xpos 0.366 ypos 0.326
+    show camelLady meanEyes OMouth as extraSpear at thridSize:
+        xpos 0.041 ypos 0.167
+
+    show camelLady at thridSize:
+        xpos -0.06 ypos 0.167
+    
+    show zaraSsatuSpear at thridSize:
+        xpos 0.114 ypos 0.167
+    
+    show tastsetrotuSwordBoy at thridSize:
+        xpos 0.69 ypos 0.326
+    show zaratoJamesianAxeLady at thridSize:
+        xpos 0.745 ypos 0.349
+    show chiazhuShortSword at thridSize:
+        xpos 0.629 ypos 0.328 
+    show shataMaceLadyZarat at thridSize:
+        xpos 0.859 ypos 0.383
+    show ssatrotuSparabaraLady at thridSize:
+        xpos 0.484 ypos 0.33 
+    show ssatrotuSparabaraDude at thridSize:
+        xpos 0.243 ypos 0.338
+    
+    
+    show zaratianEliteSpear at thridSize:
+        xpos 0.044 ypos 0.365
+    show zaraSsatuSpear as extraSsatu at thridSize , flipped:
+        xpos -0.1 ypos 0.265
+    
 
     with dissolve
-    pause 5
+    #pause
+    pause 3
+
     #slam
-    scene dustCloud at fullFit with Dissolve(5)
+    scene dustCloud at fullFit with Dissolve(1)
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
-        ypos -0.5 xalign 0.65
+        yalign 0.8 xpan 340 yzoom 0.34
     show smokes at peeShade , center:
         ypos 1.5 yzoom 0.5
-    show zaratianEliteSpear at size3quat  , right:
-        xpos 0.6
-        ypos 1.25
-    show camelLady footAttack meanEyes OMouth at size3quat , right:
-        xpos 0.8
-        ypos 1.25
-    show zaraSsatuSpearFight at flipped , right:
-        xpos 1.0
-        ypos 1.25
 
-    show zardonianCataphractDude at size2Thrid , left:
-        xpos -0.5
+    
+    show zaratianEliteSpear as extraDude at thridSize , left :
+        xpos 0.05 ypos 1.0
+    show zaratianEliteSpear as extraSpear at thridSize  , left:
+        xpos -0.05 ypos 1.0
+    show camelLady footAttack meanEyes OMouth as extraLady at thridSize , left , flipped:
+        xpos 0.15 ypos 1.2
+    
+    show zaratianEliteSpear at thridSize  , left:
+        xpos 0.0
+        ypos 1.1
+    
+    show zaraSsatuSpearFight at thridSize , left , flipped:
+        xpos 0.3
+        ypos 1.2
+    show camelLady footAttack meanEyes OMouth at thridSize , left , flipped:
+        xpos 0.2
+        ypos 1.3
+    
+
+    
+
+    show zardonianCataphractDude at thridSize , right , flipped:
+        xpos 1.5
         ypos 1.25
-        easein 3 xpos 0.8
-    show zardonianCataphractLady at size2Thrid , left:
-        xpos 0.75
+        easein 2 xpos 0.3
+        easeout 1 xpos 0.6
+    show zardonianCataphractLady at thridSize , right , flipped:
+        xpos 1.75
+        ypos 1.55
+        easein 2 xpos 0.5
+        easeout 1 xpos 0.6
+
+    show zardonianCataphractDude as extraTail at thridSize , right , flipped  :
+        xpos 1.95
         ypos 1.25
-        easein 3 xpos 0.7
+        easein 2 xpos 0.7
+        easeout 1 xpos 0.8
+    show zardonianCataphractDude as extraTail2 at thridSize , right , flipped :
+        xpos 2.15
+        ypos 1.2
+        easein 2 xpos 0.9
+        easeout 1 xpos 1.0
+
+    
+    show zardonianCataphractLady as extraScalylegs2 at thridSize , right , flipped :
+        xpos 2.55
+        ypos 1.55
+        easein 2 xpos 1.2
+        easeout 1 xpos 0.8
+    show zardonianCataphractLady as extraScalylegs at thridSize , right , flipped :
+        xpos 2.35
+        ypos 1.25
+        easein 2 xpos 1.1
+        easeout 1 xpos 1.0 ypos 1.55
     with dissolve
-    pause 2.5
+    
+    pause 0.2
+    
 
     play sound [ playerHit , thong , bloodySlam , armorProtected , foeHit , thong ] loop
     play extraSound [ bloodySlam , thong , playerHit , bloodySlam , armorProtected, armorProtected ] loop
-    show zaratianEliteSpear at size3quat  , right , angryColored:
-        xpos 0.6
-        ypos 1.25
-        easeout 2 xpos 1.5 ypos 1.0 rotate 720
-    show camelLady footAttack meanEyes OMouth at size3quat , right , angryColored:
-        xpos 0.8
-        ypos 1.25
-        easeout 2 xpos 1.5 ypos 1.0 rotate 720
-    show zaraSsatuSpearFight at flipped , right , angryColored:
-        xpos 1.0
-        ypos 1.25
-        easeout 2 xpos 1.5 ypos 1.0 rotate 720
+    
+    show zaratianEliteSpear as extraSpear at thridSize  , left:
+        xpos -0.05 ypos 1.0
+        easein 1 xpos -0.2
+        easeout 1 xpos -0.05 ypos 1.2
+    show zaratianEliteSpear as extraDude at thridSize , left:
+        xpos 0.05 ypos 1.0
+        easein 1 xpos -0.1
+        easeout 1 xpos 0.05
+    show camelLady footAttack meanEyes OMouth as extraLady at thridSize , left behind extraSpear:
+        xpos 0.15 ypos 1.2
+        easein 1 xpos 0.0
+        easeout 1 xpos 0.15
+
+    show zaraSsatuSpearFight at thridSize, left , angryColored:
+        xpos 0.1
+        
+        easeout 0.75 xpos -0.5 ypos 1.0 rotate 720
+    with vpunch
+    pause 0.1
+    
+    show camelLady footAttack meanEyes OMouth at thridSize, left , angryColored:
+        xpos 0.2
+        
+        easeout 0.75 xpos -0.5 ypos 1.0 rotate 720
+    with hpunch
+    pause 0.1
+    show zaratianEliteSpear at left , angryColored:
+        xpos 0.3
+        
+        easeout 0.75 xpos -0.5 ypos 1.0 rotate 720
+    with vpunch
+    
+    pause 2
     #animate or still frame?
     #animate with the spear troopers being flung away turned red.
-    scene dustCloud at fullFit with Dissolve(5)
+    scene dustCloud at fullFit with Dissolve(2)
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
         ypos -0.5 xalign 0.65
     show smokes at peeShade , center:
         ypos 1.5 yzoom 0.5
-    show zaratianEliteSpear at size3quat  , right:
-        xpos 0.6
-        ypos 1.25
-        linear 2 xpos 0.8
-        linear 3 xpos 0.6
-    show camelLady footAttack meanEyes OMouth at size3quat , right:
-        xpos 0.8
-        ypos 1.25
-        linear 2 xpos 0.9
-        linear 3 xpos 0.6
-    show zaraSsatuSpearFight at flipped , right:
-        xpos 1.0
-        ypos 1.25
-        linear 2 xpos 1.1
-        linear 3 xpos 1.0
+    show zaratianEliteSpear at halfSize  , left:
+        xpos 0.3
+        ypos 1.3
+        linear 2 xpos -0.2
+        linear 3 xpos 0.0
+    show camelLadyFootFighting at halfSize , left , flipped:
+        xpos 0.2
+        ypos 1.5
+        linear 2 xpos 0.0
+        linear 3 xpos 0.25
+    show zaraSsatuSpearFighting at halfSize , left , flipped:
+        xpos 0.0
+        ypos 1.55
+        linear 2 xpos -0.1
+        linear 3 xpos 0.15
 
     #maybe sword attack versions of the cataphacts??
-    show zardonianCataphractDude at size2Thrid , left:
+    show zardonianCataphractDude at halfSize , right:
         xpos 0.5
-        ypos 1.25
+        ypos 1.75
+        xzoom -1.0
         easein 1 xpos 0.7
-        linear 0.5 xzoom -1.0
-        easein 3 xpos -0.75
-    show zardonianCataphractLady at size2Thrid , left:
-        xpos 0.25
-        ypos 1.25
+        linear 0.5 xzoom 1.0
+        easein 3 xpos 2.0
+    show zardonianCataphractLady at halfSize , right:
+        xpos 0.7
+        ypos 1.75
+        xzoom -1.0
         easein 1 xpos 0.5
-        linear 0.5 xzoom -1.0
-        easein 3 xpos -0.5
+        linear 0.5 xzoom 1.0
+        easein 3 xpos 1.75
+    
     #hhave attack animations for zaratian spear girl, boy and elite man
     #they leave
+    pause 4
 
-    scene cloudyDayTime at halfSize , movingSky
+
+    scene dustCloud at fullFit , movingSky
     show yarakBattlefield:
-        ypos -0.5 xalign 0.65
+        ypos -0.5 xpan 190 xzoom 2.0
+    show smokes at peeShade:
+        yalign 1.0 ypos 0.8 xalign 0.5 xzoom 2.0
+        linear 4 ypos 1.25
 
     play sound horseGallop loop
     pause 0.1
     play extraSound horseGallop loop
-    show zardonianAxeGirl at center , sixthSize
-    show zardonianSwordsMan at center , sixthSize
-    show zardonianSwordsMan as extraSword2 at center , sixthSize
-    show zardonianSwordsWoahMan as extraSword1 at center , sixthSize
-    show zardonianSwordsWoahMan as extraSword3 at center , sixthSize
-    show zardonianAxeDude as extraSword4 at center , sixthSize
+    
 
     show zardonianCataphractDudeFlee at left , size2Thrid:
-        xpos 0.0
-        easeout 3 zoom 0.5
-    show zardonianCataphractLadyFlee at left , size2Thrid:
-        xpos 0.25
-    show zardonianCataphractLadyFlee as extraLady at right , size2Thrid:
-        xpos 0.75
-    show zardonianCataphractDudeFlee as extraDude at left , size2Thrid:
-        xpos 1.0
+        xpos -0.4 
+        easeout 3 zoom 0.1 yalign 0.5 xpos 0.0 
 
+    show zardonianCataphractLadyFlee at left , size2Thrid:
+        xpos 0.0
+        easeout 3 zoom 0.1 yalign 0.5 xpos 0.25 
+    show zardonianCataphractLadyFlee as extraLady at right , size2Thrid:
+        xpos 0.9 
+        easeout 3 zoom 0.1 yalign 0.5 xpos 0.75
+    show zardonianCataphractDudeFlee as extraDude at right , size2Thrid:
+        xpos 1.25 
+        easeout 3 zoom 0.1 yalign 0.5 xpos 0.9 
+
+    with dissolve
+    pause 1
+    hide zardonianCataphractDudeFlee
+    hide zardonianCataphractLadyFlee
+    hide extraLady
+    hide extraDude
+
+    show zardonianAxeGirl at center , sixthSize:
+        xpos 0.205 ypos 0.743
+        easeout 5 zoom 3.5 xpos 0.2 ypos 2.25
+
+    show zardonianSwordsMan as extraSword2 at center , sixthSize:
+        xpos 0.836 ypos 0.717 
+        easeout 5 zoom 4.0 xpos 1.0 ypos 2.5
+    
+    show zardonianSwordsWoahMan as extraSword3 at center , sixthSize:
+        xpos 0.377 ypos 0.74
+        easeout 5 zoom 3.5 xpos 0.7 ypos 2.2
+
+    show zardonianSwordsWoahMan as extraSword1 at center , sixthSize:
+        xpos 0.586 ypos 0.743
+        easeout 5 zoom 4.0 xpos 0.5 ypos 2.5
+
+    
+
+    show zardonianSwordsMan at center , sixthSize:
+        xpos 0.487 ypos 0.772
+        easeout 5 zoom 4.0 xpos 0.35 ypos 2.5
+
+    show zardonianAxeDude as extraSword4 at center , sixthSize:
+        xpos 0.127 ypos 0.74
+        easeout 5 zoom 4.0 xpos 0.0 ypos 2.5
+
+    with Dissolve(2)
     #legionaiers attack
     #make attack animation for zardonian legionaries and have animations loop
     scene dustCloud at fullFit with Dissolve(5)
-    play sound [ thong , armorProtected , hackIT , thong , characterHit , slashMiss , whippingMySlaves ] loop
+    play sound [ thong , armorProtected , hackIT , thong , playerHit , slashMiss , whippingMySlaves ] loop
     play extraSound [ armorProtected , thong , foeHit , slamSound , thong , slicey , slashMiss ] loop
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
         ypos -0.5 xalign 0.65
     show smokes at peeShade , center:
-        ypos 1.5 yzoom 0.5
-    show zaratianEliteSpear at size3quat  , right:
-        xpos 0.6
-        ypos 1.25
-        linear 2 xpos 0.8
-        linear 3 xpos 0.6
-    show camelLadyFootFighting at size3quat , right:
-        xpos 0.8
-        ypos 1.25
-
-    show zaraSsatuSpearFighting at flipped , right:
-        xpos 1.0
-        ypos 1.25
+        ypos 1.5 yzoom 0.5 
     
-    show zardonianSwordsManAttacking at size3quat , left , flipped:
-        xpos 0.4 ypos 1.25
-    show zardonianSwordsWoahManAttacking at size3quat , left , flipped:
-        xpos 0.25 ypos 1.25
+    show zardonianAxeDude as extraDude at halfSize,  truecenter , flipped:
+        xpos 0.9 ypos 0.619
+        linear 2 xpos 1.0
+        linear 2 xpos 0.9
+        repeat
+    show zardonianAxeDude at halfSize , truecenter, flipped:
+        xpos 0.518 ypos 0.619
+        easein 2 xpos 0.774
+        easeout 2 xpos 0.518
+        easeout 2 xpos 0.774
+        easein 2 xpos 0.518
+        repeat
+    show camelLady footAttack meanEyes OMouth at halfSize  , truecenter , flipped:
+        xpos 0.024 ypos 0.757
+        linear 2 xpos 0.124
+        linear 2 xpos 0.024
+        repeat
+    show zaratianEliteSpear at halfSize  , truecenter:
+        xpos 0.184 ypos 0.694
+        easein 2 xpos 0.519
+        easeout 2 xpos 0.184
+        easeout 2 xpos 0.519
+        easein 2 xpos 0.184
+        repeat
+    show zardonianSwordsManAttacking at halfSize , truecenter:
+        xpos 0.729 ypos 0.761
+        easein 2 xpos 0.55
+        easeout 2 xpos 0.8
+        linear 2 xpos 0.729
+        repeat
+
+    show camelLadyFootFighting at halfSize, flipped , truecenter:
+        xpos 0.317 ypos 0.729
+        easein 2 xpos 0.204
+        easeout 2 xpos 0.44
+        linear 2 xpos 0.317
+        repeat
+
+    
+    show zaraSsatuSpearFighting at halfSize , flipped , truecenter:
+        xpos 0.1 ypos 0.782
+        easein 2 xpos 0.036
+        easeout 2 xpos 0.3
+        linear 2 xpos 0.1
+        repeat
+
+    show zardonianSwordsWoahManAttacking at halfSize , truecenter:
+        xpos 0.91 ypos 0.758
+        easein 2 xpos 0.73
+        easeout 2 xpos 1.0
+        linear 2 xpos 0.91
+        repeat
+    with dissolve
+    pause 12
     #show battle scene
     #make modified comic panel for this one. or have attack animations for the legionaries
 
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
-        ypos -0.5 xpan 180
+        yalign 0.8 xpan 340 yzoom 0.34
     show smokes at peeShade , center:
         ypos 1.5 yzoom 0.5
-    show zaratianEliteCamelLady at left , size2Thrid:
-        ypos 1.6
-    show zaratianEliteSpear attackCamel at right , size2Thrid:
-        ypos 1.6
-    show regius camelYeah meanEyes OMouth at size2Thrid , center:
-        ypos 1.6
+    show zaratianEliteCamelLady at left , halfSize , flipped:
+        ypos 2.0 xpos -0.25
+    show zaratianEliteSpear attackCamel at right , halfSize:
+        ypos 2.0 xpos 1.25
+    show regius camelYeah meanEyes OMouth at halfSize , center:
+        ypos 2.0
     with dissolve
     regs "HEAVY CAMEL WARRIORS!"
     show regius camelAttack angryMouth with dissolve
@@ -471,55 +732,55 @@ label battleOfYarak:
 
     #camels attack
     scene cloudyDayTime at halfSize , movingSky
-    show yarakBattlefield:
-        ypos -0.5 xpan 270
-    show zaratianEliteCamelLady at left , size2Thrid:
-        ypos 1.6 xpos -0.5
+    show yarakBattlefield at center:
+        xpan 300 yzoom 0.25
+    show zaratianEliteCamelLady at left , halfSize :
+        ypos 1.8 xpos -0.5
         linear 3 xpos 1.3
-    show zardonianCataphractDude at right , size2Thrid:
+    show zardonianCataphractDude at right , halfSize , flipped:
         ypos 1.6 xpos 1.6
         linear 3 xpos -0.3
     
-    show zaratianEliteSpear attackCamel at left , size2Thrid:
-        ypos 1.6 xpos -0.3
+    show zaratianEliteSpear attackCamel at left , halfSize:
+        ypos 1.8 xpos -0.3
         linear 3 xpos 1.5
-    show zardonianCataphractLady at right , size2Thrid:
-        ypos 1.6 xpos 1.3
-        linear 3 xpos -0.5
-    pause 1.5
-
-    show zaratianEliteCamelLady as extraCamel at left , size2Thrid:
-        ypos 1.6 xpos -0.5
-        linear 3 xpos 1.3
-    show zardonianCataphractDude as extraHorse at right , size2Thrid:
-        ypos 1.6 xpos 1.6
-        linear 3 xpos -0.3
-    
-    show zaratianEliteSpear attackCamel as extraCamel2 at left , size2Thrid:
-        ypos 1.6 xpos -0.3
-        linear 3 xpos 1.5
-    show zardonianCataphractLady as extraHorse2 at right , size2Thrid:
-        ypos 1.6 xpos 1.3
+    show zardonianCataphractLady at right , halfSize , flipped:
+        ypos 1.8 xpos 1.3
         linear 3 xpos -0.5
     
     pause 1.5
 
-    show zaratianEliteCamelLady as extraCamel3 at left , size2Thrid:
-        ypos 1.6 xpos -0.5
+    show zaratianEliteCamelLady as extraCamel at left , halfSize:
+        ypos 1.8 xpos -0.5
         linear 3 xpos 1.3
-    show zardonianCataphractDude as extraHorse3 at right , size2Thrid:
+    show zardonianCataphractDude as extraHorse at right , halfSize , flipped:
         ypos 1.6 xpos 1.6
         linear 3 xpos -0.3
     
-    show zaratianEliteSpear attackCamel as extraCamel4 at left , size2Thrid:
-        ypos 1.6 xpos -0.3
+    show zaratianEliteSpear attackCamel as extraCamel2 at left , halfSize:
+        ypos 1.8 xpos -0.3
         linear 3 xpos 1.5
-    show zardonianCataphractLady as extraHorse4 at right , size2Thrid:
-        ypos 1.6 xpos 1.3
+    show zardonianCataphractLady as extraHorse2 at right , halfSize , flipped:
+        ypos 1.8 xpos 1.3
         linear 3 xpos -0.5
     
     pause 1.5
+
+    show zaratianEliteCamelLady as extraCamel3 at left , halfSize:
+        ypos 1.8 xpos -0.5
+        linear 3 xpos 1.3
+    show zardonianCataphractDude as extraHorse3 at right , halfSize , flipped:
+        ypos 1.6 xpos 1.6
+        linear 3 xpos -0.3
     
+    show zaratianEliteSpear attackCamel as extraCamel4 at left , halfSize:
+        ypos 1.8 xpos -0.3
+        linear 3 xpos 1.5
+    show zardonianCataphractLady as extraHorse4 at right , halfSize, flipped:
+        ypos 1.8 xpos 1.3
+        linear 3 xpos -0.5
+    
+    pause 1.5
     #camels fight cataphracts
     scene dustCloud at fullFit with Dissolve(2)
     scene cloudyDayTime at halfSize , movingSky
@@ -527,18 +788,18 @@ label battleOfYarak:
         ypos -0.5 xpan 180
     
     #might need a lance up pose for zarato jamesian lancer
-    show zaratoJamesianLancer at size04 , left:
-        ypos 1.2
+    show zaratoJamesianLancer at size04 , truecenter, flipped:
+        xpos 0.016 ypos 0.85
     #might need a female lancer - the axe lady will do for now
-    show zaratoJamesianAxeLady at size04 , right:
-        ypos 1.2
+    show zaratoJamesianAxeLady mountedAttack at size04 , truecenter:
+        ypos 0.806 xpos 0.955
 
-    show tesipizHorseAngryMace at left , halfSize:
-        ypos 1.4 xpos 0.25
-    show volkaraHorsey armedSword meanEyes deltaMouth at right , halfSize:
-        ypos 1.4 xpos 0.75
-    show xerxHorseAngrySoAM at center , halfSize:
-        ypos 1.4
+    show tesipizHorseAngryMace at truecenter , halfSize, flipped:
+        ypos 0.84 xpos 0.715
+    show volkaraHorsey armedSword meanEyes deltaMouth at truecenter , halfSize:
+        ypos 0.96 xpos 0.196 
+    show xerxHorseAngrySoAM at truecenter , halfSize:
+        ypos 0.792 xpos 0.457
     
     with dissolve
     
@@ -549,8 +810,8 @@ label battleOfYarak:
     xerx "The Zarato-Jamesian Cavarly!"
     xerx "It's time to strike."
     hide xerxHorseAngrySoAM
-    show xerxHorseAttackSoAM at center , halfSize:
-        ypos 1.4
+    show xerxHorseAttackSoAM at truecenter , halfSize:
+        ypos 0.792 xpos 0.457
 
     menu:
         "Attack the left flank!":
@@ -562,55 +823,60 @@ label yarakLeft:
     #junatu dude sees Xerx
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
-        ypos -0.5 xpan 270
-    show junatuJavelinDudeAttack at center , size2Thrid
+        ypos -0.5 xpan 200
+    show junatuJavelinDudeAttack at truecenter , size2Thrid:
+        ypos 0.72 xpos 0.19
     with dissolve
-    junaJav "GET THOSE ZARATO-JAMESIANS!!"
+    junaJav "GET THOSE ZARATO-JAMESIANS!!" with vpunch
 
-    show junatuWebRocka at left , size2Thrid:
-        ypos 1.6 xpos -0.3
-        linear 2 xpos 1.8
+    play sound giantSpiderRun loop
+    play extraSound horseGallop loop
+    show junatuWebRocka at left , size2Thrid behind junatuJavelinDudeAttack:
+        ypos 1.7 xpos -0.5
+        linear 3 xpos 1.8
     show zardonianAxeCavalry at left , size2Thrid:
-        ypos 1.6 xpos -0.5
-        linear 2 xpos 1.5
-    show ssatuOstrichFighter at left , size2Thrid:
-        ypos 1.6 xpos -0.8
-        linear 2 xpos 1.3
+        ypos 1.9 xpos -0.8
+        linear 3 xpos 1.5
+    show ssatuOstrichFighter at left , size2Thrid behind junatuJavelinDudeAttack:
+        ypos 1.7 xpos -1.3
+        linear 3 xpos 1.3
     pause 1.5
 
     show zardonianAxeCavalry as extraHorse at left , size2Thrid:
-        ypos 1.6 xpos -0.3
-        linear 2 xpos 1.8
-    show zardonianAxeCavalry as extraHorse2 at left , size2Thrid:
-        ypos 1.6 xpos -0.5
-        linear 2 xpos 1.5
+        ypos 1.9 xpos -0.5
+        linear 3 xpos 1.8
+    show zardonianAxeCavalry as extraHorse2 at left , size2Thrid behind junatuJavelinDudeAttack:
+        ypos 2.0 xpos -0.8
+        linear 3 xpos 1.5
     show junatuWebRocka as extraSpooda at left , size2Thrid:
-        ypos 1.6 xpos -0.8
-        linear 2 xpos 1.3
+        ypos 1.7 xpos -1.3
+        linear 3 xpos 1.3
     pause 1.5
 
-    show junatuSwordDude at left , size2Thrid:
-        ypos 1.6 xpos -0.3
-        linear 2 xpos 1.8
+    show junatuSwordDude at left , size2Thrid behind junatuJavelinDudeAttack:
+        ypos 1.8 xpos -0.5
+        linear 3 xpos 1.8
     show junatuWebRocka as extraSpooda2 at left , size2Thrid:
-        ypos 1.6 xpos -0.5
-        linear 2 xpos 1.5
-    show ssatuOstrichFighter as extraBirb at left , size2Thrid:
         ypos 1.6 xpos -0.8
-        linear 2 xpos 1.3
+        linear 3 xpos 1.5
+    show ssatuOstrichFighter as extraBirb at left , size2Thrid:
+        ypos 1.6 xpos -1.3
+        linear 3 xpos 1.3
     pause 1.5
 
     scene dustCloud at fullFit with dissolve
 
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
-        ypos -0.5 xpan 270
+        ypos -0.5 xpan 200
     with dissolve
     
     #korkin gurl axe cav
     #ssatu boy ostrich fighter
     #junatu slinga
     #junatu javelin dude
+    stop sound fadeout 3
+    stop extraSound fadeout 3
     $ enemyTroopers = [ copy.copy(zardonainAxeCav) , copy.copy(ostrichFighter) , copy.copy(junatuSlinger) , copy.copy(ostrichFighter) , copy.copy(zardonainAxeCav)]
     call screen playerActions( "Fight the Zardonian Cavarly!" , False , False , False , 1  ) 
     $ enemyTroopers = [ copy.copy(junatuSlinger) , copy.copy(junatuLegion) , copy.copy(junatuSlinger) , copy.copy(ostrichFighter) , copy.copy(zardonainAxeCav) ]
@@ -625,9 +891,10 @@ label yarakRight:
     #junatu warrior lady sees Xer
     scene cloudyDayTime at halfSize , movingSky
     show yarakBattlefield:
-        ypos -0.5 xpan 90
-    show junatuCataphractSwordAngry at center , size2Thrid
-    junaWar "GET THOSE ZARATO-JAMESIANS!!"
+        ypos -0.5 xpan 50
+    show junatuCataphractSwordAngry at truecenter , halfSize
+    with dissolve
+    junaWar "GET THOSE ZARATO-JAMESIANS!!" with hpunch
 
 
     #ostrich archer korkin dude
@@ -635,10 +902,19 @@ label yarakRight:
     #junatu warrior
     #junatu webber
     #junatu cataphract maybe?
+    scene dustCloud at fullFit with dissolve
+    play sound giantSpiderRun loop
+    play extraSound horseGallop loop 
+    scene cloudyDayTime at halfSize , movingSky
+    show yarakBattlefield:
+        ypos -0.5 xpan 50
+    with dissolve
+    stop sound fadeout 3
+    stop extraSound fadeout 3
     $ enemyTroopers = [ copy.copy(ostrichArcherM) , copy.copy(ostrichFighter) , copy.copy(junatuCatapharct) , copy.copy(ostrichArcherF) , copy.copy(ostrichArcherF)]
     call screen playerActions( "Fight the Zardonian ostriches!" , False , False , False , 1  ) 
     $ enemyTroopers = [ copy.copy(ostrichArcherM) , copy.copy(ostrichArcherM) , copy.copy(junatuSwordKnight) , copy.copy(junatuSlinger) ,  copy.copy(junatuCatapharct) ]
-    call screen playerActions( "They brought big spiders!" , False , False , False , 1  ) 
+    call screen playerActions( "They got some big spiders!" , False , False , False , 1  ) 
     #catahracts
     #zardossatu infantry
     jump versanizBossBattleAST

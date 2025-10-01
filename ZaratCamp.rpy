@@ -13,7 +13,7 @@ label zaratianCamp:
     #xerx and crew
     #it always starts from morning so
     show xerxHorseWithSoAM at centerAnchor:
-        zoom 0.1
+        zoom 0.05
 
         xpos 0.328 ypos 0.074
         linear 2 xpos 0.354 ypos 0.164
@@ -28,7 +28,7 @@ label zaratianCamp:
     #end at 0.341, 0.421 - Royal Zarat-ri'in camp
 
     show lakatinuFrontFly at centerAnchor:
-        zoom 0.1
+        zoom 0.04
 
         xpos 0.28 ypos 0.3
         linear 2 xpos 0.305 ypos 0.625
@@ -43,7 +43,7 @@ label zaratianCamp:
     #end at 0.872 , 0.268 - Sodu
 
     show minona at centerAnchor:
-        zoom 0.1
+        zoom 0.05
 
         xpos 0.68 ypos 0.192
         linear 8 xpos 0.66 ypos 0.192
@@ -53,34 +53,34 @@ label zaratianCamp:
     #go to 0.66, 0.268 - Outside Ectabana North
 
     show astartHopliteMale at centerAnchor:
-        zoom 0.1
+        zoom 0.05
 
         xpos 0.766 ypos 0.181
     #goons outside yazdium - 0.766 , 0.181 - astart hoplite
     show faronianAxNakedFemale at centerAnchor:
-        zoom 0.1
+        zoom 0.05
 
         xpos 0.616 ypos 0.306
     #goons outside Ectabana west - 0.616 , 0.306 - faronian nekked warrior girl
     show thiaMaceMale at centerAnchor:
-        zoom 0.1
+        zoom 0.05
 
         xpos 0.586 ypos 0.39
     #goons in serenia - 0.586 , 0.39 - thia macer
     show minobiteSpear at centerAnchor:
-        zoom 0.1
+        zoom 0.05
         xpos 0.653 ypos 0.106
     #goons in pashia - 0.653 , 0.106 - minobite
 
     show jakaCamelLancer at centerAnchor:
-        zoom 0.1
-        xpos 0.723 ypos 0.55
+        zoom 0.03
+        xpos 0.727 ypos 0.5
     #goons in nuida - 0.723 , 0.550 - jaka camel 
 
     #jamesians
     if takuriumOwner == "Jamesians":
         show megabazus armed34 at flipped , centerAnchor:
-            zoom 0.1
+            zoom 0.05
             xpos 0.766 ypos 0.362
             linear 2 xpos 0.766 ypos 0.362
             linear 2 xpos 0.764 ypos 0.331
@@ -88,7 +88,7 @@ label zaratianCamp:
         
     else:
         show megabazus armed34 at flipped , centerAnchor:
-            zoom 0.1
+            zoom 0.05
             xpos 0.711 ypos 0.358
             linear 4 xpos 0.745 ypos 0.36
             linear 2 xpos 0.745 ypos 0.36
@@ -103,14 +103,14 @@ label zaratianCamp:
     #end 0.776 , 0.362
 
     show jamesianCamelLancer at centerAnchor:
-        zoom 0.1
+        zoom 0.03
         xpos 0.536 ypos 0.396
     #Hikaria forces
     #start 0.536, 0.396
 
     #nuida forces
     show jamesianHeavySpearGirl at centerAnchor:
-        zoom 0.1
+        zoom 0.05
         xpos 0.645 ypos 0.486
         linear 3 xpos 0.645 ypos 0.486
         linear 3 xpos 0.723 ypos 0.521
@@ -120,17 +120,17 @@ label zaratianCamp:
 
     #kwortix forces
     show jamesianLongsword at centerAnchor:
-        zoom 0.1
+        zoom 0.05
         xpos 0.627 ypos 0.486
     #start 0.627, 0.115 
 
     show eliteDariusGuard1 at centerAnchor:
-        zoom 0.1
+        zoom 0.05
         xpos 0.627 ypos 0.486
     #defence of Ectabana - 0.662 , 0.303
 
     show jamesianLongsword at centerAnchor:
-        zoom 0.1
+        zoom 0.05
         xpos 0.735 ypos 0.157
     #defence of yazdium
 
@@ -141,139 +141,163 @@ label zaratianCamp:
     play music villageTheme fadein 1.0 fadeout 1.0
 
     scene cloudyDayTime at movingSky
-    show royalZaratCampOutside at center , halfSize:
-        linear 10 zoom 1.5
-    show jakaArcherCrusufied at quatSize , right:
-        linear 10 zoom 1.5 ypos 1.2
-    show balatianArcherCrusufied at quatSize , left:
-        linear 10 zoom 1.5 ypos 1.2
-    show woodSpikeRack at quatSize , right:
-        linear 10 zoom 1.5 ypos 1.2
-    show woodSpikeRack as extraWood at quatSize , flipped , left:
-        linear 10 zoom 1.5 ypos 1.2
-    show tsekrei armed at quatSize , center:
-        linear 10 zoom 1.5 ypos 1.2
+    show royalZaratCampOutside at truecenter:
+        xpos 0.6 zoom 0.6 ypos 0.55
+        linear 10 zoom 2.0 xpos 0.7 ypos 0.45
+    show jakaArcherCrusufied at truecenter ,quatSize :
+        ypos 0.6 xpos 0.75 xalign 0.75
+        linear 10 zoom 2.0 ypos 0.7 xalign 1.0 xpos 1.1
+    show balatianArcherCrusufied at truecenter ,quatSize :
+        ypos 0.7 xpos 0.25 xalign 0.25
+        linear 10 zoom 2.0 ypos 0.7 xalign 0.0 xpos -0.3
+    
+    show tsekrei armed at truecenter ,sixthSize :
+        ypos 0.5 xpos 0.525
+        linear 10 zoom 4.0 ypos 0.7 xpos 0.5
+
+    show woodSpikeRack at truecenter ,halfSize , flipped:
+        ypos 0.8 xpos 0.0 xalign 0.0
+        linear 10 zoom 2.0 ypos 1.1 xpos -0.7
+    show woodSpikeRack as extraWood at truecenter ,halfSize  :
+        ypos 0.8 xpos 0.9 xalign 0.9
+        linear 10 zoom 2.0 ypos 1.1 xalign 1.0 xpos 1.5
+    
     with Fade(0.5,1.0,2.0)
     pause 10
     #show esablishing scene of camp with x crucified astart goons
     #tsekrei is gaurding the camp
 
     show tsekrei greet happyMouth with dissolve
-    tsek "Oh Hi Regius!" #tsekrei armed greeting
+    tsek "Oh hi Regius!" #tsekrei armed greeting
     show tsekrei -greet with dissolve
     tsek "I heard about the rebels" #has she?
     #maybe have her notice king Zagzhino and have regius tell her about that
     show tsekrei OMouth with dissolve
-    tsek "You've got some Jameians and Xerxes."
+    tsek "You've got some jameians and Xerxes."
     show tsekrei XEyes happyMouth with dissolve
     tsek "Cool!"
-    show tsekrei itemArmored with dissolve
-    tsek "I'll take you to King Urkius."
+    show tsekrei -XEyes itemArmored with dissolve
+    tsek "I'll take you to King Urlius."
     tsek "He wants to talk about the rebellion." #what about the magicrystals - communication crystals
 
     #show royal tent
-    scene royalZaratCampInside at center , size2Thrid with fade
-    pause 2
-    scene kingZaratTent at fullFit
-    show kingsPlatform at center , size2Thrid
-    show yuufia at center:
-        xpos 0.45
-    show urlius at center:
-        xpos 0.55
+    scene cloudyDayTime at fullFit , movingSky
+    show royalZaratCampInside at center , size2Thrid 
     with fade
+    pause 2
+    scene kingZaratTent at truecenter
+    show kingsPlatform at center , size08:
+        ypos 1.1
+    show yuufia at center , size2Thrid:
+        xpos 0.4 ypos 1.4
+    show urlius at center , size2Thrid:
+        xpos 0.6 ypos 1.4
+    with fade
+    pause 5
     #show inisde
 
-    scene royalZaratCampInside at center , size2Thrid with fade
-    show tsekrei itemArmored happyMouth at center , halfSize , flipped
+    scene kingZaratTent at truecenter , size2Thrid with fade
+    show tsekrei itemArmored happyMouth at center , halfSize , flipped:
+        ypos 1.2
     show regius armored at left , halfSize:
-        xpos 0.75
-    show zagzhino captured meanEyes angryMouth at right , halfSize
+        xpos 0.6 ypos 1.15
+    show zagzhino  meanEyes angryMouth captured at right , halfSize:
+        ypos 1.15
     with dissolve
     tsek "King Urlius of Zarat."
     tsek "Regius of the Yimi-ri'in has got the Rebel Leader."
-    show tsekrei at flipped:
-        xzoom -1.0
+    show tsekrei at flipped , center , halfSize , flipped:
+        xzoom -1.0 ypos 1.2
         linear 1 xzoom 1.0
     with dissolve
-    show xerxArmoredHappyGreet at right , halfsize:
-        ypos 1.2
+    show xerxArmoredHappyGreet at left , halfSize:
+        ypos 1.1
     with dissolve
     tsek "Here is Xerxes."
     hide xerxArmoredHappyGreet
-    show neutralHappyXerxesArmored at right , halfsize:
+    show neutralHappyXerxesArmored at left , halfSize:
+        ypos 1.1
+    show tsekrei frontArmsArmored XEyes at flipped , center , halfSize , flipped:
         ypos 1.2
-    show tsekrei frontArmsArmored XEyes
     with dissolve
     tsek "He and his friends helped the Yimi-ri'in."
 
     #it's ok to make changes from the original comic
-    scene royalZaratCampInside at right , size2Thrid with fade
-    scene kingZaratTent at fullFit
-    show kingsPlatform at center , size2Thrid
-    show yuufia at center:
-        xpos 0.45
-    show urlius greet happyMouth at center:
-        xpos 0.55
+    #scene royalZaratCampInside at right , size2Thrid with fade
+    scene kingZaratTent at truecenter
+    show kingsPlatform at center , size08:
+        ypos 1.1
+    show yuufia at center , size2Thrid:
+        xpos 0.4 ypos 1.4
+    show urlius happyMouth greet at center , size2Thrid:
+        xpos 0.6 ypos 1.4
     with dissolve
     urli "Welcome Regius, I'm glad that rebellion was quashed so quikly."
     urli "And hello Xerxes."
     show urlius -greet with dissolve
     urli "I'm happy that you're here to help fight the Zardonians."
-    show urlius -happyMouth
+    show urlius -happyMouth behind yuufia
     show yuufia greet happyMouth
     with dissolve
     yuuf "Hello Xerxes!!"
     yuuf "I'm Queen Yuufia."
 
-    scene royalZaratCampInside at center , size2Thrid with fade
-    show tsekrei at center , halfSize , flipped
-    show regius armored at left , halfSize:
-        xpos 0.75
-    show zagzhino captured meanEyes angryMouth at right , halfSize
-    with dissolve
-    show happyXerxArmored at right , halfsize:
+    scene kingZaratTent at truecenter , size2Thrid with fade
+    show tsekrei at center , halfSize , flipped:
         ypos 1.2
+    show regius armored at left , halfSize:
+        xpos 0.6 ypos 1.15
+    show zagzhino meanEyes angryMouth captured  at right , halfSize:
+        ypos 1.15
+    with dissolve
+    show happyXerxArmored at left , halfSize:
+        ypos 1.1
     with dissolve
     xerx "I'm so glad that I get to meet you King Urlius and Queen Yuufia."
-    show xerx3quatPointCommandingArmored  at right , halfSize:
-        ypos 1.2
+    hide happyXerxArmored
+    show xerx3quatPointCommandingArmored  at left , flipped , halfSize:
+        ypos 1.1
+    with dissolve
     xerx "When are we going to drive the Zardonians out?"
 
-    scene royalZaratCampInside at right , size2Thrid with fade
-    scene kingZaratTent at fullFit
-    show kingsPlatform at center , size2Thrid
-    show yuufia at center:
-        xpos 0.45
-    show urlius pointy34 happyMouth at center:
-        xpos 0.55
+    #scene royalZaratCampInside at right , size2Thrid with fade
+    scene kingZaratTent at truecenter
+    show kingsPlatform at center , size08:
+        ypos 1.1
+    show yuufia at center , size2Thrid:
+        xpos 0.4 ypos 1.4
+    show urlius pointy34 happyMouth at center , size2Thrid:
+        xpos 0.6 ypos 1.4
     with dissolve
     urli "Tommorow."
     urli "I need to talk to Regius about the recent rebellion."
     urli "Tsekrei will show you to your sleeping tent."
 
-    scene royalZaratCampInside at center , size2Thrid with fade
-    show tsekrei frontArmsArmored34 happyMouth at center , halfSize , flipped
-    show regius armored at left , halfSize:
-        xpos 0.75
-    show zagzhino captured meanEyes angryMouth at right , halfSize
-    with dissolve
-    show happyXerxArmored at right , halfsize:
+    scene kingZaratTent at truecenter , size2Thrid 
+    show tsekrei frontArmsArmored34 happyMouth at center , halfSize :
         ypos 1.2
+    show regius armored at left , halfSize:
+        xpos 0.6 ypos 1.15
+    show zagzhino meanEyes angryMouth captured  at right , halfSize:
+        ypos 1.15
+
+    show happyXerxArmored at left , halfSize:
+        ypos 1.1
     with dissolve
     tsek "I am Tsekrei and I will show you to your tent."
     #tsekrei leads everbody out.
 
-    scene royalZaratCampInside at right , size2Thrid with fade
-    scene kingZaratTent at fullFit
-    show kingsPlatform at center , size2Thrid
-    show zagzhino captured meanEyes angryMouth at left , halfSize:
+    scene kingZaratTent at truecenter , size2Thrid 
+    show kingsPlatform at center , size2Thrid:
+        ypos 1.1
+    show zagzhino meanEyes angryMouth captured  at left , halfSize:
         ypos 1.2 xpos -0.05
 
     show urlius base34 angryMouth lineEyes at right , size2Thrid , flipped:
         ypos 1.4
-    show regius34 armored annoyedEyes annoyedMoutha at left , size2Thrid:
+    show regius34 armored annoyedEyes annoyedMouth at left , size2Thrid:
         ypos 1.4 xpos 0.25
-    with dissolve
+    with fade
     urli "Regius of Yiimi-ri'in."
     show urlius frowning
     show regius34 angryMouth
@@ -281,7 +305,7 @@ label zaratianCamp:
 
     #Urlus hodling zarafalx
     show urlius sword34 angryMouth
-    show regius34 frowning
+    show regius34 annoyedMouth
     with dissolve
     urli "For acting and defeating the rebels so quickly"
     show urlius happyMouth -lineEyes
@@ -295,26 +319,38 @@ label zaratianCamp:
     show zagzhino sadEyes sadMouth
     with dissolve
     stop music fadeout 1
-    Urlius "Now execute the rebel King." 
+    urli "Now execute the rebel King." 
 
-    show zagzhino:
-        linear 0.5 xpos 0.45
-    show regius34:
+    window hide dissolve
+    scene kingZaratTent at truecenter , size2Thrid 
+    show kingsPlatform at center , size2Thrid:
+        ypos 1.1
+    show urlius sword34 angryMouth meanEyes at right , size2Thrid , flipped behind zaghino:
+        ypos 1.4
+
+    show zagzhino sadEyes sadMouth captured at left , size2Thrid:
+        ypos 1.4 xpos -0.05
+        linear 0.5 xpos 0.25
+    show regius34 armored meanEyes annoyedMouth at left , size2Thrid :
+        ypos 1.4 xpos 0.25
         easeout 0.5 xpos 0.0
+    
     with dissolve
     pause 0.5
     show regius34 armed angryMouth with dissolve
     pause 0.5
     hide regius34
-    show regius34Stab at left , size2Thrid:
-        xpos 0.0 ypos 1.4
-        easeout 0.5 xpos 0.3
     show zagzhino closedEyes angryMouth at angryColored:
-        xpos 0.45
-        easeout 2 xpos 2.0 ypos 2.0 rotate 90
+        xpos 0.15 ypos 1.3
+        easeout 1 xpos 1.0 ypos 2.0 rotate 90
+    show regius34Stab at left , size2Thrid behind zaghino:
+        xpos 0.0 ypos 1.4
+        easeout 0.15 xpos 0.3
+    
     play sound foeHit
-    pause 1.5
-    play extraSound bloodySlam
+    pause 0.75
+    play extraSound bloodySlam 
+    with hpunch
     pause 2
     #regius with falx
     #hack
@@ -323,11 +359,13 @@ label zaratianCamp:
     play music villageTheme fadein 1.0 fadeout 1.0
     scene tsekreiTent at fullFit with Fade(2,0,0.5)
     show tsekrei itemArmored at right , size2Thrid:
-        ypos 1.2
+        ypos 1.4
+    with dissolve
     tsek "Here's where you will be sleeping tonight."
 
     #establishing shot of charactwers
-    scene tsekreiTent at left
+    scene tsekreiTent at left:
+        yalign 0.35 xalign 0.2 zoom 1.5
     show xerx3quatAnnoyed at center , size08:
         ypos 1.6
     with dissolve
@@ -340,58 +378,59 @@ label zaratianCamp:
 
     #tesipiz will hang out with Tsekrei more if he hasn't gotten frisky with the other ladies
     scene tsekreiTent:
-        zoom 2.0 xpos 0.4 ypos 0.5
+        yalign 0.4 xalign 0.5 zoom 2.0
     show tsekrei armored34 at right , size2Thrid: 
-        ypos 1.2
+        ypos 1.5
     if takuraBoinks < 1 or muwaCuddleCounter < 2:
-        show tesipiz34Happy at left , size2Thrid:
-            ypos 1.2
+        show tesipiz34Happy at left , size2Thrid ,flipped:
+            ypos 1.4 xpos 0.25
         with dissolve
         tesi "Tsekrei."
         hide tesipiz34Happy
-        show tesipiz34HappyCommandingPoting at left , size2Thrid:
-            ypos 1.2
+        show tesipiz34HappyCommandingPoting at left , size2Thrid ,flipped:
+            ypos 1.4 xpos 0.25
         show tsekrei happyMouth
         with dissolve
         tesi "You look lovely."
     else:
-        show tesipiz34HappyCommandingPoting at left , size2Thrid:
-            ypos 1.2
+        show tesipiz34HappyCommandingPoting at left , size2Thrid ,flipped:
+            ypos 1.4 xpos 0.25
         tesi "Thanks for the bed Tsekrei."
+        with dissolve
         hide tesipiz34HappyCommandingPoting
-        show tesipiz34Happy at left , size2Thrid:
-            ypos 1.2
+        show tesipiz34Happy at left , size2Thrid ,flipped:
+            ypos 1.4 xpos 0.25
         tesi "It's as nice as the one in Gilgamorium."
     hide tesipiz34Happy
     hide tesipiz34HappyCommandingPoting
-    show tesipiz34NeutralHappy at left , size2Thrid:
-        ypos 1.2
+    show tesipiz34NeutralHappy at left , size2Thrid ,flipped:
+        ypos 1.4 xpos 0.25
     show tsekrei happyMouth XEyes handChestArmored34
     with dissolve 
     tsek "Thank you."
-    show tsekrei -XEyes itemArmored OMouth with dissolve
+    show tsekrei -XEyes itemArmored happyMouth with dissolve
     tsek "What's your name?"    
     hide tesipiz34NeutralHappy
-    show tesipiz34Happy at left , size2Thrid:
-        ypos 1.2
+    show tesipiz34Happy at left , size2Thrid ,flipped:
+        ypos 1.4 xpos 0.25
     with dissolve
     tesi "Tesipiz"
 
     scene tsekreiTent:
-        zoom 2.0 xpos 0.6 ypos 0.6
+        yalign 0.4 xalign 0.6 zoom 2.0
     show tsekrei frontArmsArmored34 happyMouth at size2Thrid , flipped , center:
-        ypos 1.2
-    show volkara3quat at flipped , right:
-        ypos 1.2
+        ypos 1.5 xpos 0.25
+    show volkara3quat at size2Thrid , flipped , right:
+        ypos 1.4
     with dissolve
     tsek "Hey jamesian girl."
-    show tsekrei item34Armored with dissolve
+    show tsekrei itemArmored with dissolve
     tsek "What's your name"
     show tsekrei -happyMouth armored34
     show volkara3quat happyMouth
     with dissolve
     volk "Volkara"
-    show tsekrei item34Armored happyMouth
+    show tsekrei itemArmored happyMouth
     show volkara3quat -happyMouth
     with dissolve
     tsek "What do you like doing in your spare time?"
@@ -406,47 +445,51 @@ label zaratianCamp:
     show tsekrei armored34 happyMouth
     with dissolve
     tsek "I got my own books."
-    show tsekrei item34Armored
-    show lamassuBook #TODO set position and size to fit Tsekrei's hands
+    show tsekrei itemArmored
+    show lamassuBook:
+        xpos 0.291 ypos 0.504 zoom 0.6
+
     tsek "This one is about a lamassu lady that summons monsters when it's nighttime."
 
     show tsekrei armored34
     hide lamassuBook 
     with dissolve
-    show tesipiz34NeutralHappy at size2Thrid , left:
-        xpos -0.3 ypos 1.2
+    show tesipiz34NeutralHappy at size2Thrid , left, flipped:
+        xpos -0.3 ypos 1.3
         easein 2 xpos 0.0
-    show tsekrei armored34:
-            xzoom -1.0
-            linear 1 xzoom 1.0
+    show tsekrei armored34 at size2Thrid  , center:
+        ypos 1.5 xpos 0.25 xzoom 1.0
+        linear 1 xzoom -1.0 xpos 0.5
     with dissolve
-    if takuraBoinks < 1 or muwaCuddleCounter < 2:
-        tsek "How about you Tesipiz?"
-    else:
+    if takuraBoinks < 1 or muwaCuddleCounter < 2: 
         tsek "How about you Tesipiz since you seem to like me already."
-        show tsekrei item34Armored with dissolve
-        tesi "What do you like doing?"
+        show tsekrei itemArmored with dissolve
+        tesi "What do you like doing?"       
+    else:
+        tsek "How about you Tesipiz?"
     
     hide tesipiz34NeutralHappy
     show tsekrei armored34 -happyMouth
     show tesipizYeah at size2Thrid , left:
-        ypos 1.2
+        ypos 1.35 xpos -0.25
     with dissolve
     tesi "I like exploding things."
     show tsekrei frontArmsArmored34 OMouth with dissolve
     pause 2
     #tsek "Eh?" #can be replaced with funny face and award pause
-    show tsekrei -Omouth
-    hide tesipiz34NeutralHappy
+    show tsekrei -OMouth with dissolve
+    hide tesipizYeah
     show tesipiz34HappyCommandingPoting at left , flipped , size2Thrid:
-        ypos 1.25
-    show doll2Hang at left:
+        ypos 1.35
+    with dissolve
+    show doll2Hang at left , size08 with dissolve:
         xpos 0.125 ypos 1.0
+
     tesi "As well as collecting these dolls."
 
     show tsekrei handChestArmored34 XEyes happyMouth with dissolve
     tsek "Heheheh!"
-    show tsekrei item34Armored meanEyes with dissolve
+    show tsekrei itemArmored meanEyes with dissolve
     tsek "I know what boys like doing to these types of dolls."
     show tsekrei frontArmsArmored34 -meanEyes with dissolve
     tsek "She's cute though."
@@ -455,77 +498,78 @@ label zaratianCamp:
     hide doll2Hang
     hide tesipiz34HappyCommandingPoting
     show tesipiz34Happy at left , flipped , size2Thrid:
-        ypos 1.25
+        ypos 1.35
     with dissolve
 
     if takuraBoinks > 0 or takuraCuddles > 3:
         tesi "Not as cute as Lady Takura."
         hide tesipiz34Happy
         show tesipizSuprized at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.4
         show tsekrei handChestArmored34 XEyes happyMouth 
         with dissolve
         tsek "You're doing ghosts as well as dolls?"
         show tsekrei -XEyes -happyMouth with dissolve
         hide tesipizSuprized
         show tesipiz34Curious at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         with dissolve
         tesi "No."
-        hide tesipiz2Fingers
+        hide tesipiz34Curious
         show tesipiz34HappyCommandingPoting at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         with dissolve
         tesi "She's still alive and well under Temple Hill."
-        show doll2Hang at left:
+        show doll1Hang at left , size08 with dissolve:
             xpos 0.125 ypos 1.0
         tesi "I even got a doll from her."
         show tsekrei handChestArmored34 XEyes happyMouth with dissolve
         tsek "Heheh."
         show tsekrei meanEyes with dissolve
         hide tesipiz34HappyCommandingPoting
-        hide doll2Hang
+        hide doll1Hang
         show tesipiz34Curious at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.3
         with dissolve
         tsek "I read about ghosts who take the form of dead people."
         hide tesipiz34Curious
         show tesipizSuprized at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         show tsekrei XEyes
         with dissolve
         tsek "And boink people to feed on their seed."
         hide tesipizSuprized
         show tesipiz34LookingDownSad at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         show volkara3quat pointy meanEyes deltaMouth
-        show tsekrei frontArmsArmored34 OMouth -XEyes:
-            xzoom 1.0
-            linear 0.5 xzoom -1.0
-        volk "Those type of ghosts live in the northen mountains." #maybe add cg of northern mountains
+        show tsekrei frontArmsArmored34 OMouth -XEyes at size2Thrid  , center:
+            ypos 1.5  xzoom -1.0
+            linear 0.5 xzoom 1.0 xpos 0.4
+        volk "Those type of ghosts only live in the northen mountains." #maybe add cg of northern mountains
         hide tesipiz34LookingDownSad
         show tesipiz34LookingDown at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         show tsekrei -OMouth
         with dissolve
         volk "And the ahrites of Bowa courrupted them all." #maybe cg of bowa region
         hide tesipiz34LookingDown
         show tesipiz34NeutralHappy at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         with dissolve
-        volk "And the uncourrupted survivers were all slain by Shuumen." #maybe eg of shuumen and mibi in the succ room
+        volk "And the uncourrupted survivors were all slain by Shuumen." #maybe eg of shuumen and mibi in the succ room
         if takuraBoinks > 0:
             hide tesipiz34NeutralHappy
             show tesipiz2Fingers at left , flipped , size2Thrid:
-                ypos 1.25
+                ypos 1.35
             show volkara3quat -pointy -meanEyes happyMouth
             with dissolve
             tesi "I didn't feel any draining when I creamed in her."
             hide tesipiz2Fingers
             show tesipiz34NeutralHappy at left , flipped , size2Thrid:
-                ypos 1.25
+                ypos 1.35
             show volkara3quat -happyMouth armsFoward
-            show tsekrei armored34 XEyes happyMouth:
+            show tsekrei armored34 XEyes happyMouth at size2Thrid  , center:
+                ypos 1.5
                 xzoom 1.0
                 linear 0.5 xzoom -1.0
             with dissolve
@@ -533,76 +577,77 @@ label zaratianCamp:
 
     elif muwaCuddleCounter > 1:
 
-        tesi "Not as cute as Muwa of Kwtix Mine."
+        tesi "Not as cute as Muwa of Kwortix Mine."
         hide tesipiz34Happy
         show tesipizThrowing at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         with dissolve
         tesi "Her body was nice and fluffy."
         hide tesipizThrowing
         show tesipiz34NeutralHappy at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         show tsekrei armored34 OMouth
         with dissolve
         tsek "A fluffy."
-        show tsekrei armoredItem
+        show tsekrei itemArmored with dissolve
         tsek "What kind?"
         show tsekrei frontArmsArmored34 -OMouth
         hide tesipiz34NeutralHappy
         show tesipiz34Happy at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         with dissolve
         tesi "A shata lady I freed from slavery."
         hide tesipiz34Happy
         show tesipiz34NeutralHappy at left , flipped , size2Thrid:
-            ypos 1.25
-        show tsekrei handChest34 happyMouth
+            ypos 1.35
+        show tsekrei handChestArmored34 happyMouth
         with dissolve
         tsek "Nice"
         hide tesipiz34NeutralHappy
         show tesipiz34LookingDownSad at left , flipped , size2Thrid:
-            ypos 1.25
-        show tsekrei fowardArms34 sadEyes -happyMouth
+            ypos 1.35
+        show tsekrei frontArmsArmored34 sadEyes -happyMouth
         with dissolve
         tesi "I hope the Astarts haven't gotten to her."
-        show tsekrei OMouth with dissolve
-        tsek "Astarts attack our camp."
+        show tsekrei madMouth with dissolve
+        tsek "Astarts attacked our camp."
         tsek "I hope Zarat isn't alone."
         
-        scene tsekreiTent at left
-        show tsekrei fowardArms34 sadEyes OMouth at right , flipped , size2Thrid:
-            ypos 1.25
-        show tesipiz34LookingDownSad at center , flipped , size2Thrid:
-            ypos 1.25
+        scene tsekreiTent at left:
+            yalign 0.4 xalign 0.5 zoom 2.0
+        show tsekrei frontArmsArmored34 sadEyes OMouth at right , size2Thrid:
+            ypos 1.5
+        show tesipiz34LookingDownSad at center , size08:
+            ypos 1.55 xpos 0.4
             xzoom -1.0
             linear 0.5 xzoom 1.0
         show xerx3quatAnnoyed at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         with dissolve
         xerx "It's not."
         hide xerx3quatAnnoyed
-        show xerx3quatYeahArmoredAngry at left , flipped , size2Thrid:
-            ypos 1.25
+        show xerx3quatYeahAngry at left , flipped , size2Thrid:
+            ypos 1.35
         with dissolve
         xerx "Jamesians won't fall."
-        hide xerx3quatAnnoyed
+        hide xerx3quatYeahAngry
         show xerx3quatPointCommanding at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         with dissolve
         xerx "The Astarts are acting strong to hide their weakness."
         hide xerx3quatPointCommanding
         show xerx3quatAnnoyed at left , flipped , size2Thrid:
-            ypos 1.25
+            ypos 1.35
         with dissolve
-        show tesipiz34LookingDownSad at center , size2Thrid:
-            ypos 1.25
+        show tesipiz34LookingDownSad at center , size08:
+            ypos 1.5 xpos 0.4
             xzoom 1.0
             linear 0.5 xzoom -1.0
         show tsekrei armored34 with dissolve
         tsek "Well if she dies or is sent beyond your reach."
         hide tesipiz34LookingDownSad
-        show tesipiz34Curious at center , flipped , size2Thrid:
-            ypos 1.25
+        show tesipiz34Curious at center , flipped , size08:
+            ypos 1.5 xpos 0.4
         show tsekrei handChestArmored34 happyMouth -sadEyes
         with dissolve
         tsek "There's plenty of fluffies who love jamesians in Zarat."
@@ -614,14 +659,14 @@ label zaratianCamp:
 label zaratCampShop:
     #"kachugga" # chyazi , the lady who is the shopkeep in the AST pathway/storyline
     $ royalZaratShopAngry = 0
-    scene royalZaratShop at fullFit
-    show chyaazi greet happyMouth at center , size2Thrid:
-        ypos 1.25
-    show shopZaratShopCounter at fullFit
+    scene royalZaratShop at truecenter
+    show chyaazi greet happyMouth at center , halfSize:
+        ypos 1.0
+    show shopZaratShopCounter at truecenter , size08
     with fade
     chya "Welcome to Royal Zarat Camp Shop."
     chya "I have many goods that can help you slay those pesky Zardonians."
-    show chyaazi -greet
+    show chyaazi -greet with dissolve
     chya "What do you need?"
     $ isAngryShopRoyalZarat = False
     $ ifUsedShop = False
@@ -630,11 +675,11 @@ label zaratCampShop:
 
 label zaratCampShoppings:
 
-    hide chyaazi
-    scene royalZaratShop at fullFit
-    show chyaazi at center , size2Thrid:
-        ypos 1.25
-    show shopZaratShopCounter at fullFit
+    #hide chyaazi
+    scene royalZaratShop at truecenter
+    show chyaazi at center , halfSize:
+        ypos 1.0
+    show shopZaratShopCounter at truecenter , size08
     with dissolve
     
     call shopBasic( takuraShopItems , ifUsedShop , isAngryShopRoyalZarat )
@@ -644,7 +689,7 @@ label zaratCampShoppings:
         chya "Ooah!"
         chya "You didn't buy anyhting."
 
-        jump takuriumMenu
+        jump zaratCampMenu
 
     elif isinstance( _return , list ):
             
@@ -652,9 +697,9 @@ label zaratCampShoppings:
 
         if _return[ 0 ] == 0:
             show chyaazi with dissolve:
-                zoom 0.7                    
-                easeout 1.0 ypos 1.5
-                easein 1.0 ypos 0.7
+                zoom 0.5                    
+                easeout 1.0 ypos 2.0
+                easein 1.0 ypos 1.0
 
             pause 2
         else:
@@ -671,7 +716,7 @@ label zaratCampShoppings:
 
             show chyaazi item 
             #show dyonisisngwaArmOver at middleStand , size2Thrid , duskLights
-            show screen showItemImage( theresAnImage ,  horizontalPos = 0.6 , verticlePos = 0.7 ) #TODO reconfigure to appaer on chyaazi's hand
+            show screen showItemImage( theresAnImage ,  horizontalPos = 0.5 , verticlePos = 0.45 , zoomies = 0.5) #TODO reconfigure to appaer on chyaazi's hand/ the bench
             with dissolve
             pause 0.5
             hide screen showItemImage
@@ -687,8 +732,8 @@ label zaratCampShoppings:
                     jump zaratCampShoppings
                 "No":
                     show chyaazi greet happyMouth with dissolve
-                    dyon "Thanks for buying my stuff."
-                    dyon "See you soon."
+                    chya "Thanks for buying my stuff."
+                    chya "See you soon."
                     jump zaratCampMenu
 
     elif _return == 2:
@@ -704,7 +749,9 @@ label zaratCampShoppings:
             stop music fadeout 2.0
             chya "Nope."
             play music astartesWrath fadein 1.0 fadeout 1.0
-            show chyaazi angryMouth meanEyes mad at angryColored with dissolve
+            show chyaazi angryMouth meanEyes mad at angryColored with dissolve:
+                ypos 1.4 zoom 1.5
+            show shopZaratShopCounter behind chyaazi
             chya "We Zaratians don't have that much."
             chya "I can't give you free stuff."
 
@@ -724,8 +771,8 @@ label zaratCampMenu:
         show royalZaratCampInside at fullFit
     else:
         play music wonderStars if_changed fadein 1.0 fadeout 1.0
-        scene cloudyNightTime at movingSky
-        show royalZaratCampInside at fullFit
+        scene cloudyNightTime at movingSky , fullFit
+        show royalZaratCampInsideNight at fullFit
         #royalZaratCampInsideNight
     with fade
 
@@ -738,9 +785,9 @@ label zaratCampMenu:
             $ timeTime += _return
             if timeTime > time2Night:
                     $ IsDaytime = False
-                    scene cloudyNightTime at movingSky
-                    show royalZaratCampInside at fullFit
-                    with dissolve
+                    #scene cloudyNightTime at movingSky
+                    #show royalZaratCampInsideNight at fullFit
+                    #with dissolve
             jump zaratCampMenu
             
         "Go to the Royal Tent" if enteringFrom == "stayingInZaratCamp":
@@ -1087,7 +1134,7 @@ label zaratCampNighttime:
     show xerx3quatThink at left , halfSize, lightCrystalLights , flipped behind wholeAssTable , plateTanX , plateTanA , zaratianMug ,  foodSeedyLeaves , spicedUpMeat:
         xpos 0.27 ypos 1.15
     with dissolve
-    xerx "What I fid fishy is their change in alliance."
+    xerx "What I find fishy is their change in alliance."
     hide xerx3quatThink
     show xerx3quatThink at left , halfSize, lightCrystalLights , flipped behind wholeAssTable , plateTanX , plateTanA , zaratianMug ,  foodSeedyLeaves , spicedUpMeat:
         xpos 0.27 ypos 1.15
@@ -1256,7 +1303,7 @@ label zaratCampNighttime:
     show clearingPotionBottle  at size04:
         xpos 0.173 ypos 0.629
     with dissolve
-    volk "I heard Karanyash and Chiazhu have some flying karutu that might help."
+    volk "I heard Karanyash and Chiazhuka have some flying karutu that might help."
     
     show volkara3quat OMouth at center , halfSize, lightCrystalLights , flipped:
         ypos 1.15
@@ -1364,15 +1411,15 @@ label zaratCampNighttime:
     xerx "I've got the Sword of Ahura-Mazda which can cut through anything."
 
     hide tesipiz34NeutralHappy
-    show tesipizWithBomb at right , halfSize , lightCrystalLights , flipped:
-        xpos 1.008 ypos 1.31 
+    show tesipizWithBomb at right , halfSize , lightCrystalLights:
+        xpos 1.008 ypos 1.31 xpos 1.07
     tesi "And I have bombs."
     hide tesipizWithBomb
     hide xerxWithSoAM
 
     show xerx3quatPointHappy at right , halfSize , lightCrystalLights behind wholeAssTable:
         xpos 0.932 ypos 1.212
-    show tesipiz34Happy at right , halfSize , lightCrystalLights , flipped behind wholeAssTable:
+    show tesipiz34Happy at right , halfSize , lightCrystalLights behind wholeAssTable:
         xpos 1.008 ypos 1.31
     with dissolve
     xerx "I can get to Versaniz if you can keep the Zardonians busy."
@@ -1381,9 +1428,10 @@ label zaratCampNighttime:
     hide tesipiz34Happy
     show xerx3quatHappy at right , halfSize , lightCrystalLights behind wholeAssTable:
         xpos 0.932 ypos 1.212
-    show tesipiz34NeutralHappy at right , halfSize , lightCrystalLights , flipped behind wholeAssTable:
+    show tesipiz34NeutralHappy at right , halfSize , lightCrystalLights  behind wholeAssTable:
         xpos 1.008 ypos 1.31
-    show yuufia fowardArms34 happyMouth at flipped
+    show yuufia fowardArms34 happyMouth at flipped ,left, lightCrystalLights:
+        ypos 1.2 xpos 0.25
     with dissolve
     yuuf "We have royal infantry with falxes."
     show yuufia yeah34 meanEyes with dissolve
@@ -1392,7 +1440,9 @@ label zaratCampNighttime:
     scene cloudyDayTime at movingSky
     show yarakBattlefield:
         ypos -0.5 xalign 0.65
-    show zaratianWarChariot at center , thridSize
+    show zaratianWarChariot as extraChariot at right , thridSize:
+        xpos 1.2
+    show zaratianWarChariot at left , thridSize
     with dissolve
     yuuf "They'll attack from the other side using chariots." #make zaration chariot graphic
 
@@ -1494,7 +1544,7 @@ label zaratCampNighttime:
         xpos 0.448 ypos 0.82  
 
     with dissolve       
-    volk "Fighting Junatu shouldn't be any harder then fighting Astart giants."
+    volk "Fighting Junatu shouldn't be any harder then fighting astart giants."
     show volkara3quat pointy with dissolve 
     volk "We got Xerxes."
     hide volkara3quat
@@ -1506,27 +1556,27 @@ label zaratCampNighttime:
     hide volkaraYeah
     show volkara3quat armsFoward at left , halfSize , lightCrystalLights behind wholeAssTable:
         xpos -0.001 ypos 1.36
-    show urlius point34 oMouth
+    show urlius pointy34 oMouth
     with dissolve
     urli "We destract the main force while Xerxes takes out Versaniz."
-    show urlius happyMouth with dissolve:
-        xzoom 1.0
-        linear 2 -xzoom 1.0
-    
+    show urlius happyMouth at right , halfSize , lightCrystalLights:
+        xpos 0.745 ypos 1.147 xzoom 1.0
+        linear 1 xzoom -1.0
+    with dissolve
     urli "The Sword of Ahura-Mazda ,bombs and falxes can deal with the spider centaur problem."
     
     show yuufia fowardArms34 blush at left , halfSize , lightCrystalLights:
         xpos 0.258 ypos 1.171 xzoom 1.0
-        linear 0.5 xzoom -1.0
-    show urlius punch34 happyMouth
+        linear 0.5 xzoom -1.0 xpos 0.31
+    show urlius punch34 happyMouth behind yuufia
     with dissolve
     urli "Sounds like a good strategy."
-    show urlius point34
-    show yuufia horny34 closedEyes
+    show urlius pointy34
+    show yuufia horny34 closedEyes behind urlius
     with dissolve
     urli "We'll fight the Zardonians tomorrow."
     show yuufia sadEyes sadMouth
-    show urlius worried34 OMouth sadEyes
+    show urlius worried34 oMouth sadEyes
     with dissolve
     urli "I hope for all Zarat that we win!!"
 
@@ -1540,74 +1590,88 @@ label zaratCampNighttime:
     play music nightAmbiance fadein 1.0 fadeout 1.0
     scene cloudyNightTime at fullFit , movingSky
     show royalZaratCampInsideNight at right:
-        linear 5 center
+        xalign 1.0
+        linear 5 yalign 0.5 xalign 0.0
     with Fade(1,0,1)
     pause 5
     #xerxes has made a tent wall maybe
 
     #maybe add a blanket graphic like in gilgamorium
-    scene tsekreiTent at truecenter , size08 , lightCrystalLights
+    scene tsekreiTent at flameLight:
+        yalign 0.4 xalign 0.35 zoom 1.75
     
     #maybe add tsekrei back later?
-    #TODO use photo editor to place doll in right place.
+    
     show tsekrei handChest34 happyMouth at right , size2Thrid , lightCrystalLights:
-        xpos 1.4
+        ypos 1.5 xpos 1.175
     show tesipizPointingHappy at center , size2Thrid , lightCrystalLights:
-        xpos 1.4
-    show xerx3quatHappy at left , size2Thrid , lightCrystalLights:
-        xpos 1.4
+        ypos 1.4 xpos 0.65
+    
+    show xerx3quatHappy at left, flipped , size2Thrid , lightCrystalLights:
+        ypos 1.4
     show tsekreiBlanketOverLay at center , lightCrystalLights:
-        yzoom 0.75
-    show doll2 at size2Thrid , lightCrystalLights
+        yzoom 0.33
+    show doll2 at lightCrystalLights:
+        xpos 0.688 ypos 0.504 
+    show tesipizPointingHandOverlay at center , size2Thrid , lightCrystalLights:
+        ypos 1.4 xpos 0.65
+    
 
     with fade
     tesi "Hey Volkara."
     hide tesipizPointingHappy
+    hide tesipizPointingHandOverlay
     show tsekrei -happyMouth
     show tesipiz34HappyCommandingPoting at center , size2Thrid , lightCrystalLights behind tsekreiBlanketOverLay:
-        xpos 1.4
+        ypos 1.4 xpos 0.65
     with dissolve
     tesi "You get to be in the middle."
     hide tesipiz34HappyCommandingPoting
     show tesipizHappy at center , size2Thrid , lightCrystalLights behind tsekreiBlanketOverLay:
-        xpos 1.4
+        ypos 1.4 xpos 0.65
     show tsekrei yeah34 XEyes
     with dissolve
     tesi "You're a lucky girl."
 
-    scene tsekreiTent at truecenter , size08 , darkNight
+    scene tsekreiTent at darkNight:
+        yalign 0.4 xalign 0.35 zoom 1.75
     show tsekrei yeah34 at right , size2Thrid , nightLights:
-        xpos 1.4
+        ypos 1.5 xpos 1.175
     show tesipizNeutralHappy at center , size2Thrid , nightLights:
-        xpos 1.4
+        ypos 1.4 xpos 0.65
     show volkara3quat nightOutfit happyMouth at left , size2Thrid , nightLights:
-        xpos 1.4
+        ypos 1.4 xpos 0.2
     show xerx3quatHappy at left , size2Thrid , nightLights:
-        xpos 1.4
+        ypos 1.4
     show tsekreiBlanketOverLay at center , nightLights:
-        yzoom 0.75
-    show doll2 at size2Thrid , nightLights
+        yzoom 0.33
+    show doll2 at size2Thrid , nightLights:
+        xpos 0.688 ypos 0.504 
+    with fade
     volk "Good night Tesipiz, Xerxes and Tsekrei."
     show volkara3quat -happyMouth
     hide tesipizNeutralHappy
     show tesipiz34Happy at center , size2Thrid , nightLights behind tsekreiBlanketOverLay:
-        xpos 1.4
+        ypos 1.4 xpos 0.65
     with dissolve
     tesi "Good night Volkara and Tsekrei."
     hide tesipiz34Happy
     show tesipiz34HappyCommandingPoting at center , size2Thrid , nightLights behind tsekreiBlanketOverLay:
-        xpos 1.4
+        ypos 1.4 xpos 0.65
     with dissolve
     tesi "It'll be funny if we found Ato'ssa in bed with Xerxes tomorrow."
     hide tesipiz34HappyCommandingPoting
     show tesipizNeutralHappy at center , size2Thrid , nightLights behind tsekreiBlanketOverLay:
-        xpos 1.4
+        ypos 1.4 xpos 0.65
     show volkara3quat closedEyes happyMouth
     with dissolve
     volk "Haha, yeah."
     show volkara3quat -closedEyes
     volk "Ato'ssa traveling all the way to Zarat just for Xerxes."
     hide volkara3quat
+    show volkaraFeety nighttime happyMouth at left , size2Thrid , nightLights behind tsekreiBlanketOverLay:
+        ypos 1.4 xpos 0.2
+    with dissolve
     volk "That would be stupid."
 
     #sleep grphic
@@ -1616,27 +1680,47 @@ label zaratCampNighttime:
     scene zaratSleeps at fullFit with Fade(1,0,2)
     pause 7
 
-    scene kingZaratTent at fullFit , flameLight
-    show kingsPlatform at center , flameLight
+    #set up for next battle
+    #get in their horses
+    $ xerxesCharacter.updateMount( cataphractHorseXerx )  
+    $ tesipizCharacter.updateMount( cataphractHorseTesipiz )  
+    $ volkaraCharacter.updateMount( cataphractHorseXerx ) 
+
+    $ xerxesCharacter.updateArmor( 1 )
+    $ tesipizCharacter.updateArmor( 1 )
+    $ volkaraCharacter.updateArmor( 1 )
+    $ resurrectParty( currentParty )
+
+    scene kingZaratTent at truecenter , flameLight
+    show kingsPlatform at truecenter , flameLight:
+        ypos 0.75
     show yuufia semiNekked34foward OMouth at center , flameLight , size2Thrid:
-        ypos 1.4
+        ypos 1.4 xzoom 1.0
+        easein 3.5 xzoom -1.0
+        easein 3.5 xzoom 1.0
+        repeat
     show urlius worried34 sadEyes angryMouth at left , flameLight , size2Thrid:
-        ypos 1.4 xpos 0.0 xzoom 1.0
-        linear 3 xpos 1.0
+        ypos 1.4 xpos 0.0 xzoom 1.0 xalign 0.0
+        linear 3 xpos 1.0 xalign 1.0
         linear 0.5 xzoom -1.0
-        linear 3 xpos 0.0
+        linear 3 xpos 0.0 xalign 0.0
         linear 0.5 xzoom 1.0
         repeat
-    with fade (1,0,1)
+    with Fade (1,0,1)
     #yuufia is half nekked
     #"Urlius is pacing in stress."
     play music bardaiyaBeMad fadein 1.0 fadeout 1.0
     urli "We almost lost Gilgamorium and Astarte's goons are now in our lands."
     urli "Hopefully the Jamesians don't fall."
-    show urlius OMouth base34 with dissolve
-    urli "We can't be alone."
-    show urlius frowning at right , flameLight:
+    show yuufia semiNekked34foward OMouth at center , flameLight , size2Thrid:
         ypos 1.4
+        easeout 3.5 xzoom -1.0
+    show urlius oMouth base34 at left , flameLight , size2Thrid :
+        ypos 1.4
+        easeout 3.5 xpos 1.0 xalign 1.0 xzoom -1.0 
+    with dissolve
+    urli "We can't be alone."
+    show urlius frowning
     show yuufia semiNekked34 sadEyes
     with dissolve
     yuuf "I'm scared too Urlius."
@@ -1655,24 +1739,32 @@ label zaratCampNighttime:
     urli "How did Astarte get the Zardonians to betray us?"
 
     play music astartesWrath
-    scene sandTexture at truecenter:
-        xpan 0 ypan 0
-        linear 5 xpan 360 ypan 360
-        matrixcolor TintMatrix("#000") * BrightnessMatrix(0.5)
-    show royalZaratCampOutside at halfSize , flameLights:
-        xpan 180
+    scene dustCloud at fullFit:
+        xpan 0  matrixcolor TintMatrix("#f00") * BrightnessMatrix(-0.5)
+        linear 5 xpan 360  matrixcolor TintMatrix("#ff0") * BrightnessMatrix(0.5)    
+        linear 5 xpan 0  matrixcolor TintMatrix("#f00") * BrightnessMatrix(-0.5)
+        
+        repeat
+        
+    show royalZaratCampOutside at halfSize , center , flameLight:
+        xpan 145 matrixcolor TintMatrix("#f00") * BrightnessMatrix(-0.25)
+        linear 5 matrixcolor TintMatrix("#ff0") * BrightnessMatrix(0.25)    
+        linear 5 matrixcolor TintMatrix("#f00") * BrightnessMatrix(-0.25)
     with dissolve
     #TODO find away to make the summoners repeat
-    show minobiteArmoredAxe at quatSize , left  , summonAssualt with dissolve
+    show minobiteArmoredAxe at quatSize , left  , summonAssualt with dissolve:
+        xpos 0.0
     play sound pizyu
     pause 0.5
-    show jakalbiteKhopeshMedium at quatSize , center  , summonAssualt with dissolve
+    show jakalbiteKhopeshMedium at quatSize , center  , summonAssualt with dissolve:
+        xpos 0.45
     play extraSound pizyu
     pause 0.5
     show snakeMan at quatSize , right , summonAssualt with dissolve
     play sound pizyu
     pause 0.5
-    show falcobitePadSpear at quatSize , center , summonAssualt with dissolve
+    show falcobitePadSpear at quatSize , center , summonAssualt with dissolve:
+        xpos 0.65
     play extraSound pizyu
     pause 0.5
     show gilgamataDuckBite at quatSize , left , summonAssualt with dissolve
@@ -1690,35 +1782,40 @@ label zaratCampNighttime:
     show yimiaDeserty at truecenter , size2Thrid
     with dissolve
     show dustCloud at fullFit behind yimiaDeserty with Dissolve(2):
-    show dustCloud as frantCould at halfSize with dissolve:
-        ypos -0.3 matrixcolor OpacityMatrix(0.0)
-        easein 2 matrixcolor OpacityMatrix(1.0) ypos 0.0
-        easein 2 zoom 4.0 ypos 2.0
-    pause 5
+    show dustCloud as frantCould at truecenter with dissolve:
+        zoom 1.5 matrixcolor OpacityMatrix(0.0)
+        easein 2 matrixcolor OpacityMatrix(1.0) zoom 1.0 xzoom 1.5
+        easein 1 zoom 4.0 ypos 1.0
+    pause 3
     scene clearDayTime
-    scene sandHoles at center:
-        linear 5 ypos -0.5
+    show sandHoles at center:
+        ypos 3.5
+        linear 10 ypos 3.0
     with dissolve
     #show animation of zarat being desertifed
     urli "What if the acursed sands start creeping westwards."
 
-    scene kingZaratTent at fullFit , flameLight
-    show kingsPlatform at center , flameLight
-    show yuufia semiNekked34Yeah meanEyes happyMouth at center , flameLight , size2Thrid:
+    scene kingZaratTent at truecenter , flameLight
+    show kingsPlatform at truecenter , flameLight:
+        ypos 0.75
+    show yuufia semiNekked34Yeah meanEyes happyMouth at center , flameLight , size2Thrid , flipped:
         ypos 1.4
-    show urlius worried34 sadEyes at right , flameLight , size2Thrid:
+    show urlius worried34 sadEyes at right , flameLight , size2Thrid , flipped:
+        ypos 1.4
     with dissolve
     play music sandHero fadein 1.0 fadeout 1.0
     yuuf "Then we kill them all."
-    show urlius -worried34
+    show urlius base34
     show yuufia semiNekked34 -meanEyes
     with dissolve
     yuuf "The Jamesians are finally helping us now."
-    show yuufia asss meanEyes with dissolve
+    show yuufia asss meanEyes at center , flameLight  with dissolve:
+        ypos 1.45 xzoom -1.0
     yuuf "And..."
     pause 2
-    show yuufia booba34 hornyEyes 
-    show urlius #blush TODO make blash overy for Urlius (on monday 18 because back up time on friday)
+    show yuufia booba34 hornyEyes at center , flipped:
+        ypos 1.4 xzoom 1.0
+    show urlius -sadEyes blush #blush
     with dissolve
     yuuf "You can help me now."
     show yuufia 
@@ -1726,160 +1823,154 @@ label zaratCampNighttime:
     menu:
         "Boink Yuufia":
             play music about2Boink fadein 1.0 fadeout 1.0
-            show yuufia ass blush closedEyes with dissolve
+            show yuufia asss blush closedEyes at center , flipped  with dissolve:
+                ypos 1.5
             yuuf "Hmmm."
-            scene kingZaratTent at truecenter , darkLight
-            show kingsPlatform at center:
-                ypos 1.6
+            scene kingZaratTent at truecenter , darkNight:
+                zoom 1.5
+            show kingsPlatform at center , darkNight:
+                ypos 2.0 zoom 1.5
             show yuufia asss hornyEyes happyMouth blush at center:
-                ypos 1.6 matrixcolor TintMatrix("#ff94b4") * SaturationMatrix (0.7)
+                ypos 2.0 matrixcolor TintMatrix("#ff94b4") * SaturationMatrix (0.7)
             with Fade(2,0,1)
             stop music fadeout 6
             pause 6
-            scene kingZaratTent at truecenter , darkLight:
-                easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7)
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) * SaturationMatrix (0.7)
+            scene kingZaratTent at truecenter , darkNight:
+                zoom 1.0
+                easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7) zoom 1.25
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) * SaturationMatrix (0.7) zoom 1.0
                 repeat
             show kingsPlatform at center:
-                ypos 1.6
-                easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7)
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) * SaturationMatrix (0.7)
+                ypos 1.6 zoom 1.0
+                easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7) zoom 1.25
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) * SaturationMatrix (0.7) zoom 1.0
                 repeat
-            show yuufia:
-                xpos 0.5
-                ypos 1.6
+            show yuufia asss hornyEyes happyMouth blush at center:
+                ypos 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) * SaturationMatrix (1.0) yzoom 1.0 
                 yzoom 1.0
 
-                easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.5) yzoom 0.97 ypos 1.8
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) * SaturationMatrix (1.0) yzoom 1.0 ypos 1.6
+                easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.5) yzoom 0.97 ypos 2.2
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) * SaturationMatrix (1.0) yzoom 1.0 ypos 2.0
                 repeat
             with Fade(2,0,2)
             pause 6
             scene kingZaratTent at truecenter , darkNight:
-
-                easein 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.7)
-                easeout 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7)
+                zoom 1.0
+                easein 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.7) zoom 1.25
+                easeout 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7) zoom 1.0
                 repeat
             show kingsPlatform at center:
-                ypos 1.6
-                easein 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.7)
-                easeout 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7)
+                ypos 1.6 zoom 1.0
+                easein 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.7) zoom 1.25
+                easeout 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (0.7) zoom 1.0
                 repeat
-            show yuufia at center , size2Thrid:
-                #xpos 0.5
-                xpos 0.5
-                ypos 1.6
+            show yuufia asss closedEyes blush at center:
+                ypos 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (1.0)
                 yzoom 1.0
 
-                easein 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.5) yzoom 1.3 ypos 1.05
-                easeout 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (1.0) yzoom 1.6 ypos 1.0
+                easein 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.5) yzoom 1.3 ypos 2.3
+                easeout 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (1.0) yzoom 1.0 ypos 2.0
                 repeat
             with Fade(2,0,3)
             pause 6
 
             scene kingZaratTent at truecenter , darkNight:
-
-                easein 0.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (0.7)
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.7)
+                zoom 1.0
+                easein 0.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (0.7) zoom 1.25
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.7) zoom 1.0
                 repeat
             show kingsPlatform at center:
-                ypos 1.6
-                easein 0.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (0.7)
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.7)
+                ypos 1.6 zoom 1.0
+                easein 0.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (0.7) zoom 1.25
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (0.7) zoom 1.0
                 repeat
-            show yuufia at center , size2Thrid:
-                #xpos 0.5
-                xpos 0.5
-                ypos 1.6
-                yzoom 1.0
+            show yuufia asss hornyEyes OMouth blush at center:
+                ypos 2.4 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (1.0)
+                yzoom 1.2
 
-                easein 0.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) yzoom 1.4 ypos 1.05
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) yzoom 1.6 ypos 1.0
+                easein 0.5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) yzoom 1.4 ypos 2.6
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) yzoom 1.2 ypos 2.4
                 repeat
             with Fade(3,0,3)
 
             pause 9
 
             scene kingZaratTent at truecenter , darkNight:
-
-                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) blur 5
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) blur 2
-                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) blur 10
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) blur 5
+                zoom 1.0
+                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) blur 5 zoom 1.25
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) blur 2 zoom 1.0
+                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) blur 10 zoom 1.25
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) blur 5 zoom 1.0
                 repeat
             show kingsPlatform at center:
-                ypos 1.6
-                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) blur 5
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) blur 2
-                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) blur 10
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) blur 5
+                ypos 1.6 zoom 1.0
+                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) blur 5 zoom 1.25
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) blur 2 zoom 1.0
+                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) blur 10 zoom 1.25
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) blur 5 zoom 1.0
                 repeat
-            show yuufia at center , size2Thrid:
-                #xpos 0.5
-                xpos 0.5
-                ypos 1.6
-                yzoom 1.0
+            show yuufia asss closedEyes OMouth blush at center:
+                ypos 2.6 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (1.0)
+                yzoom 1.6
 
-                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) yzoom 1.4 ypos 1.05 blur 5
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) yzoom 1.7 ypos 1.0 blur 2
-                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) yzoom 1.4 ypos 1.05 blur 10
-                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) yzoom 1.6 ypos 1.0 blur 5
+                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) yzoom 1.4 ypos 2.7 blur 5
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) yzoom 1.7 ypos 2.6 blur 2
+                easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) * SaturationMatrix (0.5) yzoom 1.4 ypos 2.8 blur 10
+                easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) * SaturationMatrix (1.0) yzoom 1.6 ypos 2.6 blur 5
                 repeat
             with Fade(3,0,3)
             pause 9
 
             scene kingZaratTent at truecenter , darkNight:
-                
-                easein 0.4 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) blur 10
-                easeout 0.4 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) blur 5
+                zoom 1.0
+                easein 0.4 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) blur 10 zoom 1.25
+                easeout 0.4 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) blur 5 zoom 1.0
                 repeat
             show kingsPlatform at center:
                 ypos 1.6
-                easein 0.4 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) blur 10
-                easeout 0.4 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) blur 5
-            show yuufia at center , size2Thrid:
-                #xpos 0.5
-                xpos 0.5
-                ypos 1.6
+                easein 0.4 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) blur 10 zoom 1.25
+                easeout 0.4 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) blur 5 zoom 1.0
+            show yuufia asss meanEyes happyMouth blush at center:
+                ypos 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (1.0)
                 yzoom 1.0
 
-                easein 0.2 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) yzoom 0.8 ypos 1.8 blur 10
-                easeout 0.2 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) yzoom 1.0 ypos 1.6 blur 5
+                easein 0.2 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) yzoom 0.8 ypos 2.1 blur 10 zoom 1.25
+                easeout 0.2 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) yzoom 1.0 ypos 2.0 blur 5 zoom 1.0
                 repeat
             with Fade(2,0,1)
             pause 8
 
             scene kingZaratTent at truecenter , darkNight:
-                
-                easeout 1 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) blur 10
-                easein 5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) blur 5
-                easeout 10 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) * SaturationMatrix (1.0) blur 0.01
+                zoom 1.0
+                easeout 1 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) blur 10 zoom 1.25
+                easein 5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) blur 5 
+                easeout 10 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) * SaturationMatrix (1.0) blur 0.01 zoom 1.0
             show kingsPlatform at center:
                 ypos 1.6
-                easeout 1 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) blur 10
-                easein 5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) blur 5
-                easeout 10 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) * SaturationMatrix (1.0) blur 0.01
-            show yuufia at center , size2Thrid:
-                #xpos 0.5
-                xpos 0.5
-                ypos 1.6
-                yzoom 1.0
+                easeout 1 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) blur 10 zoom 1.25
+                easein 5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix (1.0) blur 5 
+                easeout 10 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) * SaturationMatrix (1.0) blur 0.01 zoom 1.0
+            show yuufia asss closedEyes happyMouth blush at center:
+                ypos 2.0 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) * SaturationMatrix (1.0)
+                yzoom 1.0 zoom 1.0
 
-                easeout 1 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) yzoom 1.0 ypos 1.8 blur 10
-                easein 5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.0) * SaturationMatrix (1.0) yzoom 0.8 ypos 1.6 blur 5
-                easeout 10 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) * SaturationMatrix (1.0) yzoom 1.0 ypos 1.5 blur 0.01
+                easeout 1 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(0.8) * SaturationMatrix (0.5) yzoom 1.0 ypos 2.2 blur 10
+                easein 5 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.0) * SaturationMatrix (1.0) yzoom 0.8 ypos 2.5 zoom 1.5 blur 5
+                easeout 10 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) * SaturationMatrix (1.0) yzoom 1.0 ypos 2.0 zoom 1.0 blur 0.01
             
             with dissolve
 
             pause 20
             
-            show yuufia ass blush closedEyes with dissolve
+            show yuufia asss blush hornyEyes -happyMouth with dissolve
             yuuf "Hmmm."
-            scene kingZaratTent at fullFit , flameLight
-            show kingsPlatform at center , flameLight
-            show yuufia booba34 meanEyes happyMouth at center , flameLight , size2Thrid:
+            scene kingZaratTent at truecenter , darkNight
+            show kingsPlatform at truecenter , darkNight:
+                ypos 0.75
+            show yuufia booba34 blush at center , nightLights , size2Thrid , flipped:
+                ypos 1.5
+            show urlius base34 blush at right , nightLights , size2Thrid , flipped:
                 ypos 1.4
-            show urlius meanEyes at right , flameLight , size2Thrid:
             with Fade(2,0,1)
             yuuf "Feeling better now?"
             show urlius happyMouth
@@ -1887,20 +1978,24 @@ label zaratCampNighttime:
             with dissolve
             urli "Yeah."
             play sound cuddles
-            scene kingZaratTent at fullFit , darkNight
-            show kingsPlatform at center , darkNight
-            show urliusAndYuufiaCuddles at truecenter , nightLights
+            scene kingZaratTent at truecenter , darkNight , hornyAura
+            show kingsPlatform at truecenter , darkNight , hornyAura:
+                ypos 0.75
+            show urliusAndYuufiaCuddles at truecenter , nightLights , hornyAura , size04
             with Fade(1,0,2)
             pause 6
             jump versanizBeforeYarak
         "Just Cuddles":
             stop music fadeout 3
+            show yuufia -hornyEyes with dissolve
             yuuf "O.K Urlius."
+            show yuufia -happyMouth with dissolve
             yuuf "We'll be O.K."
             play sound cuddles
-            scene kingZaratTent at fullFit , darkNight
-            show kingsPlatform at center , darkNight
-            show urliusAndYuufiaCuddles at truecenter , nightLights
+            scene kingZaratTent at truecenter , darkNight
+            show kingsPlatform at truecenter , darkNight:
+                ypos 0.75
+            show urliusAndYuufiaCuddles at truecenter , nightLights , size04
             with Fade(1,0,2)
             pause 6
     jump versanizBeforeYarak
