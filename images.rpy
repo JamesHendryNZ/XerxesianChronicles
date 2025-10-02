@@ -1695,7 +1695,7 @@ image zardonianCataphractLadyFlee = "images/Enemies/eliete goons/Zardonian Catap
     #Korkins
     #Junatu
 image junatuWebRocka = "images/Enemies/Zardonians/Junatu Web Rocka.webp"
-image junatuWebRockaSad = "images/Enemies/Zardonians/Junatu Web Rocka.webp"
+image junatuWebRockaSad = "images/Enemies/eliete goons/Junatu Web Rocka Sad Scared.webp"
 image junatuWebRockaFlee = "images/Enemies/Zardonians/Junatu Web Rocka Flee.webp"
 
 image junatuSwordDude = "images/Enemies/Zardonians/Junatu Sword.webp"
@@ -4425,7 +4425,7 @@ layeredimage volkaraHorsey: #1200-2500
             #xpos -193 ypos 16
         attribute OMouth:
             "images/Protagonists/Volkara/Volkara O Mouth.webp"
-            xpos 190 ypos -17
+            xpos 290 ypos -17
 
 
 #Megabazus
@@ -5691,7 +5691,7 @@ layeredimage camelLady:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Mean Eyes.webp"
         attribute meanEyes if_any["onFootYeah"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Mean Eyes.webp"
-            xpos 200 ypos 500
+            xpos 200 ypos -500
         attribute meanEyes if_any["onCamel","onCamelGreet","onCamelAttack"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Mean Eyes.webp"
             xpos 259 ypos 31
@@ -5701,7 +5701,7 @@ layeredimage camelLady:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl o mouth.webp"
         attribute OMouth if_any["onFootYeah"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl o mouth.webp"
-            xpos 200 ypos 500
+            xpos 200 ypos -500
         attribute OMouth if_any["onCamel","onCamelGreet","onCamelAttack"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl o mouth.webp"
             xpos 259 ypos 31
@@ -5710,7 +5710,7 @@ layeredimage camelLady:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Happy Mouth.webp"
         attribute happyMouth if_any["onFootYeah"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Happy Mouth.webp"
-            xpos 200 ypos 500
+            xpos 200 ypos -500
         attribute happyMouth if_any["onCamel","onCamelGreet","onCamelAttack"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Happy Mouth.webp"
             xpos 259 ypos 31

@@ -931,53 +931,53 @@ label yarakWins:
     show junatuWebRockaFlee at size2Thrid:
         ypos 1.5 xpos -0.2 zoom 1.0 matrixcolor OpacityMatrix(1.0)
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     pause 0.1
     show junatuCatapharctSwordFlee at size2Thrid:
         ypos 1.5 xpos 0.75 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     pause 0.1
     show zardonianCataphractLadyFlee at size2Thrid:
         ypos 1.5 xpos 0.3 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     show zardonianCataphractDudeFlee at size2Thrid:
         ypos 1.5 xpos 0.8 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
 
     pause 0.2
     show zardonianAxeGirlFlee at size2Thrid:
         ypos 1.5 xpos 0.1 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     show zardonianSwordsManFlee at size2Thrid:
         ypos 1.5 xpos 0.5 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     pause 0.1
     show zardonianSwordsManFlee as extraMan at size2Thrid:
         ypos 1.5 xpos 0.0 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     show zardonianDartGirlLeave at size2Thrid:
         ypos 1.5 xpos 1.0 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     show zardonianSwordsManFlee as extratraMan at size2Thrid:
         ypos 1.5 xpos 0.5 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     pause 0.1
     show zardonianDartGirlLeave as extraLady at size2Thrid:
         ypos 1.5 xpos 0.2 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     show zardonianAxeGirlFlee as extratraLady at size2Thrid:
         ypos 1.5 xpos 0.8 zoom 1.0
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     pause 3
     scene dustcloud at fullFit with Dissolve(5)
     pause 6

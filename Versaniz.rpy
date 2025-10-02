@@ -743,11 +743,11 @@ label versanizBossBattleAST:
     scene cloudyDayTime at fullFit
     show yarakBattlefield at truecenter:
         yzoom 0.5
-    show muiba onSpooda meanEyes happy at halfSize , left:
+    show muiba onSpooda meanEyes happy at quatSize , truecenter:
         ypos 0.467 xpos 0.169
-    show siayusi onSpooda meanEyes happyMouth at halfSize , right:
+    show siayusi onSpooda meanEyes happyMouth at quatSize , truecenter:
         ypos 0.428 xpos 0.836
-    show versanizOnLuna meanEyes annoyedMouth VmeanEyes VangryMouth at halfSize , center
+    show versanizOnLuna meanEyes annoyedMouth VmeanEyes VangryMouth at quatSize , truecenter
     with dissolve
     #animate them blasting xerx
     show screen bossTitleScreen( "#fff" , "#000091" , 35 , "The Prince of Zardonia" , "VERSANIZ III" , 55 , 0.5 , 0.9 ) with dissolve
@@ -758,116 +758,116 @@ label versanizBossBattleAST:
     #siayusi cannon = ypos 0.321  xpos 0.836
     #Versaniz cannon = ypos 0.39 xpos 0.461
     while volleys > 0:
-        show magicStart at summonnerLights:
-            zoom 0.1 matrixcolor OpacityMatrix(1.0)
-            linear 0.3 zoom 2.0
-            linear 0.3 zoom 0.1 OpacityMatrix(0.0)
+        show magicStart at summonnerLights , truecenter:
+            zoom 0.1 ypos 0.4 xpos 0.137 matrixcolor OpacityMatrix(1.0) 
+            linear 0.2 zoom 2.0
+            linear 0.2 zoom 0.1 matrixcolor OpacityMatrix(0.0)
         pause 0.5
         play sound magicannonShot
-        show magicStart as extraMagic at summonnerLights:
-            zoom 0.1 matrixcolor OpacityMatrix(1.0)
-            linear 0.3 zoom 2.0
-            linear 0.3 zoom 0.1 OpacityMatrix(0.0)
+        show magicStart as extraMagic at summonnerLights , truecenter:
+            zoom 0.1 ypos 0.321  xpos 0.836 matrixcolor OpacityMatrix(1.0)
+            linear 0.2 zoom 2.0
+            linear 0.2 zoom 0.1 matrixcolor OpacityMatrix(0.0)
         pause 0.25
         play extraSound magicannonShot
-        show magicStart as extraMagix at summonnerLights:
-            zoom 0.1 matrixcolor OpacityMatrix(1.0)
-            linear 0.3 zoom 2.0
-            linear 0.3 zoom 0.1 OpacityMatrix(0.0)
+        show magicStart as extraMagix at summonnerLights , truecenter:
+            zoom 0.1 ypos 0.39 xpos 0.461 matrixcolor OpacityMatrix(1.0)
+            linear 0.2 zoom 2.0
+            linear 0.2 zoom 0.1 matrixcolor OpacityMatrix(0.0)
         pause 0.25
         play sound magicannonShot
         $ volleys -= 1
-    pause 2
     
     #zarato jamesians get blasted
     scene cloudyDayTime at fullFit
-    show yarakBattlefield:
-        xpan 180
+    show yarakBattlefield at truecenter:
+        xpan 180 yzoom 0.5
     with dissolve
-    show zaratoJamesianAxeLady mountedAttack at halfSize , left:
+    show zaratoJamesianAxeLady mountedAttack at thridSize , left:
         xpos -0.5 ypos 1.4
         linear 1 xpos 0.3 #1.0
     
     #it takes one second for cavary to move to it's kill spot
-    pause 0.2 #0.2
+    #pause 0.2 #0.2
     
-    show zaratoJamesianLancer at halfSize , right:
-        xpos 1.5 ypos 1.5
+    show zaratoJamesianLancer at thridSize , truecenter:
+        xpos 1.5 ypos 0.81
         linear 1 xpos 0.7 #1.2
     show magicShot at summonnerLights:
-        ypos 1.5 xpos 0.3 rotate 180
-        linear 0.8 ypos 0.5 #1.0
+        ypos 1.5 xpos 0.3 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1#1.0
     play sound magicannonShot
-    pause 0.2 #0.4
+    #pause 0.2 #0.4
     
     show magicShot as shot2 at summonnerLights:
-        ypos 1.5 xpos 0.7 rotate 180
-        linear 0.8 ypos 0.5 #1.2
+        ypos 1.5 xpos 0.7 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #1.2
     play extraSound magicannonShot
-    pause 0.1 #0.5
+    #pause 0.1 #0.5
     
-    show zaratoJamesianAxeLady mountedAttack as extraAxe at halfSize , right:
-        xpos 1.5 ypos 1.4
+    show zaratoJamesianAxeLady mountedAttack as extraAxe at thridSize , truecenter:
+        xpos 1.5 ypos 0.81
         linear 1 xpos 0.4 #1.5
     show magicShot as shot3 at summonnerLights:
-        ypos 1.5 xpos 0.4 rotate 180
-        linear 0.8 ypos 0.5 #1.3
+        ypos 1.5 xpos 0.4 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #1.3
     play sound magicannonShot
     show magicShot as shot4 at summonnerLights:
-        ypos 1.5 xpos 0.1 rotate 180
-        linear 0.8 ypos 0.5 #1.3
+        ypos 1.5 xpos 0.1 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #1.3
     play extraSound magicannonShot
     pause 0.2 #0.7
     
     show magicShot as shot5 at summonnerLights:
-        ypos 1.5 xpos 0.6 rotate 180
-        linear 0.8 ypos 0.4 #1.5
+        ypos 1.5 xpos 0.6 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #1.5
     play sound magicannonShot
-    show zaratianHeavyHorseArcher at halfSize , left:
-        xpos -0.5 ypos 1.6
+    show zaratianHeavyHorseArcher at thridSize , truecenter:
+        xpos -0.5 ypos 0.81
         linear 1 xpos 0.25 #1.7
     pause 0.1 #0.8
 
     show magicShot as shot6 at summonnerLights:
-        ypos 1.5 xpos 0.5 rotate 180
-        linear 0.8 ypos 0.5 #1.6
+        ypos 1.5 xpos 0.5 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #1.6
     
     pause 0.1 #0.9
     show magicShot as shot7 at summonnerLights:
-        ypos 1.5 xpos 0.25 rotate 180
-        linear 0.8 ypos 0.5 #1.7
+        ypos 1.5 xpos 0.25 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #1.7
     play extraSound magicannonShot
-    show zaratianHorseArcher at halfSize , left:
-        xpos -0.5 ypos 1.3
+    show zaratianHorseArcher at thridSize , truecenter:
+        xpos -0.5 ypos 0.81
         linear 1 xpos 0.5 #1.9
     
     pause 0.1 #1.0
+    
     play extraSound playerHit
-    hide magicShot with dissolve
-    show zaratoJamesianAxeLady mountedAttack at halfSize , left , angryColored:
-        xpos 0.3 ypos 1.4
-        linear 0.5 xpos 0.5 yzoom 0.1 yalign 1.0 #1.0
+    hide magicShot 
+    show zaratoJamesianAxeLady mountedAttack at truecenter , angryColored:
+        xpos 0.3 ypos 0.81
+        linear 0.5 xpos 0.5 yzoom 0.1 ypos 1.0 #1.0
 
     pause 0.1 #1.1
     show magicShot as shot8 at summonnerLights:
-        ypos 1.5 xpos 0.9 rotate 180
-        linear 0.8 ypos 0.5 #1.9
+        ypos 1.5 xpos 0.9 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #1.9
     play sound magicannonShot
     pause 0.1 #1.2
     #dude got blasted 1
     play sound playerHit
-    hide shot2 with dissolve
-    show zaratoJamesianLancer at halfSize , right , angryColored:
-        xpos 0.7 ypos 1.5 yzoom 1.0
-        linear 0.5 xpos 0.5 yzoom 0.1 yalign 1.0 #1.2
+    hide shot2 
+    show zaratoJamesianLancer at truecenter , angryColored:
+        xpos 0.7 ypos 0.81 yzoom 1.0
+        linear 0.5 xpos 0.5 yzoom 0.1 ypos 1.0 #1.2
 
     show magicShot as shot9 at summonnerLights:
-        ypos 1.5 xpos 0.1 rotate 180
-        linear 0.8 ypos 0.5 #2.0
+        ypos 1.5 xpos 0.1 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #2.0
     play extraSound magicannonShot
     show magicShot as shot10 at summonnerLights:
-        ypos 1.5 xpos 0.3 rotate 180
-        linear 0.8 ypos 0.5 #2.0
+        ypos 1.5 xpos 0.3 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #2.0
     play sound magicannonShot
     
     pause 0.1 #1.3
@@ -879,24 +879,24 @@ label versanizBossBattleAST:
         linear 0.3 ypos 0.5 yzoom 0.1 matrixcolor OpacityMatrix(0.0) #1.3
         
     pause 0.1 #1.4
-    show zaratoJamesianLancer as extraLance at halfSize , right:
-        xpos 1.5 ypos 1.5
+    show zaratoJamesianLancer as extraLance at thridSize , truecenter:
+        xpos 1.5 ypos 0.81
         linear 1 xpos 0.6 #2.4
     show magicShot as shot11 at summonnerLights:
-        ypos 1.5 xpos 0.9 rotate 180
-        linear 0.8 ypos 0.5 #2.2
+        ypos 1.5 xpos 0.9 rotate 180 yzoom 2.0
+        linear 1.0 ypos 0.5 yzoom 0.1 #2.2
     
     pause 0.1 #1.5
     #next one got blasted
     play extraSound playerHit
-    hide shot5 with dissolve
-    show zaratoJamesianAxeLady mountedAttack as extraAxe at halfSize , right , angryColored:
-        xpos 1.5 ypos 0.4 yzoom 1.0
-        linear 0.5 xpos 0.7 yzoom 0.1 yalign 1.0 #1.5
+    hide shot5 
+    show zaratoJamesianAxeLady mountedAttack as extraAxe at truecenter , angryColored:
+        xpos 1.5 ypos 0.81 yzoom 1.0
+        linear 0.5 xpos 0.7 yzoom 0.1 ypos 1.0 #1.5
 
     show magicShot as shot12 at summonnerLights:
-        ypos 1.5 xpos 0.3 rotate 180
-        linear 0.8 ypos 0.5 #2.3
+        ypos 1.5 xpos 0.3 rotate 180 yzoom 2.0
+        linear 1.5 ypos 0.5 yzoom 0.1 #2.3
     play sound magicannonShot
     
     pause 0.1 #1.6
@@ -905,23 +905,23 @@ label versanizBossBattleAST:
         linear 0.3 ypos 0.5 yzoom 0.1 matrixcolor OpacityMatrix(0.0) #1.6
 
     show magicShot as shot13 at summonnerLights:
-        ypos 1.5 xpos 0.6 rotate 180
-        linear 0.8 ypos 0.6 #2.4
+        ypos 1.5 xpos 0.6 rotate 180 yzoom 2.0
+        linear 1.5 ypos 0.5 yzoom 0.1 #2.4
     play extraSound magicannonShot
 
     pause 0.1 #1.7
     play sound playerHit
-    hide shot7 with dissolve
-    show zaratianHeavyHorseArcher at halfSize , left , angryColored:
-        xpos 0.25 ypos 1.6 yzoom 1.0
-        linear 0.3 xpos 0.5 yzoom 0.1 yalign 1.0 #1.7
+    hide shot7 
+    show zaratianHeavyHorseArcher at  truecenter , angryColored:
+        xpos 0.25 ypos 0.81 yzoom 1.0
+        linear 0.3 xpos 0.5 yzoom 0.1 ypos 1.0 #1.7
     
     pause 0.2 #1.9
     play extraSound playerHit
-    hide shot8 with dissolve
-    show zaratianHorseArcher at halfSize , left , angryColored:
-        xpos 0.5 ypos 1.3 yzoom 1.0
-        linear 1 xpos 0.5 yzoom 0.1 yalign 1.0 #1.9
+    hide shot8 
+    show zaratianHorseArcher at  truecenter , angryColored:
+        xpos 0.5 ypos 0.81 yzoom 1.0
+        linear 1 xpos 0.5 yzoom 0.1 ypos 1.0 #1.9
     
     pause 0.1 #2.0
     show magicShot as shot9 at summonnerLights:
@@ -943,124 +943,116 @@ label versanizBossBattleAST:
     
     pause 0.1 #2.4
     play sound playerHit
-    hide shot13 with dissolve
-    show zaratoJamesianLancer as extraLance at halfSize , right , angryColored:
-        xpos 0.5 ypos 1.5 yzoom 1.0
-        linear 0.3 yzoom 0.1 yalign 1.0 #2.4
+    hide shot13 
+    show zaratoJamesianLancer as extraLance at right , angryColored:
+        xpos 0.5 ypos 0.81 yzoom 1.0
+        linear 0.3 yzoom 0.1 ypos 1.0 #2.4
     
+    #pause
     pause 0.2 #2.6
 
     scene cloudyDayTime at fullFit
-    show yarakBattlefield:
-        xpan 225
+    show yarakBattlefield at truecenter:
+        xpan 225 yzoom 0.5
     show xerxHorseSoAMDefend at left , size2Thrid:
-        ypos 1.7 matrixcolor TintMatrix ("#fff") * BrightnessMatrix ( 0.0 )
+        ypos 2.0 matrixcolor TintMatrix ("#fff") * BrightnessMatrix ( 0.0 )
     with dissolve
     play sound magicannonShot
-    show magicShot at right:
-        xpos 1.5 ypos 0.7
-        linear 1 xpos 0.25 #1.0
+    show magicShot at right , summonnerLights:
+        xpos 1.5 ypos 0.6 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.6 yzoom 2.0#1.0
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     pause 0.25 #0.25
     play extraSound magicannonShot
-    show magicShot as shot2 at right:
-        xpos 1.5 ypos 0.3
-        linear 1 xpos 0.25 # 1.25
+    show magicShot as shot2 at right , summonnerLights:
+        xpos 1.5 ypos 0.65 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.6 yzoom 2.0# 1.25
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play sound magicannonShot
     pause 0.05 #0.3
-    show magicShot as shot3 at right:
-        xpos 1.5 ypos 0.6
-        linear 1 xpos 0.25 # 1.3
+    show magicShot as shot3 at right , summonnerLights:
+        xpos 1.5 ypos 0.6 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.45 yzoom 2.0# 1.3
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play extraSound magicannonShot
     pause 0.1 #0.4
-    show magicShot as shot4 at right:
-        xpos 1.5 ypos 0.2
-        linear 1 xpos 0.25 #1.4
+    show magicShot as shot4 at right , summonnerLights:
+        xpos 1.5 ypos 0.57 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.51 yzoom 2.0 #1.4
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play sound magicannonShot
     pause 0.05 #0.45
-    show magicShot as shot5 at right:
-        xpos 1.5 ypos 0.1
-        linear 1 xpos 0.25 #1.45
+    show magicShot as shot5 at right , summonnerLights:
+        xpos 1.5 ypos 0.1 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos -0.5 yzoom 3.0#1.45
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play extraSound magicannonShot
     pause 0.05 #0.5
-    show magicShot as shot6 at right:
-        xpos 1.5 ypos 0.4
-        linear 1 xpos 0.25 #1.5
+    show magicShot as shot6 at right , summonnerLights:
+        xpos 1.5 ypos 0.6 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.6 yzoom 2.0#1.5
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play sound magicannonShot
     pause 0.2 #1.7
-    show magicShot as shot7 at right:
-        xpos 1.5 ypos 0.8
-        linear 1 xpos 0.25 #1.7
+    show magicShot as shot7 at right , summonnerLights:
+        xpos 1.5 ypos 0.53 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.41 yzoom 2.0#1.7
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play extraSound magicannonShot
     pause 0.1 #0.8
-    show magicShot as shot8 at right:
-        xpos 1.5 ypos 0.9
-        linear 1 xpos 0.25 #1.8
+    show magicShot as shot8 at right , summonnerLights:
+        xpos 1.5 ypos 0.9 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos -0.5 yzoom 3.0#1.8
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play sound magicannonShot
     pause 0.1 #0.9
-    show magicShot as shot9 at right:
-        xpos 1.5 ypos 0.3
-        linear 1 xpos 0.25 #1.9
+    show magicShot as shot9 at right , summonnerLights:
+        xpos 1.5 ypos 0.678 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.678 yzoom 2.0#1.9
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play extraSound magicannonShot
     pause 0.1 #1.0
     play sound PowerUp
     hide magicShot with dissolve
     show xerxHorseSoAMDefend at left , size2Thrid:
-        ypos 1.7 matrixcolor TintMatrix ("#fff") * BrightnessMatrix ( 0.0 )
+        ypos 2.0 matrixcolor TintMatrix ("#fff") * BrightnessMatrix ( 0.0 )
         easein 1.3 matrixcolor TintMatrix ("#ff0") * BrightnessMatrix( 1.8 )
     pause 0.1 #1.1
-    show magicShot as shot10 at right:
-        xpos 1.5 ypos 0.1
-        linear 1 xpos 0.25 #2.1
+    show magicShot as shot10 at right , summonnerLights:
+        xpos 1.5 ypos 0.1 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.25 yzoom 2.0#2.1
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play sound magicannonShot
     pause 0.05 #1.15
-    show magicShot as shot11 at right:
-        xpos 1.5 ypos 0.4
-        linear 1 xpos 0.25 #2.15
+    show magicShot as shot11 at right , summonnerLights:
+        xpos 1.5 ypos 0.71 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.71 yzoom 2.0#2.15
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play extraSound magicannonShot
     pause 0.05 #1.2
     play sound PowerUp
     hide shot2 with dissolve
-    show magicShot as shot12 at right:
-        xpos 1.5 ypos 0.5
-        linear 1 xpos 0.25 #2.2
+    show magicShot as shot12 at right , summonnerLights:
+        xpos 1.5 ypos 0.617 rotate 90 yzoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 1 xpos 0.67 yzoom 2.0#2.2
+        linear 0.1 yzoom 0.1 matrixcolor OpacityMatrix(0.0)
     play sound magicannonShot
-    pause 0.05 #1.3
     play sound PowerUp
-    hide shot3 with dissolve
-    pause 0.1 #1.4
-    play sound PowerUp
-    hide shot4 with dissolve
-    pause 0.05 #1.45
-    play sound PowerUp
-    hide shot5 with dissolve
-    pause 0.05 #1.5
-    play sound PowerUp
-    hide shot6 with dissolve
-    pause 0.2 #1.7
-    play sound PowerUp
-    hide shot7 with dissolve
-    pause 0.1 #1.8
-    play sound PowerUp
-    hide shot8 with dissolve
-    pause 0.1 #1.9
-    play sound PowerUp
-    hide shot9 with dissolve
-    pause 0.2 #2.1
-    play sound PowerUp
-    hide shot10 with dissolve
-    pause 0.05 #2.15
-    play sound PowerUp
-    hide shot11 with dissolve
-    pause 0.05 #2.2
-    play sound PowerUp
-    hide shot12 with dissolve
-    pause 0.1 #2.3
-    play sound PowerUp
+    hide shot3 
+    hide shot4 
+    hide shot5 
+    hide shot6 
+    hide shot7 
+    hide shot8 
+    hide shot9 
+    hide shot10 
+    hide shot11 
+    hide shot12 
     play extraSound cookingWithAss loop
     
     hide xerxHorseSoAMDefend
     show xerxHorseSoAMOvergared at left , size2Thrid:
-        ypos 1.7 matrixcolor TintMatrix ("#ff0") * BrightnessMatrix( 1.8 )
+        ypos 2.0 matrixcolor TintMatrix ("#ff0") * BrightnessMatrix( 1.8 )
         easeout 0.5 matrixcolor TintMatrix ("#fff") * BrightnessMatrix ( 0.0 ) 
     with Dissolve(1)
     pause 2
@@ -1086,7 +1078,7 @@ label versanizBossBattleAST:
     $ xerxChargeLevel = 2
 
     stop extraSound fadeout 3
-    $ enemyTroopers = [ copy.copy( zardonianAxInfM ) , copy.copy( zardonianAxInfF ) , copy.copy( zardonainLegionaryM ) , copy.copy( zardonianGrapplePointMarine ), copy.copy(muibaFoot) , copy.copy( zardonianAxInfF ) , copy.copy( zardonainLegionaryF ) , copy.copy( zardonianAxInfM ) ]
+    $ enemyTroopers = [ copy.copy( zardonianAxInfM ) , copy.copy( zardonianAxInfF ) , copy.copy( zardonainLegionaryM ) , copy.copy( zardonianGrapplePointMarine ) , copy.copy( zardonianAxInfF ) , copy.copy( zardonainLegionaryF ) , copy.copy( zardonianAxInfM ) ]
     
     call screen playerActions( "Unleash the Excess Engery!" , False , False , False , 1  )    
 
@@ -1124,10 +1116,32 @@ label versanizBossBattleAST:
         if versanizDaUnit in enemyTroopers and isinstance ( versanizDaUnit , PatterenFoe ) and ( muibaDaUnit in enemyTroopers or siayusiDaUnit in enemyTroopers ) :
 
             call screen playerActions( "Versaniz fell of his Junatu. {b}SLAY HIM BEFORE HE GETS BACK ON!!(in 3 turns)" , False , True , True , 3 , ringLeaders = [ versanizDaUnit ] , alternativeTargets = alternativeTargets , ringLeaders2Kill = 1 , alternativeTargets2Kill = slaysNeeded )
+            if versanizDaUnit not in enemyTroopers and getFoeTypeByName( enemyTroopers , "Prince Versaniz III" ) != False:
+                $ versanizDaUnit = getFoeTypeByName( enemyTroopers , "Prince Versaniz III" )
+
+            if muibaDaUnit not in enemyTroopers and getFoeTypeByName( enemyTroopers , "Muiba" ) != False:
+                $ muibaDaUnit = getFoeTypeByName( enemyTroopers , "Muiba" )
+                $ alternativeTargets.append(muibaDaUnit)
+            
+            if siayusiDaUnit not in enemyTroopers and getFoeTypeByName( enemyTroopers , "Princess Siayusi" ) != False:
+                $ siayusiDaUnit = getFoeTypeByName( enemyTroopers , "Princess Siayusi" )
+                $ alternativeTargets.append(siayusiDaUnit)
+            
+            if len( alternativeTargets ) > 0:
+                $ slaysNeeded = len( alternativeTargets )
+            else:
+                $ slaysNeeded = -1
             if getFoeTypeByName( enemyTroopers , "Luna" ) and versanizDaUnit in enemyTroopers:
+                $ lunaAlive = True
+                show versanizOnLuna VhappyMouth at center , size2Thrid with dissolve:
+                    ypos 2.0
                 vers "I got back on my Luna!"
+                show versanizOnLuna happyMouth blush VmeanEyes VhappyMouth at center , size2Thrid with dissolve:
+                    ypos 2.85
                 play sound PowerUp
+                
                 vers "Good thing I stuffed her with healing potions!"
+                hide versanizOnLuna with dissolve
                 $ enemyTroopers.remove( getFoeTypeByName( enemyTroopers , "Luna" ) ) 
                 $ enemyTroopers.remove( versanizDaUnit )
                 $ versanizDaUnit = copy.copy( versanizJunatu )
@@ -1185,24 +1199,36 @@ label versanizBossBattleAST:
         #animate versaniz getting beheaded
         #dead versaniz head and headless versaniz?
         scene cloudyDayTime at fullFit
-        show yarakBattlefield at truecenter
+        show yarakBattlefield at truecenter:
+            yzoom 0.5
         #TODO show Luna trying to reatach versaniz's head
-        show lunaDaJuna armredDefeated sadEyes OMouth at left , size2Thrid:
-            ypos 2.0
-        show versanizBeheaded at truecenter
-        show versanizHead at truecenter
+        show lunaDaJuna armredDefeated sadEyes OMouth at truecenter , size2Thrid:
+            xpos 0.247 ypos 0.73
+        show versanizBeheaded at truecenter , size2Thrid:
+            xpos 0.508 ypos 0.842 rotate 30
+            easein 0.5 xpos 0.555 ypos 0.715 
+            linear 1 xpos 0.555 ypos 0.715 
+            easeout 0.5 xpos 0.508 ypos 0.842
+            repeat
+        show versanizHead at truecenter , size2Thrid:
+            xpos 0.616 ypos 0.4 rotate 30
         with dissolve
         lun "{b}NOOOO!!!"
         lun "His head won't stick back on?!"
         hide versanizBeheaded
         hide versanizHead
         with dissolve
-        show lunaDaJuna closedEyes with dissolve
+        show lunaDaJuna closedEyes at truecenter , size2Thrid with dissolve:
+            xpos 0.435 ypos 1.3 
         lun "Prince Versaniz is dead!!" with vpunch
-        
+        show lunaDaJuna closedEyes at truecenter , size2Thrid with dissolve:
+            xpos 0.435 ypos 1.3 
+            easein 2 xpos 2.0
+        pause 1.5
         #show reinforcements
         scene cloudyDayTime at fullFit
-        show yarakBattlefield at truecenter
+        show yarakBattlefield at truecenter:
+            yzoom 0.5
         if muibaAlive:
             show muiba onSpooda OMouth meanEyes at left , size2Thrid:
                 ypos 2.0
@@ -1214,6 +1240,7 @@ label versanizBossBattleAST:
             show muiba at left , size2Thrid:
                 ypos 2.0
                 easein 2 xpos 2.0
+            pause 1.5
             play sound giantSpiderRun loop
         elif siayusiAlive:
             show siayusi onSpooda meanEyes OMouth at left , size2Thrid:
@@ -1226,20 +1253,26 @@ label versanizBossBattleAST:
             show siayusi at left , size2Thrid:
                 ypos 2.0
                 easein 2 xpos 2.0
+            pause 1.5
             play sound giantSpiderRun loop
         else:
-            show lunaDaJuna armredDefeated sadEyes OMouth at left , size2Thrid:
-                ypos 2.0
+            show yarakBattlefield at truecenter:
+                yzoom 0.5 xpan 100
+            show lunaDaJuna armredDefeated sadEyes OMouth at truecenter , size2Thrid:
+                xpos -1.0 ypos 0.94
+                easeout 2 xpos 0.247
                 
             with dissolve
             $ order2Retreat = True
-            lun "THERE ALL DEAD!!"
-            show lunaDaJuna closedEyes at left , size2Thrid:
-                ypos 2.0
+            lun "{b}THERE ALL DEAD!!"
+            
+            show lunaDaJuna closedEyes at truecenter , size2Thrid with dissolve:
+                xpos 0.435 ypos 1.3
                 easein 2 xpos 2.0
             play sound giantSpiderRun loop
-            lun "HWAAAAAHH!!!" with hppunch
-    elif not siayusiAlive and not muibaAlive:
+            lun "{b}HWAAAAAHH!!!" with hpunch
+            
+    elif not siayusiAlive and not muibaAlive and versanizAlive:
         if lunaAlive:
             show versanizOnLuna sadEyes OMouth VsadEyes VOMouth at center , size2Thrid:
                 ypos 2.0
@@ -1249,9 +1282,9 @@ label versanizBossBattleAST:
         with dissolve
         vers "NO!"
         vers "NO!!" with vpunch
-        vers "MY LOVELIES!!" with hpunch
+        vers "{b}MY LOVELIES!!" with hpunch
         if lunaAlive:
-            vers "THE ZARATIANS ARE SOURROUNDING US!!"
+            vers "THE ZARATIANS ARE SURROUNDING US!!"
             vers "RETREAT!!" with vpunch
             play sound giantSpiderRun loop
             show versanizOnLuna sadEyes OMouth VsadEyes VOMouth at center , size2Thrid:
@@ -1261,65 +1294,103 @@ label versanizBossBattleAST:
             #xerxes is reminded by his dead girlfriends so he cannot chase versaniz as it causes him to have an episode
             scene ahriteCave at fullFit , ahriteDarkness
             play sound [ playerHit , meatEplosion ]
-            show keioziaPossessedKilled at truecenter
-            with Fade( 0.5 , 0 , 0.5 , color="#f0c")
+            show keioziaPossessedKilled at fullFit
+            with Fade( 1 , 0 , 1 , color="#f0c")
             scene ahriteSky at fullFit
             show adgiliaFlyBlasted at truecenter , halfSize , ahriteBright
-            with Fade( 0.5 , 0 , 0.5 , color="#f0c")
+            with Fade( 1 , 0 , 1 , color="#f0c")
             play extraSound [ magicAttackUnchmabered , playerHit ]
             play sound [ thong , meatEplosion ]
 
             scene cloudyDayTime at fullFit
-            show yarakBattlefield:
-                xpan 180
-            with dissolve
-            show tesipiz33HorseConcerned at right , halfSize with dissolve:
-                ypos 1.5
-            show volkaraHorsey meanEyes deltaMouth at left , halfSize with dissolve:
-                ypos 1.5
-            show xerxHorseSwordSteam at center , halfSize with dissolve: #make angry version
-                ypos 1.5
+            show yarakBattlefield at truecenter:
+                yzoom 0.5
+            with Fade( 1 , 0 , 0.5)
+            show tesipiz33HorseConcerned at truecenter , halfSize with dissolve:
+                ypos 0.82 xpos 0.7
+            show volkaraHorsey meanEyes deltaMouth at truecenter , halfSize with dissolve:
+                ypos 0.96 xpos 0.887
+            show xerxHorseSwordSteam at truecenter , halfSize with dissolve: #make angry version
+                ypos 0.76 xpos 0.23
             tesi "Xerxes!!"
             volk "We need to kill him."
             hide xerxHorseSwordSteam
             hide tesipiz33HorseConcerned
-            show tesipizHorseSupized at right , halfSize with dissolve:
-                ypos 1.5
+            show tesipizHorseSupized at truecenter , halfSize behind volkaraHorsey:
+                ypos 0.82 xpos 0.7
             show volkaraHorsey sadEyes OMouth
-            show xerxHorseAngrySoAM at center , halfSize :
-                ypos 1.5
+            show xerxHorseAngrySoAM at truecenter , halfSize :
+                ypos 0.76 xpos 0.23
             with dissolve
             
             xerx "Nngh!" with vpunch
             hide xerxHorseAngrySoAM
-            show xerxHorseSoAMOvergared at center , halfSize:
-                ypos 1.5
+            show xerxHorseSoAMOvergared at truecenter , halfSize:
+                ypos 0.76 xpos 0.23
             with dissolve
-            xerx "HRAAGH!!" with hpunch
+            xerx "{b}HRAAGH!!" with hpunch
 
             show volkaraHorsey deltaMouth with dissolve
             volk "Snap out of it Xerxes!!"
             show volkaraHorsey meanEyes with dissolve
-            volk "Xerxes!!" with vpunch
+            volk "{b}Xerxes!!" with vpunch
+        else:
+            hide versaniz with dissolve
+            call screen playerActions( "Finish him off!" , False , False , False , 1  )
+            $ versanizAlive = False
     #kill versaniz in a time limit?
     else: #possible if lunadead and all others also dead
         if versanizAlive:
             show versaniz battle sadEyes OMouth at center , size2Thrid:
                 ypos 1.5
             with dissolve
-            vers "THERE ALL DEAD!!" with vpunch
-            hide versaniz with dissolve
             #he can't flee so you fight him to the death
-            call screen playerActions( "Finish him off!" , False , False , False , 1  )
+            if muibaAlive or siayusiAlive:
+                vers "NOO!!" with hpunch
+                vers "{b}LUNA!!" with vpunch
+                hide versaniz with dissolve
+                call screen playerActions( "Wipe them out!" , False , False , False , 1  )
+            else:
+                vers "THERE ALL DEAD!!" with vpunch
+                hide versaniz with dissolve
+            
+                call screen playerActions( "Finish him off!" , False , False , False , 1  )
             $ versanizAlive = False
+        elif muibaAlive:
+            show muiba onSpooda OMouth meanEyes at left , size2Thrid:
+                ypos 2.0
+            with dissolve
+            $ order2Retreat = True
+            muib "VERSANIZ IS DEAD!!"
+            muib "RETREAT!!"
+            show muiba sadEyes with dissolve
+            muib "RETREAT BEFORE THE ZARATIANS SURROUND US!!"
+            show muiba at left , size2Thrid:
+                ypos 2.0
+                easein 2 xpos 2.0
+            play sound giantSpiderRun loop
+        elif siayusiAlive:
+            show siayusi onSpooda meanEyes OMouth at left , size2Thrid:
+                ypos 2.0
+            with dissolve
+            $ order2Retreat = True
+            siay "VERSANIZ IS DEAD!!"
+            siay "RETREAT!!"
+            show siayusi sadEyes
+            siay "RETREAT BEFORE THE ZARATIANS SURROUND US!!"
+            show siayusi at left , size2Thrid:
+                ypos 2.0
+                easein 2 xpos 2.0
+            play sound giantSpiderRun loop
         else:
-            show junatuCataphractSwordSad at left , size04:
-                ypos 1.5
-            show junatuWebRockaSad at right , halfSize:
-                ypos 1.5
+            show junatuWebRockaSad at truecenter , halfSize:
+                xpos 0.737 ypos 0.574
+            show junatuCataphractSwordSad at truecenter , size04:
+                xpos 0.24 ypos 0.504
+            
             with dissolve
             junatus "THEY'VE KILLED ALL OUR LEADERS!!"
-            junatus "RETREAT!"
+            junatus "RETREAT BEFORE THE ZARATIANS SURROUND US!!"
             play sound giantSpiderRun loop
         #need flee grafphic for junatu
         #web rocka and sword knight
