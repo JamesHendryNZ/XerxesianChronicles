@@ -1234,7 +1234,7 @@ label versanizBossBattleAST:
                 ypos 2.0
             with dissolve
             $ order2Retreat = True
-            muib "RETRAT!!"
+            muib "RETREAT!!"
             show muiba sadEyes with dissolve
             muib "RETREAT BEFORE THE ZARATIANS SURROUND US!!"
             show muiba at left , size2Thrid:
@@ -1247,7 +1247,7 @@ label versanizBossBattleAST:
                 ypos 2.0
             with dissolve
             $ order2Retreat = True
-            siay "RETRAT!!"
+            siay "RETREAT!!"
             show siayusi sadEyes
             siay "RETREAT BEFORE THE ZARATIANS SURROUND US!!"
             show siayusi at left , size2Thrid:

@@ -924,86 +924,90 @@ label yarakWins:
     #use existing catapharct and infantry flee graphics
     #need fleeing junatu lady and dude - web rocka and sword knight
     scene cloudyDayTime at fullFit
-    show yarakBattlefield at truecenter
+    show yarakBattlefield at center:
+        yzoom 0.25 xpan 30
     with dissolve
     stop music fadeout 1.0
     play sound weOwnedThem
-    show junatuWebRockaFlee at size2Thrid:
+    show junatuWebRockaFlee at size2Thrid , truecenter:
         ypos 1.5 xpos -0.2 zoom 1.0 matrixcolor OpacityMatrix(1.0)
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        easeout 5 xpos 0.45 zoom 0.1 ypos 0.5
         linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    pause 0.1
-    show junatuCatapharctSwordFlee at size2Thrid:
-        ypos 1.5 xpos 0.75 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+    pause 0.2
+    show junatuCatapharctSwordFlee at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.75 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.55 zoom 0.1 ypos 0.5
         linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    pause 0.1
-    show zardonianCataphractLadyFlee at size2Thrid:
-        ypos 1.5 xpos 0.3 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+    pause 0.2
+    show zardonianCataphractLadyFlee at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.3 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.52 zoom 0.1 ypos 0.5
         linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    show zardonianCataphractDudeFlee at size2Thrid:
-        ypos 1.5 xpos 0.8 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+    show zardonianCataphractDudeFlee at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.8 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.47 zoom 0.1 ypos 0.5
         linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
 
+    pause 0.4
+    show zardonianAxeGirlFlee at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.1 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    show zardonianSwordsManFlee at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.5 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.39 zoom 0.1 ypos 0.5
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
     pause 0.2
-    show zardonianAxeGirlFlee at size2Thrid:
-        ypos 1.5 xpos 0.1 zoom 1.0
+    show zardonianSwordsManFlee as extraMan at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.0 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.56 zoom 0.1 ypos 0.5
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    show zardonianDartGirlLeave at size2Thrid , truecenter:
+        ypos 1.5 xpos 1.0 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.52 zoom 0.1 ypos 0.5
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    show zardonianSwordsManFlee as extratraMan at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.5 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.48 zoom 0.1 ypos 0.5
+        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
+    pause 0.2
+    show zardonianDartGirlLeave as extraLady at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.2 zoom 1.0 matrixcolor OpacityMatrix(1.0)
         easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
         linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    show zardonianSwordsManFlee at size2Thrid:
-        ypos 1.5 xpos 0.5 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
+    show zardonianAxeGirlFlee as extratraLady at size2Thrid , truecenter:
+        ypos 1.5 xpos 0.8 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xpos 0.45 zoom 0.1 ypos 0.5
         linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    pause 0.1
-    show zardonianSwordsManFlee as extraMan at size2Thrid:
-        ypos 1.5 xpos 0.0 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    show zardonianDartGirlLeave at size2Thrid:
-        ypos 1.5 xpos 1.0 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    show zardonianSwordsManFlee as extratraMan at size2Thrid:
-        ypos 1.5 xpos 0.5 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    pause 0.1
-    show zardonianDartGirlLeave as extraLady at size2Thrid:
-        ypos 1.5 xpos 0.2 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    show zardonianAxeGirlFlee as extratraLady at size2Thrid:
-        ypos 1.5 xpos 0.8 zoom 1.0
-        easeout 5 xpos 0.5 zoom 0.1 ypos 0.5
-        linear 1 zoom 0.01 matrixcolor OpacityMatrix(0.0) 
-    pause 3
-    scene dustcloud at fullFit with Dissolve(5)
-    pause 6
-    show yarakBattlefield:
-        xpan 180
+    scene dustCloud at fullFit with Dissolve(5)
+    scene cloudyDayTime at fullFit
+    show yarakBattlefield at center:
+        yzoom 0.25 xpan 180
+    show zaraSsatuSpearYeah as extraSpear at truecenter , halfSize:
+        ypos 0.8 xpos 0.75
+    show camelLady onFootYeah meanEyes happyMouth as extraCamelLady at truecenter , halfSize:
+        ypos 0.66 xpos 0.5
+    show yimiOxaYeah at truecenter , halfSize:
+        ypos 0.82 xpos 0.85
+    show zaratSlingYeah at truecenter , halfSize:
+        ypos 0.82 xpos 0.52
+    show zaraSsatuSpearYeah at truecenter , halfSize:
+        ypos 0.708 xpos 0.406
+    show ssatrotuSparabaraLady yeah at truecenter , halfSize:
+        ypos 0.668 xpos 0.634
+    show shataSlingDudeZarat at truecenter , halfSize:
+        ypos 0.889 xpos 0.75
+    show camelLady onFootYeah meanEyes happyMouth at truecenter , halfSize:
+        ypos 0.71 xpos 0.936
+    show regius camelYeah meanEyes happyMouth at truecenter , halfSize:
+        ypos 0.838 xpos 0.227
     with Dissolve(5)
-    show yimiOxaYeah at left , halfSize:
-        ypos 1.25 xpos 0.35
-    show zaratSlingYeah at left , halfSize:
-        ypos 1.25 xpos 0.1
-    show zaraSsatuSpearYeah at left , halfSize:
-        ypos 1.25 xpos 0.25
-    show ssatrotuSparabaraLady yeah at right , halfSize:
-        ypos 1.25 xpos 0.6
-    show shataSlingDudeZarat at right , halfSize:
-        ypos 1.25 xpos 0.8
-    show camelLady onFootYeah meanEyes happyMouth at right , halfSize:
-        ypos 1.25 xpos 0.9
-    show regius camelYeah meanEyes happyMouth at center , halfSize:
-        ypos 1.25 xpos 0.45
     regs "WE HAVE DEFEATED THE ZARDONIANS!!"
 
     play music grassWindAmbiance fadein 1 fadeout 1
     scene cloudyDayTime at fullFit
     show yarakBattlefield:
-        xpan 90
+        xpan 90 yzoom 0.5
     with dissolve
     if versanizAlive:
 
@@ -1012,10 +1016,10 @@ label yarakWins:
         #delta , neutral happy , frown and OMouth
         #maybe a year pose and a axe down pose
         show zaratoJamesianAxeLady meanEyes oMouth at size2Thrid , left:
-            ypos 1.25 xpos -0.5
-            easeout 2 xpos 0.2
+            ypos 1.5 xpos -0.5
+            easeout 2 xpos 0.1
         show regius34 armored at flipped , size2Thrid , right:
-            ypos 1.25
+            ypos 1.4
         with dissolve
         zarjam "Regius" #delta mouth can stay 
         show regius34 annoyedMouth sadEyes
@@ -1043,21 +1047,22 @@ label yarakWins:
         regs "Oh.. "
 
         regs "That."
-        show regius34 armoredPointing frown with dissolve
+        show regius34 armoredPointing annoyedMouth with dissolve
         regs "I'll go see him."
 
-        scene cloudyDayTime at fullFit
-        show yarakBattlefield at truecenter
-        show regius34 armoredPointing meanEyes oMouth at right , flipped , size2Thrid:
+        scene cloudyDayTime at fullFit , movingSky
+        show yarakBattlefield at truecenter:
+                yzoom 0.5
+        show regius34 armoredPointing meanEyes OMouth at right , flipped , size2Thrid:
             ypos 1.25 xpos 1.3
             easeout 2 xpos 1.0
         show xerx34LookDownArmoredMad at left , flipped , size2Thrid:
             ypos 1.25
         with dissolve
         regs "Xerxes!"
-        regs "Xerxes!" with hpunch
+        regs "{b}Xerxes!" with hpunch
         show regius34 sadEyes with dissolve 
-        regs "I heared you let Versaniz escape!"
+        regs "I heard you let Versaniz escape!"
 
         show regius34 armored with dissolve
         pause 3
@@ -1068,11 +1073,12 @@ label yarakWins:
         show regius34 armored with dissolve
         
         show volkara3quatArmored pointy sadEyes deltaMouth at size2Thrid , right , flipped:
-            ypos 1.25 xpos 1.5
-            easeout 3 xpos 0.4
+            ypos 1.4 xpos 1.5
+            easeout 3 xpos 0.6
         pause 3
 
-        show volkara3quatArmored happyMouth with dissolve
+        show volkara3quatArmored armsOut happyMouth at size2Thrid , right , flipped behind xerx34LookDownArmoredMad  with dissolve:
+            ypos 1.4 xpos 0.8
         volk "Do you want a hug Xerxes?" #armored volkara arms out
         pause 3
         if headPatCounter > 12 or atoBoinks > 0:
@@ -1093,7 +1099,7 @@ label yarakWins:
         show regius34 armored -happyMouth with dissolve
         pause 3
         hide xerx34LookDownArmoredMad
-        hide xerx34LookDownArmoredMad
+        hide xerx34LookDownSadArmored
         show xerx3quatHappyerArmored at left , flipped , size2Thrid:
             ypos 1.25
         with dissolve
@@ -1102,17 +1108,18 @@ label yarakWins:
 
     else:
         show tesipizWooArmored at left , halfSize:
-            ypos 1.2
+            ypos 1.4
         show xerx3quatHappyArmored at center , halfSize:
             ypos 1.2
-        show volkara3quatArmored happyMouth at right , halfSize:
-            ypos 1.2 xpos 0.75
+        show volkara3quatArmored happyMouth at right , halfSize , flipped:
+            ypos 1.3
         with dissolve
         tesi "Five hells!"
 
         hide tesipizWooArmored
         show tesipizYeahArmored at left , halfSize:
             ypos 1.2
+        with dissolve
         tesi "That was something!"
 
         #tesi has Xerxe and Volkara's horses if the battle went that way
@@ -1125,7 +1132,8 @@ label yarakWins:
         show volkara3quatArmored pointy -meanEyes with dissolve
         volk "Look what I got!"
         #TODO configure to right size, position and rotation
-        show magicannon at truecenter with dissolve
+        show magicannon at truecenter with dissolve:
+            zoom 0.75 rotate -70 xpos 0.74 ypos 0.68
         pause 2
         hide tesipiz34MiniHappyArmored
         show tesipiz34HappyArmored at left , halfSize , flipped:
@@ -1135,41 +1143,42 @@ label yarakWins:
         hide tesipiz34HappyArmored
         show tesipiz34HappyArmoredPointing at left , halfSize , flipped:
             ypos 1.2
+        with dissolve
         tesi "Those are ransom worthy!"
         tesi "We can end the war with that."
 
         hide tesipiz34HappyArmoredPointing
         show tesipiz34MiniHappyArmored at left , halfSize , flipped:
             ypos 1.2
-        show volkara3quatArmored -bentStand -happyMouth:
-            xzoom 1.0
-            linear 1 xzoom -1.0
+        show volkara3quatArmored -bentStand -happyMouth at right , halfSize , flipped behind xerx3quatHappyArmored:
+            ypos 1.3 xzoom 1.0 xpos 1.0
+            linear 1 xzoom -1.0 xpos 0.5
         hide magicannon with dissolve
-        show xerx3quatHappyArmored:
-            xzoom 1.0
-            linear 1 xzoom -1.0
-        show regius34 armoredFists meanEyes happyMouth at right , halfSize:
+        show xerx3quatHappyArmored at center , halfSize:
+            xzoom 1.0 ypos 1.2 xpos 0.5
+            linear 1 xzoom -1.0 xpos 0.25
+        show regius34 armoredFists meanEyes happyMouth at right , halfSize, flipped:
             ypos 1.2 xpos 1.5
             linear 1 xpos 1.0
         with dissolve
         regs "Great!!"
-        show regius34 armoredPointy with dissolve
+        show regius34 armoredPointing with dissolve
         regs "I can't wait to tell King Urlius about this."
-        show regius armoredFists with dissolve
+        show regius34 armoredFists with dissolve
         regs "Hopefully Urlius will allow the Yimi-ri'in to keep Gilamorium."
 
         show regius34 armored -happyMouth
         hide xerx3quatHappyArmored
         show xerx3quatPointHappyArmored at center , halfSize , flipped:
-            ypos 1.2
+            ypos 1.2 xpos 0.25
         with dissolve
         xerx "And King Jemesis is gonna hate this."
-        show versanizHelmet at truecenter with dissolve
-
-        show regius armoredFists meanEyes happyMouth with dissolve
+        show versanizHelmet at truecenter, halfSize with dissolve:
+            xpos 0.31 ypos 0.71
+        show regius34 armoredFists meanEyes happyMouth with dissolve
         regs "Yeah!"
 
-        show regius armoredPointy -meanEyes with dissolve
+        show regius34 armoredPointing -meanEyes with dissolve
         regs "We should return to camp!"
         regs "We need to discuss our next move."
 
@@ -1184,15 +1193,21 @@ label yarakWins:
         xpos 0.7
     show plumbata at truecenter as extraDart with dissolve:
         xpos 0.8
-    show plumbata at truecenter as extraDart with dissolve:
+    show plumbata at truecenter as extraDart2 with dissolve:
         xpos 0.9
     $ money += 300
-    $ changeItemAmount( inventory , plumbata , 30 )
+    $ changeItemAmount( inventory , plumbataDart , 30 )
     "Xerxes and Friends loot 300 dariks and 30 plumbata from the battlefield"
     $ changeItemAmount( inventory , magicannonLoot , 1 )
+    hide daricCoin with dissolve
+    hide extraMoney with dissolve
+    hide plumbata with dissolve
+    hide extraDart with dissolve
+    hide extraDart2 with dissolve
     show magicannon at truecenter with dissolve:
         xpos 0.4
-    "As well as a magicannon with a depleated enery crystal."
+    "As well as a magicannon with a depleated energy crystal."
+    hide magicannon with dissolve
     if not versanizAlive:
         show versanizHelmet  at truecenter with dissolve:
             xpos 0.6

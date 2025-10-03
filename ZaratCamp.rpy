@@ -2006,28 +2006,30 @@ label zaratCampWinning:
     #trimdius shows up
     play music grassWindAmbiance fadein 1.0 fadeout 1.0
     scene clearDayTime at size08 , movingSky
-    show royalZaratCampOutside:
+    show royalZaratCampOutside at halfSize , center:
         xpan 180
-        yalign 0.5
-    show trimdius armored meanEyes frown at trueCenter , quatSize:
-        easein 5 zoom 0.7 ypos 1.4   
+    show trimdius meanEyes frown armored at truecenter:
+        zoom 0.1 ypos 0.5
+        easeout 20 zoom 1.0 ypos 1.0   
     with Fade (2,0,1) 
-    scene clearDayTime at size08 , trueCenter , movingSky
+    pause 10
+    scene clearDayTime at size08 , truecenter , movingSky
     show royalZaratCampOutside:
-        xpan 180
+        xpan 360
         yalign 0.5
     scene cloudyDayTime at movingSky
-    show royalZaratCampOutside at center , size2Thrid
-    show jakaArcherCrusufied at halfSize , right:
-        ypos 1.2
-    show balatianArcherCrusufied at halfSize , left:
-        ypos 1.2
-    show woodSpikeRack at halfSize , right:
-        ypos 1.2
-    show woodSpikeRack as extraWood at halfSize , flipped , left:
-        ypos 1.2
-    show tsekrei armed meanEyes madMouth at halfSize , center:
-        ypos 1.2
+    show royalZaratCampOutside at truecenter:
+        zoom 2.0 xpos 0.75 ypos 0.24
+    show jakaArcherCrusufied at halfSize , truecenter :
+        xpos 0.96 ypos 0.68
+    show balatianArcherCrusufied at halfSize , truecenter  :
+        xpos 0.01 ypos 0.62
+    show woodSpikeRack at  truecenter  :
+        xpos 1.0 ypos 1.0
+    show woodSpikeRack as extraWood at truecenter , flipped:
+        xpos 0.0 ypos 1.0
+    show tsekrei  meanEyes madMouth armed at truecenter , size2Thrid:
+        ypos 0.7
     with dissolve
     play music gettingAttacked fadeout 1.0 fadein 1.0
     tsek "{b}RHHAAARHH!!!" with vpunch
@@ -2061,14 +2063,14 @@ label zaratCampWinning:
     show royalZaratCampOutside:
         xpan 180
         yalign 0.5
-    show trimdius armored meanEyes at trueCenter , size2Thrid:
+    show trimdius armored meanEyes at truecenter , size2Thrid:
         ypos 1.4 
     with dissolve
     trim "I know why King Jemesis swich sides."
     show trimdius armoredPointy happyMouth with dissolve
     trim "It's something to do with Astarte."
 
-    show trimdius armored34 -happyMouth at trueCenter , size2Thrid , flipped:
+    show trimdius armored34 -happyMouth at truecenter , size2Thrid , flipped:
         ypos 1.4 
         linear 2 xalign 1.0
     show xerxHappyGreetArmored at left , size2Thrid , flipped:
@@ -2545,15 +2547,16 @@ label dateWithTsekrei1:
     tesi "Lets get some food."
     #they get foods
     #they walk outside
-    scene cloudyDayTime at size08 , trueCenter , movingSky
-    show royalZaratCampOutside at center , size2Thrid
-    show jakaArcherCrusufied at halfSize , right:
-        ypos 1.2
-    show balatianArcherCrusufied at halfSize , left:
-        ypos 1.2
-    show woodSpikeRack at halfSize , right:
-        ypos 1.2
-    show woodSpikeRack as extraWood at halfSize , flipped , left:
+    scene cloudyDayTime at size08 , truecenter , movingSky
+    show jakaArcherCrusufied at eithSize , left ,lightYellowTint:
+        xpos 0.516 ypos 0.764
+    show balatianArcherCrusufied at eithSize , left ,lightYellowTint:
+        xpos 0.223 ypos 0.75
+    show woodSpikeRack at quatSize , right ,lightYellowTint:
+        xpos 0.719 ypos 0.849
+    show woodSpikeRack as extraWood at quatSize , flipped , left, lightYellowTint:
+        xpos 0.164 ypos 0.842
+    show tsekrei  meanEyes madMouth armed at halfSize , center:
         ypos 1.2
     show tesipizNeutralHappy at left , size2Thrid:
         ypos 1.4
@@ -2580,7 +2583,7 @@ label dateWithTsekrei1:
     #they eat foods
     #this should explore both characters.
     #tesipiz and his korkin fetish
-    scene cloudyDayTime at size08 , trueCenter , movingSky
+    scene cloudyDayTime at size08 , truecenter , movingSky
     show royalZaratCampOutside at left , size2Thrid
     show mat1 at center , size08:
         ypos 1.4
@@ -2748,7 +2751,7 @@ label dateWithTsekrei1:
     tesi "Mined?"
     tsek "I made them brainless with a pickaxe."
 
-    scene cloudyDayTime at size08 , trueCenter , movingSky
+    scene cloudyDayTime at size08 , truecenter , movingSky
     show royalZaratCampOutside at left , size2Thrid
     show mat1 at center , size08:
         ypos 1.4
@@ -3021,7 +3024,7 @@ label tsekreiSleepOver1:
 
     #back at tsekrei's tent
     play music nightAmbiance fadein 1.0 fadeout 1.0
-    show tsekreiTent at flameLights , trueCenter
+    show tsekreiTent at flameLights , truecenter
     with Fade(1,0,1)
     show volkara3quat nightOutfit at left , size2Thrid , lightCrystalLights with dissolve:
         ypos 1.25

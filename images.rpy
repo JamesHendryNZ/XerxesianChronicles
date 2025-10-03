@@ -4196,25 +4196,25 @@ layeredimage volkara3quatArmored:
             "images/Protagonists/Volkara/Volkara Neutral Eyes 3quat armored.webp"
         attribute normalEyes default if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara Neutral Eyes 3quat armored.webp"
-            xpos 350
+            xpos 300
 
         attribute sadEyes if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Sad Eyes 3quat armored.webp"
         attribute sadEyes if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara Sad Eyes 3quat armored.webp"
-            xpos 350
+            xpos 300
 
         attribute meanEyes if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Mean Eyes 3quat armored.webp"
         attribute meanEyes if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara Mean Eyes 3quat armored.webp"
-            xpos 350
+            xpos 300
 
         attribute closedEyes if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Closed Eyes armored.webp"
         attribute closedEyes if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara Closed Eyes armored.webp"
-            xpos 350
+            xpos 300
 
 
     group mouths:
@@ -4222,33 +4222,33 @@ layeredimage volkara3quatArmored:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Mouth.webp"
         attribute neutralHappyMouth default if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Mouth.webp"
-            xpos 350
+            xpos 300
 
         attribute happyMouth if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara 3-4 Happy Mouth.webp"
             ypos 100
         attribute happyMouth if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara 3-4 Happy Mouth.webp"
-            ypos 100 xpos 350
+            ypos 100 xpos 300
 
         attribute OMouth if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara 3quat Armored Omouth.webp"
         attribute OMouth if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara 3quat Armored Omouth.webp"
-            xpos 350
+            xpos 300
 
         attribute OMegaMouth if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara 3-4 OmegaMouth.webp"
             ypos 100
         attribute OMegaMouth if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara 3-4 OmegaMouth.webp"
-            ypos 100 xpos 350
+            ypos 100 xpos 300
 
         attribute deltaMouth if_not['armsOut']:
             "images/Protagonists/Volkara/Volkara Delta mouth 3quat.webp"
         attribute deltaMouth if_any['armsOut']:
             "images/Protagonists/Volkara/Volkara Delta mouth 3quat.webp"
-            xpos 350
+            xpos 300
 
 #this will be implemented soon
 layeredimage volkara3quat:
@@ -5200,9 +5200,9 @@ layeredimage tsekrei:
 layeredimage trimdius:
     group poses:
         attribute base default:
-            "images/Protagonists/Trimdius/Trimdius 00.webp"
+            "images/Protagonists/Trimdius/Trimdius.webp"
         attribute greet:
-            "images/Protagonists/Trimdius/Trimdius 00.webp"
+            "images/Protagonists/Trimdius/Trimdius Greet.webp"
         attribute item:
             "images/Protagonists/Trimdius/Trimdius 3-4 Item.webp"
         attribute base34:
@@ -5214,9 +5214,9 @@ layeredimage trimdius:
         attribute greet34:
             "images/Protagonists/Trimdius/Trimdius 3-4 Greet.webp"
         attribute armored:
-            "images/Protagonists/Trimdius/Trimdius 00.webp"
+            "images/Protagonists/Trimdius/Trimdius Armored.webp"
         attribute armoredGreet:
-            "images/Protagonists/Trimdius/Trimdius 00.webp"
+            "images/Protagonists/Trimdius/Trimdius Armored Greet.webp"
         attribute armored34:
             "images/Protagonists/Trimdius/Trimdius 3-4 Armored.webp"
         attribute armoredGreet34:
@@ -5227,47 +5227,67 @@ layeredimage trimdius:
             "images/Protagonists/Trimdius/Trimdius 3-4 Armored Pointy.webp"
 
     group eyes:
-        attribute neutralEyes default if_any['base','greet','armored','armoredGreet']:
+        attribute neutralEyes default if_any['base','greet']:
             "images/Protagonists/Trimdius/Trimdius Neutral Eyes.webp"
+        attribute neutralEyes default if_any['armored','armoredGreet']:
+            "images/Protagonists/Trimdius/Trimdius Neutral Eyes.webp"
+            ypos 300
         attribute neutralEyes default if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius Neutral Eyes.webp"
 
-        attribute meanEyes if_any['base','greet','armored','armoredGreet']:
+        attribute meanEyes if_any['base','greet']:
             "images/Protagonists/Trimdius/Trimdius Mean Eyes.webp"
+        attribute meanEyes if_any['armored','armoredGreet']:
+            "images/Protagonists/Trimdius/Trimdius Mean Eyes.webp"
+            ypos 300
         attribute meanEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius 3-4 Mean Eyes.webp"
         
         attribute xEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius 3-4 X Eyes.webp"
 
-        attribute sadEyes if_any['base','greet','armored','armoredGreet']:
+        attribute sadEyes if_any['base','greet']:
             "images/Protagonists/Trimdius/Trimdius Sad Eyes.webp"
+        attribute sadEyes if_any['armored','armoredGreet']:
+            "images/Protagonists/Trimdius/Trimdius Sad Eyes.webp"
+            ypos 300
         attribute sadEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius Sad Eyes.webp"     
 
     group mouths:
-        attribute neutralHappyMouth default if_any['base','greet','armored','armoredGreet']:
+        attribute neutralHappyMouth default if_any['base','greet']:
             "images/Protagonists/Trimdius/Trimdius Neutral Happy Mouth.webp"
+        attribute neutralHappyMouth default if_any['armored','armoredGreet']:
+            "images/Protagonists/Trimdius/Trimdius Neutral Happy Mouth.webp"
+            ypos 300
         attribute neutralHappyMouth default if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius 3-4 Neutral Happy Mouth.webp"
 
-        attribute happyMouth if_any['base','greet','armored','armoredGreet']:
+        attribute happyMouth if_any['base','greet']:
             "images/Protagonists/Trimdius/Trimdius Happy Mouth.webp"
+        attribute happyMouth if_any['armored','armoredGreet']:
+            "images/Protagonists/Trimdius/Trimdius Happy Mouth.webp"
+            ypos 300
         attribute happyMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius 3-4 Happy Mouth.webp"
         
-        attribute frown if_any['base','greet','armored','armoredGreet']:
-            "images/Protagonists/Trimdius/Trimdius 3-4 Frown.webp"
+        attribute frown if_any['base','greet']:
+            "images/Protagonists/Trimdius/Trimdius Frown.webp"
+        attribute frown if_any['armored','armoredGreet']:
+            "images/Protagonists/Trimdius/Trimdius Frown.webp"
+            ypos 300
         attribute frown if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius 3-4 Frown.webp"
 
-        attribute madMouth:
-            "images/Protagonists/Trimdius/Trimdius 00.webp"
+
         attribute madMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius 3-4 Angry Teeth.webp"
 
-        attribute OMouth if_any['base','greet','armored','armoredGreet']:
+        attribute OMouth if_any['base','greet']:
             "images/Protagonists/Trimdius/Trimdius OMouth.webp"
+        attribute OMouth if_any['armored','armoredGreet']:
+            "images/Protagonists/Trimdius/Trimdius OMouth.webp"
+            ypos 300
         attribute OMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
             "images/Protagonists/Trimdius/Trimdius 3-4 OMouth.webp"
         
@@ -5691,7 +5711,7 @@ layeredimage camelLady:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Mean Eyes.webp"
         attribute meanEyes if_any["onFootYeah"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Mean Eyes.webp"
-            xpos 200 ypos -500
+            xpos 200 ypos 700
         attribute meanEyes if_any["onCamel","onCamelGreet","onCamelAttack"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Mean Eyes.webp"
             xpos 259 ypos 31
@@ -5701,7 +5721,7 @@ layeredimage camelLady:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl o mouth.webp"
         attribute OMouth if_any["onFootYeah"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl o mouth.webp"
-            xpos 200 ypos -500
+            xpos 200 ypos 700
         attribute OMouth if_any["onCamel","onCamelGreet","onCamelAttack"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl o mouth.webp"
             xpos 259 ypos 31
@@ -5710,7 +5730,7 @@ layeredimage camelLady:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Happy Mouth.webp"
         attribute happyMouth if_any["onFootYeah"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Happy Mouth.webp"
-            xpos 200 ypos -500
+            xpos 200 ypos 700
         attribute happyMouth if_any["onCamel","onCamelGreet","onCamelAttack"]:
             "images/NPCs/Zarat/Troopers/Zaratian Heavy Javelin Girl Happy Mouth.webp"
             xpos 259 ypos 31
