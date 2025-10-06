@@ -1,6 +1,5 @@
 init python:
 
-
     def resurrectParty( playerParty ):
 
         for currentCharacter in playerParty:
@@ -180,3 +179,11 @@ default atossaCharacter = PlayerCharacter("Ato'ssa" , 70 , 4 , 4 , atossaArmorSe
 #characters get buffed when visiting Darius and Ato'ssa just after getting the Sword of Ahura-Mazda
 #and Volkara doesn't get added to the party until after this event so her stats start updated
 default volkaraCharacter = PlayerCharacter("Volkara" , 86 , 7 , 7 , volkaraArmorSets, 3 , 1)
+
+#-------------------------------------------------------------------------------------
+
+label sleepyTimeReset: #
+    $ resurrectParty( currentParty )
+    $ IsDaytime = True
+    $ timeTime = 0
+    return

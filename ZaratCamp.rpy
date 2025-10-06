@@ -1689,7 +1689,7 @@ label zaratCampNighttime:
     $ xerxesCharacter.updateArmor( 1 )
     $ tesipizCharacter.updateArmor( 1 )
     $ volkaraCharacter.updateArmor( 1 )
-    $ resurrectParty( currentParty )
+    call sleepyTimeReset
 
     scene kingZaratTent at truecenter , flameLight
     show kingsPlatform at truecenter , flameLight:
@@ -2037,11 +2037,12 @@ label zaratCampWinning:
     tsek "ZARDONIAN ASSASS.."
     #kahak
     play sound armorProtected
-    show tsekrei armoredYeah34 OMouth XEyes at halfSize , center:
-        ypos 1.25 xzoom 1.0
-        linear 0.5 xalign 1.0 ypos 1.25 xzoom -1.0
-    show urlius punch34 meanEyes angryMouth at halfSize , left:
-        ypos 1.25
+    show tsekrei armoredYeah34 OMouth XEyes at  center:
+        ypos 1.5 xzoom 1.0
+        linear 0.5 xalign 1.0 ypos 1.5 xzoom -1.0
+        linear 0.25 xzoom 1.0
+    show urlius punch34 meanEyes angryMouth at size2Thrid , left:
+        ypos 1.4
     with dissolve
     with hpunch
     stop music
@@ -2054,24 +2055,24 @@ label zaratCampWinning:
     play music villageTheme fadein 1.0 fadeout 1.0
     urli "He is my double agent."
 
-    show urlius greet happy -meanEyes
-    show tsekrei armed -OMouth
+    show urlius happyMouth -meanEyes greet
+    show tsekrei neutralHappyMouth armed 
+    with dissolve
     urli "Hello Trimdius of Assiria."
     urli "What is it Trimdius?"
 
     scene clearDayTime at size08 , movingSky
-    show royalZaratCampOutside:
+    show royalZaratCampOutside at halfSize , center:
         xpan 180
-        yalign 0.5
-    show trimdius armored meanEyes at truecenter , size2Thrid:
-        ypos 1.4 
+    show trimdius meanEyes armored at truecenter , size2Thrid:
+        ypos 0.7
     with dissolve
     trim "I know why King Jemesis swich sides."
     show trimdius armoredPointy happyMouth with dissolve
     trim "It's something to do with Astarte."
 
-    show trimdius armored34 -happyMouth at truecenter , size2Thrid , flipped:
-        ypos 1.4 
+    show trimdius armored34 -happyMouth at truecenter , flipped:
+        ypos 0.7
         linear 2 xalign 1.0
     show xerxHappyGreetArmored at left , size2Thrid , flipped:
         xpos -0.25 ypos 1.4
@@ -2083,17 +2084,19 @@ label zaratCampWinning:
     hide xerxHappyGreetArmored
     show xerx3quatHappyArmored at left , size2Thrid , flipped:
         ypos 1.4
-    show trimdius armoredGreet happyMouth
+    show trimdius armoredGreet34 happyMouth
     with dissolve
     trim "Hello Xerxes!"
-    trim "Alright, so far we don't nned to rebel yet."
+    trim "Alright, so far we don't need to rebel yet."
     #xerxes might not be wearing versaniz's helment and cape but have it as an item
     show trimdius armoredPointy with dissolve
     trim "I'm about to show King Urlius something that can destroy Jemesis."
-    show trimdius armored -happyMouth
+    hide trimdius
+    show trimdius meanEyes armored  at truecenter , size2Thrid , flipped:
+        ypos 0.7 xalign 1.0
     show xerx3quatHappyArmored at left , size2Thrid , flipped:
-        ypos 1.4
-        linear 2 xalign 0.5
+        ypos 1.4 xzoom 1.0
+        linear 2 xalign 0.5 xzoom -1.0
     show tesipizPointingNeutralArmored at left , size2Thrid , flipped:
         xpos -0.25 ypos 1.4
         linear 2 xpos 0.0
@@ -2109,7 +2112,7 @@ label zaratCampWinning:
     with dissolve
     xerx "He helped me once."
 
-    scene kingZaratTent at fullFit
+    scene kingZaratTent at truecenter
     show kingsPlatform at center , size08:
         ypos 1.2
     show yuufia greet happyMouth at center , size2Thrid:
@@ -2121,9 +2124,9 @@ label zaratCampWinning:
     yuuf "Has he given up yet?"
 
     show yuufia -happyMouth at center , size2Thrid:
-        ypos 1.4
-        linear 2 xalign 0.0
-    show trimdius armored34 happyMouth at right , size2Thrid:
+        ypos 1.4 xzoom 1.0
+        linear 2 xalign 0.0 xzoom -1.0
+    show trimdius armored34 happyMouth at right , size2Thrid , flipped:
         ypos 1.4 xpos 1.4
         easein 2 xpos 1.0
     with dissolve
@@ -2133,8 +2136,8 @@ label zaratCampWinning:
     if versanizAlive: #maybe change it a bit
 
         trim "Then we'll just need to deal with Versaniz."
-        show trimdius armored34 -meanEyes at right , size2Thrid with dissolve:
-            xzoom 1.0 ypos 1.4
+        show trimdius armored34 -meanEyes at right with dissolve:
+            xzoom 1.0 ypos 1.4 zoom 0.67
             linear 1 xalign 0.5 xpos 0.5
         show xerx3quatPointCommandingArmored at right , size2Thrid with dissolve:
             ypos 1.4 xpos 1.4
@@ -2151,7 +2154,8 @@ label zaratCampWinning:
         trim "This plus Versaniz' death should get him to give up."
     #versaniz should show item here
     show trimdius armoredItem meanEyes happyMouth
-    show imageCrystalItem at center , halfSize
+    show imageCrystalItem at truecenter , size04:
+        xpos 0.28 ypos 0.7 rotate 30
     hide xerx3quatHappyerArmored
     show xerx3quatHappyArmored at right , size2Thrid:
             ypos 1.4
@@ -2159,40 +2163,45 @@ label zaratCampWinning:
     trim "I'll show you why."
     stop music fadeout 6
 
-    scene kingZaratTent at fullFit
-    show kingsPlatform at center , size08:
+    scene kingZaratTent at truecenter , flameLight
+    show kingsPlatform at center , flameLight:
         ypos 1.2
+    
+    show volkaraFeety at halfSize , center:
+        ypos 1.2 xpos 0.25
     show happyXerx at halfSize , left:
         ypos 1.2
-    show volkaraFeety at halfSize , left:
-        ypos 1.2 xpos 0.25
     show tesipizNeutralHappy at halfSize , center:
-        ypos 1.2
-    show yuufia at halfSize , right:
-        ypos 1.2 xpos 0.75
+        ypos 1.2 xpos 0.4
+    show yuufia at halfSize , center:
+        ypos 1.2 xpos 0.7
     show urlius at halfSize , right:
         ypos 1.2
-    show imageCrystalStand at center
+    show imageCrystalStand at center:
+        ypos 1.1
     with fade
     pause 3
     hide imageCrystalStand
     show imageCrystalStandActive at center:
+        ypos 1.1
     with Dissolve(1.5)
     pause 2
     #they set up image crystal
     #show scene miidos throne room 2 angles
-    play sound bardaiyaBeMad fadein 1.0 fadeout 1.0
+    play music bardaiyaBeMad fadein 1.0 fadeout 1.0
     scene jemesisThroneRoom at size2Thrid:
-        xpan 180
-    show astarte happyMouth
+        xpan 360
+    show astarte happyMouth at size08 , truecenter:
+        ypos 0.6
     with fade
     astar "Your loyalty to me is great."
     show astarte meanEyes with dissolve
-    astar "The Jamesians have sent in a dude with a magical sword."
+    astar "The Jamesians will send in a dude with a magical sword."
     show astarte holdingSword with dissolve
     astar "Here is a blade that can stand up to the Sword of Ahura-Mazda."
 
-    scene jemesisThroneRoom at size2Thrid , center
+    scene jemesisThroneRoom at size08 , truecenter:
+        yzoom 0.75
     show jemesis yeahSword meanEyes happyMouth at size2Thrid , center:
         ypos 1.4
     with dissolve
@@ -2201,22 +2210,22 @@ label zaratCampWinning:
     show jemesis -yeahSword sadEyes OMouth at size2Thrid , center:
         ypos 1.4
         linear 1 xpos 0.1 xalign 0.0
-    show astarte happyMouth meanEyes at size2Thrid , right:
+    show astarte happyMouth meanEyes at size3quat , right:
         ypos 1.4 xpos 1.25
-        linear xpos 1.0
+        linear 1 xpos 1.0
     astar "You'll not regret joining the right side of history."
     show astarte boobaHold hornyEyes -happyMouth charming with dissolve
     astar "Written by me of course."
     show jemesis -sadEyes -OMouth
     show astarte -boobaHold happyMouth -charming
     with dissolve
-    astar "Your subjects will soon prefer trade with Astarts and not with stinking camel rats."
+    astar "Your subjects will soon prefer trade with Astarts and not with the stinking camel rats."
 
     #astarte gets nekked
     scene jemesisThroneRoom at size2Thrid:
-        xpan 180
-    show astarte blush halfNekked2Side meanEyes happyMouth at center , size08:
-        ypos 1.5
+        xpan 360
+    show astarte blush halfNekked2Side meanEyes happyMouth at center , truecenter:
+        ypos 0.6
     with dissolve
     astar "Time for some fun."
     show astarte halfNekkedBooba hornyEyes charming with dissolve
@@ -2239,51 +2248,65 @@ label zaratCampWinning:
 #            urli "Not here Yuufia."
 #            trim "Enough of that."
 
-#just use sound
-    scene kingZaratTent at fullFit
-    show kingsPlatform at center , size08:
+#just use sound it's funnier
+    scene kingZaratTent at truecenter , flameLight
+    show kingsPlatform at center , size08 , flameLight:
         ypos 1.2
+    
+    
     show xerx3quatDesgusted at halfSize , left:
         ypos 1.2
-    show volkaraFeety meanEyes deltaMouth at halfSize , left:
-        ypos 1.2 xpos 0.25
     show tesipizYeah at halfSize , center , hornyAura:
-        ypos 1.2
-    show yuufia base34 blush at halfSize , right , flipped:
-        ypos 1.2 xpos 0.75
+        ypos 1.2 xpos 0.45
+    show yuufia base34 blush at halfSize , center , flipped:
+        ypos 1.2 xpos 0.7
+    show volkaraFeety meanEyes deltaMouth at halfSize , center:
+        ypos 1.2 xpos 0.25
+    
     show urlius base34 at halfSize , right , flipped:
         ypos 1.2
     play sound punchy loop
-    show imageCrystalStandActive at center
+    show imageCrystalStandActive at center:
+        ypos 1.1
     with dissolve
     volk "Jemesis you evil hoe humper!!"
+    show volkaraFeety behind tesipizYeah
+    show yuufia behind tesipizYeah
+    with dissolve
     tesi "Make Astarte a korkin and give me a copy."
     #yuufia gets frisky
+    show tesipizYeah behind yuufia
     show yuufia horny34 hornyEyes happyMouth blush at halfSize , right , flipped:
-        ypos 1.2 xpos 0.75
+        ypos 1.2 xpos 0.85
     show urlius pointy34 happyMouth at halfSize , right , flipped:
         ypos 1.2
     with dissolve
     urli "Not here Yuufia."
 
-    stop sound
+    play sound punchy loop
+    pause 0.1
+    play extraSound punchy loop
     scene kingZaratTent at fullFit
     show trimdius base34 meanEyes frown at left , size2Thrid:
         ypos 1.4 xpos -0.25
-        linear 2 xpos 0.5
-    show imageCrystalStandActive at center
+        linear 2 xpos 0.1
+    show imageCrystalStandActive at center:
+        ypos 1.1
     with dissolve 
     play music planingTime fadein 1.0 fadeout 1.0
     trim "Enough of that."
+    stop sound
+    stop extraSound
     hide imageCrystalStandActive with dissolve
     show trimdius item OMouth
-    show imageCrystalItem at center , size08
+    show imageCrystalItem at truecenter , size04:
+        xpos 0.6 ypos 0.72 rotate 70
     with dissolve
     trim "I'm going to present the evidence to the Zardonian Elites."
     hide imageCrystalItem with dissolve
     show trimdius pointy at left , size2Thrid:
-        ypos 1.4 xpos 0.5
-        linear 2 xpos 0.0
+        ypos 1.4 xpos 0.1
+        linear 2 xpos -0.1
     show xerx3quatConsurnd at right , size2Thrid:
         ypos 1.4 xpos 1.3
         linear 1 xpos 1.0
@@ -2297,13 +2320,13 @@ label zaratCampWinning:
     with dissolve
     xerx "I'll help you if you can promise me the Anti-Stealth Tablet piece in Miidos."
     show trimdius pointy OMouth
-    hide xerx3quatConsurnd
+    hide xerx3quatPointCommanding
     show xerx3quatAnnoyed at right , size2Thrid:
         ypos 1.4
     with dissolve
     trim "You can have the piece when Jemesis is no longer King."
 
-    show trimius -pointy -OMouth -meanEyes
+    show trimdius base34 -OMouth -meanEyes
     hide xerx3quatAnnoyed
     show xerx34LookDownAnnoyed at right , size2Thrid:
         ypos 1.4
@@ -2313,7 +2336,7 @@ label zaratCampWinning:
     show trimdius happyMouth with dissolve
     trim "We'll go tomorrow."
     if versanizAlive:
-        show trimdius frowning with dissolve
+        show trimdius base34 frown sadEyes with dissolve
         hide xerx34LookDownAnnoyed
         show xerx34LookDownSad at right , size2Thrid:
             ypos 1.4
@@ -2324,69 +2347,74 @@ label zaratCampWinning:
         show trimdius pointy with dissolve
         
         trim "You need rest."
-        show trimdius happyMouth with dissolve
+        show trimdius base34 happyMouth with dissolve
         hide xerx34LookDownAnnoyed
         show xerx3quatHappyer at right , size2Thrid:
             ypos 1.4
         with dissolve
         trim "Go and hang out with your friends."
 
-    play sound villageTheme fadein 1.0 fadeout 1.0
+    play music villageTheme fadein 1.0 fadeout 1.0
     scene tsekreiTent
-    show tsekrei item34Armored happyMouth at left , size2Thrid:
-        ypos 1.4 
-    show volkara3quat at center , size2Thrid:
+    show tsekrei itemArmored happyMouth at left , size2Thrid , flipped:
+        ypos 1.4  xpos -0.15
+    show volkara3quat at center , size2Thrid , flipped:
+        ypos 1.35 xpos 0.6
+    show tesipiz34NeutralHappy at right , size3quat:
         ypos 1.4
-    show tesipiz34NeutralHappy at right , size2Thrid:
-        ypos 1.4
+    with Fade(1,0,1)
     #tsekrei gives gifts to Volk, Tesi and Xerx
-    show nueBook at left
-    $ changeItemAmount( inventory , bookGift , 1 )
+    show nueBook at truecenter , halfSize with dissolve:
+        xpos 0.24 ypos 0.61
+    #$ changeItemAmount( inventory , bookGift , 1 )
     tsek "Here's your gift Volkara." 
     show tsekrei -happyMouth
-    show nueBook at left:
+    show nueBook at truecenter , halfSize with dissolve:
+        xpos 0.24 ypos 0.61
         linear 1 xpos 0.4
-    show volkara3quat armsOut 
+    show volkara3quat pointy 
     with dissolve
     pause 0.5
     hide nueBook with dissolve
-    $ addItemAmount( inventory , bookGift , 1 )
+    $ changeItemAmount( inventory , bookGift , 1 )
     show volkara3quat -armsOut happyMouth with dissolve
     volk "Thank you Tsekrei."
     show volkara3quat  -happyMouth
-    show tsekrei frontArmsArmored34 closedEyes
+    show tsekrei frontArmsArmored34 XEyes happyMouth
     with dissolve
     tsek "It's nothing really."
-    show tsekrei -closedEyes with dissolve
+    show tsekrei -XEyes with dissolve
     tsek "You helped us fend off the Zardonians."
 
-    show tsekrei itemArmored 
+    show tsekrei itemArmored -happyMouth
 
     with dissolve
     tsek "And Tesipiz."
-    show tsekrei handChestArmored34 happyMouth
+    show tsekrei handChestArmored34 happyMouth with dissolve
     tsek "Look what I managed to get for you."
     show tsekrei itemArmored with dissolve
     $ changeItemAmount( inventory , korkinDoll , 1 )
-    show doll3 at left , size2Thrid
+    show doll3 at truecenter:
+        xpos 0.26 ypos 0.55
     hide tesipiz34NeutralHappy
-    show tesipiz34HappyArmoredPointing at right , size2Thrid:
+    show tesipiz34HappyArmoredPointing at right , size3quat:
         ypos 1.4
     with dissolve
     #a zarasikian korkin lady doll
     tesi "Finally"
     hide tesipiz34HappyArmoredPointing
-    show tesipizYeah at right , size2Thrid:
+    show tesipizYeah at right , size3quat:
         ypos 1.4
     with dissolve
     tesi "A korkin one."
     hide tesipizYeah
-    show tesipiz34HappyCommandingPoting at right , size2Thrid:
+    show tesipiz34HappyCommandingPoting at right , size3quat behind doll3:
         ypos 1.4
-    show doll3 at left , size2Thrid:
-        linear 0.5 xpos 0.65
+    show doll3 at truecenter:
+        xpos 0.26 ypos 0.55
+        linear 1 xpos 0.75
     with dissolve
-    pause 0.5
+    pause 1
     hide doll3
     show tsekrei frontArmsArmored34 -happyMouth
     with dissolve
@@ -2407,9 +2435,9 @@ label zaratCampWinning:
             with dissolve
             tsek "You're welcome."
     scene tsekreiTent at center , size2Thrid
-    show tsekrei armored34 happyMouth at left , size2Thrid:
+    show tsekrei armored34 happyMouth at left , size2Thrid , flipped:
         ypos 1.4 
-    show xerx3quatHappy at right , size2Thrid:
+    show xerx3quatHappy at right , size3quat:
         ypos 1.4
     with dissolve
     tsek "Xerxes."
@@ -2422,41 +2450,41 @@ label zaratCampWinning:
         tsek "Also"
     
     show tsekrei itemArmored -happyMouth with dissolve
-    show fazanitIdol at left , size2Thrid
+    show fazanitIdol at truecenter , size2Thrid:
+        xpos 0.39 ypos 0.59
     hide xerx3quatHappy
-    show xerx3quatHappyer at right , size2Thrid:
+    show xerx3quatHappyer at right , size3quat:
         ypos 1.4
     with dissolve
     $ changeItemAmount( inventory , idolOfFazanit , 1 )
     "An idol of Fazanit, the Zaratian water god."
-    #xerxes gets a gift
-    #a amulet of something - maybe it stops him from getting possessed
-    #but wouldn't the jamesians know about it?
-    #maybe it's a placeebo
-    show fazanitIdol at left , size2Thrid:
-        linear 1 xpos 0.65
+    show fazanitIdol at truecenter , size2Thrid:
+        xpos 0.39 ypos 0.59
+        linear 1.2 xpos 0.75
     hide xerx3quatHappyer
-    show xerx3quatPointHappy at right , size2Thrid:
+    show xerx3quatPointHappy at right , size3quat behind fazanitIdol:
         ypos 1.4
     with dissolve
     pause 0.5
+    hide fazanitIdol with dissolve
     hide xerx3quatPointHappy
-    hide fazanitIdol
-    show xerx3quatHappyer at right , size2Thrid:
+    
+    show xerx3quatHappyer at right , size3quat:
         ypos 1.4
+    with dissolve
     xerx "Thanks Tsekrei."
 
     scene tsekreiTent at fullFit
-    show tesipiz34CuriousPointing at size2Thrid , left:
+    show tesipiz34CuriousPointing at size2Thrid , left , flipped:
         ypos 1.4
-    show trimdius armored34 at size2Thrid , right:
+    show trimdius armored34 at size2Thrid , right , flipped:
         ypos 1.4
     with dissolve
     tesi "Xerxes said you helped him with something Trimdius."
     tesi "What did you help him with?"
 
     hide tesipiz34CuriousPointing
-    show tesipiz34NeutralHappy at size2Thrid , left:
+    show tesipiz34NeutralHappy at size2Thrid , left , flipped:
         ypos 1.4
     show trimdius happyMouth
     with dissolve
@@ -2468,34 +2496,36 @@ label zaratCampWinning:
     #xerdza armored scale - done - what armor damaged by transformation
     #xerdza armored ahhh!! - done - looking at hand or feeling self
     play music ahrimaniomPhase1 fadein 1.0 fadeout 1.0
-    scene zwotiArenaBattleOutNight at center , ahriteLights
-    show xerxMadArmedArmored at left , size2Thrid:
-        xpos 1.4
-    show ahrimaniomMK3 at right , flipped , size2Thrid:
-        xpos 1.4
+    scene ahriteRoom at center , ahriteLight 
+    show ahrimaniomMK3 at truecenter , flipped , halfSize:
+        xpos 0.8
+    show xerxMadArmedArmored at truecenter , halfSize:
+        xpos -0.1
+        easein 3 xpos 0.5
     with dissolve
     #scene ahriteRoom at fullFit
-    pause 2
+    pause 1
     hide ahrimaniomMK3
     hide xerxMadArmedArmored
-    show xerxSuprizedArmored at left , size2Thrid:
-        xpos 1.4
-    show ahrimaniomMK3Casting at right , flipped , size2Thrid:
-        xpos 1.4 matrixcolor TintMatrix("#000") * BrightnessMatrix(1.0)
+    show ahrimaniomMK3Casting at truecenter , flipped , halfSize:
+        xpos 0.7 matrixcolor TintMatrix("#000") * BrightnessMatrix(1.0)
         linear 0.5 matrixcolor TintMatrix("#FF48E9")
-    play sound magicAttackUnchmabered    
+    show xerxSuprizedArmored at truecenter , halfSize:
+        xpos 0.45
     with dissolve
+    play sound magicAttackUnchmabered    
+    
     hide xerxSuprizedArmored
     hide ahrimaniomMK3Casting
-    show xerdzaJustMade at left , size2Thrid:
-        xpos 1.4
-        easeout 4 xpos 0.5 xalign 0.5
-    with Fade(0.5,0.5,1,color="FF48E9")
+    show xerdzaJustMade at truecenter , halfSize , flipped:
+        xpos 0.3
+        easeout 4 xpos 0.5
+    with Fade(0.5,1,1,color="FF48E9")
     stop music fadeout 3
     pause 2
     hide xerdzaJustMade
-    show xerdzaImGirlNow at center , size2Thrid:
-        xpos 1.4
+    show xerdzaImGirlNow at center , size08:
+        ypos 1.4
     with dissolve
     with hpunch
     with vpunch
@@ -2515,14 +2545,17 @@ label zaratCampWinning:
         ypos 1.4
     show xerdzaAnnoyed at right , size2Thrid , lightCrystalLights:
         ypos 1.4
+    with fade
     trim "I made in prank proof."
     #show xerx learningn sex-change spell
     show femdius threeFingers happyMouth with dissolve
     trim "You should be able to turn back into a dude in 3 hours now that you know the spell."
 
-    show tesipiz34Curious at size2Thrid , left:
+    scene tsekreiTent at fullFit
+    show tesipiz34Curious at size2Thrid , left , flipped:
         ypos 1.4
-    show trimdius
+    show trimdius armored34 at size2Thrid , right , flipped:
+        ypos 1.4
     with dissolve
     tesi "O.K."
 
@@ -3024,19 +3057,20 @@ label tsekreiSleepOver1:
 
     #back at tsekrei's tent
     play music nightAmbiance fadein 1.0 fadeout 1.0
-    show tsekreiTent at flameLights , truecenter
-    with Fade(1,0,1)
-    show volkara3quat nightOutfit at left , size2Thrid , lightCrystalLights with dissolve:
-        ypos 1.25
+    show tsekreiTent at flameLight , truecenter
+    with Fade(1,0,1) 
+    
+    show tesipiz34NeutralHappy at center , size08 , lightCrystalLights with dissolve:
+        ypos 1.4
     show tsekrei armsForward34 at right , size2Thrid , lightCrystalLights with dissolve:
-        ypos 1.25
-    show tesipiz34NeutralHappy at center , size2Thrid , lightCrystalLights with dissolve:
-        ypos 1.25
+        ypos 1.4
+    show volkara3quat nightOutfit at left , size2Thrid , lightCrystalLights with dissolve:
+        ypos 1.3
     show volkara3quat nightOutfitPointy OMouth with dissolve
     volk "Is Xerxes at his tent?"
 
     show volkara3quat nightOutfit -OMouth 
-    show tsekrei OMouth
+    show tsekrei OMouth sadEyes
     with dissolve
     tsek "Yes."
     show tsekrei item 
@@ -3045,7 +3079,7 @@ label tsekreiSleepOver1:
     tsek "Regius says he needs space because of his past."
     tsek "So he gave him an old spare zarato-jamesian tent he had with him."
     show volkara3quat -sadEyes -deltaMouth
-    show tsekrei base34 happyMouth 
+    show tsekrei base34 happyMouth -sadEyes
     with dissolve
     tsek "He'll be fine."
 
@@ -3091,8 +3125,9 @@ label tsekreiSleepOver1:
                 tsek "It was fun while it lasted."
     hide tesipiz34NeutralHappy
     hide tesipiz34XD
-    show tesipiz34NeutralHappy at center , size2Thrid, lightCrystalLights:
-            ypos 1.25 xzoom -1.0
+    show tesipiz34NeutralHappy at center , size08, lightCrystalLights:
+            ypos 1.4 xzoom 1.0
+            linear 0.5 xzoom -1.0
             linear 0.5 xzoom 1.0
     show tsekrei armsForward34 -OMouth -happyMouth -sadEyes
     show volkara3quat nightOutfitPointy meanEyes happyMouth
@@ -3100,23 +3135,23 @@ label tsekreiSleepOver1:
     volk "Now who is the lucky boy who gets to be in the middle."
     
     hide tesipiz34NeutralHappy
-    show tesipiz34XD at center , size2Thrid, lightCrystalLights:
-            ypos 1.25
+    show tesipiz34XD at center , size08, lightCrystalLights:
+            ypos 1.4
     show volkara3quat nightOutfit -meanEyes -happyMouth
     with dissolve
     tesi "Me."
 
     hide tesipiz34XD
-    show tesipizSuprized at center , size2Thrid, lightCrystalLights:
-        ypos 1.25
+    show tesipizSuprized at center , size3quat, lightCrystalLights behind volkara3quat , tsekrei:
+        ypos 1.4
     show volkara3quat nightOutfitPointy lineEyes deltaMouth
     with dissolve
     volk "Don't get any ideas though."
 
     hide tesipizSuprized
-    show tesipizNeutralHappy at center , size2Thrid, lightCrystalLights:
-        ypos 1.25
-    show volkara34Happy nightOutfit -deltaMouth -lineEyes
+    show tesipizNeutralHappy at center , size3quat, lightCrystalLights behind volkara3quat , tsekrei:
+        ypos 1.4
+    show volkara3quat nightOutfit -deltaMouth -lineEyes
     with dissolve
     #xerxsleeps
     stop music fadeout 7
@@ -3126,7 +3161,8 @@ label tsekreiSleepOver1:
     #volkTesiTseksleeps - use cleaver camera work
     scene zaratSleeps at right , size2Thrid with Fade(3,0,3)
     pause 7
-    #establisng shot at morning.
+    call sleepyTimeReset
+    #TODO establisng shot at morning.
 
     $ enteringFrom = "leavingTown"
     jump zaratCampMenu

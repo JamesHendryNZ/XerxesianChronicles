@@ -63,7 +63,7 @@ define plumbataDart= Item( "Plumbata" , "images/items/plumbata.webp" , "javelin"
 define javelinBronze = Item( "Bronze Spear" , "images/items/javelinBronze.webp" , "javelin" , 21 , 0 , "Yeet" , 12 , "A soild bronze spear off an old battle statue. Packs quite a punch when thrown" , 20 )
 define javelinIron = Item( "Iron Spike" , "images/items/javelinIron.webp" , "javelin" , 18 , 0 , "Yeet" , 6 , "A short iron spike used in spring cannons. Can be used as a javelin as well." , 12 )
 define redPotion = Item("Healing Potion (Red)" , "images/items/bottlePotionRed.webp" , "potion" , 60 , 0 , "Heals" , 0 , "Magic potion that replenisihes some lifeforce to keep auto-heal going." , 25)
-define bluePotion = Item("Healing Potion (Blue)" , "images/items/bottlePotionBlue.webp" , "potion" , 80 , 4 , "Heals" , 0 , "Magic potion that replenisihes a lot of lifeforce to keep auto-heal going. Heals 80 for 4 turns" , 35)
+define bluePotion = Item("Healing Potion (Blue)" , "images/items/bottlePotionBlue.webp" , "potion" , 80 , 2 , "Heals" , 0 , "Magic potion that replenisihes a lot of lifeforce to keep the auto-heal going. Heals 80 for 2 turns" , 50)
 define yellowBombMakitKit = Item( "Yellow Bomb Kit" , "images/items/bombKitYellow.webp" , "preKit" , 0 , 0 , "preBomb" , 0 , "Random Chemicals needed to make yellow bombs. Needs Tesipiz and time to convert it to bombs." , 25 )
 define tanBombMakitKit = Item( "Strong Bomb Kit" , "images/items/bombKitTan.webp" , "preKit" , 0 , 0 , "preBomb" , 0 , "Random Chemicals needed to make the strong tan bombs. Needs Tesipiz and time to convert it to bombs." , 50 )
 define zwotiKey = Item( "Zwoti Sword Key" , "images/items/keysZwotiSoAM.webp" , "quest" , 6 , 0 , "questKey" , 3 , "A key needed to access the Sword of Ahura-Mazda. Found in the Zwoti Shrine." , 4 )
@@ -124,7 +124,7 @@ define clearingJuice = Item( "Clearing Potion" ,  "images/items/Clearing Potion.
 
 define dollCondition1 = Item( "Old Doll" , "images/items/Doll Partly Restored.webp" , "quest" , 0 , 0 , "dollSubQuest" , 0 , "An old doll found under Takurium Ruins." , 0 )
 define tesiDoll = Item( "Tespiz' Doll" , "images/items/Doll 2.webp" , "quest" , 0 , 0 , "TextPromt" , 0 , "One of the dolls in Tesipiz' collection." , 0 )
-define korkinDoll = Item( "Tespiz' Doll" , "images/items/Doll 3.webp" , "quest" , 0 , 0 , "TextPromt" , 0 , "A doll of a Zarasikian Korkin given to Tesipiz by Tsekrei." , 0 )
+define korkinDoll = Item( "Tespiz' Korkin Doll" , "images/items/Doll 3.webp" , "quest" , 0 , 0 , "TextPromt" , 0 , "A doll of a Zarasikian Korkin given to Tesipiz by Tsekrei." , 0 )
 
 define ironSulfate = Item( "Iron Sulfur" , "images/items/iron 2 sulfate.webp" , "chemical" , 0 , 0 , "chemical" , 0 , "Can be turned into acid" , 30)
 define grapplePointShooter = Item("Grapple Shooter" , "images/items/Grapple Point Shooter.webp" , "grapple" , 20 , 1 , "ground" , 10 , "A device that takes flyiers and swimmers out of their confort zone.", 1200 )
@@ -132,7 +132,7 @@ define harpoonLauncher = Item("Harpoon Laucher" , "images/items/Harpoon Launcher
 
 #lore documents
 define tabletDocument = Item("Anti-Stealth Tablet Document" , "images/items/tabletDocument.webp" , "quest" , 0 , 0 , "Lore" , 0 , "A document showing information of the Anti-Stealth Tablet. The Anti-Stealth Tablet is of ahrite construction, it was created around the time of the 2nd Subversion in 552. It seems to show the general area that the Bardaiya-Shahneh is. The emblem in the middle is a press activator. The Astarts had obtained it with out knowing what it does. They had lost it in an ambush raid where it shattered. The Knights of Ahura-Mazda found out when they found documentation in the ahrite ruins in Azerinyih in 554." , 2000 )
-define bookGift = Item("The Kinzrama From Heian" , "images/items/tsekrei gift.webp" , "quest" , 0 , 0 , "Lore" , 0 , "A story about a Kinzrama called Nu-eh who came from a place called Heian that is beyond the Sky Above the Sky. She arrived and helped the Karutu led by Herakiliz defeat the Katanian Empire by placing misfortune on the Katanians in 404. Herakiliz was able to get within the Katanian Captial of Kagotasha and force the Emperor to sue for peace. She was made a Kashgyim protector diety and name also became Nweh Kota-Heyan and took on a more Karutu-esque appearance." , 1209)
+define bookGift = Item("The Kinzrama From Heian" , "images/items/tsekrei gift.webp" , "quest" , 0 , 0 , "Lore" , 0 , "A story about a Kinzrama called Kinzrama who came from a place called Heian that is beyond the Sky Above the Sky.\n She arrived and helped the Karutu led by Herakiliz defeat the Katanian Empire by placing misfortune on the Katanians in 404. Herakiliz was able to get within the Katanian Captial of Kagotasha and force the Emperor to sue for peace.\n She was made a Kashgyim protector diety and name also became Kizrem-Heyan and took on a more Karutu-esque appearance." , 1209)
 
 #idols
 define idolOfFazanit = Item( "Idol of Fazanit" , "images/items/Fazanit Idol.webp" , "quest" , 0 , 0 , "loot" , 0 , "An Idol of the Zaratian god of rain, clouds , water , snow , ice and steam. Given to Xerxes by Tsekrei to help him with the magic water system." , 500)

@@ -1,6 +1,8 @@
 
 
 label morningOfYarak:
+    #it's morninggggggg!!!!
+    
     #"The battle"
     #regius gets armor for his camel - nope for now
     play music windAmbiance fadein 1.0 fadeout 1.0
