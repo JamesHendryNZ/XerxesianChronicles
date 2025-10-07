@@ -810,7 +810,7 @@ label battleOfYarak:
 
     xerx "Tesipiz, Volkara!"
     xerx "The Zarato-Jamesian Cavarly!"
-    xerx "It's time to strike."
+    xerx "It's time to strike!"
     hide xerxHorseAngrySoAM
     show xerxHorseAttackSoAM at truecenter , halfSize:
         ypos 0.792 xpos 0.457

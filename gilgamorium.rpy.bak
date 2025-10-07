@@ -95,7 +95,7 @@ label gilgamoriumIncriment:
 
         if not alerted:
             $ alerted = True
-            call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck
+            call gilgamoriumMusicCheck
             
             call screen playerActions( "They have found you!!" , canFlee , True , True , 1 )
         else:
@@ -103,25 +103,25 @@ label gilgamoriumIncriment:
             #battle time
     
     if timePassed > turnsBeforeZardoniansShowUp and zardonianSquads > 0:
-        call zardonianaLandingGilgamorium from _call_zardonianaLandingGilgamorium
+        call zardonianaLandingGilgamorium
         $ theSquads.append( Squad( False , zardonianGoons , 5 , [4,0], "u"))
         $ theSquads.append( Squad( False , zardonianGoons , 5 , [4,1], "u"))
         $ zardonianSquads -= 1
 
     if timePassed == int(turnsBeforeLakatinuShowsUp / 2):
     
-        call versanizOnABoatWithLakatinu from _call_versanizOnABoatWithLakatinu
+        call versanizOnABoatWithLakatinu
     
     if timePassed == turnsBeforeLakatinuShowsUp:
-        call lakatinuMeetsZagzhino1 from _call_lakatinuMeetsZagzhino1
+        call lakatinuMeetsZagzhino1
     
     if timePassed == turnsBeforeZardoniansShowUp - 2:
-        call versanizOnABoatMuiba from _call_versanizOnABoatMuiba
+        call versanizOnABoatMuiba
 
     if timePassed % spawnAggression == 0 and alerted:
-        call gilgamoriumSwaners from _call_gilgamoriumSwaners
+        call gilgamoriumSwaners
 
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_1
+    call gilgamoriumMusicCheck
     show screen gilgamoriumTimer
     $ timePassed += 1
 
@@ -345,10 +345,10 @@ label breakIntoEastGilgamoriumGate:
     with dissolve
    
     hide tesipizFlameStickAndBomb
-    show tesipizBombingArmed at middleStand , size2Thrid 
+    show tesipizBombingArmed at middleStand , size2Thrid , flipped
     with dissolve
     hide tesipizBombingArmed
-    show tesipizThrowingArmored at middleStand , size2Thrid , flipped
+    show tesipizThrowingArmored at middleStand , size2Thrid 
     with dissolve
     pause 0.5
 
@@ -807,7 +807,7 @@ label gilgamoriumWaterAttack:
     while counter > 0:
         $ enemyTroopers.append( copy.copy( extraGoonPool[ renpy.random.randint(0, len(extraGoonPool)-1) ]) )
         $ counter -= 1
-    call screen playerActions( "Push through the Shatseta!(Slay 12 of them)" , False , False , True , 1 , foesLeft = 12 , winWhenFoeAmountKilled = True , goonAddPool = extraGoonPool )
+    call screen playerActions( "Push through the Shatseta!(Slay 20 of them)" , False , False , True , 1 , foesLeft = 20 , winWhenFoeAmountKilled = True , goonAddPool = extraGoonPool )
     #the battles
 
     $ alerted = True
@@ -831,36 +831,28 @@ label zardonianaLandingGilgamorium:
     hide zardonianBoatFrontUp
     show zardonianBoatFrontNoRamp at center , halfSize
     show zardonianBoatFrontDown at center , halfSize
-    play sound [ slamSound  ]
     with dissolve
     show zardonianAxeDude at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos -0.5
-    play sound sandySlam
     show zardonianAxeGirl at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos 1.5
-    play sound sandySlam
     show zardonianSwordsMan at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos -0.5
-    play sound sandySlam
     show zardonianSwordsWoahMan at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos 1.5
-    play sound sandySlam
     show zardonianDartBoy at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos -0.5
-    play sound sandySlam
     show zardonianDartGirl at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos 1.5
-    play sound sandySlam
     show zardonianHarpoonDude at truecenter , quatSize with dissolve:
         easeout 1 ypos 0.75
         easeout 1 xpos -0.5
-    play sound sandySlam
     
     return
 #works just like takurium and kwortix mine
@@ -871,7 +863,7 @@ label zardonianaLandingGilgamorium:
 label gilgaNorthEast: #the entrance part
 
     $ label2Jump = 'gilgaNorthEast'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_2
+    call gilgamoriumMusicCheck
     scene cloudyDayTime at fullFit
     if enteringFrom == "East Lane":
         show eastGateStreet:
@@ -884,7 +876,7 @@ label gilgaNorthEast: #the entrance part
     with dissolve
 
     $ playerLocation = [ 1 , 2 ]
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment
+    call gilgamoriumIncriment
     if enteringFrom == "East Lane":
         show eastGateStreet:
             yalign 0.6
@@ -907,7 +899,7 @@ label gilgaNorthEast: #the entrance part
 label gilgaNorthStreet:
 
     $ label2Jump = 'gilgaNorthStreet'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_3
+    call gilgamoriumMusicCheck
     scene cloudyDayTime
     show northGateStreet:
         yalign 0.63
@@ -916,7 +908,7 @@ label gilgaNorthStreet:
 
     $ playerLocation = [ 1 , 1 ]
     
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_1
+    call gilgamoriumIncriment
     scene cloudyDayTime
     show northGateStreet:
         yalign 0.63
@@ -963,7 +955,7 @@ label gilgaNorthGateCutty:
         with dissolve
             
         $ currentParty = [ tesipizCharacter , volkaraCharacter ]
-        call gilgamoriumIncriment from _call_gilgamoriumIncriment_2
+        call gilgamoriumIncriment
         hide screen gilgamoriumTimer
         hide window dissolve
         scene cloudyDayTime  at fullFit
@@ -1012,7 +1004,7 @@ label gilgaNorthGateCutty:
             xalign 0.55 #configure to middle
         with dissolve    
 
-        call gilgamoriumIncriment from _call_gilgamoriumIncriment_3
+        call gilgamoriumIncriment
         hide screen gilgamoriumTimer
         hide window dissolve
         show northGateStreet at halfSize:
@@ -1037,7 +1029,7 @@ label gilgaNorthGateCutty:
             xalign 0.55 #configure to middle
         with dissolve     
 
-        call gilgamoriumIncriment from _call_gilgamoriumIncriment_4
+        call gilgamoriumIncriment
         hide screen gilgamoriumTimer
         hide window dissolve
         show northGateStreet at halfSize:
@@ -1073,7 +1065,7 @@ label gilgaNorthGateCutty:
 label gilgaNorthGate:
 
     $ label2Jump = 'gilgaNorthGate'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_4
+    call gilgamoriumMusicCheck
     scene cloudyDayTime at fullFit
     if enteringFrom == "North Wall Street":
         show fwimgyokaRoadWest at right
@@ -1119,7 +1111,7 @@ label gilgaNorthGate:
         ssatuRebel "JAMESIANS ARE INSIDE!!"
         hide ssatuGlaiveBoyAttack with dissolve
         
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_5 
+    call gilgamoriumIncriment 
 
     $ enteringFrom = "North Gate"
     hide screen gilgamoriumTimer
@@ -1209,9 +1201,9 @@ label gilgaNorthGate:
                 with dissolve
                 pause 4
             else:
-                call gilgaNorthGateCutty from _call_gilgaNorthGateCutty
+                call gilgaNorthGateCutty
         else:
-            call gilgaNorthGateCutty from _call_gilgaNorthGateCutty_1
+            call gilgaNorthGateCutty
             
         $ northGateOpen = True
 
@@ -1242,7 +1234,7 @@ label gilgaNorthGate:
         show zaratoJamesianAxeLady:
             ypos 0.45 xpos 0.35 zoom 0.05
             easeout 10 zoom 2.0 ypos 1.0 xpos 0.2
-        show camelLady meanEyes OMouth:
+        show camelLady meanEyebrows OMouth:
             ypos 0.45 xpos 0.3 zoom 0.05
             easeout 10 zoom 2.0 ypos 1.0 xpos -0.3
         
@@ -1327,12 +1319,12 @@ label gilgaNorthGate:
 label fountainStreet:
 
     $ label2Jump = 'fountainStreet'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_5
+    call gilgamoriumMusicCheck
     scene cloudyDayTime
     show fountainStreet at center , halfSize
     with dissolve
     $ playerLocation = [ 2 , 1 ]
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_6
+    call gilgamoriumIncriment
     scene cloudyDayTime
     show fountainStreet at center , halfSize
     with dissolve
@@ -1350,13 +1342,13 @@ label fountainStreet:
 label yimiataStreet:
 
     $ label2Jump = 'yimiataStreet'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_6
+    call gilgamoriumMusicCheck
     scene cloudyDayTime
     show yimiataStreet at center 
     with dissolve
 
     $ playerLocation = [ 3 , 1 ]
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_7
+    call gilgamoriumIncriment
     scene cloudyDayTime
     show yimiataStreet at center 
     with dissolve
@@ -1375,13 +1367,13 @@ label yimiataStreet:
 label fwimgyokaRoad:
 
     $ label2Jump = 'fwimgyokaRoad'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_7
+    call gilgamoriumMusicCheck
     scene cloudyDayTime
     show fwimgyokaRoadWest at center , size08
     with dissolve
 
     $ playerLocation = [ 2 , 0 ]
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_8
+    call gilgamoriumIncriment
     scene cloudyDayTime
     show fwimgyokaRoadWest at center , size08
     with dissolve
@@ -1428,7 +1420,7 @@ label openGilgaEastGateCutty:
         with dissolve
             
         $ currentParty = [ tesipizCharacter , volkaraCharacter ]
-        call gilgamoriumIncriment from _call_gilgamoriumIncriment_9
+        call gilgamoriumIncriment
         hide screen gilgamoriumTimer
         scene cloudyDayTime at fullFit
         show eastGateStreet:
@@ -1481,7 +1473,7 @@ label openGilgaEastGateCutty:
             xalign 0.45
         with dissolve    
 
-        call gilgamoriumIncriment from _call_gilgamoriumIncriment_10
+        call gilgamoriumIncriment
         hide screen gilgamoriumTimer
         scene cloudyDayTime at fullFit
         show eastGateStreet:
@@ -1507,7 +1499,7 @@ label openGilgaEastGateCutty:
             xalign 0.45
         with dissolve     
 
-        call gilgamoriumIncriment from _call_gilgamoriumIncriment_11
+        call gilgamoriumIncriment
         hide screen gilgamoriumTimer
         scene cloudyDayTime at fullFit
         show eastGateStreet:
@@ -1542,7 +1534,7 @@ label openGilgaEastGateCutty:
 label gilgaEastGate:
     
     $ label2Jump = 'gilgaEastGate'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_8
+    call gilgamoriumMusicCheck
     scene cloudyDayTime
     if eastGateOpen:
         show eastGateStreet:
@@ -1579,9 +1571,10 @@ label gilgaEastGate:
         play music OnDaAttack fadein 1.0 fadeout 1.0
         ssatuRebel "JAMESIANS ARE INSIDE!!"
         hide ssatuGlaiveGirlAttack with dissolve
+        $ alerted = True
 
     $ playerLocation = [ 3 , 2 ]
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_12
+    call gilgamoriumIncriment
     $ enteringFrom = "East Gate"
     
     hide screen gilgamoriumTimer
@@ -1641,9 +1634,9 @@ label gilgaEastGate:
 
                 with dissolve
             else:
-                call openGilgaEastGateCutty from _call_openGilgaEastGateCutty
+                call openGilgaEastGateCutty
         else:
-            call openGilgaEastGateCutty from _call_openGilgaEastGateCutty_1
+            call openGilgaEastGateCutty
             
 
         
@@ -1731,13 +1724,13 @@ label gilgaEastGate:
 label gilgaEastLane:
 
     $ label2Jump = 'gilgaEastLane'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_9
+    call gilgamoriumMusicCheck
     scene cloudyDayTime
     show eastGateInside at size2Thrid:
         xalign 0.3 yalign 1.0
     with dissolve
     $ playerLocation = [ 2 , 2 ]
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_13
+    call gilgamoriumIncriment
     scene cloudyDayTime
     show eastGateInside at size2Thrid:
         xalign 0.3 yalign 1.0
@@ -1760,7 +1753,7 @@ label gilgaEastLane:
 label gilgaShoreEast:
     
     $ label2Jump = 'gilgaShoreEast'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_10
+    call gilgamoriumMusicCheck
     scene cloudyDayTime at fullFit
     if enteringFrom == "Yimita Street":
         show gilgamoriumFromLake:
@@ -1775,7 +1768,7 @@ label gilgaShoreEast:
     with dissolve
 
     $ playerLocation = [ 4 , 1 ]
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_14
+    call gilgamoriumIncriment
     scene cloudyDayTime at fullFit
     if enteringFrom == "Yimita Street":
         show gilgamoriumFromLake:
@@ -1796,7 +1789,7 @@ label gilgaShoreEast:
 label gilgaShoreWest:
 
     $ label2Jump = 'gilgaShoreWest'
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_11
+    call gilgamoriumMusicCheck
     scene cloudyDayTime at fullFit
     if enteringFrom == "Palace Front":
         show gilgamoriumFromLake:
@@ -1807,7 +1800,7 @@ label gilgaShoreWest:
             xalign 0.7 yalign 0.7 yzoom 0.8
 
     $ playerLocation = [ 4 , 0 ]
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_15
+    call gilgamoriumIncriment
     scene cloudyDayTime at fullFit
     if enteringFrom == "Palace Front":
         show gilgamoriumFromLake:
@@ -1828,7 +1821,7 @@ label gilgaShoreWest:
 label gilgaPalaceFront:
     
     
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_12
+    call gilgamoriumMusicCheck
     scene cloudyDayTime at fullFit
     if enteringFrom == "The Beach West":
         show gilgamoriumFromLake:
@@ -1866,7 +1859,7 @@ label gilgaPalaceFront:
     if northGateOpen and eastGateOpen:
         $ mustFight = True
 
-    call gilgamoriumIncriment from _call_gilgamoriumIncriment_16
+    call gilgamoriumIncriment
     scene cloudyDayTime at fullFit
     if enteringFrom == "The Beach West":
         show gilgamoriumFromLake:
@@ -1881,7 +1874,7 @@ label gilgaPalaceFront:
     if northGateOpen and eastGateOpen:
         
         while check4Encounter( theSquads , gilgamoriumMap , playerLocation , playerLevel ) is not False and Palacecounter > 0:
-            call gilgamoriumIncriment from _call_gilgamoriumIncriment_17
+            call gilgamoriumIncriment
             show fwimgyokaRoadWest with dissolve:
                 xalign 0.22 yalign 1.0 zoom 2.0 yzoom 0.6
             #"[Palacecounter]"
@@ -1903,12 +1896,12 @@ label gilgaPalaceFront:
         if northGateOpen:
             xerx "We should open the east gate first."
             $ playerLocation = [ 3 , 1 ]
-            call gilgamoriumIncriment from _call_gilgamoriumIncriment_18
+            call gilgamoriumIncriment
             jump gilgaEastGate
         elif eastGateOpen:
             xerx "We should open the north gate first"
             $ playerLocation = [ 2 , 0 ]
-            call gilgamoriumIncriment from _call_gilgamoriumIncriment_19
+            call gilgamoriumIncriment
             jump gilgaNorthGate
         else:
             xerx "We should open the gates first."
@@ -1916,12 +1909,12 @@ label gilgaPalaceFront:
             menu:
                 "Go and open the North Gate!" if not northGateOpen:
                     $ playerLocation = [ 2 , 0 ]
-                    call gilgamoriumIncriment from _call_gilgamoriumIncriment_20
+                    call gilgamoriumIncriment
                     jump gilgaNorthGate
 
                 "Go and open the East Gate!" if not eastGateOpen:
                     $ playerLocation = [ 3 , 1 ]
-                    call gilgamoriumIncriment from _call_gilgamoriumIncriment_21
+                    call gilgamoriumIncriment
                     jump gilgaEastGate
 
 
@@ -2077,7 +2070,7 @@ label gettingKingZagzhino:
     if timePassed < turnsBeforeZardoniansShowUp:
         $ timeLeftBeforeReinforcements = turnsBeforeZardoniansShowUp - timePassed
 
-    call gilgamoriumMusicCheck from _call_gilgamoriumMusicCheck_13
+    call gilgamoriumMusicCheck
     #fight zagzhino's goons here
     if len(currentParty) == 1: #xerxes is busy fighting Lakatinu
         $ currentParty = [ tesipizCharacter , volkaraCharacter ]
@@ -2096,7 +2089,7 @@ label gettingKingZagzhino:
         show volkaraArmored armred happyMouth at tesiRight , size08
         with dissolve
         volk "We might hold you in the Temple of Ahura-Mazda if you tell us where the Anti-Stealth Tablet piece is."
-        show volkaraArmored heheh at tesiRight , size08 with dissolve
+        show volkaraArmored armred happyMouth heheh at tesiRight , size08 with dissolve
         volk "We're nicer than the Zaratians, we promise."
 
         scene clearDayTime 
@@ -2231,10 +2224,10 @@ label gettingKingZagzhino:
         while counter > 0:
             $ enemyTroopers.append( copy.copy( extraGoonPool[ renpy.random.randint(0 , len(extraGoonPool) - 1 )] ) )
             $ counter -= 1
-        call screen playerActions( "Defeat Zagzhino's goons (Slay 12) before the Zardonians arrive ([timeLeftBeforeReinforcements] turns)" , False , True , True , timeLeftBeforeReinforcements , foesLeft = 12 , goonAddPool = extraGoonPool)
+        call screen playerActions( "Defeat Zagzhino's goons (Slay 20) before the Zardonians arrive ([timeLeftBeforeReinforcements] turns)" , False , True , True , timeLeftBeforeReinforcements , foesLeft = 20 , goonAddPool = extraGoonPool)
         $ timeLeftBeforeReinforcements = _return
         if timeLeftBeforeReinforcements < 1:
-            call zardonianaLandingGilgamorium from _call_zardonianaLandingGilgamorium_1
+            call zardonianaLandingGilgamorium
             $ turnsBeforeZardoniansShowUp = 0
             show gateDoorClosed:
                 zoom 0.4 xpos 0.45 ypos 0.29 yzoom 1.5
@@ -2258,7 +2251,7 @@ label gettingKingZagzhino:
             scene gilgamoriumPalaceDockSouth with dissolve:
                 xalign 0.2 yalign 0.7 zoom 1.5 yzoom 0.5
             with dissolve
-            call screen playerActions( "Curses! The Zardonians arrived! Guese we have to take them out as well.(Slay 28 of them)" , False , False , False , 1 , foesLeft = 28 , winWhenFoeAmountKilled = True , goonAddPool = extraGoonPool , goonsAllowed = 7 )
+            call screen playerActions( "Curses! The Zardonians arrived! Guese we have to take them out as well.(Slay 36 of them)" , False , False , False , 1 , foesLeft = 36 , winWhenFoeAmountKilled = True , goonAddPool = extraGoonPool , goonsAllowed = 7 )
     else:
         
         $ Palacecounter = 3
@@ -2272,7 +2265,7 @@ label gettingKingZagzhino:
         while counter > 0:
             $ enemyTroopers.append( copy.copy( extraGoonPool[ renpy.random.randint(0 , len(extraGoonPool) - 1 )] ) )
             $ counter -= 1
-        call screen playerActions( "His zardonians wont save him from his fate.(Slay 28 of them)" , False , False , False , 1 , foesLeft = 28 , winWhenFoeAmountKilled = True , goonAddPool = extraGoonPool , goonsAllowed = 7 )    
+        call screen playerActions( "His zardonians wont save him from his fate.(Slay 36 of them)" , False , False , False , 1 , foesLeft = 36 , winWhenFoeAmountKilled = True , goonAddPool = extraGoonPool , goonsAllowed = 7 )    
 
     #zagzhino is defeated
     #xerxes arrives
@@ -2307,7 +2300,7 @@ label gettingKingZagzhino:
     with dissolve
     zagz "I wanted my own Kingdom."
     show zagzhino front meanEyes angryMouth at tesiRight with dissolve 
-    zagz "Not to pay tribute to Zaratians."
+    zagz "Not to play tribute to Zaratians."
     hide xerxMadArmed2Armored
     show xerx3quatConsurndArmored at xerxLeft
     show zagzhino front meanEyes frown at tesiRight
@@ -2450,7 +2443,7 @@ label gilgaPalaceRoof:
     #usd the attacked sprite with spikes poking out
     $ originalHealth = xerxesCharacter.health
     $ defencePattern = getRangedPatterns("shotgun")
-    call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , False , lakatinu2Fight , xerxesCharacter , 0.42 ) from _call_defenceTime_3
+    call defenceTime ( defencePattern[renpy.random.randint( 0 , len(defencePattern)-1 )] , False , lakatinu2Fight , xerxesCharacter , 0.42 )
     pause 0.5
     $ renpy.block_rollback()
     scene cloudyDayTime at fullFit 
@@ -2603,7 +2596,7 @@ label gilgaPalaceRoof:
                         $ cleanArenaPosition( 4 , 4 , projectiles )
 
                         $ playerPosition = 7    
-                        call shootaSetUp( 15 , 6 , 10 , xerxesCharacter , enemyTroopers[ 0 ] , projectile , characterLocation = playerPosition ) from _call_shootaSetUp_3
+                        call shootaSetUp( 15 , 6 , 10 , xerxesCharacter , enemyTroopers[ 0 ] , projectile , characterLocation = playerPosition )
                         $ results = _return
                         $ playerPosition = results[1]
                         $ result = results[0]
@@ -2636,7 +2629,7 @@ label gilgaPalaceRoof:
                 $ rythmPoints = 0
                 $ rythmPattern = getMeleePatterns( lakatinuMelee.diffculty )
                 show screen dodgeOrGetHit( rythmPoints , 2 , numbered = True)
-                call rythmAttack (rythmPattern[renpy.random.randint(0, len(rythmPattern)-1)] , lakatinu2Fight , target , 1.0 , inBattle = False) from _call_rythmAttack_6
+                call rythmAttack (rythmPattern[renpy.random.randint(0, len(rythmPattern)-1)] , lakatinu2Fight , target , 1.0 , inBattle = False)
                 pause 0.5
                 $ renpy.block_rollback()
                 hide screen dodgeOrGetHit

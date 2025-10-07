@@ -2802,8 +2802,7 @@ label xerxHouseDinnerFoods2:
 
 label leaveEctabana2:
     #can be at night since nighttime is a barrier to stop overcrafting.
-    $ xerxesCharacter.resurrect()
-    $ tesipizCharacter.resurrect()
+    call sleepyTimeReset  
     $ atossaCharacter.resurrect()
 
     play music heroicssss fadein 1.0 fadeout 1.0 if_changed

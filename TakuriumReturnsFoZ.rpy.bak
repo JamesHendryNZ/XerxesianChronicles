@@ -823,9 +823,9 @@ label march2TakuriumFoz:
 
 label takuriumFozPart1:
 
-    call setUpgradeAfterSoAM from _call_setUpgradeAfterSoAM_1
+    call setUpgradeAfterSoAM
     
-    call minonaAndBalatiusAtKworitx from _call_minonaAndBalatiusAtKworitx_1
+    call minonaAndBalatiusAtKworitx
 
     play music sandHero fadein 1.0 fadeout 1.0
 
@@ -1615,7 +1615,10 @@ label takuriumFozPart1:
         show ladyTakura greeting with dissolve
         taku "We'll get your beds"
         #sleeps
-        call sleepyTimeReset  
+        $ IsDaytime = True
+        $ xerxesCharacter.resurrect()
+        $ tesipizCharacter.resurrect()
+        $ volkaraCharacter.resurrect()
     
         #sleeps in Takurium bed - modded with no Ato'ssa?
         stop music fadeout 1.0
@@ -1794,7 +1797,7 @@ label takuriumFozPart1:
     #they leave
 
     #meanwhile to Yemeh
-    call yemehFoz from _call_yemehFoz
+    call yemehFoz
     #go to temple of sutsshak
     play music planingTime fadein 1.0 fadeout 1.0
     scene takuriumInisdeSutsshakWest at backgroundSetPlace

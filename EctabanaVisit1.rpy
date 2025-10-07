@@ -3742,7 +3742,7 @@ label ratsGoByebye:
     #play minigame
     #score effects dialog
     #ends with modified sleep time
-    $ xerxesCharacter.resurrect()
+    call sleepyTimeReset  
     $ atossaCharacter.resurrect()
     $ atossaCharacter.updateArmor( 0 )
     $ xerxesCharacter.updateArmor( 0 )
@@ -4549,9 +4549,7 @@ label leaveEctabana:
 
     #$ IsDaytime = True
     
-    $ timeTime = 0
-    $ xerxesCharacter.resurrect()
-    $ tesipizCharacter.resurrect()
+    call sleepyTimeReset  
 
     if keys == 2 and lakatinuTalks == 0:
         call bardaiyaMad1 from _call_bardaiyaMad1_5

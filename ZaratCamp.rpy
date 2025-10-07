@@ -800,7 +800,7 @@ label zaratCampMenu:
             if IsDaytime:
                 scene cloudyDayTime at movingSky
                 show royalZaratCampInside at fullFit
-                show yuufia base34 at left , halfSize:
+                show yuufia base34 at left , halfSize , flipped:
                     ypos 1.25
                 show urlius greet34 happyMouth at left , halfSize:
                     ypos 1.25 xpos 0.25
@@ -810,12 +810,12 @@ label zaratCampMenu:
                 show tesipiz34NeutralHappy at right , halfSize:
                     ypos 1.25 xpos 0.85
                 show volkara3quat at right , halfSize , flipped:
-                    ypos 1.25
+                    ypos 1.35
             else:
-                scene cloudyNightTime at movingSky
-                show royalZaratCampInside at fullFit
-                show yuufia base34 at left , halfSize , lightCrystalLights:
-                    ypos 1.25
+                scene cloudyNightTime at movingSky , fullFit
+                show royalZaratCampInsideNight at fullFit
+                show yuufia base34 at left , halfSize , lightCrystalLights, flipped:
+                    ypos 1.3
                 show urlius greet34 happyMouth at left , halfSize , lightCrystalLights:
                     ypos 1.25 xpos 0.25
 
@@ -824,11 +824,11 @@ label zaratCampMenu:
                 show tesipiz34NeutralHappy at right , halfSize , lightCrystalLights:
                     ypos 1.25 xpos 0.85
                 show volkara3quat at right , halfSize , flipped , lightCrystalLights:
-                    ypos 1.25
-
+                    ypos 1.35
+            with dissolve
             urli "Bye Xerxes and friends."
             show urlius base34 -happyMouth
-            show yuufia greet34 happyMouth
+            show yuufia greet happyMouth
             with dissolve
             yuuf "We hope you can bring a quick peace for us."
             show yuufia base34 -happyMouth
@@ -839,6 +839,7 @@ label zaratCampMenu:
             else:
                 show xerx3quatGreet at right , halfSize , lightCrystalLights:
                     ypos 1.25 xpos 0.7
+            with dissolve
             xerx "Bye Urlius and Yuufia."
             xerx "We're greatful for your hospitality."
             
@@ -2150,10 +2151,12 @@ label zaratCampWinning:
         with dissolve
         xerx "He should become inert in Mizheium." #is this about cutting off supplies relitive to the battle fo yarak
     else:
-
+        show trimdius armored34 -meanEyes at right with dissolve:
+            xzoom 1.0 ypos 1.4 zoom 0.67
+            linear 1 xalign 0.5 xpos 0.5
         trim "This plus Versaniz' death should get him to give up."
     #versaniz should show item here
-    show trimdius armoredItem meanEyes happyMouth
+    show trimdius armoredItem meanEyes happyMouth 
     show imageCrystalItem at truecenter , size04:
         xpos 0.28 ypos 0.7 rotate 30
     hide xerx3quatHappyerArmored
@@ -2397,12 +2400,12 @@ label zaratCampWinning:
     show doll3 at truecenter:
         xpos 0.26 ypos 0.55
     hide tesipiz34NeutralHappy
-    show tesipiz34HappyArmoredPointing at right , size3quat:
+    show tesipiz34HappyCommandingPoting at right , size3quat:
         ypos 1.4
     with dissolve
     #a zarasikian korkin lady doll
     tesi "Finally"
-    hide tesipiz34HappyArmoredPointing
+    hide tesipiz34HappyCommandingPoting
     show tesipizYeah at right , size3quat:
         ypos 1.4
     with dissolve
@@ -2423,7 +2426,7 @@ label zaratCampWinning:
     menu:
         "Can I hang out with you?":
             hide tesipiz34HappyCommandingPoting
-            show tesipiz34Happy at right , size2Thrid:
+            show tesipiz34Happy at right , size3quat:
                 ypos 1.4
             show tsekrei handChestArmored34 happyMouth
             with dissolve
@@ -2567,20 +2570,21 @@ label zaratCampWinning:
 
 label dateWithTsekrei1:
     
-    play msuic grassWindAmbiance fadein 1.0 fadeout 1.0
+    play music grassWindAmbiance fadein 1.0 fadeout 1.0
     #will need a bit of refining
     scene cloudyDayTime at halfSize , movingSky
     show royalZaratCampInside at center , size08
-    show tesipiz34Happy at left , size2Thrid:
+    show tesipiz34Happy at left , size3quat , flipped:
         ypos 1.4
     #need an unarmored arms foward spirte. do next week
-    show tsekrei at right , size2Thrid:
+    show tsekrei base34 at right , size2Thrid:
         ypos 1.4
     with fade
     tesi "Lets get some food."
     #they get foods
     #they walk outside
     scene cloudyDayTime at size08 , truecenter , movingSky
+    show royalZaratCampOutside at truecenter , halfSize
     show jakaArcherCrusufied at eithSize , left ,lightYellowTint:
         xpos 0.516 ypos 0.764
     show balatianArcherCrusufied at eithSize , left ,lightYellowTint:
@@ -2589,19 +2593,17 @@ label dateWithTsekrei1:
         xpos 0.719 ypos 0.849
     show woodSpikeRack as extraWood at quatSize , flipped , left, lightYellowTint:
         xpos 0.164 ypos 0.842
-    show tsekrei  meanEyes madMouth armed at halfSize , center:
-        ypos 1.2
-    show tesipizNeutralHappy at left , size2Thrid:
+    show tesipizNeutralHappy at left , size3quat:
         ypos 1.4
     show tsekrei armsForward34 happyMouth at right , size2Thrid:
         ypos 1.4
     with fade
     #maybe they carry food pots?
     tsek "No Zardonians here."
-    show tsekrei -armsForward34 at right , size2Thrid:
+    show tsekrei base34 at right , size2Thrid:
         ypos 1.4 xzoom 1.0
         linear 1 xzoom -1.0
-    tsek "No Zardonian there."
+    tsek "No Zardonians there."
     show tsekrei -happyMouth at right , size2Thrid:
         ypos 1.4 xzoom -1.0
         linear 1 xzoom 1.0
@@ -2609,50 +2611,54 @@ label dateWithTsekrei1:
     pause 2
     show tsekrei yeah34 happyMouth
     hide tesipizNeutralHappy
-    show tesipiz34Happy at left , size2Thrid:
+    show tesipiz34Happy at left , size3quat, flipped:
         ypos 1.4
+    with dissolve
     tsek "O.K lets eat."
+    play music happyAtoTheme fadein 1.0 fadeout 1.0
     #they sit on the grass
     #they eat foods
     #this should explore both characters.
     #tesipiz and his korkin fetish
     scene cloudyDayTime at size08 , truecenter , movingSky
     show royalZaratCampOutside at left , size2Thrid
-    show mat1 at center , size08:
+    show mat1 at center:
         ypos 1.4
-    show zaratianPot at halfSize
-    show cupTesi at halfSize:
-        xzoom 2.0
-    show cupXerx at halfSize:
-        xzoom 2.0
+    show zaratianPot at size04 , truecenter:
+        xpos 0.45 ypos 0.63
+    show cupTesi at thridSize , truecenter:
+        xzoom 2.0 xpos 0.34 ypos 0.81
+    show cupXerx at thridSize , truecenter:
+        xzoom 2.0 xpos 0.5 ypos 0.81
     show tsekrei base34 at right , size2Thrid:
         ypos 1.5
-    show tesipiz34NeutralHappy at left , flipped , size2Thrid:
+    show tesipiz34NeutralHappy at left , flipped , size3quat:
         ypos 1.5
     with fade
     pause 5
     if takuraBoinks > 0 or takuraCuddles > 3:
         hide tesipiz34NeutralHappy
-        show tesipiz34Happy at left , flipped , size2Thrid:
+        show tesipiz34Happy at left , flipped , size3quat:
             ypos 1.5
         with dissolve
         tesi "Let me guess."
         hide tesipiz34Happy
-        show tesipiz34HappyCommandingPoting at left , flipped , size2Thrid:
+        show tesipiz34HappyCommandingPoting at left , flipped , size3quat:
             ypos 1.5
         with dissolve
         if takuraBoinks > 0:
             tesi "You think I like korkins because I creamed in one?"
             hide tesipiz34HappyCommandingPoting
-            show tesipiz34Happy at left , flipped , size2Thrid:
+            show tesipiz34Happy at left , flipped , size3quat:
                 ypos 1.5
             show tsekrei XEyes happyMouth
             with dissolve
             tsek "Heheh!"
             hide tesipiz34Happy
-            show tesipiz34NeutralHappy at left , flipped , size2Thrid:
+            show tesipiz34NeutralHappy at left , flipped , size3quat:
                 ypos 1.5
             show tsekrei -XEyes -happyMouth
+            with dissolve
             tsek "No."
             show tsekrei handChest34 happyMouth with dissolve
             tsek "I got her because I thought she looked cute."
@@ -2661,7 +2667,7 @@ label dateWithTsekrei1:
         else:
             tesi "You think I like korkins because I cuddled up with one?"
             hide tesipiz34HappyCommandingPoting
-            show tesipiz34NeutralHappy at left , flipped , size2Thrid:
+            show tesipiz34NeutralHappy at left , flipped , size3quat:
                 ypos 1.5
             show tsekrei handChest34 XEyes
             with dissolve
@@ -2681,7 +2687,7 @@ label dateWithTsekrei1:
                     $ tsekreiCuddles += 1
                     hide tsekrei
                     hide tesipiz34NeutralHappy
-                    show tesipizWithTsekrei at size2Thrid , center:
+                    show tesipizWithTsekrei at size3quat , center:
                         1.5
                     pause 2
                 "Thank you Tsekrei":
@@ -2691,17 +2697,18 @@ label dateWithTsekrei1:
                     tsek "You're welcome."
     elif muwaCuddleCounter > 1:
         hide tesipiz34NeutralHappy
-        show tesipiz34HappyCommandingPoting at left , flipped , size2Thrid:
+        show tesipiz34HappyCommandingPoting at left , flipped , size3quat:
             ypos 1.5
+        with dissolve
         tesi "I wonder if Muwa will like her."
         hide tesipiz34HappyCommandingPoting
-        show tesipiz34Happy at left , flipped , size2Thrid:
+        show tesipiz34Happy at left , flipped , size3quat:
             ypos 1.5
         show tsekrei happyMouth armsForward34
         with dissolve
         tsek "Did you show her any of your collection?"
         hide tesipiz34Happy
-        show tesipiz34Curious at left , flipped , size2Thrid:
+        show tesipiz34Curious at left , flipped , size3quat:
             ypos 1.5
         show tsekrei -happyMouth
         with dissolve
@@ -2709,30 +2716,34 @@ label dateWithTsekrei1:
         show tsekrei happyMouth XEyes handChest34 with dissolve
         tsek "Maybe you should show her and see if she likes it."
         hide tesipiz34Curious
-        show tesipiz34Happy at left , flipped , size2Thrid:
+        show tesipiz34Happy at left , flipped , size3quat:
             ypos 1.5
         show tsekrei base34 -XEyes -happyMouth
         with dissolve
         menu:
             "I know you like it":
-                show tsekrei XEyes handChest34 with dissolve:
-                    linear 0.5 xpos 0.3
+                show tesipiz34Happy behind tsekrei
+                show tsekrei XEyes handChest34 at right , size2Thrid with dissolve:
+                    ypos 1.5
+                    linear 0.5 xpos 0.65
                 tsek "Hmm." #maybe a hugging 
                 $ tsekreiCuddles += 1
                 pause 0.5
-                show tsekrei:
+                show tsekrei at right , size2Thrid:
+                    xpos 0.65 ypos 1.5
                     linear 0.5 xpos 1.0
+                pause 0.5
             "I'll show her when I get the chance":
                 show tsekrei armsForward34 happyMouth with dissolve
                 tsek "Do that and tell me what she thinks of it."
     else:
         hide tesipiz34NeutralHappy
-        show tesipiz34HappyCommandingPoting at left , flipped , size2Thrid:
+        show tesipiz34HappyCommandingPoting at left , flipped , size3quat:
             ypos 1.5
         with dissolve
         tesi "How do you know I like korkin ladies?"
         hide tesipiz34HappyCommandingPoting
-        show tesipiz34NeutralHappy at left , flipped , size2Thrid:
+        show tesipiz34NeutralHappy at left , flipped , size3quat:
             ypos 1.5
         show tsekrei happyMouth with dissolve
         tsek "I didn't."
@@ -2743,31 +2754,37 @@ label dateWithTsekrei1:
         tsek "Like me?"
         menu:
             "Yes. Like you.":
-                show tsekrei XEyes handChest34 with dissolve:
-                    linear 0.5 xpos 0.3
+                show tesipiz34NeutralHappy behind tsekrei
+                show tsekrei XEyes handChest34 at right , size2Thrid with dissolve:
+                    ypos 1.5
+                    linear 0.5 xpos 0.65
                 tsek "Hmmmm."
                 $ tsekreiCuddles += 1
                 pause 0.5
-                show tsekrei:
+                show tsekrei at right , size2Thrid:
+                    xpos 0.65 ypos 1.5
                     linear 0.5 xpos 1.0
+                pause 0.5
             "She's cuter.":
-                show tsekrei armsForward34 angryMouth meanEyes with dissolve
+                show tsekrei armsForward34 madMouth meanEyes with dissolve
                 tsek "Rnnnn."
 
     hide tesipiz34NeutralHappy
     hide tesipiz34Happy
     hide tsekrei
-    show tesipiz34CuriousPointing at left , flipped , size2Thrid:
+    show tesipiz34CuriousPointing at left , flipped , size3quat:
         ypos 1.5
-    show tsekrei base34
+    show tsekrei base34 at right , size2Thrid:
+        ypos 1.5
     with dissolve
-    show doll3 at center , size2Thrid with dissolve
+    show doll3 at truecenter behind tsekrei , tesipiz34CuriousPointing  with dissolve:
+        xpos 0.44 ypos 0.68
     tesi "Is she a zaratian korkin?"
 
     hide tesipiz34CuriousPointing
-    show tesipiz34NeutralHappy at left , flipped , size2Thrid:
+    show tesipiz34NeutralHappy at left , flipped , size3quat:
         ypos 1.5
-    show tesipiz34Curious at left , flipped , size2Thrid:
+    show tesipiz34Curious at left , flipped , size3quat:
         ypos 1.5
     show tsekrei armsForward34 happyMouth
     tsek "A zarasikian korkin."
@@ -2786,23 +2803,26 @@ label dateWithTsekrei1:
 
     scene cloudyDayTime at size08 , truecenter , movingSky
     show royalZaratCampOutside at left , size2Thrid
-    show mat1 at center , size08:
+    show mat1 at center:
         ypos 1.4
-    show zaratianPot at halfSize
-    show cupTesi at halfSize:
-        xzoom 2.0
-    show cupXerx at halfSize:
-        xzoom 2.0
+    show zaratianPot at size04 , truecenter:
+        xpos 0.45 ypos 0.63
+    show cupTesi at thridSize , truecenter:
+        xzoom 2.0 xpos 0.34 ypos 0.81
+    show cupXerx at thridSize , truecenter:
+        xzoom 2.0 xpos 0.5 ypos 0.81
+    show doll3 at truecenter :
+        xpos 0.44 ypos 0.68
     show tsekrei base34 at right , size2Thrid:
         ypos 1.5
-    show tesipiz34XD at left , flipped , size2Thrid:
+    show tesipiz34XD at left , flipped , size3quat:
         ypos 1.5
-    show doll3 at center , size2Thrid
+    
     with dissolve
     tesi "Heh."
 
     hide tesipiz34XD
-    show tesipiz34NeutralHappy at left , flipped , size2Thrid:
+    show tesipiz34NeutralHappy at left , flipped , size3quat:
         ypos 1.5
     show tsekrei happyMouth
     with dissolve
@@ -2811,25 +2831,26 @@ label dateWithTsekrei1:
 
     show tsekrei yeah34 meanEyes OMouth with dissolve
     tsek "Zarasikia is currently controlled by those treaterous sons of goats Zardonians." 
-    show tsekrei armsForward34 angryMouth with dissolve
+    show tsekrei armsForward34 madMouth with dissolve
     tsek "I hope you remove them."
 
     hide tesipiz34NeutralHappy
-    show tesipizFlameStickAndBomb at left , flipped , size2Thrid:
+    show tesipizWithBomb at left , flipped , size3quat:
         ypos 1.5      
-    show tsekrei -meanEyes base34
+    show tsekrei -meanEyes OMouth base34
     with dissolve
     tesi "I can remove them with my bombs."      
-    hide tesipizFlameStickAndBomb
-    show tesipizYeah at left , flipped , size2Thrid:
+    hide tesipizWithBomb
+    show tesipizYeah at left , flipped , size3quat:
         ypos 1.5      
+    with dissolve
     tesi "They're powerfull!"
 
     #something about tsekrei - maybe her asperations
 
     #tesi shows off his explosions
     hide tesipizYeah
-    show tesipiz34Happy at left , flipped , size2Thrid:
+    show tesipiz34Happy at left , flipped , size3quat:
         ypos 1.5      
     show tsekrei armsForward34 happyMouth meanEyes
     with dissolve
@@ -2840,75 +2861,85 @@ label dateWithTsekrei1:
     
 
     scene cloudyDayTime at halfSize , movingSky
-    show royalZaratCampOutside at right , size2Thrid
-    show woodenBoard at thridSize
-    show woodenBoard as extraBoard at thridSize
-    show zaratHopliteShield at thridSize
+    show royalZaratCampOutside at right , size2Thrid 
+    show woodenBoard at halfSize , truecenter:
+        xzoom 1.5 xpos 0.42 ypos 0.48 rotate 90
+    show woodenBoard as extraBoard at halfSize , truecenter:
+        xzoom 1.5 xpos 0.57 ypos 0.48 rotate 90
+    show zaratHopliteShield at halfSize , truecenter
     with fade
+ 
     pause 3
 
     scene cloudyDayTime at halfSize , movingSky
     show royalZaratCampOutside at left , size2Thrid
-    show mat1 at center , size08:
+    show mat1 at center:
         ypos 1.4
-    show zaratianPot at thridSize
-    show cupTesi at quatSize:
-        xzoom 2.0
-    show cupXerx at quatSize:
-        xzoom 2.0
+    show zaratianPot at size04 , truecenter:
+        xpos 0.45 ypos 0.63
+    show cupTesi at thridSize , truecenter:
+        xzoom 2.0 xpos 0.34 ypos 0.81
+    show cupXerx at thridSize , truecenter:
+        xzoom 2.0 xpos 0.5 ypos 0.81
     show tsekrei base34 at right , size2Thrid:
-        ypos 1.25
-    show tesipizFlameStickAndBomb at center , size2Thrid:
+        ypos 1.25 xpos 1.2
+    show tesipizBombing at center , size3quat:
         ypos 1.25
     with dissolve
-    pause 
+
     pause 2
 
     #boom scene cloudyDayTime at halfSize , movingSky
+    scene cloudyDayTime at halfSize , movingSky
     show royalZaratCampOutside at right , size2Thrid
-    show woodenBoard at thridSize
-    show woodenBoard as extraBoard at thridSize
-    show zaratHopliteShield at thridSize
+    show woodenBoard at halfSize , truecenter:
+        xzoom 1.5 xpos 0.42 ypos 0.48 rotate 90
+    show woodenBoard as extraBoard at halfSize , truecenter:
+        xzoom 1.5 xpos 0.57 ypos 0.48 rotate 90
+    show zaratHopliteShield at halfSize , truecenter
     with dissolve
     pause 1
     show bombImg at center:
         ypos 1.5 zoom 1.0
-        easein 5 ypos 0.5 zoom 0.25
-    pause 4
+        easein 1 ypos 0.5 zoom 0.25
+    pause 0.5
     play sound daBOOM
     show explosion at truecenter:
         zoom 0.1 matrixcolor OpacityMatrix(0.0)
         linear 0.1 zoom 0.13 matrixcolor OpacityMatrix(1.0)
-        linear 9 zoom 1.5
-    pause 6
+        linear 1 zoom 1.5
+    pause 0.75
+    hide bombImg
     show smokes at truecenter:
         zoom 1.5 matrixcolor OpacityMatrix(1.0)
-        linear 3 zoom 2.0
-        linear 6 zoom 2.5 OpacityMatrix(0.0)
+        linear 1.5 zoom 2.0
+        linear 3 zoom 2.5 matrixcolor OpacityMatrix(0.0)
     hide explosion with Dissolve(3)
-    pause 12
+    pause 6
     #the shield survives
     scene cloudyDayTime at halfSize , movingSky
     show royalZaratCampOutside at left , size2Thrid
-    show mat1 at center , size08:
+    show mat1 at center:
         ypos 1.4
-    show zaratianPot at thridSize
-    show cupTesi at quatSize:
-        xzoom 2.0
-    show cupXerx at quatSize:
-        xzoom 2.0
+    show zaratianPot at size04 , truecenter:
+        xpos 0.45 ypos 0.63
+    show cupTesi at thridSize , truecenter:
+        xzoom 2.0 xpos 0.34 ypos 0.81
+    show cupXerx at thridSize , truecenter:
+        xzoom 2.0 xpos 0.5 ypos 0.81
     show tsekrei yeah34 meanEyes happyMouth at right , size2Thrid:
         ypos 1.25
-    show tesipiz34Happy at left , size2Thrid:
+    show tesipiz34Happy at left , size3quat , flipped:
         ypos 1.25
     with dissolve
     tsek "Heh!"
     tsek "You can always trust a big old strudy bronze shield."
 
     hide tesipiz34Happy
-    show tesipiz34NeutralHappy at left , size2Thrid:
+    show tesipiz34NeutralHappy at left , size3quat , flipped:
         ypos 1.25
     show tsekrei armsForward34 -meanEyes 
+    with dissolve
     tsek "I still believe you can remove my Zardonian problem."
     #tehey walk aroud the camp and outside
     show tsekrei handChest34 -happyMouth with dissolve
@@ -2916,15 +2947,15 @@ label dateWithTsekrei1:
     
     #they walk around
     scene cloudyDayTime at halfSize , movingSky
-    show yarakBattlefield at center , backgroundSetPlace:
-        xpan 0
-        linear 60 xpan 360
+    show yarakBattlefield at truecenter , backgroundSetPlace:
+        xpan 0 yzoom 0.8 ypos 0.6
+        linear 360 xpan 360
         linear 0 xpan 0
         repeat
-    show tesipiz34NeutralHappy at center , flipped , size2Thrid:
+    show tesipiz34NeutralHappy at center , flipped , size3quat:
         ypos 1.25
-    show tsekrei base34 happyMouth at left , size2Thrid:
-        ypos 1.25 
+    show tsekrei base34 happyMouth at left , size2Thrid , flipped:
+        ypos 1.3
     with fade
     tsek "It took me awhile to get used to the rolling plains of Zarat."
     tsek "The ground being so soft."
@@ -2932,14 +2963,14 @@ label dateWithTsekrei1:
     tsek "Expecially when it rains."
     show tsekrei -meanEyes
     hide tesipiz34NeutralHappy
-    show tesipiz34Commanding at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz34Commanding at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     with dissolve
     tesi "Sands of the Accursed Desert are soft yet corse."
     tesi "Hot during the day yet cold during the night."
 
     hide tesipiz34Commanding
-    show tesipiz34Curious at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz34Curious at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     show tsekrei meanEyes OMouth base34
     with dissolve
@@ -2947,72 +2978,73 @@ label dateWithTsekrei1:
     tsek "Not sure why you Jamesians still trust the Zardonians to keep their word."
     
     hide tesipiz34Curious
-    show tesipizPointingUp at center , flipped , size2Thrid behind tsekrei:
+    show tesipizPointingUp at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     with dissolve
     tesi "We have secret weapon."
     show tsekrei -meanEyes with dissolve
     tesi "Which isn't Xerxes."
     hide tesipizPointingUp
-    show tesipiz34NeutralHappy at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz34NeutralHappy at center , flipped , size3quat behind tsekrei:
         ypos 1.25
-    show tsekrei armsForward3 meanEyes 
+    show tsekrei armsForward34 meanEyes 
     with dissolve
     tsek "Why havent you used it yet?"
     hide tesipiz34NeutralHappy
-    show tesipiz34LookingDownSad at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz34LookingDownSad at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     tesi "There is still hope that the Zardonians can be redeemed."
     tesi "If we use it now."
-    show teskrei base34 sadEyes with dissolve
+    show tsekrei base34 sadEyes with dissolve
     tesi "It will split Zardonia into pieces and garantee some will become loyal to Astarte."
     tesi "And stay loyal."
 
-    show tsekrei yeah34 meanEyes angryMouth with dissolve
-    tsek "But we know the parts like us."
+    show tsekrei yeah34 meanEyes madMouth with dissolve
+    tsek "But we know the parts that like us."
     tsek "We should free them form the Zardonian King before they get purged."
     
     hide tesipiz34LookingDownSad
-    show tesipiz34CommandingPoting at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz34CommandingPoting at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     show tsekrei OMouth
     with dissolve
     tesi "If they try, the trap will be triggered."
     
     hide tesipiz34CommandingPoting
-    show tesipizAnnoyed at center , flipped , size2Thrid behind tsekrei:
+    show tesipizAnnoyed at center , flipped , size3quat behind tsekrei:
         ypos 1.25
+    with dissolve
     tesi "They won't let themselves be purged."
-    show tsekrei armsForward34 sadEyes
+    show tsekrei armsForward34 sadEyes with dissolve
     tsek "But we should still."
     hide tesipizAnnoyed
-    show tesipiz34CommandingPoting at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz34CommandingPoting at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     with dissolve
     tesi "We'll only do it when we have no other choice."
     hide tesipiz34CommandingPoting
-    show tesipizYeah at center , flipped , size2Thrid behind tsekrei:
+    show tesipizYeah at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     with dissolve
     tesi "And Xerxes and Trimdius have given us an other choice."
     hide tesipizYeah
-    show tesipiz34Happy at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz34Happy at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     show tsekrei base34 -sadEyes happyMouth
     with dissolve
     tsek "Well, Xerxes did defeat the Zardonians despite them having those giant spider-centaurs."
     tsek "I guess you're right."
-    show tsekrei yeah34 meanEyes angryMouth with dissolve
+    show tsekrei yeah34 meanEyes madMouth with dissolve
     tsek "But if they betrayed us once, they can betray us again."
 
     show tsekrei armsForward34 sadEyes OMouth
     hide tesipiz34Happy
-    show tesipiz34HappyCommandingPoting at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz34HappyCommandingPoting at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     with dissolve
     tesi "It's O.K Tsekrei"
     hide tesipiz34HappyCommandingPoting
-    show tesipiz3Fingers at center , flipped , size2Thrid behind tsekrei:
+    show tesipiz3Fingers at center , flipped , size3quat behind tsekrei:
         ypos 1.25
     show tsekrei handChest34 -sadEyes
     with dissolve
@@ -3023,10 +3055,10 @@ label dateWithTsekrei1:
             hide tsekrei
             hide tesipiz3Fingers
             
-            show tesipizWithTsekrei2 at size2Thrid , center:
-                1.5
+            show tesipizWithTsekrei2 at size08 , center:
+                ypos 1.5
             with dissolve
-            pause 2
+            pause 4
         "We'll deal with this.":
             show tsekrei happyMouth
             tsek "I hope so."
@@ -3095,7 +3127,7 @@ label tsekreiSleepOver1:
         menu:
             "Yes":
                 hide tesipiz34NeutralHappy
-                show tesipizYeah at center , size2Thrid , lightCrystalLights with dissolve:
+                show tesipizYeah at center , size2Thrid , lightCrystalLights behind tsekrei with dissolve:
                     ypos 1.25
                 show tsekrei XEyes -happyMouth
                 with dissolve
@@ -3108,6 +3140,7 @@ label tsekreiSleepOver1:
                 tsek "O.K"
                 $ tsekreiDating = True
             "No":
+                hide tesipiz34NeutralHappy
                 show tesipiz34HappyCommandingPoting at center , size2Thrid , flipped, lightCrystalLights:
                     ypos 1.25
                 show tsekrei sadEyes OMouth
@@ -3162,8 +3195,19 @@ label tsekreiSleepOver1:
     scene zaratSleeps at right , size2Thrid with Fade(3,0,3)
     pause 7
     call sleepyTimeReset
-    #TODO establisng shot at morning.
 
+    scene cloudyDayTime at halfSize , movingSky, lightYellowTint
+    show royalZaratCampOutside at truecenter , halfSize , lightYellowTint
+    show jakaArcherCrusufied at eithSize , left ,lightYellowTint:
+        xpos 0.516 ypos 0.764
+    show balatianArcherCrusufied at eithSize , left ,lightYellowTint:
+        xpos 0.223 ypos 0.75
+    show woodSpikeRack at quatSize , right ,lightYellowTint:
+        xpos 0.719 ypos 0.849
+    show woodSpikeRack as extraWood at quatSize , flipped , left, lightYellowTint:
+        xpos 0.164 ypos 0.842
+    with Fade(1,0,1)
+    pause 2
     $ enteringFrom = "leavingTown"
     jump zaratCampMenu
 

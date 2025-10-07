@@ -6,19 +6,17 @@ default nightmareInTemple = True
     
 
 label animate2TempleFromTakurium:
-    call mapOfDaWorldoSouthJamesia from _call_mapOfDaWorldoSouthJamesia_6
+    call mapOfDaWorldoSouthJamesia
     show neutralHappyXerxesArmored:
         xanchor 0.5
         yanchor 0.5
         zoom 0.1
         
-        xpos 0.7
-        ypos 0.54
-        linear 1.5 xpos 0.55 ypos 0.4
-        linear 1.5 xpos 0.67 ypos 0.26
+        xpos 0.57
+        ypos 0.38
+        linear 3 xpos 0.58 ypos 0.18
     
     pause 4
-
     if IsDaytime:
         $ IsDaytime = False
     else:
@@ -27,15 +25,15 @@ label animate2TempleFromTakurium:
     jump approch2TempleOfAhuraMazda
 
 label animate2TempleFromZwoti:
-    call mapOfDaWorldoSouthJamesia from _call_mapOfDaWorldoSouthJamesia_7
+    call mapOfDaWorldoSouthJamesia
     show neutralHappyXerxesArmored:
         xanchor 0.5
         yanchor 0.5
         zoom 0.1
         
-        xpos 0.5
-        ypos 0.67
-        linear 5 xpos 0.67 ypos 0.25
+        xpos 0.42
+        ypos 0.43
+        linear 5 xpos 0.58 ypos 0.18
 
     pause 6
     if IsDaytime:
@@ -47,46 +45,39 @@ label animate2TempleFromZwoti:
     jump approch2TempleOfAhuraMazda
 
 label animate2TempleFromKwortixMine:
-    call mapOfDaWorldoSouthJamesia from _call_mapOfDaWorldoSouthJamesia_8
+    call mapOfDaWorldoSouthJamesia
     show neutralHappyXerxesArmored:
         xanchor 0.5
         yanchor 0.5
         zoom 0.1
         
-        xpos 0.56
-        ypos 0.20
-        linear 2 xpos 0.67 ypos 0.25
-    
+        xpos 0.49
+        ypos 0.18
+        linear 2 xpos 0.58 ypos 0.18
     pause 3
-    
 
     if isDusk:
         $ isDusk = False
     jump approch2TempleOfAhuraMazda
 
 label animate2TempleFromKwortixCity:
-    call mapOfDaWorldoSouthJamesia from _call_mapOfDaWorldoSouthJamesia_9
+    call mapOfDaWorldoSouthJamesia
     show neutralHappyXerxesArmored:
         xanchor 0.5
         yanchor 0.5
         zoom 0.1
         
-        xpos 0.46
-        ypos 0.2
-        linear 2.5 xpos 0.63 ypos 0.2
-        linear 0.5 xpos 0.67 ypos 0.25
-    pause 4
-    pause
-    if isDusk:
-        $ isDusk = False
+        xpos 0.4
+        ypos 0.17
+        linear 3 xpos 0.58 ypos 0.18
+    pause 2
     jump approch2TempleOfAhuraMazda
 
 
 label approch2TempleOfAhuraMazda:
 
-    call lakatinuReturns from _call_lakatinuReturns
+    call lakatinuReturns
 
-    play music happyAtoTheme fadein 1.0 fadeout .0
     if IsDaytime:
         scene templeOfAhuraMazdaEstb:
             zoom 0.67
@@ -393,7 +384,7 @@ label approch2TempleOfAhuraMazda:
         if IsDaytime:
             scene templeOfAhuraMazdaGate at fullFit
             show xerxHorseMiniSad at xerxLeftLeft , fullFit , halfSize
-            show tesipizHorseNeutralHappy at tesiRight , fullFit , halfSize
+            show tesipizHorseNeutralHappy at tesiRight
         
         else:
             scene templeOfAhuraMazdaGate at lightCrystalLights , fullFit
@@ -726,9 +717,6 @@ label approch2TempleOfAhuraMazda:
     with dissolve
     xerx "Yes Volkara."
 
-    play music ahrimaniomPhase1 fadein 1.0 fadeout 1.0
-    play sound [magicannonShot, magicAttackUnchmabered , swooshy ,magicAttackUnchmabered , whippingMySlaves, whippingMySlaves,whippingMySlaves,whippingMySlaves] loop
-    play extraSound [magicAttackUnchmabered,magicAttackUnchmabered,magicAttackUnchmabered,magicAttackUnchmabered,magicAttackUnchmabered, swooshy, magicannonShot , whippingMySlaves] loop
     scene xerxVsAhriteZramaT2 at size2Thrid with fade:
         xalign 0.5
         yanchor 0.0
@@ -737,9 +725,6 @@ label approch2TempleOfAhuraMazda:
     xerx "Their elites could even shoot ahric energy at you."
     #if xerxes has nightmare he makes a comment.
 
-    stop sound
-    stop extraSound
-    play music happyAtoTheme fadein 1.0 fadeout 1.0
     if IsDaytime:
         scene templeOfAhuraMazdaOutside at fullFit 
     else:
@@ -956,8 +941,6 @@ label approch2TempleOfAhuraMazda:
 
 
 label restBeforeSoAM:
-
-    stop music fadeout 3.0
     #need
     #ahura-Mazda temple bedroom - modified keiozia's bedroom    -   done.
     #Xerxes sleeeping           -   done.
@@ -969,7 +952,7 @@ label restBeforeSoAM:
     with Fade( 1 , 0 , 1 )
     pause 3
     $ whats4Dinner = "CheeseGrommit"
-    call setUpFoodAtTemple from _call_setUpFoodAtTemple
+    call setUpFoodAtTemple
     pause 6
     $ IsDaytime = False
     $ xerxesCharacter.resurrect()
@@ -978,7 +961,6 @@ label restBeforeSoAM:
 
 label setUpFoodAtTemple:
 
-    
     scene templeOfAhuraMazdaFoodRoom at quatSize , truecenter , lightCrystalLights:       
         xalign 1.0
         xsize 2.0
@@ -1057,7 +1039,6 @@ label setUpFoodAtTemple:
 
 label nightBeforeSoAM:
     
-    stop music fadeout 3.0
     $ nightmareInTemple = False
     scene templeDormRoom at size2Thrid , lightCrystalLights with Fade(1 , 0 , 1)
     pause 1
@@ -1073,7 +1054,6 @@ label nightBeforeSoAM:
     with dissolve
     xerx "{i}I can end my own curse."
 
-    play sound sleepss
     scene templeSleeping at size2Thrid , nightLights with Fade(1, 0 , 2)
     pause 3
 
@@ -1083,19 +1063,18 @@ label nightBeforeSoAM:
 
         if ahrimaniomNightmare == 0:
             #"First Nightmare"
-            play music ahriteTempless fadein 1.0 fadeout 1.0
             scene ahriteCave with fade:
                 fit "cover"
-            pause 5
+            pause 1
             scene ahriteBaseCenter at size08:
                 xpos -0.8
                 ypos 0.0
-                linear 10 ypos -1.5
+                linear 5 ypos -1.5
             show ahrimaniomMK5UnderConstruction1 at truecenter , size2Thrid:
                 ypos 2.0
-                linear 10 ypos 0.5
+                linear 5 ypos 0.5
             with fade
-            pause 10
+            pause 5
             scene ahriteSky at fullFit
             show flatWater1 at fullFit:
                 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix( 1.3 )
@@ -1106,16 +1085,13 @@ label nightBeforeSoAM:
 
             show swordChamberLedge at fullFit , ahriteDarkness
             pause 1.0
-            play music ahrimaniomPhase1 fadein 1.0 fadeout 1.0
             show ahrimaniomMK4Shrouded at truecenter , halfSize:
                 linear 1.0 zoom 0.6
                 linear 1.0 zoom 0.5
                 repeat
             with dissolve
-            play sound ahrimaniomHisskttktk
             pause 1.0
             with hpunch
-            play extraSound ahrimaniomHisskttktk
             pause 1.0
             with vpunch
             show ahrimaniomMK4Shrouded at truecenter , halfSize:
@@ -1123,34 +1099,15 @@ label nightBeforeSoAM:
                 linear 0.2 matrixcolor TintMatrix("#000")
             pause 1.0
             with vpunch
-            play extraSound playerHit
+            with hpunch
             pause 0.5
-            play sound bloodySlam
-            with hpunch
-            stop music
-            pause 1.25
-            play extraSound ahrimaniomHisskttktk
-            with vpunch
-            pause 2.5
-            play extraSound slicey
-            pause 0.3
-            play sound meatEplosion
-            with hpunch
-            pause 2.5
-            stop music fadeout 3.0
-            play sound vored
-            pause 1.0
-            
             $ ahrimaniomNightmare += 1
 
-        
             scene templeDormRoom at size2Thrid , darkNight with dissolve:
                 xanchor 0.0 
                 yanchor 0.18 
                 zoom 2.5
             show scaredXerxesNoHat at middleStand , size08 , nightLights 
-            play sound thong
-            play extraSound drop2DaFloor
             with fade
             with vpunch
             with hpunch
@@ -1170,10 +1127,9 @@ label nightBeforeSoAM:
             
 
         elif headPatCounter > 15 and ahrimaniomNightmare == 1:
-            call ahrimaniomResurrectionPart1 from _call_ahrimaniomResurrectionPart1_2
-            stop music fadeout 3.0
+            call ahrimaniomResurrectionPart1
             $ ahrimaniomNightmare += 1
-            
+
             scene templeDormRoom at size2Thrid , darkNight:
                 xanchor 0.0 
                 yanchor 0.18 
@@ -1188,14 +1144,16 @@ label nightBeforeSoAM:
             with dissolve 
             xerx "{i}Hopefully the Sword of Ahura-Mazda can wipe them out for good!"
     
-    call sleepyTimeReset  
+    $ IsDaytime = True
+    $ timeTime = 0
+    $ xerxesCharacter.resurrect()
+    $ tesipizCharacter.resurrect()
     scene templeOfAhuraMazdaNoDudes at fullFit with fade:
         yanchor 0.25
     pause 3
     #xerxes wakes up scene
     $ whats4Dinner = "ZeBugz"
 
-    play music happyAtoTheme fadein 1.0 fadeout 1.0
     scene templeOfAhuraMazdaHallWay at fullFit with fade
     show tesipizGreeting at xerxLeftLeft
     show volkaraHappyGreeting at tesiRight
@@ -1214,13 +1172,12 @@ label nightBeforeSoAM:
     with dissolve
     volk "All you need is some food and you're good to go."
     
-    call setUpFoodAtTemple from _call_setUpFoodAtTemple_1
+    call setUpFoodAtTemple
     pause 5
     jump gettingTheSoAM
 
 label gettingTheSoAM:
 
-    play music templeOfGrandness fadein 1.0 fadeout 1.0
     scene templeOfAhuraMazdaChamberHall:
         #ypos 0.0
         yanchor 0.3
@@ -1293,12 +1250,9 @@ label gettingTheSoAM:
         ypos 1.0 xpos 0.5
         linear 1 ypos 0.701 xpos 0.52 zoom 0.5
     pause 2
-    play sound bigDoorLocked
     #play keylock sounds for each key
     hide greenKey with dissolve
-    play sound bigDoorLocked
     hide redKey with dissolve
-    play sound bigDoorLocked
     hide yellowKey with dissolve
 
     show swordDoorBottomOut at  lightCrystalLights:
@@ -1311,10 +1265,8 @@ label gettingTheSoAM:
         yanchor 1.0 ypos 1.0
         linear 5 ypos 0.0 xpos 1.0
     #show templeOfAhuraMazdaChamberDoor at truecenter, halfSize
-    play sound magicEngine
-    play extraSound bigDoorOpen
+
     pause 6
-    
 
     scene templeOfAhuraMazdaChamberHall at fullFit
     show tesipiz34LookingDownSad at tesiRight , lightCrystalLights
@@ -1327,10 +1279,8 @@ label gettingTheSoAM:
 
     hide volkaraNeutralHappy
     show volkaraHappy at xerxLeftLeft , lightCrystalLights
-    with dissolve
     volk "You'll be in and out in 5 breath-times."
 
-    play music heroicssss fadein 1.0 fadeout 1.0
     scene sandTexture:
         yzoom 0.5
         ysize 2.0
@@ -1378,9 +1328,7 @@ label gettingTheSoAM:
 label gotTheSoAM:
     #upgrades people!
     #upgrades!
-    stop music
-    play sound weOwnedThem
-    play extraSound PowerDown
+    
 
     scene sandTexture:
         yzoom 0.5
@@ -1401,11 +1349,10 @@ label gotTheSoAM:
     with dissolve
 
     show hydrasyonInactiveSnakes at fullFit with Dissolve(3) 
-    
 
     #show hydrasyonInactive at truecenter , halfSize with Dissolve(3)
 
-    call hydrasyonArenaSetUp from _call_hydrasyonArenaSetUp_10
+    call hydrasyonArenaSetUp
     show hydrasyonActiveNoSword at middleStand:
         zoom 2.0
         ypos 1.0
@@ -1415,11 +1362,11 @@ label gotTheSoAM:
     xerx "{i}The pedestal stopped working."
     xerx "{i}I've got the Sword of Ahura-Mazda."
 
-    xerx "{i}Now we can end this desert and that wretched Astarte!!"
+    xerx "{i}Now we can end this desert and that retched Astarte!!"
     if ahrimaniomNightmare > 0:
         xerx "{i}And end my own curse."
     
-    play music sandHero fadein 1.0 fadeout 1.0
+    
     scene sandTexture:
         yzoom 0.5
         ysize 2.0
@@ -1437,24 +1384,21 @@ label gotTheSoAM:
 
     show swordDoorBottomOut at lightCrystalLights:       
         yanchor 1.0 xalign 0.505 ypos 1.5 zoom 0.41
-        linear 7.5 ypos 1.0 xalign 0.505
+        linear 5 ypos 1.0 xalign 0.505
     show swordDoorLeftOut at lightCrystalLights:
         yanchor 1.0 ypos 0.0 xpos 0.0 zoom 0.41
-        linear 7.5 ypos 1.0 xalign 0.505
+        linear 5 ypos 1.0 xalign 0.505
     show swordDoorRightOut at lightCrystalLights:
         yanchor 1.0 ypos 0.0 xpos 1.0 zoom 0.41
-        linear 7.5 ypos 1.0 xalign 0.505
+        linear 5 ypos 1.0 xalign 0.505
     show templeOfAhuraMazdaChamberDoor at size2Thrid , lightCrystalLights:
         ypos -0.125
     with Fade(1,0,2)
-    play sound bigDoorOpen
-    play extraSound magicEngine loop
     pause 4.5
     show xerxYeahWithSoAM at middleStand , lightCrystalLights with dissolve
 
-    stop extraSound fadeout 1.0
     xerx "Tesipiz and Volkara!"
-    xerx "Look at what I've got!"
+    xerx "Look whay I've got!"
     xerx "The Sword of Ahura-Mazda!"
 
     scene templeOfAhuraMazdaChamberHall at fullFit
@@ -1549,10 +1493,8 @@ label gotTheSoAM:
         show xerxWithChargedSoAM at tesiRight , lightCrystalLights:
             ypos -0.1
     with dissolve 
-    play sound powerHum loop
     xerx "Well. Focusing energy in it makes it glow a bit."
 
-    stop sound fadeout 1.0
     scene clearDayTime
     show azagaraWilds at fullFit
     show astartoFaronianOfficerSlashed at xerxLeftLeft , size2Thrid , flipped:
@@ -1560,8 +1502,6 @@ label gotTheSoAM:
     show xerxAttackingSoamChargedArmored at tesiRight , size2Thrid
     with dissolve
     xerx "Apparently that means it can cut through armor."
-
-    play sound powerHum loop
 
     if IsDaytime:
         show templeOfAhuraMazdaOutside at fullFit
@@ -1586,10 +1526,8 @@ label gotTheSoAM:
         show volkara34NeutralHappyPoint at xerxLeftLeft , lightCrystalLights
     with dissolve
 
-    stop music fadeout 3.0
     volk "Have you binded the sword to you yet Xerxes?"
-    stop sound fadeout 1.0
-
+    
     hide xerxWithChargedSoAM
     hide volkara34NeutralHappyPoint
     if IsDaytime:
@@ -1636,15 +1574,11 @@ label gotTheSoAM:
     volk "It'll cause the magic to flow in a circle."
     #Xerxes eyes closed little charged
     hide xerxWithSoAMEyesClosed
-    play sound PowerUp
-    queue sound powerHum loop
     if IsDaytime:
         show xerxWithSoAMEyesClosedCharged1 at tesiRight
     else: 
         show xerxWithSoAMEyesClosedCharged1 at tesiRight , lightCrystalLights
     with Dissolve(3)
-    
-    
     volk "It'll burn but to prove yourself worthy of the Sword of Ahura-Mazda you must prove your resolve to it one last time."
     #XerxesGlowPain
     #sisslve sounds and Xerxes hissing
@@ -1657,7 +1591,6 @@ label gotTheSoAM:
         show xerxWithSoAMEyesClosedCharged2 at tesiRight , lightCrystalLights
         show volkara34NeutralHappy at xerxLeftLeft , lightCrystalLights
     with dissolve
-    play extraSound cookingWithAss loop
     volk "Resist the pain and keep holding it for 10 long breath-times."
     volk "I'll do the long breathing."
 
@@ -1678,7 +1611,6 @@ label gotTheSoAM:
     #have minigame similar to modonon riding but it's about maintainig over
     #the failpoint 
     $ bindPoint = 0
-    play music "<to 38>audio/music/Binding.ogg" loop
     while bindPoint < 10:
         
         $ getDaDodge = getMeleePatterns( "lakatinu1" )
@@ -1687,7 +1619,7 @@ label gotTheSoAM:
         $ holdOut4 = 3.0 - ( 0.25 * bindPoint )
 
         show screen dodgeOrGetHit( rythmPoints , pass2Next , numbered = True)
-        call rythmAttack (getDaDodge[renpy.random.randint(0, len(getDaDodge)-1)] , xerxesCharacter , xerxesCharacter , holdOut4 , inBattle = False) from _call_rythmAttack_5
+        call rythmAttack (getDaDodge[renpy.random.randint(0, len(getDaDodge)-1)] , xerxesCharacter , xerxesCharacter , holdOut4 , inBattle = False)
         hide screen dodgeOrGetHit
 
         if rythmPoints >= pass2Next:
@@ -1695,11 +1627,8 @@ label gotTheSoAM:
 
 
             if bindPoint > 3:
-
                 if bindPoint > 5:
-
                     if bindPoint > 7:
-                        
                         show xerxWithSoAMEyesClosedCharged3 at farHazeDay:
                             matrixcolor BrightnessMatrix( 0.4 )
                     else:
@@ -1713,9 +1642,6 @@ label gotTheSoAM:
         else:
             #xerxes fails and has to try again
             #the player willl try again until success
-            stop music
-            stop sound
-            stop extraSound
             if IsDaytime:
                 scene templeOfAhuraMazdaOutside at fullFit
                 show volkara34Suprized at xerxLeftLeft
@@ -1732,7 +1658,6 @@ label gotTheSoAM:
                 easeout 3 ypos 1.5 rotate -790
             with dissolve
             $ bindPoint = 0
-            play sound slashMiss
             xerx "AAAAARGGGHHHHH!!!"
             
             hide volkara34Suprized
@@ -1741,7 +1666,6 @@ label gotTheSoAM:
             else:
                 show volkara34Sad at xerxLeftLeft , lightCrystalLights
             with dissolve
-            play sound keyDrops
             volk "You failed."
 
             hide xerx34OuchBurns
@@ -1784,7 +1708,6 @@ label gotTheSoAM:
                     linear 4 zoom 1.0
                     repeat
             with Fade(1,0,1)
-            play sound PowerUp
             pause 1
 
             if IsDaytime:
@@ -1792,13 +1715,6 @@ label gotTheSoAM:
             else:
                 show xerxWithSoAMEyesClosedCharged2 at tesiRight , lightCrystalLights
             with dissolve
-
-            
-            queue sound powerHum loop
-            play extraSound cookingWithAss loop
-            play music fightingDaSwords noloop
-
-
     #-----------------------------------------------------------------------------------
     jump binedDaSoAM
 #--------------------------------------------------------------------------------------
@@ -1806,7 +1722,7 @@ label gotTheSoAM:
 label binedDaSoAM:
 
     #xerxes with sword eyes closed
-    play music  "<from 40>audio/music/Binding.ogg" fadein 1.0 fadeout 1.0 noloop
+    
     if IsDaytime:
         scene templeOfAhuraMazdaOutside at fullFit
         show volkara34Happy at xerxLeftLeft
@@ -1818,10 +1734,9 @@ label binedDaSoAM:
     
     show xerxWithSoAMEyesClosedCharged3 at tesiRight , farHazeDay:
         matrixcolor BrightnessMatrix( 0.4 )
-        easein 5 matrixcolor BrightnessMatrix( 1.0 )
-    play extraSound [ PowerUp  , clearMyMind , ressurection ]
+        easein 2 matrixcolor BrightnessMatrix( 1.0 )
     with dissolve
-    pause 6
+    pause 2
     hide xerxWithSoAMEyesClosedCharged3
     if IsDaytime:
         show xerxBinded2SoAMYeah at tesiRight
@@ -1830,8 +1745,7 @@ label binedDaSoAM:
     with Dissolve( 3 )
     #xerxes touches SoAM with both hands 
     #he turns blue then stops
-    stop sound fadeout 3.0
-    stop extraSound fadeout 3.0
+
     volk "You're done now."
 
     hide xerxBinded2SoAMYeah
@@ -1852,44 +1766,40 @@ label binedDaSoAM:
     if IsDaytime:
         show xerxYeahOpenHand at tesiRight:
             linear 2 matrixcolor TintMatrix( "#fff")
-            easein 1 matrixcolor TintMatrix( "#ffff00") * BrightnessMatrix( 0.5 )
+            easein 1 matrixcolor TintMatrix( "#ffff00")
         show theSoAM:
             yanchor 0.5 xpos 0.5 zoom 2.0
             easein 2 ypos 2.0 rotate 169
-        pause 2
-        play sound keyDrops
-        pause 1.0
-        queue sound [ PowerUp  , clearMyMind ]
+        pause 3
+
         hide xerxYeahOpenHand
         show xerxHappySoAM at tesiRight:
             ypos -0.1
-            linear 1 matrixcolor TintMatrix( "#ffff00")  * BrightnessMatrix( 0.9 )
+            linear 1 matrixcolor TintMatrix( "#ffff00")
         with dissolve
-        pause 2
+        pause 1
         show xerxHappySoAM at tesiRight with Dissolve( 1 ):
-            ypos -0.1 matrixcolor TintMatrix( "#fff")  * BrightnessMatrix( 0.1 )
+            ypos -0.1 matrixcolor TintMatrix( "#fff")
             
 
     else:
         show xerxYeahOpenHand at tesiRight , lightCrystalLights:
             linear 2 matrixcolor TintMatrix("#ffffd0")
-            easein 1 matrixcolor TintMatrix( "#ffff00") * BrightnessMatrix( 0.5 )
+            easein 1 matrixcolor TintMatrix( "#ffff00")
         show theSoAM:
             yanchor 0.5 xpos 0.5 zoom 2.0
             easein 2 ypos 2.0 rotate 169
-        pause 2
-        play sound keyDrops
-        pause 1.0
-        queue sound [ PowerUp  , clearMyMind ]
+        pause 3
+
         hide xerxYeahOpenHand
         show xerxHappySoAM at tesiRight , lightCrystalLights:
             ypos -0.1
-            linear 1 matrixcolor TintMatrix( "#ffff00") * BrightnessMatrix( 0.9 )
+            linear 1 matrixcolor TintMatrix( "#ffff00")
         with dissolve
-        pause 2
+        pause 1
         show xerxHappySoAM at tesiRight with Dissolve( 1 ):
             ypos -0.1
-            linear 2 matrixcolor TintMatrix("#ffffd0")  * BrightnessMatrix( 0.1 )
+            linear 2 matrixcolor TintMatrix("#ffffd0")
             
     
     pause 1
@@ -1906,7 +1816,6 @@ label binedDaSoAM:
     volk "Now you can't lose the Sword of Ahura-Mazda Xerxes."
 
     #The upgrades could be gifts from Darius and Ato'ssa
-    play music sandHero fadein 1.0 fadeout 1.0
     "The binding ritual has also made Xerxes stronger."
     $ xerxesCharacter.baseSpeed += 3
     $ xerxesCharacter.baseAttack += 2
@@ -1928,7 +1837,6 @@ label binedDaSoAM:
         volk "We'll go to Ectabana tomorrow."
 
         #nighttime
-        stop music fadeout 3.0
         scene templeSleeping at size2Thrid , nightLights with Fade(1, 0 , 2)
         pause 3
     
@@ -1936,19 +1844,18 @@ label binedDaSoAM:
 
             if ahrimaniomNightmare == 0:
                 #"First Nightmare"
-                play music ahriteTempless fadein 1.0 fadeout 1.0
                 scene ahriteCave with fade:
                     fit "cover"
-                pause 5
+                pause 1
                 scene ahriteBaseCenter at size08:
                     xpos -0.8
                     ypos 0.0
-                    linear 10 ypos -1.5
+                    linear 5 ypos -1.5
                 show ahrimaniomMK5UnderConstruction1 at truecenter , size2Thrid:
                     ypos 2.0
-                    linear 10 ypos 0.5
+                    linear 5 ypos 0.5
                 with fade
-                pause 10
+                pause 5
                 scene ahriteSky at fullFit
                 show flatWater1 at fullFit:
                     matrixcolor TintMatrix("#7500ce") * BrightnessMatrix( 1.3 )
@@ -1959,16 +1866,13 @@ label binedDaSoAM:
 
                 show swordChamberLedge at fullFit , ahriteDarkness
                 pause 1.0
-                play music ahrimaniomPhase1 fadein 1.0 fadeout 1.0
                 show ahrimaniomMK4Shrouded at truecenter , halfSize:
                     linear 1.0 zoom 0.6
                     linear 1.0 zoom 0.5
                     repeat
                 with dissolve
-                play sound ahrimaniomHisskttktk
                 pause 1.0
                 with hpunch
-                play extraSound ahrimaniomHisskttktk
                 pause 1.0
                 with vpunch
                 show ahrimaniomMK4Shrouded at truecenter , halfSize:
@@ -1976,23 +1880,8 @@ label binedDaSoAM:
                     linear 0.2 matrixcolor TintMatrix("#000")
                 pause 1.0
                 with vpunch
-                play extraSound playerHit
+                with hpunch
                 pause 0.5
-                play sound bloodySlam
-                with hpunch
-                stop music
-                pause 1.25
-                play extraSound ahrimaniomHisskttktk
-                with vpunch
-                pause 2.5
-                play extraSound slicey
-                pause 0.3
-                play sound meatEplosion
-                with hpunch
-                pause 2.5
-                stop music fadeout 3.0
-                play sound vored
-                pause 1.0
                 $ ahrimaniomNightmare += 1
 
                 scene templeDormRoom at size2Thrid , darkNight with dissolve:
@@ -2003,14 +1892,11 @@ label binedDaSoAM:
                 with fade
                 with vpunch
                 with hpunch
-                play sound thong
-                play extraSound drop2DaFloor
                 pause 1.0
 
                 hide scaredXerxesNoHat
                 show sadXerxesNoHat at middleStand , size08 , nightLights 
                 with dissolve
-                
                 xerx "{i}sigh{/i}"
                 hide sadXerxesNoHat
                 show xerx34LookDownSadNoHat at middleStand , size08 , nightLights
@@ -2021,8 +1907,7 @@ label binedDaSoAM:
             
 
             elif headPatCounter > 13 and ahrimaniomNightmare == 1:
-                call ahrimaniomResurrectionPart1 from _call_ahrimaniomResurrectionPart1_3
-                stop music fadeout 3.0
+                call ahrimaniomResurrectionPart1
                 $ ahrimaniomNightmare += 1
 
                 scene templeDormRoom at size2Thrid , darkNight:
@@ -2040,7 +1925,10 @@ label binedDaSoAM:
                 xerx "{i}The Sword of Ahura-Mazda will wipe them out for good!"
             $ nightmareInTemple = False
         
-        call sleepyTimeReset  
+        $ xerxesCharacter.resurrect()
+        $ tesipizCharacter.resurrect()  
+        $ IsDaytime = True
+        $ timeTime = 0
         scene templeOfAhuraMazdaNoDudes at fullFit with Fade(1,0,1):
             yanchor 0.25
         pause 3
