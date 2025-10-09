@@ -368,9 +368,9 @@ label configureNewImages:
 label testVersanizFight:
 
     play music zarodnianBattle fadein 1.0 fadeout 1.0
-    call addTesipiz 
-    call addVolkara 
-    call setDebugStatsMiddle
+    call addTesipiz from _call_addTesipiz_2 
+    call addVolkara from _call_addVolkara_1 
+    call setDebugStatsMiddle from _call_setDebugStatsMiddle_1
     $ changeItemAmount( inventory , clearingJuice , 3 )
 
     "fight the zardonian goons"

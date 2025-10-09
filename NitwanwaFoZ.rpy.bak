@@ -592,12 +592,12 @@ label setUpgradeAfterSoAM: #sets needed variables I
 label NiitwanwaFoZ:
 
     
-    call setUpgradeAfterSoAM
+    call setUpgradeAfterSoAM from _call_setUpgradeAfterSoAM
 
     #map showing everyone moving about.
     #call minonaAndBalatiusAtKworitx
     #go to Niitwana fortress 
-    call minonaAndBalatiusAtKworitx
+    call minonaAndBalatiusAtKworitx from _call_minonaAndBalatiusAtKworitx
     play music happyAtoTheme fadein 1.0 fadeout 1.0
     if IsDaytime:
         scene niitwanwaEstablishing at fullFit with fade
@@ -773,10 +773,7 @@ label NiitwanwaFoZ:
         pause 2
         scene niitwanwaInside at left with Fade(3)
         #heal the group
-        $ IsDaytime = True
-        $ xerxesCharacter.resurrect()
-        $ tesipizCharacter.resurrect()
-        $ volkaraCharacter.resurrect()
+        call sleepyTimeReset  
     
     
     #the negoitations will work like a game
@@ -1107,7 +1104,7 @@ label NiitwanwaFoZ:
 label afterKoithaFoz:
     
     
-    call krokkosnekInTakurium
+    call krokkosnekInTakurium from _call_krokkosnekInTakurium
 
     #jamesians prepare to battle them
     play music planingTime fadein 1.0 fadeout 1.0

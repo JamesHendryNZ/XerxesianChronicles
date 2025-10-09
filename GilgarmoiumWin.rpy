@@ -877,7 +877,7 @@ label gilgamoriumWin:
     hide xerx3quatWorry
     show xerx3quatYeahAngry at middleStand , size2Thrid , duskLights
     with dissolve
-    xerx "{i}That ACURSED AHRIMANIOM!!"
+    xerx "{i}That {b}ACURSED AHRIMANIOM!!"
     scene ectabanaNorthEast1:
         zoom 0.8
         ypos -0.9

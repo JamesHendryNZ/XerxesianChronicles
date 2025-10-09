@@ -1188,7 +1188,7 @@ label nightBeforeSoAM:
             with dissolve 
             xerx "{i}Hopefully the Sword of Ahura-Mazda can wipe them out for good!"
     
-    call sleepyTimeReset  
+    call sleepyTimeReset from _call_sleepyTimeReset_11  
     scene templeOfAhuraMazdaNoDudes at fullFit with fade:
         yanchor 0.25
     pause 3
@@ -2040,7 +2040,7 @@ label binedDaSoAM:
                 xerx "{i}The Sword of Ahura-Mazda will wipe them out for good!"
             $ nightmareInTemple = False
         
-        call sleepyTimeReset  
+        call sleepyTimeReset from _call_sleepyTimeReset_12  
         scene templeOfAhuraMazdaNoDudes at fullFit with Fade(1,0,1):
             yanchor 0.25
         pause 3

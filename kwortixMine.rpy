@@ -4960,7 +4960,7 @@ label kwortixSleeper:
         linear 5 ypos 0.5 zoom 0.666
     pause 5
 
-    call sleepyTimeReset  
+    call sleepyTimeReset from _call_sleepyTimeReset_10  
 
     play music happyAtoTheme fadein 1.0 fadeout 1.0
     scene kwortixMotel:

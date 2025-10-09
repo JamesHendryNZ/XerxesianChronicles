@@ -773,7 +773,7 @@ label NiitwanwaFoZ:
         pause 2
         scene niitwanwaInside at left with Fade(3)
         #heal the group
-        call sleepyTimeReset  
+        call sleepyTimeReset from _call_sleepyTimeReset_4  
     
     
     #the negoitations will work like a game

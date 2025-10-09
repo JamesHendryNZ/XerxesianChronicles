@@ -2693,7 +2693,7 @@ label lakatinuMeetsZagzhino1:
     zagz "Ryuutu girl!"
     
     show lakatinuFront armored meanEyes happyMouth at lakatinuRight , size2Thrid with dissolve
-    laki "Do you have a fragment of the anti-stealth tablet."
+    laki "Do you have a fragment of the Anti-Stealth Tablet."
     show lakatinuFront armored neutralEyes happyMouth at lakatinuRight , size2Thrid with dissolve
     laki "It's looks a map and is purple."
     show zagzhino neutralEyes at size2Thrid with dissolve:
@@ -2704,10 +2704,10 @@ label lakatinuMeetsZagzhino1:
         xpos 0.0
     show lakatinuFront armored angryEyes angryMouth at lakatinuRight , size2Thrid
     with dissolve
-    zagz "Help me deal with the zaratians first."
+    zagz "Help me deal with the Zaratians first."
     show zagzhino twoFists meanEyes angryMouth at size2Thrid with dissolve:
         xpos 0.0
-    zagz "Then we'll discuss this anti-stealth tablet."
+    zagz "Then we'll discuss this Anti-Stealth Tablet."
 
     show zagzhino neutralEyes frown front at size2Thrid :
         xpos 0.0

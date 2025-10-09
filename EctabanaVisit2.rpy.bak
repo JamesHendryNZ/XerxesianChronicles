@@ -7,15 +7,15 @@ label ectabanaAfterGettingDaSoAM:
     $ sleepWithAtossa = False
     $ atossaInXerxesBed = False
     
-    call mapOfDaWorldoSouthJamesia
+    call mapOfDaWorldoSouthJamesia from _call_mapOfDaWorldoSouthJamesia_2
     show neutralHappyXerxesArmored:
         xanchor 0.5
         yanchor 0.5
         zoom 0.1
         
-        xpos 0.58
-        ypos 0.18
-        linear 3 xpos 0.48 ypos 0.39
+        xpos 0.64
+        ypos 0.23
+        linear 3 xpos 0.53 ypos 0.5
     #pause
     pause 4
 
@@ -26,6 +26,7 @@ label ectabanaAfterGettingDaSoAM:
         linear 2 zoom 0.5 xpos -0.3
     pause 13
 
+    play music dariusTheme fadein 1.0 fadeout 1.0 
     scene clearDayTime
     show ectabanaNorthEast2:
             #zoom 0.8
@@ -51,8 +52,13 @@ label ectabanaAfterGettingDaSoAM:
     ato "Xerxes!?"
 
     hide atoSuprized
-    show atoExcited at middleStand , size08
+    show atoExcited at middleStand , size08:
+        ypos 0.7
+        easein 0.5 ypos 0.5
+        easeout 0.5 ypos 0.7
     with dissolve
+    play music ratThonking fadein 1.0 fadeout 1.0 
+    play sound atoJump1ce
     ato "Xerxes!"
 
     hide atoExcited
@@ -148,6 +154,7 @@ label ectabanaAfterGettingDaSoAM:
 
     #----------------------------------------------------
 
+    play music planingTime fadein 1.0 fadeout 1.0
     scene dariusDinner at bigroom:
     show bronzeFigureTable:
         zoom 0.7
@@ -175,8 +182,10 @@ label ectabanaAfterGettingDaSoAM:
     hide happyDarius
     show dariusMiniAnnoyed at hiddenLegs , size08 behind shortRoyalTable
     with dissolve
-    darius "We also need to find and defeat sneaky Astart Lord Bardaiya."
-    scene dariusDinner at bigroom:
+    darius "We also need to find and defeat that sneaky Astart Lord Bardaiya."
+    scene dariusDinner at bigroom
+
+    play music heroicssss fadein 1.0 fadeout 1.0
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
@@ -197,13 +206,14 @@ label ectabanaAfterGettingDaSoAM:
         ypos 0.35
         xpos 0
     with dissolve
+    play music planingTime fadein 1.0 fadeout 1.0
     darius "We can't Xerxes."
     darius "Astarte's armies and navies prevent us."
     scene bardaiyaVZyarya at fullFit with dissolve
-    darius "And Bardaiya has defeated us many time before."
+    darius "And Bardaiya has defeated us many times before."
     darius "He needs to die."
 
-    call jamesosRealmSmollAndWholl
+    call jamesosRealmSmollAndWholl from _call_jamesosRealmSmollAndWholl
     #test items on call jjamesos Realm
     with dissolve
     #pause
@@ -218,30 +228,33 @@ label ectabanaAfterGettingDaSoAM:
     #partBal                    -   done.
     #partMak                    -   done.
     hide stoneTablet
-    show stoneTabletGil at left , halfSize
+    show stoneTabletGil at left , halfSize:
+        ypos 0.8
     show stoneTabletZard at topleft , halfSize
     show stoneTabletBala at topright , halfSize
-    show stoneTabletMakka at right , halfSize
+    show stoneTabletMakka at right , halfSize:
+        ypos 0.8
     with Dissolve(1)
 
-    darius "This stone artifact is currently Shattered."
+    
+    darius "This stone artifact is currently shattered."
     
     hide stoneTabletGil
     hide stoneTabletZard
     hide stoneTabletBala
     hide stoneTabletMakka
     show xMarxDaSpot at halfSize:
-        xpos 0.126
+        xpos 0.15
         ypos 0.111
     show xMarxDaSpot as zardoX at halfSize:
-        xpos 0.021
-        ypos 0.71
+        xpos 0.03
+        ypos 0.68
     show xMarxDaSpot as balaX at halfSize:
-        xpos 0.858
+        xpos 0.83
         ypos 0.35
     show xMarxDaSpot as MakkaX at halfSize:
-        xpos 0.7
-        ypos 0.285
+        xpos 0.67
+        ypos 0.28
     with Dissolve(1)
     darius "Here is roughly where they are located."
 
@@ -411,6 +424,7 @@ label ectabanaAfterGettingDaSoAM:
         #ato'ssa wants to help the 
         menu:
             "Go west, Help the Zaratians":
+                play music happyAtoTheme fadein 1.0 fadeout 1.0
                 scene dariusDinner at bigroom:
                 show bronzeFigureTable:
                     zoom 0.7
@@ -425,8 +439,9 @@ label ectabanaAfterGettingDaSoAM:
                 hide xerx3quatHappyCrossArms
                 show xerx3quatHappyer at tesiRight behind longRoyalTable
                 with dissolve
-                xerx "While the agreement was to not intervene, a small {i}\"rouge\"{/i} groups involvement shouldn't upset the Zardonians."
+                xerx "While the agreement was to not intervene, a small {i}\"rouge\"{/i} group involvement shouldn't upset the Zardonians."
             "Go east and secure Takurium for good" if takuriumOwner == "Jamesians" : 
+                play music sandHero fadein 1.0 fadeout 1.0
                 scene dariusDinner at bigroom:
                 show bronzeFigureTable:
                     zoom 0.7
@@ -445,6 +460,7 @@ label ectabanaAfterGettingDaSoAM:
                 xerx "We need to help our troopers keep Takurium and put distance between Jamesia and the Astarts."
                 $ goingEast = True
             "Go east and claim Takurium before that summoner comes back." if takuriumOwner == "Krokkosnek" : 
+                play music OnDaAttack fadein 1.0 fadeout 1.0
                 scene dariusDinner at bigroom:
                 show bronzeFigureTable:
                     zoom 0.7
@@ -493,6 +509,7 @@ label ectabanaAfterGettingDaSoAM:
                     pause 2
                     $ headPatCounter += 1
     else:
+        play music happyAtoTheme fadein 1.0 fadeout 1.0 if_changed
         scene dariusDinner at bigroom:
         show bronzeFigureTable:
             zoom 0.7
@@ -510,6 +527,7 @@ label ectabanaAfterGettingDaSoAM:
     #ato'ssa will do ato'ssa things and you'll have a choice unless you have had 2 nightmares.
     #ato'ssa might join Xerxes if headPatCounter is high enough.
     #if so she'll need horsey graphics 
+    play music happyAtoTheme fadein 1.0 fadeout 1.0 if_changed
     scene dariusDinner at bigroom:
     show bronzeFigureTable:
         zoom 0.7
@@ -554,7 +572,7 @@ label ectabanaAfterGettingDaSoAM:
                         "Sure":
                             scene dariusDinnerDoor at fullFit
                             show atossaHairStroke at centerAlignment:
-                                zoom 1.25
+                                zoom 0.75
                             with dissolve
                             pause 3
                             $ headPatCounter += 3
@@ -633,14 +651,14 @@ label ectabanaAfterGettingDaSoAM:
     #shield gold rim
     "A new shield made from sturner stuff."
     "Xerxes is now a little more durable."
-    $ xerxesCharacter.hitpoints += 20
+    $ xerxesCharacter.baseHitPoints += 20
     $ xerxesCharacter.baseArmor += 1
 
     scene dariusDinner at bigroom
     show tesipizHehehArmoredArmed at middleStand , size08
     with dissolve
     "Tesipiz has become a little tougher and stronger from his current quest with Xerxes"
-    $ tesipizCharacter.hitpoints += 20
+    $ tesipizCharacter.baseHitPoints += 20
     $ tesipizCharacter.baseAttack += 5
     $ tesipizCharacter.baseSpeed += 2
 
@@ -649,17 +667,23 @@ label ectabanaAfterGettingDaSoAM:
     jump setUpEctabanaMenuFromPalace
 
 label ectabanaMenuAfterSoAM:
+    if IsDaytime:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0
+    else:
+        play music wonderStars if_changed fadein 1.0 fadeout 1.0
+
     menu:
         "Buy Some Items" if IsDaytime: 
             jump EctabanaShop
         "Craft More Items" if IsDaytime: 
-            call carftTime
+            call carftTime from _call_carftTime_3
             $ timeTime += _return
             if timeTime > time2Night:
                 $ IsDaytime = False
-                $ isDusk = True
-            elif timeTime > time2Night:
                 $ isDusk = False
+            
+                scene ectabanaEstablishingNight at halfSize , truecenter
+                with Fade(1,0,1)
             jump ectabanaMenuAfterSoAM
         "Go to Ato'ssa's house." if sleepWithAtossa and not atossaInXerxesBed: 
             $ leavingTown = True
@@ -669,25 +693,30 @@ label ectabanaMenuAfterSoAM:
             jump xerxesHouseAfterSoAM
 
 label ectabanaBeforePart2Menu:
+    if IsDaytime:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0
+    else:
+        play music wonderStars if_changed fadein 1.0 fadeout 1.0
+
     menu:
         "Buy More Items" if IsDaytime: 
             jump EctabanaShop
         "Craft More Items" if IsDaytime: 
-            call carftTime
+            call carftTime from _call_carftTime_4
             $ timeTime += _return
             if timeTime > time2Night:
                 $ IsDaytime = False
-                $ isDusk = True
-            elif timeTime > time2Night:
                 $ isDusk = False
-            jump ectabanaMenuAfterSoAM
+                scene ectabanaEstablishingNight at halfSize , truecenter
+                with Fade(1,0,1)
+            jump ectabanaBeforePart2Menu
         "Leave":
             jump leaveEctabana2
 
 label atosSleepOverAfterSoAM:
     
     # will be at night
-    
+    stop music fadeout 2.0 
     scene starNightTime:
         fit "cover"
     show atossaBedroomNight:
@@ -715,6 +744,7 @@ label atosSleepOverAfterSoAM:
                     repeat 2
                 with dissolve
                 #ato'ssa jumps in existe ment
+                play sound atoJump1ce
                 ato "Yes!"
                 jump atoTries2GetFriskyWithXerxes
                 #xerx headpats ato
@@ -728,6 +758,7 @@ label atosSleepOverAfterSoAM:
                 ato "You're spending time with me, so it's O.K."
                 $ sleepWithAtossa = False
 
+                play sound cuddles
                 scene atossaBedXerxOnFloor at fullFit with Fade( 1, 0 , 3 )
                 pause 5
                 jump atoMorningAfterSoAMNight
@@ -779,7 +810,7 @@ label atosSleepOverAfterSoAM:
 label atoTries2GetFriskyWithXerxes:
     if headPatCounter > 5:
                         
-
+        play music about2Boink fadein 1.0 fadeout 1.0
         if headPatCounter > 12:#ato be half neeked
             scene starNightTime at fullFit
             show atossaBedroomNight:
@@ -796,20 +827,24 @@ label atoTries2GetFriskyWithXerxes:
                         easein 0.5 ypos 0.5
                         easeout 0.5 ypos 1.0
                         repeat
+                    play sound jump4Joy loop
                     with dissolve
+                    stop music fadeout 4.0
+                    #stop sound fadeout 1.5
                     pause 3
                     #would need a new cg
                     #get to see ato'ssa front.
                     #maybe hair bra maybe x
-                    scene atossaBedXerxReallyInAtossa with fade:
+                    play sound cuddles
+                    scene atossaBedXerxReallyInAtossa with Fade(2,0,1):
                         zoom 1.5
                         xanchor 0.6
                         yanchor 0.3
                         xpos 0.6
                         ypos 0.3
-                        easeout 6 zoom 0.67 
-                    pause 6
-                    scene atossaBedXerxReallyInAtossa with dissolve:
+                        easeout 8 zoom 0.67 
+                    pause 8
+                    scene atossaBedXerxReallyInAtossa with Fade(2,0,2):
                         zoom 0.67
                         xanchor 0.6
                         yanchor 0.3
@@ -820,8 +855,8 @@ label atoTries2GetFriskyWithXerxes:
                         easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) zoom 0.67
                         repeat
                     
-                    pause 20
-                    scene atossaBedXerxReallyInAtossa with dissolve:
+                    pause 6
+                    scene atossaBedXerxReallyInAtossa with Fade(2,0,3):
                         zoom 0.8
                         xanchor 0.6
                         yanchor 0.3
@@ -831,8 +866,8 @@ label atoTries2GetFriskyWithXerxes:
                         easeout 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) zoom 0.8
                         
                         repeat 
-                    pause 18
-                    scene atossaBedXerxReallyInAtossa with dissolve:
+                    pause 6
+                    scene atossaBedXerxReallyInAtossa with Fade(2,0,3):
                         zoom 1.0
                         xanchor 0.6
                         yanchor 0.3
@@ -842,34 +877,34 @@ label atoTries2GetFriskyWithXerxes:
                         easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5)  zoom 1.0
                         
                         repeat 
-                    pause 21
-                    scene atossaBedXerxReallyInAtossa with dissolve:
+                    pause 9
+                    scene atossaBedXerxReallyInAtossa with Fade(3,0,3):
                         zoom 1.25
                         xanchor 0.6
                         yanchor 0.3
                         xpos 0.6
                         ypos 0.3
-                        easein 0.5 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(0.7) zoom 1.5 blur 5
+                        easein 0.5 matrixcolor TintMatrix("#ce0045") * BrightnessMatrix(0.7) zoom 1.5 blur 5
                         easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) zoom 1.25 blur 2
                         easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) zoom 1.5 blur 10
                         easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) zoom 1.25 blur 5
                         #easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.3) zoom 1.25 blur 2
                         repeat
                     
-                    pause 18
-                    scene atossaBedXerxReallyInAtossa with dissolve:
+                    pause 9
+                    scene atossaBedXerxReallyInAtossa with Fade(3,0,2):
                         zoom 1.5
                         xanchor 0.6
                         yanchor 0.3
                         xpos 0.6
                         ypos 0.3
                         
-                        easein 0.4 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(0.8) * SaturationMatrix(0.5) zoom 2.2 blur 10
+                        easein 0.4 matrixcolor TintMatrix("#ce0045") * BrightnessMatrix(0.8) * SaturationMatrix(0.5) zoom 2.2 blur 10
                         easeout 0.4 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix(1.0) zoom 1.5 blur 5
                         repeat
 
 
-                    pause 12
+                    pause 8
 
                     scene atossaBedXerxReallyInAtossa with dissolve:
                         zoom 1.5
@@ -879,12 +914,12 @@ label atoTries2GetFriskyWithXerxes:
                         ypos 0.3
                         blur 5
                         easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.8) zoom 2.0 blur 20
-                        easein 5 matrixcolor TintMatrix("#7500ce") * BrightnessMatrix(1.0) zoom 2.5 blur 20
+                        easein 5 matrixcolor TintMatrix("#ce0045") * BrightnessMatrix(1.0) zoom 2.5 blur 20
                         easeout 10 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) zoom 0.67 blur 0.01
                     
                     pause 20
                     scene atossaBedXerxInAtossa at fullFit , hornyAura with Fade(1,0,2)
-                    pause 3
+                    pause 4
                     $ atoBoinks += 1
                     $ headPatCounter += 10
                     #sleep
@@ -892,6 +927,7 @@ label atoTries2GetFriskyWithXerxes:
                     jump atoKnightmare2
                     
                 "No, but I do want to cuddle you. (Just cuddles)":
+                    stop music fadeout 2.0
                     hide atoHalfNekkedHorny
                     show ato3quatHalfNakkedO at middleStand , lightCrystalLights , size08
                     with dissolve
@@ -903,6 +939,7 @@ label atoTries2GetFriskyWithXerxes:
                     #check for nigmtmare
                     jump atoKnightmare2
                 "No":
+                    play music happyAtoTheme fadein 1.0 fadeout 1.0
                     hide atoHalfNekkedHorny
                     show atohappy2HalfNekked at middleStand , lightCrystalLights , size08
                     with dissolve
@@ -918,12 +955,14 @@ label atoTries2GetFriskyWithXerxes:
                             $ nekkedAto = False
                             $ headPatCounter += 2
                             #sleep
+                            play sound cuddles
                             scene atossaBedXerxWithAtossa at fullFit with Fade(2,0,2)
                             pause 3
                             jump atoKnightmare2
                             #check fro nightmare
                         "No, I want my space.":
 
+                            stop music fadeout 2.0
                             hide atohappy2HalfNekked
                             show atoSadHalfNekked at middleStand , lightCrystalLights , size08
                             with dissolve
@@ -938,6 +977,7 @@ label atoTries2GetFriskyWithXerxes:
                             ato "So I'll give you space."  
                             $ sleepWithAtossa = False
 
+                            play sound sleepss
                             scene atossaBedXerxOnFloor at fullFit with Fade(2,0,2)
                             pause 3
                             jump atoMorningAfterSoAMNight      
@@ -954,6 +994,7 @@ label atoTries2GetFriskyWithXerxes:
             ato "Want to cuddle with me?"
             menu:
                 "Yes":
+                    play music about2Boink fadein 1.0 fadeout 1.0
                     hide atohappy2HalfNekked
                     hide atohappy2
                     if headPatCounter > 10:
@@ -961,6 +1002,10 @@ label atoTries2GetFriskyWithXerxes:
                     else:
                         show atoExcited at middleStand , lightCrystalLights , size08
                     with dissolve
+
+                    play sound cuddles
+                    stop music fadeout 2
+
                     if headPatCounter > 10:
                         scene atossaBedXerxInAtossa at fullFit with Fade(2,0,2)
                     else:
@@ -970,7 +1015,7 @@ label atoTries2GetFriskyWithXerxes:
                     jump atoKnightmare2
                 "No":
                     if headPatCounter > 10:
-                        
+                        play music happyAtoTheme fadein 1.0 fadeout 1.0
                         ato "What if I put my clothes back on?"
                         menu:
                             "I'll cuddle you if you keep your clothes on.":
@@ -1001,10 +1046,13 @@ label atoTries2GetFriskyWithXerxes:
                                 ato "So I'll give you space."  
                                 $ sleepWithAtossa = False
 
+                                stop music fadeout 1.0
+                                play sound cuddles fadein 1.0 fadeout 1.0
                                 scene atossaBedXerxOnFloor at fullFit with Fade(2,0,2)
                                 pause 3
                                 jump atoMorningAfterSoAMNight
                     else:
+                        play music happyAtoTheme fadein 1.0 fadeout 1.0
                         hide atohappy2
                         show ato3quatMiniSad at middleStand , lightCrystalLights , size08
                         with dissolve
@@ -1019,6 +1067,9 @@ label atoTries2GetFriskyWithXerxes:
                         ato "So I'll give you space."
 
                         $ sleepWithAtossa = False
+
+                        stop music fadeout 1.0
+                        play sound sleepss
                         scene atossaBedXerxOnFloor at fullFit with Fade(2,0,2)
                         pause 3
                         jump atoMorningAfterSoAMNight
@@ -1027,6 +1078,8 @@ label atoTries2GetFriskyWithXerxes:
         #things will go smoothly 
         #until morning.
         $ sleepWithAtossa = False
+
+        play sound sleepss
         scene atossaBedXerxOnFloor at fullFit with Fade(2,0,2)
         pause 3
         jump atoMorningAfterSoAMNight
@@ -1037,7 +1090,7 @@ label atoKnightmare2:
     
     if ahrimaniomNightmare == 1 and headPatCounter > 15:
         
-        call ahrimaniomResurrectionPart1
+        call ahrimaniomResurrectionPart1 from _call_ahrimaniomResurrectionPart1
         $ ahrimaniomNightmare += 1
         #xerxes wakes up
         #ato'ssa will be nekked
@@ -1063,25 +1116,28 @@ label atoKnightmare2:
     elif headPatCounter > 10 and ahrimaniomNightmare == 0:
         pause 3
         #
+        play music ahrimaniomTemple fadein 1.0 fadeout 1.0
         scene ahriteCave with fade:
             fit "cover"
-        pause 1
+        pause 5
         scene ahriteBaseCenter at size08:
             xpos -0.8
             ypos 0.0
-            linear 5 ypos -1.5
+            linear 10 ypos -1.5
         show ahrimaniomMK5UnderConstruction1 at truecenter , size2Thrid:
             ypos 2.0
-            linear 5 ypos 0.5
+            linear 10 ypos 0.5
         with fade
-        pause 5
+        pause 10
 
         scene ahriteSky:
             fit "cover"
         show atossaBed at ahriteDarkness:
             fit "cover"
         with dissolve
-        pause 1.0
+        pause 5.0
+        play music ahrimaniomPhase1 fadein 3.0 fadeout 3.0
+        play sound ahrimaniomHisskttktk
         show ahrimaniomMK4Shrouded at truecenter , halfSize:
             linear 1.0 zoom 0.6
             linear 1.0 zoom 0.5
@@ -1089,15 +1145,31 @@ label atoKnightmare2:
         with dissolve
         pause 1.0
         with hpunch
+        play extraSound ahrimaniomHisskttktk
         pause 1.0
         with vpunch
+        play sound ahrimaniomHisskttktk
         show ahrimaniomMK4Shrouded at truecenter , halfSize:
             linear 1 zoom 3.0
             linear 0.2 matrixcolor TintMatrix("#000")
         pause 1.0
-        with vpunch
-        with hpunch
+        play extraSound playerHit
         pause 0.5
+        play sound bloodySlam
+        with hpunch
+        stop music
+        pause 1.25
+        play extraSound ahrimaniomHisskttktk
+        with vpunch
+        pause 2.5
+        play extraSound slicey
+        pause 0.3
+        play sound meatEplosion
+        with hpunch
+        pause 2.5
+        play sound vored
+        pause 0.2
+
         #ahrite nightmare
         $ ahrimaniomNightmare += 1
         scene atossaBedroom at truecenter , darkNight:
@@ -1123,7 +1195,10 @@ label atoKnightmare2:
         with fade
         with vpunch
         with hpunch
+        play sound thong
+        play extraSound drop2DaFloor
         pause 1.0
+        stop music fadeout 3.0
         #xerxes wakes up
         #need xerxes graphics , unarmored without hat.  -   
         #xerxes sceared - no hat                        -   done.
@@ -1151,7 +1226,7 @@ label atoKnightmare2:
 
 label atoMorningAfterSoAMNight:
 
-    call bardaiyaNewGun
+    call bardaiyaNewGun from _call_bardaiyaNewGun
     $ IsDaytime = True
     $ timeTime = 0
     #need to differentiate 
@@ -1184,6 +1259,7 @@ label atoMorningAfterSoAMNight:
             hide ato3quatCurious
             show ato3quatHappyer at xerxLeftLeft
             with dissolve
+            play music sandHero fadein 1.0 fadeout 1.0
             ato "You have the Sword of Ahura-Mazda now."
             
             scene ahriteWastland at fullFit:
@@ -1222,6 +1298,7 @@ label atoMorningAfterSoAMNight:
                 ypos 0.35
             show xerx3quatHappy at tesiRight
             with dissolve
+            play music happyAtoTheme fadein 1.0 fadeout 1.0
             ato "And this might take your mind off things."
             show egg at truecenter with dissolve
             $ changeItemAmount( inventory , ladyEgg , 1 )
@@ -1242,6 +1319,7 @@ label atoMorningAfterSoAMNight:
             show ato3quatMiniExict at xerxLeftLeft
             with dissolve
             ato "I know you can." 
+            stop music fadeout 2.0
             jump setUpEctabanaMenuFromPalace   
 
         elif ahrimaniomNightmare == 2:
@@ -1288,6 +1366,7 @@ label atoMorningAfterSoAMNight:
             show ato3quatCheeky at xerxLeftLeft:
                 ypos 0.35
             with dissolve
+            play music happyAtoTheme fadein 1.0 fadeout 1.0
             ato "Look at what I have being making this morning."
             #ato gets an egg she layed
             ato "Egg"
@@ -1305,12 +1384,13 @@ label atoMorningAfterSoAMNight:
             show xerx3quatPointHappy at tesiRight
             with dissolve
             xerx "At least you layed it in your room this time."
-
+            stop music fadeout 2.0
             jump setUpEctabanaMenuFromPalace
 
 
         else:
             #no nightmares xerxes confindet
+            play music sandHero fadein 1.0 fadeout 1.0
             scene clearDayTime
             show atossaBedroom at fullFit
             with fade
@@ -1378,6 +1458,7 @@ label atoMorningAfterSoAMNight:
                 xerx "This will help me fight the Astarts."
             else:
                 xerx "This will help me deal with the Zaratians Zardonian problem."
+            stop music fadeout 2.0
             jump setUpEctabanaMenuFromPalace
             
     else:
@@ -1385,7 +1466,7 @@ label atoMorningAfterSoAMNight:
             #ato on xerxes
             scene clearDayTime
             show atossaBed:
-                zoom 2.0 xanchor 1.0 yanchor 1.0
+                zoom 1.5 xanchor 0.5 yanchor 0.5
             #ato sleeping on Xerx from xerx's pov - done.
             show atoOnXerxesSleeping at truecenter with Fade (1,0,1):
                 easeout 10 zoom 1.05
@@ -1398,22 +1479,27 @@ label atoMorningAfterSoAMNight:
                     #to'ssa blade to'ssa blade, let her rip a fart lololololol
                     scene clearDayTime
                     show atossaBedroom:
-                        yanchor 1.0
-                    show madsitterXerx at xerxLeftLeft , quatSize
-                    show atorolly1 at xerxLeftLeft , quatSize:
+                        yanchor 0.5
+                        ypos 0.3
+                    show madsitterXerx at xerxLeftLeft , halfSize:
+                        xpos 0.25
+                    show atorolly1 at xerxLeftLeft , halfSize:
                         xpos 0.25
                         ypos 0.2
                         zoom 0.5
-                        linear 1.0 xpos 0.5 counterclockwise rotate 1080
+                        linear 1.0 xpos 0.3 counterclockwise rotate 1080 zoom 1.0
                         "atorolly2"
                     with dissolve
-                    pause 2.0
+                    pause 1.0
+                    play sound slamSound
+                    pause 1.0
 
                     scene clearDayTime
                     show atossaBedroom at fullFit
                     show ato3quatHehe at xerxLeftLeft
                     show xerx3quatAnnoyed at tesiRight
                     with dissolve
+                    play music ratThonking
                     ato "Typical Xerxes."
                     xerx "Typical Ato'ssa."
                     hide ato3quatHehe
@@ -1468,6 +1554,7 @@ label atoMorningAfterSoAMNight:
                     show ato3quatGreet at xerxLeftLeft
                     with dissolve
                     ato "Bye."
+                    stop music fadeout 2.0
                     jump setUpEctabanaMenuFromPalace
 
                 "Set her aside and leave":
@@ -1478,8 +1565,12 @@ label atoMorningAfterSoAMNight:
                     show xerx3quatMiniSuprized at xerxLeft , size08
                     show atoSleepNoShoess at right, size2Thrid:
                         rotate 90
+                        ypos 1.0
+                        xpos 0.5
+                        yanchor 0.5
+                        xanchor 0.5
                         easein 10 zoom 0.75
-                        easeout 10 zoom 0.67
+                        easeout 10 zoom 0.72
                         repeat
                     with dissolve
                     xerx "{i}What's this??"
@@ -1504,6 +1595,7 @@ label atoMorningAfterSoAMNight:
                 "Give her affection until she awakens.":
 
                     hide atoOnXerxesSleeping
+                    play music happyAtoTheme fadein 1.0 fadeout 1.0
                     #xerx headpatting sleeping atossa while she is on him.
                     #based on sleey ato     -   done.
                     #ato wakens - 1 eye open -  
@@ -1546,20 +1638,21 @@ label atoMorningAfterSoAMNight:
                     show atoOnXerxesHorny1 at truecenter
                     with dissolve
                     xerx "It's your room so it's fine."
-
+                    stop music fadeout 2.0
                     jump setUpEctabanaMenuFromPalace
         else: #ato lets xerxes have his space
 
+            play music happyAtoTheme fadein 1.0 fadeout 1.0
             scene clearDayTime
             show atossaBedroom at fullFit
             with fade
-            show xerx3quatGreet at xerxLeftLeft
+            show xerx3quatGreet at xerxLeft
             show ato3quatHappy at atoRight
             with dissolve
             xerx "Morning Ato'ssa."
             hide xerx3quatGreet
             hide ato3quatHappy
-            show xerx3quatHappy at xerxLeftLeft
+            show xerx3quatHappy at xerxLeft
             show ato3quatGreet at atoRight
             with dissolve
             ato "Morning Xerxes."
@@ -1643,21 +1736,23 @@ label atoMorningAfterSoAMNight:
             xerx "Bye."
             hide xerx3quatGreet
             hide ato3quatHappy2
-            show xerx3quatHappy
-            show ato3quatGreet
+            show xerx3quatHappy at xerxLeft
+            show ato3quatGreet at atoRight
             with dissolve
             ato "Bye."
+            stop music fadeout 2.0
             jump setUpEctabanaMenuFromPalace   
 
 label treeKnightMare2:
 
     
     if ahrimaniomNightmare == 1 and headPatCounter > 15:
-        call ahrimaniomResurrectionPart1
+        call ahrimaniomResurrectionPart1 from _call_ahrimaniomResurrectionPart1_1
     elif headPatCounter > 10:
         scene ahriteSky at fullFit
         show xerxesHouseInsideFacingOut at fullFit , ahriteDarkness
-        with dissolve
+        with Fade(1,0,1)
+        play music ahrimaniomPhase1 fadein 5.0 fadein 1.0
         pause 3
         with vpunch
         show ahrimaniomMK4Shrouded at centerAlignment , quatSize with dissolve:
@@ -1665,17 +1760,31 @@ label treeKnightMare2:
             linear 1.0 zoom 0.5
             repeat
         with hpunch
+        play sound ahrimaniomHisskttktk
         pause 1
         with vpunch
+        play extraSound ahrimaniomHisskttktk
         pause 1
         show ahrimaniomMK4Shrouded at centerAlignment with dissolve:
-            linear 1 zoom 4.0
+            linear 1 zoom 8.0
             linear 0.2 matrixcolor TintMatrix("#000")
         with vpunch
+        play extraSound playerHit
         pause 0.5
+        play sound bloodySlam
         with hpunch
+        stop music
         pause 1.25
+        play extraSound ahrimaniomHisskttktk
         with vpunch
+        pause 2.5
+        play extraSound slicey
+        pause 0.3
+        play sound meatEplosion
+        with hpunch
+        pause 2.5
+        play sound vored
+        pause 0.2
 
     $ ahrimaniomNightmare += 1
     return
@@ -1685,12 +1794,14 @@ label xerxesHouseAfterSoAM:
     #determine if tesipiz has also introed to Xerxes' house.
     #show xerxes' tree
     if IsDaytime:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0
         scene bigstump at fullFit , center
         with fade
         pause 2
         
         
     else:
+        play music wonderStars if_changed fadein 1.0 fadeout 1.0
         scene starNightTime:
             fit "cover"
         show bigstumpNight at truecenter , size2Thrid:
@@ -1801,6 +1912,9 @@ label xerxesHouseAfterSoAM:
     scene achem with dissolve:
         fit "cover"
     xerx "My hometown of Achemyenizneh."
+
+    play music happyAtoTheme fadein 1.0 fadeout 1.0
+
 
 label xerxHouseDinnerFoods2:
     $ IsDaytime = False
@@ -2066,12 +2180,14 @@ label xerxHouseDinnerFoods2:
                 $ sleepWithAtossa = False
             "You get to join me in my bed": 
                 #ato jumpos
+                play sound jump4Joy loop
                 hide ato3quatCheeky
                 show ato3quatMiniExict at atoRight , hornyAura:
                     easein 0.25 yalign 0.5
                     easeout 0.25 yalign 0.1
                     repeat
                 xerx "Calm down Ato'ssa."
+                stop sound
                 hide ato3quatMiniExict
                 show ato3quatHappyer at atoRight , hornyAura
                 with dissolve
@@ -2080,6 +2196,7 @@ label xerxHouseDinnerFoods2:
     
     hide xerx3quatHappy
     hide xerx3quatPoint
+    play music wonderStars fadein 1.0 fadeout 1.0
     show happyXerx at middleStand , lightCrystalLights , size08
     with dissolve
     xerx "Good night Tesipiz and Volkara."
@@ -2102,21 +2219,21 @@ label xerxHouseDinnerFoods2:
     #don't repeat things said in temple of ahura-mazda intro
     #foodtime
 
-    
-    call bardaiyaNewGun
+    stop music fadeout 1.0
+    call bardaiyaNewGun from _call_bardaiyaNewGun_1
     $ IsDaytime = True
     $ timeTime = 0
     #morning time
     #ato lays an egg
     if sleepWithAtossa:
         
-        
+        play sound cuddles
         if headPatCounter > 10:#ato half nekked
             scene xerxBedInAtossa at fullFit with Fade(1,0,2)
         else:
             scene xerxBedWithAtossa2 at fullFit with Fade(1,0,2)
-        pause 3
-        call treeKnightMare2
+        pause 5
+        call treeKnightMare2 from _call_treeKnightMare2
 
         #"The Ato is with da Xerxes"
         #Xerxes and ato wake up
@@ -2132,6 +2249,7 @@ label xerxHouseDinnerFoods2:
         pause 3
 
         scene xerxesBed at fullFit
+        play music happyAtoTheme fadein 1.0 fadeout 1.0
         if headPatCounter > 10:
             show atoOnXerxesSleepingHalfNekked at truecenter
         else:
@@ -2200,6 +2318,7 @@ label xerxHouseDinnerFoods2:
 
                 
                 "What did I say Ato'ssa. No laying eggs on me.{b} GET OFF NOW!!":
+                    stop music
                     #ato gets chucked off the bed.
                     #she will need a chuck graphic
                     hide atoHalfNekkedOnXerxesNeutralHappy
@@ -2216,12 +2335,15 @@ label xerxHouseDinnerFoods2:
                         easein 1 ypos 1.9
                     with dissolve
                     pause 0.7
+                    play sound slamSound
+                    play extraSound drop2DaFloor
                     with vpunch
                     with hpunch
 
                     scene xerxesHouseInisde at truecenter , size2Thrid
                     show tesipiz34Happy at xerxLeft
                     with dissolve
+                    play music ratThonking fadein 1.0 fadeout 1.0
                     tesi "Heheheh."
                     tesi "Ato'ssa you're stupid."
                     #ato is half nekked
@@ -2242,6 +2364,7 @@ label xerxHouseDinnerFoods2:
                     tesi "Persistantly stupid."
                     $ tesiRivalsAto = True
 
+                    play music happyAtoTheme fadein 1.0 fadeout 1.0
                     scene lakeview at fullFit
                     show xerxesHouseInsideFacingOut at fullFit
                     show volkara34Happy at xerxLeftLeft
@@ -2298,6 +2421,8 @@ label xerxHouseDinnerFoods2:
                 easein 1 ypos 2.0
             with dissolve
             pause 0.7
+            play sound slamSound
+            play extraSound drop2DaFloor
             with vpunch
             with hpunch
             scene xerxesHouseInisde at truecenter , size2Thrid
@@ -2319,7 +2444,8 @@ label xerxHouseDinnerFoods2:
             with dissolve
             tesi "Persistantly stupid."
             $ tesiRivalsAto = True
-
+            
+            play music happyAtoTheme fadein 1.0 fadeout 1.0
             if headPatCounter > 6:
                 scene lakeview at fullFit
                 show xerxesHouseInsideFacingOut at fullFit
@@ -2394,11 +2520,12 @@ label xerxHouseDinnerFoods2:
         #move to floor
 
         #only if xerxes doesn't chuck ato'ssa off
+        play music happyAtoTheme fadein 1.0 fadeout 1.0 if_changed
         scene lakeview at fullFit
         show xerxesHouseInsideFacingOut at fullFit
         show volkaraHappyGreeting at xerxLeftLeft
         with fade
-        volk "Good moring Xerxes and Ato'ssa."
+        volk "Good morning Xerxes and Ato'ssa."
         hide volkaraHappyGreeting
         show volkaraHappy at xerxLeftLeft
         with dissolve
@@ -2410,7 +2537,7 @@ label xerxHouseDinnerFoods2:
 
         if ahrimaniomNightmare > 1:
             show xerx3quatHappyer at tesiRight:
-                xalign 1.3
+                xalign 1.4
                 easein 1 xalign 0.9
 
             xerx "Yes, but I can deal with him for good now."
@@ -2468,12 +2595,15 @@ label xerxHouseDinnerFoods2:
             easeout 2 ypos 1.8
         with Fade(1,0,1)
         pause 1.0
+        play sound slamSound
+        play extraSound drop2DaFloor
         with vpunch
         with hpunch
 
         scene xerxesHouseInisde at truecenter , size2Thrid
         show tesipiz34Happy at xerxLeft
         with dissolve
+        play music happyAtoTheme fadein 1.0 fadeout 1.0 if_changed
         tesi "Heheheh."
         tesi "Ato'ssa you're stupid."
 
@@ -2552,17 +2682,20 @@ label xerxHouseDinnerFoods2:
         #she lays it on the floor then gives it to Xerxes.
         #xerxes jumps down.
         
+        play sound sleepss
         scene xerxBedXerx at fullFit with Fade(1,0,2)
         pause 5
         #
         #donk!
+        play music happyAtoTheme fadein 1.0 fadeout 1.0 if_changed
         scene xerxesHouseInisde at truecenter , size2Thrid
         show xerx3quatFalling at middleStand, size08 , flipped:
             ypos -2.7
             easein 2 ypos 1.0
         with Fade(1,0,1)
-        pause 2
+        #pause 0.5
         hide xerx3quatFalling
+        play sound drop2DaFloor
         show xerx3quatHappy at tesiRight
         with dissolve
         show ato3quatGreet at xerxLeftLeft with dissolve
@@ -2604,7 +2737,7 @@ label xerxHouseDinnerFoods2:
                 hide ato3quatHappy2
                 hide xerx3quatHappyer
                 show atossaHairStroke at truecenter:
-                    zoom 1.5
+                    zoom 0.75
                 pause 3
                 $ headPatCounter += 2
 
@@ -2669,11 +2802,10 @@ label xerxHouseDinnerFoods2:
 
 label leaveEctabana2:
     #can be at night since nighttime is a barrier to stop overcrafting.
-    $ xerxesCharacter.resurrect()
-    $ tesipizCharacter.resurrect()
+    call sleepyTimeReset  
     $ atossaCharacter.resurrect()
 
-
+    play music heroicssss fadein 1.0 fadeout 1.0 if_changed
     if IsDaytime:
         scene etabanaDesert at size2Thrid:
             xpos -1.0
@@ -2727,14 +2859,15 @@ label leaveEctabana2:
     
     if goingEast:
         if takuriumOwner == "Jamesians":
-            "To Takurium"
-            #jump TakuriumEarlyCapture
+            #"To Takurium"
+            jump takuriumFozPart1
         else:
-            "To Niitwana assault."
-            #jump  
+            #"To Niitwana fortress."
+            jump NiitwanwaFoZ
     else:
-        "Zaratianss"
-        #jump ToZarat
+        #"Zaratianss"
+        jump ToZarat
     
-    "{b}THIS IS THE END OF PART 1 \n PART 2 COMMING SOON"
+    "{i}You somehow skipped a if/else statement"
+    "{i}Well dumb."
     return

@@ -1615,7 +1615,7 @@ label takuriumFozPart1:
         show ladyTakura greeting with dissolve
         taku "We'll get your beds"
         #sleeps
-        call sleepyTimeReset  
+        call sleepyTimeReset from _call_sleepyTimeReset_6  
     
         #sleeps in Takurium bed - modded with no Ato'ssa?
         stop music fadeout 1.0

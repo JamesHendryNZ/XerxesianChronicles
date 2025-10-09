@@ -1813,39 +1813,87 @@ layeredimage astarte:
             "images/antagonists/Astarte/Astarte Standing Half Nekked arm out side.webp"
 
     group eyes:
-        attribute neutralEyes default:
+        attribute neutralEyes default if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Neutral Eyes.webp"
-        attribute meanEyes:
+        attribute neutralEyes default if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Neutral Eyes.webp"
+            xpos 100
+
+        attribute meanEyes if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Mean Eyes.webp"
-        attribute hornyEyes:
+        attribute meanEyes if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Mean Eyes.webp"
+            xpos 100
+
+        attribute hornyEyes if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Horny Eyes.webp"
-        attribute sadEyes:
+        attribute hornyEyes if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Horny Eyes.webp"
+            xpos 100
+
+        attribute sadEyes if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Sad Eyes.webp"
+        attribute sadEyes if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Sad Eyes.webp"
+            xpos 100
 
     group mouths:
-        attribute neutralHappyMouth default:
+        attribute neutralHappyMouth default if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Neutral Happy Mouth.webp"
-        attribute happyMouth:
+        attribute neutralHappyMouth default if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Neutral Happy Mouth.webp"
+            xpos 100
+
+        attribute happyMouth if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Happy Mouth.webp"
-        attribute hornyMouth:
+        attribute happyMouth if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Happy Mouth.webp"
+            xpos 100
+
+        attribute hornyMouth if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Horny Mouth.webp"
-        attribute OMouth:
+        attribute hornyMouth if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Horny Mouth.webp"
+            xpos 100
+
+        attribute OMouth if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing OMouth.webp"
-        attribute annoyedMouth:
+        attribute OMouth if_any['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing OMouth.webp"
-        attribute angryMouth:
+            xpos 100
+
+        attribute annoyedMouth if_not['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing OMouth.webp"
+        attribute annoyedMouth if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing OMouth.webp"
+            xpos 100
+
+        attribute angryMouth if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Annoyed Mouth.webp"
+        attribute angryMouth if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Annoyed Mouth.webp"
+            xpos 100
 
     group blushes:
-        attribute blush:
+        attribute blush if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Blush.webp"
+        attribute blush if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Blush.webp"
+            xpos 100
+
     group magics:
-        attribute charming:
+        attribute charming if_not['holdingSword']:
             "images/antagonists/Astarte/Charm Shot.webp" #configure to main sprite
             xpos 240 ypos 450 #alpha .9
+        attribute charming if_any['holdingSword']:
+            "images/antagonists/Astarte/Charm Shot.webp" #configure to main sprite
+            xpos 340 ypos 450    
     group leakies:
-        attribute leaking:
+        attribute leaking if_not['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Leak.webp"
+        attribute leaking if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte Standing Leak.webp"
+            xpos 100
 #layeredimage astarteKizharyuutu - flying astarte
 
 #layeredimage astarteOmega - final boss of a personal curse lifted ending a
@@ -4547,7 +4595,7 @@ layeredimage regius:
         attribute neutralEyes default if_any["basic"]:
             "images/Protagonists/Regius/Regius Neutral eyes.webp"
             ypos -100
-        attribute neutralEyes default if_any["camelArmor","camelGreet","camelAttack"]:
+        attribute neutralEyes default if_any["camelArmor","camelGreet","camelAttack","camelYeah"]:
             "images/Protagonists/Regius/Regius Neutral eyes.webp"
             xpos 389 ypos 55
         attribute neutralEyes default if_any["armored","armoredGreet"]:
@@ -4557,7 +4605,7 @@ layeredimage regius:
         attribute meanEyes if_any["basic"]:
             "images/Protagonists/Regius/Regius Mean Eyes.webp"
             ypos -100
-        attribute meanEyes if_any["camelArmor","camelGreet","camelAttack"]:
+        attribute meanEyes if_any["camelArmor","camelGreet","camelAttack","camelYeah"]:
             "images/Protagonists/Regius/Regius Mean Eyes.webp"
             xpos 389 ypos 56
         attribute meanEyes if_any["armored","armoredGreet"]:
@@ -4566,7 +4614,7 @@ layeredimage regius:
         
         attribute sadEyes if_any["basic"]:
             "images/Protagonists/Regius/Regius Sad Eyes.webp"
-        attribute sadEyes if_any["camelArmor","camelGreet","camelAttack"]:
+        attribute sadEyes if_any["camelArmor","camelGreet","camelAttack","camelYeah"]:
             "images/Protagonists/Regius/Regius Sad Eyes.webp"
             xpos 389 ypos 156
         attribute sadEyes if_any["armored","armoredGreet"]:
@@ -4578,7 +4626,7 @@ layeredimage regius:
         attribute neutralMouth default if_any["basic"]:
             "images/Protagonists/Regius/Regius Neutral Happy Mouth.webp"
             ypos -100
-        attribute neutralMouth default if_any["camelArmor","camelGreet","camelAttack"]:
+        attribute neutralMouth default if_any["camelArmor","camelGreet","camelAttack","camelYeah"]:
             "images/Protagonists/Regius/Regius Neutral Happy Mouth.webp"
             xpos 389 ypos 57
         attribute neutralMouth default if_any["armored","armoredGreet"]:
@@ -4588,7 +4636,7 @@ layeredimage regius:
         attribute angryMouth if_any["basic"]:
             "images/Protagonists/Regius/Regius Angry mouth.webp"
             ypos -100
-        attribute angryMouth if_any["camelArmor","camelGreet","camelAttack"]:
+        attribute angryMouth if_any["camelArmor","camelGreet","camelAttack","camelYeah"]:
             "images/Protagonists/Regius/Regius Angry mouth.webp"
             xpos 389 ypos 56
         attribute angryMouth if_any["armored","armoredGreet"]:
@@ -4598,7 +4646,7 @@ layeredimage regius:
         attribute happyMouth if_any["basic"]:
             "images/Protagonists/Regius/Regius Happy Mouth.webp"
             ypos -100
-        attribute happyMouth if_any["camelArmor","camelGreet","camelAttack"]:
+        attribute happyMouth if_any["camelArmor","camelGreet","camelAttack","camelYeah"]:
             "images/Protagonists/Regius/Regius Happy Mouth.webp" 
             xpos 389 ypos 56
         attribute happyMouth if_any["armored","armoredGreet"]:
@@ -4607,7 +4655,7 @@ layeredimage regius:
         
         attribute OMouth if_any["basic"]:
             "images/Protagonists/Regius/Regius O Mouth.webp"
-        attribute OMouth if_any["camelArmor","camelGreet","camelAttack"]:
+        attribute OMouth if_any["camelArmor","camelGreet","camelAttack","camelYeah"]:
             "images/Protagonists/Regius/Regius O Mouth.webp"
             xpos 389 ypos 156
         attribute OMouth if_any["armored","armoredGreet"]:
@@ -4616,7 +4664,7 @@ layeredimage regius:
         
         attribute sadMouth if_any["basic"]:
             "images/Protagonists/Regius/Regius Sad Mouth.webp"
-        attribute sadMouth if_any["camelArmor","camelGreet","camelAttack"]:
+        attribute sadMouth if_any["camelArmor","camelGreet","camelAttack","camelYeah"]:
             "images/Protagonists/Regius/Regius Sad Mouth.webp"
             xpos 389 ypos 156
         attribute sadMouth if_any["armored","armoredGreet"]:
@@ -5073,7 +5121,7 @@ layeredimage tsekrei:
             "images/Protagonists/Tsekrei/Tsekrei Armored Eyes.webp"
         attribute neutralEyes default if_any['greet']:
             "images/Protagonists/Tsekrei/Tsekrei Armored Eyes.webp"
-            ypos 200 xpos 200
+            ypos 200 xpos 100
 
         attribute neutralEyes default if_any['base34','yeah34','handChest34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Neutral Eyes.webp"
@@ -5090,7 +5138,7 @@ layeredimage tsekrei:
             "images/Protagonists/Tsekrei/Tsekrei Armored Mean Eyes.webp"
         attribute meanEyes if_any['greet']:
             "images/Protagonists/Tsekrei/Tsekrei Armored Mean Eyes.webp"
-            ypos 200 xpos 200
+            ypos 200 xpos 100
 
         attribute meanEyes if_any['base34','yeah34','handChest34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Mean Eyes.webp"
@@ -5107,7 +5155,7 @@ layeredimage tsekrei:
             "images/Protagonists/Tsekrei/Tsekrei Armored Sad Eyes.webp"
         attribute sadEyes if_any['greet']:
             "images/Protagonists/Tsekrei/Tsekrei Armored Sad Eyes.webp"
-            ypos 200 xpos 200
+            ypos 200 xpos 100
 
         attribute sadEyes if_any['base34','yeah34','handChest34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 Sad Eyes.webp"
@@ -5124,7 +5172,7 @@ layeredimage tsekrei:
             "images/Protagonists/Tsekrei/Tsekrei Armored x Eyes.webp"
         attribute XEyes if_any['greet']:
             "images/Protagonists/Tsekrei/Tsekrei Armored x Eyes.webp"
-            ypos 200 xpos 200
+            ypos 200 xpos 100
             
         attribute XEyes if_any['base34','yeah34','handChest34','armsForward34','item']:
             "images/Protagonists/Tsekrei/Tsekrei 34 X Eyes.webp"
@@ -5233,7 +5281,7 @@ layeredimage trimdius:
             "images/Protagonists/Trimdius/Trimdius Neutral Eyes.webp"
             ypos 300
         attribute neutralEyes default if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
-            "images/Protagonists/Trimdius/Trimdius Neutral Eyes.webp"
+            "images/Protagonists/Trimdius/Trimdius 3-4 Neutral Eyes.webp"
 
         attribute meanEyes if_any['base','greet']:
             "images/Protagonists/Trimdius/Trimdius Mean Eyes.webp"
@@ -5252,7 +5300,7 @@ layeredimage trimdius:
             "images/Protagonists/Trimdius/Trimdius Sad Eyes.webp"
             ypos 300
         attribute sadEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
-            "images/Protagonists/Trimdius/Trimdius Sad Eyes.webp"     
+            "images/Protagonists/Trimdius/Trimdius 3-4 Sad Eyes.webp"     
 
     group mouths:
         attribute neutralHappyMouth default if_any['base','greet']:
@@ -5315,7 +5363,7 @@ layeredimage femdius: #female form trimdius
         attribute neutralHappyMouth default:
             "images/Protagonists/Trimdius/Trimdius 3-4 Female Neutral Happy Mouth.webp"
         attribute happyMouth:
-            "images/Protagonists/Trimdius/Trimdius 3-4 Female Neutral Happy Mouth.webp"
+            "images/Protagonists/Trimdius/Trimdius 3-4 Female Happy Mouth.webp"
         attribute frown:
             "images/Protagonists/Trimdius/Trimdius 3-4 Female Frown.webp"
         attribute OMouth:

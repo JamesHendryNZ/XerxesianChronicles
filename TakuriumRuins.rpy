@@ -2412,7 +2412,7 @@ label takuraAsking1:
             pause 5
             $ takuraSleepOvered = True
             $ takuraCuddles += 1
-            call sleepyTimeReset  
+            call sleepyTimeReset from _call_sleepyTimeReset_7  
 
             play music happyAtoTheme fadein 1.0 fadeout 1.0
             scene takurasRoom:

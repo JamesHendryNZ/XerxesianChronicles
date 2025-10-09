@@ -40,7 +40,7 @@ transform takuraSittingZone:
 label takuriumRuinsEntrance:
 
     
-
+    play music eeerieRuins if_changed fadein 1.0 fadeout 1.0
     #pan intro scene 
     if enteringFrom == "Forest Village":
         
@@ -76,7 +76,7 @@ label takuriumRuinsEntrance:
                     ypos 0.0
                     xpos 0.5
                     zoom 0.4
-                    easein 5 ypos 0.9
+                    easein 8 ypos 0.9
             if not freedTakura:
                 show astarteStatueIcon at centerAlignment , astarteStatueIconPlacement , darkNight:
                     xpos 0.412
@@ -84,7 +84,7 @@ label takuriumRuinsEntrance:
                     zoom 0.5
                     easein 8 astarteStatueIconPlacement 
         with fade
-        pause 6
+        pause 10
 
     if firstVisitTakurium:
         if IsDaytime:
@@ -146,7 +146,7 @@ label takuriumRuinsEntrance:
         with dissolve 
 
         pause 1
-
+        play music ahrimaniomPhase1 fadein 1.0 fadeout 1.0
         scene ahriteSky:
             fit "cover"
         show takuriumEntraceAhrites at backgroundSetPlace
@@ -187,6 +187,7 @@ label takuriumRuinsEntrance:
 
         xerx "It's still in ruins from when the Ahrimaniom destroyed it"
 
+        play music eeerieRuins fadein 1.0 fadeout 1.0
         #mosters show up and move around
         if IsDaytime:
             scene clearDayTime
@@ -364,9 +365,13 @@ label takuriumSutshakOutsideNorth:
     with dissolve
     if not deafeatedKrokkosnek:
         if keys == 1:
+            play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+            queue music fightingCommon
             $ enemyTroopers = [ copy.copy(minobiteWarrior) , copy.copy(minobiteGreatAx) , copy.copy(minobiteGreatAxArmored) , copy.copy(minobiteGreatAx) , copy.copy(minobiteWarrior) ]
             call screen playerActions( "Looks like their's some serious beef here." , False , False , False , 1 )
 
+            play music weOwnedThem
+            queue music eeerieRuins
             if IsDaytime:
                 show Meat at centerAlignment with dissolve:
                     xpos 0.1
@@ -398,7 +403,7 @@ label takuriumSutshakOutsideNorth:
                     xpos 0.9
                     zoom 0.7
 
-            "Thier's alot of meat on these minobites."
+            "Thier's a lot of meat on these minobites."
             $ changeItemAmount( inventory , lizardMeat , 10 )
 
             if IsDaytime:
@@ -419,7 +424,7 @@ label takuriumSutshakOutsideNorth:
                 show xerx3quatHappyArmored at xerxLeft , lightCrystalLights
                 show tesipiz34HappyArmored at tesiRight , lightCrystalLights
             with dissolve
-            tesi "That was alot of beef."
+            tesi "That was a lot of beef."
 
             hide tesipiz34HappyArmored
             if IsDaytime:
@@ -453,8 +458,14 @@ label takuriumSutshakOutsideNorth:
                     
         elif renpy.random.randint(0,1) > 0:
             $ setRandomtroopersKeyBased( enemyTroopers , keys , krokkosnekSummonSetsLand , renpy.random.randint(1,5) )
+            
+            play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+            queue music fightingCommon
 
             call screen playerActions( "A monster patrol!" , False , False , False , 1 )
+
+            play music weOwnedThem
+            queue music eeerieRuins
     
 
     menu:
@@ -514,7 +525,13 @@ label takuriumMainStreet:
     if not deafeatedKrokkosnek and renpy.random.randint(0,1) > 0:
             $ setRandomtroopersKeyBased( enemyTroopers , keys , krokkosnekSummonSetsLand , renpy.random.randint(1,5) )
 
-            call screen playerActions( "Monsters are making a mess of this place." , False , False , False , 1 )        
+            play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+            queue music fightingCommon
+
+            call screen playerActions( "Monsters are making a mess of this place." , False , False , False , 1 )   
+
+            play music weOwnedThem
+            queue music eeerieRuins     
     
     $ enteringFrom = "Main Street"
     
@@ -557,8 +574,14 @@ label takuriumSutshakOutsideSouth:
     with dissolve
     if not deafeatedKrokkosnek:
         if keys == 1:
+            play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+            queue music fightingCommon
+
             $ enemyTroopers = [ copy.copy(minobiteWarrior) , copy.copy(minobiteGreatAx) , copy.copy(minobiteGreatAxArmored) , copy.copy(minobiteGreatAx) , copy.copy(minobiteWarrior) ]
             call screen playerActions( "Looks like their's some serious beef here." , False , False , False , 1 )
+
+            play music weOwnedThem
+            queue music eeerieRuins 
 
             if IsDaytime:
                 show Meat at centerAlignment with dissolve:
@@ -591,7 +614,7 @@ label takuriumSutshakOutsideSouth:
                     xpos 0.9
                     zoom 0.7
 
-            "There's alot of meat on these minobites."
+            "There's a lot of meat on these minobites."
             $ changeItemAmount( inventory , lizardMeat , 10 )
 
             if IsDaytime:
@@ -609,7 +632,7 @@ label takuriumSutshakOutsideSouth:
                 show xerx3quatHappyArmored at xerxLeft , lightCrystalLights
                 show tesipiz34HappyArmored at tesiRight , lightCrystalLights
             with dissolve
-            tesi "That was alot of beef."
+            tesi "That was a lot of beef."
 
             hide tesipiz34HappyArmored
             if IsDaytime:
@@ -642,9 +665,17 @@ label takuriumSutshakOutsideSouth:
             jump sutshakTempleTime
         
         elif renpy.random.randint(0,1) > 0:
+            
             $ setRandomtroopersKeyBased( enemyTroopers , keys , krokkosnekSummonSetsLand , renpy.random.randint(1,5) )
 
+            play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+            queue music fightingCommon
+
             call screen playerActions( "A monster patrol!" , False , False , False , 1 )
+            
+            play music weOwnedThem
+            queue music eeerieRuins 
+
     menu:
         "Go inside the Temple":
             jump sutshakTempleTime
@@ -673,6 +704,9 @@ label sutshakTempleTime:
     
     if keys == 1:
         if enteringFrom == "Outside Sutsshak North" and not deafeatedKrokkosnek:
+            
+            play music astartesWrath fadein 1.0 fadeout 1.0
+
             if IsDaytime:
                 show wholeAssTable at centerAlignment:
                     zoom 0.3
@@ -710,6 +744,9 @@ label sutshakTempleTime:
                     xpos 0.5
 
         elif enteringFrom == "Outside Sutsshak South" and not deafeatedKrokkosnek:
+            
+            play music astartesWrath fadein 1.0 fadeout 1.0
+            
             if IsDaytime:
 
 
@@ -750,7 +787,7 @@ label sutshakTempleTime:
                  
         with fade
         if not deafeatedKrokkosnek:
-            krok "JAMESIANS?"
+            krok "JAMESIANS?!"
             krok "YOU DARE DESECRATE MY TEMPLE TO MY SUTSSHAK!!"
             #zzap insome minobites.
             hide krokkosnekAngryAround
@@ -760,6 +797,7 @@ label sutshakTempleTime:
             hide sutsshakIdolButt
             hide wholeAssTable
             
+            play sound bigPizyu
             if IsDaytime:
                 
                 show krokkosnekCommanding at centerAlignment , hiddenLegs:
@@ -775,7 +813,7 @@ label sutshakTempleTime:
                     xpos 0.5                
                     linear 0.3 matrixcolor "#fff"
                     linear 0.3 summonnerLights                    
-
+                
                 show minobiteAxe at xerxLeft with dissolve:
                     zoom 0.6
                     xpos -0.1
@@ -831,6 +869,7 @@ label sutshakTempleTime:
                     linear 0.1 summonnerLights
                     linear 0.3 lightCrystalLights
 
+            
             pause 0.3
             krok "Taste my endlessly summoning steel!!"
             $ enemyTroopers = [ copy.copy(minobiteGreatAx) , copy.copy( krokkosnekLand1st ) , copy.copy(minobiteGreatAx) ]
@@ -839,9 +878,10 @@ label sutshakTempleTime:
             hide minobiteAxe
             hide extraBeef
 
+            play music OnDaAttack fadein 1.0 fadeout 1.0
             call screen playerActions( "Taking this dude out will solve the monster problem" , False , False , False , 1 )
             #-----
-
+            play music weOwnedThem noloop
             if IsDaytime:
                 show tipuaShocked at xerxLeft:
                     zoom 1.0
@@ -973,6 +1013,7 @@ label sutshakTempleTime:
             "The summoner was storing some stuff in the temple."
             "Loots of tasty food, 60 astartins, 3 health potions and even some chemicals Tesipiz can turn into bombs with."
             $ deafeatedKrokkosnek = True
+            queue music eeerieRuins
             $ changeItemAmount( inventory , saltyMeat , 4 )
             $ changeItemAmount( inventory , spicycrayfish , 2 )
             $ changeItemAmount( inventory , astartin , 60 )
@@ -1058,9 +1099,16 @@ label sutshakTempleTime:
     else:
         with fade
         if not visitedSutsshakTemple:
+            
+            play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+            queue music fightingCommon
+            
             $ enemyTroopers = [ copy.copy(minobiteWarrior) , copy.copy(minobiteGreatAx) , copy.copy(minobiteGreatAxArmored) , copy.copy(minobiteGreatAx) , copy.copy(minobiteWarrior) ]
             call screen playerActions( "Looks like the congregation of cows is in here." , False , False , False , 1 )            
-
+            
+            play music weOwnedThem
+            queue music eeerieRuins 
+            
             if IsDaytime:
                 show Meat at centerAlignment with dissolve:
                     xpos 0.11
@@ -1226,6 +1274,7 @@ label oldTempleHill:
                 xpos 1.0
         with dissolve
         tesi "LOOK!"
+        stop music fadeout 2.0
 
         
         hide tesipizPointArmedArmored
@@ -1269,6 +1318,7 @@ label oldTempleHill:
                 ypos 0.4
                 xpos 0.47    
         with dissolve        
+        play music ratThonking fadein 1.0 fadeout 1.0
         tesi "There's a new statue of Astarte"
         tesi "It must be destroyed."
 
@@ -1296,6 +1346,7 @@ label oldTempleHill:
             tesi "Xerxes"
             tesi "Have some bombs."
             tesi "We're blowing up the statue!!"
+
         else:
             if IsDaytime:
                 scene clearDayTime
@@ -1324,7 +1375,7 @@ label oldTempleHill:
         
             #lakatinu fight here
             # it should be called to not jumped too
-            call setUpLakatinu
+            call setUpLakatinu from _call_setUpLakatinu_1
             $ lakatinuAssSmacks += 1
             $ enemyTroopers = []
             if xerxesCharacter.currentArmor == 1:
@@ -1381,6 +1432,7 @@ label oldTempleHill:
                 show tesipiz34MiniHappyArmored at tesiRight , nightLights
                 show xerx3quatHappyArmored at xerxLeft , nightLights
             with dissolve
+            play music ratThonking fadein 1.0 fadeout 1.0
             tesi "Now"
 
             hide tesipiz34MiniHappyArmored
@@ -1499,7 +1551,9 @@ label oldTempleHill:
                 zoom 0.5
                 linear 0.9 zoom 2.0
             with dissolve    
+            play sound [ daBOOM , rockIt , rockIt ]
             pause 1
+            play extraSound [ rockIt , rockIt ]
             hide astarteStatue
             hide sandStatueBase
             show explosion at centerAlignment:
@@ -1520,7 +1574,7 @@ label oldTempleHill:
                     xzoom 1.5                     
             hide explosion              
             with dissolve
-
+            play music astartesWrath fadein 1.0 fadeout 1.0
             if IsDaytime:
 
                 show tesipizScaredRunning at centerAlignment with dissolve:
@@ -1569,6 +1623,7 @@ label oldTempleHill:
                 hide tesipizScaredRunning with dissolve
                 pause 1
                 hide tesipizGettingSucked with dissolve
+                play sound vored
                 pause 0.5
                 hide xerxRunningScaredArmored
                 show xerxGettingSucked at centerAlignment , nightLights:
@@ -1576,6 +1631,7 @@ label oldTempleHill:
                     ypos 0.6
 
             pause 3
+            play extraSound vored
             jump takuraTime1
 
         else:
@@ -1602,6 +1658,8 @@ label oldTempleHill:
                     zoom 0.4
                     ypos 0.75
             hide tesipizArmoredSwingBack2 with dissolve
+
+            play sound armorProtected loop
             pause 6.0
             #tesipiz swing armored1 back
             #tesipiz swing armored2 back
@@ -1634,7 +1692,8 @@ label oldTempleHill:
             with dissolve           
             xerx "We can destroy the statue later."
             xerx "The key propably isn't under it."
-            
+            stop sound
+            play music eeerieRuins fadein 1.0 fadeout 1.0
              
             if IsDaytime:
                 scene clearDayTime
@@ -1841,6 +1900,7 @@ label outSideDaArena:
 
 label takuraTime1:
 
+    stop music fadeout 1.0
     $ freedTakura = True
     $ visitedTakuriumAstarteStatue = True
 
@@ -1854,6 +1914,7 @@ label takuraTime1:
             easein 1 ypos 1.5
         pause 0.5
         with hpunch
+        play sound slamSound
         pause 0.5 
         show xerxFlung:
             yzoom -1.0
@@ -1861,6 +1922,7 @@ label takuraTime1:
             easein 1 ypos 1.5
         pause 0.5
         with hpunch
+        play sound slamSound
         pause 0.5
 
         scene takurasRoomBLocked with fade:
@@ -1876,6 +1938,7 @@ label takuraTime1:
             ypos -2.0
             easein 1 ypos 1.5
         pause 0.5
+        play sound slamSound
         with hpunch
         pause 0.5
         show xerxFlung at nightLights:
@@ -1883,7 +1946,9 @@ label takuraTime1:
             ypos -2.0
             easein 1 ypos 1.5
         pause 0.5
+        play sound slamSound
         with hpunch
+        
         pause 0.5
 
         scene takurasRoomBLocked at darkNight with fade:
@@ -1892,6 +1957,7 @@ label takuraTime1:
         show tesipizAngryArmored at tesiRight, nightLights with dissolve   
     xerx "Thank Ahura-Mazda we didn't get incased in sand!"
     
+    play music ratThonking fadein 1.0 fadeout 1.0
     if IsDaytime:
         scene takurasRoom:
             zoom 0.7
@@ -1975,6 +2041,8 @@ label takuraTime1:
         pause 0.5
         show xerx3quatFistPushArmored at xerxLeft , nightLights 
     
+    play sound punchy
+    play extraSound armorProtected
     xerx "Tesipiz,"
     xerx "I need to ask Takura about something"
     xerx "You can snuggle Takura's titties later."
@@ -2004,7 +2072,7 @@ label takuraAsking1:
     $ enteringFrom = "Takura's Palace"
     menu:
         "Takura, you used to rule a kingdom before the Astarts destroyed it.":
-            
+            stop music fadeout 1.0
             if IsDaytime:
         
                 show takuraSadSit at takuraSittingZone
@@ -2015,98 +2083,66 @@ label takuraAsking1:
             hide takuraHappySit
             with dissolve        
             taku "Yeah,"
-            scene map1Small:
+
+            play music sandHero fadein 1.0 fadeout 1.0
+            scene map2:
                 
-                xpos -3.0
-                ypos -2.0
+                zoom 0.8
+                xpos -1.0
+                ypos -0.8
+
+            show map212Axeria:
+                zoom 0.8
+                xpos -1.0
+                ypos -0.8
+ 
 
             
-            show oldTakuriumCity1 at centerAnchor:
-                zoom 0.15
-                xpos 0.127
-                ypos 0.342
+            #show oldTakuriumCity1 at centerAnchor:
+            #    zoom 0.15
+            #    xpos 0.127
+            #    ypos 0.342
 
-
-            show kyuusholyaCity at centerAnchor:
-                zoom 0.13
-                xpos 0.512
-                ypos 0.793
-            show xartabanaCity at centerAnchor:
-                zoom 0.15
-                xpos 0.42
-                ypos 0.632
-            show axerianFort at centerAnchor:
-                zoom 0.2
-                xpos 0.566
-                ypos 0.472
-            show jamesianFortress at centerAnchor:
-                zoom 0.2
-                xpos 0.285
-                ypos 0.583
-            show kappaiumCity at centerAnchor:
-                zoom 0.2
-                xpos 0.731
-                ypos 0.844
-            show nozzoriumCity at centerAnchor:
-                zoom 0.15
-                xpos 0.71
-                ypos 0.25
-            show sarrataCity at centerAnchor:
-                zoom 0.15
-                xpos 0.716
-                ypos 0.529
-            show astartFortress at centerAnchor:
-                zoom 0.2
-                xpos 0.545
-                ypos 0.154
-            show astartFortress as extraFort at centerAnchor:
-                zoom 0.2
-                xpos 0.337
-                ypos 0.126
-            show makkabiumRuins1 at centerAnchor:
-                zoom 0.15
-                xpos 0.366
-                ypos 0.268
 
             show kazwiianSpear at centerAnchor:
                 zoom 0.1
                 xpos 0.587
                 ypos 0.292
                 xzoom -1.0
-                linear 5 xpos 0.699 ypos 0.224
+                linear 5 xpos 0.881 ypos 0.201
             show ordonianScutarii at centerAnchor:
                 zoom 0.1
                 xpos 0.659
                 ypos 0.613
                 xzoom -1.0
-                linear 5 xpos 0.716 ypos 0.481 
+                linear 5 xpos 0.748 ypos 0.64
                 linear 1 rotate 90 angryColored 
                 linear 1 zoom 0.0     
             show axerianInfAttackSpear at centerAnchor:
                 zoom 0.1
                 xpos 0.584
                 ypos 0.594
-                linear 5.5 xpos 0.716 ypos 0.481 
+                linear 5.5 xpos 0.748 ypos 0.64
                 
             show zwotiInfantryDude at centerAnchor:
                 zoom 0.1
                 xpos 0.491
                 ypos 0.285
-                linear 5 xpos 0.635 ypos 0.247
+                linear 5 xpos 0.821 ypos 0.22
 
 
             show thiaSpear at centerAnchor:
                 zoom 0.1
                 xpos 0.259
                 ypos 0.189
-                linear 5 xpos 0.317 ypos 0.069 
+                linear 5 xpos 0.397 ypos 0.180 
                 linear 1 rotate 90 angryColored 
                 linear 1 zoom 0.0             
             show eliteAtossaGuard2 at centerAnchor:
                 zoom 0.1
                 xpos 0.216
                 ypos 0.229
-                linear 5.5 xpos 0.317 ypos 0.069  
+                linear 5.5 xpos 0.397 ypos 0.180  
         
             
             #Should we have a kazwiian spear for pre-reformed Astarts?
@@ -2119,18 +2155,24 @@ label takuraAsking1:
                 xpos 0.3
                 ypos 0.5
                 linear 5 xpos 0.0
+            
             taku "Then, I heard a string of a string of Tarminian mercenary rebellions around 212."
             taku "So I joined in to help crush the Astarte Empire."
 
+            play music tentionTime fadein 1.0 fadeout 1.0
             scene astartVTarminians2 with dissolve:
                 zoom 0.7
-            taku "But the Astarts adapted and then pushed back and crushed the rebels."
+            taku "But the Astarts adapted, then pushed back and crushed the rebels."
             taku "I soon realized that I was in a lot of trouble."
+
+            play music gettingAttacked fadein 1.0 fadeout 1.0
+            queue sound [ slicey , armorProtected , slamSound , whippingMySlaves , arrowMiss , playerHit , arrowHit , armorProtected , slicey , slicey , armorProtected , armorProtected , slashMiss , punchy , foeHit, bloodySlam , bloodySlam , whippingMySlaves , swooshy , arrowHit , armorProtected ] loop
+            queue extraSound [  armorProtected , slicey , playerHit , slamSound , rockIt , arrowMiss ,  whippingMySlaves , arrowHit , armorProtected ,  whippingMySlaves , rockIt , foeHit , foeHit , armorProtected , burningMan , swooshy , burningMan , whippingMySlaves , arrowMiss , playerHit , armorProtected ] loop
             scene takuriumAssult1 at centerAnchor with fade:
                 zoom 0.3
                 xpos 0.5
                 ypos 0.25
-                linear 5 ypos 0.65
+                linear 8 ypos 0.65
             taku "The Astarts pushed me back into Takurium."
             scene clearDayTime
             show takuriumDaHillOld at centerAlignment:
@@ -2170,6 +2212,11 @@ label takuraAsking1:
             hide astartHopliteMale2Back with dissolve
             taku "Then into my own palace!"
 
+            stop sound
+            stop extraSound
+
+
+            play music bardaiyaBeMad fadein 1.0 fadeout 1.0
             scene clearDayTime
             show takuriumDaHillAstarte at centerAlignment:
                 zoom 1.5
@@ -2213,6 +2260,7 @@ label takuraAsking1:
         
                 show takuraHappySit2 at takuraSittingZone , nightLights             
             with dissolve
+            play music ratThonking fadein 1.0 fadeout 1.0
             taku "But you freed me."
 
             hide takuraHappySit2
@@ -2299,6 +2347,8 @@ label takuraAsking1:
                 show takuraSadSitSide at takuraSittingZone , nightLights
             hide takuraNeutralHappySideSit
             with dissolve
+            stop music fadeout 2.0
+            play sound bloodySlam
             taku "I'm too heavy."
             jump goingThroughTakurasPalace
         "Is there a way out?":
@@ -2323,7 +2373,7 @@ label takuraAsking1:
             hide takuraSadSitSide
 
             if IsDaytime:
-                show takuraNeutralHappySideSit at takuraSittingZone , nightLights
+                show takuraNeutralHappySideSit at takuraSittingZone 
             else:
                 show takuraNeutralHappySideSit at takuraSittingZone , nightLights
             taku "But I have a grapple point shooter."
@@ -2358,14 +2408,13 @@ label takuraAsking1:
                 zoom 0.7
                 ypos 0.0
                 linear 3 ypos 0.7
+            play music sleepss noloop
             pause 5
             $ takuraSleepOvered = True
             $ takuraCuddles += 1
-            $ xerxesCharacter.resurrect()
-            $ tesipizCharacter.resurrect()
-            $ IsDaytime = True
-            $ timeTime = 0
+            call sleepyTimeReset  
 
+            play music happyAtoTheme fadein 1.0 fadeout 1.0
             scene takurasRoom:
                 zoom 0.7
                 xpos -0.2
@@ -2422,7 +2471,7 @@ label goingThroughTakurasPalace:
     with dissolve 
     taku "You're welcome you two."
    
-
+    play music deadCaves fadein 1.0 fadeout 1.0
     if IsDaytime:
         scene takurasSpooderHallway:
             zoom 0.7
@@ -2503,6 +2552,7 @@ label goingThroughTakurasPalace:
             linear 3 ypos 0.7     
     with fade   
     pause 5
+    
     if IsDaytime:
         scene takurasPalaceCenterAway at centerAnchor:
             zoom 0.7
@@ -2554,6 +2604,7 @@ label goingThroughTakurasPalace:
     
     with dissolve
     pause 1
+    
     #Copy for Kwortix Sneak Path ---------------------------------
     if IsDaytime:
         show chains at centerAnchor:
@@ -2597,6 +2648,7 @@ label goingThroughTakurasPalace:
             xpos 0.54
             zoom 0.3
             linear 3 ypos 1.23
+    play sound [ thong , knockIt , magicEngine ]
     with dissolve        
     pause 3
     hide grapplePointEnd
@@ -2616,7 +2668,9 @@ label goingThroughTakurasPalace:
             xpos 0.54
             zoom 0.3
             linear 1.2 ypos 0.0
+        play extraSound magicEngine
         pause 1.3
+        
 
         show xerxBehindJumpDown at centerAnchor:
             ypos 0.0
@@ -2638,7 +2692,9 @@ label goingThroughTakurasPalace:
             xpos 0.54
             zoom 0.3
             linear 1.2 ypos 0.0
+        play extraSound magicEngine
         pause 1.3
+        
 
         show xerxBehindJumpDown at centerAnchor , nightLights:
             ypos 0.0
@@ -2647,6 +2703,7 @@ label goingThroughTakurasPalace:
             linear 1.2 ypos 0.45 zoom 0.3 
     hide xerxGrappleUpFlyBackArmored with dissolve
     pause 1.2
+    play sound knockIt
 
     if IsDaytime:
         show xerxBehind at centerAnchor behind centerBalcony:
@@ -2720,7 +2777,9 @@ label goingThroughTakurasPalace:
                 ypos 0.5
         with dissolve
         $ xerxesCharacter.resurrect()
-        "{i}Glug Glug Glug{/i}"
+        pause 2.0
+        play sound PowerUp
+        play extraSound glugglug
         hide potionzRed
         if IsDaytime:
             show potionzRed at centerAnchor with dissolve:
@@ -2903,6 +2962,7 @@ label goingThroughTakurasPalace:
     else:
         show tesipizEyeDollIn at xerxLeft , nightLights
     hide tesipizDollEye
+    play sound drop2DaFloor
     tesi "She'll make a fine addition to my collection."
 
     hide xerx3quatConsurndArmored
@@ -3006,6 +3066,7 @@ label goingThroughTakurasPalace:
 
 label takuraSleepOverTime:
 
+    play music happyAtoTheme fadein 1.0 fadeout 1.0
     if IsDaytime:
         scene takurasRoom:
             zoom 0.7
@@ -3337,6 +3398,7 @@ label takuraSleepOverTime:
             show takuraHappySit at takuraSittingZone , nightLights
         hide takuraNeutralHappySit
         with dissolve
+        play music about2Boink fadein 1.0 fadeout 1.0
         taku "Have me."
 
         if IsDaytime:
@@ -3468,7 +3530,7 @@ label takuraSleepOverTime:
             show takuraNeutralHappySit at takuraSittingZone , nightLights
         with dissolve
         if takuraSleepOvered:
-            taku "O.K"
+            taku "Yes my lovely Tesipiz."
         else:
             taku "Yes you can."
         if IsDaytime:
@@ -3478,17 +3540,129 @@ label takuraSleepOverTime:
         hide takuraNeutralHappySit
         with dissolve
 
+        play music about2Boink if_changed fadein 1.0 fadeout 1.0
         if takuraSleepOvered:
             taku "And you can get closer to me this time."
+            taku "Hmmm."
         else:
             taku "And you can get close to me."
             taku "Heheh."
-        $ takuraCuddles += 2
-        scene takuraSleepOver2 at centerAlignment with fade:
-            zoom 0.7
-            ypos 0.0
-            linear 3 ypos 0.7
-        pause 5
+        
+        menu:
+            "Yes, as close as possible Takura. (Sex with Takura)" if takuraCuddles > 2:
+                #takura horny
+                if IsDaytime:
+                    show takuraHornySit at takuraSittingZone
+                else:
+                    show takuraHornySit at takuraSittingZone , nightLights
+                hide takuraHappySit
+                with dissolve
+                taku "Yes Tesipiz."
+
+                
+                stop music fadeout 3.0
+                #play sound cuddles 
+                scene tesipizInTakura at centerAlignment with Fade(2,0,1):
+                    zoom 1.5
+                    yanchor 0.4
+                    xanchor 0.35
+                    easeout 7 zoom 0.5 yanchor 0.5 xanchor 0.5
+                pause 8
+                
+                scene tesipizInTakura at centerAlignment with Fade(2,0,2):
+                    zoom 0.75
+                    yanchor 0.4
+                    xanchor 0.35
+                    #easein 1 matrixcolor TintMatrix("#ff94b4") zoom 0.67
+                    easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) zoom 0.8 
+                    easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.1) zoom 0.75 
+                    repeat
+
+                pause 6
+
+                scene tesipizInTakura at centerAlignment with Fade(2,0,3):
+                    zoom 0.8
+                    yanchor 0.4
+                    xanchor 0.35
+                    easein 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) zoom 1.0 
+                    easeout 0.75 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3) zoom 0.8
+                        
+                    repeat 
+                pause 6
+                
+                scene tesipizInTakura at centerAlignment with Fade(3,0,3):
+                    zoom 1.0
+                    yanchor 0.4
+                    xanchor 0.35
+                    easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7)  zoom 1.25 
+                    easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5)  zoom 1.0
+                        
+                    repeat 
+                
+                pause 9
+
+                scene tesipizInTakura at centerAlignment with Fade(3,0,3):
+                    zoom 1.25
+                    yanchor 0.3
+                    xanchor 0.35
+                    easein 0.5 matrixcolor TintMatrix("#ce0045") * BrightnessMatrix(0.7) zoom 1.5 blur 5
+                    easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) zoom 1.25 blur 2
+                    easein 0.5 matrixcolor TintMatrix("#ffa2a2") * BrightnessMatrix(0.7) zoom 1.5 blur 10
+                    easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.5) zoom 1.25 blur 5
+                    #easein 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(1.3) zoom 1.25 blur 2
+                    repeat
+                    
+                pause 9
+
+                scene tesipizInTakura at centerAlignment with Fade(3,0,2):
+                    zoom 1.5
+                    yanchor 0.3
+                    xanchor 0.35
+                    easein 0.4 matrixcolor TintMatrix("#ce0045") * BrightnessMatrix(0.8) * SaturationMatrix(0.5) zoom 2.2 blur 10
+                    easeout 0.4 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.7) * SaturationMatrix(1.0) zoom 1.5 blur 5
+                    repeat
+
+
+                pause 8
+
+                scene tesipizInTakura at centerAlignment with dissolve:
+                    zoom 1.5
+                    yanchor 0.3
+                    xanchor 0.35
+                    blur 5
+                    easeout 1 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.8) zoom 2.0 blur 20
+                    easein 5 matrixcolor TintMatrix("#ce0045") * BrightnessMatrix(1.0) zoom 2.5 blur 20
+                    easeout 10 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.0) zoom 0.5 blur 0.01 yanchor 0.5 xanchor 0.5
+                    
+                pause 20
+
+                play sound cuddles 
+                scene takuraSleepOver2 at centerAlignment , fullFit , hornyAura with Fade(2,3,1):
+                pause 9
+
+                $ takuraBoinks += 1
+                $ takuraCuddles += 4
+
+            "But not too close.":
+                stop music fadeout 3.0
+                #change takura's pose
+                if IsDaytime:
+                    show takuraNeutralHappySideSit at takuraSittingZone
+                else:
+                    show takuraNeutralHappySideSit at takuraSittingZone , nightLights
+                hide takuraHappySit
+                with dissolve
+                taku "Got it"
+                pause 2
+                play sound cuddles 
+                scene takuraSleepOver2 at centerAlignment with Fade(2,3,1):
+                    zoom 0.7
+                    ypos 0.0
+                    linear 2 ypos 0.0
+                    linear 10 ypos 0.7 
+                pause 9
+                $ takuraCuddles += 2
+        
     else:
         if IsDaytime: 
             show tesipizYeahArmored at tesiRight
@@ -3515,6 +3689,7 @@ label takuraSleepOverTime:
             show takuraNeutralHappySit at takuraSittingZone , nightLights
         with dissolve
         taku "Yes you can."
+        play music sleepss noloop
         scene takuraSleepOver1 at centerAlignment with fade:
             zoom 0.7
             ypos 0.0
@@ -3524,10 +3699,12 @@ label takuraSleepOverTime:
 
     #sleep over
     if keys == 2 and lakatinuTalks == 0:
-        call bardaiyaMad1 
+        call bardaiyaMad1 from _call_bardaiyaMad1_9 
 
     $ IsDaytime = True
     $ timeTime = 0
+
+    play music happyAtoTheme fadein 1.0 fadeout 1.0
 
     scene takurasRoom:
         zoom 0.7
@@ -3561,7 +3738,7 @@ label takuraSleepOverTime:
     show takuraNeutralHappySit at takuraSittingZone
     with dissolve
 
-    taku "O.K."
+    taku "Got it."
     show takuraHappySit2 at takuraSittingZone
     hide takuraNeutralHappySit
     with dissolve
@@ -3572,6 +3749,7 @@ label takuraSleepOverTime:
 
 label whereDaAhritesEscaped:
 
+    stop music fadeout 3.0
     $ enteringFrom = "Ahrite Hole in Takurium"
     
     if IsDaytime:
@@ -3609,6 +3787,7 @@ label whereDaAhritesEscaped:
             show tesipizNeutralHappyArmored at tesiRight , nightLights with dissolve
 
     with dissolve
+    play music ahriteCavess fadein 1.0 fadeout 1.0
 
     xerx "This is where it happened."
 
@@ -3616,6 +3795,7 @@ label whereDaAhritesEscaped:
         fit "cover"
     
     with fade
+    play music ahriteTempless fadein 1.0 fadeout 1.0
     xerx "The Takurium Incident 10 years ago."
     #show CG to be made later
     scene ahriteLair4 at ahriteDarkness:
@@ -3625,8 +3805,12 @@ label whereDaAhritesEscaped:
         linear 6 zoom 2.0
         linear 3 matrixcolor TintMatrix("#000")
     with fade
+    pause 6
+    play sound ahrimaniomHisskttktk
+    pause 2
     xerx "The Ahrimaniom Spawned here and took over the city."
     #show ahrites in ahrite background
+    play music ahrimaniomPhase1 fadein 1.0 fadeout 1.0
     scene ahriteSky:
             fit "cover"
     show takuriumEntraceAhrites at backgroundSetPlace
@@ -3706,7 +3890,8 @@ label whereDaAhritesEscaped:
             show xerxAnnoyedAmored at xerxLeft , nightLights
             show tesipizNeutralHappyArmored at tesiRight , nightLights 
 
-    with fade    
+    with fade 
+    play music ahriteCavess fadein 1.0 fadeout 1.0   
     xerx "We were able to stop and end the Ahrite threat."
     hide xerxAnnoyedAmored
     if IsDaytime:
@@ -3747,7 +3932,7 @@ label whereDaAhritesEscaped:
     with dissolve
     xerx "Maybe."
     
-    
+    stop music fadeout 3.0
     xerx "But they might be having trouble getting people to move here."
     hide tesipizNeutralHappyArmored
     hide xerx3quatHappyArmored
@@ -3763,6 +3948,7 @@ label whereDaAhritesEscaped:
             show tesipiz34HappyArmored at tesiRight , nightLights
             show neutralHappyXerxesArmored at xerxLeft , nightLights
     with dissolve
+    play music villageTheme fadein 1.0 fadeout 1.0
     tesi "The locals would love to live here."
 
     hide neutralHappyXerxesArmored
@@ -3819,6 +4005,8 @@ label whereDaAhritesEscaped:
     with dissolve
     xerx "Me too."
 
+    play music eeerieRuins
+
     jump takuriumMainStreet
 
 label daDoxTakurium:
@@ -3853,6 +4041,7 @@ label daDoxTakurium:
     with dissolve
 
     if keys == 2:
+        play music seaSounds fadein 2.0 fadeout 2.0
         if not deafeatedKrokkosnek:
             if IsDaytime:
                 show krokkosnekNeutralHappyWater at centerAlignment behind takuriumDocks:
@@ -3879,11 +4068,14 @@ label daDoxTakurium:
                     show krokkosnekAngryWater at centerAlignment , nightLights behind takuriumDocks:
                         zoom 0.4                                      
 
-            krok "JAMESIANS!?"
+            stop music fadeout 2.0
+            
+            krok "JAMESIANS!?" with vpunch
+            play music tentionTime fadein 1.0 fadeout 1.0
             krok "I bet you're smugglers and raiders!"
 
             hide krokkosnekAngryWater
-            
+            play sound bigPizyu
             if IsDaytime:
 
 
@@ -3936,17 +4128,24 @@ label daDoxTakurium:
                     linear 0.1 summonnerLights
                     linear 0.3 nightLights
             
+            
             krok "Lets see if you can swim sand monkeys!!"
             $ enemyTroopers = [ copy.copy( snakebite ) , copy.copy( krokkosnek1st ) , copy.copy( snakebite ) ]
+            $ enemyTroopers[1].isFlying = True #krokkosnek is still in the water
             hide krokkosnekGrandWater
             hide snakeManInWater 
             hide hsssy
-            call screen playerActions( "Heheh!! You can't reach me here suckers!!" , False , False , False , 1 , ringLeaders = [ enemyTroopers[ 1 ] ] , foesLeft = 0 , winWhenFoeAmountKilled = False , goonAddPool = [], alternativeTargets = [] , ringLeaders2Kill = 1 , alternativeTargets2Kill = -1 , goonsAllowed = 5)
+
+            play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+            queue music fightingCommon
+            call screen playerActions( "Heheh!! You can't reach me here suckers!!" , True , False , False , 1 , ringLeaders = [ enemyTroopers[ 1 ] ] , foesLeft = 0 , winWhenFoeAmountKilled = False , goonAddPool = [], alternativeTargets = [] , ringLeaders2Kill = 1 , alternativeTargets2Kill = -1 , goonsAllowed = 5)
 
             if checkForFoeTypeByName( enemyTroopers , "Krokkosnek" ):
                 $ enemyTroopers = [ copy.copy( snakebiteLand ) , copy.copy( krokkosnekLand1st ) , copy.copy( snakebiteLand ) ]
                 call screen playerActions( "You can't run from me!!" , False , False , False , 1 , ringLeaders = [ enemyTroopers[ 1 ] ] , foesLeft = 0 , winWhenFoeAmountKilled = False , goonAddPool = [], alternativeTargets = [] , ringLeaders2Kill = 1 , alternativeTargets2Kill = -1 , goonsAllowed = 5)
             
+            play music weOwnedThem noloop
+
             if IsDaytime:
                 show krokkosnekSwimmingAway at centerAlignment behind takuriumDocks:
                     zoom 0.6
@@ -3986,11 +4185,15 @@ label daDoxTakurium:
 
     elif not deafeatedKrokkosnek and renpy.random.randint(0,1) > 0:
         
+        play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+        queue music fightingCommon
         $ setRandomtroopersKeyBased( enemyTroopers , keys , krokkosnekSummonSetWater , renpy.random.randint(1,5) )
         #$ fillEnemyPartyRandom( 5 , goonAddPool , enemyTroopers )
         call screen playerActions( "They're in the water now." , True , True , True , 10 )
+        play music weOwnedThem noloop
 
     pause 1.0
     $ enteringFrom = "Takurium Docks"
 
+    play music eeerieRuins fadein 1.0 fadeout 1.0
     jump takuriumMainStreet

@@ -27,6 +27,8 @@ label throughDaWoods:
     #if Xerxes went to Ectabana before going to Takurium
     if visitedEctabana > 0 and tesiWaifuWants:
         
+        play music planingTime fadein 1.0 fadeout 1.0
+
         scene blackBackground:
             fit "cover"
         if IsDaytime:
@@ -93,7 +95,11 @@ label throughDaWoods:
     pause 5
 
     if keys == 2:
+        
+        play music windAmbiance 
+        
         if IsDaytime:
+
             scene clearDayTime:
                 fit "cover"
 
@@ -201,6 +207,7 @@ label throughDaWoods:
     #the villagers wouldn't know about the goings on 
 label forestVillage:
 
+
     #if this is the first they will hide their horses.
     $ enteringFrom = "Forest Village"
 
@@ -214,10 +221,14 @@ label forestVillage:
         
         
         if IsDaytime:
+            play music villageTheme if_changed fadein 1.0 fadeout 1.0 
+            
             scene clearDayTime 
             show forestVillageFront at centerAlignment :
                 fit "cover"
         else:
+            play music wonderStars if_changed fadein 1.0 fadeout 1.0
+
             scene starNightTime:
                 fit "cover"
             show forestVillageFrontNight:
@@ -470,10 +481,12 @@ label forestVillage:
 label forestVillageMenu:
 
     if IsDaytime:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0 
         scene clearDayTime
         show forestVillageFront:
             fit "cover"
     else:
+        play music wonderStars if_changed fadein 1.0 fadeout 1.0 
         scene starNightTime:
             fit "cover"
 
@@ -496,7 +509,7 @@ label forestVillageMenu:
             jump leaveForestVillage
 
 label craftForestVillage:
-    call carftTime
+    call carftTime from _call_carftTime
     $ timeTime += _return
     if timeTime > time2Night:
         $ IsDaytime = False
@@ -505,6 +518,7 @@ label craftForestVillage:
 
 label forestHotel:
 
+    
     if IsDaytime:
         scene clearDayTime
         show forestVillageFront at centerAlignment:
@@ -524,9 +538,11 @@ label forestHotel:
     
     with dissolve
     pause 3
+    play music happyAtoTheme if_changed fadein 1.0 fadeout 1.0
 
     if not canUseVillageShop:
-
+        
+        play music tentionTime fadein 1.0 fadeout 1.0
         if IsDaytime:
             scene forestLobby:
                 fit "cover"
@@ -552,6 +568,7 @@ label forestHotel:
                 zoom 0.7  
         yiwatsyoh "Now that I have warned you."
         hide yiwatsohNope 
+        play music happyAtoTheme fadein 1.0 fadeout 1.0 
         $ canUseVillageShop = True
     
     if IsDaytime:
@@ -625,7 +642,7 @@ label forestHotel:
             show forestMessHallCounter at counterTransform , lightCrystalLights
         with dissolve
         yiwatsyoh "Really??"
-        yiwatsyoh "I need to tell everone about this."
+        yiwatsyoh "I need to tell everyone about this."
 
         if IsDaytime:
             scene forestLobbyDoor:
@@ -809,8 +826,8 @@ label forestHotel:
             if IsDaytime:
                 scene forestLobbyDoor:
                     fit "cover"
-                show neutralHappyXerxesArmored at xerxLeftLeft , lightCrystalLights
-                show tesipizWooArmored at tesiRight , lightCrystalLights
+                show neutralHappyXerxesArmored at xerxLeftLeft 
+                show tesipizWooArmored at tesiRight 
             else:
                 scene forestLobbyDoor at lightCrystalLights:
                     fit "cover"
@@ -845,8 +862,8 @@ label forestHotel:
             if IsDaytime:
                 scene forestLobbyDoor:
                     fit "cover"
-                show neutralHappyXerxesArmored at xerxLeftLeft , lightCrystalLights
-                show tesipizHappyArmored at tesiRight , lightCrystalLights
+                show neutralHappyXerxesArmored at xerxLeftLeft
+                show tesipizHappyArmored at tesiRight 
             else:
                 scene forestLobbyDoor at lightCrystalLights:
                     fit "cover"
@@ -873,8 +890,8 @@ label forestHotel:
             if IsDaytime:
                 scene forestLobbyDoor:
                     fit "cover"
-                show happyXerxArmored at xerxLeftLeft , lightCrystalLights
-                show tesipizNeutralHappyArmored  at tesiRight , lightCrystalLights
+                show happyXerxArmored at xerxLeftLeft 
+                show tesipizNeutralHappyArmored  at tesiRight 
             else:
                 scene forestLobbyDoor at lightCrystalLights:
                     fit "cover"
@@ -1398,17 +1415,17 @@ label forestHotel:
 
 label forestSleepOver:
     
+
+    play music sleepss noloop
     if keys == 2 and lakatinuTalks == 0:
-        call bardaiyaMad1 
+        call bardaiyaMad1 from _call_bardaiyaMad1 
 
     scene yiwabisSleeping with fade:
         fit "cover"
     #scene 
     pause 5 
 
-    $ IsDaytime = True
-    $ resurrectParty( currentParty )
-    $ timeTime = 0
+    call sleepyTimeReset  
 
 
     #checkforTakuraKey
@@ -1420,6 +1437,7 @@ label forestSleepOver:
         zoom 0.7    
     show forestMessHallCounter at counterTransform
     with fade
+    play music happyAtoTheme fadein 1.0 fadeout 1.0
     yiwatsyoh "Good Morning Jamesians!"
     jump forestHotelMenu
 
@@ -1482,25 +1500,29 @@ label forestHotelMenu:
                     if IsDaytime:
                         scene forestLobby:
                             fit "cover"
-                        show yiwatsohNope at middleStand behind forestMessHallCounter:
+                        show yiwatsohNope at middleStand:
                             zoom 0.7
+                        show forestMessHallCounter at counterTransform
                     else:
                         scene forestLobby at lightCrystalLights:
                             fit "cover"
-                        show yiwatsohNope at middleStand , lightCrystalLights behind forestMessHallCounter:
+                        show yiwatsohNope at middleStand , lightCrystalLights:
                             zoom 0.7
+                        show forestMessHallCounter at counterTransform , lightCrystalLights
                     yiwatsyoh "You don't have enough money."
                     yiwatsyoh "You can hide in the woods."
                     if IsDaytime:
                         scene forestLobby:
                             fit "cover"
-                        show yiwatsyohSad at middleStand behind forestMessHallCounter:
+                        show yiwatsyohSad at middleStand:
                             zoom 0.7
+                        show forestMessHallCounter at counterTransform
                     else:
                         scene forestLobby at lightCrystalLights:
                             fit "cover"
-                        show yiwatsyohSad at middleStand , lightCrystalLights behind forestMessHallCounter:
+                        show yiwatsyohSad at middleStand , lightCrystalLights:
                             zoom 0.7
+                        show forestMessHallCounter at counterTransform , lightCrystalLights
                     yiwatsyoh "I know you need to hide but I need to eat."
                     jump forestHotelMenu
         "Buy some goodies":
@@ -1543,7 +1565,7 @@ label forestHotelShop:
                 zoom 0.7
             show forestMessHallCounter at counterTransform , lightCrystalLights
 
-        call shopBasic( yiwatsyohItems , True , False )
+        call shopBasic( yiwatsyohItems , True , False ) from _call_shopBasic
 
         if _return == 0 or _return == 3:
             #hide yiwatsyohNeutralHappy
@@ -1696,7 +1718,7 @@ label forestShopCounterTime:
         xzoom 1.5
         xpos -0.5
 
-    call shopBasic( keimdakItems , ifUsedShop , isAngryShop )
+    call shopBasic( keimdakItems , ifUsedShop , isAngryShop ) from _call_shopBasic_1
         
     hide keimdakNeutralHappy
 
@@ -1761,6 +1783,7 @@ label forestShopCounterTime:
             zoom 0.7
 
         if keimdakMad >= 5:
+            stop music fadeout 2.0
             show keimdakNope at hiddenLegs behind shopCounter:
                 zoom 0.8
                 yalign 0.1
@@ -1776,6 +1799,7 @@ label forestShopCounterTime:
             jump forestShopCounterTime
         else:
             hide keimdakNope
+            play music tentionTime fadein 1.0 fadeout 1.0
             show keimdakGTFO at hiddenLegs:
                 zoom 0.9
                 yalign 0.2
@@ -1834,6 +1858,7 @@ label forestShopCounterTime:
 
 label swampNearTakurium:
 
+    stop music fadeout 2.0
     if IsDaytime:
         scene clearDayTime
         show forestSwamp at centerAlignment:
@@ -1846,10 +1871,15 @@ label swampNearTakurium:
             yzoom 0.4
             ypos 0.6
     with fade
-    if keys == 0:
+
+    play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+    queue music fightingCommon
+
+    if keys == 0:    
         $ enemyTroopers = [ copy.copy(BigCrayfish) ,copy.copy(BigCrayfish), copy.copy(BigCrayfish) , copy.copy(BigCrayfish) , copy.copy(BigCrayfish) ]
         call screen playerActions( "These are some very aggressive crayfish." , False , False , True , 1 )
         #get crayfish
+        play music weOwnedThem noloop
         if IsDaytime:
             show crayfished at centerAlignment with dissolve:
                 zoom 0.5
@@ -1875,9 +1905,12 @@ label swampNearTakurium:
         hide extraCrusty
         with dissolve
     elif keys == 1:
+        
+        
         $ enemyTroopers = [ copy.copy( pythonDaSnake ) , copy.copy( nitricAcidSpittingCobra )  , copy.copy( pythonDaSnake )  , copy.copy( snakebiteLand ) , copy.copy( pythonDaSnake ) ]
         call screen playerActions( "Who filled the swamp with snakes??" , False , False , True , 1 )    
         #get meat and acid
+        play music weOwnedThem noloop
         if IsDaytime:
             show Meat at centerAlignment with dissolve:
                 zoom 0.5
@@ -1905,9 +1938,11 @@ label swampNearTakurium:
         hide extraMeaty
         with dissolve         
     else:
+        
         $ enemyTroopers = [ copy.copy( thiatsetuPeltastLand ) , copy.copy( thiatsetuArcherLand ) , copy.copy( thiatsetuPeltastLand ) , copy.copy( thiaKhopesh ) , copy.copy( thiaKhopesh ) ]
         call screen playerActions( "OI!! No Jamesians allowed in Astart territory!!" , False , False , True , 1 )
         #get money and a health pothion
+        play music weOwnedThem noloop
         if IsDaytime:
             show arrows at centerAlignment with dissolve:
                 zoom 0.5
@@ -1953,6 +1988,7 @@ label swampNearTakurium:
 
 label velociraptorNightHunt:
 
+    play music planingTime if_changed fadein 1.0 fadeout 1.0
     $ timesTried += 1
     
     #check for projectiles
@@ -2007,6 +2043,10 @@ label velociraptorNightHunt:
             yzoom 0.7
             ypos 0.3
         with fade
+
+        play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+        queue music fightingCommon
+
         if keys == 0:
             $ enemyTroopers = [ copy.copy(falcobiteArcherz) , copy.copy(falcobiteArcherz) , copy.copy(falcobiteRaider) , copy.copy(falcobiteRaider) , copy.copy(falcobiteArcherz)]    
         elif keys == 1:
@@ -2017,6 +2057,7 @@ label velociraptorNightHunt:
         if keys < 2:
             call screen playerActions( "We found some falcobites. They're like velociraptors but without the veloci." , False , False , True , 1 )
             #get dead 
+            play music weOwnedThem noloop
 
             show arrows at nightLights , centerAlignment with dissolve:
                 xpos 0.3
@@ -2030,6 +2071,7 @@ label velociraptorNightHunt:
 
         else:
             call screen playerActions( "We found some falcobites. They're like velociraptors but without the veloci. Also a giant duck man." , False , False , True , 1 )        
+            play music weOwnedThem noloop
 
             show arrows at nightLights , centerAlignment with dissolve:
                 xpos 0.3
@@ -2068,6 +2110,7 @@ label shootingVeloso:
 
     $ cleanArenaPosition( 4 , 4 , projectiles )
 
+    play music planingTime fadein 1.0 fadeout 1.0
     #will shoot at velosoraptors until one is ded or they run aout of projectiles.
     if projectile is not None:
             while len(enemyTroopers) == amountORaptors:
@@ -2075,7 +2118,7 @@ label shootingVeloso:
                 
                 
                 
-                call shootaSetUp( 10 , 3 , 10 , xerxesCharacter , enemyTroopers[ counter ] , projectile , characterLocation = playerPosition )
+                call shootaSetUp( 10 , 3 , 10 , xerxesCharacter , enemyTroopers[ counter ] , projectile , characterLocation = playerPosition ) from _call_shootaSetUp
                 $ results = _return
                 $ playerPosition = results[1]
                 $ result = results[0]
@@ -2083,10 +2126,13 @@ label shootingVeloso:
                     
                     #xerx "I got One!!"
                     $ projectiles.clear()
+                    play sound arrowHit
+                    play extraSound drop2DaFloor
                     jump Igot1Veloso
 
                 elif result == 3:
                     #xerx "Ahh Freks!!"
+                    play sound arrowMiss
                     $ projectiles.clear()
                     jump velociraptorNightHunt
 
@@ -2100,7 +2146,8 @@ label shootingVeloso:
 
 label Igot1Veloso:
 
-
+    play music weOwnedThem noloop
+    queue music wonderStars
     show xerxYeahArmored at nightLights , xerxLeftLeft with dissolve
     xerx "I got one!"
     
@@ -2121,6 +2168,7 @@ label return2Hwassak:
     #needed for yiwastyoh
     $ doingCollectWeaponQuest = True
     #This only happens at night
+    play music wonderStars if_changed fadein 1.0 fadeout 1.0
     scene starNightTime:
         fit "cover"
     show forestVillageFrontNight:
@@ -2427,6 +2475,7 @@ label chooseNextDestanationTakurium:
     $ currentParty = [ xerxesCharacter , tesipizCharacter ]
     
     if IsDaytime:
+        play music sandyMusic fadein 1.0 fadeout 1.0
         scene clearDayTime
            
         show astaJamesianBoarder at centerAlignment:
@@ -2441,6 +2490,7 @@ label chooseNextDestanationTakurium:
             xzoom -1.0
 
     else:
+        play music wonderStars fadein 1.0 fadeout 1.0
         scene starNightTime:
             fit "cover"
            
@@ -2471,7 +2521,7 @@ label chooseNextDestanationTakurium:
             xzoom -1.0
     with dissolve
     pause 1
-    call mapOfDaWorldoSouthJamesia
+    call mapOfDaWorldoSouthJamesia from _call_mapOfDaWorldoSouthJamesia
     with dissolve
     $ going2Number = 0
     $ need2GoToSerinium = False  

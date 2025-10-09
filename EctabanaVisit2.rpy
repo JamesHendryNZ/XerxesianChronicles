@@ -176,7 +176,7 @@ label ectabanaAfterGettingDaSoAM:
         ypos 0.35
         xpos 0
     with dissolve
-    darius "We need to push the Astarts to within 10 hour fast-walk from the shore."
+    darius "We need to push the Astarts to within a 10 hour fast-walk from the shore."
     darius "That will be close enough to the sea to allow my Magic Water System will Work."
 
     hide happyDarius
@@ -1414,7 +1414,7 @@ label atoMorningAfterSoAMNight:
             #
             hide ato3quatHappy
             
-            if atoBoinks < 0:
+            if atoBoinks < 1:
                 show ato3quatHappy2 at xerxLeftLeft
                 with dissolve
                 ato "We might try getting closer sometime."
@@ -1428,8 +1428,8 @@ label atoMorningAfterSoAMNight:
                 ato "We should do each other again somethime."
                 xerx "Sure."
             #xerxes saves ato affections
-            hide xerx3quatHappy
-            hide ato3quatHappy2
+            scene clearDayTime
+            show atossaBedroom at fullFit
             show atossaHeadPats at middleStand , size08
             with dissolve
             pause 2.0
@@ -2802,7 +2802,7 @@ label xerxHouseDinnerFoods2:
 
 label leaveEctabana2:
     #can be at night since nighttime is a barrier to stop overcrafting.
-    call sleepyTimeReset  
+    call sleepyTimeReset from _call_sleepyTimeReset_3  
     $ atossaCharacter.resurrect()
 
     play music heroicssss fadein 1.0 fadeout 1.0 if_changed

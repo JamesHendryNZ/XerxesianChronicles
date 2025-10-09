@@ -9,7 +9,7 @@ define royalZaratShopItems = [ arrow , metalArrow , salt ,  redSpice
 
 label zaratianCamp:
     #da map
-    call jamesosWestSide from _call_jamesosWestSide
+    call jamesosWestSide
     #xerx and crew
     #it always starts from morning so
     show xerxHorseWithSoAM at centerAnchor:
@@ -682,7 +682,7 @@ label zaratCampShoppings:
     show shopZaratShopCounter at truecenter , size08
     with dissolve
     
-    call shopBasic( takuraShopItems , ifUsedShop , isAngryShopRoyalZarat ) from _call_shopBasic_9
+    call shopBasic( takuraShopItems , ifUsedShop , isAngryShopRoyalZarat )
 
     if _return == 0:
         show chyaazi OMouth sadEyes with dissolve
@@ -781,7 +781,7 @@ label zaratCampMenu:
             jump zaratCampShop
 
         "Craft items" if IsDaytime:
-            call carftTime from _call_carftTime_12
+            call carftTime
             $ timeTime += _return
             if timeTime > time2Night:
                     $ IsDaytime = False
@@ -1690,7 +1690,7 @@ label zaratCampNighttime:
     $ xerxesCharacter.updateArmor( 1 )
     $ tesipizCharacter.updateArmor( 1 )
     $ volkaraCharacter.updateArmor( 1 )
-    call sleepyTimeReset from _call_sleepyTimeReset_8
+    call sleepyTimeReset
 
     scene kingZaratTent at truecenter , flameLight
     show kingsPlatform at truecenter , flameLight:
@@ -2068,11 +2068,11 @@ label zaratCampWinning:
     show trimdius meanEyes armored at truecenter , size2Thrid:
         ypos 0.7
     with dissolve
-    trim "I know why King Jemesis switched sides."
+    trim "I know why King Jemesis swich sides."
     show trimdius armoredPointy happyMouth with dissolve
     trim "It's something to do with Astarte."
 
-    show trimdius armored34 -meanEyes -happyMouth at truecenter , flipped:
+    show trimdius armored34 -happyMouth at truecenter , flipped:
         ypos 0.7
         linear 2 xalign 1.0
     show xerxHappyGreetArmored at left , size2Thrid , flipped:
@@ -3001,7 +3001,7 @@ label dateWithTsekrei1:
 
     show tsekrei yeah34 meanEyes madMouth with dissolve
     tsek "But we know the parts that like us."
-    tsek "We should free them from the Zardonian King before they get purged."
+    tsek "We should free them form the Zardonian King before they get purged."
     
     hide tesipiz34LookingDownSad
     show tesipiz34CommandingPoting at center , flipped , size3quat behind tsekrei:
@@ -3194,7 +3194,7 @@ label tsekreiSleepOver1:
     #volkTesiTseksleeps - use cleaver camera work
     scene zaratSleeps at right , size2Thrid with Fade(3,0,3)
     pause 7
-    call sleepyTimeReset from _call_sleepyTimeReset_9
+    call sleepyTimeReset
 
     scene cloudyDayTime at halfSize , movingSky, lightYellowTint
     show royalZaratCampOutside at truecenter , halfSize , lightYellowTint

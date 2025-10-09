@@ -148,9 +148,9 @@ transform chwitazaFocus:
 label kwortixMineSection:
 
     if keys == 2 and lakatinuTalks == 0:
-        call bardaiyaMad1 
+        call bardaiyaMad1 from _call_bardaiyaMad1_10 
     if visitedEctabana == 1:    
-        call talkAboutGirlsInDaDesert
+        call talkAboutGirlsInDaDesert from _call_talkAboutGirlsInDaDesert_1
 
     $ xerxesCharacter.updateArmor( 0 )
     $ tesipizCharacter.updateArmor( 0 )
@@ -158,6 +158,7 @@ label kwortixMineSection:
     $ xerxesCharacter.mount = noMount
 
     if IsDaytime:
+        play music sandyMusic fadein 1.0 fadeout 1.0 if_changed
         scene kwortixMineFront:
             zoom 0.25
             xalign 0.5
@@ -165,6 +166,7 @@ label kwortixMineSection:
             linear 5 zoom 1.0 ypos 0.3
 
     elif isDusk:
+        play music sandyMusic fadein 1.0 fadeout 1.0 if_changed
         scene kwortixMineFrontDusk:
             zoom 0.25
             xalign 0.5
@@ -172,6 +174,7 @@ label kwortixMineSection:
             linear 5 zoom 1.0 ypos 0.3
 
     else:
+        play music wonderStars fadein 1.0 fadeout 1.0 if_changed
         scene kwortixMineFrontNight:
             zoom 0.25
             xalign 0.5
@@ -227,6 +230,7 @@ label kwortixMineSection:
                     tesi "Understood"
                 
     if keys == 2 and lakatinuAssSmacks == 0:
+        play music bardaiyaBeMad fadein 1.0 fadeout 1.0
         if IsDaytime:
             scene lakatinuKwortixMad:
                 zoom 0.7
@@ -281,10 +285,10 @@ label kwortixMineSection:
                 yalign 0.5
         with fade
         #start Lakatinu fight (will be it's own label)
-        call setUpLakatinu
+        call setUpLakatinu from _call_setUpLakatinu_2
         $ lakatinuAssSmacks += 1
         #Xerxes and Tesipiz will react.
-
+        stop music
         if IsDaytime:
             scene KwortixMineFromFront:
                 zoom 0.7
@@ -505,6 +509,9 @@ label enterKwortixMineThroughRocks:
         $ kwortixEntranceOpened = True
         $ changeItemAmount( inventory , bomb2Explode.item , -1 )
         #$ bomb2Explode.amountOf -= 1
+
+        queue sound [ daBOOM , rockIt , rockIt , rockIt ]
+        queue extraSound [ rockIt , burningMan , rockIt , rockIt , rockIt ]
 
         if IsDaytime:
             scene kwortixMineFrontExplodingRocks with dissolve:
@@ -805,6 +812,7 @@ label enterKwortixMineThroughBackdoor:
                         else:
                             show xerxFistForward at xerxLeftLeft , nightLights
                         #sound
+                        play sound knockIt
                         pause 0.25
                         hide xerxFistForward
 
@@ -827,6 +835,7 @@ label enterKwortixMineThroughBackdoor:
                         else:
                             show xerxFistForwardArmored at xerxLeftLeft , nightLights
                         #sound
+                        play sound knockIt
                         pause 0.25
                         hide xerxFistForwardArmored 
 
@@ -992,12 +1001,20 @@ label smashBackDoorOpen:
     hide tesipizSwing
     hide tesipizArmoredSwing
     with dissolve
-    pause 4    
+
+    $ counter = 0
+    while counter < 4:
+        pause 0.25
+        play sound knockIt
+        pause 0.25
+        $ counter += 1    
 
         
    
     
     #big smash sounds
+    play sound hackIT
+    play extraSound knockIt
     $ kwortixBackDoorOpen = True
 
     $ enteringFrom = "backdoorOutside"
@@ -1005,7 +1022,7 @@ label smashBackDoorOpen:
 
 label kwortixFireRoom:
 
-    
+    play music flameAmbiance fadein 1.0 fadeout 1.0
 
     if enteringFrom == "frontEntranceOutside":
         $ enteringFrom = "FlameRoom"
@@ -1126,7 +1143,7 @@ label kwortixFireRoom:
             hide tesipiz34LookingDownAnnoyedArmored
             show tesipiz34MiniHappyArmored at right , tesiRight , flameLight
             with dissolve
-            tesi "But not any that would found in the Astart Army."
+            tesi "But not any that would be found in the Astart Army."
             hide xerx34LookDownArmored
             show xerx3quatHappyArmored at left , xerxLeft , flameLight
             with dissolve
@@ -1141,9 +1158,10 @@ label kwortixFireRoom:
         $ enteringFrom = "FlameRoom"
         scene kwortixFlameRoom:
             zoom 0.7
+        play sound rammage
         #play rummging around sound effects
         with fade
-        pause 3
+        pause 5
         "There's nothing of interest around here."
         "Just some random ore and an eternal flame coming out of the ground."
         "As well as a mild sulfur smell."
@@ -1155,26 +1173,35 @@ label shataKitchen:
 
     #$ enteringFrom = "shataKitchen"
     
+    
+    if keys == 0 or shataDefeatedz and not caveSsatuDefeatedz:
+        play music deadCaves if_changed fadein 1.0 fadeout 1.0
+    elif caveSsatuDefeatedz:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0
+    
+
     if enteringFrom == "backdoorOutside":
 
         $ enteringFrom = "shataKitchen"
 
         if keys == 1:
             #Shata living and inderpendant, they don't like the jamesians
-            
+            stop music fadeout 1.0
+
             scene kwortixKitchenLight:
                 zoom 0.7
 
             show shataCookingLadyShocked at hiddenLegs , lightCrystalLights:
                 zoom 0.7
             with dissolve
-            shataCookingLady "HWAAHH!!!"
+            shataCookingLady "HWAAHH!!!" with hpunch
             hide shataCookingLadyShocked
             show shataCookingLadyScared at hiddenLegs , lightCrystalLights:
                 zoom 0.6
                 #ypos 0.1
             with dissolve
-            shataCookingLady "HEEELLP!!"
+            shataCookingLady "HEEELLP!!" with vpunch
+            
             
             if IsDaytime:
                 scene kwortixKitchenOutsideUsed:
@@ -1188,8 +1215,10 @@ label shataKitchen:
             with dissolve
             show tesipizSwing at right , tesiRight , lightCrystalLights
             show happyXerx at left , xerxLeftLeft , lightCrystalLights
+            play music ratThonking fadein 1.0 fadeout 1.0
             xerx "You should have opened the door you silly green furball!"
 
+            play music tentionTime fadein 1.0 fadeout 1.0
             scene kwortixKitchenLight with dissolve:
                 zoom 0.7
             show shataCookingLadyFleeBack at lightCrystalLights:
@@ -1256,6 +1285,7 @@ label shataKitchen:
                 zoom 0.7
                 ypos -0.5
             
+            play music OnDaAttack fadein 1.0 fadeout 1.0
             $ extraGoonPool = [ shataSpear , shataSpear , shataSpearGirl , shataSpearGirl , shataMace , shataJavelins , shataArcher ]
             $ enemyTroopers = []
             $ i = 0
@@ -1313,7 +1343,7 @@ label shataKitchen:
             show neutralHappyXerxesArmored at left , xerxLeftLeft , lightCrystalLights
             show tesipizArmoredSwing at right , tesiRight , lightCrystalLights
             with dissolve
-            tesi "Looks like this mine arenn't abandoned after all."
+            tesi "Looks like this mine isn't abandoned after all."
 
             show happyXerxArmored at left , xerxLeftLeft , lightCrystalLights    
             xerx "And we'll have a king's feast afterwards."
@@ -1322,7 +1352,7 @@ label shataKitchen:
 
         elif keys == 2:
             #Shata are enslave and are happy to see the jamesians
-
+            play music ratThonking fadein 1.0 fadeout 1.0
             scene shataCookingLadySlave with dissolve:
                 zoom 0.7
             
@@ -1374,6 +1404,7 @@ label shataKitchen:
             show shataCookingLadyFreed at hiddenLegs, lightCrystalLights with dissolve:
                 zoom 0.8
                 ypos -0.1
+            stop music fadeout 3.0
             shataCookingLady "Now lets free the oth..."
 
             scene kwortixKaffateriaUsedInside :
@@ -1384,7 +1415,8 @@ label shataKitchen:
             with hpunch
             #maybe have some text or her shake a bit 
             #show ssatuSlaverOI at 
-            ssatuBandito "OI!!!"
+            play music tentionTime fadein 1.0 fadeout 1.0
+            ssatuBandito "OI!!!" with vpunch
             ssatuBandito "Intruders!!"
             #show ssatuSlaverCommanding
             hide ssatuSlaverOi
@@ -1405,7 +1437,7 @@ label shataKitchen:
 
             show shataCookingLadyScared at hiddenLegs , lightCrystalLights:
                 zoom 0.8
-            show tesipizSwing at right , tesiRight , lightCrystalLights
+            show tesipizArmoredSwing at right , tesiRight , lightCrystalLights
             show xerxHehehArmoredArmed1 at left , xerxLeftLeft , lightCrystalLights        
             with dissolve
             xerx "How about I turn you into dinner and a fur coat!"
@@ -1422,8 +1454,9 @@ label shataKitchen:
                 zoom 0.8
                 ypos 0.1
                 xpos 0.1
+            stop music fadeout 3.0
             ssatuBandito "So you have chosen to die then?"
-            
+            play music OnDaAttack fadein 1.0 fadeout 1.0
 
             scene kwortixKicthenFight at benchBattle with dissolve
             $ enemyTroopers = [ copy.copy( ssatuBanditGlave ) , copy.copy( ssatuSlaverUnit ) , copy.copy( ssatuBanditGirl ) ]
@@ -1432,6 +1465,7 @@ label shataKitchen:
 
             #cooking lady shocked placed behind xerxes.
             #xerxes moves then goes to 3-4
+            play music sandHero fadein 1.0 fadeout 1.0
             if IsDaytime:
                 scene kwortixKitchenOutside:
                     zoom 0.7
@@ -1718,9 +1752,15 @@ label shataLivingZoneMenu:
 
 label shataLivingZone:
 
-    
+    if shataLeaderFate != "alive" or keys == 0:
+        play music deadCaves if_changed fadein 1.0 fadeout 1.0
+    elif caveSsatuDefeatedz:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0
 
     if shataDefeatedz:
+        
+        
+
         if enteringFrom == "shataKitchen":
             
             $ enteringFrom = "shataLivingZone"
@@ -1906,6 +1946,7 @@ label fightTheShataFurbals:
         ypos 1.2
     
     with dissolve
+    stop music fadeout 2.0
     shataGoons "ALL HAIL!!"
     shataGoons "2 SUN BAKED IDIOTS!!"
 
@@ -1927,7 +1968,7 @@ label fightTheShataFurbals:
     show xerxHehehArmoredArmed1 at xerxLeftLeft , lightCrystalLights:
         zoom 0.9 
     with dissolve
-    xerx "You aren't eating us. You little Hairy Idiots!!"
+    xerx "You aren't eating us. You little hairy idiots!!"
     
     scene kwortixLivingBenchUsed:
         xpos -0.5
@@ -1939,6 +1980,8 @@ label fightTheShataFurbals:
     hide muwaYummy
     show muwaGetEm at centerAlignment , muwaAtBench , lightCrystalLights
     with dissolve
+    play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+    queue music fightingCommon
     muwa "CHARGE!!"
     scene kwortixLivingBenchUsed:
         zoom 0.7
@@ -1971,7 +2014,7 @@ label fightTheShataFurbals:
         linear 1 zoom 0.9 xpos 1.0 ypos 0.8
     with dissolve
     pause 0.5
-    shataGoons "KWAWATA!!"
+    shataGoons "KWAWATA!!" with vpunch
 
     scene kwortixLivingBenchUsed at benchBattle:
         ypos 0.4
@@ -1988,6 +2031,8 @@ label fightTheShataFurbals:
 
     $ shataDefeatedz = True
 
+    play music tentionTime fadein 1.0 fadeout 1.0
+
     scene kwortixShataStreetUsed at streetNear
     show kwortixShataStreetDoorLights at centerAlignment , lightCrystalLights:
         zoom 0.8
@@ -2000,14 +2045,14 @@ label fightTheShataFurbals:
         zoom 0.8   
 
     with dissolve
-    xerx "COME HERE!!"
-    xerx "I WANT THAT KEY OF YOURS!!"
+    xerx "COME HERE!!" with vpunch
+    xerx "I WANT THAT KEY OF YOURS!!" with hpunch
 
     scene kwortixLivingBenchUsed at centerAlignment , benchUpClose
 
     show muwaScared at centerAlignment , muwaAtBenchClose , lightCrystalLights
     with dissolve
-    muwa "BIYA!!"
+    muwa "BIYA!!" with vpunch
 
     scene muwaChoke with dissolve:
         zoom 0.7
@@ -2020,10 +2065,12 @@ label fightTheShataFurbals:
     show tesipizPointingNeutralArmored at hiddenLegs , lightCrystalLights:
         zoom 0.8
     with dissolve
+    stop music fadeout 3.0
     tesi "Xerxes."
     tesi "That key is purple."
     tesi "None of the keys of Ahura-Mazda are purple." 
 
+    play music bardaiyaBeMad fadein 1.0 fadeout 1.0
     scene muwaChoke with dissolve:
         zoom 0.8
     xerx "That's annoying"
@@ -2039,12 +2086,15 @@ label fightTheShataFurbals:
     menu:
         "Throw this trash away.":
 
+            play sound bloodySlam
+            queue sound drop2DaFloor
             $ shataLeaderFate = "Knocked Out"
             scene muwaChuck with dissolve:
                 zoom 0.7
                 #do some animations
             pause 1
 
+            play music deadCaves fadein 1.0 fadeout 1.0
             scene kwortixShataStreetUsed at streetNear
             show kwortixShataStreetDoorLights at centerAlignment , lightCrystalLights:
                 zoom 0.8
@@ -2081,7 +2131,7 @@ label fightTheShataFurbals:
             show tesipizHappyArmored at hiddenLegs , lightCrystalLights:
                 zoom 0.8
             with dissolve
-            tesi "Fair Enough."
+            tesi "Fair enough."
 
             scene kwortixLivingBenchUsed:
                 zoom 0.7
@@ -2102,6 +2152,9 @@ label fightTheShataFurbals:
 
             $ shataLeaderFate = "SwordDead"
 
+            play sound playerHit
+            queue sound bloodySlam
+            queue sound drop2DaFloor
             scene muwaStabSword with dissolve:
                 zoom 0.8
                 #do some animations (same as chucking)
@@ -2114,8 +2167,11 @@ label fightTheShataFurbals:
                 zoom 0.8
 
             with dissolve
+            stop music fadeout 3.0
             xerx "That should have delt with the shata problem"
             
+            play music deadCaves fadein 1.0 fadeout 1.0
+
             scene kwortixShataStreetUsed:
                 zoom 0.7
             show kwortixShataStreetDoorLights at lightCrystalLights:
@@ -2128,12 +2184,14 @@ label fightTheShataFurbals:
         
         "Stabbity Stab Stab Stab!!":
 
+            play music astartesWrath fadein 1.0 fadeout 1.0
             $ shataLeaderFate = "StabyStabStabStab"
             
             scene muwaStab1 with dissolve:
                 zoom 0.8
             pause 1
             while stabbyCount > 0:
+                play sound playerHit
                 scene muwaStab2:
                     zoom 0.8
                 pause 0.25
@@ -2149,10 +2207,15 @@ label fightTheShataFurbals:
             show tesipizAngerierArmored at hiddenLegs , lightCrystalLights:
                 zoom 0.8
             with dissolve
-            tesi "HEY XERXES!!!"
-            tesi "STOP!!"
+            play sound foeHit loop
+            tesi "HEY XERXES!!!" with vpunch
+            tesi "STOP!!" with hpunch
 
             hide tesipizAngerierArmored
+            stop music fadeout 3.0
+            stop sound
+            play sound bloodySlam
+            queue sound punchy
             show tesipizNeutralArmored at hiddenLegs , lightCrystalLights:
                 zoom 0.8
             with dissolve
@@ -2204,6 +2267,7 @@ label fightTheShataFurbals:
             hide xerxOoahArmored
             show neutralHappyXerxesArmored at hiddenLegs , lightCrystalLights:
                 zoom 0.8
+            play music deadCaves fadein 1.0 fadeout 1.0
             jump shataLivingZoneMenu
                 
 
@@ -2257,6 +2321,7 @@ label fightTheSsatuBandits:
         zoom 0.8
     show chwitazaHehe at centerAlignment , chwitazaPlaceNear , lightCrystalLights
     with dissolve
+    play music bardaiyaBeMad fadein 1.0 fadeout 1.0
     chwitaza "Looks like we've got some tough ones!"
 
     chwitaza "It's not too late to be my slaves."
@@ -2269,7 +2334,7 @@ label fightTheSsatuBandits:
 
     scene kwortixLivingNorthUsed:
         zoom 0.7
-    show xerxMadArmed  at xerxLeftLeft , lightCrystalLights
+    show xerxMadArmedArmored  at xerxLeftLeft , lightCrystalLights
     show tesipizClosedMadArmedArmored at tesiRight , lightCrystalLights
 
     with dissolve
@@ -2280,12 +2345,13 @@ label fightTheSsatuBandits:
     else:
         xerx "We won't handle you!"
         xerx "We'll despose of you."
-    hide xerxMadArmed 
+    hide xerxMadArmedArmored
     show xerxArmoedCharge at xerxLeftLeft , lightCrystalLights:
         zoom 1.2
     with dissolve
-    xerx "Slavers don't deserve to live!!"
+    xerx "Slavers don't deserve to live!!" with vpunch
 
+    stop music fadeout 3.0
     scene kwortixLivingFightingUsed at centerAlignment , chwitazaFocus:
         zoom 0.8
     show chwitazaBackground at centerAlignment , chwitazaPlaceNear , lightCrystalLights
@@ -2296,6 +2362,8 @@ label fightTheSsatuBandits:
     with dissolve
     chwitaza "Get'em my goons!!"
 
+    play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
+    
     scene kwortixLivingFightingChwitaza at centerAlignment:
         zoom 0.5
         yzoom 0.5
@@ -2320,12 +2388,14 @@ label fightTheSsatuBandits:
         linear 1 zoom 0.7 ypos 0.7
     with dissolve
     pause 1.5
+
+    queue music fightingCommon
     scene kwortixLivingFightingChwitaza at centerAlignment with dissolve:
         zoom 0.5
         yzoom 0.5
         ypos 0.3
 
-
+    
     $ enemyTroopers = [ copy.copy( ssatuLongbow ) , copy.copy( ssatuBandit ) , copy.copy( ssatuBanditGirl ) , copy.copy( ssatuLongBowGirl )]
     $ extraGoonPool = ( ssatuBandit , ssatuBandit , ssatuBanditGirl , ssatuBanditGirl , ssatuLongbow , ssatuLongBowGirl , ssatuBanditGlave , ssatuBanditGlave , ssatuBanditJavelin , ssatuBanditSlings , ssatuDoggoDude )
     $ theMessage = "Lets end these criminal beasts!"
@@ -2345,7 +2415,7 @@ label fightTheSsatuBandits:
         zoom 0.7
         ypos 1.5
     with dissolve
-    chwitaza "YOU'LL PAY FOR THIS!!!"    
+    chwitaza "YOU'LL PAY FOR THIS!!!" with hpunch
 
     $ ringLeader = copy.copy( chwitazaFoe )
     $ enemyTroopers.append( ringLeader )
@@ -2358,7 +2428,9 @@ label fightTheSsatuBandits:
 
     call screen playerActions( "Finish this beast off!!" , False , False , False , 1 , ringLeaders = [ ringLeader ] , ringLeaders2Kill = 1 )
     $ shataDefeatedz = True
-
+    
+    stop music fadeout 1.0
+    play music weOwnedThem noloop
     scene kwortixLivingFightingUsed at centerAlignment:
         zoom 0.7
         yzoom 0.5
@@ -2367,16 +2439,19 @@ label fightTheSsatuBandits:
     show chwitazaDead at centerAlignment , lightCrystalLights:
         zoom 0.5
         ypos 0.5
-        easeout 1 zoom 1.5 ypos 2.5 rotate 45
+        easeout 2 zoom 1.5 ypos 2.5 rotate 45
         #play thonk noise
     with dissolve
-    pause 1
+    pause 2
+    play sound bloodySlam
+    play extraSound punchy
     with vpunch
     with hpunch
-    pause 1
+    pause 4
 
-    $ caveSsatuDefeatedz = False
+    $ caveSsatuDefeatedz = True
     
+    play music ratThonking fadein 1.0 fadeout 1.0
     scene kwortixLivingNorthUsed:
         zoom 0.7
 
@@ -2482,11 +2557,12 @@ label fightTheSsatuBandits:
     $ changeItemAmount( inventory , kwortixGenericKey , 1 )
 
     #
-
+    play music villageTheme fadein 1.0 fadeout 1.0
     jump shataLivingZoneMenu
 
 label fightingRandomMonsters:
 
+    stop music fadeout 2.0
     if kwortixBackDoorOpen:
         if IsDaytime:
             scene kwortixLivingBench at benchBattle 
@@ -2497,9 +2573,13 @@ label fightingRandomMonsters:
     else:
         scene kwortixLivingBenchNight at benchBattle
     with dissolve
+    play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
+    queue music fightingCommon 
     $ enemyTroopers = [ copy.copy( minobiteWarrior ) , copy.copy( falcobiteRaider ) , copy.copy( jakalbitePadPealtast ) , copy.copy( jakalbitePadPealtast ) , copy.copy( falcobiteRaider )]
     call screen playerActions( "Looks like the mine is a monster hideout" , False , False , False , 1 )
     
+    play music weOwnedThem
+    queue music deadCaves
     #finds key in the water collection if playing through first.
     #after the fight
     if kwortixBackDoorOpen:
@@ -2597,6 +2677,8 @@ label fightingRandomMonsters:
 label talk2Muwa:
     #she is for crafting and healing, also maybe have her talk about a random stuff
     #this is before fighting modonon
+    play music villageTheme if_changed fadein 1.0 fadeout 1.0
+
     scene kwortixLivingBenchUsed at centerAlignment , benchUpClose
 
     show muwaHappy at centerAlignment , muwaAtBenchClose , lightCrystalLights
@@ -2646,6 +2728,8 @@ label talk2Muwa:
 
 label muwaMenu:
     
+    play music villageTheme if_changed fadein 1.0 fadeout 1.0
+
     scene kwortixLivingBenchUsed at centerAlignment , benchUpClose 
     show muwaUpNeutralHappy at centerAlignment , muwaAtBenchClose , lightCrystalLights
     with dissolve
@@ -2660,7 +2744,7 @@ label muwaMenu:
             
             scene kwortixLivingFightingUsed at centerAlignment:
                 zoom 0.7
-            call carftTime
+            call carftTime from _call_carftTime_6
             $ timeTime += _return
             if timeTime > 50:
                 if timeTime > time2Night:
@@ -2701,6 +2785,7 @@ label muwaMenu:
             show tesipizNeutralHappyArmored at tesiRight , lightCrystalLights
             show xerxNoWeGoodArmored at xerxLeftLeft , lightCrystalLights 
             with dissolve
+            stop music fadeout 3.0
             xerx "No Thanks, We're good."
             #logic for Tesipiz
             hide tesipizNeutralHappyArmored
@@ -2711,13 +2796,14 @@ label muwaMenu:
             #list of images to make
 
             #GC of the TesipizhuggingMuwa done
+            play sound cuddles
             scene TesipizhuggingMuwa at centerAlignment with fade:
                 zoom 0.7
                 ypos 0.1
             pause 20
             $ muwaCuddleCounter += 1
             $ resurrectParty( currentParty )
-
+            
             jump muwaMenu
         "I want to talk to you" if gotMuwaItems is False:
 
@@ -2791,7 +2877,11 @@ label muwaMenu:
 label mainPoolInMine:
 
     if enteringFrom == "FlameRoom":
+        play music flameAmbiance if_changed fadein 1.0 fadeout 1.0
+    else:
+        play music deadCaves if_changed fadein 1.0 fadeout 1.0
 
+    if enteringFrom == "FlameRoom":       
         $ enteringFrom = "mainPoolInMine"
 
         if keys == 0:
@@ -2856,7 +2946,7 @@ label mainPoolInMine:
                 jump DoggoRoom
             "The Key might in the water collection zone right next to the door.":
                 jump waterCollection
-            "Should we try opening the door again. I'm sure we haven't tried hard enough":
+            "Should we try opening the door again. I'm sure we haven't tried hard enough.":
                 jump modononDoor        
 
     else:
@@ -2930,10 +3020,16 @@ label DoggoRoom:
 
             $ enteringFrom = "DoggoRoom"
             if keys == 0:
+                play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
+                queue music fightingCommon 
                 $ enemyTroopers = [ copy.copy( ratas ) , copy.copy( minobiteWarrior ) , copy.copy( ratas ) ]
 
                 call screen playerActions( "Rats!! .. And a minobite." , False , False , False , 1)
+
+                play music weOwnedThem
+                queue music deadCaves 
             elif keys == 1:
+                stop music fadeout 2.0
                 show jamesianWolf at right , lightCrystalLights:
                     zoom 0.5
                 show shataDoggoDude at hiddenLegs , lightCrystalLights:
@@ -2941,15 +3037,16 @@ label DoggoRoom:
                 show jamesianWolf as extraDoggo at left , lightCrystalLights:
                     zoom 0.5
                 with dissolve
-                shataDogDude "JAMESIANS!!"
+                shataDogDude "JAMESIANS!!" with vpunch
                 shataDogDude "GET'EM BOYS!!"
 
                 scene kwortixDoggoRoom at benchBattle with dissolve
+                play music OnDaAttack fadein 1.0 fadeout 1.0
                 $ enemyTroopers = [ copy.copy( jamesoWolf ) , copy.copy( shataDoggoDude ) , copy.copy( jamesoWolf ) ]
             
                 call screen playerActions( "Who let the dogs out?" , False , False , False , 1)
             else:
-
+                stop music fadeout 2.0
                 show jamesianWolf as dog2 at lightCrystalLights:
                     zoom 0.4
                     xpos 0.0
@@ -2965,10 +3062,11 @@ label DoggoRoom:
                 show ssatuDoggoDude at hiddenLegs , lightCrystalLights:
                     zoom 0.6
                 with dissolve
-                ssatuDogDude "JAMESIAN INTRUDERS!!"
-                ssatuDogDude "HERE BOYS!!"
+                ssatuDogDude "JAMESIAN INTRUDERS!!" with vpunch
+                ssatuDogDude "HERE BOYS!!" 
                 ssatuDogDude "THERE'S A NEW FRESH MEAT DELIVERY!!"
 
+                play music OnDaAttack fadein 1.0 fadeout 1.0
                 $ enemyTroopers = [ copy.copy( jamesoWolf ) , copy.copy( jamesoWolf ) , copy.copy( ssatuDoggoDude ) , copy.copy( jamesoWolf ) , copy.copy( jamesoWolf ) ]
                 scene kwortixDoggoRoom at benchBattle with dissolve            
                 call screen playerActions( "Who let the dogs out?" , False , False , False , 1)
@@ -3014,7 +3112,7 @@ label DoggoRoom:
                         zoom 0.9 
                         xpos 0.4
                         ypos 0.6
-                    xerx "GET BACK HERE YOU!!"
+                    xerx "GET BACK HERE YOU!!" with vpunch
 
 
                     scene kwortixShataStreetKey at longImageTop , centerAlignment:
@@ -3049,7 +3147,7 @@ label DoggoRoom:
                         xpos 0.4
                         ypos 0.6
                     with dissolve
-                    xerx "GET BACK HERE YOU!!"
+                    xerx "GET BACK HERE YOU!!" with vpunch
                     
                     
                     scene kwortixShataStreetDoggoUsed at longImageTop , centerAlignment:
@@ -3082,9 +3180,15 @@ label DoggoRoom:
                 
 
             if not shataDefeatedz:
+                play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
+                queue music fightingCommon 
+
                 $ enemyTroopers = [ copy.copy( ratas ) , copy.copy( minobiteWarrior ) , copy.copy( ratas ) ]
 
                 call screen playerActions( "Hopefully these are the last of the monsters." , False , False , False , 1)
+                
+                play music weOwnedThem
+                queue music deadCaves 
                 $ shataDefeatedz = True
 
             pause 1
@@ -3113,7 +3217,8 @@ label DoggoRoom:
 
 
 label waterCollection:
-    
+
+    play music deadCaves if_changed fadein 1.0 fadeout 1.0
     $ enteringFrom = "waterCollection"
 
     scene waterCollectionZone with dissolve:
@@ -3138,8 +3243,8 @@ label waterCollection:
 
         menu:
             "Yes. Free food.":
+                play sound wataDrop
                 "You got the key and crayfish"
-                
                 $ waterCrayfish = False
                 $ changeItemAmount( inventory , crayfish , 3 )
             "No. Leave them be.":
@@ -3160,6 +3265,7 @@ label waterCollection:
         "Should we grab them?"
         menu:
             "Yes. Free food.":
+                play sound wataDrop
                 "You got the crayfish."
                 $ changeItemAmount( inventory , crayfish , 3 )
                 $ waterCrayfish = False
@@ -3176,6 +3282,7 @@ label waterCollection:
 
 label modononDoor:
     
+    play music deadCaves if_changed fadein 1.0 fadeout 1.0
 
     $ enteringFrom = "modononDoor"
     scene modononDoorImg with dissolve:
@@ -3244,12 +3351,16 @@ label modononDoor:
         tesi "The key should be in there"
         if not checkIfHave( inventory , kwortixGenericKey ):
             
+            play sound bigDoorLocked
             with vpunch
             pause 0.25
+            play sound bigDoorLocked
             with hpunch
             pause 0.25
+            play sound bigDoorLocked
             with vpunch
             pause 0.25
+            play sound bigDoorLocked
             with hpunch
             pause 0.25
 
@@ -3329,8 +3440,9 @@ label modononDoor:
 
 label kwortixCity:
 
-
+    
     if IsDaytime:
+        play music villageTheme fadein 1.0 fadeout 1.0
         scene kwortixCity at centerAlignment with fade:
             zoom 0.25
             linear 5 zoom 1.0
@@ -3340,6 +3452,7 @@ label kwortixCity:
         pause 1
 
     elif isDusk:
+        play music villageTheme fadein 1.0 fadeout 1.0
         scene kwortixCityDusk at centerAlignment with fade:
             zoom 0.25
             linear 5 zoom 1.0
@@ -3349,6 +3462,7 @@ label kwortixCity:
         pause 1
 
     else:
+        play music wonderStars fadein 1.0 fadeout 1.0
         scene kwortixCityNight at centerAlignment with fade:
             zoom 0.25
             linear 5 zoom 1.0
@@ -3491,12 +3605,15 @@ label kwortixCity:
 
 label kwortixCityMenu:
     if IsDaytime:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0
         scene kwortixSquare with dissolve:
             zoom 0.7
     elif isDusk:
+        play music villageTheme if_changed fadein 1.0 fadeout 1.0
         scene kwortixSquareDusk with dissolve:
             zoom 0.7
     else:
+        play music wonderStars if_changed fadein 1.0 fadeout 1.0
         scene kwortixSquareNight with dissolve:
             zoom 0.7
     
@@ -3598,7 +3715,7 @@ label buyAtKwortixShop:
         
         show tyetkreiHappy at benhindKwortixCounter , nightLights
         show shopCounter2 at kwortixShopCounter, nightLights    
-    call shopBasic( kwortixShopItems , ifUsedShop , isAngryShopKwotrix )
+    call shopBasic( kwortixShopItems , ifUsedShop , isAngryShopKwotrix ) from _call_shopBasic_5
         
         
     if _return == 0:
@@ -3729,6 +3846,7 @@ label buyAtKwortixShop:
             show tyetkreiNope at benhindKwortixCounter , nightLights behind shopCounter2
 
         if kwortixShopAngry >= 5:
+            stop music fadeout 2.0
             show tyetkreiNope at benhindKwortixCounter behind shopCounter2:
                 matrixcolor TintMatrix("#ff2222")                
         tyetkrei "You can't afford that!"
@@ -3741,7 +3859,7 @@ label buyAtKwortixShop:
                 
             jump buyAtKwortixShop
         else:
-
+            play music astartesWrath fadein 1.0 fadeout 1.0
             show tyetkreiMad at benhindKwortixCounter behind shopCounter2:
                 matrixcolor TintMatrix("#ff2222")
                 linear 0.01 xalign 0.5
@@ -3778,13 +3896,14 @@ label buyAtKwortixShop:
 
 label kwortixCrafta:
     $ canVisitShopKwortix = True
-    call carftTime
+    call carftTime from _call_carftTime_7
     $ timeTime += _return
-    if timeTime > 50:
+    if timeTime > time2Night:
+            $ IsDaytime = False
+            $ isDusk = False
+    elif timeTime > 50:
             $ IsDaytime = False
             $ isDusk = True
-    elif timeTime > time2Night:
-            $ isDusk = False
 
     jump kwortixCityMenu
 
@@ -3796,6 +3915,7 @@ label kwortixMotel:
     default isAngryMotelKwotrix = False
 
     $ isAngryMotelKwotrix = False
+    play music happyAtoTheme if_changed fadein 1.0 fadeout 1.0
 
     if IsDaytime:
         scene kwortixMotel:
@@ -4343,7 +4463,9 @@ label kwortixMotel:
                     elif isDusk:
                         show tazatuHappy at tazatubehindBench , duskLights 
                     else:
-                        show tazatuHappy at tazatubehindBench , lightCrystalLights                  
+                        show tazatuHappy at tazatubehindBench , lightCrystalLights    
+                    hide tazatuSad
+                    with dissolve             
                     tazatu "I'm pretty sure there's a chemical seller somewhere else."
                     menu:
                         "O.K Thanks":
@@ -4725,7 +4847,7 @@ label kwortixMotelSleepOver( ):
             menu:
                 "Yes. We want a room":
                     hide tazatuHappy    
-                    call kwortixMotelMoneyPay
+                    call kwortixMotelMoneyPay from _call_kwortixMotelMoneyPay
                     $ money -= 20
                     jump kwortixSleeper
                 "No, We're not Interested":
@@ -4829,17 +4951,18 @@ label kwortixSleeper:
     tazatu "Have a nice night you two."
 
     if keys == 2 and lakatinuTalks == 0:
-        call bardaiyaMad1 
+        call bardaiyaMad1 from _call_bardaiyaMad1_11 
 
+    play music sleepss 
+    queue music happyAtoTheme 
     scene kwortixXerxyTesiYawn at centerAlignment with fade:
         ypos 1.0
         linear 5 ypos 0.5 zoom 0.666
     pause 5
 
-    $ resurrectParty( currentParty )
-    $ IsDaytime = True
-    $ timeTime = 0
+    call sleepyTimeReset  
 
+    play music happyAtoTheme fadein 1.0 fadeout 1.0
     scene kwortixMotel:
         zoom 0.7
     show tazatuHappyGreeting at tazatubehindBench behind kwortixMotelBench    
@@ -4897,7 +5020,7 @@ label kwortixSleeper:
         with dissolve       
         tesi "We're going to get another key."
 
-        scene kwortixMotelDoor:
+        scene kwortixMotel:
             zoom 0.7
         show tazatuOh at tazatubehindBench behind kwortixMotelBench  
         show kwortixMotelBench at kwortixBench   
@@ -5049,7 +5172,7 @@ label kwortixMotelShop:
             zoom 0.7
         show tazatuHappy at tazatubehindBench , lightCrystalLights
         show kwortixMotelBench at kwortixBench ,lightCrystalLights  
-    call shopBasic( kwortixmotelItems , ifUsedShop , isAngryMotelKwotrix )
+    call shopBasic( kwortixmotelItems , ifUsedShop , isAngryMotelKwotrix ) from _call_shopBasic_6
         
         
     if _return == 0:
@@ -5186,6 +5309,7 @@ label kwortixMotelShop:
         else:
 
             hide tazatuMad
+            play music tentionTime fadein 1.0 fadeout 1.0
             show tazatuSad at tazatubehindBench behind kwortixMotelBench:
                 matrixcolor TintMatrix("#ff0000")
                 linear 0.01 xalign 0.3
@@ -5193,7 +5317,7 @@ label kwortixMotelShop:
                 repeat
             tazatu "If you can't afford things."
             tazatu "Maybe you should leave."
-            
+            stop music fadeout 3.0
             jump kwortixCityMenu
         
     elif _return == 3:
@@ -5304,10 +5428,12 @@ label kwortixMotelMoneyPay( ):
 
 label kwortixLevelSelect:
 
+    play music sandyMusic fadein 1.0 fadeout 1.0
 
     $ currentParty = [ xerxesCharacter , tesipizCharacter ]
     
     if IsDaytime:
+        play music sandyMusic if_changed fadein 1.0 fadeout 1.0
         scene desertRoad1 at centerAlignment with fade:
             zoom 0.7
         show xerx3HorseCurious at on33Horse:
@@ -5318,6 +5444,7 @@ label kwortixLevelSelect:
             xzoom -1.0
 
     elif isDusk:
+        play music sandyMusic if_changed fadein 1.0 fadeout 1.0
         scene desertRoad1Dusk at centerAlignment with fade:
             zoom 0.7
         show xerx3HorseCurious at on33Horse , duskLights:
@@ -5328,6 +5455,7 @@ label kwortixLevelSelect:
             xzoom -1.0
 
     else:
+        play music wonderStars if_changed fadein 1.0 fadeout 1.0
         scene desertRoad1Night at centerAlignment with fade:
             zoom 0.7
         show xerx3HorseCurious at on33Horse , nightLights:
@@ -5357,7 +5485,7 @@ label kwortixLevelSelect:
             xzoom -1.0
     with dissolve
     pause 1
-    call mapOfDaWorldoSouthJamesia
+    call mapOfDaWorldoSouthJamesia from _call_mapOfDaWorldoSouthJamesia_5
     with dissolve
     $ going2Number = 0
     $ need2GoToSerinium = False  

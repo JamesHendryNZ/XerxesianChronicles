@@ -356,9 +356,13 @@ label versanizBeforeYarak:
     if doingLuna:
         show magicannon at center , flipped:
             ypos 0.75 xpos 0.3 rotate 45
-    
+        with dissolve
+        vers "I'll tech you how to use magic cannons."
+    else:
+        vers "I'll tech you all how to use magic cannons."
     with dissolve
-    vers "I'll tech you all how to use magic cannons."
+
+    
 
     hide magicannon with dissolve
     if doingLuna:
@@ -368,7 +372,8 @@ label versanizBeforeYarak:
         vers "Speaking of cannons."
         show versaniz nekked1Finger meanEyes meanHappyMouth blush  at center , size08 , lightCrystalLights:
             ypos 1.5
-        vers "Fluffy spider is going to get blasted."
+        vers "Fluffy spider." 
+        vers "You're going to get your insides blasted."
         stop music fadeout 1.0
         show versanizsBedTowards at flameLight , truecenter:
             zoom 2.0  yalign 0.35 matrixcolor TintMatrix("#ffffd0")

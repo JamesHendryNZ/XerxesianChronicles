@@ -1976,7 +1976,7 @@ label afterSaporiusFight:
         zoom 0.67
         ypos -0.3
 
-    call sleepyTimeReset from _call_sleepyTimeReset_5  
+    call sleepyTimeReset  
 
     pause 7
 

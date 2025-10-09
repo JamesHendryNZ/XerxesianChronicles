@@ -1425,9 +1425,7 @@ label forestSleepOver:
     #scene 
     pause 5 
 
-    $ IsDaytime = True
-    $ resurrectParty( currentParty )
-    $ timeTime = 0
+    call sleepyTimeReset from _call_sleepyTimeReset  
 
 
     #checkforTakuraKey
