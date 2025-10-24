@@ -50,10 +50,16 @@ define chya = Character("Chyaazi" , color = "#5a8a00")
 #assiria
 define trim = Character("Trimdius" , color = "#007e4e")
 
+#Axeria/Xartabana/Atazera's Realm
+define ataz = Character("Atazera" , color = "#07553b")
+define mali = Character("Malik" , color= "#077777")
 
+#need a shop for Xartabana - Axerian most likely
 
-#need a shop for Takura - korkin or jamesian.
-
+#Minor Allied Factions
+define mazy = Character( "Mazyultius" , color = "#900")
+define zyac = Character( "Zyachwa" , color="#600")
+define tazh = Character( "Tazha" , color="#444")
 #minor characters
 
 #random locals
@@ -86,6 +92,8 @@ define astar = Character("Astarte" , color = "#cc008b")
 define bardy = Character("Bardaiya" , color = "#6f2500")
 define laki = Character("Lakatinu" , color = "#004e44")
 define bala = Character("Balatius" , color="#716f00")
+define tsan = Character("Tsanihoni" , color="#600")
+define jana = Character("Jana" , color = "#066")
 define krok = Character("Krokkosnek" , color = "#005265")
 define tip = Character("Tipua" , color="#004269")
 define yeni = Character("Yeni" , color="#56008c")
@@ -99,9 +107,16 @@ define astaOrdOf = Character("Captain Gadiz" , color = "#863e00")
 define balaCavOf = Character("Captain Belgius" , color = "#474600")
 define flameChucka = Character("Commander Mwejya" , color = "#474600")
 define krokGoon = Character("Krokkosnek's Goons" , color="#009faa")
+define astRaid = Character("Astart Raider" , color = "#920145")
 define gilgamataDuck = Character("Gilgamata" , color = "#014521")
 define astartFemSum1 = Character("Lukina" , color = "#000c51")
 define captainHuksosy = Character("Captain Huksos" , color = "#6c2800")
+define dido = Character( "Captain Dido" )
+define balatianGoon = Character( "Balatian Guard" , color="#444400")
+define lizardSuit = Character( "Lizard Suit Warrior" , color="#888800")
+define haremGuard = Character( "Harem Guard" , color="#aa0088")
+define minotuarMan = Character( "Minobite" , color = "#550")
+define astartGoon = Character( "Astart Warrior" , color = "#cc008b")
 
 #Ahrites
     #Cult of Ahriman
@@ -126,11 +141,15 @@ define shataGoons = Character("Shata Goons", color = "#000")
 define junaJav = Character("Junatu Javelin Dude" , color= "#3d5579")
 define junaWar = Character("Junatu Warrior" , color= "#3d5579")
 define junatus = Character("Junatu Warriors" , color= "#3d5579")
+define yuni = Character("King Yunigzho" , color = "#222")
 
 #Banditos
 define chwitaza = Character("Chwitaza" , color = "#000" )
 define shataSlaves = Character("Shata Slaves" , color = "#006831")
 define ssatuBandito = Character( "Ssatu Bandit" , color = "#000" )
+define serv = Character( "Servanus" , color="#808")
+define rait = Character( "Raituniimus" , color="#830")
+define makk = Character( "Makkabian Trooper" , color="#a0a")
 
 #minor antagonists
 

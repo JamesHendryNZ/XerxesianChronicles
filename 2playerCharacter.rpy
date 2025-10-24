@@ -33,7 +33,7 @@ init python:
         #immunityList = []
         #
         # xerxes in scalemail is default
-        # [0] unarmored
+        # [0] Clothed
         # [1] Scale mail
         # [2] Linothorax
         # [3] Metal Curass
@@ -76,6 +76,7 @@ init python:
             self.speed = baseSpeed
             self.currentArmor = currentArmor
             self.effects = []
+
         #---------------------------------------------------------------------
 
         def resurrect( self ):
@@ -116,28 +117,23 @@ init python:
 
         def updateArmor( self , armorType ):
             
+            armorValues = [2,7,5,10,8,12,0,6]
+            #medium/full clothing 
+            #scale mail armor, laminlar 
+            #Linothorax , padded and leaher armor, Also scaly skin and soft exoskeletons counts as leather armor
+            #Metal Plate
+            #Black Plate Armor , lorica segemntata , hard exoskeletons 
+            #Lizard Suit , Full Cover Armor
+            #butt naked, skimpy clothing and not furry/scalie or tough skinned
+            #Chaimail and medium exoskeletons
+
             if armorType != self.currentArmor:
                 self.currentArmor = armorType 
             
-            
-            if armorType == 0:  #Unarmored but waring clothes or a furry/scalie/Tough skinned
-                return 0
-            elif armorType == 1:    #scale mail armor, laminlar
-                return 7
-            elif armorType == 2:    #Linothorax , padded and leaher armor, Also scaly skin and soft exoskeletons counts as leather armor
-                return 5
-            elif armorType == 3:    #Metal Plate
-                return 10
-            elif armorType == 4:    #Black Plate Armor , lorica segemntata , hard exoskeletons 
-                return 8
-            elif armorType == 5:    #Lizard Suit , Full Cover Armor
-                return 12
-            elif armorType == 6:    #butt naked, skimpy clothing and not furry/scalie or tough skinned
-                return self.baseArmor - self.baseArmor//2
-            elif armorType == 7:    #Chaimail and medium exoskeletons
-                return 6
+            if armorType < len( armorValues ):
+                return armorValues[ armorType ]
             else:
-                return 0
+                return 0 #other undefined armors are treated as butt naked
 
         def weaponUsed( self , isRanged ):
             
