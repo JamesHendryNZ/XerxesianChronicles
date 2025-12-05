@@ -682,7 +682,7 @@ label zaratCampShoppings:
     show shopZaratShopCounter at truecenter , size08
     with dissolve
     
-    call shopBasic( takuraShopItems , ifUsedShop , isAngryShopRoyalZarat ) from _call_shopBasic_9
+    call shopBasic( royalZaratShopItems , ifUsedShop , isAngryShopRoyalZarat ) 
 
     if _return == 0:
         show chyaazi OMouth sadEyes with dissolve
@@ -1782,7 +1782,7 @@ label zaratCampNighttime:
     scene clearDayTime
     show yimiaDeserty at truecenter , size2Thrid
     with dissolve
-    show dustCloud at fullFit behind yimiaDeserty with Dissolve(2):
+    show dustCloud at fullFit behind yimiaDeserty with Dissolve(2)
     show dustCloud as frantCould at truecenter with dissolve:
         zoom 1.5 matrixcolor OpacityMatrix(0.0)
         easein 2 matrixcolor OpacityMatrix(1.0) zoom 1.0 xzoom 1.5
@@ -2093,7 +2093,7 @@ label zaratCampWinning:
     show trimdius armoredPointy with dissolve
     trim "I'm about to show King Urlius something that can destroy Jemesis."
     hide trimdius
-    show trimdius meanEyes armored  at truecenter , size2Thrid , flipped:
+    show trimdius armored  at truecenter , size2Thrid , flipped:
         ypos 0.7 xalign 1.0
     show xerx3quatHappyArmored at left , size2Thrid , flipped:
         ypos 1.4 xzoom 1.0

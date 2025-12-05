@@ -359,7 +359,7 @@ label gilgamoriumWin:
             #some ssatu make it to boat
             #tastsetu get shrekt near boat
             scene cloudyDayTime at fullFit
-            show flatWater1:
+            show flatWater1
             show zardonianBoatSide at truecenter , halfSize:
                 xpos 1.0 ypos 0.4
             show ssatuArmoredJavelinSwim at thridSize:
@@ -1373,6 +1373,7 @@ label leaveGilgamorium:
     #establishing shot
     #they leave gilgamorium
     #chuwos is sad that he couldn't be involved in themagic water system due to his responsibilities (tesipiz replaces him if tesipiz boinks tsekrei)
+    call sleepyTimeReset from _call_sleepyTimeReset_19
     scene cloudyDayTime at fullFit , movingSky 
     show yimiataStreet at right
     show zagzhino  sadEyes frown captured at middleStand , size2Thrid

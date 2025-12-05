@@ -3637,7 +3637,7 @@ label takuraSleepOverTime:
                 pause 20
 
                 play sound cuddles 
-                scene takuraSleepOver2 at centerAlignment , fullFit , hornyAura with Fade(2,3,1):
+                scene takuraSleepOver2 at centerAlignment , fullFit , hornyAura with Fade(2,3,1)
                 pause 9
 
                 $ takuraBoinks += 1

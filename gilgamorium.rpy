@@ -1932,7 +1932,7 @@ label gilgaPalaceInside:
     if timePassed > turnsBeforeLakatinuShowsUp:
         $ activeLakatinu = True
     
-    scene clearDayTime:
+    scene clearDayTime
     show gateDoorClosed:
         zoom 0.4 xpos 0.45 ypos 0.29 yzoom 1.5
     show gilgamoriumPalaceDockSouth at fullFit
@@ -2007,7 +2007,7 @@ label gilgaPalaceInside:
             menu:
                 "I'm going after her!":
                     hide xerxSoAMPointArmoredAngry
-                    show xerx3quatPointCommandingArmored at middleStand , size2Thrid , flipped:
+                    show xerx3quatPointCommandingArmored at middleStand , size2Thrid , flipped
                     with dissolve
                     hide xerx3quatPointCommandingArmored    
                     show xerxPointArmored at middleStand , size2Thrid

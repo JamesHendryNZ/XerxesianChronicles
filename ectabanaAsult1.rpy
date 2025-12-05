@@ -95,6 +95,7 @@ label ectabanaAssult1:
     $ xerxesCharacter.weapon = jamesianSword
     $ xerxesCharacter.rangedWeapon = compositeBow
     $ xerxesCharacter.shield =jamesianShieldXerx
+    $ xerxesCharacter.updateStats()
     
     $ tesipizCharacter.weapon = pashidianAx
     $ tesipizCharacter.shield = jamesianShieldTesipiz
@@ -105,6 +106,7 @@ label ectabanaAssult1:
     $ atossaCharacter.weapon = jamesianLongSword
     $ atossaCharacter.shield = jamesianShieldAtossa
     $ atossaCharacter.rangedWeapon = compositeBow
+    $ atossaCharacter.updateStats()
 
     #$ inventory = [ arrow , jarOfDirt , yellowBomb  , javelinBasic , redPotion ]
     $ changeItemAmount( inventory , arrow , 30 )
@@ -852,8 +854,8 @@ label tesipizRecuitingXerxes:
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
-    show atohappy at left, behindTable:
-    show xerxSuprized at right, behindTable:
+    show atohappy at left, behindTable
+    show xerxSuprized at right, behindTable
     show longRoyalTable:
         zoom 0.9
         ypos 0.15
@@ -877,8 +879,8 @@ label tesipizRecuitingXerxes:
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
-    show atohappy at left, behindTable:
-    show thinkXerx at right, behindTable:
+    show atohappy at left, behindTable
+    show thinkXerx at right, behindTable
     show longRoyalTable:
         zoom 0.9
         ypos 0.15
@@ -1046,8 +1048,8 @@ label tesipizRecuitingXerxes:
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
-    show ato3quatHappy at left, behindTable:
-    show thinkXerx at right, behindTable:
+    show ato3quatHappy at left, behindTable
+    show thinkXerx at right, behindTable
     show longRoyalTable:
         zoom 0.9
         ypos 0.15    
@@ -1079,8 +1081,8 @@ label tesipizRecuitingXerxes:
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
-    show ato3quatHappy at left, behindTable:
-    show thinkXerx at right, behindTable:
+    show ato3quatHappy at left, behindTable
+    show thinkXerx at right, behindTable
     show longRoyalTable:
         zoom 0.9
         ypos 0.15
@@ -1106,7 +1108,7 @@ label tesipizRecuitingXerxes:
 
     hide thinkXerx
     hide ato3quatCheeky
-    show xerxYeah at right, behindTable behind longRoyalTable:
+    show xerxYeah at right, behindTable behind longRoyalTable
     show ato3quatHappyer at hiddenLegs, behindTable behind longRoyalTable:
         ypos 0.3
         linear 0.2 ypos 0.0
@@ -1115,17 +1117,17 @@ label tesipizRecuitingXerxes:
     xerx "OK! I'll go!"
 
     hide xerxYeah
-    show xerx3quatHappyer at right, behindTable behind longRoyalTable:
+    show xerx3quatHappyer at right, behindTable behind longRoyalTable
     
     xerx "Ato'ssa"
     xerx "I'm going now."
     
     hide xerx3quatHappyer
-    show xerx3quatHappy at right, behindTable behind longRoyalTable:
+    show xerx3quatHappy at right, behindTable behind longRoyalTable
     xerx "I'll be back."
     
     hide xerx3quatHappy
-    show xerx3quatGreet at right, behindTable behind longRoyalTable:
+    show xerx3quatGreet at right, behindTable behind longRoyalTable
     xerx "Bye bye."
 
     hide ato3quatHappyer
@@ -1208,13 +1210,13 @@ label afterTheMeeting1Headpats:
     
     hide ato3quatTouchy
     hide xerx3quatGreet
-    show xerx3quatNO at right, behindTable behind longRoyalTable:
+    show xerx3quatNO at right, behindTable behind longRoyalTable
     show ato3quatHappy2 at hiddenLegs, behindTable behind longRoyalTable:
         ypos 0.0
     xerx "No touching."
     hide xerx3quatNO
     hide ato3quatHappy2
-    show xerx3quatAnnoyed at right, behindTable behind longRoyalTable:
+    show xerx3quatAnnoyed at right, behindTable behind longRoyalTable
     show ato3quatHehe at hiddenLegs, behindTable behind longRoyalTable:
         ypos 0.0 
     ato "Heheh."

@@ -1613,6 +1613,7 @@ label TakuriumFozEvening:
             "Yes":
             
                 #"Hug Volkara" #hug volkara sprite
+                $ volkaraCuddleCounterXerx += 1
                 hide xerx34LookDownSad
                 hide volkara3quat
                 show xerxWithVolkara at center , size2Thrid , duskLights:
@@ -1847,7 +1848,7 @@ label boinkTakura:
     pause 20
 
     play sound cuddles 
-    scene takuraSleepOver2L at centerAlignment , fullFit , hornyAura with Fade(2,3,1):
+    scene takuraSleepOver2L at centerAlignment , fullFit , hornyAura with Fade(2,3,1)
     pause 9
 
     $ takuraBoinks += 1
@@ -2467,7 +2468,7 @@ label gilgamoriumRebelsWin:
     show versaniz armoredPointy with dissolve
     vers "I'll wait for my cavarly reiforcements."
     show versaniz angryPose meanEyes meanHappyMouth with dissolve
-    vers "I might get an escort on a boat and land on the Fwimgyoka river past the bridge and before Chatmiak."
+    vers "I might get an escort on a boat and land on the Fwimgyoka river past the bridge and before Fima."
     show versaniz OMouth -meanEyes armoredThink
     show zagzhino pointies meanEyes sadMouth
     with dissolve

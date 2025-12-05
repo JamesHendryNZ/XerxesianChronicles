@@ -1101,7 +1101,7 @@ label ToZarat:
 label boinkSiayusi:
     scene gilgamoriumPalaceDockNorth at left , halfSize :
         xalign 0.9
-    show versanizBoinkingSiayusi at center , halfSize:
+    show versanizBoinkingSiayusi at center , halfSize
     with Fade(3,0,3)
     scene gilgamoriumPalaceDockNorth at left , halfSize , hornyAura :
         xalign 0.9

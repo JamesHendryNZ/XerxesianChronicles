@@ -1473,7 +1473,7 @@ label gotTheSoAM:
     volk "What was with the crashing and bashing?"
 
     #--------------
-    scene sandTexture:
+    scene sandTexture
 
     show swordDoorBottomOut at  lightCrystalLights:
         yanchor 1.0 ypos 1.0 xalign 0.42 zoom 0.66
@@ -1501,7 +1501,7 @@ label gotTheSoAM:
     with dissolve
     tesi "Now all we need to do is return to Ectabana and plan on killing Astarte."
 
-    scene sandTexture:
+    scene sandTexture
 
     show swordDoorBottomOut at  lightCrystalLights:
         yanchor 1.0 ypos 1.0 xalign 0.42 zoom 0.66

@@ -278,6 +278,8 @@ label sleepAtAtossaNoIntro:
     with dissolve
     ato "Or do you want to sleep on the floor as usual."
 
+    call sleepyTimeReset from _call_sleepyTimeReset_1
+
     menu:
         "I'm sleeping on the floor Ato'ssa":
             hide atohappy
@@ -604,7 +606,7 @@ label dinnerWithAtossaFromDay:
                 with dissolve
                 xerx "Fighting giant sand fish has worn me out a bit."
                 hide ato3quatHappy2
-                show ato3quatCurious at atoRight:
+                show ato3quatCurious at atoRight
                 with dissolve
                 ato "Sand fish?"
 
@@ -2255,7 +2257,7 @@ label atossaSadMadRant:
     show zyaryaDed at center:
         rotate 80
         ypos 1.8
-    show littleAtoShocked at middleStand, size08 behind zyaryaDed:
+    show littleAtoShocked at middleStand, size08 behind zyaryaDed
     with fade
     ato "Mahmy!?"
     ato "Zyarya??"
@@ -3098,8 +3100,7 @@ label nextMorningAtAtossasHouse:
 
 label nextMorningAtAtossasHouseSeperateSleep:
 
-    $ IsDaytime = True
-    $ timeTime = 0
+
     scene ectabanaEstablishingMorning with fade:
         ypos -2.0
         xpos -1.0
@@ -3742,7 +3743,7 @@ label ratsGoByebye:
     #play minigame
     #score effects dialog
     #ends with modified sleep time
-    call sleepyTimeReset from _call_sleepyTimeReset_1  
+    $ xerxesCharacter.resurrect() 
     $ atossaCharacter.resurrect()
     $ atossaCharacter.updateArmor( 0 )
     $ xerxesCharacter.updateArmor( 0 )
@@ -3998,10 +3999,10 @@ label lateRats:
 
     $ projectiles.clear()
     scene starNightTime at fullFit
-    show rodentsAllyWayOutsideNight at size2Thrid , fullFit, center:
-    show eliteAtossaGuard1 at xerxLeftLeft , size2Thrid , lightCrystalLights:
-    show eliteAtossaGuard2 at tesiRight , size2Thrid , lightCrystalLights:
-    show shahhriitStand at hiddenLegs , size08 , lightCrystalLights:
+    show rodentsAllyWayOutsideNight at size2Thrid , fullFit, center
+    show eliteAtossaGuard1 at xerxLeftLeft , size2Thrid , lightCrystalLights
+    show eliteAtossaGuard2 at tesiRight , size2Thrid , lightCrystalLights
+    show shahhriitStand at hiddenLegs , size08 , lightCrystalLights
     with fade
 
     #"Shahriit is sent to collect Xerx and ato."
@@ -4078,7 +4079,7 @@ label secondAtossaSleepOver:
         $ headPatCounter += 2
     
     #character moments are done on the first will be skipped
-    
+    call sleepyTimeReset from _call_sleepyTimeReset_2
     $ hungWithAtossa = True
     play music happyAtoTheme if_changed fadein 1.0 fadeout 1.0
     scene starNightTime:
@@ -4154,8 +4155,8 @@ label nextMorningAtXerxesHouse1:
     if keys == 2 and lakatinuTalks == 0:
         call bardaiyaMad1 from _call_bardaiyaMad1_4
 
-    $ IsDaytime = True
-    $ timeTime = 0
+    call sleepyTimeReset from _call_sleepyTimeReset_13
+
     #ato'ssa without her hat and cape.
     #some emotions as weel
 
@@ -4375,7 +4376,6 @@ label nextMorningAtXerxesHouse1:
             xerx "{i}Looks like Ato'ssa paid me a visit last night.{/i}"
 
             #ato'ssa wakes up
-            #TODO for version 0.1.5 - add in note with money and ammo or food as reward. Changed Adaption of page 20
             hide atohappyHalfNekkedEyesClosed
             show atohappyHalfNekkedEyesHalf at xerxLeftLeft , size08:
                 ypos 0.6
@@ -4549,7 +4549,7 @@ label leaveEctabana:
 
     #$ IsDaytime = True
     
-    call sleepyTimeReset from _call_sleepyTimeReset_2  
+ 
 
     if keys == 2 and lakatinuTalks == 0:
         call bardaiyaMad1 from _call_bardaiyaMad1_5
@@ -4821,8 +4821,8 @@ label xerxesSleepOver2ndVisit:
 
     if atossaCharacter in currentParty and killedRatsWithAtossa is False:
 
-        $ IsDaytime = True
-        $ timeTime = 0
+        call sleepyTimeReset from _call_sleepyTimeReset_14
+
         play sound cuddles
         scene xerxBedWithAtossa2 at fullFit with fade
         pause 5
@@ -4993,8 +4993,7 @@ label xerxesSleepOver2ndVisit:
                 with dissolve
                 xerx "GoodNight Atossa."
 
-                $ IsDaytime = True
-                $ timeTime = 0
+                call sleepyTimeReset from _call_sleepyTimeReset_15
 
                 play sound sleepss
                 scene xerxBedXerx at fullFit with fade
@@ -5011,8 +5010,7 @@ label xerxesSleepOver2ndVisit:
                 xerx "Good Night Ato'ssa."
                 $ headPatCounter += 3
 
-                $ IsDaytime = True
-                $ timeTime = 0
+                call sleepyTimeReset from _call_sleepyTimeReset_16
 
                 play sound sleepss
                 scene xerxBedXerx at fullFit with fade
@@ -5049,8 +5047,7 @@ label xerxesSleepOver2ndVisit:
                 pause 5
                 scene lakeview at fullFit with fade
 
-                $ IsDaytime = True
-                $ timeTime = 0
+                call sleepyTimeReset from _call_sleepyTimeReset_17
                 jump EctabanaMenu
             "No. You can get closer to me tonight." if headPatCounter > 10:
 
@@ -5157,8 +5154,7 @@ label xerxesSleepOver2ndVisit:
                 xerx "{i}I hope those go away{/i}"
                 xerx "{i}It has been 10 years. He won't come back.{/i}"
                 
-                $ IsDaytime = True
-                $ timeTime = 0
+                call sleepyTimeReset from _call_sleepyTimeReset_18
 
                 
                 scene xerxBedInAtossa at fullFit with fade

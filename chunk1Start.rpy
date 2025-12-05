@@ -456,8 +456,8 @@ label stoneBench:
             zoom 0.8
             ypos -0.9
 
-        show eliteAtossaGuard1 at right, behindTable:
-        show eliteAtossaGuard2 at left, behindTable:
+        show eliteAtossaGuard1 at right, behindTable
+        show eliteAtossaGuard2 at left, behindTable
         show shahhriitPointFoward at hiddenLegs:
             zoom 0.8
         with dissolve
@@ -664,8 +664,8 @@ label atoshorttime:
 
     hide ato3quatExicted
     hide xerx3quatHappyer
-    show xerx3quatHappy at right, regularSize:
-    show ato3quatHappy at left, regularSize:
+    show xerx3quatHappy at right, regularSize
+    show ato3quatHappy at left, regularSize
     with dissolve
     xerx "O.K"
     xerx "Lets talk to Darius."
@@ -780,8 +780,8 @@ label meetDarius1:
             ypos -0.7
             xpos -0.5
 
-        show neutralHappyXerxes at right, regularSize:
-        show atohappy2 at left, regularSize:
+        show neutralHappyXerxes at right, regularSize
+        show atohappy2 at left, regularSize
         with dissolve
         ato "Yeah"
         hide atohappy2
@@ -804,7 +804,7 @@ label meetDarius1:
             darius "\(Once you've delt with your curse.\)"
             hide happyDarius
         else:
-            show atohappy at left, regularSize:
+            show atohappy at left, regularSize
             ato "He spent time with me."
             scene etcabanaPalaceEntrance:
                 zoom 0.7
@@ -885,15 +885,15 @@ label dariusMeeting1:
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
-    show atohappy at left, behindTable:
-    show thinkXerx at right, behindTable:
+    show atohappy at left, behindTable
+    show thinkXerx at right, behindTable
     show longRoyalTable:
         zoom 0.9
         ypos 0.15
     with dissolve
     xerx "Are we going to force all the water up but keep the Astart controlled parts bone dry?"
 
-    scene dariusDinnerDoor at bigroom:
+    scene dariusDinnerDoor at bigroom
     show happyDarius at hiddenLegs:
         zoom 0.8
     show shortRoyalTable:
@@ -917,13 +917,13 @@ label dariusMeeting1:
     darius "The water there is salty"
 
     stop sound
-    scene dariusDinner at bigroom:
+    scene dariusDinner at bigroom
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
     show ato3quatHappy at left, behindTable:
         xzoom -1
-    show xerx3quatHappyCrossArms at right, behindTable:
+    show xerx3quatHappyCrossArms at right, behindTable
     show longRoyalTable:
         zoom 0.9
         ypos 0.15
@@ -934,7 +934,7 @@ label dariusMeeting1:
         xzoom -1
     ato "Leaving them with the extra salt of course."
 
-    scene dariusDinnerDoor at bigroom:
+    scene dariusDinnerDoor at bigroom
 
     show happyDarius at hiddenLegs:
         zoom 0.8
@@ -952,12 +952,12 @@ label dariusMeeting1:
 
     darius "The Magic Water System will force sea water through the ground and purify it."
 
-    scene dariusDinner at bigroom:
+    scene dariusDinner at bigroom
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
-    show ato3quatMiniExict at left, behindTable:
-    show xerx3quatHappyCrossArms at right, behindTable:
+    show ato3quatMiniExict at left, behindTable
+    show xerx3quatHappyCrossArms at right, behindTable
     show longRoyalTable:
         zoom 0.9
         ypos 0.15
@@ -980,9 +980,9 @@ label dariusMeeting1:
 
     hide ato3quatHappy xerx3quatPoint
 
-    show xerxSuprized at right, behindTable behind longRoyalTable:
+    show xerxSuprized at right, behindTable behind longRoyalTable
 
-    show atoSuprized at left, behindTable behind longRoyalTable:
+    show atoSuprized at left, behindTable behind longRoyalTable
     with dissolve
     play music "<from 0 to 5.82>audio/music/Under Attack.ogg" fadein 1.0
     "ASTART FORCES ARE ATTACKING THE CITY!!!"

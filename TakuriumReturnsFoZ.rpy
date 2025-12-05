@@ -1367,7 +1367,7 @@ label takuriumFozPart1:
             else:
                 show xerxPointBackArmored at xerxLeft , lightCrystalLights
             xerx "That would be Princess Ato'ssa."
-            scene ahriteSky at fullFit:
+            scene ahriteSky at fullFit
             show takuriumEntraceAhrites at backgroundSetPlace
             show xerxCarryingAhriteAtossa at middleStand , size08 , ahriteBright
             with dissolve

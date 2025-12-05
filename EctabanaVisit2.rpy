@@ -155,7 +155,7 @@ label ectabanaAfterGettingDaSoAM:
     #----------------------------------------------------
 
     play music planingTime fadein 1.0 fadeout 1.0
-    scene dariusDinner at bigroom:
+    scene dariusDinner at bigroom
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
@@ -168,7 +168,7 @@ label ectabanaAfterGettingDaSoAM:
     xerx "Now."
     xerx "What are we doing next?"
 
-    scene dariusDinnerDoor at bigroom:
+    scene dariusDinnerDoor at bigroom
 
     show happyDarius at hiddenLegs, size08
     show shortRoyalTable:
@@ -198,7 +198,7 @@ label ectabanaAfterGettingDaSoAM:
     with dissolve
     xerx "Why don't we just ignore him and just go straight for Astarte!?"
 
-    scene dariusDinnerDoor at bigroom:
+    scene dariusDinnerDoor at bigroom
 
     show dariusWorried at hiddenLegs, size08
     show shortRoyalTable:
@@ -278,7 +278,7 @@ label ectabanaAfterGettingDaSoAM:
     volk "Should we go to Zarat?"
     volk "Or Should we risk it with the Astarts."
 
-    scene dariusDinner at bigroom:
+    scene dariusDinner at bigroom
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
@@ -353,7 +353,7 @@ label ectabanaAfterGettingDaSoAM:
 
             tesi "Becuase we have already sent troops to Takurium and we can get the anti-stealth tablet pieces that are in Astart territory."
         else:
-            tesi "Because Sakuna is dead, we should capture Takurium before the Summoner comes back and restablish his presence there."
+            tesi "Because Sakuna is dead, we should capture Takurium before the Summoner comes back and restablishes his presence there."
 
         hide tesipizPointingUp
         show tesipizHappy at tesiRight behind longRoyalTable
@@ -363,7 +363,7 @@ label ectabanaAfterGettingDaSoAM:
         elif takuraCuddles != 0:
             tesi "And Lady Takura needs our help."
 
-        scene dariusDinner at bigroom:
+        scene dariusDinner at bigroom
         show bronzeFigureTable:
             zoom 0.7
             ypos 0.1
@@ -411,7 +411,7 @@ label ectabanaAfterGettingDaSoAM:
         with dissolve
         tesi "We can fight the Zardonians later."
 
-        scene dariusDinnerDoor at bigroom:
+        scene dariusDinnerDoor at bigroom
 
         show dariusNeutral at hiddenLegs, size08
         show shortRoyalTable:
@@ -425,7 +425,7 @@ label ectabanaAfterGettingDaSoAM:
         menu:
             "Go west, Help the Zaratians":
                 play music happyAtoTheme fadein 1.0 fadeout 1.0
-                scene dariusDinner at bigroom:
+                scene dariusDinner at bigroom
                 show bronzeFigureTable:
                     zoom 0.7
                     ypos 0.1
@@ -442,7 +442,7 @@ label ectabanaAfterGettingDaSoAM:
                 xerx "While the agreement was to not intervene, a small {i}\"rouge\"{/i} group involvement shouldn't upset the Zardonians."
             "Go east and secure Takurium for good" if takuriumOwner == "Jamesians" : 
                 play music sandHero fadein 1.0 fadeout 1.0
-                scene dariusDinner at bigroom:
+                scene dariusDinner at bigroom
                 show bronzeFigureTable:
                     zoom 0.7
                     ypos 0.1
@@ -461,7 +461,7 @@ label ectabanaAfterGettingDaSoAM:
                 $ goingEast = True
             "Go east and claim Takurium before that summoner comes back." if takuriumOwner == "Krokkosnek" : 
                 play music OnDaAttack fadein 1.0 fadeout 1.0
-                scene dariusDinner at bigroom:
+                scene dariusDinner at bigroom
                 show bronzeFigureTable:
                     zoom 0.7
                     ypos 0.1
@@ -485,7 +485,7 @@ label ectabanaAfterGettingDaSoAM:
                 $ goingEast = True
         
         if goingEast:
-            scene dariusDinner at bigroom:
+            scene dariusDinner at bigroom
             show bronzeFigureTable:
                 zoom 0.7
                 ypos 0.1
@@ -510,7 +510,7 @@ label ectabanaAfterGettingDaSoAM:
                     $ headPatCounter += 1
     else:
         play music happyAtoTheme fadein 1.0 fadeout 1.0 if_changed
-        scene dariusDinner at bigroom:
+        scene dariusDinner at bigroom
         show bronzeFigureTable:
             zoom 0.7
             ypos 0.1
@@ -528,7 +528,7 @@ label ectabanaAfterGettingDaSoAM:
     #ato'ssa might join Xerxes if headPatCounter is high enough.
     #if so she'll need horsey graphics 
     play music happyAtoTheme fadein 1.0 fadeout 1.0 if_changed
-    scene dariusDinner at bigroom:
+    scene dariusDinner at bigroom
     show bronzeFigureTable:
         zoom 0.7
         ypos 0.1
@@ -584,7 +584,7 @@ label ectabanaAfterGettingDaSoAM:
 
     else:
 
-        scene dariusDinner at bigroom:
+        scene dariusDinner at bigroom
         show bronzeFigureTable:
             zoom 0.7
             ypos 0.1
