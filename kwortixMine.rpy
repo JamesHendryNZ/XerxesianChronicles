@@ -201,7 +201,7 @@ label kwortixMineSection:
             tesi "It's almost dark."
             tesi "We should go and sleep at Kwortix first."
             hide tesipiz34MiniCommanding
-            show tesipiz34NeutralHappy at tesiRight , duskLights:               
+            show tesipiz34NeutralHappy at tesiRight , duskLights               
             tesi "The Abandoned Mines wont go anywhere"
             menu:
                 "Sure. We can explore the Abandoned Mine tomorrow":
@@ -420,7 +420,7 @@ label enterKwortixMineThroughRocks:
             scene kwortixMineFromFrontNight at nightLights: 
                 zoom 0.7
             show annoyedXerx at xerxLeftLeft , nightLights
-            show tesipizNeutralHappy at tesiRight , nightLights:
+            show tesipizNeutralHappy at tesiRight , nightLights
 
     with dissolve    
     xerx "Ooooahh!!"
@@ -625,7 +625,7 @@ label enterKwortixMineThroughRocks:
 
             else:
                 show annoyedXerx at xerxLeftLeft
-                show tesipizSlightlyAnnoyed at tesiRight , nightLights:
+                show tesipizSlightlyAnnoyed at tesiRight , nightLights
         
         tesi "Damn!"
         tesi "We ran out of bombs!!"
@@ -680,7 +680,7 @@ label enterKwortixMineThroughRocks:
                         scene kwortixMineFromFrontNight at nightLights: 
                             zoom 0.7
                         show xerx3quatHappy at xerxLeft
-                        show tesipizNeutralHappy at right , tesiRight , nightLights:                
+                        show tesipizNeutralHappy at right , tesiRight , nightLights               
                 with dissolve
                 xerx "There's some footprints."
                 xerx "They might lead to another entrance."
@@ -1954,7 +1954,7 @@ label fightTheShataFurbals:
         
         xpos -0.5
         ypos -0.0
-    show muwaYummy at centerAlignment , muwaAtBench , lightCrystalLights:
+    show muwaYummy at centerAlignment , muwaAtBench , lightCrystalLights
     with dissolve
     #need to position and and scaling on muwa in testing.
     muwa "Hahahah!"
@@ -2942,7 +2942,7 @@ label mainPoolInMine:
         menu:
             "Maybe the Fire place has the key?":
                 jump kwortixFireRoom
-            "Their was another door. Maybe search there?":
+            "There was another door. Maybe search there?":
                 jump DoggoRoom
             "The Key might in the water collection zone right next to the door.":
                 jump waterCollection
@@ -4326,9 +4326,9 @@ label kwortixMotel:
                         if IsDaytime:
                             show tazatuHappy at tazatubehindBench behind kwortixMotelBench  
                         elif isDusk:
-                            show tazatuHappy at tazatubehindBench , duskLights 
+                            show tazatuHappy at tazatubehindBench , duskLights behind kwortixMotelBench  
                         else:
-                            show tazatuHappy at tazatubehindBench , lightCrystalLights 
+                            show tazatuHappy at tazatubehindBench , lightCrystalLights behind kwortixMotelBench  
 
                         tazatu "That's O.K"
                         tazatu "I'm sure you can find money in the mines."
@@ -5180,14 +5180,14 @@ label kwortixMotelShop:
         hide tazatuHappy
             
         if IsDaytime:
-            show tazatuSad at tazatubehindBench behind kwortixMotelBench:
+            show tazatuSad at tazatubehindBench behind kwortixMotelBench
  
         elif isDusk:
-            show tazatuSad at tazatubehindBench , duskLights behind kwortixMotelBench:
+            show tazatuSad at tazatubehindBench , duskLights behind kwortixMotelBench
 
 
         else:
-            show tazatuSad at tazatubehindBench , nightLights behind kwortixMotelBench:
+            show tazatuSad at tazatubehindBench , nightLights behind kwortixMotelBench
 
 
                     
@@ -5292,7 +5292,7 @@ label kwortixMotelShop:
     elif _return == 2:
         hide tazatuHappy
 
-        show tazatuMad at tazatubehindBench behind kwortixMotelBench:
+        show tazatuMad at tazatubehindBench behind kwortixMotelBench
 
         if kwortixMotelAngry >= 5:
             show tazatuMad at tazatubehindBench behind kwortixMotelBench:
