@@ -56,7 +56,7 @@ label sakunaBattleStart:
             else:
                 scene starNightTime:
                     fit "cover"
-                show takuriumArenaEstablishingSouth at centerAlignment:
+                show takuriumArenaEstablishingSouth at centerAlignment , darkNight:
                     zoom 0.5
     
     with fade
@@ -212,7 +212,7 @@ label sakunaBattleStart:
                 xpos 0.52 
         hide krokkosnekGrand
         with dissolve
-        krok "As well as alot of monsters"
+        krok "As well as a lot of monsters"
         krok "Will the jamesians get to explore the cavernous depths of Sakuna!!"
 
         
@@ -2772,7 +2772,7 @@ label sakunaDoomed:
                     hide tesipiz34HappyArmored
                     with dissolve
                     tesi "Well we defeated the summoner"
-                    tesi "There won't be any monster to worry about."
+                    tesi "There won't be any monsters to worry about."
                     menu:
                         "O.K":
                             if IsDaytime:
