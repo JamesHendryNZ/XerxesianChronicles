@@ -3,6 +3,7 @@ default desgueFoiled = False
 default sussyBakaLevel = 0
 default imposterLevel = 20
 default canGetFoodAtMessHall = True
+default foundMuwa = False
 
 #list of items for diconary for items??
 #only for genric items
@@ -76,6 +77,8 @@ label balaAxeriumSneakyFoZ:
 
     with fade
     mali "Now we need you to get you inside the palace." 
+    mali "Use this."
+    $ changeByAmount( inventory , harpoonLauncher , 1 ) #the zardonian harpoon launcher
     mali "You can grapple to the 2nd floor"
     mali "Then you can find the Anti-Stealth tablet piece."
     mali "You are Balatiu's slave girls, so you should try to act like them."
@@ -141,6 +144,23 @@ label balaPalace2ndFloor:
         menu:
             "Check the Rooms":
                 "Open and click objects"
+                "Find some items"
+                if muwaCuddleCounter > 0:
+                    tesi "Hey it's Muwa."
+                    muwa "You know me?"
+                    tesi "Yes."
+                    #volka jabs tesi
+                    volk "Ahem.."
+                    tesi "My brother told me about you."
+                    tesi "Do you know a man named Tesipiz."
+                    $ sussyBakaLevel += 2
+                    muwa "He must be sad."
+                    muwa "He lost both a fluffy friend and a sister."
+                    muwa "Psst."
+                    muwa "Don't tell anyone."
+                    muwa "But there is a secret key to a vult."
+                    muwa "Where the stars can be clearly watched."
+                    $ foundMuwa = True
             "Go to the mess hall":
                 jump balaPalaceHaremMessHall
             "Go up a floor":
@@ -157,6 +177,7 @@ label balaPalace2ndFloor:
 label balaPalaceHaremMessHall:
     "this is where the food is"
     "get some food."
+    #harem cook lady
     if desgueFoiled:
         "Get those Jamesians!!"
         "battle time"
@@ -164,7 +185,7 @@ label balaPalaceHaremMessHall:
         jump balaPalace2ndFloor
     else:
         menu:
-            "Eat some food" if canGetFoodAtMessHall:
+            "Get some food" if canGetFoodAtMessHall:
                 "om nom nom"
                 $ canGetFoodAtMessHall = False
 
@@ -221,7 +242,11 @@ label balaBootyRoom:
 
     tesi "Loot at that loot."
     #lookies
-    volk "Some weapons."
+    volk "Some weapons." #they switch to these weapons
+    #chaing weapons or just have graphics
+    #graphics
+    #what weapons would fem tesi and volk have?
+    #sword (balatius') for volk and mace and shield for tesi
     tesi "Some idols of their gods."
     volk "Incense sticks."
     tesi "Lots of gold and siver."
@@ -253,31 +278,31 @@ label balaTemple:
     "maybe other gods as well."
     #astart priestesss is based here
     if desgueFoiled:
-        "It's those jamesian assassins!"
-        "summons minobites"
-        "Prepare to become broken slaves!!"
-        "loot stuff"
+        haremSum "It's those jamesian assassins!"
+        haremSum "summons minobites"
+        haremSum "Prepare to become broken slaves!!"
+        haremSum "loot stuff"
         jump balaPalace3rdFloor
     else:
         menu:
             "Investigate Objects":
                 "lookeses"
                 "Astart priesstess asks what you're doing here"
-                "I haven't seen you two before"
-                "You must be new slave girls."
-                "I guess soon you will be stuffed with the servants of Astarte's essence soon"
+                haremSum "I haven't seen you two before"
+                haremSum "You must be new slave girls."
+                haremSum "I guess soon you will be stuffed with the servants of Astarte's essence soon"
                 if sussyBakaLevel > imposterLevel:
-                    "Wait...."
-                    "You have alot of items on you."
-                    ""
-                    "You're not slave girls."
-                    "You're theives and or assassins!!"
+                    haremSum "Wait...."
+                    haremSum "You have alot of items on you."
+                    haremSum ""
+                    haremSum "You're not slave girls."
+                    haremSum "You're theives and or assassins!!"
                     with vpunch
-                    "she summons minobites"
-                    "Well!"
-                    "Not yet anyway!"
-                    "Khakhah!"
-                    "Time to get broken!!"
+                    "she summons minobites" #make summoning 
+                    haremSum "Well!"
+                    haremSum "Not yet anyway!"
+                    haremSum "Khakhah!"
+                    haremSum "Time to get broken!!"
                     #battle happends
                     #looting happends
                     $ desgueFoiled = True
