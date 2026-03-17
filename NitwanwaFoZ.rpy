@@ -1399,7 +1399,7 @@ label krokkosnekInTakurium:
             hide wholeAssTable
             hide sutsshakIdol
             hide krokkosnekHappy
-            show krokkosnekGrand at middleStand , size08:
+            show krokkosnekGrand at middleStand , size08
             with dissolve
             krok "As expected they destroyed the Astarte statue but left my Sutsshak alone."
             hide krokkosnekGrand

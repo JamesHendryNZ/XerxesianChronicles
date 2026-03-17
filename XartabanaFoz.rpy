@@ -18,12 +18,57 @@ default xartabanaShopItems = []
 #A Personal Curse Lifted is
 
 label toXartabanaFoz:
+    call lowerJamesosRealmMap 
+    
     #animate Xerxes going to Xartabana via Yineh
+    #co for xerx
+    show xerx3HorseHappy at tenthSize:
+        xanchor 1.0 yanchor 1.0
+        xpos 0.113 ypos 0.403
+        linear 1 xpos 0.094 ypos 0.407
+        linear 3 xpos 0.092 ypos 0.46
+        linear 3 xpos 0.13 ypos 0.583
+        linear 2 xpos 0.125 ypos 0.66
+        linear 1 xpos 0.184 ypos 0.667
+    #0.113 , 0.403 - 0
+    #0.094, 0.407 - 0.1 1
+    #0.092, 0.46 - 0.3 4
+    #0.13, 0.583 - 0.3 7
+    #0.125, 0.660 - 0.2 9
+    #0.184, 0.667 - 0.1 10
+
+
+    #animate jaka camel girl
+    show jakaCamelLancer at tenthSize:
+        xanchor 1.0 yanchor 1.0
+        xpos 0.0 ypos 0.689
+        linear 6 xpos 0.11 ypos 0.713
+        linear 2 xpos 0.176 ypos 0.664
+        linear 2 xpos 0.211 ypos 0.689
+
+    #0 - 0.0 , 0.689 - 0
+    #6 - 0.11, 0.713 - 6 6
+    #2 - 0.176, 0.664 - 2 8
+    #2 - 0.211, 0.689 - 2 10
+    with fade
+    pause 12
+    "animations done - debug remove"
     #jaka camel lancer lady is pushed out and flees via the same bridge
+
+    scene clearDayTime at fullFit
+    show rockyDesertBridge:
+        xalign 0.4 yalign 0.7
+    
+    show khopeshCommander at right, size2Thrid:
+        xpos 1.3
+    
+    
+    
     #Astart forces have occupied the bridge for another assult on Yineh
     #they encounter Xerxes and friends
     #dido is on a camel - she is a tier 2 camel warrior for astart empire?
     #or an ostrich
+    #she is a khopesh warrior on foot for now
     astRaid "The Jamesians pushed us out of Suwa and Hyengmeish."
     #an oppertunity to have a decition
     volk "The are a lot of astarts are guarding the Dzenyash Bridge."
@@ -37,7 +82,7 @@ label toXartabanaFoz:
             dido "He's just got two people with him!"
             dido "Get him before he escapes!!"
             #battle happends
-            #Atazera intoduces herself with a scythed chariot
+            #Atazera intoduces herself with a scythed chariot and cavarly
             dido "BACK XERXES!!"
             dido "I'M WARNING YOU"
             #thonk
@@ -108,7 +153,7 @@ label atazeraMeetFoz:
     xerx "Bala-Axerium and Balatius."
     xerx "How well is your war against him?"
 
-    ataz "The usuall"
+    ataz "The usuall."
     ataz "I haven't been able to take out the fortresses guarding Bala-Axerium."
     xerx "O.K"
     
@@ -180,7 +225,7 @@ label atazeraMeetFoz:
             ataz "And that's why I need you to do it."
             ataz "They won't be expecting it."#does atazera know about magic sword binding?
             ataz "And you'll act natural."
-            ataz "You can't fool people with honesty."
+            ataz "You can fool people with honesty."
 
             tesi "There's a sex changing spell?"
             xerx "Yes Tesipiz."
@@ -219,46 +264,15 @@ label atazeraMeetFoz:
             ataz "And two is better then one."
 
             volk "Curses."
-            #they do their thing
-
-            #xerxes turn tesipiz into a lady before turning himself into one
-
-            #they reviel their slave dancer outfits
-            tesi "I look nice." #while feeling him/herself
-
-            ataz "Tesipiz you need to act more unwilling."
-            tesi "Oh. O.K"
-            tesi "Noo!"
-            tesi "I'm sexy."
-
-            xerx "Don't worry Atazera."
-            xerx "Give him time."
-            xerx "He'll start hating it soon."
-
-
-            if checkIfHaveType( inventory , "grapple" ) is False:
-                ataz "Tesipiz and Volkara"
-                ataz "You need to grapple to the upper floors"
-                ataz "This will help you."
-                $ changeByAmount( inventory , harpoonLauncher , 1 ) #the zardonian harpoon launcher
-
             
+            call trioTurnIntoGirlsInXartabana
+
             if IsDaytime:
                 ataz "We'll go when it's night time."
             else:
                 ataz "We'll go to now."
 
-            mali "Hello ladies."
-            mali "I'll be leading you into the Bala-Axerium."
-            mali "If I yank your chains, I'm just acting, understood."
-
-            ataz "Also Xerxes."
-            ataz "Try to avoid calling the Sword of Ahura-Mazda until either Tesipiz and Volkara break into the throne room or you hear a large bang."
-            ataz "Timing will be inportant."
-
-            $ sleepyTimeReset()
-            $ IsDaytime = False
-            jump balaAxeriumSneakyFoZ
+            jump malikGetsDaLadies
 
         "The ghosts of Makkabium won't mind if we look around":
             $ enteringFrom = "Xarta2Makkabium"
@@ -322,6 +336,18 @@ label xartabanaMenu:
                     xerx "You're strong."
                     xerx "I'll be with you."
             jump makkabiumFoZ1
+        "Leave Xartabana" if enteringFrom == "XartabanaLast":
+            xerx "We're leaving. Atazera."
+            tesi "Good luck finishing off the Astarts"
+            volk "We'll see you soon."
+            ataz "You too Xerxes, Tesipiz and Atazera."
+            #map of attacks
+            #kwafwim and ssayu fall
+            "{b}Next part will come in Version 0.3.0"
+            return
+
+            
+
 
 label sleepXartabanaFoZ:
     #sleep graphic
@@ -344,8 +370,8 @@ label shopXartabana: #will be the only shop for both the Bala-Axerium and Makkab
         ypos 1.0
     show shopZaratShopCounter at truecenter , size08
     with fade
-    chya "Welcome to Royal Zarat Camp Shop."
-    chya "I have many goods that can help you slay those pesky Zardonians."
+    chya "Welcome to Xartabana Palace Shop."
+    chya "I have many goods that can help you deal with the Astarts."
     show chyaazi -greet with dissolve
     chya "What do you need?"
     $ isAngryXartabanaShop = False
@@ -431,7 +457,7 @@ label shoppingXartabana:
             show chyaazi angryMouth meanEyes mad at angryColored with dissolve:
                 ypos 1.4 zoom 1.5
             show shopZaratShopCounter behind chyaazi
-            chya "We Zaratians don't have that much."
+            chya "I still need to make money."
             chya "I can't give you free stuff."
 
             jump xartabanaMenu
@@ -441,12 +467,256 @@ label shoppingXartabana:
         chya "See you soon."
         jump xartabanaMenu    
 
+label makkaBala:
+    #$ enteringFrom = "Xarta2BalaAxerium"
+    if checkIfHave( inventory , tabletPieceGil ) & checkIfHave( inventory , tabletPieceZar ):
+        "movie time"
+    #map moving shot
+    #establsihg shot
+    else:
+        call yusinziaRebels
+    #map moving shot
+    #establsihg shot
+    ataz "Welcome back you three."
+    ataz "I've got a plan as to how we're getting you inside Bala-Axerium."
+
+    ataz "Xerxes has binded the Sword of Ahura-Mazda to him, right?"
+    volk "Yes he has."
+    ataz "Good."
+
+    ataz "That'll make the smuggling easier."
+    
+    ataz "All though."
+    ataz "You won't like this Xerxes."
+
+    xerx "Not that."
+    ataz "Yes that."
+    tesi "What's that."
+
+    ataz "Xerxes knows how to change his body's sex."
+    tesi "You can do that?"
+    xerx "Yes."
+    xerx "I can teach you so I don't have to go."
+    tesi "when did you learn?"
+    xerx "Because the Ahrimaniom was able to use it on me."
+
+    xerx "THE 5 HELLS!!"
+    with vpunch
+
+    xerx "I was able to return back when I learned the spell."
+    xerx "I can teach you, so you can destract Balatius instead."
+    xerx "Or use Volkara since she is a girl to begin with."
+    xerx "I like being a boy."
+
+    ataz "All of you are going to sneak into Bala-Axerium as dancing slaves."
+
+    volk "All of us?"
+
+    ataz "Yes."
+    ataz "Xerxes."
+    ataz "Teach Tesipiz the spell."
+
+    ataz "You don't need to do it now."
+    
+    
+    #next day
+
+    ataz "You'll need to destract him long enough for my \"astarts\" to do their thing and bring an end to Bala-Axerium."
+    ataz "Balatius won't know what hit it."
+
+    ataz "I'll attack the fort towns inbetween here and Bala-Axerium to help"
+    
+    xerx "Do I have to do this?"
+    ataz "Yes"
+    ataz "Now turn you and Tesipiz into ladies."
+
+    
+
+    call trioTurnIntoGirlsInXartabana
+    
+    if IsDaytime:
+        ataz "Because my plan will start at dusk."
+        ataz "You can rest and prepare"
+        ataz "It will be a long night."
+    else:
+        ataz "Because my plan will start next dusk."
+        ataz "It will be a long night."
+        ataz "So you should rest."
+    
+        "Sleeps"
+        $ sleepyTimeReset()
+    ataz "It's time you three."
+    jump malikGetsDaLadies
+
+label malikGetsDaLadies:
+    mali "Hello ladies."
+    mali "I'll be leading you into the Bala-Axerium."
+    mali "If I yank your chains, I'm just acting, understood."
+
+    ataz "Also Xerxes."
+    ataz "Try to avoid calling the Sword of Ahura-Mazda until either Tesipiz and Volkara break into the throne room or you hear a large bang."
+    ataz "Timing will be inportant."
+
+    $ sleepyTimeReset()
+    $ IsDaytime = False
+    jump balaAxeriumSneakyFoZ
+
+label trioTurnIntoGirlsInXartabana:
+
+    #they do their thing
+
+    #xerxes turn tesipiz into a lady before turning himself into one
+
+    #they reviel their slave dancer outfits
+    with fade
+    tesi "I look nice."#feeling himself
+    if muwaCuddleCounter <= 0 and takuraCuddles <= 0 and tsekreiCuddles <= 0 and not tsekreiDating:
+        tesi "Maybe I can be own girlfirend."
+        tesi "Heheh!"
+        ataz "You need to act more natural Tesipiz."
+        tesi "Oh no!"
+        tesi "I'm my own sexy girlfriend."
+        volk "No."
+        volk "You'll be someone else's sexy girlfriend."
+        #tesi's face
+        ataz "Thanks Volkara"
+    else:
+        tesi "Although."
+        if muwaCuddleCounter > takuraCuddles and muwaCuddleCounter > tsekreiCuddles:
+            tesi "I don't think Muwa would like it."
+        elif takuraCuddles > muwaCuddleCounter and takuraCuddles > tsekreiCuddles:
+            tesi "I don't think Lady Takura would like it." 
+        elif tsekreiCuddles > muwaCuddleCounter and tsekreiCuddles > takuraCuddles:
+            tesi "I don't think Tsekrei would like it."
+        
+    return
+
 label winXartabanaFoZ:
-    "Winner winner chickin dinner"
-    "Maybe have Atazera's backstroy revealed here for pacing reasons."
+    $ enteringFrom = "XartabanaLast"
+    ataz "You're back!"
+    ataz "Malik told me about what happend in Bala-Axerium."
+
+    ataz "Thank you for taking King Balatius and his city out."
+    ataz "The remaning forts and towns will surrender soon enough."
+    ataz "And we can start prepping the Magic Water System."
+    #maybe show some jamesian magi
+
+    tesi "King Darius wants to deal with Bardaiya before we start implementing the Magic Water System."
+    tesi "We don't know if he can stealth into Axeria."
+    ataz "Me and my forces will defend the magi."
+    ataz "Brining water to the parts of the Jamesos Realm that we control will do more damage to Astart morale and faith then any lord slaying and city razing."
+    ataz "We'll make it seem like Astart is punishing her own loyal followers."
+    ataz "As if she was loyal to her followers anyway."
+
+
+    $ sleepyTimeReset()
+    call atazeraBackstroy
+    volk "O.K"
+    xerx "Well."
+    xerx "I'll be needed in Zarat to collect the two Anti-Stealth Tablet pieces there and end the war against the Zardonians."
+    xerx "So I'll advise against starting the Magic Water System until we're truly ready to fight Astarte."
+    ataz "I understand."
+    ataz "But we should still prepare though."
+    xerx "You can prepare, and even take out the remaning Astart forts and towns."
+    xerx "Darius is already setting up the nodes."
+    xerx "So you should focus on setting up nodes between Axeria, Takuria and Zwotia."
+
+    ataz "I'll talk to General Megabazus and King Darius about this."
+    ataz "It's late."
+    ataz "You should rest."
+
+    #rest
+    if muwaCuddleCounter > 0:
+        ataz "And Tesipiz"
+        ataz "Your fluffy friend is here."
+
+        muwa "Tesipiz"
+        muwa "You're back."
+        if muwaCuddleCounter > 2 and muwaCuddleCounter > takuraCuddles:
+            muwa "Want to make me your's Tesipiz?"
+            menu:
+                "Yes (Boink Muwa)":
+                    muwa "Hmhmhmmmm!!"
+                    ataz "I'll get you two your own room."
+                    ataz "I don't think Xerxes and Volkara would like being next to you too boning."
+                    $ muwaCuddleCounter += 5
+                    jump muwaBoinkInXartabana
+                "No, but want to cuddle you.":
+                    muwa "O.K"
+                    $ muwaCuddleCounter += 1
+                    "cuddle Muwa she is on top of tesipiz"
+                "Nope":
+                    muwa "Oah!"
+                    muwa "At least you saved me again."
+                    muwa "And spent some time with me."
+        else:
+            muwa "Want to cuddle me?"
+            menu:
+                "Yes":
+                    $ muwaCuddleCounter += 1
+                    "cuddle Muwa she is on top of tesipiz"
+                "No":
+                    muwa "Oah!"
+                    muwa "At least you saved me again."
+                    muwa "And spent some time with me."
+
+    jump sleepXartabanaFoZ
 
 label winXartabanaAST:
-    "Winna winna chikin dinner"
+    ataz "Thank you Xerxes for helping me destory the Bala-Axerians!"
+    ataz "Balatius has been delt with and Axeria is ours!"
+    $ sleepyTimeReset()
+    call atazeraBackstroy
 
 label atazeraBackstroy:
-    "General Atazera: Origins"
+    tesi "Atazera?"
+    tesi "I heared you were an Astart General before joining us."
+    tesi "Why?"
+
+    ataz "Because the Astart Empire betrayed me."
+    ataz "They betrayed me by trusting those crazed Cult of Ahriman freaks."
+    #show sene 
+    #lord Dargon and teir 2 ahrite dude
+    #Atazera loylist skin
+    #"" point
+    ataz "I don't think we should trust them Lord Dagon of Takurium."
+    ataz "They betrayed us for their twisted god during the Azagara war."
+
+    dago "That's only because Marius failed."
+    dago "When we get the Ahrimaniom under our control."
+    dago "the Jamesians will finally fall."
+
+    #modded skin or just use already exisitng one.
+    astartFemSumG "As a representive of Astarte herself."
+    astartFemSumG "The Ahrites are on our side as they have proven their loyalty to her."
+    astartFemSumG "Leave them alone or you will be {b}disciplined{/b}, Atazera."
+
+    #show smash
+    #show carage
+    ataz "Takurium was reduced to ruins because they didn't listen to me."
+    #gets attacked by ahrites
+    #Loyalist Battle
+    ataz "What in the Deep Dark!!"
+    #
+    ataz "{i}What is it doing to me!?"
+
+    ataz "JAMESIANS!!"
+    ataz "The Ahrites are rampaging around Takurium."
+    ataz "{i}I will be deemed a trator for this."
+    ataz "{i}But I have no choice."
+
+    ataz "And Xerxes and the Magi took me in and cured me."
+    ataz "As well as those who sided with me."
+
+    ataz "I then lead a rebellion against Astarte herself."
+    ataz "But Astarte and her forces were too strong."
+    ataz "And I was forced into exile."
+    ataz "With hunters stalking me."
+
+    xerx "Forntunatly I found her and many straggerlers in the mountains."
+    xerx "And I helped her and her followers take over Xartabana and the sourrounding area."
+    ataz "King Darius made me the satrap of Axeria."
+    return
+
+label muwaBoinkInXartabana:
+    "Boink Muwa is Xartabana"

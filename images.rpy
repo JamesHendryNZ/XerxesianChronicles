@@ -1014,6 +1014,9 @@ image xartabanaPalaceCortyard = "images/Locations/Xartabana/Atazera Cortyard.web
 image xartabanaThoneRoom = "images/Locations/Xartabana/Xartabana Throne Room.webp"
 image xartabanaShop = "images/Locations/Xartabana/Xartabana Shop.webp"
 
+image oxCart = "images/animals/Ox Cart.webp"
+image oxCartParkt = "images/animals/Ox Cart Tailgate down.webp"
+image oxCartDude = "images/NPCs/Ox Cart With Dude.webp"
 
 
 #Zarat
@@ -1524,13 +1527,34 @@ image jakaCamelLancerFlee = "images/Enemies/astartes goons/Jaka Camel Lancer Fle
 image jakaCamelArcher = "images/Enemies/astartes goons/Jaka Camel Archer.webp"
 
 image hekaAxeLady = "images/Enemies/astartes goons/Heka Valley Axwoman.webp"
+image hekaKhopeshMan = "images/Enemies/astartes goons/Riujaka Khopesh warrior medium-level.webp"
 
 #Faronians
 image faronianAxNakedFemale = "images/Enemies/astartes goons/Faronian Axe Naked Female v1 sfw.webp"
+layeredimage haremGuardLady:
+    group poses:
+        attribute baseArmed default:
+            "images/Enemies/astartes goons/Harem Guard.webp"
+    
+    group eyes:
+        attribute neutral default:
+            "images/Enemies/astartes goons/Harem Guard Neutral.webp"
+        attribute mean:
+            "images/Enemies/astartes goons/Harem Guard mean.webp"
+    
+    group mouths:
+        attribute neutralHappy default:
+            "images/Enemies/astartes goons/Harem Guard Neutral Happy.webp"
+        attribute O:
+            "images/Enemies/astartes goons/Harem Guard O.webp"
+        attribute angry:
+            "images/Enemies/astartes goons/Harem Guard Angry.webp"
+        attribute annoyed:
+            "images/Enemies/astartes goons/Harem Guard Annoyed.webp"
 
 #Balatians
 image balatianNekkedAxeWoman = "images/Enemies/astartes goons/Balatian Axe Naked Female v1.webp"
-#image balatianAmoredAx = "images/Enemies/astartes goons/Balatian Axe Armored Female v1.webp"
+image balatianAmoredAxLady = "images/Enemies/astartes goons/Balatian Axe Armored Female v1.webp"
 image balatianArcher = "images/Enemies/astartes goons/Balatian Archer.webp"
 image balatianArcherFlee = "images/Enemies/astartes goons/Balatian Archer Flee.webp"
 image balatianArcherPunished = "images/Enemies/astartes goons/Balatian Archer X posed.webp"
@@ -1545,6 +1569,31 @@ image balaAstartWhippaWhipping:
     "images/Enemies/astartes goons/Balato-Astart Slaver Whip down2.webp"
     pause 0.125
     repeat
+
+layeredimage balaAstartWhippaLady:
+    group poses:
+        attribute base default:
+            "images/Enemies/astartes goons/Balato-Astart Slaver Harem No Weapon.webp"
+        attribute armed:
+            "images/Enemies/astartes goons/Balato-Astart Slaver Harem.webp"
+    group mouths:
+        attribute neutralHappy default:
+            "images/Enemies/astartes goons/Balato-Astart Slaver Neutral happy Mouth.webp"
+        attribute annoyed:
+            "images/Enemies/astartes goons/Balato-Astart Slaver Annoyed Mouth.webp"
+        attribute angry:
+            "images/Enemies/astartes goons/Balato-Astart Slaver Angry Mouth.webp"
+
+image balatianHeavySpear = "images/Enemies/astartes goons/Balatian Heavy Spear.webp"
+image balatianHeavySpearGreet = "images/Enemies/astartes goons/Balatian Heavy Spear Greet.webp"
+image balatianHeavySpearAttack = "images/Enemies/astartes goons/Balatian Heavy Spear battle.webp"
+image balatianHeavySpearAttacking: 
+    "images/Enemies/astartes goons/Balatian Heavy Spear.webp"
+    pause 0.5
+    "images/Enemies/astartes goons/Balatian Heavy Spear battle.webp"
+    pause 0.5
+    repeat
+
 image astartBalatianLancerCharge = "images/Enemies/astartes goons/balatian light lancer charge.webp"
 
 #Suzumites
@@ -1567,6 +1616,14 @@ image thiaSpearMale = "images/Enemies/astartes goons/Thia Armored Spear male.web
 image astartoThiaKhopeshFemale = "images/Enemies/astartes goons/Astarto-Thia Khopesh Female v1.webp"
 image thiamaceFemale = "images/Enemies/astartes goons/Thia Mace Infantry Female.webp"
 image thiaMaceFemaleFlee = "images/Enemies/astartes goons/Thia Mace Infantry Female Flee.webp"
+image thiaMaceFemaleAttack = "images/Enemies/astartes goons/Thia Mace Infantry Female Attack.webp"
+
+image thiaMaceFemaleAttcking:
+    "images/Enemies/astartes goons/Thia Mace Infantry Female.webp"
+    pause 0.5
+    "images/Enemies/astartes goons/Thia Mace Infantry Female Attack.webp"
+    pause 0.5
+    repeat
 
 #Shata
 image shataSpear = "images/Enemies/Shata and Ssatu/Shata Speardude Yeah.webp"
@@ -1876,6 +1933,11 @@ image minobiteFallingSide = "images/Enemies/astartes goons/Minobite Archer Falli
 image snakeMan = "images/Enemies/astartes goons/Snakebite.webp"
 image snakeManInWater = "images/Enemies/astartes goons/Snakebite Swimming.webp"
 
+image batbiteImg = "images/Enemies/astartes goons/batbite.webp"
+image batbiteFlyImg = "images/Enemies/astartes goons/batbite flying.webp"
+
+image batbitegirlImg = "images/Enemies/astartes goons/Batbite harem spear.webp"
+image batbitegirlFlyImg = "images/Enemies/astartes goons/Batbite harem spear flying.webp"
 
 #animal Monsters
 image nitroacidicCobra = "images/Enemies/astartes goons/Nitroacidic Cobra.webp"
@@ -1910,7 +1972,11 @@ image tsetulingGuardM2 = "images/Enemies/astartes goons/Tsetuling Fighter Male G
 image bardaiyaPioneerFemale = "images/Enemies/eliete goons/Bardaiya Pioneer Female.webp"
 image bardaiyaPioneerMaleNeko = "images/Enemies/eliete goons/Bardaiya Pioneer Male Nekomimi.webp"
 
-    # This shows a character sprite. A placeholder is used, but you can
+
+#the giants
+image giantLady = "images/Enemies/eliete goons/Astart Giant Femle2.webp"
+image giantDude = "images/Enemies/eliete goons/Astart Giant Male.webp"
+  
 #lizard suit lady
 layeredimage lizardSuitLadyImg:
     group poses:
@@ -2316,6 +2382,10 @@ image tsanihoniNeutralHappy = "images/antagonists/King Balatius/Balatius' Girlfr
 image tsanihoniScared = "images/antagonists/King Balatius/Balatius' Girlfriends/Tsanihoni Scared.webp"
 image tsanihoniBattle = "images/antagonists/King Balatius/Balatius' Girlfriends/Tsanihoni Battle.webp"
 
+#the palace mess hall lady
+image orodianHaremLady = "images/NPCs/Astart Cilivians/Orodian Harem Lady.webp"
+image orodianHaremLadyItem = "images/NPCs/Astart Cilivians/Orodian Harem Lady Item.webp"
+
 #Minona
 image astartChariot = "images/animals/Astart chariot.webp"
 layeredimage minona:
@@ -2568,7 +2638,35 @@ layeredimage mwejya:
             xpos 365
     
 
+#astart khopesh kommander
+layeredimage khopeshCommander:
+    group poses:
+        attribute base default:
+            "images/antagonists/Astart Officers/Astart Sword Down.webp"
+        attribute commanding:
+            "images/antagonists/Astart Officers/Astart Sword.webp"
     
+    group eyes:
+        attribute neutral default:
+            "images/antagonists/Astart Officers/Astart Sword Neutral.webp"
+        attribute mean:
+            "images/antagonists/Astart Officers/Astart Sword Mean.webp"
+        attribute sad:
+            "images/antagonists/Astart Officers/Astart Sword Sad.webp"
+        attribute closed:
+            "images/antagonists/Astart Officers/Astart Sword Xeyes.webp"
+
+    group mouths:    
+        attribute neutralHappy default:
+            "images/antagonists/Astart Officers/Astart Sword Neutral Happy.webp"
+        attribute happy:
+            "images/antagonists/Astart Officers/Astart Sword Happy.webp"
+        attribute O:
+            "images/antagonists/Astart Officers/Astart Sword O.webp"
+        attribute frown:
+            "images/antagonists/Astart Officers/Astart Sword Frown.webp"
+        attribute angry:
+            "images/antagonists/Astart Officers/Astart Sword Angry.webp"
 
 #MiniBosses
     #Seige Ladder Astart
@@ -6139,6 +6237,7 @@ layeredimage sabotaurusMan:
             "images/NPCs/Axeria/Saboturus bomb time.webp"
         attribute chuck:
             "images/NPCs/Axeria/Saboturus Chuck.webp"
+
 
 #Jamesian Troopers
 image jamesianHeavySpearDude = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Boy.webp"
