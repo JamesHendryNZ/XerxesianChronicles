@@ -1524,6 +1524,34 @@ image jakaArcherCrusufied = "images/Location Accessories/Jaka Archer Crusufied.w
 
 image jakaCamelLancer = "images/Enemies/astartes goons/Jaka Camel Lancer.webp"
 image jakaCamelLancerFlee = "images/Enemies/astartes goons/Jaka Camel Lancer Fleeing.webp"
+
+layeredimage jakaLancerGirl:
+    group poses:
+        attribute baseArmed default:
+            "images/Enemies/astartes goons/Jaka Camel Lancer dismounted.webp"
+        attribute onCamel:
+            "images/Enemies/astartes goons/Jaka Camel Lancer.webp"
+
+    group eyes:
+        attribute neutral default:
+            "images/Enemies/astartes goons/Jaka Camel Lancer neutral.webp"
+        attribute sad:
+            "images/Enemies/astartes goons/Jaka Camel Lancer Sad.webp"
+        attribute mean:
+            "images/Enemies/astartes goons/Jaka Camel Lancer Mean.webp"
+
+    group mouths:
+        attribute neutralHappy default:
+            "images/Enemies/astartes goons/Jaka Camel Lancer neutral happy.webp"
+        attribute happy:
+            "images/Enemies/astartes goons/Jaka Camel Lancer Happy.webp"
+        attribute O:
+            "images/Enemies/astartes goons/Jaka Camel Lancer O.webp"
+        attribute angry:
+            "images/Enemies/astartes goons/Jaka Camel Lancer angry.webp"
+        attribute frown:
+            "images/Enemies/astartes goons/Jaka Camel Lancer frown.webp"
+
 image jakaCamelArcher = "images/Enemies/astartes goons/Jaka Camel Archer.webp"
 
 image hekaAxeLady = "images/Enemies/astartes goons/Heka Valley Axwoman.webp"
@@ -1599,6 +1627,7 @@ image astartBalatianLancerCharge = "images/Enemies/astartes goons/balatian light
 #Suzumites
 image heavySuzumiteFemaleSpear = "images/Enemies/astartes goons/Heavy Spear inf Suzumite Female Shield.webp"
 image suzumiteKaetratius = "images/Enemies/astartes goons/Suzumite Kaetratius Melee.webp"
+image suzumiteKaetratiusPilum = "images/Enemies/astartes goons/Suzumite Kaetratius Ranged.webp"
 
 #Ordoians
 image ordonianKaetratiiMaleNeko = "images/Enemies/astartes goons/Ordonian Kaetratii Male nekomini v1.webp"
@@ -5145,6 +5174,8 @@ layeredimage atazera:
 #for the training secquence/debug
 image atazeraTraining = "images/Protagonists/Atazera/Atazera training.webp"
 
+#her sytched chariot (can also be the jamesian scythed chariot)
+image scythedChariot = "images/images/animals/Scythed chariot.webp"
 
 #malik
 layeredimage malik:

@@ -18,50 +18,108 @@ default xartabanaShopItems = []
 #A Personal Curse Lifted is
 
 label toXartabanaFoz:
-    call lowerJamesosRealmMap 
+    #call lowerJamesosRealmMap 
     
-    #animate Xerxes going to Xartabana via Yineh
-    #co for xerx
-    show xerx3HorseHappy at tenthSize:
-        xanchor 1.0 yanchor 1.0
-        xpos 0.113 ypos 0.403
-        linear 1 xpos 0.094 ypos 0.407
-        linear 3 xpos 0.092 ypos 0.46
-        linear 3 xpos 0.13 ypos 0.583
-        linear 2 xpos 0.125 ypos 0.66
-        linear 1 xpos 0.184 ypos 0.667
-    #0.113 , 0.403 - 0
-    #0.094, 0.407 - 0.1 1
-    #0.092, 0.46 - 0.3 4
-    #0.13, 0.583 - 0.3 7
-    #0.125, 0.660 - 0.2 9
-    #0.184, 0.667 - 0.1 10
+    if IsDaytime:
+        scene map2:
+            zoom 0.75
+            xalign 1.0
+            yalign 0.4
+            matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#FFF")
+            linear 1 matrixcolor TintMatrix("#FFF")
+            linear 9 matrixcolor TintMatrix("#ffd2a1")
+            linear 3 matrixcolor TintMatrix("#0600bc")
+            linear 2 matrixcolor TintMatrix("#ffd2a1")
+            linear 2 matrixcolor TintMatrix("#FFF")
+        #animate Xerxes going to Xartabana via Yineh
+        #co for xerx
+        show xerx3HorseHappy at tenthSize:
+            xanchor 1.0 yanchor 1.0
+            xpos 0.113 ypos 0.403
+            linear 1 xpos 0.094 ypos 0.407
+            linear 3 xpos 0.092 ypos 0.46
+            linear 3 xpos 0.13 ypos 0.583
+            linear 2 xpos 0.125 ypos 0.66
+            linear 6 xpos 0.125 ypos 0.66
+            linear 1 xpos 0.184 ypos 0.667
+        #0.113 , 0.403 - 0
+        #0.094, 0.407 - 0.1 1
+        #0.092, 0.46 - 0.3 4
+        #0.13, 0.583 - 0.3 7
+        #0.125, 0.660 - 0.2 9
+        #0.184, 0.667 - 0.1 10
 
 
-    #animate jaka camel girl
-    show jakaCamelLancer at tenthSize:
-        xanchor 1.0 yanchor 1.0
-        xpos 0.0 ypos 0.689
-        linear 6 xpos 0.11 ypos 0.713
-        linear 2 xpos 0.176 ypos 0.664
-        linear 2 xpos 0.211 ypos 0.689
+        #jaka camel lancer lady is pushed out and flees via the same bridge
+        show jakaCamelLancer at tenthSize:
+            xanchor 1.0 yanchor 1.0
+            xpos 0.0 ypos 0.689
+            linear 6 xpos 0.11 ypos 0.713
+            linear 2 xpos 0.176 ypos 0.664
+            linear 2 xpos 0.211 ypos 0.689
 
-    #0 - 0.0 , 0.689 - 0
-    #6 - 0.11, 0.713 - 6 6
-    #2 - 0.176, 0.664 - 2 8
-    #2 - 0.211, 0.689 - 2 10
+        #0 - 0.0 , 0.689 - 0
+        #6 - 0.11, 0.713 - 6 6
+        #2 - 0.176, 0.664 - 2 8
+        #2 - 0.211, 0.689 - 2 10
+    else:
+        scene map2:
+            zoom 0.75
+            xalign 1.0
+            yalign 0.4
+            matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#0600bc")
+            linear 6 matrixcolor TintMatrix("#0600bc")
+            linear 6 matrixcolor TintMatrix("#ffd2a1")
+            linear 1 matrixcolor TintMatrix("#FFF")
+        #animate Xerxes going to Xartabana via Yineh
+        #co for xerx
+        show xerx3HorseHappy at tenthSize:
+            xanchor 1.0 yanchor 1.0
+            xpos 0.113 ypos 0.403
+            linear 1 xpos 0.094 ypos 0.407
+            linear 3 xpos 0.092 ypos 0.46
+            linear 4 xpos 0.092 ypos 0.46
+            linear 3 xpos 0.13 ypos 0.583
+            linear 2 xpos 0.125 ypos 0.66
+            linear 1 xpos 0.184 ypos 0.667
+        #0.113 , 0.403 - 0
+        #0.094, 0.407 - 0.1 1
+        #0.092, 0.46 - 0.3 4
+        #0.13, 0.583 - 0.3 7
+        #0.125, 0.660 - 0.2 9
+        #0.184, 0.667 - 0.1 10
+
+
+        #jaka camel lancer lady is pushed out and flees via the same bridge
+        show jakaCamelLancer at tenthSize:
+            xanchor 1.0 yanchor 1.0
+            xpos 0.0 ypos 0.689
+            linear 6 xpos 0.11 ypos 0.713
+            linear 2 xpos 0.176 ypos 0.664
+            linear 2 xpos 0.211 ypos 0.689
+
+        #0 - 0.0 , 0.689 - 0
+        #6 - 0.11, 0.713 - 6 6
+        #2 - 0.176, 0.664 - 2 8
+        #2 - 0.211, 0.689 - 2 10
     with fade
     pause 12
     "animations done - debug remove"
-    #jaka camel lancer lady is pushed out and flees via the same bridge
+
+    $ IsDaytime = True
+    
 
     scene clearDayTime at fullFit
     show rockyDesertBridge:
-        xalign 0.4 yalign 0.7
+        xalign 0.4 yalign 0.7 zoom 1.5
     
-    show khopeshCommander at right, size2Thrid:
-        xpos 1.3
+    show jakaLancerGirl sad O at left , size2Thrid:
+        ypos 1.3
+
+    show khopeshCommander sad frown at right, size2Thrid:
+        ypos 1.3
     
+    with fade
     
     
     #Astart forces have occupied the bridge for another assult on Yineh
@@ -69,19 +127,114 @@ label toXartabanaFoz:
     #dido is on a camel - she is a tier 2 camel warrior for astart empire?
     #or an ostrich
     #she is a khopesh warrior on foot for now
+    
     astRaid "The Jamesians pushed us out of Suwa and Hyengmeish."
+
+    show jakaLancerGirl frowning
+    show khopeshCommander mean O
+    with dissolve
+    dido "We'll hold this brige untill reinforcements show up."
+    dido "Hopefully we can attack again."
+
     #an oppertunity to have a decition
-    volk "The are a lot of astarts are guarding the Dzenyash Bridge."
+    scene clearDayTime at fullFit
+    show rockyDesertBridge:
+        xalign 0.25 yalign 0.5 zoom 2.0
+    
+    show xerx3quatConsurndArmored at center , flipped , size2Thrid:
+        ypos 1.4
+    show tesipiz34snekayArmored at left , flipped , size2Thrid:
+        ypos 1.4
+    show volkara3quatArmored pointy OMotuh at right , size2Thrid:
+        ypos 1.4
+    with fade
+    volk "The are a lot of astarts guarding the Dzenyash Bridge."
+    
+    hide xerx3quatConsurndArmored
+    show xerx3quatAnnoyedArmored at center , flipped , size2Thrid:
+        ypos 1.4 
+    show volkara3quatArmored meanEyes deltaMouth
+    with dissolve
     volk "We should probably avoid them for now."
+
+    hide xerx3quatAnnoyedArmored
+    show xerx3quatThinkArmored at center , flipped , size2Thrid:
+        ypos 1.4
+    with dissolve
     
     menu:
         "Those Astarts have chosen death. (Attack the Astarts)":
-            "Fight the Astarts"
+            
+
+            scene clearDayTime at fullFit
+            show rockyDesertBridge:
+                xalign 0.4 yalign 0.7 zoom 1.5
+            
+            show jakaLancerGirl meanEyes at left , size2Thrid:
+                ypos 1.3
+
+            show khopeshCommander mean angry at right, size2Thrid:
+                ypos 1.3
+            
+            with fade
 
             dido "It's Xerxes!"
             dido "He's just got two people with him!"
             dido "Get him before he escapes!!"
+
+            scene clearDayTime at fullFit
+            show rockyDesertBridge:
+                xalign 0.35 yalign 0.7 zoom 1.5
+            $ enemyTroopers = [ copy.copy(batbiteSpear) ,  copy.copy(balatianSpear) , copy.copy(suzumiteKaetarius) , copy.copy(hekaArcher) , copy.copy( jakaCamelDismounted ) , copy.copy(captainDido) , copy.copy(orodianArcher) , copy.copy(balatianHeavyAxe) , copy.copy(kazwiianSpear) , copy.copy(batbiteSpear) , copy.copy(tsetulingFighterMLand) ]
             #battle happends
+            call screen playerActions( "Defeat the Astarts guarding the bridge!!" , False , False , True , 0 )
+            
+            scene clearDayTime at fullFit
+            show rockyDesertBridge:
+                xalign 1.0 yalign 0.7 zoom 1.5
+                linear 15 xpos 0.5
+            
+            #batbites fly away
+            show batbiteImg at quatSize:
+                xpos -0.5
+            show batbiteImg as extraBat at quatSize:
+                xpos -0.5
+            show batbiteImg as moreBat at quatSize:
+                xpos -0.5
+
+            show balatianAmoredAxLady at quatSize:
+                xpos -0.7
+            show kazwiianSpear at quatSize:
+                xpos -0.7
+            show suzumiteKaetratiusPilum at quatSize:
+                xpos -0.7
+            show tsetulingGuardMAttack at quatSize:
+                xpos -0.7
+            #kazwiian spears
+            #heavy ax
+            #suzumite kaetratious
+            
+            show axerianCamel at quatSize:
+                ypos 1.5 xpos 1.7
+                linear 15 xpos 0.6
+                easeout 3 
+
+            show axerianLancer at quatSize:
+                ypos 1.5 xpos 1.7
+                linear 15 xpos 0.6
+                easeout 3
+
+            show atazera armoredBattle mean angry at quatSize:
+                ypos 1.5 xpos 1.5
+                linear 10 xpos 0.6
+                easeout 3
+
+            show rockyDesertForground:
+                xalign 1.0 yalign 0.7 zoom 1.5
+                linear 15 xpos 0.5
+            
+            with fade
+
             #Atazera intoduces herself with a scythed chariot and cavarly
             dido "BACK XERXES!!"
             dido "I'M WARNING YOU"
