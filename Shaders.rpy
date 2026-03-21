@@ -58,13 +58,108 @@ transform duskMorningGradient:
     # Red at the top (R=1.0, G=0.0, B=0.0, Alpha=1.0)
     u_gradient_top (-0.3, -0.3, 0.0, 1.0)
     # Blue at the bottom (R=0.0, G=0.0, B=1.0, Alpha=1.0)
-    u_gradient_bottom (1.3, 1.0, 0.8, 1.0)
+    u_gradient_bottom (1.3, 0.95, 0.8, 1.0)
+
+transform starReavalTopGradient:
+    shader "gradiants.two_thirds_gradient"
+    # yes stars
+    u_gradient_top (0.5, 0.5, 0.5, 1.0)
+    # no stars
+    u_gradient_bottom (1.3, 0.95, 0.8, 0.0)
+
+transform topShineGradient:
+    shader "gradiants.two_thirds_gradient"
+    # yes stars
+    u_gradient_top (0.5, 0.5, 0.5, 1.0)
+    # no stars
+    u_gradient_bottom (1.3, 0.95, 0.8, 1.0)
+
+transform darkShade:
+    shader "gradiants.vertical_gradient"
+    # Red at the top (R=1.0, G=0.0, B=0.0, Alpha=1.0)
+    u_gradient_top (1.3, 0.95, 0.8, 1.0)
+    # Blue at the bottom (R=0.0, G=0.0, B=1.0, Alpha=1.0)
+    u_gradient_bottom (0.4, 0.3, 0.0, 1.0)
 
 
 label testDaGradiants:
 
-    scene clearDayTime at fullFit , duskMorningGradient
+    scene clearDayTime at fullFit , duskMorningGradient with fade
     "hehe"
-    show secondSubversionBaseRuins at fullFit , duskLights
+    show light at center:
+        matrixcolor TintMatrix( "#97d6ff") * BrightnessMatrix( 0.6 )
+        ypos 0.95
+    show secondSubversionBaseRuins at fullFit , darkShade
+    with dissolve
     "the testicles lolololololol"
+
+
+    #delete or comment out when done testing images for webp issues caused by krita
+    #up to the harem ladies 
+    #mr malik
+    #atazera
+    scene xartabanaThoneRoom at center
+    show atazeraImg at center , halfSize
+    with fade
+    "atazera"
+    show atazeraImg item happy mean  
+    "hehe"
+    show atazeraImg point O
+    "o"
+    show atazeraImg greet closedEyes frown
+    "dsds"
+    show atazeraImg training mean angry
+    "beat yo ass"
+    show atazeraImg sadEyes
+    "sadge"
+
+    show atazeraImg armored neutral neutralHappy
+    with fade
+    "atazera with armor"
+    show atazeraImg armoredItem mean happy
+    "hehe"
+    show atazeraImg armoredPoint O
+    "o"
+    show atazeraImg armoredGreet closedEyes frown
+    "dsds"
+    show atazeraImg armoredBattle mean angry
+    "beat yo ass"
+    show atazeraImg sadEyes
+    "sadge"
+
+    scene balatiusPalaceHaremGirlRoom at fullFit
+    show muwaHarem at left, halfSize
+    show orodianHaremLady at right , halfSize
+    show balaAstartWhippaLady at center , halfSize
+    with fade
+    "harem girls"
+
+    show muwaHarem greet happy
+    hide orodianHaremLady
+    show orodianHaremLadyItem at right , halfSize
+    show balaAstartWhippaLady annoyed
+    "talking"
+
+    hide orodianHaremLadyItem with dissolve
+    show muwaHarem inviting mean extraHappy
+    show balaAstartWhippaLady armed angry
+    "angry lady"
+
+    show muwaHarem sad O
+    "sad muwa"
+
+    show muwaHarem horny blush
+    show balaAstartWhippaLady base neutralHappy:
+        linear 2 xpos 0.75
+    "they have an idea."
+
+    scene clearDayTime at duskMorningGradient with fade
+    show astaJamesianBoarderModular at fullFit , darkShade , right 
+    show atazeraImg schytedChariot at quatSize , center:
+        matrixcolor TintMatrix("#ffdbb9")
+    with fade
+    "Atazera on her chaiort"
+    show atazeraImg armoredBattle
+    "with armor"
+
     return

@@ -1769,24 +1769,102 @@ layeredimage ssatuSlavers:
             "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver enslaved lol.webp"
 
     group eyes:
-        attribute neutral default:
+        attribute neutral default if_any['commanding','harem']:
             "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Neutral Eyes.webp"
-        attribute mean:
+        attribute neutral default if_any['base','pointing']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Neutral Eyes.webp"
+            xpos -125
+        attribute neutral default if_any['chainSpin']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Neutral Eyes.webp"
+            xpos -175
+        attribute neutral default if_any['captured']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Neutral Eyes.webp"
+            xpos -350
+
+        attribute mean if_any['commanding','harem']:
             "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Mean Eyes.webp"
-        attribute sad:
-            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem.webp"
+        attribute mean if_any['base','pointing']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Mean Eyes.webp"
+            xpos -125
+        attribute mean if_any['chainSpin']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Mean Eyes.webp"
+            xpos -175
+        attribute mean if_any['captured']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Mean Eyes.webp"
+            xpos -350
+
+        attribute sad if_any['commanding','harem']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Sad Eyes.webp"
+        attribute sad if_any['base','pointing']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Sad Eyes.webp"
+            xpos -125
+        attribute sad if_any['chainSpin']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Sad Eyes.webp"
+            xpos -175
+        attribute sad if_any['captured']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Sad Eyes.webp"
+            xpos -350
 
     group mouths:
-        attribute neutralHappy default:
+        attribute neutralHappy default if_any['commanding','harem']:
             "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Neutral Happy Mouth.webp"
-        attribute happy:
+        attribute neutralHappy default if_any['base','pointing']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Neutral Happy Mouth.webp"
+            xpos -125
+        attribute neutralHappy default if_any['chainSpin']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Neutral Happy Mouth.webp"
+            xpos -175
+        attribute neutralHappy default if_any['captured']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Neutral Happy Mouth.webp"
+            xpos -350
+
+        attribute happy if_any['commanding','harem']:
             "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Happy Mouth.webp"
-        attribute O:
+        attribute happy if_any['base','pointing']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Happy Mouth.webp"
+            xpos -125
+        attribute happy if_any['chainSpin']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Happy Mouth.webp"
+            xpos -175
+        attribute happy if_any['captured']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Happy Mouth.webp"
+            xpos -350
+
+        attribute O if_any['commanding','harem']:
             "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem OMouth.webp"
-        attribute angry:
+        attribute O if_any['base','pointing']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem OMouth.webp"
+            xpos -125
+        attribute O if_any['chainSpin']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem OMouth.webp"
+            xpos -175
+        attribute O if_any['captured']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem OMouth.webp"
+            xpos -350
+
+        attribute angry if_any['commanding','harem']:
             "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Angry Mouth.webp"
-        attribute annoyed:
+        attribute angry if_any['base','pointing']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Angry Mouth.webp"
+            xpos -125
+        attribute angry if_any['chainSpin']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Angry Mouth.webp"
+            xpos -175
+        attribute angry if_any['captured']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Angry Mouth.webp"
+            xpos -350
+
+        attribute annoyed if_any['commanding','harem']:
             "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Mini Annoyed Face.webp"
+        attribute annoyed if_any['base','pointing']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Mini Annoyed Face.webp"
+            xpos -125
+        attribute annoyed if_any['chainSpin']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Mini Annoyed Face.webp"
+            xpos -175
+        attribute annoyed if_any['captured']:
+            "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver Harem Mini Annoyed Face.webp"
+            xpos -350
 
 #Ssatu Bandits Enslaved
 image ssatuSlaverEnslaved = "images/NPCs/Jamesia/Kwortix/Kwortix Mine/ssatu slaver enslaved lol.webp"
@@ -1823,8 +1901,8 @@ layeredimage ssatuGlaiveGirl:
             "images/Enemies/Shata and Ssatu/ssatu glave female suprized.webp"
         attribute swing:
             "images/Enemies/Shata and Ssatu/ssatu glave female swing.webp"
-        attribute attack:
-            "images/Enemies/Shata and Ssatu/ssatu glave female attack.webp"
+        #will need to make attack that is compatible with the mouths and eyes
+        #orignal attack isn't
 
     group eyes:
         attribute neutral default:
@@ -2475,41 +2553,41 @@ layeredimage minona:
 
 #harem summoner
 
-layeredimage haremSummoner:
+layeredimage haremSummonerImg:
     group poses:
         attribute base default:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Harem Suit.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Harem Suit.webp"
         attribute knife:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Harem Suit Knife.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Harem Suit Knife.webp"
         attribute summoning:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Harem Suit Summoning.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Harem Suit Summoning.webp"
 
     group eyes:
         attribute neutral:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Neutral Eyes.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Neutral Eyes.webp"
         attribute mean:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Mean Eyes.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Mean Eyes.webp"
         attribute closed:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Closed Eyes.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Closed Eyes.webp"
         attribute horny:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Horny Eyes.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Horny Eyes.webp"
 
     group mouths:
         attribute neutralHappy:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Neutral Happy.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Neutral Happy.webp"
         attribute happy:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Happy Mouth.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Happy Mouth.webp"
         attribute O:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 OMouth.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 OMouth.webp"
         attribute angry:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Angry Mouth.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Angry Mouth.webp"
 
     group magic:
         attribute magic if_any["summoning"]:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Harem Suit Summoning Light Bulb.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Harem Suit Summoning Light Bulb.webp"
     group blashes:
         attribute blush:
-            "game/images/antagonists/Mini-Bosses/Astart Summoner Female2 Blush.webp"
+            "images/antagonists/Mini-Bosses/Astart Summoner Female2 Blush.webp"
 
 #Astart Officers
 #Astarto-Faronian
@@ -3401,7 +3479,7 @@ layeredimage zagzhino:
         attribute happyMouth:   
             "images/antagonists/Zagzhino/Zagzhino Happy Mouth.webp"
 
-layeredimage yunigzho:
+layeredimage yunigzhoImg:
     group poses:
         attribute front default:
             "images/antagonists/Zagzhino/Yunigzho.webp"
@@ -3889,9 +3967,9 @@ layeredimage femXerx:
         attribute neutral default:
             "images/Protagonists/Xerxes/Xerdza Neutral Eyes.webp"
         attribute sad:
-            "images/Protagonists/Xerxes/Xerdza Harem Yeah.webp"
-        attribute mean:
             "images/Protagonists/Xerxes/Xerdza Sad Eyes.webp"
+        attribute mean:
+            "images/Protagonists/Xerxes/Xerdza Mean Eyes.webp"
 
     group mouths:
         attribute neutralHappy:
@@ -4165,11 +4243,11 @@ image tesipizWithTsekrei2 = "images/Protagonists/Tesipiz/Tesipiz with Tsekrei2.w
 layeredimage femTesipiz:
     group poses:
         attribute base default:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem 100-7.0webp"
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem 100-70.webp"
         attribute chained:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem chained.webp"
         attribute greet:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem armed.webp"
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Greet.webp"
         attribute yeah:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Yeah.webp"
         attribute point:
@@ -4178,30 +4256,63 @@ layeredimage femTesipiz:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem armed.webp"
 
     group mouths:
-        attribute neutralHappy default:
+        attribute neutralHappy default if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Neutral Happy.webp"
-        attribute happy:
+        attribute neutralHappy default if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Neutral Happy.webp"
+            xpos 100
+        attribute happy if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem happy.webp"
-        attribute angry:
+        attribute happy if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem happy.webp"
+            xpos 100
+        attribute angry if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem angry mouth.webp"
-        attribute frown:
+        attribute angry if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem angry mouth.webp"
+            xpos 100
+        attribute frown if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Frown.webp"
-        attribute O:
+        attribute frown if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Frown.webp"
+            xpos 100
+        attribute O if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem OMouth.webp"
-        attribute extraHappy:
+        attribute O if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem OMouth.webp"
+            xpos 100
+        attribute extraHappy if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Yeah Mouth.webp"
+        attribute extraHappy if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Yeah Mouth.webp"
+            xpos 100
 
     group eyes:
-        attribute neutral default:
+        attribute neutral default if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem neutral Eyes.webp"
-        attribute nervous:
+        attribute neutral default if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem neutral Eyes.webp"
+            xpos 100
+        attribute nervous if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Nervous Eyes.webp"
-        attribute mean:
+        attribute nervous if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Nervous Eyes.webp"
+            xpos 100
+        attribute mean if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Mean Eyes.webp"
-        attribute sad:
+        attribute mean if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Mean Eyes.webp"
+            xpos 100
+        attribute sad if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Sad Eyes.webp"
-        attribute closed:
+        attribute sad if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Sad Eyes.webp"
+            xpos 100
+        attribute closed if_not['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Closed Eyes.webp"
+        attribute closed if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Closed Eyes.webp"
+            xpos 100
 
 
 #Ato'ssa
@@ -4817,7 +4928,7 @@ layeredimage volkara3quat:
         attribute nightOutfit:    
             "images/Protagonists/Volkara/Volkara Neutral Happy 3quat Nighttiem.webp"
         attribute harem:
-            "images/Protagonists/Volkara/Volkara 3-4 harem 100-70webp"
+            "images/Protagonists/Volkara/Volkara 3-4 harem 100-70.webp"
         attribute haremChained:
             "images/Protagonists/Volkara/Volkara 3-4 harem chanied.webp"
         attribute haremGreet:
@@ -5103,7 +5214,7 @@ layeredimage megabazus:
             ypos -84 xpos 230
 
 #Atazera
-layeredimage atazera:
+layeredimage atazeraImg:
     group poses:
         attribute basic default:
             "images/Protagonists/Atazera/Atazera.webp"
@@ -5148,9 +5259,9 @@ layeredimage atazera:
             "images/Protagonists/Atazera/Atazera Armored Sad.webp"
 
         attribute closedEyes if_any["basic","greet","point","item","training"]:
-            "images/Protagonists/Atazera/Atazera Armored Closed.webp"
-        attribute closedEyes if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle"]:
             "images/Protagonists/Atazera/Atazera Closed.webp"
+        attribute closedEyes if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle"]:
+            "images/Protagonists/Atazera/Atazera Armored Closed.webp"
 
     group mouths:
         attribute neutralHappy default:
@@ -5167,10 +5278,11 @@ layeredimage atazera:
     #will need some debugging to get position right try Minona's positions first
     group chariots:
         attribute schytedChariot:
-            "images/images/animals/Scythed chariot.webp"
-            xpos -900  
-            ypos 800
+            "images/animals/Scythed chariot.webp"
+            xpos -800  
+            ypos 100
             zoom 0.9
+            xzoom -1.0
 #for the training secquence/debug
 image atazeraTraining = "images/Protagonists/Atazera/Atazera training.webp"
 
@@ -5178,7 +5290,7 @@ image atazeraTraining = "images/Protagonists/Atazera/Atazera training.webp"
 image scythedChariot = "images/images/animals/Scythed chariot.webp"
 
 #malik
-layeredimage malik:
+layeredimage malikImg:
     group poses:
         attribute base default:
             "images/Protagonists/Malik/Malik Base.webp"

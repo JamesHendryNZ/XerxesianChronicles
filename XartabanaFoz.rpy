@@ -175,7 +175,7 @@ label toXartabanaFoz:
             show rockyDesertBridge:
                 xalign 0.4 yalign 0.7 zoom 1.5
             
-            show jakaLancerGirl meanEyes at left , size2Thrid:
+            show jakaLancerGirl mean at left , size2Thrid:
                 ypos 1.3
 
             show khopeshCommander mean angry at right, size2Thrid:
@@ -261,7 +261,7 @@ label toXartabanaFoz:
                 linear 15 xpos 0.6
                 easeout 3 xpos 0.3
 
-            show atazera armoredBattle mean angry schytedChariot at quatSize:
+            show atazeraImg armoredBattle mean angry schytedChariot at quatSize:
                 ypos 1.5 xpos 1.5
                 linear 10 xpos 0.6
                 easeout 3 xpos 0.0
@@ -331,16 +331,16 @@ label toXartabanaFoz:
             show xerx3quatHappyArmored at right , size2Thrid , flipped:
                 ypos 1.3 xpos 1.0
                 linear 2 xpos 0.0
-            show atazera armoredGreet happy at right , size2Thrid:
+            show atazeraImg armoredGreet happy at right , size2Thrid:
                 ypos 1.3 xpos 1.3
                 linear 2 xpos 1.0
             with dissolve
             ataz "Hello Xerxes!!"
             ataz "Nice to see you again!"
-            show atazera armoredItem with dissolve
+            show atazeraImg armoredItem with dissolve
             ataz "Who are your new friends?"
 
-            show atazera armored neutralHappy
+            show atazeraImg armored neutralHappy
             hide xerx3quatHappyArmored
             show xerxHappyGreetArmored at left . size2Thrid , flipped:
                 ypos 1.3
@@ -362,7 +362,7 @@ label toXartabanaFoz:
 
             xerx "These two are called Tesipiz and Volkara."
 
-            show atazera armored happy
+            show atazeraImg armored happy
             hide xerx3quatPointHappyArmored
             show xerx3quatHappyArmored at center , size2Thrid , flipped:
                 ypos 1.3
@@ -376,13 +376,13 @@ label toXartabanaFoz:
                 ypos 1.3
             with dissolve
             ataz "Got it then."
-            show atazera armoredPoint:
+            show atazeraImg armoredPoint:
                 xzoom 1.0
                 linear 1 xzoom -1.0
             ataz "We'll head back to Xartabana."
             ataz "We'll talk then."
 
-            show atazera armored neutralHappy:
+            show atazeraImg armored neutralHappy:
                 linear 2 xpos 1.5
             show volkara3quatArmored:
                 linear 5 xpos 1.5
@@ -433,10 +433,15 @@ label toXartabanaFoz:
             #they go around the southern ede of the second subversion base.
             #they get attacked by ahrite scorpions and low level cultsits
             #they talk about the ahrite 
-            scene clearDayTime at fullFit
-            show secondSubversionBaseRuins at left, halfSize:
-                linear 12 
+            scene clearDayTime at fullFit , duskMorningGradient
+            show secondSubversionBaseRuins at left, fullFit , darkShade:
+                linear 12 xalign 0.5
+            show light at center:
+                matrixcolor TintMatrix( "#97d6ff") * BrightnessMatrix( 0.6 )
+                ypos 0.95
             #ahrite battle theme plays - should follow similar instrimentation as ahrimaniom battle.
+            $ enemyTroopers = [ copy.copy(ahriteSpearDude) , copy.copy(ahriteSpearGirl) , copy.copy(ahriteArcher) , copy.copy(ahriteScorpion) , copy.copy(ahriteScorpion) , copy.copy(ahriteSlinga) , copy.copy(ahriteSpearGirl) ]
+            call screen playerActions( "This accursed ruin still houses Ahrites!? SLAY THEM!!" , False , False , True , 0 )
             xerx "This acursed ruin still spawns Ahrite?"
             xerx "I thought they cleaned this place up in 554!"
             tesi "We can explode it away!"
