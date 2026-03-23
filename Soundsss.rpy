@@ -9,6 +9,7 @@ init:
     define villageTheme = "audio/music/Yiwabis.ogg" #James Hendry
     define wonderStars = "audio/music/Nighttime Stars.ogg" #James Hendry
     define ahriteCavess = "audio/music/Ahrite ambiance.ogg" #James Hendry
+    define ahriteBattle = "audio/music/Ahrite Battle loop.ogg" #James Hendry
     define ahriteTempless = "audio/music/Church of Ahriman Loop.ogg" #James Hendry
     define ahrimaniomTemple = "audio/music/Church of Ahriman.ogg"
 

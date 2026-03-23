@@ -392,6 +392,16 @@ label toXartabanaFoz:
                 linear 3 xpos 1.5
             pause 5
 
+            call lowerJamesosRealmMap
+            #animate Xerxes going to Xartabana via Yineh
+            #co for xerx
+            show atazeraImg armoredBattle scythedChariot at tenthSize:
+                xanchor 1.0 yanchor 1.0
+                #start - xpos 0.2 ypos 0.68
+                #linear 2 xpos 0.317 ypos 0.685
+                #linear 2 xpos 0.283 ypos 0.72 
+            with fade
+            pause 4
             jump atazeraMeetFoz
 
         "There is a lot of them. Lets go around the long way":
@@ -441,23 +451,100 @@ label toXartabanaFoz:
                 ypos 0.95
             #ahrite battle theme plays - should follow similar instrimentation as ahrimaniom battle.
             $ enemyTroopers = [ copy.copy(ahriteSpearDude) , copy.copy(ahriteSpearGirl) , copy.copy(ahriteArcher) , copy.copy(ahriteScorpion) , copy.copy(ahriteScorpion) , copy.copy(ahriteSlinga) , copy.copy(ahriteSpearGirl) ]
+            play music "<to 5>audio/music/Ahrite Battle.ogg" noloop
+            queue music ahriteBattle 
             call screen playerActions( "This accursed ruin still houses Ahrites!? SLAY THEM!!" , False , False , True , 0 )
+            play music weOwnedThem
+            queue music eeerieRuins
+
+            show xerx34LookDownArmoredMad at right , size2Thrid , duskLights:
+                ypos 1.4
+            show tesipiz34Consurned at center , size2Thrid , duskLights:
+                ypos 1.4
+            show volkara3quatArmored OMouth at left , size2Thrid , duskLights:
+                ypos 1.4
+            with fade
             xerx "This acursed ruin still spawns Ahrite?"
+            hide xerx34LookDownArmoredMad
+            show xerx3quatPointArmored at right , size2Thrid , duskLights:
+                ypos 1.4
+            with dissolve
             xerx "I thought they cleaned this place up in 554!"
+
+            hide xerx3quatPointArmored
+            hide tesipiz34Consurned
+            show xerx3quatAnnoyedArmored at right , size2Thrid , duskLights:
+                ypos 1.4
+            show tesipizBombAndFist at center , size2Thrid , duskLights:
+                ypos 1.4
+            with dissolve
             tesi "We can explode it away!"
+
+            hide tesipizBombAndFist
+            hide xerx3quatAnnoyedArmored
+            show tesipiz34SupirzedArmored at center , size2Thrid , duskLights:
+                ypos 1.4
+            show xerx3quatPointCommandingArmored at right , size2Thrid , duskLights:
+                ypos 1.4 
+            with dissolve    
             xerx "No Tesipiz." 
             xerx "That would spread it around."
+
+            hide xerx3quatPointCommandingArmored
+            hide tesipiz34SupirzedArmored
+            show volkara3quatArmored pointy deltaMouth
+            show xerx3quatAnnoyedArmored at right , size2Thrid , duskLights:
+                ypos 1.4
+            show tesipiz34MiniHappyArmored at center , size2Thrid , duskLights:
+                ypos 1.4
+            with dissolve
             volk "The source is likely deep undergroud like in Takurium."
+
+            hide xerx3quatAnnoyedArmored
+            show volkara3quatArmored bentStand OMouth
+            show xerx3quatCommandingCrossarmsArmored at right , size2Thrid , duskLights:
+                ypos 1.4
+            with dissolve
             xerx "Yeah."
+            hide xerx3quatCommandingCrossarmsArmored
+            show xerx3quatPointCommandingArmored at right , size2Thrid , duskLights:
+                ypos 1.4
+            with dissolve
             xerx "We'll need to deal with them after our mission is over."
+
+            hide xerx3quatPointCommandingArmored
+            show xerx3quatThinkArmored at right , size2Thrid , duskLights:
+                ypos 1.4
+            show volkara3quatArmored basic sadEyes deltaMouth
+            with dissolve
             volk "Hopefully they haven't contanimated the ground water."
 
             if headPatCounter > 12 or atoBoinks > 0:
+                show volkara3quatArmored basic normalEyes neutralHappyMouth:
+                    xzoom 1.0
+                    linear 1 xzoom -1.0
+                    linear 2 xpos 1.5
+                show tesipiz34MiniHappyArmored:
+                    linear 3 xpos 1.5
+                with dissolve
                 xerx "{i}Thier base might be here."
                 xerx "{i}We need to finish our mission quickly."
                 xerx "{i}I think they're up to something."
             #maybe a lore explanation thing?
             $ IsDaytime = False
+
+            scene map2:
+                zoom 0.75
+                xalign 1.0
+                yalign 0.4 
+                matrixcolor TintMatrix("#fc9357")
+                linear 4 matrixcolor TintMatrix("#0600bc")
+
+            show xerxHorseMiniMad at tenthSize:
+                xpos 0.3 ypos 0.786 matrixcolor matrixcolor TintMatrix("#fc9357")
+                linear 4 xpos 0.127 ypos 0.743 matrixcolor TintMatrix("#0600bc")
+            with fade
+            pause 4
             jump atazeraMeetFoz
     #they go to Xartabana
     #
@@ -472,10 +559,70 @@ label toXartabanaATS:
 label atazeraMeetFoz:
     "Hello Atazera"
     #establishing shot
+    play music justDaWind fadein 1.0 fadeout 1.0
+    if IsDaytime:
+        scene xartabanaEstblishing at fullFit with fade
+    else:
+        scene xartabanaEstblishingNight at fullFit with fade
 
     #atazera should have some catch up talk with Xerxes
     #the purpose is to both inform the player/reader and have xerxes understand the current situation
     #they're at the tabel, eating dinner
+    play music ratThonking
+    show xartabanaThoneRoom at center
+
+    #people - have it similar to that jesus table painting where everbody is on the same side of the table to avoid needed to make another background.
+    show atazeraImg at center:
+        xpos 0.4
+    show happyXerx at center:
+        xpos 0.6
+    show tesipiz34NeutralHappy at right
+    show volkara3quat at left
+
+    #da table
+    show shortRoyalTable at center:
+        xzoom 0.75 yzoom 1.25
+    
+    #best to use action editor tool to configure
+    #volkara
+    show plateTanV
+    show foodLeaves
+    show spicedUpCrayfish
+    show bread
+    show cheese
+    show cupVolk
+
+    #xerx 
+    show plateTanX
+    show foodLeaves as xerxLeaves
+    show spicedUpCrayfish as xerxCray
+    show bread as xerxBread
+    show cheese as xerxCheese
+    
+    show cupXerx
+    #tesipiz
+    show plateTanT
+    show foodLeaves as tesiLeaves
+    show spicedUpCrayfish as tesiCray
+    show bread as tesiBread
+    show cheese as tesiCheese
+    
+
+    show cupTesi
+    #atazera
+    show plateGoldX
+    show foodLeaves as ataLeaves
+    show spicedUpCrayfish as ataCray
+    show bread as ataBread
+    show cheese as ataCheese
+    
+    show Goblet
+
+    show teaPot
+    #da food
+    #a mix of crayfish and breads and leafy greens and a cheese.
+    #they have a drink
+    #maybe a drink pot in a 
     ataz "How has things been going?"
     
     xerx "Great!"
