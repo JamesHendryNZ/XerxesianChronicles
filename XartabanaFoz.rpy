@@ -569,15 +569,15 @@ label atazeraMeetFoz:
     #the purpose is to both inform the player/reader and have xerxes understand the current situation
     #they're at the tabel, eating dinner
     play music ratThonking
-    show xartabanaThoneRoom at center
+    scene xartabanaThoneRoom at center
 
     #people - have it similar to that jesus table painting where everbody is on the same side of the table to avoid needed to make another background.
-    show atazeraImg at center:
+    show atazeraImg at center , halfSize:
         xpos 0.4
-    show happyXerx at center:
+    show happyXerx at center , halfSize:
         xpos 0.6
-    show tesipiz34NeutralHappy at right
-    show volkara3quat at left
+    show tesipiz34NeutralHappy at right , halfSize
+    show volkara3quat at left , halfSize
 
     #da table
     show shortRoyalTable at center:
@@ -585,74 +585,234 @@ label atazeraMeetFoz:
     
     #best to use action editor tool to configure
     #volkara
-    show plateTanV
-    show foodLeaves
-    show spicedUpCrayfish
-    show bread
-    show cheese
-    show cupVolk
+    show plateTanV at thridSize
+    show foodLeaves at thridSize
+    show spicedUpCrayfish at thridSize
+    show bread at thridSize
+    show cheese at thridSize
+    show cupVolk at thridSize
 
     #xerx 
-    show plateTanX
-    show foodLeaves as xerxLeaves
-    show spicedUpCrayfish as xerxCray
-    show bread as xerxBread
-    show cheese as xerxCheese
+    show plateTanX at thridSize
+    show foodLeaves as xerxLeaves at thridSize
+    show spicedUpCrayfish as xerxCray at thridSize
+    show bread as xerxBread at thridSize
+    show cheese as xerxCheese at thridSize
     
     show cupXerx
     #tesipiz
-    show plateTanT
-    show foodLeaves as tesiLeaves
-    show spicedUpCrayfish as tesiCray
-    show bread as tesiBread
-    show cheese as tesiCheese
+    show plateTanT at thridSize
+    show foodLeaves as tesiLeaves at thridSize
+    show spicedUpCrayfish as tesiCray at thridSize
+    show bread as tesiBread at thridSize
+    show cheese as tesiCheese at thridSize
     
 
     show cupTesi
     #atazera
-    show plateGoldX
-    show foodLeaves as ataLeaves
-    show spicedUpCrayfish as ataCray
-    show bread as ataBread
-    show cheese as ataCheese
+    show plateGoldX at thridSize
+    show foodLeaves as ataLeaves at thridSize
+    show spicedUpCrayfish as ataCray at thridSize
+    show bread as ataBread at thridSize
+    show cheese as ataCheese at thridSize
     
-    show Goblet
+    show Goblet at thridSize
 
-    show teaPot
+    show teaPot at thridSize
+    pause 5
     #da food
     #a mix of crayfish and breads and leafy greens and a cheese.
     #they have a drink
-    #maybe a drink pot in a 
+    #maybe a drink pot in a
+
+    show atazeraImg point happy with dissolve
     ataz "How has things been going?"
     
+    show atazeraImg neutralHappy
+    hide happyXerx 
+    show xerx3quatHappyer at center , flipped , halfSize behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.6
+    with dissolve
     xerx "Great!"
+
+    hide xerx3quatHappyer
+    show xerxWithSoAM at center , flipped , halfSize behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.6
+    with dissolve
     xerx "I have the Sword of Ahura-Mazda."
+
+    hide xerxWithSoAM
+    hide tesipiz34NeutralHappy
+    show xerx3quatHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.6
+    show tesipizYeah at right , halfSize behind shortRoyalTable , plateTanT , tesiLeaves , tesiCray , tesiBread , tesiCheese:
+        xpos 0.6
+    show atazeraImg happy
+    with dissolve
     tesi "And we've finally captured Takurium and freed Lady Takura."
 
+    hide tesipizYeah
+    show tesipiz34NeutralHappy at right , halfSize behind shortRoyalTable , plateTanT , tesiLeaves , tesiCray , tesiBread , tesiCheese:
+        xpos 0.6
+    show atazeraImg mean item
+    with dissolve
     ataz "That's great!!"
+
+    
+    show atazeraImg point with dissolve
     ataz "We should deal with the last of the astart loyalist strongholds."
     ataz "And pushing Balatius' goons to Bala-Axerium."
     
+    hide xerx3quatHappy 
+    show atazeraImg base neutral neutralHappy
+    show xerx3quatPointHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.6
+    with dissolve
     xerx "Bala-Axerium and Balatius."
     xerx "How well is your war against him?"
 
+    hide xerx3quatPointHappy
+    show xerx3quatHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.6
+    show atazeraImg item mean frown
+    with dissolve
     ataz "The usuall."
+    show atazeraImg sad angry
     ataz "I haven't been able to take out the fortresses guarding Bala-Axerium."
+
+    hide xerx3quatHappy
+    show atazeraImg base neutral neutralHappy
+    show xerx3quatConsurnd at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.6
+    with dissolve
     xerx "O.K"
     
+
+    hide xerx3quatConsurnd
+    show atazeraImg point happy
+    show xerx3quatHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.6
+    with dissolve
     ataz "By the way."
     ataz "I've learnt a new skill."
+    show atazeraImg training closed with dissolve
     ataz "I'll teach you. It'll help"
 
+    scene xartabanaThoneRoom at center with fade
+    show atazeraImg training at center , size2Thrid with dissolve:
+        ypos 1.25
     ataz "Some emenies have been doing undodgable and unblockable attacks."
     ataz "We can deal with these attacks by jumping."
     $ canJump = True
     #TODO put jumping tutorial here
+    $ rythmPoints = 0
+    $ atazeraTrain = copy.copy( atazeraTutorial )
+    $ defencePattern = getMeleeDefencePatterns( atazeraTrain.diffculty )
+    $ resurrectParty( currentParty )
+    $ canProceed = False
 
+    #should we have a training theme?
+    #simple just simple medoly and rythmn
+    play music villageTheme fadein 1.0 fadeout 1.0
+    
+    show atazeraTraining training happy at left , size2Thrid with dissolve:
+        ypos 1.25
+    ataz "Jumping can now be done with the X button"
+
+    while not canProceed: 
+        call defenceTime ( defencePattern[0] , not atazeraTrain.rangedFoe , atazeraTrain , currentParty[0] , 1.0)
+        if currentParty[0].health < currentParty[0].hitpoints:
+            show atazeraImg sad O with dissolve
+            ataz "Lets try that again."
+            show atazeraImg mean with dissolve
+            ataz "Try to avoid getting hit by jumping over lines with the X button."
+            $ resurrectParty( currentParty )
+            $ atazeraTrain.health = atazeraTrain.hitpoints
+            $ defencePattern = getMeleeDefencePatterns( atazeraTrain.diffculty )
+            $ canProceed = False
+        else:
+            $ canProceed = True
+
+    $ canProceed = False
+    $ atazeraTrain.health = atazeraTrain.hitpoints
+
+    while not canProceed: 
+        show atazeraImg mean frown with dissolve
+        ataz "Try to avoid jumping into attacks"
+        call defenceTime ( defencePattern[1] , not atazeraTrain.rangedFoe , atazeraTrain , currentParty[0] , 1.0)
+        if currentParty[0].health < currentParty[0].hitpoints:
+            show atazeraImg sad O with dissolve
+            ataz "Lets try that again."
+            $ resurrectParty( currentParty )
+            $ atazeraTrain.health = atazeraTrain.hitpoints
+            $ defencePattern = getMeleeDefencePatterns( atazeraTrain.diffculty )
+            $ canProceed = False
+        else:
+            $ canProceed = True
+    
+    $ canProceed = False
+    $ atazeraTrain.health = atazeraTrain.hitpoints
+
+    while not canProceed: 
+        show atazeraImg mean frown with dissolve
+        ataz "Be sure to block arrows before jumping as you will still take damage from them."
+        show atazeraImg O with dissolve
+        ataz "Keep in mind that you can block arrows while jumping."
+        call defenceTime ( defencePattern[2] , not atazeraTrain.rangedFoe , atazeraTrain , currentParty[0] , 1.0)
+        if currentParty[0].health < currentParty[0].hitpoints:
+            ataz "Lets try that again."
+            $ resurrectParty( currentParty )
+            $ defencePattern = getMeleeDefencePatterns( atazeraTrain.diffculty )
+            $ atazeraTrain.health = atazeraTrain.hitpoints
+            $ canProceed = False
+        else:
+            $ canProceed = True
+    
+    $ canProceed = False
+    $ atazeraTrain.health = atazeraTrain.hitpoints
+
+    while not canProceed: 
+        show atazeraImg neutral O with dissolve
+        ataz "Jumping will also avoid counter attacks so keep that in mind."
+        call defenceTime ( defencePattern[3] , not atazeraTrain.rangedFoe , atazeraTrain , currentParty[0] , 1.0)
+        if currentParty[0].health < currentParty[0].hitpoints:
+            show atazeraImg mean frown with dissolve
+            ataz "Lets try that again."
+            $ resurrectParty( currentParty )
+            $ defencePattern = getMeleeDefencePatterns( atazeraTrain.diffculty )
+            $ atazeraTrain.health = atazeraTrain.hitpoints
+            $ canProceed = False
+        else:
+            $ canProceed = True
+    
+    show atazeraImg closed happy with dissolve
+    ataz "All done."
+    show atazeraImg base neutral with dissolve
+    ataz "That should help with fighting the higher tier Astarts."
+    show atazera at center , size2Thrid:
+        xpos 0.5
+        linear 2 xpos 0.0 xalign 0.0
+    show xerx3quatHappyer at right , size2Thrid:
+        xpos 1.5 ypos 1.25
+        linear 2 xpos 1.0
     xerx "Nice."
+    hide xerx3quatHappyer
+    show xerx3quatHappyCrossArms at right , size2Thrid:
+        ypos 1.25
+    with dissolve
     xerx "That should make things easier."
 
+    show atazeraImg point O at flipped with dissolve
     ataz "I also got Megabazus' message."
+    show atazeraImg item happy 
+    hide xerx3quatHappyCrossArms
+    show xerx3quatHappy at right , size2Thrid:
+        ypos 1.25
+        linear 2 xpos 0.5 xalign 0.5
+    show volkara3quat at right , size2Thrid , flipped:
+        ypos 1.25 xpos 1.5
+        linear 2 xpos 1.0
+    with dissolve
     ataz "This might help you with finding the Anti-Stealth Tablet pieces"
 
     $ changeItemAmount( inventory , tabletDocument , 1 )
