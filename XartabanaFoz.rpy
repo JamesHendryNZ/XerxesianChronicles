@@ -713,7 +713,7 @@ label atazeraMeetFoz:
 
     #should we have a training theme?
     #simple just simple medoly and rythmn
-    play music villageTheme fadein 1.0 fadeout 1.0
+    play music trainingTune fadein 1.0 fadeout 1.0
     
     show atazeraTraining training happy at left , size2Thrid with dissolve:
         ypos 1.25
@@ -785,6 +785,7 @@ label atazeraMeetFoz:
         else:
             $ canProceed = True
     
+    play music villageTheme fadein 1.0 fadeout 1.0
     show atazeraImg closed happy with dissolve
     ataz "All done."
     show atazeraImg base neutral with dissolve
@@ -813,23 +814,58 @@ label atazeraMeetFoz:
         ypos 1.25 xpos 1.5
         linear 2 xpos 1.0
     with dissolve
+    show antiStealthScroll at left with dissolve
     ataz "This might help you with finding the Anti-Stealth Tablet pieces"
 
+    #animeate antisteal scroll going 2 volkara
+    show volkara3quat pointy with dissolve
+    pause 2
     $ changeItemAmount( inventory , tabletDocument , 1 )
 
+    hide antiStealthScroll with dissolve
+    show volkara3quat basic happyMouth
+    show atazeraImg base neutralHappy
+    with dissolve
     volk "Thanks Atazera."
 
     #in the original comic (showing the cannonical AST version of events, Xerxes wants the jamesians to enter)
     #but their are no jamesian army here - they're busy fighting krokkosnek over lake Takura
+    scene xartabanaThoneRoom at truecenter, size2Thrid with fade
+    show atazeraImg at left , size2Thrid , flipped:
+        ypos 1.25
+    #should i make a new graphic for the 2 fingers (based on yeah)
+    show xerx3quatHappyer at right , size2Thrid:
+        ypos 1.25
+    with dissolve
     xerx "We need 2 of the Anti-Stealth Tablet pieces."
+    hide xerx3quatHappyer
+    show xerx3quatPointHappy at right , size2Thrid:
+        ypos 1.25
+    with dissolve
     xerx "We belive one to be in Balatius' possession."
     xerx "And another one lost in Makkabium Ruins."
+    hide xerx3quatPointHappy
+    show xerx3quatPointCommanding at right , size2Thrid:
+        ypos 1.25
+    with dissolve
     xerx "We need to get into Bala-Axerium."
 
+    hide xerx3quatPointCommanding
+    show xerx3quatHappy at right , size2Thrid:
+        ypos 1.25
+    show atazeraImg point mean happy
+    with dissolve
     ataz "I have infiltrated Bala-Axerium."
     ataz "I can get many of my \"Astart\" forces in."
+
+    hide xerx3quatHappy
+    show xerx34LookDownAnnoyed at right , size2Thrid:
+        ypos 1.25
+    show atazeraImg greet sad O
     ataz "But they'll kill me on the spot as my head is worth 25,000 astartins."
 
+    #atazera thinking pose - hand in fornt of chest but below face
+    #atazera armored think.
     ataz "All though."
     ataz "Makkabium Ruins may be easier since the Astarts don't bother with it."
     volk "Aren't those ruins filled with angry ghosts?"
