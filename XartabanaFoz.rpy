@@ -549,7 +549,7 @@ label toXartabanaFoz:
     #they go to Xartabana
     #
 
-label toXartabanaATS:
+label toXartabanaATS: #do when ats version of events
     "Take the southern foress out"
     #the Astart rammans are held up here and needed to be flushed out
     #they assult the walls
@@ -557,7 +557,7 @@ label toXartabanaATS:
     #they win and they go to Xartabana
 
 label atazeraMeetFoz:
-    "Hello Atazera"
+    #"Hello Atazera"
     #establishing shot
     play music justDaWind fadein 1.0 fadeout 1.0
     if IsDaytime:
@@ -866,12 +866,28 @@ label atazeraMeetFoz:
 
     #atazera thinking pose - hand in fornt of chest but below face
     #atazera armored think.
+    show atazeraImg think neutral frown with dissolve
     ataz "All though."
+    show atazeraImg point with dissolve
     ataz "Makkabium Ruins may be easier since the Astarts don't bother with it."
+    show atazeraImg think neutralHappy
+    show xerx3quatPointCommanding at right , size2Thrid:
+        ypos 1.25
+        linear 2 xalign 0.5 xpos 0.5
+    show volkara3quat pointy meanEyes deltaMouth at right , size2Thrid:
+        ypos 1.25
+        linear 2 xpos 1.5
+        linear 2 xpos 1.0
     volk "Aren't those ruins filled with angry ghosts?"
     volk "Expellically in the underground sections."
 
+    show atazeraImg point closedEyes
+    show volkara3quat armsFoward
+    with dissolve
     ataz "Yes. That's why the Astarts don't bother with it."
+    show atazeraImg neutral happy
+    show volkara3quat basic normalEyes neutralHappyMouth
+    with dissolve
     ataz "You don't have to deal with them right now."
     
     
@@ -880,97 +896,390 @@ label atazeraMeetFoz:
     #many of the fighters will be desguised as slaves and will activate when ready.
     #many of the slave "onwers" are also in on it
     #forces will hide underground and attack when ready
-
+    hide xerx3quatPointCommanding
+    show xerx3quatThink at center , size2Thrid:
+        ypos 1.25
+    show atazeraImg base neutralHappy
+    with dissolve
     #face xerxes for menu
     menu:
         "We'll deal with King Balatius first.":
             $ enteringFrom = "Xarta2BalaAxerium"
+            hide xerx3quatThink
+            show xerx3quatYeah at center , size2Thrid:
+                ypos 1.25
+            with dissolve
             xerx "The morale hit and confusion will be to our advantage."
+            hide xerx3quatYeah
+            show xerx3quatThink at center , size2Thrid:
+                ypos 1.25
             xerx "Just..."
             pause 2
+            hide xerx3quatThink
+            show xerx3quatPoint at center , size2Thrid:
+                ypos 1.25
+            with dissolve
             xerx "How would be entering Bala-Axerium?"
 
+            hide xerx3quatPoint
+            show xerx3quatMiniSuprized at center , size2Thrid:
+                ypos 1.25
+            show atazeraImg closed happy
+            with dissolve
             ataz "Through the front gate."
+            show atazeraImg mean with dissolve
             ataz "As someone else."
 
+            hide xerx3quatPoint
+            show xerx3quatAnnoyed at center , size2Thrid:
+                ypos 1.25
+            show atazeraImg hornyEyes point 
+            with dissolve
             ataz "You know about the sex changing spell?"
+            hide xerx3quatAnnoyed
+            show xerx34LookDownAnnoyed at center , size2Thrid:
+                ypos 1.25
+            show atazeraImg closed greet
+            with dissolve
             ataz "You can turn into a girl and destract Balatius."
 
-            xerx "NO!!"
+            show atazeraImg neutral O
+            hide xerx34LookDownAnnoyed
+            show xerx3quatNO at center , size2Thrid:
+                ypos 1.25
+            with dissolve
             with vpunch
-            xerx "I'M NOT GOING TO BE BALATIUS' DANCING GIRL!!"
+            xerx "NO!!"
+            hide xerx3quatNO
+            show xerx3quatYeahAngry at center , size2Thrid:
+                ypos 1.25
+            with dissolve
             with hpunch
-
+            xerx "I'M NOT GOING TO BE BALATIUS' DANCING GIRL!!"
+            
+            hide xerx3quatNO
+            show xerx34LookDownAnnoyed at center , size2Thrid:
+                ypos 1.25
+            show atazeraImg point mean happy
+            with dissolve
             ataz "And that's why I need you to do it."
-            ataz "They won't be expecting it."#does atazera know about magic sword binding?
+            show atazeraImg point yeah with dissolve
+            ataz "They won't be expecting it."
+            show atazeraImg hornyEyes with dissolve
             ataz "And you'll act natural."
+            show atazeraImg base neutral with dissolve
             ataz "You can fool people with honesty."
 
+            hide xerx34LookDownAnnoyed
+            show xerx3quatAnnoyed at center , size2Thrid:
+                ypos 1.25 xzoom 1.0
+                linear 2 xpos 0.5 xalign 0.5 xzoom -1.0
+            show atazeraImg neutralHappy
+            show tesipiz34CuriousPointing at right , size2Thrid:
+                ypos 1.25 xpos 1.5
+                linear 2 xpos 1.0
+            with dissolve
             tesi "There's a sex changing spell?"
+
+            hide tesipiz34CuriousPointing
+            hide xerx3quatAnnoyed
+            show xerx3quatPointCommanding at center , size2Thrid , flipped:
+                ypos 1.25
+            show tesipiz34NeutralHappy at right , size2Thrid:
+                ypos 1.25
+            with dissolve
             xerx "Yes Tesipiz."
             xerx "It allows a man to turn into lady."
-            xerx "They can even lay eggs like one."
+            hide xerx3quatPointCommanding
+            show xerx34Ouch at center , size2Thrid , flipped:
+                ypos 1.25
+            hide tesipiz34NeutralHappy
+            show tesipiz34Curious at right , size2Thrid:
+                ypos 1.25
+            with dissolve
+            xerx "And can even lay eggs like one."
+            hide xerx34Ouch
+            show xerx3quatAnnoyed at center , size2Thrid , flipped:
+                ypos 1.25
+            hide tesipiz34Curious
+            show tesipiz34CuriousPointing at right , size2Thrid:
+                ypos 1.25
+            with dissolve
             tesi "How do you know this?"
 
+            hide xerx3quatAnnoyed
+            show xerx3quatPointCommanding at center , size2Thrid , flipped:
+                ypos 1.25
+            hide tesipiz34CuriousPointing
+            show tesipiz34Curious at right , size2Thrid:
+                ypos 1.25
             xerx "Because the Ahrimaniom was able to use it on me."
 
-            xerx "THE 5 HELLS!!"
+
+            play music ahrimaniomPhase1 fadein 1.0 fadeout 1.0
+            scene ahriteRoom at center , ahriteLight 
+            show ahrimaniomMK3 at truecenter , flipped , halfSize:
+                xpos 0.8
+            show xerxMadArmedArmored at truecenter , halfSize:
+                xpos -0.1
+                easein 3 xpos 0.5
+            with dissolve
+            #scene ahriteRoom at fullFit
+            pause 1
+            hide ahrimaniomMK3
+            hide xerxMadArmedArmored
+            show ahrimaniomMK3Casting at truecenter , flipped , halfSize:
+                xpos 0.7 matrixcolor TintMatrix("#000") * BrightnessMatrix(1.0)
+                linear 0.5 matrixcolor TintMatrix("#FF48E9")
+            show xerxSuprizedArmored at truecenter , halfSize:
+                xpos 0.45
+            with dissolve
+            play sound magicAttackUnchmabered    
+            
+            hide xerxSuprizedArmored
+            hide ahrimaniomMK3Casting
+            show xerdzaJustMade at truecenter , halfSize , flipped:
+                xpos 0.3
+                easeout 4 xpos 0.5
+            with Fade(0.5,1,1,color="FF48E9")
+            stop music fadeout 3
+            pause 2
+            hide xerdzaJustMade
+            show xerdzaImGirlNow at center , size08:
+                ypos 1.4
+            with dissolve
+            with hpunch
+            with vpunch
+            with hpunch
+            with vpunch
+            with hpunch
+            with vpunch
+            with hpunch
+            with vpunch
+            #show xerx getting genderbent 
+            #need Ahrimaniom Xerxes sprite - he gets a mordern design
+
+            play music eeerieRuins fadein 1.0 fadeout 1.0
+            scene ashurChanber at fullFit
+            show femdius at left , size2Thrid , lightCrystalLights:
+                ypos 1.4
+            show xerdzaAnnoyed at right , size2Thrid , lightCrystalLights:
+                ypos 1.4
+            with fade
+            xerx "I was able to return back when I learned the spell."
+            #show xerx learningn sex-change spell
+            show femdius threeFingers happyMouth with dissolve
+            trim "You should be able to turn back into a dude in 3 hours now that you know the spell."
             with vpunch
 
-            xerx "I was able to return back when I learned the spell."
+            scene xartabanaThoneRoom at center
+            show atazeraImg at left , size2Thrid , flipped:
+                ypos 1.25
+            show xerx3quatPointHappy at center , size2Thrid , flipped:
+                ypos 1.25
+            show tesipiz34Curious at right , size2Thrid:
+                ypos 1.25
+            with fade
             xerx "I can teach you, so you can destract Balatius instead."
             xerx "Or use Volkara since she is a girl to begin with."
+            
+            hide xerx3quatPointHappy
+            show xerxNoWeGood at center , size2Thrid , flipped:
+                ypos 1.25
+            with dissolve
             xerx "I like being a boy."
             
+            show atazeraImg yeah happy
+            hide xerxNoWeGood
+            show xerx3quatHappyer at center , size2Thrid , flipped:
+                ypos 1.25
+            hide tesipiz34Curious
+            show tesipiz34Happy at right , size2Thrid:
+                ypos 1.25
+            with dissolve
             ataz "Good idea."
+            show atazeraImg closedEyes
+            hide xerx3quatHappyer
+            show xerx3quatMiniSuprized at center , size2Thrid:
+                ypos 1.25
+            hide tesipiz34Curious
+            show tesipiz34Happy at right , size2Thrid:
+                ypos 1.25
+            with dissolve
             ataz "More destractions."
+            show atazeraImg point horny
+            hide xerx3quatHappyer
+            show xerx3quatMiniSuprized at center , size2Thrid:
+                ypos 1.25
             ataz "But you're still turning into a girl Xerxes."
+            show atazeraImg netrual happy
+            show xerx3quatAnnoyed at center , size2Thrid:
+                ypos 1.25
+                linear 2 xpos 0.25
+            hide tesipiz34Happy
+            show tesipiz34NeutralHappy at right , size2Thrid:
+                ypos 1.25
+                linear 2 xpos 0.75 xalign 0.5
+            show volkara3quat armsFoward Omouth at right , size2Thrid:
+                ypos 1.25 xpos 1.5
+                linear 2 xpos 1.0
+
             ataz "Xerxes has binded the Sword of Ahura-Mazda to him, right?"
+            show atazeraImg neutral neutralHappy
+            show volkara3quat base happyMouth
+            with dissolve
             volk "Yes he has."
+
+            show atazeraImg mean happy
+            show volkara3quat neutralHappyMouth
             ataz "Good."
 
+            show atazeraImg yeah closedEyes with dissolve 
             ataz "That'll make the smuggling easier."
             
+            show atazeraImg neutral with dissolve
             ataz "Now."
+            ataz "Xerxes."
+            show atazeraImg point
+            hide tesipiz34NeutralHappy
+            show tesipiz34Curious at center , size2Thrid:
+                ypos 1.25 xpos 0.75
+            hide xerx3quatAnnoyed
+            show slightlyAnnoyedXerx at center , size2Thrid:
+                ypos 1.25 xpos 0.25
+            with dissolve
             ataz "Teach Tesipiz the sex change spell."
+
+            show atazeraImg at left , size2Thrid , flipped:
+                ypos 1.25 xzoom 1.0
+                linear 1 xzoom -1.0
+            show volkara3quat basic OmegaMouth
+            with dissolve
             ataz "And I'll get dancing slave costumes for the three of you."
 
+            show atazeraImg base neutral
+            show volkara34Happy pointy sadEyes OMouth 
+            with dissolve
             volk "Wait!?"
+            show volkara34Happy OmegaMouth with dissolve
             volk "What!!"
+            show volkara3quat Omouth with dissolve
             volk "Me too??"
 
+
+            show atazeraImg at left , size2Thrid , flipped:
+                ypos 1.25 xzoom -1.0
+                linear 1 xzoom 1.0
+            show volkara3quat armsFoward
+            with dissolve
             ataz "We'll need somebody to steal the Anti-Stealth tablet while Xerxes does the destracting."
+            
+            show atazeraImg greet closed with dissolve
             ataz "And two is better then one."
 
+            show atazeraImg base neutral neutralHappy
+            show volkara34Happy meanEyes deltaMouth
+            with dissolve
             volk "Curses."
             
+
             call trioTurnIntoGirlsInXartabana
+            #scene xartabanaThoneRoom at truecenter, size2Thrid            
+            show atazeraImg point happy at left , size2Thrid , flipped:
+                ypos 1.25 xpos -0.5
+                linear 1 xpos 0.0
 
             if IsDaytime:
                 ataz "We'll go when it's night time."
+                
             else:
-                ataz "We'll go to now."
+                ataz "We'll go now."
 
             jump malikGetsDaLadies
 
         "The ghosts of Makkabium won't mind if we look around":
             $ enteringFrom = "Xarta2Makkabium"
 
+            show volkara3quat armsFoward sadEyes OMotuh with dissolve
             volk "Ghosts!"
+            show volkara34Happy OmegaMouth with dissolve
             volk "I don't like ghosts."
+
+            hide xerx3quatThink
+            show xerx3quatHappy at center , size2Thrid:
+                ypos 1.25
+                linear 2 xalign 0.5 xpos 0.3
+            show volkara3quat deltaMouth at right , size2Thrid:
+                ypos 1.25
+                linear 2 xpos 0.67 xalign 0.1
+            show tesipiz34HappyCommandingPoting at right:
+                ypos 1.25 xpos 1.5
+                linear 2 xpos 1.0
+            with dissolve
             tesi "Don't worry."
+            hide tesipiz34HappyCommandingPoting
+            show tesipizYeah at right , size2Thrid:
+                ypos 1.25
+            with dissolve
             tesi "Ghosts are easy to deal with."
 
+            #volk 3quat frown in needed?
+            hide tesipizYeah
+            show tesipiz34NeutralHappy at right , size2Thrid:
+                ypos 1.25
+            show volkara3quat armsOut OMegaMouth
+            with dissolve
             volk "But there are swarms of them."
+            show volkara3quat base oMouth with dissolve
             volk "And they hate Jamesians because of how the city became a ruin."
 
+            show volkara3quat armsFoward neutralMouth
+            hide xerx3quatHappy
+            show xerx3quatPointHappy at center , size2Thrid:
+                ypos 1.25 xpos 0.3 xzoom 1.0
+                linear 2 xzoom -1.0
             xerx "Don't worry Volkara."
+            hide xerx3quatPointHappy
+            show xerxWithSoAM at center , size2Thrid , flipped:
+                ypos 1.25 xpos 0.3
+            show volkara3quat lineEyes OMotuh
+            with dissolve
             xerx "We'll deal with any silly ghost that attack us."
 
+            hide tesipiz34NeutralHappy
+            show tesipiz34happy at center , size2Thrid:
+                ypos 1.25 xpos 0.3
+            with dissolve
             tesi "And you should think happy thoughts Volkara."
+
+            hide tesipiz34Happy
+            show tesipizYeah at center , size2Thrid:
+                ypos 1.25 xpos 0.3
+            with dissolve
             tesi "It worked for Ato'ssa and she has been through worse."
+            
+        
+            show volkara3quat pointy meanEyes deltaMouth
+            hide tesipiz34Happy
+            show tesipiz34NeutralHappy at center , size2Thrid:
+                ypos 1.25 xpos 0.3
+            hide xerxWithSoAM
+            show xerx3quatHappy at center , size2Thrid:
+                ypos 1.25 xpos 0.3
+            with dissolve
             volk "But I don't like them."
+
+            hide xerx3quatHappy
+            show xerx3quatPointHappy at center , size2Thrid:
+                ypos 1.25 xpos 0.3
+            show volkara3quat armsFoward lineEyes
+            with dissolve
             xerx "Bravery is earned Volkara"
+            hide xerx3quatPointHappy
+            show xerx3quatHappyCrossArms at center , size2Thrid:
+                ypos 1.25 xpos 0.3
+            show volkara3quat basic OMotuh
+            with dissolve
             xerx "You'll have to deal with it."
 
             jump xartabanaMenu
@@ -985,6 +1294,12 @@ label atazeraMeetFoz:
     #oh boy this will be a long one then
 
 label xartabanaMenu:
+
+    if IsDaytime:
+        scene xartabanaEstblishing at fullFit with Fade(2,0,2)
+    else:
+        scene xartabanaEstblishingNight at fullFit with Fade(2,0,2)
+
     menu:
         "Buy items":
             jump shopXartabana
@@ -1002,28 +1317,233 @@ label xartabanaMenu:
             else:
                 jump sleepXartabanaFoZ
         "Head for Makkabium" if enteringFrom == "Xarta2Makkabium":
+            if IsDaytime:
+                scene clearDayTime at fullFit
+                show xartabanaPalaceCortyard at center
+                with fade
+                show volkara3quatArmored bentStand sadEyes OMouth at left, size2Thrid with dissolve:
+                    ypos 1.25
+                show xerx3quatHappyArmored at right , size2Thrid with dissolve:
+                    ypos 1.25
+            else:
+                scene starNightTime at fullFit
+                show xartabanaPalaceCortyard at center , starReavalTopGradient
+                with fade
+                show volkara3quatArmored bentStand sadEyes OMouth at left , size2Thrid , lightCrystalLights with dissolve:
+                    ypos 1.25
+                show xerx3quatHappyArmored at right , size2Thrid , lightCrystalLights with dissolve:
+                    ypos 1.25
+                
             volk "We're going to that place with ghosts."
+
+            hide xerx3quatHappyArmored 
+            if IsDaytime:
+                show xerx3quatPointHappyArmored xerx3quatHappyArmored at right , size2Thrid with dissolve:
+                    ypos 1.25
+            else:
+                show xerx3quatPointHappyArmored xerx3quatHappyArmored at right , size2Thrid , lightCrystalLights with dissolve:
+                    ypos 1.25
+
             xerx "Don't worry Volkara."
+
+            hide xerx3quatPointHappyArmored
+            if IsDaytime:
+                show xerxWithChargedSoAM at right , size2Thrid with dissolve:
+                    ypos 1.25
+            else:
+                show xerxWithChargedSoAM at right , size2Thrid , lightCrystalLights with dissolve:
+                    ypos 1.25
+
             xerx "The Sword of Ahura-Mazda will purge the ruins of any hostile ghosts!"
             #volkara wants a hug
+            show volkara3quatArmored armsOut deltaMouth
+            with dissolve
             menu:
                 "Confort Her":
-                    "huggy the volkara"
+                    hide volkara3quatArmore
+                    hide xerxWithChargedSoAM
+                    if IsDaytime:
+                        show xerxWithVolkaraArmored at center , size2Thrid:
+                            ypos 1.25
+                    else:
+                        show xerxWithVolkaraArmored at center , size2Thrid , lightCrystalLights:
+                            ypos 1.25
+                    
+                    with dissolve
+                    pause 5
+                    hide xerxWithVolkaraArmored with dissolve
                     $ volkaraCuddleCounterXerx += 1
                 "You're strong Volkara":
+                    hide xerxWithChargedSoAM
+                    if IsDaytime:
+                        show xerx3quatPointHappyArmored at right , size2Thrid:
+                            ypos 1.25
+                    else:
+                        show xerx3quatPointHappyArmored at right , size2Thrid , lightCrystalLights:
+                            ypos 1.25
+                    show volkara3quatArmored basic
+                    with dissolve
                     xerx "I bevile you can overcome this."
+                    show volkara3quatArmored neutralHappyMouth with dissolve
                     xerx "You're strong."
+                    show volkara3quatArmored neutraEyes with dissolve
                     xerx "I'll be with you."
+
+                    #xerx goes to makkabium
+                    #he weve through the fortresses
+                    # start xpos 0.383 ypos 0.71
+                    # linear 1 xpos 0.356 ypos 0.692
+                    # linear 1 xpos 0.36 ypos 0.647
+                    # linear 3 xpos 0.4 ypos 0.57
+                    # linear 3 xpos 0.4 ypos 0.47
+                    # linear 1 xpos 0.42 ypos 0.428
+                    if IsDaytime:
+                        scene map2:
+                            zoom 0.75
+                            xalign 1.0
+                            yalign 0.4
+                            matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#FFF")
+                            linear 2 matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#FFF")
+                            linear 3 xpos 0.4 ypos 0.57 matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#fcfaa6")
+                            linear 3 xpos 0.4 ypos 0.47 matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#ac8233")
+                            linear 1 xpos 0.42 ypos 0.428 matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#ff943c")
+                        show xerxMarchFowardSoAM at tenthSize:
+                            xpos 0.383 ypos 0.71 xanchor 0.5 yanchor 0.5
+                            linear 1 xpos 0.356 ypos 0.692
+                            linear 1 xpos 0.36 ypos 0.647
+                            linear 3 xpos 0.4 ypos 0.57 matrixcolor TintMatrix("#fcfaa6")
+                            linear 3 xpos 0.4 ypos 0.47 matrixcolor TintMatrix("#ac8233")
+                            linear 1 xpos 0.42 ypos 0.428 matrixcolor TintMatrix("#ff943c")
+                    else:
+                        scene map2:
+                            zoom 0.75
+                            xalign 1.0
+                            yalign 0.4
+                            matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#0600bc")
+                            linear 2 matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#0600bc")
+                            linear 3 xpos 0.4 ypos 0.57 matrixcolor TintMatrix("#ac8233")
+                            linear 3 xpos 0.4 ypos 0.47 matrixcolor TintMatrix("#fcfaa6")
+                            linear 1 xpos 0.42 ypos 0.428 matrixcolor TintMatrix("#ffffff")
+
+                        show xerxMarchFowardSoAM at tenthSize:
+                            xpos 0.383 ypos 0.71 xanchor 0.5 yanchor 0.5 matrixcolor TintMatrix("#0600bc")
+                            linear 1 xpos 0.356 ypos 0.692
+                            linear 1 xpos 0.36 ypos 0.647
+                            linear 3 xpos 0.4 ypos 0.57 matrixcolor TintMatrix("#ac8233")
+                            linear 3 xpos 0.4 ypos 0.47 matrixcolor TintMatrix("#fcfaa6")
+                            linear 1 xpos 0.42 ypos 0.428 matrixcolor TintMatrix("#ffffff")
+                        $ IsDaytime = True
+                    with Fade( 3 )
+                    pause 10
+
             jump makkabiumFoZ1
-        "Leave Xartabana" if enteringFrom == "XartabanaLast":
+        "Leave Xartabana" if enteringFrom == "XartabanaLast": #do in the makkabium update
+            if IsDaytime:
+                scene clearDayTime at fullFit
+                show xartabanaPalaceCortyard at center
+                with fade
+                show atazeraImg at left , size2Thrid:
+                    ypos 1.25 
+                with dissolve
+                show xerxHappyGreetArmored at center , size2Thrid:
+                    ypos 1.25 xpos 0.33
+                show tesipiz34MiniHappyArmored at center , size2Thrid:
+                    ypos 1.25 xpos 0.67
+                show volkara3quat armsFoward at right , size2Thrid:
+                    ypos 1.25
+            else:
+                scene starNightTime at fullFit
+                #TODO side light gradient ( left brown , right yellow )
+                show xartabanaPalaceCortyard at center , starReavalTopGradient
+                with fade
+                show atazeraImg:
+                    ypos 1.25
+                with dissolve
+                show xerxHappyGreetArmored at center , size2Thrid , lightCrystalLights:
+                    ypos 1.25 xpos 0.33
+                show tesipiz34MiniHappyArmored at center , size2Thrid , lightCrystalLights:
+                    ypos 1.25 xpos 0.67
+                show volkara3quatArmored at right , size2Thrid , lightCrystalLights:
+                    ypos 1.25
+            with dissolve
             xerx "We're leaving. Atazera."
+            hide xerxHappyGreetArmored
+            hide tesipiz34MiniHappyArmored
+            if IsDaytime:
+                show xerx3quatHappyArmored at center , size2Thrid:
+                    ypos 1.25 xpos 0.33
+                show tesipizGreetingArmored at center , size2Thrid:
+                    ypos 1.25 xpos 0.67
+            else:
+                show xerx3quatHappyArmored at center , size2Thrid , lightCrystalLights:
+                    ypos 1.25 xpos 0.33
+                show tesipizGreetingArmored at center , size2Thrid , lightCrystalLights:
+                    ypos 1.25 xpos 0.67
+            with dissolve
+
             tesi "Good luck finishing off the Astarts"
+
+            hide tesipizGreetingArmored
+            hide volkara3quatArmored 
+
+            if IsDaytime:
+                show tesipiz34MiniHappyArmored at center , size2Thrid:
+                    ypos 1.25 xpos 0.67
+                show volkaraArmored greeting happyMouth at right , size2Thrid:
+                    ypos 1.25
+            else:
+                show tesipiz34MiniHappyArmored at center , size2Thrid , lightCrystalLights:
+                    ypos 1.25 xpos 0.67
+                show volkaraArmored greeting happyMouth at right , size2Thrid , lightCrystalLights:
+                    ypos 1.25
+            with dissolve
+
             volk "We'll see you soon."
+
+            hide volkaraArmored
+
+            if IsDaytime:
+                show volkara3quatArmored at right , size2Thrid:
+                    ypos 1.25
+            else:
+                show volkara3quatArmored at right , size2Thrid , lightCrystalLights:
+                    ypos 1.25
+            show atazeraImg greet happy
+            with dissolve
             ataz "You too Xerxes, Tesipiz and Atazera."
-            #map of attacks
-            #kwafwim and ssayu fall
+            
             "{b}Next part will come in Version 0.3.0"
             return
+            #map of attacks
+            #kwafwim and ssayu fall
+            #atazera's goons and astart goons
+            # start xpos 0.319 ypos 0.69
+            # linear 2 xpos 0.265 ypos 0.681
+            # linear 2 xpos 0.26 ypos 0.618
+            
+            #astart goon
+            # xpos 0.254 ypos 0.6
+            #xerxes goes to Ectabana
+            # start xpos 0.375 ypos 0.724
+            # linear 2 xpos 0.315 ypos 0.688
+            # linear 3 xpos 0.207 ypos 0.688
+            # linear 0.5 xpos 0.188 ypos 0.664
+            # linear 1.5 xpos 0.143 ypos 0.643
+            # linear 4 xpos 0.2 ypos 0.59
+            #if IsDaytime:
+            #    scene map2:
+            #        zoom 0.75
+            #        xalign 1.0
+            #        yalign 0.4
+            #        matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#FFF")
+            #else:
+            #    scene map2:
+            #        zoom 0.75
+            #        xalign 1.0
+            #        yalign 0.4
+            #        matrixcolor SaturationMatrix( 0.5 ) * TintMatrix("#0600bc")
+            
+            
 
             
 
@@ -1041,35 +1561,35 @@ label sleepXartabanaAST:
 label shopXartabana: #will be the only shop for both the Bala-Axerium and Makkabium parts of the story
     #shop lady or dude?
     #will be an axerian
-    "Kachigga kachigga"
+    #"Kachigga kachigga"
 
     $ xartabanaShopAngry = 0
-    scene royalZaratShop at truecenter
-    show chyaazi greet happyMouth at center , halfSize:
+    scene xartabanaShop at truecenter
+    show axerianLady greet happy at center , halfSize:
         ypos 1.0
-    show shopZaratShopCounter at truecenter , size08
+    show shopCounter2 at truecenter , size08
     with fade
     chya "Welcome to Xartabana Palace Shop."
     chya "I have many goods that can help you deal with the Astarts."
-    show chyaazi -greet with dissolve
+    show axerianLady -greet with dissolve
     chya "What do you need?"
     $ isAngryXartabanaShop = False
     $ ifUsedShop = False
-    show chyaazi -happyMouth
+    show axerianLady -happy
     with dissolve
 
 label shoppingXartabana:
 #hide chyaazi
-    scene royalZaratShop at truecenter
-    show chyaazi at center , halfSize:
+    scene xartabanaShop at truecenter
+    show axerianLady at center , halfSize:
         ypos 1.0
-    show shopZaratShopCounter at truecenter , size08
+    show shopCounter2 at truecenter , size08
     with dissolve
     
     call shopBasic( xartabanaShopItems , ifUsedShop , isAngryXartabanaShop ) 
 
     if _return == 0:
-        show chyaazi OMouth sadEyes with dissolve
+        show axerianLady O sad with dissolve
         chya "Ooah!"
         chya "You didn't buy anyhting."
 
@@ -1080,14 +1600,14 @@ label shoppingXartabana:
         $ theresAnImage =  str(_return[ 1 ])
 
         if _return[ 0 ] == 0:
-            show chyaazi with dissolve:
+            show axerianLady with dissolve:
                 zoom 0.5                    
                 easeout 1.0 ypos 2.0
                 easein 1.0 ypos 1.0
 
             pause 2
         else:
-            show chyaazi with dissolve
+            show axerianLady with dissolve
             
         #may need to add in an extra overlayer
         
@@ -1098,55 +1618,54 @@ label shoppingXartabana:
         
         if _return[ 1 ]:
 
-            show chyaazi item 
+            show axerianLady item 
             #show dyonisisngwaArmOver at middleStand , size2Thrid , duskLights
             show screen showItemImage( theresAnImage ,  horizontalPos = 0.5 , verticlePos = 0.45 , zoomies = 0.5) #TODO reconfigure to appaer on shopkeepers's hand/ the bench
             with dissolve
             pause 0.5
             hide screen showItemImage
-            show chyaazi happyMouth -item
-            hide dyonisisngwaArmOver
+            show axerianLady happy -item
             with dissolve
             chya "Do you want anything else?"
-            show chyaazi -happyMouth with dissolve
+            show axerianLady -happy with dissolve
             menu:
                 "Yes":
                     $ ifUsedShop = True
-                    show chyaazi happyMouth with dissolve
+                    show axerianLady happy with dissolve
                     jump shoppingXartabana
                 "No":
-                    show chyaazi greet happyMouth with dissolve
+                    show axerianLady greet happy with dissolve
                     chya "Thanks for buying my stuff."
                     chya "See you soon."
                     jump xartabanaMenu
 
     elif _return == 2:
 
-        show chyaazi OMouth mad 
+        show axerianLady O mean 
         with dissolve
         chya "You don't have enough money."
         if takuriumShopAngry < 5:
             $ takuriumShopAngry += 1
             jump shoppingXartabana
         else:
-            show chyaazi angryMouth meanEyes
+            show axerianLady mad mean
             stop music fadeout 2.0
             chya "Nope."
             play music astartesWrath fadein 1.0 fadeout 1.0
-            show chyaazi angryMouth meanEyes mad at angryColored with dissolve:
+            show axerianLady mean mad at angryColored with dissolve:
                 ypos 1.4 zoom 1.5
-            show shopZaratShopCounter behind chyaazi
+            show shopCounter2 behind chyaazi
             chya "I still need to make money."
             chya "I can't give you free stuff."
 
             jump xartabanaMenu
     elif _return == 3:
-        show chyaazi greet happyMouth with dissolve
+        show axerianLady greet happy with dissolve
         chya "Thanks for buying my supplies."
         chya "See you soon."
         jump xartabanaMenu    
 
-label makkaBala:
+label makkaBala: #do in the makkabium update
     #$ enteringFrom = "Xarta2BalaAxerium"
     if checkIfHave( inventory , tabletPieceGil ) & checkIfHave( inventory , tabletPieceZar ):
         "movie time"
@@ -1270,7 +1789,8 @@ label trioTurnIntoGirlsInXartabana:
         
     return
 
-label winXartabanaFoZ:
+###################################makkabium update content below######################################3
+label winXartabanaFoZ: #do in the makkabium update
     $ enteringFrom = "XartabanaLast"
     ataz "You're back!"
     ataz "Malik told me about what happend in Bala-Axerium."
@@ -1341,13 +1861,13 @@ label winXartabanaFoZ:
 
     jump sleepXartabanaFoZ
 
-label winXartabanaAST:
+label winXartabanaAST: #do in the makkabium update
     ataz "Thank you Xerxes for helping me destory the Bala-Axerians!"
     ataz "Balatius has been delt with and Axeria is ours!"
     $ sleepyTimeReset()
     call atazeraBackstroy
 
-label atazeraBackstroy:
+label atazeraBackstroy: #do in the makkabium update
     tesi "Atazera?"
     tesi "I heared you were an Astart General before joining us."
     tesi "Why?"

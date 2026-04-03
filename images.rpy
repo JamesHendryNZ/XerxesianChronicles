@@ -3925,6 +3925,7 @@ image xerxHorseBrush = "images/Protagonists/Xerxes/Xerxes 3-4 Neutral-Happy Armo
 
 image xerxWithAtossa = "images/Protagonists/Xerxes/Xerxes Hugging Atossa.webp"
 image xerxWithVolkara = "images/Protagonists/Xerxes/Xerxes Hugging Volkara.webp"
+image xerxWithVolkaraArmored = "images/Protagonists/Xerxes/Xerxes Hugging Volkara.webp"
 
 image xerxCarryingAhriteAtossa = "images/Protagonists/Xerxes/Xerxes Carraying Courrupted Ato'ssa.webp"
 
@@ -5224,6 +5225,10 @@ layeredimage atazeraImg:
             "images/Protagonists/Atazera/Atazera Item.webp"
         attribute point:
             "images/Protagonists/Atazera/Atazera Point.webp"
+        attribute think:
+            "images/Protagonists/Atazera/Atazera Point.webp"
+        attribute yeah:
+            "images/Protagonists/Atazera/Atazera Yeah.webp"
 
         attribute training:
             "images/Protagonists/Atazera/Atazera training.webp"
@@ -5236,32 +5241,41 @@ layeredimage atazeraImg:
             "images/Protagonists/Atazera/Atazera Armored Greet.webp"
         attribute armoredItem:
             "images/Protagonists/Atazera/Atazera Armored Item.webp"
+        attribute armoredThink:
+            "images/Protagonists/Atazera/Atazera Point.webp"
+        attribute armoredYeah:
+            "images/Protagonists/Atazera/Atazera Armored Yeah.webp"
 
         attribute armoredBattle:
             "images/Protagonists/Atazera/Atazera Armed.webp" 
         attribute rebelBattle:
-            "images/Protagonists/Atazera/Atazera Armed Rebel.webp"
+            "images/Protagonists/Atazera/Atazera Armored Yeah.webp"
     
     group eyes:
-        attribute neutral default if_any["basic","greet","point","item","training"]:
+        attribute neutral default if_any["basic","greet","point","item","training","think","yeah"]:
             "images/Protagonists/Atazera/Atazera Neutral.webp"
-        attribute neutral default if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle"]:
+        attribute neutral default if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle","armoredThink","armoredYeah"]:
             "images/Protagonists/Atazera/Atazera Armored Neutral.webp"
 
-        attribute mean if_any["basic","greet","point","item","training"]:
+        attribute mean if_any["basic","greet","point","item","training","think","yeah"]:
             "images/Protagonists/Atazera/Atazera Mean.webp"
-        attribute mean if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle"]:
+        attribute mean if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle","armoredThink","armoredYeah"]:
             "images/Protagonists/Atazera/Atazera Armored mean.webp"
 
-        attribute sadEyes if_any["basic","greet","point","item","training"]:
+        attribute sadEyes if_any["basic","greet","point","item","training","think","yeah"]:
             "images/Protagonists/Atazera/Atazera Sad.webp"
-        attribute sadEyes if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle"]:
+        attribute sadEyes if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle","armoredThink","armoredYeah"]:
             "images/Protagonists/Atazera/Atazera Armored Sad.webp"
 
-        attribute closedEyes if_any["basic","greet","point","item","training"]:
+        attribute closedEyes if_any["basic","greet","point","item","training","think","yeah"]:
             "images/Protagonists/Atazera/Atazera Closed.webp"
-        attribute closedEyes if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle"]:
+        attribute closedEyes if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle","armoredThink","armoredYeah"]:
             "images/Protagonists/Atazera/Atazera Armored Closed.webp"
+
+        attribute hornyEyes if_any["basic","greet","point","item","training","think","yeah"]:
+            "images/Protagonists/Atazera/Atazera Horny.webp"
+        attribute hornyEyes if_any["armored","armoredPoint","armoredGreet","armoredItem","armoredBattle","rebelBattle","armoredThink","armoredYeah"]:
+            "images/Protagonists/Atazera/Atazera Armored Horny.webp"
 
     group mouths:
         attribute neutralHappy default:

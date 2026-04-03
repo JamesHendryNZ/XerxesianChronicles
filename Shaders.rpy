@@ -24,7 +24,7 @@ init python:
     """)
 
 #the example on the renpy documentation is of a horizonantal one
-    renpy.register_shader("gradiants.gradient", variables="""
+    renpy.register_shader("gradiants.horizontal_gradient", variables="""
         uniform vec4 u_gradient_left;
         uniform vec4 u_gradient_right;
         uniform vec2 u_model_size;
@@ -53,6 +53,14 @@ init python:
         gl_FragColor *= mix(u_gradient_top, u_gradient_bottom, transition);
     """)
 
+
+transform litFromDaSideYellow2brown:
+    shader "gradiants.horizontal_gradient"
+    #yello at the right
+    u_gradient_right (0.4, 0.3, 0.0, 1.0)
+    #brown at the left
+    u_gradient_left (1.3, 0.95, 0.8, 1.0)
+
 transform duskMorningGradient:
     shader "gradiants.two_thirds_gradient"
     # Red at the top (R=1.0, G=0.0, B=0.0, Alpha=1.0)
@@ -63,9 +71,9 @@ transform duskMorningGradient:
 transform starReavalTopGradient:
     shader "gradiants.two_thirds_gradient"
     # yes stars
-    u_gradient_top (0.5, 0.5, 0.5, 1.0)
+    u_gradient_top (0.5, 0.5, 0.2, 1.0)
     # no stars
-    u_gradient_bottom (1.3, 0.95, 0.8, 0.0)
+    u_gradient_bottom (1.0, 0.95, 0.0, 0.0)
 
 transform topShineGradient:
     shader "gradiants.two_thirds_gradient"
