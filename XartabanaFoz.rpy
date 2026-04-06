@@ -1590,8 +1590,8 @@ label shoppingXartabana:
 
     if _return == 0:
         show axerianLady O sad with dissolve
-        chya "Ooah!"
-        chya "You didn't buy anyhting."
+        yukk "Ooah!"
+        yukk "You didn't buy anyhting."
 
         jump xartabanaMenu
 
@@ -1626,7 +1626,7 @@ label shoppingXartabana:
             hide screen showItemImage
             show axerianLady happy -item
             with dissolve
-            chya "Do you want anything else?"
+            yukk "Do you want anything else?"
             show axerianLady -happy with dissolve
             menu:
                 "Yes":
@@ -1635,34 +1635,34 @@ label shoppingXartabana:
                     jump shoppingXartabana
                 "No":
                     show axerianLady greet happy with dissolve
-                    chya "Thanks for buying my stuff."
-                    chya "See you soon."
+                    yukk "Thanks for buying my stuff."
+                    yukk "See you soon."
                     jump xartabanaMenu
 
     elif _return == 2:
 
         show axerianLady O mean 
         with dissolve
-        chya "You don't have enough money."
+        yukk "You don't have enough money."
         if takuriumShopAngry < 5:
             $ takuriumShopAngry += 1
             jump shoppingXartabana
         else:
             show axerianLady mad mean
             stop music fadeout 2.0
-            chya "Nope."
+            yukk "Nope."
             play music astartesWrath fadein 1.0 fadeout 1.0
             show axerianLady mean mad at angryColored with dissolve:
                 ypos 1.4 zoom 1.5
             show shopCounter2 behind chyaazi
-            chya "I still need to make money."
-            chya "I can't give you free stuff."
+            yukk "I still need to make money."
+            yukk "I can't give you free stuff."
 
             jump xartabanaMenu
     elif _return == 3:
         show axerianLady greet happy with dissolve
-        chya "Thanks for buying my supplies."
-        chya "See you soon."
+        yukk "Thanks for buying my supplies."
+        yukk "See you soon."
         jump xartabanaMenu    
 
 label makkaBala: #do in the makkabium update
@@ -1747,12 +1747,43 @@ label makkaBala: #do in the makkabium update
     jump malikGetsDaLadies
 
 label malikGetsDaLadies:
+    $ IsDaytime = False
+    scene clearDayTime at fullFit , duskMorningGradient
+    show xartabanaPalaceCortyard at center , halfSize , darkShade with Fade( 2, 0, 2)
+    show malikImg greets mean happy at duskLights , size2Thrid , left with dissolve:
+        ypos 1.25
+    show femXerx haremChained mean frown at duskLights , size2Thrid , center:
+        ypos 1.25
+    show femTesipiz chained at duskLights , size2Thrid , center:
+        ypos 1.25 xpos 0.75
+    show volkara3quat haremChained lineEyes OMouth at duskLights , size2Thrid , left :
+        ypos 1.25
+    with dissolve
+
     mali "Hello ladies."
+
+    show malikImg point neutral with dissolve
     mali "I'll be leading you into the Bala-Axerium."
+    show malikImg item with dissolve
+    with vpunch
+    show femXerx angry
+    show femTesipiz nervous O
+    show volkara3quat OMegaMouth
+    with hpunch
+    show femTesipiz neutral
+    show volkara3quat OMotuh
     mali "If I yank your chains, I'm just acting, understood."
 
+    show malikImg base:
+        linear 2 xpos 0.25 xanchor 0.5
+    show atazeraImg happy at left:
+        ypos 1.25 xpos -0.5
+        linear 2 xpos 0.0
     ataz "Also Xerxes."
+
+    show atazeraImg point frown with dissolve
     ataz "Try to avoid calling the Sword of Ahura-Mazda until either Tesipiz and Volkara break into the throne room or you hear a large bang."
+    show atazeraImg base O with dissolve
     ataz "Timing will be inportant."
 
     $ sleepyTimeReset()
@@ -1762,11 +1793,30 @@ label malikGetsDaLadies:
 label trioTurnIntoGirlsInXartabana:
 
     #they do their thing
+    scene xartabanaPalaceBedroom at fullFit
+    show light
+    with fade
 
+    show xerx3quatAnnoyed at left , size2Thrid:
+        ypos 1.25 xpos -0.5
+    pause 1
+    show tesipiz34NeutralHappy at left , size2Thrid:
+        ypos 1.25 xpos -0.5
+    pause 1
+    show volkara34Happy at left , size2Thrid:
+        ypos 1.25 xpos -0.5
     #xerxes turn tesipiz into a lady before turning himself into one
 
+    xerx "Now Tesipiz"
+    xerx "Watch this."
+    #TODO make transformation sound effect
+    #TODO make pointy pose for fem xerx regular clothes and base with hat
+    #TODO make fem tesipiz regular clothes
     #they reviel their slave dancer outfits
     with fade
+
+    #should I have female tesipiz her tesipiz's regular zone?
+
     tesi "I look nice."#feeling himself
     if muwaCuddleCounter <= 0 and takuraCuddles <= 0 and tsekreiCuddles <= 0 and not tsekreiDating:
         tesi "Maybe I can be own girlfirend."

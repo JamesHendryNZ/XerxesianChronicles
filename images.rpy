@@ -5310,6 +5310,8 @@ layeredimage malikImg:
             "images/Protagonists/Malik/Malik Base.webp"
         attribute armed:
             "images/Protagonists/Malik/Malik Armed.webp"
+        attribute greet:
+            "images/Protagonists/Malik/Malik Greet.webp"
         attribute commanding:
             "images/Protagonists/Malik/Malik Commanding.webp"
         attribute point:
