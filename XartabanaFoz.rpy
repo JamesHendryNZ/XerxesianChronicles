@@ -1798,26 +1798,43 @@ label trioTurnIntoGirlsInXartabana:
     with fade
 
     show xerx3quatAnnoyed at left , size2Thrid:
-        ypos 1.25 xpos -0.5
+        ypos 1.25 xpos -0.5 xzoom -1.0
+        linear 4 xpos 1.0 xanchor 1.0
+        linear 0.5 xzoom 1.0
     pause 1
     show tesipiz34NeutralHappy at left , size2Thrid:
         ypos 1.25 xpos -0.5
+        linear 3 xpos 0.5 xanchor 0.5
     pause 1
     show volkara34Happy at left , size2Thrid:
         ypos 1.25 xpos -0.5
+        linear 2 xpos 0.0
+    pause 6
     #xerxes turn tesipiz into a lady before turning himself into one
 
+    hide xerx3quatAnnoyed
+    show xerx3quatPoint at left , size2Thrid:
+        ypos 1.25
+    with dissolve
     xerx "Now Tesipiz"
     xerx "Watch this."
-    #TODO make transformation sound effect
-    #TODO make pointy pose for fem xerx regular clothes and base with hat
-    #TODO make fem tesipiz regular clothes
+    #TODO make transformation sound effect or experiment with already existing ones
+
+
     #they reviel their slave dancer outfits
-    with fade
+    hide xerx3quatAnnoyed
+    show femXerx hatBase frown
+    with Fade( 0.5 , 0.5 , 0.5 , color="#ff0")
+    
+    pause 2
+    #how does this spell work?
+    #how would it work?
 
-    #should I have female tesipiz her tesipiz's regular zone?
-
-    tesi "I look nice."#feeling himself
+    show femTesipiz clothedBase
+    with Fade( 0.5 , 0.5 , 0.5 , color="#ff0")
+    pause 2
+    show femTesipiz happy
+    tesi "I look nice."#feeling himself while in regular clothes
     if muwaCuddleCounter <= 0 and takuraCuddles <= 0 and tsekreiCuddles <= 0 and not tsekreiDating:
         tesi "Maybe I can be own girlfirend."
         tesi "Heheh!"
@@ -1827,6 +1844,7 @@ label trioTurnIntoGirlsInXartabana:
         volk "No."
         volk "You'll be someone else's sexy girlfriend."
         #tesi's face
+        #atazera moves in
         ataz "Thanks Volkara"
     else:
         tesi "Although."
@@ -1836,7 +1854,16 @@ label trioTurnIntoGirlsInXartabana:
             tesi "I don't think Lady Takura would like it." 
         elif tsekreiCuddles > muwaCuddleCounter and tsekreiCuddles > takuraCuddles:
             tesi "I don't think Tsekrei would like it."
-        
+    
+    #they change clothes
+    with fade
+
+    pause 5
+
+    xerx "Are you sure this is a good idea?"
+    ataz "Yes."
+    ataz "They won't be expecting Knights of Ahura-Mazda to do such an act."
+    
     return
 
 ###################################makkabium update content below######################################3

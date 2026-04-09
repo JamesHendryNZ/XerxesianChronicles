@@ -3953,14 +3953,21 @@ layeredimage femXerx:
     group poses:
         attribute base:
             "images/Protagonists/Xerxes/Xerdza.webp"
+        attribute hatBase:
+            "images/Protagonists/Xerxes/Xerdza Hat.webp"
+
         attribute haremBase default:
             "images/Protagonists/Xerxes/Xerdza Harem.webp"
         attribute haremChained:
             "images/Protagonists/Xerxes/Xerdza Harem Chained.webp"
         attribute haremGreet:
             "images/Protagonists/Xerxes/Xerdza Harem Greeting.webp"
+
         attribute haremPoint:
             "images/Protagonists/Xerxes/Xerdza Harem Pointing.webp"
+        attribute hatPoint:
+            "images/Protagonists/Xerxes/Xerdza Hat Point.webp"
+
         attribute haremYeah:
             "images/Protagonists/Xerxes/Xerdza Harem Yeah.webp"
 
@@ -4245,14 +4252,24 @@ layeredimage femTesipiz:
     group poses:
         attribute base default:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem 100-70.webp"
+        attribute clothedBase:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 female.webp"
         attribute chained:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem chained.webp"
         attribute greet:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Greet.webp"
+
         attribute yeah:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Yeah.webp"
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 female Yeah.webp"
+        attribute clothedYeah:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem 100-70.webp"
+            
         attribute point:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Point.webp"
+
+        attribute clothedFeeling:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 female Feeling it.webp"
+
         attribute armed:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem armed.webp"
 
@@ -4314,7 +4331,17 @@ layeredimage femTesipiz:
         attribute closed if_any['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Closed Eyes.webp"
             xpos 100
-
+        attribute horny if_not['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 Harem Horny.webp"
+        attribute horny if_any['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 Harem Horny.webp"
+            xpos 100
+    
+    group blushes:
+        attribute blush if_not['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 Harem Blush.webp"
+        attribute blush if_not['armed']:
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 Harem Blush.webp"
 
 #Ato'ssa
 
