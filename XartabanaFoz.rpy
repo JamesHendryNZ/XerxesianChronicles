@@ -1821,22 +1821,128 @@ label trioTurnIntoGirlsInXartabana:
     #TODO make transformation sound effect or experiment with already existing ones
 
 
-    #they reviel their slave dancer outfits
+    
     hide xerx3quatAnnoyed
     show femXerx hatBase frown
+    play sound magicAttackUnchmabered  
     with Fade( 0.5 , 0.5 , 0.5 , color="#ff0")
     
     pause 2
     #how does this spell work?
     #how would it work?
+    #how does magic work - by focusing with mind similar to charging and powering things, possibly psionics mixed with eletromagnetics
+    #that would explain most magics
+    
+    #magics descovered via emotions and refined through study and research
+    #necromancy through greif
+    #overcharge through anger and/or determination
+    #sex-change via gender dysphoria or gender fuild - and others can do this to them ( ahrimaniom to Xerxes )
+    #binding through fear of loss/misplacement
+    #energy attacks - building energy and releasing it through anger or fear?
+    #summoning creatures from anther realm( dream world/Hekuoss as this can explain their endlessness) through extreme nightmares
+    #Dream World Communication (Miruki talks to Xerxes this way) through lucid dreaming
 
+    #magics descovered through study/resurch
+    #stone casting is a magic created through magical theory/ magical geology
+    #stone flinging "earthbending" ()
+    #water moving magic "waterbending" ( magic water system and Astarte's desert curse )
+    #transformation magic - if you can change your sex , you could change other parts of your body
+    #soul splitting
+    #glass orbs and other magic storage, computing and compasiting magic
+    #energy shield
+    #weather manipulation "Potential Airbending???"- the desert curse
+    #cloning - possibly an offshoot of summoning
+    #portaling (lunarites and phazarites) but this seems to be very differcult and require multiple people
+
+    #magics innate to cirtain beeings
+    #levytation - only ghosts can do this
+    #possession - beings can only do this in a will o wisp "myon" form and it kills/destroys the original possessor's body
+    #courruption - only ahrite and some magical alien fungi
+
+    #what it cannot do
+    #summon water/ice as s ( this would remove on of the storys core conflicts)
+    #cast heavy metals ( this would make gold and silver less valible )
+    #time travel (I want the consiquences to stay as it's generally better storytelling )
+    #transform into a completely different animal ( You can turn into a anthropermothic dragon/ scalie but not a feral one/ giant lizard )
+    #suddenly shrink ( you can shrink but it takes time. getting bigger is quite easy though but takes time to revert ) 
+    #cast fireball ( Firebending is off the menu. Most likey because fire is a chemical reaction and not a substance like rocks, water and gas 
+    #       and hence wouldn't be cosidered an classical element in the Jamesossian mind )
+
+    #what it might do?
+    #ressurection (iffy, Astarte is most likey a clone or used a clone ) resseration can make death cheap and less efective.
+    #brainwasing/remote controll?
+
+    
+    
+    with dissolve
+    xerx "Tesipiz"
+    xerx "The sex change spell works though transformation via focusing on the soul's opposite gender half."
+    xerx "You need to focus on your souls feminine half."
+
+    show femXerx hatBase neutral neutralHappy
+    hide tesipiz34NeutralHappy
+    show tesipizThonkt at center , size2Thrid:
+        ypos 1.25
+    with dissolve
+    pause 3
+    #TODO magic show simple magix use music
+    #tesipiz focuses on his feminie self
+    #this could be a game?
+    show tesipizThonkt at center , size2Thrid:
+        ypos 1.25 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
+        linear 1 matrixcolor TintMatrix("#cf4d01") * BrightnessMatrix ( 0.2 )
+        linear 1 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
+        linear 1 matrixcolor TintMatrix("#cfb001") * BrightnessMatrix ( 0.2 )
+        linear 1 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
+        repeat
+    pause 8
+    with fade (0.25 , 0 , 0.25 , color="#cf4d01")
+    pause 5
+
+    hide tesipizThonkt
+    show tesipiz34Curious at center , size2Thrid:
+        ypos 1.25
+    show femXerx hatPoint mean O
+    xerx "Focus harder."
+    xerx "She'll pop out if you focus on reaching out to her."
+
+    #tesipiz focusus more
+    
+    #starts glowing
+    show femXerx hatBase
+    hide tesipiz34Curious
+    show tesipizThonkt at center , size2Thrid:
+        ypos 1.25
+    with dissolve
+    pause 4
+    show tesipizThonkt at center , size2Thrid:
+        ypos 1.25 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
+        linear 1 matrixcolor TintMatrix("#cf4d01") * BrightnessMatrix ( 0.2 )
+        linear 1 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
+        linear 1 matrixcolor TintMatrix("#cfb001") * BrightnessMatrix ( 0.2 )
+        linear 1 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
+        linear 1 matrixcolor TintMatrix("#ffd900") * BrightnessMatrix ( 0.5 )
+        linear 1 matrixcolor TintMatrix("#cfb001") * BrightnessMatrix ( 0.2 )
+        linear 1 matrixcolor TintMatrix("#ffe869") * BrightnessMatrix ( 0.5 )
+        linear 1 matrixcolor TintMatrix("#ffd900") * BrightnessMatrix ( 0.2 )
+    pause 8
+    
+    #changes sex
+    hide tesipizThonkt
     show femTesipiz clothedBase
+    show femXerx hatBase neutralHappy
+    play sound magicAttackUnchmabered 
     with Fade( 0.5 , 0.5 , 0.5 , color="#ff0")
     pause 2
-    show femTesipiz happy
+    show femTesipiz happy with dissolve
     tesi "I look nice."#feeling himself while in regular clothes
     if muwaCuddleCounter <= 0 and takuraCuddles <= 0 and tsekreiCuddles <= 0 and not tsekreiDating:
+        show femTesipiz clothedYeah horny happy with dissolve
+        
         tesi "Maybe I can be own girlfirend."
+        show femTesipiz clothedFeeling
+        show volkara3quat lineEyes OMouth
+        with dissolve
         tesi "Heheh!"
         ataz "You need to act more natural Tesipiz."
         tesi "Oh no!"
@@ -1847,6 +1953,7 @@ label trioTurnIntoGirlsInXartabana:
         #atazera moves in
         ataz "Thanks Volkara"
     else:
+        show femTesipiz
         tesi "Although."
         if muwaCuddleCounter > takuraCuddles and muwaCuddleCounter > tsekreiCuddles:
             tesi "I don't think Muwa would like it."
@@ -1857,6 +1964,9 @@ label trioTurnIntoGirlsInXartabana:
     
     #they change clothes
     with fade
+    #they reviel their slave dancer outfits
+
+    tesi "Nice"
 
     pause 5
 
@@ -1994,5 +2104,5 @@ label atazeraBackstroy: #do in the makkabium update
     ataz "King Darius made me the satrap of Axeria."
     return
 
-label muwaBoinkInXartabana:
+label muwaBoinkInXartabana: #do in the makkabium update
     "Boink Muwa is Xartabana"
