@@ -1185,7 +1185,7 @@ label atazeraMeetFoz:
 
             call trioTurnIntoGirlsInXartabana
             #scene xartabanaThoneRoom at truecenter, size2Thrid            
-            show atazeraImg point happy at left , size2Thrid , flipped:
+            show atazeraImg point neutral happy at left , size2Thrid , flipped:
                 ypos 1.25 xpos -0.5
                 linear 1 xpos 0.0
 
@@ -1806,7 +1806,7 @@ label trioTurnIntoGirlsInXartabana:
         ypos 1.25 xpos -0.5
         linear 3 xpos 0.5 xanchor 0.5
     pause 1
-    show volkara34Happy at left , size2Thrid:
+    show volkara3quat armsFoward at left , size2Thrid:
         ypos 1.25 xpos -0.5
         linear 2 xpos 0.0
     pause 6
@@ -1944,16 +1944,44 @@ label trioTurnIntoGirlsInXartabana:
         show volkara3quat lineEyes OMouth
         with dissolve
         tesi "Heheh!"
+
+        show atazeraImg point mean frown at size2Thrid , left:
+            xpos -0.5 ypos 1.25
+            linear 2 xpos 0.0
+        show volkara3quat:
+            xpos 0.0 xzoom -1.0
+            linear 2 xpos 0.25 xalign 0.5 xzoom 1.0
+        show femTesipiz clothedBase netrual neutralHappy:
+            xpos 0.5
+            linear 2 xpos 0.75
+        with dissolve
         ataz "You need to act more natural Tesipiz."
+
+        show atazeraImg base neutral
+        show volkara3quat:
+            xzoom 1.0
+            linear 1 xzoom -1.0
+        show femTesipiz nervous extraHappy
+        with dissolve
         tesi "Oh no!"
+        show femTesipiz clothedFeeling horny blush with dissolve
         tesi "I'm my own sexy girlfriend."
+
+        show volkara3quat pointy meanEyes deltaMouth with dissolve
         volk "No."
+        show volkara3quat happyMouth
+        show femTesipiz yeah O nervous -blush
+        with dissolve
         volk "You'll be someone else's sexy girlfriend."
         #tesi's face
         #atazera moves in
+        show volkara3quat basic
+        show femTesipiz base
+        show atazeraImg point happy point
+        with dissolve
         ataz "Thanks Volkara"
     else:
-        show femTesipiz
+        show femTesipiz clothedFeeling with dissolve
         tesi "Although."
         if muwaCuddleCounter > takuraCuddles and muwaCuddleCounter > tsekreiCuddles:
             tesi "I don't think Muwa would like it."
@@ -1962,16 +1990,51 @@ label trioTurnIntoGirlsInXartabana:
         elif tsekreiCuddles > muwaCuddleCounter and tsekreiCuddles > takuraCuddles:
             tesi "I don't think Tsekrei would like it."
     
+    scene xartabanaPalaceBedroom at fullFit
+    show light
+    show atazeraImg point happy at size2Thrid , left:
+        ypos 1.25
+    show volkara3quat armsFoward lineEyes OmegaMouth at size2Thrid , center , flipped:
+        xpos 0.25 ypos 1.25
+    show femTesipiz clothedBase at size2Thrid , center: 
+        xpos 0.75 ypos 1.25
+    show femXerx hatBase at size2Thrid , right:
+        ypos 1.25
+    with dissolve
+
+    ataz "Now."
+    ataz "Time to change into your harem outfits."
     #they change clothes
+    
+    scene xartabanaPalaceBedroom at fullFit
+    show light
+    show volkara3quat harem deltaMouth at size2Thrid , center , flipped:
+        xpos 0.25 ypos 1.25
+    show femTesipiz at size2Thrid , center: 
+        xpos 0.75 ypos 1.25
+    show femXerx frown at size2Thrid , right:
+        ypos 1.25
     with fade
     #they reviel their slave dancer outfits
+    pause 2
 
+    show femTesipiz yeah horny happy with dissolve
     tesi "Nice"
 
-    pause 5
-
+    show femTesipiz base neutral neutralHappy
+    show femXerx haremPoint mean O
+    show atazeraImg at size2Thrid , left:
+        xpos -0.5 ypos 1.25
+        linear 2 xpos 0.0
+    with dissolve
+    pause 2
+    
     xerx "Are you sure this is a good idea?"
+    show atazeraImg yeah closedEyes happy
+    show femXerx haremBase frown
+    with dissolve
     ataz "Yes."
+    show atazeraImg point mean with dissolve
     ataz "They won't be expecting Knights of Ahura-Mazda to do such an act."
     
     return
