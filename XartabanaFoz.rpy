@@ -35,8 +35,8 @@ label toXartabanaFoz:
             linear 2 matrixcolor TintMatrix("#FFF")
         #animate Xerxes going to Xartabana via Yineh
         #co for xerx
-        show xerx3HorseHappy at tenthSize:
-            xanchor 1.0 yanchor 1.0
+        show xerx3HorseHappy at twentithSize:
+            xanchor 0.5 yanchor 1.0
             xpos 0.113 ypos 0.403
             linear 1 xpos 0.094 ypos 0.407
             linear 3 xpos 0.092 ypos 0.46
@@ -53,8 +53,8 @@ label toXartabanaFoz:
 
 
         #jaka camel lancer lady is pushed out and flees via the same bridge
-        show jakaCamelLancer at tenthSize:
-            xanchor 1.0 yanchor 1.0
+        show jakaCamelLancer at twentithSize:
+            xanchor 0.5 yanchor 1.0
             xpos 0.0 ypos 0.689
             linear 6 xpos 0.11 ypos 0.713
             linear 2 xpos 0.176 ypos 0.664
@@ -75,8 +75,8 @@ label toXartabanaFoz:
             linear 1 matrixcolor TintMatrix("#FFF")
         #animate Xerxes going to Xartabana via Yineh
         #co for xerx
-        show xerx3HorseHappy at tenthSize:
-            xanchor 1.0 yanchor 1.0
+        show xerx3HorseHappy at twentithSize:
+            xanchor 0.5 yanchor 1.0
             xpos 0.113 ypos 0.403
             linear 1 xpos 0.094 ypos 0.407
             linear 3 xpos 0.092 ypos 0.46
@@ -93,8 +93,8 @@ label toXartabanaFoz:
 
 
         #jaka camel lancer lady is pushed out and flees via the same bridge
-        show jakaCamelLancer at tenthSize:
-            xanchor 1.0 yanchor 1.0
+        show jakaCamelLancer at twentithSize:
+            xanchor 0.5 yanchor 1.0
             xpos 0.0 ypos 0.689
             linear 6 xpos 0.11 ypos 0.713
             linear 2 xpos 0.176 ypos 0.664
@@ -105,21 +105,21 @@ label toXartabanaFoz:
         #2 - 0.176, 0.664 - 2 8
         #2 - 0.211, 0.689 - 2 10
     with fade
-    pause 12
+    pause 16
     "animations done - remove after testing and debugging"
 
     $ IsDaytime = True
-    play sound bardaiyaBeMad fadein 1 fadeout 1
+    play music bardaiyaBeMad fadein 1 fadeout 1
 
     scene clearDayTime at fullFit
     show rockyDesertBridge:
-        xalign 0.4 yalign 0.7 zoom 1.5
+        xalign 0.35 yalign 0.625 zoom 2.0 yzoom 1.5
     
-    show jakaLancerGirl sad O at left , size2Thrid:
-        ypos 1.3
+    show jakaLancerGirl sad O at left , halfSize:
+        ypos 1.2
 
-    show khopeshCommander sad frown at right, size2Thrid:
-        ypos 1.3
+    show khopeshCommander sad frown at right, halfSize:
+        ypos 1.2
     
     with fade
     
@@ -132,7 +132,7 @@ label toXartabanaFoz:
     
     astRaid "The Jamesians pushed us out of Suwa and Hyengmeish."
 
-    show jakaLancerGirl frowning
+    show jakaLancerGirl frown
     show khopeshCommander mean O
     with dissolve
     dido "We'll hold this brige untill reinforcements show up."
@@ -143,13 +143,13 @@ label toXartabanaFoz:
     #an oppertunity to have a decition
     scene clearDayTime at fullFit
     show rockyDesertBridge:
-        xalign 0.25 yalign 0.5 zoom 2.0
+        xalign 0.1 yalign 0.5 zoom 1.5
     
     show xerx3quatConsurndArmored at center , flipped , size2Thrid:
         ypos 1.4
     show tesipiz34snekayArmored at left , flipped , size2Thrid:
         ypos 1.4
-    show volkara3quatArmored pointy OMotuh at right , size2Thrid:
+    show volkara3quatArmored pointy OMouth at right , size2Thrid:
         ypos 1.4
     with fade
     volk "The are a lot of astarts guarding the Dzenyash Bridge."
@@ -173,23 +173,24 @@ label toXartabanaFoz:
             play music tentionTime fadein 1.0 fadeout 1.0
             scene clearDayTime at fullFit
             show rockyDesertBridge:
-                xalign 0.4 yalign 0.7 zoom 1.5
+                xalign 0.35 yalign 0.625 zoom 2.0 yzoom 1.5
             
-            show jakaLancerGirl mean at left , size2Thrid:
-                ypos 1.3
+            show jakaLancerGirl mean O at left , halfSize:
+                ypos 1.2
 
-            show khopeshCommander mean angry at right, size2Thrid:
-                ypos 1.3
+            show khopeshCommander mean angry at right, halfSize:
+                ypos 1.2
             
             with fade
 
             dido "It's Xerxes!"
             dido "He's just got two people with him!"
+            show khopeshCommander commanding with dissolve
             dido "Get him before he escapes!!"
 
             scene clearDayTime at fullFit
             show rockyDesertBridge:
-                xalign 0.35 yalign 0.7 zoom 1.5
+                xalign 0.35 yalign 0.75 zoom 2.0 yzoom 1.5
             $ enemyTroopers = [ copy.copy(batbiteSpear) ,  copy.copy(balatianSpear) , copy.copy(suzumiteKaetarius) , copy.copy(hekaArcher) , copy.copy( jakaCamelDismounted ) , copy.copy(captainDido) , copy.copy(orodianArcher) , copy.copy(balatianHeavyAxe) , copy.copy(kazwiianSpear) , copy.copy(batbiteSpear) , copy.copy(tsetulingFighterMLand) ]
             #battle happends
             play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
@@ -199,122 +200,141 @@ label toXartabanaFoz:
             scene clearDayTime at fullFit
             show rockyDesertBridge:
                 xalign 1.0 yalign 0.7 zoom 1.5
-                linear 15 xpos 0.5
-            
+                linear 15 xalign 0.5
             #batbites fly away
+            play sound horseGallop loop
 
             show balatianAmoredAxLady at quatSize:
-                xpos -0.7 ypos 0.75 matrixcolor TintMatrix("#fff")
-                linear 8 xpos -0.7
-                linear 5 xpos 0.05
-                linear 0.1 TintMatrix("#a00")
+                xpos -0.7 yalign 0.75 matrixcolor TintMatrix("#fff")
+                linear 9 xpos -0.7
+                linear 4 xpos 0.0
+                linear 0.1 matrixcolor TintMatrix("#a00")
                 easeout 3 xpos -0.5 ypos 0.5 rotate 720
 
             show kazwiianSpear at quatSize:
-                xpos -0.7 ypos 0.85 matrixcolor TintMatrix("#fff")
-                linear 8 xpos -0.7
-                linear 5 xpos 0.1
-                linear 0.1 TintMatrix("#a00")
+                xpos -0.7 yalign 0.85 matrixcolor TintMatrix("#fff")
+                linear 9 xpos -0.7
+                linear 3 xpos 0.05
+                linear 0.1 matrixcolor TintMatrix("#a00")
                 easeout 3 xpos -0.5 ypos 0.5 rotate 720
 
             show suzumiteKaetratiusPilum at quatSize:
-                xpos -0.7 ypos 0.95 matrixcolor TintMatrix("#fff")
-                linear 8 xpos -0.7
-                linear 5 xpos 0.1
-                linear 0.1 TintMatrix("#a00")
+                xpos -0.7 yalign 0.95 matrixcolor TintMatrix("#fff")
+                linear 9 xpos -0.7
+                linear 3 xpos 0.05
+                linear 0.1 matrixcolor TintMatrix("#a00")
                 easeout 3 xpos -0.5 ypos 0.5 rotate 720
 
             show tsetulingGuardMAttack at quatSize:
-                xpos -0.7 ypos 1.05 matrixcolor TintMatrix("#fff")
-                linear 8 xpos -0.7
-                linear 5 xpos 0.05
-                linear 0.1 TintMatrix("#a00")
+                xpos -0.7 yalign 1.05 matrixcolor TintMatrix("#fff")
+                linear 9 xpos -0.7
+                linear 3 xpos 0.025
+                linear 0.1 matrixcolor TintMatrix("#a00")
                 easeout 3 xpos -0.5 ypos 0.5 rotate 720
             
             show batbiteImg at quatSize:
-                xpos -0.5 ypos 0.75 
-                linear 8 xpos -0.5
-                linear 3 xpos 0.25
+                xpos -0.5 yalign 0.75 
+                linear 5 xpos -0.5
+                linear 8 xpos 0.075
 
             show batbiteImg as extraBat at quatSize:
-                xpos -0.5 ypos 0.9 
-                linear 8 xpos -0.5
-                linear 3 xpos 0.25
+                xpos -0.5 yalign 0.9 
+                linear 5 xpos -0.5
+                linear 8 xpos 0.075
 
             show batbiteImg as moreBat at quatSize:
-                xpos -0.5 ypos 1.05 
-                linear 8 xpos -0.5
-                linear 3 xpos 0.25
-                linear 0.1 TintMatrix("#a00")
+                xpos -0.5 yalign 1.05 
+                linear 7 xpos -0.5
+                linear 3 xpos 0.075
+                linear 0.1 matrixcolor TintMatrix("#a00")
                 easeout 3 xpos -0.5 ypos 0.5 rotate 720
             #kazwiian spears
             #heavy ax
             #suzumite kaetratious
             
-            show axerianCamel at quatSize:
-                ypos 1.5 xpos 1.7
-                linear 15 xpos 0.6
-                easeout 3 xpos 0.3
-
-            show axerianLancer at quatSize:
-                ypos 1.5 xpos 1.7
-                linear 15 xpos 0.6
+            show axerianCamel at quatSize , flipped:
+                ypos 1.8 yalign 3.2 xpos 1.1
+                linear 12 xpos 0.5
                 easeout 3 xpos 0.3
 
             show atazeraImg armoredBattle mean angry schytedChariot at quatSize:
-                ypos 1.5 xpos 1.5
+                ypos 1.5 yalign 1.5
                 linear 10 xpos 0.6
-                easeout 3 xpos 0.0
+                easein 2.5 xpos 0.1
+                easeout 1 xpos 0.0
+            
+            show axerianLancer at quatSize , flipped:
+                ypos 2.0 yalign 2.8 xpos 1.1
+                linear 12 xpos 0.5
+                easeout 3 xpos 0.3
 
             show rockyDesertForground:
                 xalign 1.0 yalign 0.7 zoom 1.5
-                linear 15 xpos 0.5
+                linear 15 xalign 0.5
             
             with fade
 
-            pause 12
+            pause 8
             hide batbiteImg
             hide extraBat
-            show batbiteFlyImg:
-                xpos 0.25 ypos 0.75 
-                easeout 4 ypos 0.0 xpos -0.5
-            show batbiteFlyImg as extraFlappy:
-                xpos 0.25 ypos 0.9 
-                easeout 3 ypos 0.0 xpos -0.5
+            show batbiteFlyImg at quatSize behind atazeraImg:
+                xpos 0.25 yalign 1.0 xanchor 0.5 yanchor 0.7
+                linear 2 ypos 0.0 xpos -0.5
+            pause 0.5
+            show batbiteFlyImg at quatSize as extraFlappy behind atazeraImg:
+                xpos 0.25 yalign 1.0 xanchor 0.5 yanchor 0.7
+                linear 2 ypos 0.0 xpos -0.5
             
-            pause 5
+            pause 1
+            play extraSound bloodySlam
+            pause 2
+            play extraSound bloodySlam
+            pause 0.1
+            play extraSound bloodySlam
+            pause 0.1
+            play extraSound bloodySlam
+            pause 0.3
+            play extraSound bloodySlam
+            pause 0.5
+            play extraSound bloodySlam
+            pause 0.1
+            play extraSound bloodySlam
 
+            pause 3
+
+            stop sound fadeout 1.0
             scene clearDayTime at fullFit
             show rockyDesertBridge:
-                xalign 0.4 yalign 0.7 zoom 1.5
+                xalign 0.35 yalign 0.625 zoom 2.0 yzoom 1.5
             
-            show xerxMarchFowardSoAM meanEyes at left , size2Thrid:
-                ypos 1.3
+            show xerxMarchFowardSoAM at left , halfSize:
+                ypos 1.25
                 xpos -0.25
-                linear 6 xpos 0.6
+                linear 6 xpos 0.15
 
-            show khopeshCommander commanding sad angry at right, size2Thrid:
+            show khopeshCommander commanding sad angry at right, halfSize:
                 ypos 1.3
             dido "BACK XERXES!!"
             dido "I'M WARNING YOU"
-            $ counter = 20
+            $ counter = 6
             while counter > 0:
                 pause 0.1
                 show khopeshCommander base
                 pause 0.1
                 show khopeshCommander commanding
-                $ counter += 1
+                $ counter -= 1
             #Atazera intoduces herself with a scythed chariot and cavarly
             hide xerxMarchFowardSoAM
-            show xerxSoAMPointArmored at left , size2Thrid:
-                ypos 1.3
-                xpos 0.6
+            show xerxSoAMPointArmored at left , halfSize:
+                ypos 1.2
+                xpos 0.3
                 linear 1 xalign 1.0
             #thonk
             pause 0.5
-            show khopeshCommander closed angry:
+            show khopeshCommander closed angry at right, halfSize:
+                ypos 1.3
                 linear 0.2 matrixcolor TintMatrix( "#a00" )
-                easeout 2 xpos 1.2 ypos 1.5 rotate 90
+                easein 1 xpos 1.6 ypos 2.0 rotate 90
             
             play sound bloodySlam
             play music weOwnedThem fadein 1 fadeout 1
@@ -322,18 +342,17 @@ label toXartabanaFoz:
             pause 3
 
             hide xerxSoAMPointArmored
-            show xerx3quatConsurndArmored at right , size2Thrid , flipped:
-                ypos 1.3
+            show xerx3quatConsurndArmored at right , halfSize , flipped
             with dissolve
             xerx "I'm insulted that Astarte sends her trash here."
             
             hide xerx3quatConsurndArmored
-            show xerx3quatHappyArmored at right , size2Thrid , flipped:
-                ypos 1.3 xpos 1.0
+            show xerx3quatHappyArmored at left , halfSize , flipped:
+                xpos 1.1
                 linear 2 xpos 0.0
-            show atazeraImg armoredGreet happy at right , size2Thrid:
-                ypos 1.3 xpos 1.3
-                linear 2 xpos 1.0
+            show atazeraImg armoredGreet happy at right , halfSize:
+                ypos 1.4 xpos 1.3
+                linear 2 ypos 1.15 xpos 1.0
             with dissolve
             ataz "Hello Xerxes!!"
             ataz "Nice to see you again!"
@@ -342,66 +361,71 @@ label toXartabanaFoz:
 
             show atazeraImg armored neutralHappy
             hide xerx3quatHappyArmored
-            show xerxHappyGreetArmored at left . size2Thrid , flipped:
-                ypos 1.3
+            show xerxHappyGreetArmored at left , halfSize , flipped:
+                ypos 1.1
             with dissolve
             xerx "Hello Atazera!"
 
 
             hide xerxHappyGreetArmored
-            show xerx3quatPointHappyArmored at left , size2Thrid:
-                ypos 1.3
-                linear 2 xpos 0.5 xalign 0.5
-            show tesipizGreetingArmored at left , size2Thrid , flipped:
-                ypos 1.3
-                linear 3 xpos 0.25
-            show volkaraArmored greeting at left , size2Thrid , flipped:
-                ypos 1.3
-                linear 3 xpos 0.0
+            show xerx3quatPointHappyArmored at left , halfSize:
+                ypos 1.1
+                linear 2 xpos 0.5 xalign 0.67
+            show tesipizGreetingArmored at left , halfSize , flipped behind xerx3quatPointHappyArmored:
+                ypos 1.5
+                linear 3 xpos 0.33 ypos 1.1
+            show volkaraArmored greeting at left , halfSize , flipped behind xerx3quatPointHappyArmored:
+                ypos 1.5 xpos -0.3
+                linear 3 xpos 0.0 ypos 1.2
             with dissolve
 
             xerx "These two are called Tesipiz and Volkara."
 
             show atazeraImg armored happy
             hide xerx3quatPointHappyArmored
-            show xerx3quatHappyArmored at center , size2Thrid , flipped:
-                ypos 1.3
+            show xerx3quatHappyArmored at center , halfSize , flipped:
+                ypos 1.1
             
             hide tesipizGreetingArmored
-            show tesipiz34MiniHappyArmored at left , size2Thrid , flipped:
-                ypos 1.3 xpos 0.25
+            show tesipiz34MiniHappyArmored at left , halfSize , flipped:
+                ypos 1.1 xpos 0.175
 
             hide volkaraArmored
-            show volkara3quatArmored at left , size2Thrid , flipped:
-                ypos 1.3
+            show volkara3quatArmored at left , halfSize:
+                ypos 1.1
             with dissolve
             ataz "Got it then."
-            show atazeraImg armoredPoint:
-                xzoom 1.0
+            show atazeraImg armoredPoint at right , halfSize:
+                xzoom 1.0 ypos 1.15 xpos 1.0
                 linear 1 xzoom -1.0
             ataz "We'll head back to Xartabana."
             ataz "We'll talk then."
 
-            show atazeraImg armored neutralHappy:
-                linear 2 xpos 1.5
-            show volkara3quatArmored:
-                linear 5 xpos 1.5
-            show tesipiz34MiniHappyArmored:
-                linear 4 xpos 1.5
-            show xerx3quatHappyArmored:
-                linear 3 xpos 1.5
+            show atazeraImg armored neutralHappy at right , flipped:
+                ypos 1.15 xpos 1.0
+                linear 2 xpos 1.5 ypos 1.5
+            show volkara3quatArmored at left , halfSize:
+                ypos 1.1
+                linear 5 xpos 1.5 ypos 1.5
+            show tesipiz34MiniHappyArmored at left , halfSize , flipped:
+                ypos 1.1 xpos 0.175
+                linear 4 xpos 1.5 ypos 1.5
+            show xerx3quatHappyArmored at center , halfSize , flipped:
+                ypos 1.1
+                linear 3 xpos 1.5 ypos 1.5
             pause 5
 
             call lowerJamesosRealmMap
             #animate Xerxes going to Xartabana via Yineh
             #co for xerx
             show atazeraImg armoredBattle scythedChariot at tenthSize:
-                xanchor 1.0 yanchor 1.0
-                #start - xpos 0.2 ypos 0.68
-                #linear 2 xpos 0.317 ypos 0.685
-                #linear 2 xpos 0.283 ypos 0.72 
+                xanchor 0.5 yanchor 1.0
+                xpos 0.2 ypos 0.68
+                linear 2 xpos 0.317 ypos 0.685
+                linear 2 xpos 0.283 ypos 0.72 
+                linear 2 xpos 0.377 ypos 0.722 
             with fade
-            pause 4
+            pause 6
             jump atazeraMeetFoz
 
         "There is a lot of them. Lets go around the long way":
@@ -419,8 +443,10 @@ label toXartabanaFoz:
 
             xerx "There are no astarts at the next crossing at Dzegaralya."
             
+            hide xerx3quatPointArmored
             show xerx3quatPointHappyArmored at center , size2Thrid:
                 ypos 1.4
+            with dissolve
             xerx "We'll cross there."
 
             scene map2:
@@ -432,23 +458,29 @@ label toXartabanaFoz:
                 linear 4 matrixcolor TintMatrix("#ffd2a1")
                 linear 3 matrixcolor TintMatrix("#fc9357")
 
-            show xerxHorseMiniMad at tenthSize:
+            show xerxHorseMiniMad at twentithSize:
+                xanchor 1.0 yanchor 1.0
                 xpos 0.184 ypos 0.668 matrixcolor TintMatrix("fff")
                 linear 2 xpos 0.152 ypos 0.654
                 linear 1 xpos 0.141 ypos 0.675
                 linear 1 xpos 0.13 ypos 0.675 matrixcolor TintMatrix("#fff8f1")
                 linear 4 xpos 0.127 ypos 0.743 matrixcolor TintMatrix("#ffd2a1")
                 linear 3 xpos 0.223 ypos 0.757 matrixcolor TintMatrix("#fc9357")
+            with fade
+            pause 11
             #they go along the south crossing at Dzegaralya
             #they go around the southern ede of the second subversion base.
             #they get attacked by ahrite scorpions and low level cultsits
             #they talk about the ahrite 
             scene clearDayTime at fullFit , duskMorningGradient
-            show secondSubversionBaseRuins at left, fullFit , darkShade:
-                linear 12 xalign 0.5
             show light at center:
                 matrixcolor TintMatrix( "#97d6ff") * BrightnessMatrix( 0.6 )
                 ypos 0.95
+            show secondSubversionBaseRuins at left, fullFit , darkShade:
+                linear 12 xalign 0.5
+                linear 3 zoom 2.5 xalign 0.72
+            with fade
+            pause 15
             #ahrite battle theme plays - should follow similar instrimentation as ahrimaniom battle.
             $ enemyTroopers = [ copy.copy(ahriteSpearDude) , copy.copy(ahriteSpearGirl) , copy.copy(ahriteArcher) , copy.copy(ahriteScorpion) , copy.copy(ahriteScorpion) , copy.copy(ahriteSlinga) , copy.copy(ahriteSpearGirl) ]
             play music "<to 5>audio/music/Ahrite Battle.ogg" noloop
@@ -482,9 +514,9 @@ label toXartabanaFoz:
 
             hide tesipizBombAndFist
             hide xerx3quatAnnoyedArmored
-            show tesipiz34SupirzedArmored at center , size2Thrid , duskLights:
+            show tesipiz34SupirzedArmored at center , size2Thrid , duskLights , flipped :
                 ypos 1.4
-            show xerx3quatPointCommandingArmored at right , size2Thrid , duskLights:
+            show xerx3quatPointCommandingArmored at right , size2Thrid , duskLights :
                 ypos 1.4 
             with dissolve    
             xerx "No Tesipiz." 
@@ -495,7 +527,7 @@ label toXartabanaFoz:
             show volkara3quatArmored pointy deltaMouth
             show xerx3quatAnnoyedArmored at right , size2Thrid , duskLights:
                 ypos 1.4
-            show tesipiz34MiniHappyArmored at center , size2Thrid , duskLights:
+            show tesipiz34MiniHappyArmored at center , size2Thrid , duskLights , flipped:
                 ypos 1.4
             with dissolve
             volk "The source is likely deep undergroud like in Takurium."
@@ -520,12 +552,13 @@ label toXartabanaFoz:
             volk "Hopefully they haven't contanimated the ground water."
 
             if headPatCounter > 12 or atoBoinks > 0:
-                show volkara3quatArmored basic normalEyes neutralHappyMouth:
-                    xzoom 1.0
-                    linear 1 xzoom -1.0
-                    linear 2 xpos 1.5
-                show tesipiz34MiniHappyArmored:
-                    linear 3 xpos 1.5
+                show volkara3quatArmored basic normalEyes neutralHappyMouth at left , size2Thrid , duskLights:
+                    ypos 1.4
+                    linear 6 xpos 1.5
+                hide tesipiz34MiniHappyArmored
+                show tesipiz34MiniHappyArmored at center , size2Thrid , duskLights , flipped:
+                    ypos 1.4
+                    linear 6 xpos 1.8
                 with dissolve
                 xerx "{i}Thier base might be here."
                 xerx "{i}We need to finish our mission quickly."
@@ -540,9 +573,9 @@ label toXartabanaFoz:
                 matrixcolor TintMatrix("#fc9357")
                 linear 4 matrixcolor TintMatrix("#0600bc")
 
-            show xerxHorseMiniMad at tenthSize:
-                xpos 0.3 ypos 0.786 matrixcolor matrixcolor TintMatrix("#fc9357")
-                linear 4 xpos 0.127 ypos 0.743 matrixcolor TintMatrix("#0600bc")
+            show xerxHorseMiniMad at twentithSize:
+                xpos 0.3 ypos 0.786 xanchor 1.0 yanchor 1.0 matrixcolor TintMatrix("#fc9357")
+                linear 4 xpos 0.385 ypos 0.722 matrixcolor TintMatrix("#0600bc")
             with fade
             pause 4
             jump atazeraMeetFoz
@@ -564,61 +597,93 @@ label atazeraMeetFoz:
         scene xartabanaEstblishing at fullFit with fade
     else:
         scene xartabanaEstblishingNight at fullFit with fade
-
+    pause 3
     #atazera should have some catch up talk with Xerxes
     #the purpose is to both inform the player/reader and have xerxes understand the current situation
     #they're at the tabel, eating dinner
     play music ratThonking
-    scene xartabanaThoneRoom at center
+    scene xartabanaThoneRoom at center , size2Thrid
 
     #people - have it similar to that jesus table painting where everbody is on the same side of the table to avoid needed to make another background.
-    show atazeraImg at center , halfSize:
-        xpos 0.4
+    show atazeraImg at center , halfSize , flipped:
+        xpos 0.45
     show happyXerx at center , halfSize:
-        xpos 0.6
+        xpos 0.67
     show tesipiz34NeutralHappy at right , halfSize
     show volkara3quat at left , halfSize
 
     #da table
     show shortRoyalTable at center:
         xzoom 0.75 yzoom 1.25
-    
+
+    with fade
     #best to use action editor tool to configure
+    show cupGold at thridSize:
+        xpos 0.26 ypos 0.56
     #volkara
-    show plateTanV at thridSize
-    show foodLeaves at thridSize
-    show spicedUpCrayfish at thridSize
-    show bread at thridSize
-    show cheese at thridSize
-    show cupVolk at thridSize
+    show plateTanV at size2Thrid:
+        xpos 0.039 ypos 0.633
+    show foodLeaves at thridSize:
+        xpos 0.116 ypos 0.675
+    show cheese at thridSize:
+        xpos 0.123 ypos 0.628
+    show spicedUpCrayfish at thridSize:
+        xpos 0.057 ypos 0.626
+    show bread at thridSize:
+        xpos 0.061 ypos 0.675
+    show cupVolk at quatSize:
+        xpos 0.212 ypos 0.643
 
     #xerx 
-    show plateTanX at thridSize
-    show foodLeaves as xerxLeaves at thridSize
-    show spicedUpCrayfish as xerxCray at thridSize
-    show bread as xerxBread at thridSize
-    show cheese as xerxCheese at thridSize
+    show cupTesi at quatSize:
+        xpos 0.73 ypos 0.6
+
+    show plateTanX at size2Thrid:
+        xpos 0.574 ypos 0.636
+    show foodLeaves as xerxLeaves at thridSize:
+        xpos 0.645 ypos 0.683
+    show spicedUpCrayfish as xerxCray at thridSize:
+        xpos 0.6 ypos 0.65
     
-    show cupXerx
+    show cheese as xerxCheese at thridSize:
+        xpos 0.67 ypos 0.68
+    show bread as xerxBread at thridSize:
+        xpos 0.6 ypos 0.68
+    
+    show cupXerx at quatSize:
+        xpos 0.553 ypos 0.588
+    
     #tesipiz
-    show plateTanT at thridSize
-    show foodLeaves as tesiLeaves at thridSize
-    show spicedUpCrayfish as tesiCray at thridSize
-    show bread as tesiBread at thridSize
-    show cheese as tesiCheese at thridSize
+    show plateTanT at size2Thrid:
+        xpos 0.776 ypos 0.618
+    show foodLeaves as tesiLeaves at thridSize:
+        xpos 0.864 ypos 0.675
+    show spicedUpCrayfish as tesiCray at thridSize:
+        xpos 0.8 ypos 0.615
+    show cheese as tesiCheese at thridSize:
+        xpos 0.864 ypos 0.69
+    show bread as tesiBread at thridSize:
+        xpos 0.811 ypos 0.66
+    
     
 
-    show cupTesi
+    
     #atazera
-    show plateGoldX at thridSize
-    show foodLeaves as ataLeaves at thridSize
-    show spicedUpCrayfish as ataCray at thridSize
-    show bread as ataBread at thridSize
-    show cheese as ataCheese at thridSize
     
-    show Goblet at thridSize
 
-    show teaPot at thridSize
+    show plateGoldX at size2Thrid:
+        xpos 0.323 ypos 0.625
+    show foodLeaves as ataLeaves at thridSize:
+        xpos 0.415 ypos 0.675
+    show spicedUpCrayfish as ataCray at thridSize:
+        xpos 0.36 ypos 0.626
+    show cheese as ataCheese at thridSize:
+        xpos 0.422 ypos 0.674
+    show bread as ataBread at thridSize:
+        xpos 0.35 ypos 0.675
+    show teaPot at halfSize:
+        xpos 0.43 ypos 0.67
+    with fade
     pause 5
     #da food
     #a mix of crayfish and breads and leafy greens and a cheese.
@@ -630,14 +695,14 @@ label atazeraMeetFoz:
     
     show atazeraImg neutralHappy
     hide happyXerx 
-    show xerx3quatHappyer at center , flipped , halfSize behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
-        xpos 0.6
+    show xerx3quatHappyer at center , halfSize behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.65
     with dissolve
     xerx "Great!"
 
     hide xerx3quatHappyer
-    show xerxWithSoAM at center , flipped , halfSize behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
-        xpos 0.6
+    show xerxWithSoAM at center , halfSize behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+        xpos 0.65
     with dissolve
     xerx "I have the Sword of Ahura-Mazda."
 
@@ -646,14 +711,13 @@ label atazeraMeetFoz:
     show xerx3quatHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
         xpos 0.6
     show tesipizYeah at right , halfSize behind shortRoyalTable , plateTanT , tesiLeaves , tesiCray , tesiBread , tesiCheese:
-        xpos 0.6
+        xpos 1.05
     show atazeraImg happy
     with dissolve
     tesi "And we've finally captured Takurium and freed Lady Takura."
 
     hide tesipizYeah
-    show tesipiz34NeutralHappy at right , halfSize behind shortRoyalTable , plateTanT , tesiLeaves , tesiCray , tesiBread , tesiCheese:
-        xpos 0.6
+    show tesipiz34NeutralHappy at right , halfSize behind shortRoyalTable , plateTanT , tesiLeaves , tesiCray , tesiBread , tesiCheese
     show atazeraImg mean item
     with dissolve
     ataz "That's great!!"
@@ -664,25 +728,26 @@ label atazeraMeetFoz:
     ataz "And pushing Balatius' goons to Bala-Axerium."
     
     hide xerx3quatHappy 
-    show atazeraImg base neutral neutralHappy
-    show xerx3quatPointHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+    show atazeraImg basic neutral neutralHappy
+    show xerx3quatPointHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese :
         xpos 0.6
     with dissolve
     xerx "Bala-Axerium and Balatius."
     xerx "How well is your war against him?"
 
     hide xerx3quatPointHappy
-    show xerx3quatHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+    show xerx3quatHappy behind atazeraImg
+    show xerx3quatHappy at flipped ,center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
         xpos 0.6
     show atazeraImg item mean frown
     with dissolve
     ataz "The usuall."
-    show atazeraImg sad angry
+    show atazeraImg sadEyes angry
     ataz "I haven't been able to take out the fortresses guarding Bala-Axerium."
 
     hide xerx3quatHappy
-    show atazeraImg base neutral neutralHappy
-    show xerx3quatConsurnd at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+    show atazeraImg basic neutral neutralHappy
+    show xerx3quatConsurnd at flipped , center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
         xpos 0.6
     with dissolve
     xerx "O.K"
@@ -690,15 +755,16 @@ label atazeraMeetFoz:
 
     hide xerx3quatConsurnd
     show atazeraImg point happy
-    show xerx3quatHappy at center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
+    show xerx3quatHappy behind atazeraImg
+    show xerx3quatHappy at flipped , center , halfSize , flipped behind shortRoyalTable , plateTanX , xerxLeaves , xerxCray , xerxBread , xerxCheese:
         xpos 0.6
     with dissolve
     ataz "By the way."
     ataz "I've learnt a new skill."
-    show atazeraImg training closed with dissolve
+    show atazeraImg training closedEyes with dissolve
     ataz "I'll teach you. It'll help"
 
-    scene xartabanaThoneRoom at center with fade
+    scene xartabanaThoneRoom at center , size2Thrid with fade
     show atazeraImg training at center , size2Thrid with dissolve:
         ypos 1.25
     ataz "Some emenies have been doing undodgable and unblockable attacks."
@@ -715,7 +781,7 @@ label atazeraMeetFoz:
     #simple just simple medoly and rythmn
     play music trainingTune fadein 1.0 fadeout 1.0
     
-    show atazeraTraining training happy at left , size2Thrid with dissolve:
+    show atazeraImg training happy at left , size2Thrid with dissolve:
         ypos 1.25
     ataz "Jumping can now be done with the X button"
 
@@ -786,13 +852,13 @@ label atazeraMeetFoz:
             $ canProceed = True
     
     play music villageTheme fadein 1.0 fadeout 1.0
-    show atazeraImg closed happy with dissolve
+    show atazeraImg closedEyes happy with dissolve
     ataz "All done."
-    show atazeraImg base neutral with dissolve
+    show atazeraImg basic neutral with dissolve
     ataz "That should help with fighting the higher tier Astarts."
-    show atazera at center , size2Thrid:
-        xpos 0.5
-        linear 2 xpos 0.0 xalign 0.0
+    show atazeraImg at center , size2Thrid:
+        xpos 0.5 ypos 1.25
+        linear 2 xpos 0.0
     show xerx3quatHappyer at right , size2Thrid:
         xpos 1.5 ypos 1.25
         linear 2 xpos 1.0
@@ -803,34 +869,39 @@ label atazeraMeetFoz:
     with dissolve
     xerx "That should make things easier."
 
-    show atazeraImg point O at flipped with dissolve
+    show atazeraImg point O at flipped, size2Thrid with dissolve:
+        ypos 1.25
     ataz "I also got Megabazus' message."
-    show atazeraImg item happy 
+    show atazeraImg item happy at left, flipped:
+        ypos 1.25 xpos -0.25
     hide xerx3quatHappyCrossArms
     show xerx3quatHappy at right , size2Thrid:
-        ypos 1.25
+        ypos 1.25 xpos 1.0
         linear 2 xpos 0.5 xalign 0.5
     show volkara3quat at right , size2Thrid , flipped:
         ypos 1.25 xpos 1.5
         linear 2 xpos 1.0
     with dissolve
-    show antiStealthScroll at left with dissolve
+    show antiStealthScroll at left , halfSize with dissolve:
+        ypos 0.625
     ataz "This might help you with finding the Anti-Stealth Tablet pieces"
 
     #animeate antisteal scroll going 2 volkara
     show volkara3quat pointy with dissolve
+    show antiStealthScroll at left , halfSize with dissolve:
+        ypos 0.625
+        linear 2 xpos 0.58 ypos 0.425 xanchor 0.5 yanchor 0.5
     pause 2
     $ changeItemAmount( inventory , tabletDocument , 1 )
 
     hide antiStealthScroll with dissolve
     show volkara3quat basic happyMouth
-    show atazeraImg base neutralHappy
+    show atazeraImg basic neutralHappy
     with dissolve
     volk "Thanks Atazera."
-
     #in the original comic (showing the cannonical AST version of events, Xerxes wants the jamesians to enter)
     #but their are no jamesian army here - they're busy fighting krokkosnek over lake Takura
-    scene xartabanaThoneRoom at truecenter, size2Thrid with fade
+    scene xartabanaThoneRoom at center, size2Thrid with fade
     show atazeraImg at left , size2Thrid , flipped:
         ypos 1.25
     #should i make a new graphic for the 2 fingers (based on yeah)
@@ -861,7 +932,7 @@ label atazeraMeetFoz:
     hide xerx3quatHappy
     show xerx34LookDownAnnoyed at right , size2Thrid:
         ypos 1.25
-    show atazeraImg greet sad O
+    show atazeraImg greet sadEyes O
     ataz "But they'll kill me on the spot as my head is worth 25,000 astartins."
 
     #atazera thinking pose - hand in fornt of chest but below face
@@ -871,17 +942,17 @@ label atazeraMeetFoz:
     show atazeraImg point with dissolve
     ataz "Makkabium Ruins may be easier since the Astarts don't bother with it."
     show atazeraImg think neutralHappy
-    show xerx3quatPointCommanding at right , size2Thrid:
-        ypos 1.25
-        linear 2 xalign 0.5 xpos 0.5
-    show volkara3quat pointy meanEyes deltaMouth at right , size2Thrid:
-        ypos 1.25
-        linear 2 xpos 1.5
+    hide xerx34LookDownAnnoyed 
+    show xerx3quatHappy at right , size2Thrid:
+        ypos 1.25 xpos 1.0 xalign 1.0
+        linear 2 xalign 0.67 xpos 0.67
+    show volkara3quat pointy meanEyes deltaMouth at right , flipped , size2Thrid:
+        ypos 1.25 xpos 1.5
         linear 2 xpos 1.0
     volk "Aren't those ruins filled with angry ghosts?"
     volk "Expellically in the underground sections."
 
-    show atazeraImg point closedEyes
+    show atazeraImg point happy closedEyes
     show volkara3quat armsFoward
     with dissolve
     ataz "Yes. That's why the Astarts don't bother with it."
@@ -896,10 +967,10 @@ label atazeraMeetFoz:
     #many of the fighters will be desguised as slaves and will activate when ready.
     #many of the slave "onwers" are also in on it
     #forces will hide underground and attack when ready
-    hide xerx3quatPointCommanding
+    hide xerx3quatHappy
     show xerx3quatThink at center , size2Thrid:
         ypos 1.25
-    show atazeraImg base neutralHappy
+    show atazeraImg basic neutralHappy
     with dissolve
     #face xerxes for menu
     menu:
@@ -924,13 +995,13 @@ label atazeraMeetFoz:
             hide xerx3quatPoint
             show xerx3quatMiniSuprized at center , size2Thrid:
                 ypos 1.25
-            show atazeraImg closed happy
+            show atazeraImg closedEyes happy
             with dissolve
             ataz "Through the front gate."
             show atazeraImg mean with dissolve
             ataz "As someone else."
 
-            hide xerx3quatPoint
+            hide xerx3quatMiniSuprized
             show xerx3quatAnnoyed at center , size2Thrid:
                 ypos 1.25
             show atazeraImg hornyEyes point 
@@ -939,7 +1010,7 @@ label atazeraMeetFoz:
             hide xerx3quatAnnoyed
             show xerx34LookDownAnnoyed at center , size2Thrid:
                 ypos 1.25
-            show atazeraImg closed greet
+            show atazeraImg closedEyes greet
             with dissolve
             ataz "You can turn into a girl and destract Balatius."
 
@@ -957,23 +1028,27 @@ label atazeraMeetFoz:
             with hpunch
             xerx "I'M NOT GOING TO BE BALATIUS' DANCING GIRL!!"
             
-            hide xerx3quatNO
+            hide xerx3quatYeahAngry
             show xerx34LookDownAnnoyed at center , size2Thrid:
                 ypos 1.25
             show atazeraImg point mean happy
             with dissolve
             ataz "And that's why I need you to do it."
-            show atazeraImg point yeah with dissolve
+            show atazeraImg yeah with dissolve
             ataz "They won't be expecting it."
             show atazeraImg hornyEyes with dissolve
             ataz "And you'll act natural."
-            show atazeraImg base neutral with dissolve
+            show atazeraImg basic neutral with dissolve
             ataz "You can fool people with honesty."
 
+            hide volkara3quat
+            show volkara3quat at right , size2Thrid:
+                ypos 1.25 xpos 1.0 xzoom -1.0
+                linear 2 xpos 0.75 xzoom 1.0
             hide xerx34LookDownAnnoyed
             show xerx3quatAnnoyed at center , size2Thrid:
                 ypos 1.25 xzoom 1.0
-                linear 2 xpos 0.5 xalign 0.5 xzoom -1.0
+                linear 1 xzoom -1.0
             show atazeraImg neutralHappy
             show tesipiz34CuriousPointing at right , size2Thrid:
                 ypos 1.25 xpos 1.5
@@ -997,7 +1072,7 @@ label atazeraMeetFoz:
             show tesipiz34Curious at right , size2Thrid:
                 ypos 1.25
             with dissolve
-            xerx "And can even lay eggs like one."
+            xerx "And even lay eggs like one."
             hide xerx34Ouch
             show xerx3quatAnnoyed at center , size2Thrid , flipped:
                 ypos 1.25
@@ -1196,7 +1271,7 @@ label atazeraMeetFoz:
                 ataz "We'll go now."
 
             jump malikGetsDaLadies
-
+'''     uncomment at Makkabium Update
         "The ghosts of Makkabium won't mind if we look around":
             $ enteringFrom = "Xarta2Makkabium"
 
@@ -1284,7 +1359,7 @@ label atazeraMeetFoz:
 
             jump xartabanaMenu
 
-
+'''
     #main goal is to get the anti-stealth tablet piece - kill King Balatius and either eascpe or destory Bala-Axerium.
     #an armored giant will block the way out and be a boss.
     #atazera will attack the nearby fortresses head on as destraction - if they win woohooo if not - oh well
