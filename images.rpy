@@ -176,6 +176,9 @@ transform middleStand:
 transform size08:
     zoom 0.8
 
+transform size06:
+    zoom 0.6
+
 transform size3quat:
     zoom 0.75
 
@@ -211,6 +214,9 @@ transform tenthSize:
 
 transform twentithSize:
     zoom 0.05
+
+transform fortyithSize:
+    zoom 0.025
 
 transform behindTable:
     zoom 0.7
@@ -3851,7 +3857,7 @@ image xerx3quatConsurnd = "images/Protagonists/Xerxes/Xerxes 3-4 Consurnd.webp"
 image xerx3quatLineMouthCrossarms = "images/Protagonists/Xerxes/Xerxes 3-4 crossarms lineMouth.webp"
 image xerx3quatAnnoyed = "images/Protagonists/Xerxes/Xerxes 3-4 annoyed.webp"
 image xerx3quatAnnoyedArmored = "images/Protagonists/Xerxes/Xerxes 3-4 annoyed Armored.webp"
-image xerx3quatCommandingCrossarmsArmored = Composite(( 600, 1400 ) , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 annoyed Armored.webp" , (0,0) , "Xerxes 3-4 pointing Commanding Armored")
+image xerx3quatCommandingCrossarmsArmored = Composite(( 600, 1400 ) , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 annoyed Armored.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Commanding Armored.webp")
 image xerx3quatFistPushArmored = "images/Protagonists/Xerxes/Xerxes 3-4 Armored Commanding Fist Push.webp"
 image xerx3quatPointCommanding = Composite ( (600,1400) ,  (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Commanding Armored.webp" )
 image xerx3quatPointCommandingArmored = Composite ( (600,1400) ,  (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Happy Armored.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Commanding Armored.webp" )
@@ -3986,6 +3992,7 @@ layeredimage femXerx:
             "images/Protagonists/Xerxes/Xerdza Happy Mouth.webp"
         attribute O:
             "images/Protagonists/Xerxes/Xerdza OMouth.webp"
+        
         attribute frown:
             "images/Protagonists/Xerxes/Xerdza Frown.webp"
         attribute angry:
@@ -4260,9 +4267,9 @@ layeredimage femTesipiz:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Greet.webp"
 
         attribute yeah:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 female Yeah.webp"
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Yeah.webp"
         attribute clothedYeah:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 harem 100-70.webp"
+            "images/Protagonists/Tesipiz/Tesipiz 3-4 female Yeah.webp"
             
         attribute point:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Point.webp"

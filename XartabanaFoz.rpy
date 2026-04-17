@@ -1,7 +1,10 @@
 
 default xartabanaShopAngry = 0
 default isAngryXartabanaShop = False
-default xartabanaShopItems = []
+define xartabanaShopItems = [ arrow , metalArrow , yellowBombMakitKit , cheesyCheese 
+, smellyCheese , baitFish , floodFish , redSpice , salt , ladyEgg , breadz , musselz 
+, harraFood , potOAcid , throwNet , clearingJuice , foodLeevz , foodSeedz , reviverFang 
+, saltyMeat , isopod , javelinBasic , javelinIron ]
 
 #start with battle at the front lines
 
@@ -106,7 +109,6 @@ label toXartabanaFoz:
         #2 - 0.211, 0.689 - 2 10
     with fade
     pause 16
-    "animations done - remove after testing and debugging"
 
     $ IsDaytime = True
     play music bardaiyaBeMad fadein 1 fadeout 1
@@ -594,9 +596,12 @@ label atazeraMeetFoz:
     #establishing shot
     play music justDaWind fadein 1.0 fadeout 1.0
     if IsDaytime:
-        scene xartabanaEstblishing at fullFit with fade
+        scene clearDayTime
+        show xartabanaEstblishing at fullFit with fade
     else:
-        scene xartabanaEstblishingNight at fullFit with fade
+        scene starNightTime at fullFit
+        show xartabanaEstblishingNight at fullFit 
+    with fade
     pause 3
     #atazera should have some catch up talk with Xerxes
     #the purpose is to both inform the player/reader and have xerxes understand the current situation
@@ -984,6 +989,7 @@ label atazeraMeetFoz:
             hide xerx3quatYeah
             show xerx3quatThink at center , size2Thrid:
                 ypos 1.25
+            with dissolve
             xerx "Just..."
             pause 2
             hide xerx3quatThink
@@ -1002,7 +1008,7 @@ label atazeraMeetFoz:
             ataz "As someone else."
 
             hide xerx3quatMiniSuprized
-            show xerx3quatAnnoyed at center , size2Thrid:
+            show xerx3quatAnnoyed at center , size2Thrid behind atazeraImg:
                 ypos 1.25
             show atazeraImg hornyEyes point 
             with dissolve
@@ -1029,7 +1035,7 @@ label atazeraMeetFoz:
             xerx "I'M NOT GOING TO BE BALATIUS' DANCING GIRL!!"
             
             hide xerx3quatYeahAngry
-            show xerx34LookDownAnnoyed at center , size2Thrid:
+            show xerx34LookDownAnnoyed at center , size2Thrid behind atazeraImg:
                 ypos 1.25
             show atazeraImg point mean happy
             with dissolve
@@ -1150,12 +1156,17 @@ label atazeraMeetFoz:
             scene xartabanaThoneRoom at center
             show atazeraImg at left , size2Thrid , flipped:
                 ypos 1.25
+            show volkara3quat armsFoward at center , size2Thrid:
+                ypos 1.3 xpos 0.56
             show xerx3quatPointHappy at center , size2Thrid , flipped:
                 ypos 1.25
             show tesipiz34Curious at right , size2Thrid:
                 ypos 1.25
             with fade
             xerx "I can teach you, so you can destract Balatius instead."
+            show volkara3quat basic meanEyes OMouth at center , size2Thrid:
+                ypos 1.3 xpos 0.56 xzoom 1.0
+                linear 0.5 xzoom -1.0 xpos 0.75
             xerx "Or use Volkara since she is a girl to begin with."
             
             hide xerx3quatPointHappy
@@ -1167,7 +1178,8 @@ label atazeraMeetFoz:
             show atazeraImg yeah happy
             hide xerxNoWeGood
             show xerx3quatHappyer at center , size2Thrid , flipped:
-                ypos 1.25
+                ypos 1.25 xzoom 1.0
+                linear 1 xzoom -1.0
             hide tesipiz34Curious
             show tesipiz34Happy at right , size2Thrid:
                 ypos 1.25
@@ -1182,31 +1194,33 @@ label atazeraMeetFoz:
                 ypos 1.25
             with dissolve
             ataz "More destractions."
-            show atazeraImg point horny
+            show atazeraImg point hornyEyes
             hide xerx3quatHappyer
-            show xerx3quatMiniSuprized at center , size2Thrid:
+            show xerx3quatMiniSuprized at center , size2Thrid behind atazeraImg:
                 ypos 1.25
+            with dissolve
             ataz "But you're still turning into a girl Xerxes."
-            show atazeraImg netrual happy
-            show xerx3quatAnnoyed at center , size2Thrid:
+            show atazeraImg neutral happy
+            hide xerx3quatMiniSuprized
+            show xerx3quatAnnoyed at center , size2Thrid behind atazeraImg:
                 ypos 1.25
-                linear 2 xpos 0.25
             hide tesipiz34Happy
             show tesipiz34NeutralHappy at right , size2Thrid:
                 ypos 1.25
-                linear 2 xpos 0.75 xalign 0.5
-            show volkara3quat armsFoward Omouth at right , size2Thrid:
-                ypos 1.25 xpos 1.5
-                linear 2 xpos 1.0
-
+            show volkara3quat armsFoward Omouth
+            with dissolve
             ataz "Xerxes has binded the Sword of Ahura-Mazda to him, right?"
             show atazeraImg neutral neutralHappy
-            show volkara3quat base happyMouth
+            show volkara3quat pointy happyMouth at center , size2Thrid:
+                ypos 1.25 xpos 0.75
+                linear 1 xpos 0.67
             with dissolve
             volk "Yes he has."
 
             show atazeraImg mean happy
-            show volkara3quat neutralHappyMouth
+            show volkara3quat armsFoward neutralHappyMouth at center , size2Thrid:
+                ypos 1.2 xpos 0.67
+                linear 1 xpos 0.75
             ataz "Good."
 
             show atazeraImg yeah closedEyes with dissolve 
@@ -1217,28 +1231,30 @@ label atazeraMeetFoz:
             ataz "Xerxes."
             show atazeraImg point
             hide tesipiz34NeutralHappy
-            show tesipiz34Curious at center , size2Thrid:
-                ypos 1.25 xpos 0.75
+            show tesipiz34Curious at right , size2Thrid:
+                ypos 1.25
             hide xerx3quatAnnoyed
-            show slightlyAnnoyedXerx at center , size2Thrid:
-                ypos 1.25 xpos 0.25
+            show slightlyAnnoyedXerx at center , size2Thrid behind atazeraImg:
+                ypos 1.25
             with dissolve
             ataz "Teach Tesipiz the sex change spell."
 
             show atazeraImg at left , size2Thrid , flipped:
                 ypos 1.25 xzoom 1.0
-                linear 1 xzoom -1.0
-            show volkara3quat basic OmegaMouth
+                linear 1 xzoom -1.0 xpos -0.3
+            show volkara3quat basic OMegaMouth
             with dissolve
             ataz "And I'll get dancing slave costumes for the three of you."
 
             show atazeraImg base neutral
-            show volkara34Happy pointy sadEyes OMouth 
+            show volkara3quat pointy sadEyes OMouth at center , size2Thrid:
+                ypos 1.25 xpos 0.75
+                linear 1 xpos 0.65
             with dissolve
             volk "Wait!?"
-            show volkara34Happy OmegaMouth with dissolve
+            show volkara3quat OMegaMouth with dissolve
             volk "What!!"
-            show volkara3quat Omouth with dissolve
+            show volkara3quat OMouth with dissolve
             volk "Me too??"
 
 
@@ -1249,20 +1265,20 @@ label atazeraMeetFoz:
             with dissolve
             ataz "We'll need somebody to steal the Anti-Stealth tablet while Xerxes does the destracting."
             
-            show atazeraImg greet closed with dissolve
+            show atazeraImg greet closedEyes with dissolve
             ataz "And two is better then one."
 
-            show atazeraImg base neutral neutralHappy
-            show volkara34Happy meanEyes deltaMouth
+            show atazeraImg basic neutral neutralHappy
+            show volkara3quat meanEyes deltaMouth
             with dissolve
             volk "Curses."
             
 
             call trioTurnIntoGirlsInXartabana
             #scene xartabanaThoneRoom at truecenter, size2Thrid            
-            show atazeraImg point neutral happy at left , size2Thrid , flipped:
-                ypos 1.25 xpos -0.5
-                linear 1 xpos 0.0
+            #show atazeraImg point neutral happy at left , size2Thrid , flipped:
+            #    ypos 1.25 xpos -0.5
+            #    linear 1 xpos 0.0
 
             if IsDaytime:
                 ataz "We'll go when it's night time."
@@ -1370,10 +1386,16 @@ label atazeraMeetFoz:
 
 label xartabanaMenu:
 
+    play music villageTheme if_changed fadein 1.0 fadeout 1.0
     if IsDaytime:
-        scene xartabanaEstblishing at fullFit with Fade(2,0,2)
+        scene clearDayTime at fullFit
+        show xartabanaEstblishing at fullFit 
+        
     else:
-        scene xartabanaEstblishingNight at fullFit with Fade(2,0,2)
+        scene starNightTime at fullFit
+        show xartabanaEstblishingNight at fullFit
+    
+    with Fade(2,0,2)
 
     menu:
         "Buy items":
@@ -1640,9 +1662,10 @@ label shopXartabana: #will be the only shop for both the Bala-Axerium and Makkab
 
     $ xartabanaShopAngry = 0
     scene xartabanaShop at truecenter
-    show axerianLady greet happy at center , halfSize:
-        ypos 1.0
-    show shopCounter2 at truecenter , size08
+    show axerianLady greet happy at center , size2Thrid:
+        ypos 1.25
+    show shopCounter2 at center , size08:
+        yzoom 1.25
     with fade
     chya "Welcome to Xartabana Palace Shop."
     chya "I have many goods that can help you deal with the Astarts."
@@ -1656,9 +1679,10 @@ label shopXartabana: #will be the only shop for both the Bala-Axerium and Makkab
 label shoppingXartabana:
 #hide chyaazi
     scene xartabanaShop at truecenter
-    show axerianLady at center , halfSize:
-        ypos 1.0
-    show shopCounter2 at truecenter , size08
+    show axerianLady at center , size2Thrid:
+        ypos 1.25
+    show shopCounter2 at center , size08:
+        yzoom 1.25
     with dissolve
     
     call shopBasic( xartabanaShopItems , ifUsedShop , isAngryXartabanaShop ) 
@@ -1675,10 +1699,10 @@ label shoppingXartabana:
         $ theresAnImage =  str(_return[ 1 ])
 
         if _return[ 0 ] == 0:
-            show axerianLady with dissolve:
-                zoom 0.5                    
+            show axerianLady at center , size2Thrid with dissolve:
+                ypos 1.25                  
                 easeout 1.0 ypos 2.0
-                easein 1.0 ypos 1.0
+                easein 1.0 ypos 1.25
 
             pause 2
         else:
@@ -1695,7 +1719,7 @@ label shoppingXartabana:
 
             show axerianLady item 
             #show dyonisisngwaArmOver at middleStand , size2Thrid , duskLights
-            show screen showItemImage( theresAnImage ,  horizontalPos = 0.5 , verticlePos = 0.45 , zoomies = 0.5) #TODO reconfigure to appaer on shopkeepers's hand/ the bench
+            show screen showItemImage( theresAnImage ,  horizontalPos = 0.35 , verticlePos = 0.556 , zoomies = 0.5) #TODO reconfigure to appaer on shopkeepers's hand/ the bench
             with dissolve
             pause 0.5
             hide screen showItemImage
@@ -1727,8 +1751,8 @@ label shoppingXartabana:
             stop music fadeout 2.0
             yukk "Nope."
             play music astartesWrath fadein 1.0 fadeout 1.0
-            show axerianLady mean mad at angryColored with dissolve:
-                ypos 1.4 zoom 1.5
+            show axerianLady mean mad at angryColored , center , size2Thrid with dissolve:
+                ypos 1.5 zoom 1.25
             show shopCounter2 behind chyaazi
             yukk "I still need to make money."
             yukk "I can't give you free stuff."
@@ -1823,16 +1847,18 @@ label makkaBala: #do in the makkabium update
 
 label malikGetsDaLadies:
     $ IsDaytime = False
+    play music windAmbiance fadein 1.0 fadeout 1.0
     scene clearDayTime at fullFit , duskMorningGradient
-    show xartabanaPalaceCortyard at center , halfSize , darkShade with Fade( 2, 0, 2)
-    show malikImg greets mean happy at duskLights , size2Thrid , left with dissolve:
-        ypos 1.25
-    show femXerx haremChained mean frown at duskLights , size2Thrid , center:
+    show xartabanaPalaceCortyard at center , halfSize , darkShade 
+    with Fade( 2, 0, 2)
+    show malikImg greet mean happy at duskLights , size2Thrid , left with dissolve:
+        ypos 1.4
+    show femXerx haremChained mean frown at duskLights , size2Thrid , right:
         ypos 1.25
     show femTesipiz chained at duskLights , size2Thrid , center:
-        ypos 1.25 xpos 0.75
-    show volkara3quat haremChained lineEyes OMouth at duskLights , size2Thrid , left :
-        ypos 1.25
+        ypos 1.25 xpos 0.67
+    show volkara3quat haremChained lineEyes OMouth at duskLights , size06 , center , flipped:
+        ypos 1.2 xpos 0.5
     with dissolve
 
     mali "Hello ladies."
@@ -1846,22 +1872,23 @@ label malikGetsDaLadies:
     show volkara3quat OMegaMouth
     with hpunch
     show femTesipiz neutral
-    show volkara3quat OMotuh
+    show volkara3quat OMouth
     mali "If I yank your chains, I'm just acting, understood."
 
-    show malikImg base:
+    show malikImg base at duskLights , size2Thrid , left:
+        ypos 1.4
         linear 2 xpos 0.25 xanchor 0.5
-    show atazeraImg happy at left:
-        ypos 1.25 xpos -0.5
-        linear 2 xpos 0.0
+    show atazeraImg happy at duskLights, flipped , left , size2Thrid , left:
+        ypos 1.4 xpos -0.5
+        linear 2 xpos -0.15
     ataz "Also Xerxes."
 
     show atazeraImg point frown with dissolve
     ataz "Try to avoid calling the Sword of Ahura-Mazda until either Tesipiz and Volkara break into the throne room or you hear a large bang."
-    show atazeraImg base O with dissolve
+    show atazeraImg basic O with dissolve
     ataz "Timing will be inportant."
 
-    $ sleepyTimeReset()
+    call sleepyTimeReset
     $ IsDaytime = False
     jump balaAxeriumSneakyFoZ
 
@@ -1869,7 +1896,8 @@ label trioTurnIntoGirlsInXartabana:
 
     #they do their thing
     scene xartabanaPalaceBedroom at fullFit
-    show light
+    show light at truecenter:
+        xpos 0.9 ypos 0.18
     with fade
 
     show xerx3quatAnnoyed at left , size2Thrid:
@@ -1877,7 +1905,7 @@ label trioTurnIntoGirlsInXartabana:
         linear 4 xpos 1.0 xanchor 1.0
         linear 0.5 xzoom 1.0
     pause 1
-    show tesipiz34NeutralHappy at left , size2Thrid:
+    show tesipiz34NeutralHappy at left , size2Thrid , flipped:
         ypos 1.25 xpos -0.5
         linear 3 xpos 0.5 xanchor 0.5
     pause 1
@@ -1888,17 +1916,15 @@ label trioTurnIntoGirlsInXartabana:
     #xerxes turn tesipiz into a lady before turning himself into one
 
     hide xerx3quatAnnoyed
-    show xerx3quatPoint at left , size2Thrid:
+    show xerx3quatPoint at right , size2Thrid:
         ypos 1.25
     with dissolve
     xerx "Now Tesipiz"
     xerx "Watch this."
-    #TODO make transformation sound effect or experiment with already existing ones
-
-
     
-    hide xerx3quatAnnoyed
-    show femXerx hatBase frown
+    hide xerx3quatPoint
+    show femXerx hatBase frown at right , size2Thrid:
+        ypos 1.25
     play sound magicAttackUnchmabered  
     with Fade( 0.5 , 0.5 , 0.5 , color="#ff0")
     
@@ -1950,20 +1976,22 @@ label trioTurnIntoGirlsInXartabana:
     
     
     with dissolve
+    show femXerx hatPoint with dissolve
     xerx "Tesipiz"
     xerx "The sex change spell works though transformation via focusing on the soul's opposite gender half."
     xerx "You need to focus on your souls feminine half."
 
     show femXerx hatBase neutral neutralHappy
     hide tesipiz34NeutralHappy
-    show tesipizThonkt at center , size2Thrid:
+    show tesipizThonkt at center , size2Thrid , flipped:
         ypos 1.25
     with dissolve
     pause 3
     #TODO magic show simple magix use music
     #tesipiz focuses on his feminie self
     #this could be a game?
-    show tesipizThonkt at center , size2Thrid:
+    hide tesipizThonkt
+    show tesipizThonkt at center , size2Thrid , flipped:
         ypos 1.25 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
         linear 1 matrixcolor TintMatrix("#cf4d01") * BrightnessMatrix ( 0.2 )
         linear 1 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
@@ -1971,11 +1999,11 @@ label trioTurnIntoGirlsInXartabana:
         linear 1 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
         repeat
     pause 8
-    with fade (0.25 , 0 , 0.25 , color="#cf4d01")
+    with Fade (0.25 , 0 , 0.25 , color="#cf4d01")
     pause 5
 
     hide tesipizThonkt
-    show tesipiz34Curious at center , size2Thrid:
+    show tesipiz34Curious at center , size2Thrid , flipped:
         ypos 1.25
     show femXerx hatPoint mean O
     xerx "Focus harder."
@@ -1986,11 +2014,12 @@ label trioTurnIntoGirlsInXartabana:
     #starts glowing
     show femXerx hatBase
     hide tesipiz34Curious
-    show tesipizThonkt at center , size2Thrid:
+    show tesipizThonkt at center , size2Thrid , flipped:
         ypos 1.25
     with dissolve
     pause 4
-    show tesipizThonkt at center , size2Thrid:
+    hide tesipizThonkt
+    show tesipizThonkt at center , size2Thrid , flipped:
         ypos 1.25 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
         linear 1 matrixcolor TintMatrix("#cf4d01") * BrightnessMatrix ( 0.2 )
         linear 1 matrixcolor TintMatrix("#fff") * BrightnessMatrix ( 0.0 )
@@ -2004,7 +2033,8 @@ label trioTurnIntoGirlsInXartabana:
     
     #changes sex
     hide tesipizThonkt
-    show femTesipiz clothedBase
+    show femTesipiz clothedBase at center , size2Thrid , flipped:
+        ypos 1.25
     show femXerx hatBase neutralHappy
     play sound magicAttackUnchmabered 
     with Fade( 0.5 , 0.5 , 0.5 , color="#ff0")
@@ -2020,21 +2050,22 @@ label trioTurnIntoGirlsInXartabana:
         with dissolve
         tesi "Heheh!"
 
-        show atazeraImg point mean frown at size2Thrid , left:
-            xpos -0.5 ypos 1.25
-            linear 2 xpos 0.0
-        show volkara3quat:
-            xpos 0.0 xzoom -1.0
-            linear 2 xpos 0.25 xalign 0.5 xzoom 1.0
-        show femTesipiz clothedBase netrual neutralHappy:
-            xpos 0.5
-            linear 2 xpos 0.75
+        show atazeraImg point mean frown at size2Thrid , left , flipped:
+            xpos -0.75 ypos 1.25
+            linear 3 xpos 0.0
+        show volkara3quat at left:
+            xpos 0.0 xzoom 1.0 ypos 1.25
+            linear 2 xpos 0.25 xalign 0.5 xzoom -1.0
+        show femTesipiz clothedBase neutral neutralHappy at size2Thrid , center:
+            xpos 0.5 ypos 1.25 xzoom 1.0
+            linear 2 xpos 0.75 xzoom -1.0
         with dissolve
         ataz "You need to act more natural Tesipiz."
 
-        show atazeraImg base neutral
-        show volkara3quat:
-            xzoom 1.0
+        show atazeraImg basic neutral
+        hide volkara3quat
+        show volkara3quat lineEyes OMouth at center , size2Thrid , flipped:
+            ypos 1.3 xzoom 1.0
             linear 1 xzoom -1.0
         show femTesipiz nervous extraHappy
         with dissolve
@@ -2051,7 +2082,7 @@ label trioTurnIntoGirlsInXartabana:
         #tesi's face
         #atazera moves in
         show volkara3quat basic
-        show femTesipiz base
+        show femTesipiz frown clothedBase
         show atazeraImg point happy point
         with dissolve
         ataz "Thanks Volkara"
@@ -2059,21 +2090,26 @@ label trioTurnIntoGirlsInXartabana:
         show femTesipiz clothedFeeling with dissolve
         tesi "Although."
         if muwaCuddleCounter > takuraCuddles and muwaCuddleCounter > tsekreiCuddles:
+            show femTesipiz nervous O with dissolve
             tesi "I don't think Muwa would like it."
         elif takuraCuddles > muwaCuddleCounter and takuraCuddles > tsekreiCuddles:
+            show femTesipiz nervous O with dissolve
             tesi "I don't think Lady Takura would like it." 
         elif tsekreiCuddles > muwaCuddleCounter and tsekreiCuddles > takuraCuddles:
+            show femTesipiz nervous O with dissolve
             tesi "I don't think Tsekrei would like it."
     
     scene xartabanaPalaceBedroom at fullFit
-    show light
-    show atazeraImg point happy at size2Thrid , left:
-        ypos 1.25
+    show light at truecenter:
+        xpos 0.9 ypos 0.18
+    
     show volkara3quat armsFoward lineEyes OmegaMouth at size2Thrid , center , flipped:
-        xpos 0.25 ypos 1.25
+        xpos 0.67 ypos 1.3
     show femTesipiz clothedBase at size2Thrid , center: 
         xpos 0.75 ypos 1.25
     show femXerx hatBase at size2Thrid , right:
+        ypos 1.25
+    show atazeraImg point happy at size2Thrid , left , flipped:
         ypos 1.25
     with dissolve
 
@@ -2082,11 +2118,12 @@ label trioTurnIntoGirlsInXartabana:
     #they change clothes
     
     scene xartabanaPalaceBedroom at fullFit
-    show light
-    show volkara3quat harem deltaMouth at size2Thrid , center , flipped:
-        xpos 0.25 ypos 1.25
+    show light at truecenter:
+        xpos 0.9 ypos 0.18
+    show volkara3quat harem deltaMouth at size2Thrid , left:
+        ypos 1.3
     show femTesipiz at size2Thrid , center: 
-        xpos 0.75 ypos 1.25
+        ypos 1.25
     show femXerx frown at size2Thrid , right:
         ypos 1.25
     with fade
@@ -2096,11 +2133,16 @@ label trioTurnIntoGirlsInXartabana:
     show femTesipiz yeah horny happy with dissolve
     tesi "Nice"
 
-    show femTesipiz base neutral neutralHappy
+    show volkara3quat harem deltaMouth at left:
+        ypos 1.2 xpos 0.0 xzoom 1.0 xanchor 0.0 zoom 0.6
+        linear 2 xanchor 0.5 xpos 0.5 xzoom -1.0
+    show femTesipiz base neutral neutralHappy at size2Thrid , center: 
+        ypos 1.25 xpos 0.5
+        linear 2 xpos 0.67
     show femXerx haremPoint mean O
-    show atazeraImg at size2Thrid , left:
+    show atazeraImg at size2Thrid , left , flipped:
         xpos -0.5 ypos 1.25
-        linear 2 xpos 0.0
+        linear 2 xpos -0.1
     with dissolve
     pause 2
     
