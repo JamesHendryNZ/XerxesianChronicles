@@ -89,6 +89,20 @@ transform darkShade:
     # Blue at the bottom (R=0.0, G=0.0, B=1.0, Alpha=1.0)
     u_gradient_bottom (0.4, 0.3, 0.0, 1.0)
 
+transform light2DarkBottom2Top:
+    shader "gradiants.vertical_gradient"
+    # Red at the top (R=1.0, G=0.0, B=0.0, Alpha=1.0)
+    u_gradient_top (0.4, 0.3, 0.0, 1.0)
+    # Blue at the bottom (R=0.0, G=0.0, B=1.0, Alpha=1.0)
+    u_gradient_bottom (1.3, 0.95, 0.8, 1.0)
+
+
+transform light2NightRight2Left:
+    shader "gradiants.horizontal_gradient"
+    #yello at the right
+    u_gradient_right (1.3, 0.95, 0.8, 1.0)
+    #brown at the left
+    u_gradient_left (0.0, 0.0, 0.8, 1.0)
 
 label testDaGradiants:
 

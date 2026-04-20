@@ -13,34 +13,148 @@ label balatiumPalace:
 
 label balaAxeriumSneakyFoZ:
     $ timeTime = 0 #this will tick up every action until a certain point
+    #it will be night time.
+
+    scene map2:
+        zoom 0.75
+        xalign 1.0
+        yalign 0.4 
+        linear 3 
     "map to balatium."
 
+    scene starNightTime at fullFit:
+        xzoom -1.0 yzoom -1.0
+    show balaAxeriumEstablishingNight at fullFit
+    with Fade ( 2,1,2 )
+    pause 5
+    
+    scene starNightTime at fullFit:
+        xzoom -1.0 yzoom -1.0
+    show Balagate at left , size2Thrid , light2NightRight2Left:
+        xalign 0.0
+        linear 5 xalign 1.0
+    with Fade( 1,1,1 )
+
+    show malikImg at left , halfSize:
+        xpos -0.5 xalign 0.0 matrixcolor TintMatrix("#0600bc")
+        linear 9 xalign 0.5 matrixcolor TintMatrix("#ffffd0")
+    pause 1
+    show femXerx haremChained mean frown at left , halfSize:
+        xpos -0.6 xalign 0.0 matrixcolor TintMatrix("#0600bc")
+        linear 9 xalign 0.33 matrixcolor TintMatrix("#ffffd0")
+    show femTesipiz chained nervous frown at left , halfSize:
+        xpos -0.7 xalign 0.0 matrixcolor TintMatrix("#0600bc")
+        linear 9 xalign 0.15 matrixcolor TintMatrix("#ffffd0")
+    show volkara3quat haremChained lineEyes deltaMouth at left , halfSize:
+        xpos -0.8 xalign 0.0 matrixcolor TintMatrix("#0600bc")
+        linear 9 xalign 0.0 matrixcolor TintMatrix("#ffffd0")
+
+    pause 3
+    show balatianHeavySpear at right , flipped , lightCrystalLights , halfSize:
+        xpos 1.5
+        linear 3 xpos 1.0
+    pause 6
+
+    hide balatianHeavySpear
+    show balatianHeavySpearGreet at right , flipped , lightCrystalLights
+    with dissolve
     balatianGoon "Hello Astarts"
     balatianGoon "Looks like you scored a nice victory against Atazera!"
 
+    hide balatianHeavySpearGreet
+    show balatianHeavySpear at right , flipped , lightCrystalLights
+    show malikImg greet happy
+    with dissolve
+
     mali "Yes we have!"
     mali "We've got lots of loot and slaves"
+    show malikImg point mean with dissolve
     mali "We even caught three Knights of Ahura-Mazda."
 
+    show malikImg base neutral neutralHappy
+    hide balatianHeavySpear
+    show balatianHeavySpearGreet at right , flipped , lightCrystalLights
+    with dissolve
     balatianGoon "Exellent!!"
     balatianGoon "King Balatius will be proud!"
 
+    hide balatianHeavySpearGreet
+    show balatianHeavySpearAttack
+    with dissolve
     balatianGoon "OPEN THE GATE!!"
 
     #show the trio get dragged to the placae
+    scene starNightTime at fullFit:
+        xzoom -1.0 yzoom -1.0
 
+    show oxCartDude at quatSize , lightCrystalLights , truecenter:
+        linear 6 xalign 1.0
+    show balaAxeriumInsideNight at fullFit
+
+    show balaAxeriumInsideForground at fullFit , flameLight
+    show malikImg at thridSize , lightCrystalLights , center:
+        ypos 1.0 xalign 0.5
+        linear 3 ypos 2.0 xalign 0.0 zoom 1.5
+    show femXerx haremChained O at thridSize , lightCrystalLights , center:
+        ypos 0.8 xpos 0.75
+        linear 3 ypos 2.0 xalign 0.0 zoom 1.5
+    show femTesipiz chained nervous frown at thridSize , lightCrystalLights , center:
+        ypos 0.8
+        linear 3 ypos 2.0 xalign 0.0 zoom 1.5
+    show volkara3quat haremChained lineEyes frown at thridSize , lightCrystalLights , center:
+        ypos 0.8 xpos 0.25
+        linear 3 ypos 2.0 xalign 0.0 zoom 1.5
     #show "astart" forces and wagons move into side allays 
     with fade
     #establsihg shot of palace front
+    scene starNightTime at fullFit
+    show balatiusPalace at fullFit , light2DarkBottom2Top:
+        yalign 0.0
+        linear 12 yalign 1.0
     with fade
-    #lizard suit girl shows up
+    pause 14
 
+    #lizard suit girl shows up
+    scene balatiusPalaceEntrance at center , size2Thrid , lightCrystalLights
+    show lizardSuitLadyImg greet happy at center , halfSize , lightCrystalLights
+    with fade
     lizardSuit "Hello Astart commander!"
     lizardSuit "What are you doing here?"
 
+    show lizardSuitLadyImg base neutralHappy at center , halfSize , lightCrystalLights:
+        linear 2 xalign 1.0
+    show malikImg at left , halfSize , lightCrystalLights:
+        xpos -0.5 xanchor 0.0
+        linear 3 xpos 0.5 xanchor 0.5
+    show femTesipiz chained at left ,  halfSize , lightCrystalLights:
+        xpos 0.7 
+        linear 3 xpos 0.0
+    show volkara3quat haremChained lineEyes deltaMouth at left ,  halfSize , lightCrystalLights:
+        xpos 0.7 
+        linear 3 xpos 0.2
+    show femXerx mean haremChained frown at left ,  halfSize , lightCrystalLights:
+        xpos 0.7 
+        linear 3 xpos 0.4
+    
+    pause 3
+    show malikImg greet happy with dissolve
     mali "Hello Balatian guard!"
+    show malikImg point 
+    show femXerx mean angry
+    show volkara3quat meanEyes
+    show femTesipiz O
+    with dissolve
+    with vpunch
     mali "I'm here to give King Balatius a gift."
 
+    show malikImg base neutral
+    show femXerx O
+    show volkara3quat OMouth
+    #maybe closed eyes and point
+    #TODO add closed eyes for lizard suit lady
+    #TODO add point pose for lizard suit lady
+    show lizardSuitLadyImg happy
+    with dissolve
     lizardSuit "Oh goodie!!"
     lizardMeat "Are all three of them a gift?"
 
@@ -51,6 +165,8 @@ label balaAxeriumSneakyFoZ:
 
     lizardSuit "Got it."
     lizardSuit "I'll take you to King Balatius"
+
+    with fade
 
     with fade
 
