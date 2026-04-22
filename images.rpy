@@ -1129,6 +1129,7 @@ image balatiusPalaceFloor2 = "images/Locations/Bala-Axerium/Floor2Hub.webp"
 image balatiusPalaceFloor3 = "images/Locations/Bala-Axerium/Floor3Hub.webp"
 image balatiusPalaceRoof = "images/Locations/Bala-Axerium/Palace Roof.webp"
 image balatiusPalaceColumns = "images/Locations/Bala-Axerium/Palace Column Front.webp"
+image balatiusPalaceCloumnsRepeating = Frame( "images/Locations/Bala-Axerium/Palace Column Front.webp", tile=True )
 image balatiusPalaceTemple = "images/Locations/Bala-Axerium/Palace Temple to Astarte.webp"
 image balatiusBedroom = "images/Locations/Bala-Axerium/Balatius Bedroom.webp"
 image balatiusShrine = "images/Locations/Bala-Axerium/Secret Vult.webp"
@@ -1380,6 +1381,7 @@ image lamassuBook = "images/items/tsekrei book.webp"
 image nueBook = "images/items/tsekrei gift.webp"
 
 image jamesossianSword = "images/weapons armor and shields/jamesian Sword.webp"
+image jamesossianDagger = "images/weapons armor and shields/jamesian Dagger.webp"
 
 image tastsetuShield1 = "images/weapons armor and shields/Zara-Tastsetu Shield with Javelins.webp"
 image tastsetuShield2 = "images/weapons armor and shields/Zara-Tastsetu Shield with Darts.webp"
@@ -2099,12 +2101,16 @@ layeredimage lizardSuitLadyImg:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Greeting.webp"
         attribute attack:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Battle.webp"
+        attribute pointy:
+            "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Point.webp"
 
     group eyes:
         attribute neutral default:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Neutral Eyes.webp"
         attribute mean:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Mean Eyes.webp"
+        attribute closed:
+            "images/Enemies/eliete goons/Balatian Lizard Suit Guard XEyes.webp"
 
 
     group mouths:

@@ -151,35 +151,96 @@ label balaAxeriumSneakyFoZ:
     show femXerx O
     show volkara3quat OMouth
     #maybe closed eyes and point
-    #TODO add closed eyes for lizard suit lady
-    #TODO add point pose for lizard suit lady
-    show lizardSuitLadyImg happy
+    #maybe try with the spear poiting/attacking pose but with happy face?
+    #no add in the pointy
+    show lizardSuitLadyImg closedEyes happy
     with dissolve
     lizardSuit "Oh goodie!!"
+    show lizardSuitLadyImg pointy neutral with dissolve
     lizardMeat "Are all three of them a gift?"
 
+    show lizardSuitLadyImg base neutralHappy
+    show malikImg O
+    with dissolve
     mali "No."
+    show malikImg point happy with dissolve
     mali "Just this one."
-    mali "One of the other two will go to someone else."
-    mali "And I'm keeping this one."
+    mali "And I'm keeping the other two."
 
+    show malikImg base neutralHappy
+    show lizardSuitLadyImg closed point happy
+    with dissolve
     lizardSuit "Got it."
+    show lizardSuitLadyImg neutral with dissolve
     lizardSuit "I'll take you to King Balatius"
 
+    scene balatiusPalaceFloor1 at right , halfSize
+    show malikImg at halfSize , lightCrystalLights , left:
+        xpos -0.5
+        linear 4 xpos 0.6
+    show lizardSuitLadyImg at halfSize , lightCrystalLights , left:
+        xpos -0.3
+        linear 4 xpos 0.7
+    show femXerx haremChained sad frown at halfSize , lightCrystalLights , left:
+        xpos -0.7
+        linear 4 xpos 0.5
+    with fade
+    pause 4
+
+    scene balatiusThroneDoor at fullFit , lightCrystalLights with dissolve
+    show lizardSuitLadyImg at center , lightCrystalLights , size2Thrid with dissolve:
+        xpos 0.5 ypos 0.125
+        linear 2 xpos 0.0 xalign 0.0
+    show malikImg at center , lightCrystalLights , size2Thrid with dissolve:
+        xpos 0.5 ypos 0.125
+        linear 2 xpos 1.0 xalign 1.0
+    show femXerx haremChained mean frown at center , lightCrystalLights , size2Thrid with dissolve:
+        xpos 0.5 ypos 0.125
     with fade
 
-    with fade
-
+    show lizardSuitLadyImg greet happy with dissolve
     lizardSuit "King Balatius!"
+    show lizardSuitLadyImg point with dissolve
     lizardSuit "An Astart would like to present you a gift!!"
 
+    scene balatiusThroneRoom at truecenter , lightCrystalLights:
+        ypos 1.0
+    show balatiusAndGfs at truecenter , size2Thrid , lightCrystalLights:
+        ypos 0.6
+    with dissolve
     bala "Is this gift that jamesian girl?"
 
+    scene balatiusThroneDoor at fullFit , lightCrystalLights
+    show lizardSuitLadyImg at right , lightCrystalLights , size2Thrid:
+        ypos 0.125
+    show malikImg greet happy at center , lightCrystalLights , size2Thrid:
+        ypos 0.125
+    show femXerx haremChained mean frown at left , lightCrystalLights , size2Thrid:
+        ypos 0.125
+    with dissolve
     mali "Yes!"
+    show malikImg point with dissolve
     mali "This jamesian girl I caught is a Knight of Ahura-Mazda."
 
+    scene balatiusThroneRoom at truecenter , lightCrystalLights:
+        ypos 1.0
+    show balatiusAndGfs at truecenter , size2Thrid , lightCrystalLights:
+        ypos 0.6
+    with dissolve
     bala "Leave her here."
+
+    scene balatiusThroneRoom at truecenter , size2Thrid , lightCrystalLights
+    
+    show janaNeutralHappy at halfSize , lightCrystalLights , left
+    show tsanihoniNeutralHappy at halfSize , lightCrystalLights , right
+    show balatiusHappy at size2Thrid , lightCrystalLights , center:
+        ypos 1.25
+    with dissolve
     bala "Breaking her will be fun!"
+    hide balatiusHappy
+    show balatiusYeah at size2Thrid , lightCrystalLights , center:
+        ypos 1.25
+    with dissolve
     bala "Hahaha!"
 
     #now we need to seperate both Xerxes from Tesi and Volk and their inventories
@@ -188,28 +249,79 @@ label balaAxeriumSneakyFoZ:
     $ inventory = []
     $ currentParty = [ tesipizCharacter , volkaraCharacter ]
 
+    scene starNightTime at fullFit:
+        xzoom -1.0 yzoom -1.0
+    show balaAxeriumInsideNight at fullFit
+    #need to configure in testing
+    show balatiusPalaceCloumnsRepeating at flameLight , halfSize
+    show malikImg at right , lightCrystalLights , size2Thrid:
+        ypos 1.25 xpos 1.5
+        linear 2 xpos 1.0
+    show femTesipiz chained nervous frown at left , lightCrystalLights , size2Thrid:
+        ypos 1.25 xpos 0.2
+    show volkara3quat haremChained lineEyes OmegaMouth at left , lightCrystalLights , size2Thrid:
+        ypos 1.25 xpos 0.1
     with fade
+    pause 2
+    show malikImg point happy with dissolve
     mali "Now to my place you lovelies."
 
+    show balaAxeriumMalikHideout at fullFit , lightCrystalLights
     with fade
+    show malikImg at right , lightCrystalLights with dissolve
+    show femTesipiz at center , lightCrystalLights
+    show volkara3quat harem at left , lightCrystalLights
+    with dissolve
+    show malikImg happy with dissolve
     mali "Now we need you to get you inside the palace." 
+    show malikImg point with dissolve
     mali "Use this."
+    show malikImg item neutralHappy with dissolve
+    show harpoonLauncherImg with dissolve
     $ changeByAmount( inventory , harpoonLauncher , 1 ) #the zardonian harpoon launcher
+    pause 2
+    show malikImg happy
     mali "You can grapple to the 2nd floor"
     mali "Then you can find the Anti-Stealth tablet piece."
     mali "You are Balatiu's slave girls, so you should try to act like them."
+    hide harpoonLauncherImg 
+    show jamesossianDagger with dissolve
+    show jamesossianDagger as extraStabby with dissolve
     mali "Take these daggers and hide them, just in case."
 
+    hide jamesossianDagger with dissolve
+    hide extraStabby with dissolve
+    show femTesipiz point O
     tesi "Where??"
+
+    show femTesipiz base neutralHappy
+    show volkara3quat closedEyes happyMouth
+    with dissolve
     volk "You know where."
+
     tesi "......"
+    
     #sloop
 
+    scene balaAxeriumInsideNight at topright
+    show malikImg mean at right , size2Thrid , lightCrystalLights
+    show femTesipiz O at center , size2Thrid , lightCrystalLights
+    show volkara3quat harem deltaMouth at left , size2Thrid , lightCrystalLights
+    show balaAxeriumInsideForground at topright , flameLight
     with fade
 
+    pause 6
+    show malikImg mean O with dissolve
     mali "It's clear!"
-    mali "Now!"
+    show malikImg point with dissolve
+    mali "Now!" with vpunch
 
+    scene starNightTime fullFit
+    show balatiusPalace at light2DarkBottom2Top , truecenter:
+        zoom 1.0
+        easeout 6 zoom 3.0
+    pause 6
+    jump balaPalace2ndFloor
     #Tesi and Volk grapple to the 2nd floor
     #there will be servents and other slave girls
     #muwa may be here as well or in the throne room on level 1
@@ -228,6 +340,7 @@ label balaAxeriumSneakyFoZ:
 
 label balaPalace2ndFloor:
     "The floor2"
+    scene balatiusPalaceFloor2 at fullFit with fade
     if checkIfHave( inventory , tabletPieceBal ):
         "They're trying to escape with that artifact!!"
         "Get them!!"
