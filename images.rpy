@@ -1567,6 +1567,8 @@ image hekaKhopeshMan = "images/Enemies/astartes goons/Riujaka Khopesh warrior me
 
 #Faronians
 image faronianAxNakedFemale = "images/Enemies/astartes goons/Faronian Axe Naked Female v1 sfw.webp"
+image haremHealerImg = "images/Enemies/astartes goons/Astart Healer.webp"
+image haremHealerImgMad = Composite( (1100,1400) , (0,0) , "images/Enemies/astartes goons/Astart Healer.webp" , (0,0) , "images/Enemies/astartes goons/Astart Healer Angry Mouth.webp" )
 layeredimage haremGuardLady:
     group poses:
         attribute baseArmed default:
@@ -2044,6 +2046,26 @@ image minobiteAxe = "images/Enemies/eliete goons/Minobite Great Axe.webp"
 image minobiteArmoredAxe = "images/Enemies/eliete goons/Minobite Great Axe Armored.webp"
 
 image minobiteFallingSide = "images/Enemies/astartes goons/Minobite Archer Falling.webp" 
+
+layeredimage haremMinobiteImg:
+    group poses:
+        attribute baseArmed default:
+            "images/Enemies/eliete goons/Minobite Harem Great Axe.webp"
+    group mouths:  
+        attribute neutralHappy default:
+            "images/Enemies/eliete goons/Minobite Harem Great Axe Neutral Happy.webp"
+        attribute O:
+            "images/Enemies/eliete goons/Minobite Harem Great Axe O.webp"
+        attribute angry:
+            "images/Enemies/eliete goons/Minobite Harem Great Axe Angry.webp"
+
+    group eyes:
+        attribute neutral default:
+            "images/Enemies/eliete goons/Minobite Harem Great Axe Neutral.webp"
+        attribute miniMean:
+            "images/Enemies/eliete goons/Minobite Harem Great Axe Mini Mean.webp"
+        attribute mean:
+            "images/Enemies/eliete goons/Minobite Harem Great Axe Mean.webp"
 
 image snakeMan = "images/Enemies/astartes goons/Snakebite.webp"
 image snakeManInWater = "images/Enemies/astartes goons/Snakebite Swimming.webp"
