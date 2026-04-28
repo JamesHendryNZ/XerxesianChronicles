@@ -4,6 +4,7 @@ default sussyBakaLevel = 0
 default imposterLevel = 20
 default canGetFoodAtMessHall = True
 default foundMuwa = False
+default gotFloor2Items = False
 
 #list of items for diconary for items??
 #only for genric items
@@ -409,30 +410,17 @@ label balaPalace2ndFloor:
     else:
         menu:
             "Check the Rooms":
-                scene balatiusPalaceFloor2 at fullFit 
+                scene balatiusPalaceFloor2 at size2Thrid
                 
                 with dissolve
                 "Open and click objects"
                 #need overlays as imagebuttons
 
+                
                 "Find some items"
                 scene balatiusPalaceHaremGirlRoom at fullFit
-                if muwaCuddleCounter > 0:
-                    tesi "Hey it's Muwa."
-                    muwa "You know me?"
-                    tesi "Yes."
-                    #volka jabs tesi
-                    volk "Ahem.."
-                    tesi "My brother told me about you."
-                    tesi "Do you know a man named Tesipiz."
-                    $ sussyBakaLevel += 2
-                    muwa "He must be sad."
-                    muwa "He lost both a fluffy friend and a sister."
-                    muwa "Psst."
-                    muwa "Don't tell anyone."
-                    muwa "But there is a secret key to a vult."
-                    muwa "Where the stars can be clearly watched."
-                    $ foundMuwa = True
+                call showFloor2Doors
+                
             "Go to the mess hall":
                 jump balaPalaceHaremMessHall
             "Go up a floor":
@@ -600,3 +588,113 @@ label balaPalaceRoof:
             jump balaPalace3rdFloor
 #like with Kwortix mine and gilgamorium - the seperate earas will be their own labels
 
+#add in imagebuttons for exploration
+#it should be 
+#screen for imagebutton
+#then a label for it's content
+screen floor2Door1():
+    imagebutton:
+        idle Transform( child="/images/Location Accessories/Floor2HubDoor1.webp" , matrixcolor=BrightnessMatrix(0.0) )
+        hover Transform( child="/images/Location Accessories/Floor2HubDoor1.webp" , matrixcolor=BrightnessMatrix(0.5) )
+        action Call("floor2Door1Content")
+
+label floor2Door1Content:
+    call hideFloor2Doors
+    scene balatiusPalaceHaremGirlRoom
+    if muwaCuddleCounter > 0 and foundMuwa != False:
+        tesi "Hey it's Muwa."
+        muwa "You know me?"
+        tesi "Yes."
+        #volka jabs tesi
+        volk "Ahem.."
+        tesi "My brother told me about you."
+        tesi "Do you know a man named Tesipiz."
+        $ sussyBakaLevel += 2
+        muwa "He must be sad."
+        muwa "He lost both a fluffy friend and a sister."
+        muwa "Psst."
+        muwa "Don't tell anyone."
+        muwa "But there is a secret key to a vult."
+        muwa "Where the stars can be clearly watched."
+        $ foundMuwa = True
+    elif foundMuwa:
+        muwa "Hello again Jamesians."
+        muwa "Have you got use to this place"
+        volk "No."
+        volk "I haven't gotten used to this outfit yet."
+        muwa "You'll get used to it."
+        volk "But you're fluffy."
+        tesi "This place is big"
+        tesi "Any hints with navigating this pplace."
+        muwa "The Harem Priesstess is on the 3rd floor."
+        muwa "She'll assign you a room."
+        muwa "Also I noticed a key on the roof."
+        muwa "I wonder what it is for?"
+    else:
+        muwa "Hello"
+        muwa "You must be new here."
+        volk "Yes."
+        tesi "Hello fluffy one."
+        muwa "Hello jamesian ones"
+        muwa "They got you too?"
+        volk "Yes."
+        tesi "They got our friend as well."
+        muwa "Oh."
+        muwa "I hope you get assigned to my room."
+        muwa "You seem nice."
+        muwa "I've seen a key on the roof."
+        muwa "I wonder whoes that is?"
+    return
+
+
+screen floor2Door2():
+    imagebutton:
+        idle Transform( child="/images/Location Accessories/Floor2HubDoor2.webp" , matrixcolor=BrightnessMatrix(0.0) )
+        hover Transform( child="/images/Location Accessories/Floor2HubDoor2.webp" , matrixcolor=BrightnessMatrix(0.5) )
+        action Call("floor2Door2Content")
+
+label floor2Door2Content:
+    call hideFloor2Doors
+    if gotFloor2Items:
+        "We've taken all the items here"
+        "I hope the other girls don't notice"
+        "This is our assigned room."
+        "Guess these are our items."
+    else:
+        "Door 2"
+        "get some items"
+        "items"
+        "I hope the other girls don't notice"
+        ""
+    $ gotFloor2Items = True
+    return
+
+screen floor2Door3():
+    imagebutton:
+        idle Transform( child="/images/Location Accessories/Floor2HubDoor3.webp" , matrixcolor=BrightnessMatrix(0.0) )
+        hover Transform( child="/images/Location Accessories/Floor2HubDoor3.webp" , matrixcolor=BrightnessMatrix(0.5) )
+        action Call("floor2Door3Content")
+
+label floor2Door3Content:
+    call hideFloor2Doors
+    "Door 3"
+    "harem girls? they won't let you get some items."
+    "Who are you?"
+    "Are you new here?"
+    "The Harem Priestess will assign you a room."
+    "This is not your room."
+    "Leave. Go to the Harem Priestess."
+    "She'll assign you a room."
+    return
+
+label hideFloor2Doors:
+    hide screen floor2Door1
+    hide screen floor2Door2
+    hide screen floor2Door3
+    return
+
+label showFloor2Doors:
+    show screen floor2Door1
+    show screen floor2Door2
+    show screen floor2Door3
+    return
