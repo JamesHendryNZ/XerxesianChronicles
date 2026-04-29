@@ -2036,6 +2036,8 @@ image miniAhrimaniomLosing = "images/Enemies/Ahrites/Mini Ahrimaniom Side Attack
 #humanoid Monsters
 image jakalbiteKhopeshLight = "images/Enemies/astartes goons/Jakalbite Khopesh low-level v1.webp"
 image lizardbiteEspionAx = "images/Enemies/astartes goons/Lizardbite Espion Axman v1.webp"
+image lizardbiteHaremAx = "images/Enemies/astartes goons/Lizardbite Harem Axwoman.webp"
+image lizardbiteHaremAxAngry = Composite( ( 800,1400 ) , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman.webp" , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman Angry.webp" )
 image jakalbiteSpear = "images/Enemies/astartes goons/Jakalbite Spear v1.webp"
 image falcobiteArcher = "images/Enemies/astartes goons/falcobite archer.webp"
 image falcobitePadSpear = "images/Enemies/astartes goons/falcobite padded infantry spear.webp"
@@ -2058,6 +2060,8 @@ layeredimage haremMinobiteImg:
             "images/Enemies/eliete goons/Minobite Harem Great Axe O.webp"
         attribute angry:
             "images/Enemies/eliete goons/Minobite Harem Great Axe Angry.webp"
+        attribute frown:
+            "images/Enemies/eliete goons/Minobite Harem Great Axe Mean.webp"
 
     group eyes:
         attribute neutral default:
@@ -2074,6 +2078,7 @@ image batbiteImg = "images/Enemies/astartes goons/batbite.webp"
 image batbiteFlyImg = "images/Enemies/astartes goons/batbite flying.webp"
 
 image batbitegirlImg = "images/Enemies/astartes goons/Batbite harem spear.webp"
+image batbiteGirlMad = Composite( ( 1000, 1600 ), (0,0) , "images/Enemies/astartes goons/batbite.webp" , (0,0) , "images/Enemies/astartes goons/Batbite harem spear Angry.webp" )
 image batbitegirlFlyImg = "images/Enemies/astartes goons/Batbite harem spear flying.webp"
 
 #animal Monsters
@@ -2144,6 +2149,8 @@ layeredimage lizardSuitLadyImg:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female OMotuh.webp"
         attribute happy:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Happy.webp"
+        attribute delta:
+            "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female delta.webp"
 
 image lizardSuitLadyFighting:
     Composite( ( 1000,1800 ) , (0,0) , "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female.webp" , (0,0) , "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Mean Eyes.webp" , (0,0) , "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female OMotuh.webp" )
