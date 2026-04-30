@@ -362,23 +362,29 @@ label balaPalace2ndFloor:
         show balaAstartWhippaLady armed angry at halfSize , lightCrystalLights , center:
             xpos 0.3
         show haremHealerImgMad at halfSize , lightCrystalLights , center:
-            xpos 0.7
-        show haremGuardLady mean angry at halfSize , lightCrystalLights , right
-        show haremGuardLady mean angry as extraHarem at halfSize , lightCrystalLights , left
-        show lizardSuitLadyImg point mean angry at size2Thrid , lightCrystalLights , center
-        "They're making their way to where Balatius is!!"
-        "Get them!!" with vpunch
+            xpos 0.8
+        show haremGuardLady mean angry at halfSize , lightCrystalLights , center:
+            xpos 0.4
+        show haremGuardLady mean angry as extraHarem at halfSize , lightCrystalLights , left:
+            xpos 0.6
+        show lizardSuitLadyImg point mean angry at size2Thrid , lightCrystalLights , center:
+            ypos 1.25
+        lizardSuit "They're making their way to where Balatius is!!"
+        lizardSuit "Get them!!" with vpunch
         $ enemyTroopers = [ copy.copy(astartHealer) , copy.copy(haremWarrior) , copy.copy(lizardSuitF) , copy.copy(haremWarrior) , copy.copy(astartHaremWhippa) , copy.copy(haremWarrior) ]
         #battle
         call screen playerActions( "They know were imposters. Leave no witnesses!!" , False , False , True , 0 )
 
         menu:
             "Check the Rooms":
-                "Open and click objects"
                 $ sussyBakaLevel += 2 #maybe more items more sus
                 if sussyBakaLevel > imposterLevel:
                     #Suprized ( neutral , O )
                     scene balatiusPalaceFloor2 at fullFit
+                    show batbiteGirlMad at left , lightCrystalLights , size2Thrid:
+                        ypos 1.25
+                    show lizardbiteHaremAxAngry at right , lightCrystalLights , size2Thrid:
+                        ypos 1.25
                     show haremMinobiteImg O at center , lightCrystalLights , size2Thrid:
                         ypos 1.25
                     with dissolve
@@ -398,11 +404,8 @@ label balaPalace2ndFloor:
                     call screen playerActions( "They found us out! Kill them!!" , False , False , True , 0 )
                     play music weOwnedThem fadein 1 fadeout 1
                     queue music sandyMusic
-                    menu:
-                        "Go to the mess hall":
-                            jump balaPalaceHaremMessHall
-                        "Go up a floor":
-                            jump balaPalace3rdFloor
+                    scene balatiusPalaceFloor2 at size2Thrid
+                    call showFloor2Doors
             "Go to the mess hall":
                 jump balaPalaceHaremMessHall
             "Go up a floor":
@@ -413,11 +416,6 @@ label balaPalace2ndFloor:
                 scene balatiusPalaceFloor2 at size2Thrid
                 
                 with dissolve
-                "Open and click objects"
-                #need overlays as imagebuttons
-
-                
-                "Find some items"
                 scene balatiusPalaceHaremGirlRoom at fullFit
                 call showFloor2Doors
                 
@@ -429,51 +427,117 @@ label balaPalace2ndFloor:
                 scene balatiusPalaceFloor2 at fullFit 
                 show haremMinobiteImg miniMean O at halfSize , lightCrystalLights , left
                 show haremMinobiteImg miniMean O as extraCowGirl at halfSize , lightCrystalLights , right
-                show haremGuardLady at size2Thrid , lightCrystalLights , center:
+                show haremGuardLady mean annoyed at size2Thrid , lightCrystalLights , center:
                     ypos 1.2
                 with dissolve
                 #harem guards
                 haremGuard "Balatius' slave ladies aren't allowed to leave without his permission."
                 haremGuard "You two can't come down."
+                show haremGuardLady O with dissolve
                 haremGuard "You jamesian ladies live here now."
+                show haremGuardLady angry with dissolve
                 haremGuard "Back to your rooms."
                 jump balaPalace2ndFloor
             
 
 label balaPalaceHaremMessHall:
-    "this is where the food is"
-    "get some food."
+    scene balatiusPalaceMessHall at fullFit
+
     #harem cook lady
     if desgueFoiled:
-        "Get those Jamesians!!"
-        "battle time"
-        "looting"
+        show lizardbiteHaremAxAngry at halfSize , left , lightCrystalLights
+        show batbiteGirlMad at halfSize , right , lightCrystalLights
+        show lizardbiteHaremAxAngry as extraLizard at center , halfSize , lightCrystalLights:
+            xpos 0.4
+        show haremGuardLady angry at center , halfSize , lightCrystalLights:
+            xpos 0.6
+        show haremHealerImgMad at center , size2Thrid , lightCrystalLights:
+            xpos 0.25 ypos 1.25
+        show balaAstartWhippaLady arms angry at center , size2Thrid , lightCrystalLights:
+            xpos 0.75 ypos 1.25
+        with fade
+        haremWhip "Get those Jamesians!!" with vpunch
+        $ enemyTroopers = [ copy.copy( haremLizard ) , copy.copy( haremLizard ) , copy.copy( haremWarrior) , copy.copy( astartHaremWhippa ) , copy.copy( haremWarrior ) , copy.copy( batbiteSpearGirl ) ]
+        play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
+        queue music fightingCommon 
+        call screen playerActions( "Defeat these harem warriors!" , False , False , True , 0 )
+        play music weOwnedThem fadein 1 fadeout 1
+        queue music sandyMusic
+        scene balatiusPalaceFloor2 at size2Thrid
+        if canGetFoodAtMessHall:
+            "steal the meal"
+        
         jump balaPalace2ndFloor
     else:
+        show orodianHaremLady at truecenter , quatSize , lightCrystalLights
+        show balatiusPalaceMessHallForground at fullFit
+        with fade
         menu:
             "Get some food" if canGetFoodAtMessHall:
-                "om nom nom"
+                haremCook "You must be new here."
+                haremCook "You must be hungry."
+                haremCook "Here is some food." with fade
                 $ canGetFoodAtMessHall = False
 
             "Look around":
-                "lookies"
+                pause 5
+                with fade
             "Leave":
                 jump balaPalace2ndFloor
             
 
 label balaPalace3rdFloor:
-    "The floor3"
+    #"The floor3"
+    scene balatiusPalaceFloor3 at fullFit
     if checkIfHave( inventory , tabletPieceBal ):
+        show haremMinobiteImg O at left , halfSize , lightCrystalLights
+        show haremMinobiteImg O as extraBeef at right , halfSize , lightCrystalLights
+        show lizardSuitLadyImg mean O at center , size2Thrid , lightCrystalLights:
+            ypos 1.25 xpos 0.4
+        show lizardSuitLadyImg pointy mean O as extraScales at center , size2Thrid , lightCrystalLights:
+            ypos 1.25 xpos 0.4
+        
+        with fade
         "What's that?"
+        show haremMinobiteImg mean frown
+        show extraBeef mean frown
+        show extraScales angry
+        with dissolve 
         "Why are you armed."
+        show extraScales delta with dissolve
         "..."
-        "JAMESIAN ASSASSINS HAVE INFILTRATED THE PALACE!!"
+        show extraScales
+        show extraScales attack angry
+        with dissolve
+        "JAMESIAN ASSASSINS HAVE INFILTRATED THE PALACE!!" with hpunch
         #$ balaAlerted = True this may nt be needed
+        scene balatiusPalaceFloor3 at fullFit with dissolve
         $ desgueFoiled = True
+        $ enemyTroopers = [ copy.copy(minobiteGreatAxLady) , copy.copy(lizardSuitF) , copy.copy(lizardSuitF) , copy.copy(minobiteGreatAxLady) ]
+        play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
+        queue music fightingCommon 
+        call screen playerActions( "Defeat these harem warriors!" , False , False , True , 0 )
+        play music weOwnedThem fadein 1 fadeout 1
+        queue music sandyMusic
+        scene balatiusPalaceFloor2 at size2Thrid
         #battle time
     elif desgueFoiled:
-        "It's the Jamesian spies"
-        "Gettem!!"
+        
+        show haremMinobiteImg mean angry
+        show haremMinobiteImg mean angry as extraBeef
+        show lizardSuitLadyImg attack mean angry
+        show lizardSuitLadyImg pointy mean angry as extraScales
+        with fade
+        lizardSuit "It's the Jamesian spies"
+        show lizardSuitLadyImg attack with dissolve
+        lizardSuit "GET THEM!!" with hpunch
+        scene balatiusPalaceFloor3 at fullFit with dissolve
+        play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
+        queue music fightingCommon 
+        call screen playerActions( "Defeat these harem warriors!" , False , False , True , 0 )
+        play music weOwnedThem fadein 1 fadeout 1
+        queue music sandyMusic
+        scene balatiusPalaceFloor2 at size2Thrid
         #battletime
     menu:
         "Go down a level":
@@ -486,21 +550,79 @@ label balaPalace3rdFloor:
             jump balaPalaceRoof
 
 label balaBedroom:
-    "The bedroom"
+    scene clearDayTime at fullFit topShineGradient
+    show balatiusBedroom at fullFit
+    with fade
     menu:
         "Look around":
-            "looksieks"
-            "maybe key is located here"
+            show femTesipiz at left , size2Thrid , lightCrystalLights with dissolve:
+                ypos 1.25 xzoom 1.0
+                linear 2 xzoom 1.0
+                linear 1 xzoom -1.0
+                linear 2 xzoom -1.0
+                linear 1 xzoom 1.0
+                repeat
+            show volkara3quat harem at right , size2Thrid , lightCrystalLights with dissolve:
+                ypos 1.25 xzoom 1.0
+                linear 2 xzoom 1.0
+                linear 1 xzoom -1.0
+                linear 2 xzoom -1.0
+                linear 1 xzoom 1.0
+                repeat
+            
+            pause 6
+
+            show femTesipiz happy with dissolve
+            tesi "Nice beds"
+            show femTesipiz neutralHappy
+            show volkara3quat lineEyes OMouth
+            with dissolve
+            volk "Nothing of interest here"
+
+            scene clearDayTime at fullFit topShineGradient
+            show balatiusBedroom at fullFit
+            show femTesipiz nervous O at left , size2Thrid , lightCrystalLights:
+                ypos 1.25
+            show volkara3quat harem lineEyes OMouth at right , size2Thrid , lightCrystalLights:
+                ypos 1.25 xalign 1.0
+                linear 2 xalign 0.5
+            show balaAstartWhippaLady annoyed
+            with dissolve
+            haremWhip "Hey."
+            show balaAstartWhippa angry with dissolve
+            haremWhip "You're not supposed to be here."
+            show balaAstartWhippa armed with dissolve
+            haremWhip "Now leave before I whip you!"
+            jump balaPalace3rdFloor
+            
         "Enter the closet" if not checkIfHave( inventory , tabletPieceBal ):
             #we'll need a key item.
-            volk "It's locked."
-            volk "We need to find the key somewhere."
-            tesi "Hopefully it isn't on Balatius."
+            if checkIfHave( inventory , balatiumKey ):
+                play sound littleDoorLocked
+                queue sound openLidNoHinge
+                pause 1
+                show femTesipiz happy  at left , size2Thrid , lightCrystalLights:
+                    ypos 1.25
+                show volkara3quat at right , size2Thrid , lightCrystalLights:
+                    ypos 1.25
+                tesi "Opened"
+                show femTesipiz mean extraHappy with dissolve
+                tesi "We're in."
+                jump balaBootyRoom
+                
+            else:
+                play sound littleDoorLocked
+                queue sound littleDoorLocked
+                show femTesipiz nervous at right , size2Thrid , lightCrystalLights:
+                    ypos 1.25
+                show volkara3quat harem meanEyes deltaMouth at left , size2Thrid , lightCrystalLights:
+                    ypos 1.25
+                volk "It's locked."
+                volk "We need to find the key somewhere."
+                tesi "Hopefully it isn't on Balatius."
             $ sussyBakaLevel += 3
         "Leave":
             jump balaPalace3rdFloor
-            "A servant harem lady is cleaning the room"
-            ""
 
 label balaBootyRoom:
     "This is a secret shrine with loot"
@@ -596,7 +718,7 @@ screen floor2Door1():
     imagebutton:
         idle Transform( child="/images/Location Accessories/Floor2HubDoor1.webp" , matrixcolor=BrightnessMatrix(0.0) )
         hover Transform( child="/images/Location Accessories/Floor2HubDoor1.webp" , matrixcolor=BrightnessMatrix(0.5) )
-        action Call("floor2Door1Content")
+        action Jump("floor2Door1Content")
 
 label floor2Door1Content:
     call hideFloor2Doors
@@ -644,14 +766,14 @@ label floor2Door1Content:
         muwa "You seem nice."
         muwa "I've seen a key on the roof."
         muwa "I wonder whoes that is?"
-    return
+    jump balaPalace2ndFloor
 
 
 screen floor2Door2():
     imagebutton:
         idle Transform( child="/images/Location Accessories/Floor2HubDoor2.webp" , matrixcolor=BrightnessMatrix(0.0) )
         hover Transform( child="/images/Location Accessories/Floor2HubDoor2.webp" , matrixcolor=BrightnessMatrix(0.5) )
-        action Call("floor2Door2Content")
+        action Jump("floor2Door2Content")
 
 label floor2Door2Content:
     call hideFloor2Doors
@@ -667,13 +789,13 @@ label floor2Door2Content:
         "I hope the other girls don't notice"
         ""
     $ gotFloor2Items = True
-    return
+    jump balaPalace2ndFloor
 
 screen floor2Door3():
     imagebutton:
         idle Transform( child="/images/Location Accessories/Floor2HubDoor3.webp" , matrixcolor=BrightnessMatrix(0.0) )
         hover Transform( child="/images/Location Accessories/Floor2HubDoor3.webp" , matrixcolor=BrightnessMatrix(0.5) )
-        action Call("floor2Door3Content")
+        action Jump("floor2Door3Content")
 
 label floor2Door3Content:
     call hideFloor2Doors
@@ -685,7 +807,7 @@ label floor2Door3Content:
     "This is not your room."
     "Leave. Go to the Harem Priestess."
     "She'll assign you a room."
-    return
+    jump balaPalace2ndFloor
 
 label hideFloor2Doors:
     hide screen floor2Door1
