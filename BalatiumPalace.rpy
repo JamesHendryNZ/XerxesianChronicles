@@ -550,7 +550,7 @@ label balaPalace3rdFloor:
             jump balaPalaceRoof
 
 label balaBedroom:
-    scene clearDayTime at fullFit topShineGradient
+    scene clearDayTime at fullFit , topShineGradient
     show balatiusBedroom at fullFit
     with fade
     menu:
@@ -579,7 +579,7 @@ label balaBedroom:
             with dissolve
             volk "Nothing of interest here"
 
-            scene clearDayTime at fullFit topShineGradient
+            scene clearDayTime at fullFit , topShineGradient
             show balatiusBedroom at fullFit
             show femTesipiz nervous O at left , size2Thrid , lightCrystalLights:
                 ypos 1.25
@@ -625,19 +625,69 @@ label balaBedroom:
             jump balaPalace3rdFloor
 
 label balaBootyRoom:
-    "This is a secret shrine with loot"
-    "This loot includes weapons and the anti stealth tablet."
 
+    scene balatiusShrine at fullFit , darkShade with fade
+    show femTesipiz at right , lightCrystalLights , size2Thrid with dissolve:
+        ypos 1.2
+    show volkara3quat harem at left , lightCrystalLights , size2Thrid with dissolve:
+        ypos 1.2
+    show femTesipiz yeah happy with dissolve
     tesi "Loot at that loot."
     #lookies
+    show femTesipiz at right , lightCrystalLights , size2Thrid with dissolve:
+        ypos 1.2 xzoom 1.0
+        linear 1 xzoom -1.0
+        linear 2 xzoom -1.0
+        linear 1 xzoom 1.0
+    show volkara3quat harem at left , lightCrystalLights , size2Thrid with dissolve:
+        ypos 1.2 xzoom 1.0
+        linear 1 xzoom -1.0
+        linear 2 xzoom -1.0
+        linear 1 xzoom 1.0
+    pause 4
+    show volkara3quat haremPointy happyMouth with dissolve
+    volk "Look."
     volk "Some weapons." #they switch to these weapons
     #chaing weapons or just have graphics
     #graphics
     #what weapons would fem tesi and volk have?
     #sword (balatius') for volk and mace and shield for tesi
+    show volkara3quat haremArmed
+    show femTesipiz armed happy
+    with fade
+    tesi "Nice."
+
+    show femTesipiz point
+    show volkara3quat harem neutralHappyMouth
+    with dissolve
     tesi "Some idols of their gods."
+    show femTesipiz neutralHappy
+    show volkara3quat haremPointy happyMouth
+    with dissolve
     volk "Incense sticks."
+    show femTesipiz point happy
+    show volkara3quat harem neutralHappyMouth
+    with dissolve
     tesi "Lots of gold and siver."
+    show femTesipiz yeah extraHappy with dissolve
+    tesi "Should we take it?"
+    
+    show volkara34Happy haremPointy meanEyes deltaMouth
+    show femTesipiz base O nervous
+    with dissolve
+    volk "No."
+    show volkara3quat harem OMegaMouth with dissolve
+    volk "Not yet."
+
+    show volkara3quat haremPointy neutralHappy happyMouth
+    show femTesipiz neutralHappy neutral
+    with dissolve
+    volk "We need to find the tablet piece first."
+
+    play sound openLidNoHinge
+    queue sound  [ rammage , closeLidNoHinge ]
+    with Fade( 0.5 , 2 0.5 )
+    show volkara3quat OMegaMouth with dissolve
     volk "Oh.."
     volk "A weird stone map."
     volk "It seems shattered."
@@ -657,6 +707,7 @@ label balaBootyRoom:
     $ sussyBakaLevel += imposterLevel
 
     $ changeItemAmount ( inventory , tabletPieceBal )
+    $ money += 300
 
     jump balaBedroom
 
