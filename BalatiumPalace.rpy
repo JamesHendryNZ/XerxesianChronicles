@@ -5,6 +5,7 @@ default imposterLevel = 20
 default canGetFoodAtMessHall = True
 default foundMuwa = False
 default gotFloor2Items = False
+default haremSummonerAlive = True
 
 #list of items for diconary for items??
 #only for genric items
@@ -546,8 +547,7 @@ label balaPalace3rdFloor:
             jump balaTemple
         "Go into King Balatius' Bedroom":
             jump balaBedroom
-        "Go to the roof":
-            jump balaPalaceRoof
+        
 
 label balaBedroom:
     scene clearDayTime at fullFit , topShineGradient
@@ -689,21 +689,37 @@ label balaBootyRoom:
     with Fade( 0.5 , 2 0.5 )
     show volkara3quat OMegaMouth with dissolve
     volk "Oh.."
+    show stoneTabletBala with dissolve
     volk "A weird stone map."
     volk "It seems shattered."
     volk "And looks similat to artifact in the documentation."
+    show volkara3quat happyMouth
     volk "This might be an Anti-Stealth Tablet piece."
 
+    show stoneTabletBala at truecenter with dissolve
     "This purple tablet is most likey a fragment of the Anti-Stealth Tablet piece."
 
+    hide stoneTabletBala with dissolve
+    show volkara3quat harem OMouth
+    show femTesipiz point nervous O
+    with dissolve
     tesi "We can't hide anything."
+    show femTesipiz yeah with dissolve
     tesi "And.."
+    show femTesipiz horny with dissolve
     tesi "Can I remove the dagger from myself?"
+
+    show femTesipiz base neutral
+    show volkara3quat haremPointy meanEyes deltaMouth
+    with dissolve
     volk "It won't fit."
     volk "They'll attack us if they see us with it."
 
+    show femTesipiz armed mean extraHappy with fade
     tesi "I guess it's time to end Balatius and his goons then."
 
+    show volkara3quat haremArmed with fade
+    pause 2
     $ sussyBakaLevel += imposterLevel
 
     $ changeItemAmount ( inventory , tabletPieceBal )
@@ -713,52 +729,172 @@ label balaBootyRoom:
 
 
 label balaTemple:
-    "Astarte is worshiped here"
-    "maybe other gods as well."
+    scene balatiusPalaceTemple with dissolve
     #astart priestesss is based here
-    if desgueFoiled:
-        haremSum "It's those jamesian assassins!"
-        haremSum "summons minobites"
-        haremSum "Prepare to become broken slaves!!"
-        haremSum "loot stuff"
-        jump balaPalace3rdFloor
+    if haremSummonerAlive:
+        if desgueFoiled:
+            show haremSummonerImg knife mean angry at size2Thrid , lightCrystalLights , center:
+                ypos 1.25
+            with dissolve
+            haremSum "It's those jamesian assassins!"
+            show haremSummonerImg summoning with dissolve
+            show haremSummonerImg magic with dissolve:
+                xalign 0.5 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                linear 2 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                linear 1 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.25)
+                linear 2 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+            pause 2
+            play sound bigPizyu
+            show haremMinobiteImg mean angry with Dissolve:
+                xalign 0.0 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+            pause 1
+            play sound bigPizyu
+            show haremMinobiteImg mean angry with Dissolve:
+                xalign 1.0 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+            pause 2
+            
+            show haremSummonerImg blush horny -magic with dissolve
+            haremSum "Prepare to become broken slaves!!"
+            
+            scene balatiusPalaceTemple with dissolve
+            $ enemyTroopers = [ copy.copy( minobiteGreatAxLady ) , copy.copy( haremSummoner ) , copy.copy( minobiteGreatAxLady ) ]
+            play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+            queue music fightingCommon
+            call screen playerActions( "You won't make slaves out of us!" , False , False , True , 0 )
+            play music weOwnedThem fadein 1 fadeout 1
+            queue music sandyMusic
+
+            show haremSummonerImg summoning closed O at size2Thrid , angryColored , center with dissolve:
+                ypos 1.25
+                easeout 5 rotate -90 ypos 1.4
+            
+            pause 4
+            play extraSound bloodySlam
+            $ haremSummonerAlive = False
+            with vpunch
+
+            haremSum "loot stuff"
+            
+            menu:
+                "Go to the roof":
+                    jump balaPalaceRoof
+                "Go to the 3rd Floor Hallway.":
+                    jump balaPalace3rdFloor
+        else:
+            menu:
+                "Investigate Objects":
+                    scene balatiusPalaceTemple with dissolve:
+                        xalign 0.0 yalign 1.0
+                        linear 5 xalign 1.0
+                        linear 5 xalign 0.5 yalign 0.6
+                    pause 10
+                    show haremSummonerImg O at center , size2Thrid , lightCrystalLights with dissolve:
+                        ypos 1.25
+                    haremSum "I haven't seen you two before"
+
+                    show haremSummonerImg happy with dissolve
+                    haremSum "You must be new slave girls."
+                    show haremSummonerImg summoning horny blush with dissolve
+                    haremSum "I guess soon you will be stuffed with the servants of Astarte's essence soon"
+                    show haremSummonerImg neutral happy -blush with dissolve
+                    haremSum "When that happens."
+                    show haremSummonerImg base with dissolve
+                    haremSum "I'll assign you a room."
+                    
+                    #they have knives in their minges, they will be discovered if they bone.
+                    #malik could not have them hide daggers in there.
+                    if sussyBakaLevel > imposterLevel:
+                        show haremSummonerImg O with dissolve
+                        haremSum "Wait...."
+                        show haremSummonerImg mean with dissolve
+                        haremSum "You have alot of items on you."
+                        haremSum ""
+                        show haremSummonerImg angry with dissolve
+                        haremSum "You're not slave girls."
+                        show haremSummonerImg knife with dissolve
+                        haremSum "You're theives and or assassins!!"
+                        with vpunch
+
+                        "she summons minobites" #make summoning 
+                        show haremSummonerImg summoning with dissolve
+                        show haremSummonerImg magic with dissolve:
+                            xalign 0.5 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                            linear 2 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                            linear 1 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.25)
+                            linear 2 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                            linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                        pause 2
+                        play sound bigPizyu
+                        show haremMinobiteImg mean angry with Dissolve:
+                            xalign 0.0 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                            linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                        pause 1
+                        play sound bigPizyu
+                        show haremMinobiteImg mean angry with Dissolve:
+                            xalign 1.0 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                            linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                        pause 2
+                        show haremSummonerImg mean happy -magic with dissolve
+                        haremSum "Well!"
+                        show haremSummonerImg horny with dissolve
+                        haremSum "Not yet anyway!"
+                        show haremSummonerImg closed
+                        haremSum "Khakhah!"
+                        show haremSummonerImg knife horny blush with dissolve 
+                        haremSum "Time to get broken!!"
+                        #battle happends
+                        #looting happends
+                        $ desgueFoiled = True
+                        scene balatiusPalaceTemple with dissolve
+                        $ enemyTroopers = [ copy.copy( minobiteGreatAxLady ) , copy.copy( haremSummoner ) , copy.copy( minobiteGreatAxLady ) ]
+                        play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+                        queue music fightingCommon
+                        call screen playerActions( "You won't make slaves out of us!" , False , False , True , 0 )
+                        play music weOwnedThem fadein 1 fadeout 1
+                        queue music sandyMusic
+
+                        show haremSummonerImg summoning closed O at size2Thrid , angryColored , center with dissolve:
+                            ypos 1.25
+                            easeout 5 rotate -90 ypos 1.4
+                        
+                        pause 4
+                        play extraSound bloodySlam
+                        $ haremSummonerAlive = False
+                        with vpunch
+                "Go to the roof":
+                    jump balaPalaceRoof
+                "Go to the 3rd Floor Hallway.":
+                    jump balaPalace3rdFloor
     else:
         menu:
-            "Investigate Objects":
-                "lookeses"
-                "Astart priesstess asks what you're doing here"
-                haremSum "I haven't seen you two before"
-                haremSum "You must be new slave girls."
-                haremSum "I guess soon you will be stuffed with the servants of Astarte's essence soon"
-                if sussyBakaLevel > imposterLevel:
-                    haremSum "Wait...."
-                    haremSum "You have alot of items on you."
-                    haremSum ""
-                    haremSum "You're not slave girls."
-                    haremSum "You're theives and or assassins!!"
-                    with vpunch
-                    "she summons minobites" #make summoning 
-                    haremSum "Well!"
-                    haremSum "Not yet anyway!"
-                    haremSum "Khakhah!"
-                    haremSum "Time to get broken!!"
-                    #battle happends
-                    #looting happends
-                    $ desgueFoiled = True
-            "Leave":
+            "Go to the roof":
+                jump balaPalaceRoof
+            "Go to the 3rd Floor Hallway.":
                 jump balaPalace3rdFloor
+
 
 label balaPalaceRoof:
     "The roof"
+    scene starNightTime at fullFit:
+        xzoom -1.0 yzoom -1.0
+    show balatiusPalaceRoof at fullFit , nightLights
+    with dissolve
     menu:
-        "Look around":
+        "Look around" if not checkIfHave ( inventory , balatiumKey ):
             #check for key
-            "Lookies"
+            pause 2
             "There is a secret compartment"
+            show keyBalatium at truecenter with dissolve
             "It's a key"
+            "I wonder what it opens?"
+            $ changeItemAmount ( inventory , balatiumKey , 1 )
             $ sussyBakaLevel += 2
+            jump balaTemple
         "Go down a floor":
-            jump balaPalace3rdFloor
+            jump balaTemple
 #like with Kwortix mine and gilgamorium - the seperate earas will be their own labels
 
 #add in imagebuttons for exploration
@@ -775,6 +911,12 @@ label floor2Door1Content:
     call hideFloor2Doors
     scene balatiusPalaceHaremGirlRoom
     if muwaCuddleCounter > 0 and foundMuwa != False:
+        show femTesipiz at flipped , size2Thrid , center , lightCrystalLights:
+            ypos 1.25
+        show volkara3quat harem at left , size2Thrid , lightCrystalLights:
+            ypos 1.25
+        show muwaHarem at right , size2Thrid , lightCrystalLights:
+            ypos 1.25
         tesi "Hey it's Muwa."
         muwa "You know me?"
         tesi "Yes."
