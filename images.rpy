@@ -2038,6 +2038,7 @@ image jakalbiteKhopeshLight = "images/Enemies/astartes goons/Jakalbite Khopesh l
 image lizardbiteEspionAx = "images/Enemies/astartes goons/Lizardbite Espion Axman v1.webp"
 image lizardbiteHaremAx = "images/Enemies/astartes goons/Lizardbite Harem Axwoman.webp"
 image lizardbiteHaremAxAngry = Composite( ( 800,1400 ) , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman.webp" , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman Angry.webp" )
+image lizardbiteHaremAngry = Composite( ( 800,1400 ) , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman Unarmed.webp" , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman Angry.webp" )
 image jakalbiteSpear = "images/Enemies/astartes goons/Jakalbite Spear v1.webp"
 image falcobiteArcher = "images/Enemies/astartes goons/falcobite archer.webp"
 image falcobitePadSpear = "images/Enemies/astartes goons/falcobite padded infantry spear.webp"
@@ -2532,7 +2533,9 @@ image tsanihoniBattle = "images/antagonists/King Balatius/Balatius' Girlfriends/
 
 #the palace mess hall lady
 image orodianHaremLady = "images/NPCs/Astart Cilivians/Orodian Harem Lady.webp"
+image orodianHaremLadyMad = Composite( ( 800 , 1400 ) , (0,0) , "images/NPCs/Astart Cilivians/Orodian Harem Lady.webp" , (0,0) , "images/NPCs/Astart Cilivians/Orodian Harem Lady mad.webp" )
 image orodianHaremLadyItem = "images/NPCs/Astart Cilivians/Orodian Harem Lady Item.webp"
+
 
 #Minona
 image astartChariot = "images/animals/Astart chariot.webp"

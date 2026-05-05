@@ -909,56 +909,153 @@ screen floor2Door1():
 
 label floor2Door1Content:
     call hideFloor2Doors
-    scene balatiusPalaceHaremGirlRoom
+    scene balatiusPalaceHaremGirlRoom with fade
     if muwaCuddleCounter > 0 and foundMuwa != False:
-        show femTesipiz at flipped , size2Thrid , center , lightCrystalLights:
+        show muwaHarem at right , size2Thrid , lightCrystalLights with dissolve:
             ypos 1.25
+
+        show femTesipiz greet extraHappy at flipped , size2Thrid , left , lightCrystalLights:
+            ypos 1.25 xpos -0.5
+            linear 2 xalign 0.5 xpos 0.5
         show volkara3quat harem at left , size2Thrid , lightCrystalLights:
-            ypos 1.25
-        show muwaHarem at right , size2Thrid , lightCrystalLights:
-            ypos 1.25
+            ypos 1.25 xpos -0.7
+            linear 2 xalign 0.0 xpos 0.0
+        
         tesi "Hey it's Muwa."
+        
+        show muwaHarem O with dissolve
         muwa "You know me?"
+
+        show femTesipiz base with dissolve
         tesi "Yes."
         #volka jabs tesi
-        volk "Ahem.."
+        show volkara3quat haremPointy lineEyes deltaMouth
+        show femTesipiz closedEyes O
+        with dissolve
+        volk "Ahem.." with vpunch
+
+        show volkara3quat harem neutralHappyMouth
+        show femTesipiz neutral happy
+        with dissolve
         tesi "My brother told me about you."
+        show femTesipiz point with dissolve
         tesi "Do you know a man named Tesipiz."
         $ sussyBakaLevel += 2
+        show femTesipiz base neutralHappy
+        show muwaHarem sad O
+        with dissolve
         muwa "He must be sad."
+        show muwaHarem inviting with dissolve
         muwa "He lost both a fluffy friend and a sister."
+        show muwaHarem mean neutralHappy with dissolve
         muwa "Psst."
         muwa "Don't tell anyone."
+        show muwaHarem happy with dissolve
         muwa "But there is a secret key to a vult."
         muwa "Where the stars can be clearly watched."
         $ foundMuwa = True
     elif foundMuwa:
+
+        show muwaHarem at right , size2Thrid , lightCrystalLights with dissolve:
+            ypos 1.25
+
+        show femTesipiz at flipped , size2Thrid , left , lightCrystalLights:
+            ypos 1.25 xpos -0.5
+            linear 2 xalign 0.5 xpos 0.5
+        show volkara3quat harem at left , size2Thrid , lightCrystalLights:
+            ypos 1.25 xpos -0.7
+            linear 2 xalign 0.0 xpos 0.0
+        pause 2
+        show muwaHarem greet happy with dissolve
         muwa "Hello again Jamesians."
+        show muwaHarem base with dissolve
         muwa "Have you got use to this place"
+
+        show muwaHarem neutralHappy
+        show volkara3quat lineEyes deltaMouth 
+        with dissolve
         volk "No."
+        show volkara3quat haremPointy OMegaMouth with dissolve
         volk "I haven't gotten used to this outfit yet."
+
+        show volkara3quat harem OMouth
+        show muwaHarem inviting happy
+        with dissolve
         muwa "You'll get used to it."
+
+        show volkara3quat haremPointy lineEyes 
+        show muwaHarem neutralHappy
+        with dissolve
         volk "But you're fluffy."
+
+        show volkara3quat harem deltaMouth
+        show femTesipiz pointy sad O
+        with dissolve
         tesi "This place is big"
-        tesi "Any hints with navigating this pplace."
+        show femTesipiz neutral with dissolve
+        tesi "Any hints with navigating this place."
+
+        show femtesipiz base
+        show muwaHarem base O 
+        with dissolve
         muwa "The Harem Priesstess is on the 3rd floor."
+        show muwaHarem inviting happy with dissolve
         muwa "She'll assign you a room."
+        show muwaHarem O with dissolve
         muwa "Also I noticed a key on the roof."
+        show muwaHarem base with dissolve
         muwa "I wonder what it is for?"
-    else:
+
+    elif shataLeaderFate == "alive":
+        
+        show muwaHarem O at right , size2Thrid , lightCrystalLights with dissolve:
+            ypos 1.25
+
+        show femTesipiz at flipped , size2Thrid , left , lightCrystalLights:
+            ypos 1.25 xpos -0.5
+            linear 2 xalign 0.5 xpos 0.5
+        show volkara3quat harem at left , size2Thrid , lightCrystalLights:
+            ypos 1.25 xpos -0.7
+            linear 2 xalign 0.0 xpos 0.0
+        pause 2
+        show muwaHarem greet happy with dissolve
         muwa "Hello"
         muwa "You must be new here."
+
+        show muwaHarem base neutralHappy
+        show volkara3quat haremGreet happyMouth
+        with dissolve
         volk "Yes."
+
+        show femTesipiz greet extraHappy with dissolve
         tesi "Hello fluffy one."
-        muwa "Hello jamesian ones"
+
+        show femTesipiz base neutralHappy
+        show muwaHarem sad O
+        with dissolve
+        muwa "Jamesians?"
         muwa "They got you too?"
+
+        show volkara3quat lineEyes OMouth with dissolve
         volk "Yes."
+        show femTesipiz sad O with dissolve
         tesi "They got our friend as well."
         muwa "Oh."
+        show volkara3quat deltaMouth
+        show femTesipiz neutral neutralHappy
+        show muwaHarem extraHappy
+        with dissolve
         muwa "I hope you get assigned to my room."
+        show muwaHarem inviting with dissolve
         muwa "You seem nice."
+        
+        show muwaHarem happy with dissolve
         muwa "I've seen a key on the roof."
+        show muwaHarem O
         muwa "I wonder whoes that is?"
+        $ foundMuwa = True
+    else:
+        haremSsatu "Muwa isn't here so she will be the substitute"
     jump balaPalace2ndFloor
 
 
@@ -970,18 +1067,27 @@ screen floor2Door2():
 
 label floor2Door2Content:
     call hideFloor2Doors
+    #should the other rooms have their own graphic??
+    #it will need 2 backgrounds that are similar
     if gotFloor2Items:
         "We've taken all the items here"
         "I hope the other girls don't notice"
         "This is our assigned room."
         "Guess these are our items."
+
     else:
         "Door 2"
         "get some items"
         "items"
         "I hope the other girls don't notice"
         ""
-    $ gotFloor2Items = True
+        menu:
+            "Grab our items":
+                "Grabby grab grab"
+                #put items here
+                $ gotFloor2Items = True
+            "Leave them here":
+                volk "They might get suspsious if they catch us with too much on us."
     jump balaPalace2ndFloor
 
 screen floor2Door3():
@@ -991,15 +1097,19 @@ screen floor2Door3():
         action Jump("floor2Door3Content")
 
 label floor2Door3Content:
+    #make a background for it but use muwa's room as a placeholder?
     call hideFloor2Doors
-    "Door 3"
-    "harem girls? they won't let you get some items."
-    "Who are you?"
-    "Are you new here?"
-    "The Harem Priestess will assign you a room."
-    "This is not your room."
-    "Leave. Go to the Harem Priestess."
-    "She'll assign you a room."
+    
+    show haremHealerImgMad at left , size2Thrid , lightCrystalLights
+    show orodianHaremLadyMad at center , size2Thrid , lightCrystalLights
+    show lizardbiteHaremAngry at right , size2Thrid , lightCrystalLights
+    with dissolve
+    haremLadies "Who are you?"
+    haremLadies "Are you new here?"
+    haremLadies "The Harem Priestess will assign you a room."
+    haremLadies "This is not your room."
+    haremLadies "Leave. Go to the Harem Priestess."
+    haremLadies "She'll assign you a room."
     jump balaPalace2ndFloor
 
 label hideFloor2Doors:
