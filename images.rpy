@@ -176,9 +176,6 @@ transform middleStand:
 transform size08:
     zoom 0.8
 
-transform size06:
-    zoom 0.6
-
 transform size3quat:
     zoom 0.75
 
@@ -214,9 +211,6 @@ transform tenthSize:
 
 transform twentithSize:
     zoom 0.05
-
-transform fortyithSize:
-    zoom 0.025
 
 transform behindTable:
     zoom 0.7
@@ -1129,7 +1123,6 @@ image balatiusPalaceFloor2 = "images/Locations/Bala-Axerium/Floor2Hub.webp"
 image balatiusPalaceFloor3 = "images/Locations/Bala-Axerium/Floor3Hub.webp"
 image balatiusPalaceRoof = "images/Locations/Bala-Axerium/Palace Roof.webp"
 image balatiusPalaceColumns = "images/Locations/Bala-Axerium/Palace Column Front.webp"
-image balatiusPalaceCloumnsRepeating = Frame( "images/Locations/Bala-Axerium/Palace Column Front.webp", tile=True )
 image balatiusPalaceTemple = "images/Locations/Bala-Axerium/Palace Temple to Astarte.webp"
 image balatiusBedroom = "images/Locations/Bala-Axerium/Balatius Bedroom.webp"
 image balatiusShrine = "images/Locations/Bala-Axerium/Secret Vult.webp"
@@ -1381,7 +1374,6 @@ image lamassuBook = "images/items/tsekrei book.webp"
 image nueBook = "images/items/tsekrei gift.webp"
 
 image jamesossianSword = "images/weapons armor and shields/jamesian Sword.webp"
-image jamesossianDagger = "images/weapons armor and shields/jamesian Dagger.webp"
 
 image tastsetuShield1 = "images/weapons armor and shields/Zara-Tastsetu Shield with Javelins.webp"
 image tastsetuShield2 = "images/weapons armor and shields/Zara-Tastsetu Shield with Darts.webp"
@@ -1567,8 +1559,6 @@ image hekaKhopeshMan = "images/Enemies/astartes goons/Riujaka Khopesh warrior me
 
 #Faronians
 image faronianAxNakedFemale = "images/Enemies/astartes goons/Faronian Axe Naked Female v1 sfw.webp"
-image haremHealerImg = "images/Enemies/astartes goons/Astart Healer.webp"
-image haremHealerImgMad = Composite( (1100,1400) , (0,0) , "images/Enemies/astartes goons/Astart Healer.webp" , (0,0) , "images/Enemies/astartes goons/Astart Healer Angry Mouth.webp" )
 layeredimage haremGuardLady:
     group poses:
         attribute baseArmed default:
@@ -2036,9 +2026,6 @@ image miniAhrimaniomLosing = "images/Enemies/Ahrites/Mini Ahrimaniom Side Attack
 #humanoid Monsters
 image jakalbiteKhopeshLight = "images/Enemies/astartes goons/Jakalbite Khopesh low-level v1.webp"
 image lizardbiteEspionAx = "images/Enemies/astartes goons/Lizardbite Espion Axman v1.webp"
-image lizardbiteHaremAx = "images/Enemies/astartes goons/Lizardbite Harem Axwoman.webp"
-image lizardbiteHaremAxAngry = Composite( ( 800,1400 ) , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman.webp" , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman Angry.webp" )
-image lizardbiteHaremAngry = Composite( ( 800,1400 ) , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman Unarmed.webp" , (0,0) , "images/Enemies/astartes goons/Lizardbite Harem Axwoman Angry.webp" )
 image jakalbiteSpear = "images/Enemies/astartes goons/Jakalbite Spear v1.webp"
 image falcobiteArcher = "images/Enemies/astartes goons/falcobite archer.webp"
 image falcobitePadSpear = "images/Enemies/astartes goons/falcobite padded infantry spear.webp"
@@ -2050,28 +2037,6 @@ image minobiteArmoredAxe = "images/Enemies/eliete goons/Minobite Great Axe Armor
 
 image minobiteFallingSide = "images/Enemies/astartes goons/Minobite Archer Falling.webp" 
 
-layeredimage haremMinobiteImg:
-    group poses:
-        attribute baseArmed default:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe.webp"
-    group mouths:  
-        attribute neutralHappy default:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe Neutral Happy.webp"
-        attribute O:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe O.webp"
-        attribute angry:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe Angry.webp"
-        attribute frown:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe Mean.webp"
-
-    group eyes:
-        attribute neutral default:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe Neutral.webp"
-        attribute miniMean:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe Mini Mean.webp"
-        attribute mean:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe Mean.webp"
-
 image snakeMan = "images/Enemies/astartes goons/Snakebite.webp"
 image snakeManInWater = "images/Enemies/astartes goons/Snakebite Swimming.webp"
 
@@ -2079,7 +2044,6 @@ image batbiteImg = "images/Enemies/astartes goons/batbite.webp"
 image batbiteFlyImg = "images/Enemies/astartes goons/batbite flying.webp"
 
 image batbitegirlImg = "images/Enemies/astartes goons/Batbite harem spear.webp"
-image batbiteGirlMad = Composite( ( 1000, 1600 ), (0,0) , "images/Enemies/astartes goons/batbite.webp" , (0,0) , "images/Enemies/astartes goons/Batbite harem spear Angry.webp" )
 image batbitegirlFlyImg = "images/Enemies/astartes goons/Batbite harem spear flying.webp"
 
 #animal Monsters
@@ -2129,16 +2093,12 @@ layeredimage lizardSuitLadyImg:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Greeting.webp"
         attribute attack:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Battle.webp"
-        attribute pointy:
-            "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Point.webp"
 
     group eyes:
         attribute neutral default:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Neutral Eyes.webp"
         attribute mean:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Mean Eyes.webp"
-        attribute closed:
-            "images/Enemies/eliete goons/Balatian Lizard Suit Guard XEyes.webp"
 
 
     group mouths:
@@ -2150,8 +2110,6 @@ layeredimage lizardSuitLadyImg:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female OMotuh.webp"
         attribute happy:
             "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Happy.webp"
-        attribute delta:
-            "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female delta.webp"
 
 image lizardSuitLadyFighting:
     Composite( ( 1000,1800 ) , (0,0) , "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female.webp" , (0,0) , "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female Mean Eyes.webp" , (0,0) , "images/Enemies/eliete goons/Balatian Lizard Suit Guard Female OMotuh.webp" )
@@ -2533,9 +2491,7 @@ image tsanihoniBattle = "images/antagonists/King Balatius/Balatius' Girlfriends/
 
 #the palace mess hall lady
 image orodianHaremLady = "images/NPCs/Astart Cilivians/Orodian Harem Lady.webp"
-image orodianHaremLadyMad = Composite( ( 800 , 1400 ) , (0,0) , "images/NPCs/Astart Cilivians/Orodian Harem Lady.webp" , (0,0) , "images/NPCs/Astart Cilivians/Orodian Harem Lady mad.webp" )
 image orodianHaremLadyItem = "images/NPCs/Astart Cilivians/Orodian Harem Lady Item.webp"
-
 
 #Minona
 image astartChariot = "images/animals/Astart chariot.webp"
@@ -3895,7 +3851,7 @@ image xerx3quatConsurnd = "images/Protagonists/Xerxes/Xerxes 3-4 Consurnd.webp"
 image xerx3quatLineMouthCrossarms = "images/Protagonists/Xerxes/Xerxes 3-4 crossarms lineMouth.webp"
 image xerx3quatAnnoyed = "images/Protagonists/Xerxes/Xerxes 3-4 annoyed.webp"
 image xerx3quatAnnoyedArmored = "images/Protagonists/Xerxes/Xerxes 3-4 annoyed Armored.webp"
-image xerx3quatCommandingCrossarmsArmored = Composite(( 600, 1400 ) , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 annoyed Armored.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Commanding Armored.webp")
+image xerx3quatCommandingCrossarmsArmored = Composite(( 600, 1400 ) , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 annoyed Armored.webp" , (0,0) , "Xerxes 3-4 pointing Commanding Armored")
 image xerx3quatFistPushArmored = "images/Protagonists/Xerxes/Xerxes 3-4 Armored Commanding Fist Push.webp"
 image xerx3quatPointCommanding = Composite ( (600,1400) ,  (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Commanding Armored.webp" )
 image xerx3quatPointCommandingArmored = Composite ( (600,1400) ,  (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Happy Armored.webp" , (0,0) , "images/Protagonists/Xerxes/Xerxes 3-4 pointing Commanding Armored.webp" )
@@ -3969,7 +3925,6 @@ image xerxHorseBrush = "images/Protagonists/Xerxes/Xerxes 3-4 Neutral-Happy Armo
 
 image xerxWithAtossa = "images/Protagonists/Xerxes/Xerxes Hugging Atossa.webp"
 image xerxWithVolkara = "images/Protagonists/Xerxes/Xerxes Hugging Volkara.webp"
-image xerxWithVolkaraArmored = "images/Protagonists/Xerxes/Xerxes Hugging Volkara.webp"
 
 image xerxCarryingAhriteAtossa = "images/Protagonists/Xerxes/Xerxes Carraying Courrupted Ato'ssa.webp"
 
@@ -3997,21 +3952,14 @@ layeredimage femXerx:
     group poses:
         attribute base:
             "images/Protagonists/Xerxes/Xerdza.webp"
-        attribute hatBase:
-            "images/Protagonists/Xerxes/Xerdza Hat.webp"
-
         attribute haremBase default:
             "images/Protagonists/Xerxes/Xerdza Harem.webp"
         attribute haremChained:
             "images/Protagonists/Xerxes/Xerdza Harem Chained.webp"
         attribute haremGreet:
             "images/Protagonists/Xerxes/Xerdza Harem Greeting.webp"
-
         attribute haremPoint:
             "images/Protagonists/Xerxes/Xerdza Harem Pointing.webp"
-        attribute hatPoint:
-            "images/Protagonists/Xerxes/Xerdza Hat Point.webp"
-
         attribute haremYeah:
             "images/Protagonists/Xerxes/Xerdza Harem Yeah.webp"
 
@@ -4030,7 +3978,6 @@ layeredimage femXerx:
             "images/Protagonists/Xerxes/Xerdza Happy Mouth.webp"
         attribute O:
             "images/Protagonists/Xerxes/Xerdza OMouth.webp"
-        
         attribute frown:
             "images/Protagonists/Xerxes/Xerdza Frown.webp"
         attribute angry:
@@ -4297,24 +4244,14 @@ layeredimage femTesipiz:
     group poses:
         attribute base default:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem 100-70.webp"
-        attribute clothedBase:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 female.webp"
         attribute chained:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem chained.webp"
         attribute greet:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Greet.webp"
-
         attribute yeah:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Yeah.webp"
-        attribute clothedYeah:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 female Yeah.webp"
-            
         attribute point:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Point.webp"
-
-        attribute clothedFeeling:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 female Feeling it.webp"
-
         attribute armed:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem armed.webp"
 
@@ -4376,17 +4313,7 @@ layeredimage femTesipiz:
         attribute closed if_any['armed']:
             "images/Protagonists/Tesipiz/Tesipiz 3-4 harem Closed Eyes.webp"
             xpos 100
-        attribute horny if_not['armed']:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 Harem Horny.webp"
-        attribute horny if_any['armed']:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 Harem Horny.webp"
-            xpos 100
-    
-    group blushes:
-        attribute blush if_not['armed']:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 Harem Blush.webp"
-        attribute blush if_not['armed']:
-            "images/Protagonists/Tesipiz/Tesipiz 3-4 Harem Blush.webp"
+
 
 #Ato'ssa
 
@@ -5382,8 +5309,6 @@ layeredimage malikImg:
             "images/Protagonists/Malik/Malik Base.webp"
         attribute armed:
             "images/Protagonists/Malik/Malik Armed.webp"
-        attribute greet:
-            "images/Protagonists/Malik/Malik Greet.webp"
         attribute commanding:
             "images/Protagonists/Malik/Malik Commanding.webp"
         attribute point:

@@ -822,6 +822,52 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                     if canTurn is False:
                         "[currentFoe.name] is entangled and cannot move."
 
+                    elif isinstance( enemyTroopers[ i ] , PatterenFoe ) and len( enemyTroopers[ i ].help2Give) > 0 and len( enemyTroopers ) > 1:
+                        $ j = 0
+                        $ k = 0
+                        $ currentTrooper = enemyTroopers[ i ]
+
+                        while k < len( enemyTroopers[ i ].help2Give):
+                            
+                            while j < enemyTroopers[ i ].help2Give[ k ][ 2 ] - 1:
+                                $ number2Choose = renpy.random.randint( 0 , len( enemyTroopers) - 1 )
+                                $ chosenDude = enemyTroopers[ number2Choose ] 
+                                $ nameOfEffectingItem = currentTrooper.help2Give[ k ][ 0 ]
+
+                                $ addEffects( currentTrooper.help2Give[ k ][ 1 ] , chosenDude , currentTrooper.help2Give[ k ][ 4 ] , currentTrooper.help2Give[ k ][ 3 ] , nameOfEffectingItem )
+                                
+                                
+                                $ chosenDude.health += enemyTroopers[ i ].help2Give[ k ][ 3 ]
+                            
+                                if chosenDude.health > chosenDude.hitpoints:
+                                    $ chosenDude.health = chosenDude.hitpoints
+                                
+                                
+                                if enemyTroopers[ i ].help2Give[ k ][ 3 ] > 0:
+                                    $ moreHealth = currentTrooper.help2Give[ k ][ 3 ]
+                                    
+                                    "[currentTrooper.name] heals [chosenDude.name] with [ nameOfEffectingItem ] by [ moreHealth ] health."
+                                
+                                elif enemyTroopers[ i ].help2Give[ k ][ 3 ] < 0:
+                                    $ lessHealth = currentTrooper.help2Give[ k ][ 3 ] * -1
+                                    
+                                    "[currentTrooper.name] damages [chosenDude.name] with [ nameOfEffectingItem ] by [ lessHealth ] health."
+                                    
+                                    if chosenDude.health < 1:
+
+                                        "Unfortunatly for them. It defeated them."
+                                        $ removeDedFoes( enemyTroopers , ringLeaders , alternativeTargets , ringLeaders2Kill , alternativeTargets2Kill , endOnRingLeadersGone , winWhenAlternativeTargetsKilled )
+                                        if number2Choose < i:
+                                            $ i -= 1
+
+                                        if len(enemyTroopers) <= 0:
+                                            $ badTroopersAlive = False
+                                else:
+                                    "[currentTrooper.name] gives [chosenDude.name] a [ nameOfEffectingItem ]"
+                                
+                                $ j+= 1
+                            $ k+= 1
+                    #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                     elif ( isinstance( enemyTroopers[ i ] , SummonerFoe ) or isinstance( enemyTroopers[ i ] , PatterenFoe ) ) and len(enemyTroopers) < goonsAllowed and enemyTroopers[ i ].canSummon:
                         $ enemyTroopers[ i ].summonTroopers( goonsAllowed , enemyTroopers )
@@ -829,6 +875,9 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                         "[currentFoe.name] Summons new troops."
 
                     else:
+                        
+                           
+                        
                         $ targetNumber = renpy.random.randint( 0 , len(targetiblePlayers)-1)
                         $ targetPlayer = targetiblePlayers[ targetNumber ]
                         

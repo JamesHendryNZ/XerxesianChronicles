@@ -36,7 +36,13 @@ Transform ( child="images/Protagonists/Xerxes/Xerxes 3-4 unarmored 029-01.webp",
 Transform ( child="images/Protagonists/Xerxes/Xerxes 3-4 unarmored 00.webp", zoom=0.3 )
 )
 
-define xerxesArmorSets = [ xerxesUnarmored , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail]
+define xerxesHaremGirlForm = ArmorSet( Transform ( child="images/Protagonists/Xerxes/Xerdza Harem 100-70.webp", zoom=0.3 ) ,
+Transform ( child="images/Protagonists/Xerxes/Xerdza Harem 69-30.webp", zoom=0.3 ) ,
+Transform ( child="images/Protagonists/Xerxes/Xerdza Harem 29-01.webp", zoom=0.3 ) ,
+Transform ( child="images/Protagonists/Xerxes/Xerdza Harem 00.webp", zoom=0.3 )
+)
+
+define xerxesArmorSets = [ xerxesUnarmored , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesScaleMail , xerxesHaremGirlForm ]
 
 
     #Tesipiz
@@ -52,7 +58,12 @@ Transform( child ="images/Protagonists/Tesipiz/Tesipiz 3-4 unarmored 029-01.webp
 Transform( child ="images/Protagonists/Tesipiz/Tesipiz 3-4 unarmored 00.webp" , zoom=0.3 ) 
 ) 
 
-define tesipizArmorSets = [ tesipizUnarmored , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail]
+define tesipizHaremGirlForm = ArmorSet( Transform( child ="images/Protagonists/Tesipiz/Tesipiz 3-4 harem 100-70.webp" , zoom=0.3 ) ,
+Transform( child ="images/Protagonists/Tesipiz/Tesipiz 3-4 harem 69-30.webp" , zoom=0.3 ) ,
+Transform( child ="images/Protagonists/Tesipiz/Tesipiz 3-4 harem 29-01.webp" , zoom=0.3 ) ,
+Transform( child ="images/Protagonists/Tesipiz/Tesipiz 3-4 harem 00.webp" , zoom=0.3 ) )
+
+define tesipizArmorSets = [ tesipizUnarmored , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizScaleMail , tesipizHaremGirlForm ]
 
     #Ato'ssa
 define atossaScaleMail = ArmorSet( Transform( child ="images/Protagonists/Atossa/Atossa 3-4 Armored 100-70.webp" , zoom=0.3 , xzoom =-1.0 ) ,
@@ -82,7 +93,13 @@ Transform( child ="images/Protagonists/Volkara/Volkara 3-4 unarmored 29-01.webp"
 Transform( child ="images/Protagonists/Volkara/Volkara 3-4 unarmored 00.webp" , zoom=0.3 , xzoom =-1.0 )
 )
 
-define volkaraArmorSets = [ volkaraUnarmored , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail ]
+define volkaraHaremSuit = ArmorSet( Transform( child ="images/Protagonists/Volkara/Volkara 3-4 harem 100-70.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Volkara/Volkara 3-4 harem 69-30.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Volkara/Volkara 3-4 harem 29-01.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Volkara/Volkara 3-4 harem 00.webp" , zoom=0.3 , xzoom =-1.0 )
+)
+
+define volkaraArmorSets = [ volkaraUnarmored , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraHaremSuit ]
     #Trimdius
 
     #Xerdza
