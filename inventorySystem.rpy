@@ -50,6 +50,12 @@ init python:
         for itemSlot in inventory:
             if itemSlot.amountOf < 1:
                 inventory.remove(itemSlot)
+    
+    def checkAllItemAmount( inventory ):
+        itemAmount = 0
+        for itemSlot in inventory:
+            itemAmount += itemSlot.amountOf
+        return itemAmount
 #--------------------------------------------------
 default inventory = []
 default money = 0
