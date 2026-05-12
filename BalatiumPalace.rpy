@@ -309,17 +309,20 @@ label balaAxeriumSneakyFoZ:
     tesi "......"
     
     #sloop
-    #TODO make or find a sloop sound effect
+    #make or find a sloop sound effect
     #maybe not - test to see if they can beat all the enimies using no weapons.
     #they cannot defeat the lizard suits without weapons
     #so slooping it up their it is.
+    #use punchy it's close enough
+    play sound [ punchy , punchy ]
+
 
     scene balaAxeriumInsideNight at topright
     show malikImg mean at right , size2Thrid , lightCrystalLights
     show femTesipiz O at center , size2Thrid , lightCrystalLights
     show volkara3quat harem deltaMouth at left , size2Thrid , lightCrystalLights
     show balaAxeriumInsideForground at topright , flameLight
-    with fade
+    with Fade[ 0.5 , 1 , 0.5 ]
 
     pause 6
     show malikImg mean O with dissolve
