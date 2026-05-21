@@ -580,11 +580,72 @@ label balatiusTesiAndVolkShowUp:
     #depending on how long the battle takes, tesipiz and volkara join
 
 label malikMakesGoesExploding:
+
+    scene balatiusPalace at truecenter , light2DarkBottom2Top
+    show lizardSuitLadyRunBack at halfSize , lightCrystalLights , right:
+        xpos 1.5
+        linear 3 xalign 0.5 xpos 0.5
+        easeout 3 ypos 0.5 zoom 0.01 
+    pause 0.5
+    show balatianHeavySpeatRunBack at halfSize , lightCrystalLights , left:
+        xpos -0.5
+        linear 3 xalign 0.5 xpos 0.5
+        easeout 3 ypos 0.5 zoom 0.01 
+    pause 0.5 #1.0
+    show balatianAmoredAxLadyRunBack at halfSize , lightCrystalLights , right:
+        xpos 1.5
+        linear 3 xalign 0.5 xpos 0.5
+        easeout 3 ypos 0.5 zoom 0.01 
+    pause 0.5 
+    show balatianAmoredAxLadyRunBack as extraAxeLady at halfSize , lightCrystalLights , right:
+        xpos 1.5
+        linear 3 xalign 0.5 xpos 0.5
+        easeout 3 ypos 0.5 zoom 0.01 
+    pause 0.5 #2.0
+    show lizardSuitLadyRunBack as extraLizard at halfSize , lightCrystalLights , left:
+        xpos -0.5
+        linear 3 xalign 0.5 xpos 0.5
+        easeout 3 ypos 0.5 zoom 0.01 
+    pause 0.5
+    show balatianHeavySpeatRunBack as extraDude at halfSize , lightCrystalLights , right:
+        xpos 1.5
+        linear 3 xalign 0.5 xpos 0.5
+        easeout 3 ypos 0.5 zoom 0.01 
+    pause 0.5 #3.0
+    show balatianHeavySpeatRunBack as extraDude2 at halfSize , lightCrystalLights , left:
+        xpos -0.5
+        linear 3 xalign 0.5 xpos 0.5
+        easeout 3 ypos 0.5 zoom 0.01 
+    pause 3
+    hide lizardSuitLadyRunBack with dissolve
+    pause 0.5
+    hide balatianHeavySpeatRunBack with dissolve
+    pause 0.5 
+    hide balatianAmoredAxLadyRunBack with dissolve
+    pause 0.5 
+    hide extraAxeLady with dissolve
+    pause 0.5 
+    hide extraLizard with dissolve
+    pause 0.5 
+    hide extraDude with dissolve
+    pause 0.5 
+    hide extraDude2 with dissolve
+    pause 0.5 
+    
+    show malikImg greet happy at halfSize , left , lightCrystalLights:
+        xpos -0.5
     mali "The guards are moving."
-    mali "Time to start."
+    hide malikImg
+    show malikImg commanding mean happy at size08 , center , lightCrystalLights:
+        ypos 1.4
+    with dissolve
+    mali "Time to start." with vpunch
 
     #he waves something that acts like a signal
-
+    
+    scene starNightTime at fullFit
+    show balatiusPalace at light2DarkBottom2Top , center , thridSize
+    show malikImg at tenthSize , center , lightCrystalLights
     "That is the signal."
     "Time for some another incident."
 
