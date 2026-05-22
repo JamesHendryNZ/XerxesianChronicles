@@ -9,7 +9,7 @@ default haremSummonerAlive = True
 
 
 init python:
-    def determinSussyIncrease( )
+    def determinSussyIncrease( ):
         return checkAllItemAmount( inventory ) / 3 
 
 #list of items for diconary for items??

@@ -485,7 +485,6 @@ label balatiusTesiAndVolkShowUp:
         show volkara3quat haremArmed meanEyes
         show femTesipiz armed mean happy
         with dissolve
-        wtih dissolve
         tesi "Suprize"
         show volkara3quat happyMouth
         show femTesipiz neutralHappy
@@ -645,7 +644,16 @@ label malikMakesGoesExploding:
     
     scene starNightTime at fullFit
     show balatiusPalace at light2DarkBottom2Top , center , thridSize
-    show malikImg at tenthSize , center , lightCrystalLights
+    $ counter = 3
+    while counter > 0:
+        show malikImg mean happy base at tenthSize , center , lightCrystalLights
+        pause 0.5
+        show malikImg mean happy greet at tenthSize , center , lightCrystalLights
+        pause 0.5
+        $ counter
+    
+    show balaAxeriumEstablishingNight
+
     "That is the signal."
     "Time for some another incident."
 
@@ -669,7 +677,7 @@ label balatiusDedAnimation:
         easeout 3 rotate 90 ypos 1.5
     with dissolve
     pause 2
-    play bloodySlam
+    play sound bloodySlam
     with vpunch
     return
 
