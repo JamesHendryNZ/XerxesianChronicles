@@ -6472,13 +6472,19 @@ layeredimage axerianLady:
     #sabotaurus
 layeredimage sabotaurusMan:
     group poses:
-        attribute base:
+        attribute base default:
             "images/NPCs/Axeria/Saboturus.webp"
-        attribute BombTime:
+        attribute bombTime:
             "images/NPCs/Axeria/Saboturus bomb time.webp"
         attribute chuck:
             "images/NPCs/Axeria/Saboturus Chuck.webp"
-
+    group faces:
+        attribute neutralHappyFace if_any["base","bombTime"]:
+            "images/NPCs/Axeria/Saboturus NeutralHappy.webp"
+        attribute yeahFace if_any["base","bombTime"]:
+            "images/NPCs/Axeria/Saboturus Yeah Face.webp"
+        attribute suprizedFace if_any["base","bombTime"]:
+            "images/NPCs/Axeria/Saboturus O.webp"
 
 #Jamesian Troopers
 image jamesianHeavySpearDude = "images/NPCs/Jamesia/Troopers/Jamesian Heavy Spear Boy.webp"

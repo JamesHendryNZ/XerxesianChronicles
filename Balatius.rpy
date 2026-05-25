@@ -653,19 +653,106 @@ label malikMakesGoesExploding:
         $ counter
     
     show balaAxeriumEstablishingNight
+    show sabotaurusMan suprizedFace at center , lightCrystalLights , size2Thrid , hiddenLegs125
+    show balaAxeriumInsideForground at lightCrystalLights
+    with dissolve
+    #sabotorus
+    "That is the signal." # O Mouth
+    show sabotaurusMan neutralHappyFace with dissolve
+    "Time for some another incident." #mean eyes
 
-    "That is the signal."
-    "Time for some another incident."
+    #sabotaurus
+    show sabotaurusMan yeahFace with dissolve
+    "Heheh!" 
+    show sabotaurusMan chuck with dissolve
+    "Kaboom time!!" #heheh
 
-    "Heheh!"
-    "Kaboom time!!"
 
-    "many wagons filled with bombs had their fuses set"
+    #wagons go boom
+    
+    scene starNightTime at fullFit
+    show balatiusPalace at light2DarkBottom2Top , center , thridSize
+    show oxCartParkt at fithSize , lightCrystalLights , left
+    show oxCartParkt as extraCart at fithSize , lightCrystalLights , right
+    pause 1
+    show bombImg at center , lightCrystalLights:
+        ypos -0.5 zoom 1.0
+        easeout 2 xalign 0.25 ypos 1.0 zoom 0.1
+    show bombImg as extraBombs at center , lightCrystalLights:
+        ypos -0.5 zoom 1.0
+        easeout 2 xalign 0.75 ypos 1.0 zoom 0.1
+    pause 1.5
+    play sound daBOOM
+    show explosion at center:
+        xalign 0.25 zoom 0.01
+        easeout 1 zoom 0.5
+    show explosion as extraBoom at center:
+        xalign 0.75 zoom 0.01
+        easeout 1 zoom 0.5
+    with dissolve
+    hide explosion
+    hide extraBoom
+    show smokes at center , lightCrystalLights:
+        ypos -0.5 zoom 0.3 
+        easeout 5 xalign 0.25 ypos 1.0 zoom 1.2
+    show smokes as extraPuff at center , lightCrystalLights:
+        ypos -0.5 zoom 1.0
+        easeout 5 xalign 0.75 ypos 1.0 zoom 1.2
+    
+    #"Malik and his troops reveal their true colors"
+    scene starNightTime
+    show balaAxeriumInsideFlame at fullFit , center
 
-    "A wagon is set on fire and pushed into the palace front."
-    "the giants swipe at it cuasing it to explode, taking them out."
-    "Malik and his troops reveal their true colors"
+    show axerianHopiliteAttcking at left , halfSize , lightCrystalLights:
+        xpos 0.25
+        easein 2 xpos 0.5
+        easeout 2 xpos 0.25
+        repeat
 
+    show thiaMaceFemaleAttcking at right , halfSize , lightCrystalLights:
+        xpos 0.55
+        easeout 2 xpos 0.35
+        easein 2 xpos 0.55
+        repeat
+
+    show axerianSpear2Attacking at left , halfSize , lightCrystalLights:
+        xpos 0.33
+        easein 2 xpos 0.66
+        easeout 2 xpos 0.33
+        repeat
+    
+    show axerianHopiliteAttcking as extraHoplite at left , halfSize , lightCrystalLights:
+        xpos 0.0
+        easeout 2 xpos 0.25
+        easein 2 xpos 0.0
+        repeat
+
+    show balaAstartWhippaWhipping at right , halfSize , lightCrystalLights:
+        xpos 1.0
+        easein 2 xpos 0.7
+        easeout 2 xpos 1.0
+        repeat
+
+    show balatianHeavySpearAttacking at right , halfSize , lightCrystalLights:
+        xpos 0.75
+        easein 2 xpos 0.5
+        easeout 2 xpos 0.75
+        repeat
+
+    show axerianSpear2Attacking as extraSpear at left , halfSize , lightCrystalLights:
+        xpos 0.4
+        easein 2 xpos 0.6
+        easeout 2 xpos 0.4
+        repeat
+
+    show lizardSuitLadyFighting at right , halfSize , lightCrystalLights:
+        xpos 0.6
+        easeout 2 xpos 0.4
+        easein 2 xpos 0.6
+        repeat
+    
+
+    #astart giants join in.
     #they start attacking the astart forces in the city
     return
     
