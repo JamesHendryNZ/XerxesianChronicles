@@ -545,38 +545,62 @@ label balatiusTesiAndVolkShowUp:
 
     call malikMakesGoesExploding
 
-    volk "Wahh!!!"
+    scene balatiusPalaceFloor1 at fullFit
+    show femXerx O at center , hiddenLegs125
+    show volkara3quat haremBase sadEyes OMegaMouth at left , flipped , hiddenLegs125
+    show femTesipiz O at right , hiddenLegs125
+    with dissolve
+    with vpunch
+    with hpunch
+    volk "Wahh!!!" 
+    show volkara3quat neutralEyes OMouth
+    show femTesipiz yeah mean happy
+    show femXerx happy
+    with dissolve
     tesi "Oh YEAH!!"
     tesi "BOOM TIME!!"
 
-    "ROUGUE ASTARTS IN THE CITY!!"
-    "REBEL SLAVE FORCES IN THE CITY!!"
+    scene balatiusPalaceEntrance at flameLight , fullFit
+    show lizardSuitLadyImg attack mean angry at lightCrystalLights , center , size2Thrid , hiddenLegs125
+    show balatianHeavySpearAttack at lightCrystalLights , left , size2Thrid , hiddenLegs125
+    show balatianAmoredAxLady at lightCrystalLights , right , size2Thrid , hiddenLegs125
+    with dissolve
+    "ROUGUE ASTARTS IN THE CITY!!" with vpunch
+    "REBEL SLAVE FORCES IN THE CITY!!" with hpunch
+    #astart giants notice them
+    scene balatiusPalaceEntrance at flameLight , truecenter
+    show giantDude at center , lightCrystalLights , size2Thrid:
+        ypos 1.5
+    "THERE ARE HAREM INFILTRATORS IN THE PALACE!!"
+    "GET THEM!!" with dissolve
+    #another fight
+    scene starNightTime at fullFit , darkNight
+    show balaAxeriumInsideFlame at fullFit
+    show balatiusPalaceColumns at fullFit , flameLight
+    $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(astartGiantM) , copy.copy(astartGiantF) , copy.copy(balatianSpear) , copy.copy( balatianHeavyAxe ) ]
 
+    #malik reunites with them
+    scene starNightTime at fullFit , darkNight
+    show balaAxeriumInsideFlame at fullFit
+    show balatiusPalaceColumns at fullFit , flameLight
     xerx "That'll make our escape easier."
     mali "There you are!"
+    call screen playerActions( "Fell these giants!" , False , False , True , 0 )
 
+    #should we have dead giants with a sound effects and screen shake?
+
+    show malikImg
     mali "There you are."
     mail "Here are some health potions."
     $ xerxesCharacter.resurrect()
     $ tesipizCharacter.resurrect()
     $ volkaraCharacter.resurrect()
 
-    #if balatius.health <= 0:
+    
     mali "You killed King Balatius!"
     mali "Atazera will be pleased."
-    mali "I need you to take out the giants like you did in Takurium 10 years ago."
-    jump balaGiantGuardianFight
 
-    #else
-    volk "Balatius escaped into the dungeon!"
-    mali "Go after him"
 
-    jump balaPalaceBasment
-
-    #battle the 
-    #balatius and his gfs fless
-    #lizard suits show up
-    #depending on how long the battle takes, tesipiz and volkara join
 
 label malikMakesGoesExploding:
 
@@ -684,20 +708,23 @@ label malikMakesGoesExploding:
     pause 1.5
     play sound daBOOM
     show explosion at center:
-        xalign 0.25 zoom 0.01
-        easeout 1 zoom 0.5
+        xalign 0.25 zoom 0.01 matrixcolor OpacityMatrix(1.0)
+        easeout 1 zoom 0.5 
+        easein 1 zoom 1.0 matrixcolor OpacityMatrix(0.0)
     show explosion as extraBoom at center:
-        xalign 0.75 zoom 0.01
+        xalign 0.75 zoom 0.01 matrixcolor OpacityMatrix(1.0)
         easeout 1 zoom 0.5
+        easein 1 zoom 1.0 matrixcolor OpacityMatrix(0.0)
     with dissolve
+    pause 1.0
     hide explosion
     hide extraBoom
     show smokes at center , lightCrystalLights:
-        ypos -0.5 zoom 0.3 
-        easeout 5 xalign 0.25 ypos 1.0 zoom 1.2
+        ypos -0.5 zoom 0.3 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xalign 0.25 ypos 1.0 zoom 1.2 matrixcolor OpacityMatrix(0.0)
     show smokes as extraPuff at center , lightCrystalLights:
-        ypos -0.5 zoom 1.0
-        easeout 5 xalign 0.75 ypos 1.0 zoom 1.2
+        ypos -0.5 zoom 1.0 matrixcolor OpacityMatrix(1.0)
+        easeout 5 xalign 0.75 ypos 1.0 zoom 1.2 matrixcolor OpacityMatrix(0.0)
     
     #"Malik and his troops reveal their true colors"
     scene starNightTime
@@ -751,9 +778,12 @@ label malikMakesGoesExploding:
         easein 2 xpos 0.6
         repeat
     
-
-    #astart giants join in.
-    #they start attacking the astart forces in the city
+    play sound [ knockIt , foeHit , arrowHit , slashMiss , armorProtected , hackIT ] loop
+    play extraSound [ arrowHit , arrowHit , hackIT , playerHit , slicey , armorProtected, armorProtected] loop
+    pause 12
+    "debug pause message"
+    stop sound
+    stop extraSound
     return
     
 
