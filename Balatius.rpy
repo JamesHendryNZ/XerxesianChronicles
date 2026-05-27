@@ -589,17 +589,9 @@ label balatiusTesiAndVolkShowUp:
 
     #should we have dead giants with a sound effects and screen shake?
 
-    show malikImg
-    mali "There you are."
-    mail "Here are some health potions."
-    $ xerxesCharacter.resurrect()
-    $ tesipizCharacter.resurrect()
-    $ volkaraCharacter.resurrect()
-
     
-    mali "You killed King Balatius!"
-    mali "Atazera will be pleased."
 
+    jump outOfBalaAzeriumFoZ
 
 
 label malikMakesGoesExploding:
@@ -798,27 +790,87 @@ label balatiusDedAnimation:
     with vpunch
     return
 
-label balaPalaceBasment: #might be cut
-    "Underground"
-    "more goons"
-    "Giants get activated"
-    "fight Astart giants"
-    "Kill Balatius and giants"
-    jump outOfBalaAzeriumFoZ
+#label balaPalaceBasment: #cut out
+#    "Underground"
+#    "more goons"
+#    "Giants get activated"
+#    "fight Astart giants"
+#    "Kill Balatius and giants"
+#    jump outOfBalaAzeriumFoZ
 
-label balaGiantGuardianFight:
-    "Giants show up"
-    "Fighting time"
-    "Giants die"
-    jump outOfBalaAzeriumFoZ
+#label balaGiantGuardianFight: #cut out
+#    "Giants show up"
+#    "Fighting time"
+#    "Giants die"
+#    jump outOfBalaAzeriumFoZ
 
 label outOfBalaAzeriumFoZ:
     "Bala-Axerium burns!!"
+    scene
+
+    scene starNightTime at fullFit , darkNight
+    show balaAxeriumInsideFlame at fullFit
+    show balatiusPalaceColumns at fullFit , flameLight
+    with fade
+    #sound of burning
+    show malikImg greet happy at left , halfSize, lightCrystalLights:
+        xpos -0.5
+        easein 0.0
+    show volkara3quat haremBase at center , halfSize , lightCrystalLights, flipped:
+        xpos 0.25
+    show femXerx at center , halfSize , lightCrystalLights , flipped:
+        xpos 0.65
+    show femTesipiz at right , halfSize , lightCrystalLights , flipped
+    mali "There you are."
+
+    show malikImg item with dissolve
+    show potionzRed at halfSize , lightCrystalLights, truecenter with dissolve
+    mail "Here are some health potions."
+    $ xerxesCharacter.resurrect()
+    $ tesipizCharacter.resurrect()
+    $ volkaraCharacter.resurrect()
+
+    hide potionzRed
+
+    show malikImg neutralHappy base
+    show femTesipiz yeah extraHappy
+    with dissolve
+    tesi "Cool explosion."
+    show malikImg happy 
+    show femTesipiz neutralHappy
+    with dissolve
+    mali "Yeah."
+    show malikImg point with dissolve
+    mali "Atazera's Plan."
+    show malikImg base neutralHappy
+    show femXerx haremYeah mean happy
+    with dissolve
+    xerx "We managed to kill King Balatius!"
+    #should we mention that thing?
+    #he doesn't need to know
+
+    show malikImg point mean happy
+    show femXerx haremBase neutral neutralHappy
+    with dissolve
+    mali "You killed King Balatius!?"
+    show malikImg neutral with dissolve
+    mali "Atazera will be pleased."
+
+    show malikImg point with dissolve
     mali "You have the tablet piece?"
+    show malikImg base
+    show volkara3quat haremPointy happyMouth
+    with dissolve
+    show stoneTabletBala at halfSize , lightCrystalLights , truecenter with dissolve
     volk "Yes."
+    hide stoneTabletBala
+    show volkara3quat haremBase neutralHappyMouth
+    show malikImg happy
+    with dissolve
     mali "Good."
+    show malikImg happy point with dissolve
     mali "We need to leave before the Astarts send in reinforcements to recapture the ruins."
-    if checkIfHave( inventory , tabletPieceMak ):
+    if checkIfHave( inventory , tabletPieceMak ): #will do when it version 0.2.5
         mali "We'll return to Xartabana"
         jump winXartabanaFoZ
         jump makkabiumFoZ2
