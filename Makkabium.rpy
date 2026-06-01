@@ -11,44 +11,148 @@ label makkabiumFoZ1:
 
 label makkabiumFoZ2:
     $ IsDaytime = True
+    #set the scene
+    play music sandyMusic
+    scene makkabiumEstblishing1 at fullFit with Fade( 2,1,3 )
+    pause 8
+    scene clearDayTime
+    show makkabiumRuinEntrance at left , halfSize with Fade( 2,0,1 ):
+        linear 8 xpos 0.25
+    pause 10
+    show makkabiumRuinEntrance at left, halfSize with fade:
+        xpos 0.25
+    show femXerx at center , halfSize with dissolve:
+        xpos 0.33
+    show femTesipiz at center , halfSize with dissolve:
+        xpos 0.66
+    show volkara3quat haremBase at right , halfSize with dissolve
+    show malikImg happy greet at left , halfSize with dissolve
     mali "You're awake?"
+    show malikImg base with dissolve
     mali "Good"
     #a camel rider delivers xerxes and friends stuff
-    "Hey Xerxes"
-    "Atazera has sent me to return your stuff"
+    show axeriumCamelUnarmed at left , halfSize behind femXerx:
+        xpos -0.5
+        easein 3 xpos 0.1
+    pause 3
+    hide axeriumCamelUnarmed
+    show axerianCamelGreet at left , halfSize behind femXerx:
+        xpos 0.1
+    with dissolve
+    axCam "Hey Xerxes"
+    hide axerianCamelGreet
+    show axerianCamelPoint at left , halfSize behind femXerx: 
+        xpos 0.1
+    with dissolve
+    axCam "Atazera has sent me to return your stuff"
 
+    hide axerianCamelPoint
+    show axeriumCamelUnarmed at left , halfSize behind femXerx:
+        xpos 0.1
+    show femXerx haremYeah mean happy
+    with dissolve
     xerx "Finally"
 
     call returnEquptment
 
+    scene clearDayTime
+    show makkabiumRuinEntrance at left , halfSize:
+        xpos 0.25
+    show malikImg at left, halfSize
+    show makkabiumRuinEntrance at left, halfSize:
+        xpos 0.25
+    show xerx3quatYeah at center , halfSize:
+        xpos 0.33
+    show femTesipiz clothedBase O
+    hide volkara3quat
+    show volkara3quatArmored at right , halfSize
     with fade
     xerx "Back to being a dude again."
+
+    hide xerx3quatYeah
+    show xerx3quatHappyArmored at center , halfSize:
+        xpos 0.33
+    show volkara3quatArmored happyMouth
+    with dissolve
     volk "These clothes fit me more"
 
+    show volkara3quatArmored OMouth
+    hide xerx3quatHappyArmored
+    show xerx3quatMiniSuprizedArmored at center , halfSize:
+        xpos 0.33
+    show femTesipiz clothedFeeling nervous
+    with dissolve
     tesi "How do you do the spell again."
     tesi "I forgot."
 
+    hide xerx3quatMiniSuprizedArmored
+    show xerx3quatPointHappyArmored at center , halfSize , flipped:
+        xpos 0.33
+    with dissolve
     xerx "Like this."
+    hide xerx3quatPointHappyArmored
+    hide femTesipiz
+    show tesipiz34MiniHappyArmored at center , halfSize:
+        xpos 0.66
     with fade
     tesi "Thank you."
 
+    hide tesipiz34MiniHappyArmored
+    show tesipiz34MiniHappyArmored at center , halfSize:
+        xpos 0.66
+    hide xerx3quatPointHappyArmored
+    show xerx3quatHappyArmored at center , halfSize:
+        xpos 0.33
+    show volkara3quatArmored neutralHappyMouth
+    show malikImg happy greet
+    with dissolve
     mali "We'll be leaving for Xartabana."
+    show malikImg point with dissolve
     mali "You should enter the ruins before the Astarts show up."
     
+
+
+    scene clearDayTime
+    show makkabiumRuinEntrance at left , halfSize:
+        xpos 0.4
+        linear 60 xpos 1.0 xalign 1.0
+    show xerx3quatPointHappyArmored at left , size2Thrid , hiddenLegs125 , flipped
+    show volkara3quatArmored OMouth at medium , size2Thrid , hiddenLegs125
+    show tesipiz34MiniHappyArmored at right , size2Thrid , hiddenLegs125 , flipped
     with fade
 
+    #put end fro current update here?
+
     xerx "See Volkara."
+
+    hide xerx3quatPointHappyArmored
+    show xerxArmsOutHappyArmored at left , size2Thrid , hiddenLegs125 , flipped
+    with dissolve
     xerx "No ghosts!"
 
+    show volkara3quatArmored pointy OMegaMouth with dissolve
     volk "Yeah no ghosts, but how about in the temples?"
 
+    hide xerxArmsOutHappyArmored
+    show xerx3quatHappyerArmored at left , size2Thrid , hiddenLegs125 , flipped
+    show volkara3quatArmored bentStand OMouth
+    with dissolve
     xerx "Yes."
+    hide xerx3quatHappyerArmored
+    show xerx3quatPointHappyArmored at left , size2Thrid , hiddenLegs125 , flipped
+    with dissolve
     xerx "There probably Makkabian ghosts in the temples,"
+
+    hide xerx3quatPointHappyArmored
+    show xerxNoWeGoodArmored at left , size2Thrid , hiddenLegs125 , flipped
+    with dissolve
     xerx "But you're now with me."
+    
     xerx "So you should stay with us for our safty's sake."
 
     #check for food items
     #they go ontop of the little sand hill covering a ruined building
+    #TODO make the little hill fort background
 
     xerx "The main temple should be accross the river."
     xerx "The Anti-Stealth Tablet piece is most likey in there."
@@ -57,6 +161,7 @@ label makkabiumFoZ2:
     xerx "We'll be here for you."
     volk "O.K"
 
+    "{b}Next Part will be released in Version 0.2.5"
 
 label makkabiumAST1:
     "Forces will arrive later"

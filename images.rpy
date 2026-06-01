@@ -30,6 +30,7 @@
     #Ahrite Zones
     #Bardaiya Shahneh
     #Bala-Axerium
+    #Makkabium Ruins
     #Aratashium
     #Kiridium
 
@@ -1142,6 +1143,10 @@ image balatiusPalaceHaremGirlRoom = "images/Locations/Bala-Axerium/Harem Girl Ro
 image balatiusPalaceHaremGirlRoom2 = "images/Locations/Bala-Axerium/Harem Girl Room2.webp"
 image balatiusPalaceHaremGirlRoom3 = "images/Locations/Bala-Axerium/Harem Girl Room3.webp"
 
+#Makkabium Ruins
+image makkabiumEstblishing1 = "images/Locations/Makkabium/Makkabium Establishing 1.webp"
+image makkabiumRuinEntrance = "images/Locations/Makkabium/Makkabium Entrance.webp"
+
 #Aratashium
 image aratashiumFrontEntrance = "images/Locations/Aratashium/Aratashium Front.webp"
 image aratashiumPool = "images/Locations/Aratashium/Aratashium Pool.webp"
@@ -1944,9 +1949,22 @@ layeredimage ssatuGlaiveGirl:
         attribute angry:
             "images/Enemies/Shata and Ssatu/ssatu glave female angry.webp"
 
+image ssatuGlaveGirlAttacking:
+    "images/Enemies/Shata and Ssatu/ssatu glave female swing.webp"
+    pause 0.5
+    "images/Enemies/Shata and Ssatu/ssatu glave female attack.webp"
+    pause 0.5
+    repeat
 
 image ssatuGlaiveBoyAttack = "images/Enemies/Shata and Ssatu/ssatu glave male attack.webp"
 image ssatuGlaiveBoySuprized = "images/Enemies/Shata and Ssatu/ssatu glave male suprized.webp"
+
+image ssatuGlaiveBoyAttacking:
+    "images/Enemies/Shata and Ssatu/ssatu glave male slash.webp"
+    pause 0.5
+    "images/Enemies/Shata and Ssatu/ssatu glave male attack.webp"
+    pause 0.5
+    repeat
 
 image ssatuOstrichFighter = "images/Enemies/Shata and Ssatu/Ssatu Ostrich FIghter.webp"
 
@@ -6561,6 +6579,9 @@ layeredimage kina:
     
 #Axerian troopers
 image axerianCamel = "images/NPCs/Axeria/Troopers/Axerian Camel Lancer.webp"
+image axeriumCamelUnarmed = "images/NPCs/Axeria/Troopers/Axerian Camel Rider.webp"
+image axerianCamelGreet = "images/NPCs/Axeria/Troopers/Axerian Camel Rider Greet.webp"
+image axerianCamelPoint = "images/NPCs/Axeria/Troopers/Axerian Camel Rider Point.webp"
 image axerianLancer = "images/NPCs/Axeria/Troopers/Axerian Lancer.webp"
 image axerianHoplite = "images/NPCs/Axeria/Troopers/Psudo Astart Hoplite.webp"
 image axerianSpear2 = "images/NPCs/Axeria/Troopers/Psudo Astart Spear.webp"
