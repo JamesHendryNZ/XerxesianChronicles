@@ -19,6 +19,9 @@ label balatiumPalace:
     "The palace is ass."
 
 label balaAxeriumSneakyFoZ:
+    
+    
+    play music sandyMusic fadein 1.0 fadeout 1.0
     $ timeTime = 0 #this will tick up every action until a certain point
     #it will be night time.
 
@@ -90,7 +93,9 @@ label balaAxeriumSneakyFoZ:
     with dissolve
     balatianGoon "OPEN THE GATE!!"
 
+    
     #show the trio get dragged to the placae
+    play music trainingMusic fadein 1.0 fadeout 1.0
     scene starNightTime at fullFit:
         xzoom -1.0 yzoom -1.0
 
@@ -122,6 +127,7 @@ label balaAxeriumSneakyFoZ:
     pause 14
 
     #lizard suit girl shows up
+    play music ratThonking fadein 1.0 fadeout 1.0
     scene balatiusPalaceEntrance at center , size2Thrid , lightCrystalLights
     show lizardSuitLadyImg greet happy at center , halfSize , lightCrystalLights
     with fade
@@ -256,6 +262,7 @@ label balaAxeriumSneakyFoZ:
     $ inventory = []
     $ currentParty = [ tesipizCharacter , volkaraCharacter ]
 
+    play music planingTime fadein 1.0 fadeout 1.0
     scene starNightTime at fullFit:
         xzoom -1.0 yzoom -1.0
     show balaAxeriumInsideNight at fullFit
@@ -351,9 +358,19 @@ label balaAxeriumSneakyFoZ:
 #    "This place is only accessable when they have been found out."
 
 #    lizardSuit "Wait"
+label checkBalaPalaceMusic:
+    if checkIfHave( inventory , tabletPieceBal ):
+        play music OnDaAttack fadein 1.0 fadeout 1.0 if_changed
+    elif desgueFoiled:
+        play music gettingAttacked fadein 1.0 fadeout 1.0 if_changed
+    else:
+        play music balatiusPalaceTheme fadein 1.0 fadeout 1.o if_changed
+    return
+
 
 label balaPalace2ndFloor:
     $ sussyBakaLevel += determinSussyIncrease( )
+    call checkBalaPalaceMusic
     scene balatiusPalaceFloor2 at fullFit with fade
     if checkIfHave( inventory , tabletPieceBal ):
         show balaAstartWhippaLady armed angry at halfSize , lightCrystalLights , center:
@@ -455,6 +472,7 @@ label balaPalace2ndFloor:
 label balaPalaceHaremMessHall:
     scene balatiusPalaceMessHall at fullFit
     $ sussyBakaLevel += determinSussyIncrease( )
+    call checkBalaPalaceMusic
     #harem cook lady
     if desgueFoiled:
         show lizardbiteHaremAxAngry at halfSize , left , lightCrystalLights
@@ -523,6 +541,7 @@ label balaPalaceHaremMessHall:
 label balaPalace3rdFloor:
     #"The floor3"
     $ sussyBakaLevel += determinSussyIncrease( )
+    call checkBalaPalaceMusic
     scene balatiusPalaceFloor3 at fullFit
     if checkIfHave( inventory , tabletPieceBal ):
         show haremMinobiteImg O at left , halfSize , lightCrystalLights
@@ -770,6 +789,7 @@ label balaTemple:
     scene balatiusPalaceTemple with dissolve
     #astart priestesss is based here
     $ sussyBakaLevel += determinSussyIncrease( )
+    call checkBalaPalaceMusic
     if haremSummonerAlive:
         if desgueFoiled:
             show haremSummonerImg knife mean angry at size2Thrid , lightCrystalLights , center:
@@ -917,6 +937,7 @@ label balaTemple:
 
 label balaPalaceRoof:
     #"The roof"
+    play music wonderStars fadein 1.0 fadeout 1.0
     scene starNightTime at fullFit:
         xzoom -1.0 yzoom -1.0
     show balatiusPalaceRoof at fullFit , nightLights
@@ -948,6 +969,7 @@ screen floor2Door1():
 
 label floor2Door1Content:
     call hideFloor2Doors
+    play music ratThonking fadein 1.0 fadeout 1.0
     scene balatiusPalaceHaremGirlRoom with fade
     if muwaCuddleCounter > 0 and foundMuwa != False:
         show muwaHarem at right , size2Thrid , lightCrystalLights with dissolve:
@@ -1139,6 +1161,7 @@ screen floor2Door2():
 
 label floor2Door2Content:
     call hideFloor2Doors
+    play music deadCaves fadein 1.0 fadeout 1.0
     #should the other rooms have their own graphic??
     #it will need 2 backgrounds that are similar
     scene balatiusPalaceHaremGirlRoom2 with fade

@@ -46,6 +46,7 @@ label returnEquptment:
 
 label balatiusFoz:
 
+    play music balatiusBattlePhase1 fadein 1.0 fadeout 1.0
     scene balatiusThroneRoom at fullFit , lightCrystalLights with fade
     "meanwhile"
     
@@ -164,6 +165,7 @@ label balatiusFoz:
         with dissolve
         menu:
             "Let him have his fun (Boink him)":
+                stop music fadeout 3.0
                 $ balatiusBoinks += 1
                 $ timeTime -= 3
                 show balatiusBoning start at halfSize , center , lightCrystalLights:
@@ -270,6 +272,11 @@ label balatiusFoz:
                 
                 jump battleBalatius
 
+label startBalatiusBattleTheme:
+    play music "<to 4>audio/music/Balatius Battle.ogg"
+    queue music balatiusBattleLoop
+    return
+
 label battleBalatius:
     #fight for a set amount of time
     $ xerxesCharacter.weapon = swordOfAhuraMazda
@@ -301,6 +308,7 @@ label battleBalatius:
         tesi "Suprize"
         volk "Think you could run away"
         window hide dissolve
+        call startBalatiusBattleTheme
         show screen bossTitleScreen( "#fff" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
         pause 5
         hide screen bossTitleScreen with dissolve
@@ -334,6 +342,7 @@ label balatiusTesiAndVolkShowUp:
         tesi "King Balatius!!"
         volk "Your end is near!!"
         if balatiusBoinks > 0:
+            stop music
             show volkara3quat lineEyes OMouth
             show femTesipiz neutral O
             with fade
@@ -407,6 +416,7 @@ label balatiusTesiAndVolkShowUp:
             xerx "Nope!!"
 
             $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ]
+            call startBalatiusBattleTheme
             show screen bossTitleScreen( "#1a1818" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
             pause 5
             scene balatiusPalaceFloor1 at fullFit
@@ -470,7 +480,7 @@ label balatiusTesiAndVolkShowUp:
             
         
     else:
-        
+        play music OnDaAttack fadein 1.0 fadeout 1.0
         show janaScared at center , halfSize , lightCrystalLights:
             xpos 0.25
         show tsanihoniScared at center , halfSize , lightCrystalLights:
@@ -503,6 +513,7 @@ label balatiusTesiAndVolkShowUp:
         show lizardSuitLadyImg attack mean angry at left , halfSize , lightCrystalLights
         show lizardSuitLadyImg attack mean angry as extraLizard at right , halfSize , lightCrystalLights
         window hide dissolve
+        call startBalatiusBattleTheme
         show screen bossTitleScreen( "#fff" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
         pause 5
         scene balatiusPalaceFloor1 at fullFit
@@ -514,7 +525,7 @@ label balatiusTesiAndVolkShowUp:
 
         $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ] 
     
-    
+    play music gettingAttacked fadein 1.0 fadeout 1.0
     scene balatiusPalaceFloor1 at fullFit with fade
     show volkara3quat harem deltaMouth at left , size2Thrid , lightCrystalLights , hiddenLegs125
     show femXerx haremPointy mean frown at center , size2Thrid , lightCrystalLights , hiddenLegs125
@@ -577,15 +588,19 @@ label balatiusTesiAndVolkShowUp:
     scene starNightTime at fullFit , darkNight
     show balaAxeriumInsideFlame at fullFit
     show balatiusPalaceColumns at fullFit , flameLight
+    play music "<to 4>audio/music/Xerxesian Battle2.ogg"
+    queue music fightingDaBoss
     $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(astartGiantM) , copy.copy(astartGiantF) , copy.copy(balatianSpear) , copy.copy( balatianHeavyAxe ) ]
+    call screen playerActions( "Fell these giants!" , False , False , True , 0 )
 
     #malik reunites with them
+    #does this needed?
     scene starNightTime at fullFit , darkNight
     show balaAxeriumInsideFlame at fullFit
     show balatiusPalaceColumns at fullFit , flameLight
     xerx "That'll make our escape easier."
     mali "There you are!"
-    call screen playerActions( "Fell these giants!" , False , False , True , 0 )
+    
 
     #should we have dead giants with a sound effects and screen shake?
 
@@ -596,6 +611,7 @@ label balatiusTesiAndVolkShowUp:
 
 label malikMakesGoesExploding:
 
+    stop music fadeout 10.0
     scene balatiusPalace at truecenter , light2DarkBottom2Top
     show lizardSuitLadyRunBack at halfSize , lightCrystalLights , right:
         xpos 1.5
@@ -719,6 +735,7 @@ label malikMakesGoesExploding:
         easeout 5 xalign 0.75 ypos 1.0 zoom 1.2 matrixcolor OpacityMatrix(0.0)
     
     #"Malik and his troops reveal their true colors"
+    play msuic OnDaAttack fadein 1.0 fadeout 1.0
     scene starNightTime
     show balaAxeriumInsideFlame at fullFit , center
 
@@ -780,6 +797,7 @@ label malikMakesGoesExploding:
     
 
 label balatiusDedAnimation:
+    play music weOwnedThem noloop
     scene balatiusThroneRoom at fullFit , lightCrystalLights
     show balatiusDead at center , size2Thrid , lightCrystalLights:
         ypos 1.25 rotate 0
@@ -805,8 +823,9 @@ label balatiusDedAnimation:
 #    jump outOfBalaAzeriumFoZ
 
 label outOfBalaAzeriumFoZ:
-    "Bala-Axerium burns!!"
-    scene
+    play music flameAmbiance fadein 1.0 fadeout 1.0
+    #"Bala-Axerium burns!!"
+    #scene
 
     scene starNightTime at fullFit , darkNight
     show balaAxeriumInsideFlame at fullFit

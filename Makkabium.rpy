@@ -12,7 +12,7 @@ label makkabiumFoZ1:
 label makkabiumFoZ2:
     $ IsDaytime = True
     #set the scene
-    play music sandyMusic
+    play music sandyMusic fadein 1.0 fadeout 1.0
     scene makkabiumEstblishing1 at fullFit with Fade( 2,1,3 )
     pause 8
     scene clearDayTime
@@ -147,21 +147,34 @@ label makkabiumFoZ2:
     show xerxNoWeGoodArmored at left , size2Thrid , hiddenLegs125 , flipped
     with dissolve
     xerx "But you're now with me."
-    
+    hide xerxNoWeGoodArmored
+    show xerxArmsOutHappyArmored at left , size2Thrid , hiddenLegs125 , flipped
+    with dissolve
     xerx "So you should stay with us for our safty's sake."
 
     #check for food items
     #they go ontop of the little sand hill covering a ruined building
-    #TODO make the little hill fort background
-
+    
+    hide xerxNoWeGoodArmored
+    show xerx3quatPointHappyArmored at left , size2Thrid , hiddenLegs125 , flipped
+    with dissolve
     xerx "The main temple should be accross the river."
     xerx "The Anti-Stealth Tablet piece is most likey in there."
+    hide xerx3quatPointHappyArmored
+    show xerx3quatHappyerArmored at left , size2Thrid , hiddenLegs125 , flipped
+    show volkara3quatArmored bentStand sadEyes OMegaMouth 
+    with dissolve
     #volkara does scared face
     xerx "Don't worry Volkara"
+    hide xerx3quatHappyerArmored
+    show xerxMarchFowardSoAMYeah at left , size2Thrid , hiddenLegs125 , flipped
+    with dissolve
     xerx "We'll be here for you."
+    show volkara34Happy basic normalEyes happyMouth with dissolve
     volk "O.K"
 
     "{b}Next Part will be released in Version 0.2.5"
+    return
 
 label makkabiumAST1:
     "Forces will arrive later"

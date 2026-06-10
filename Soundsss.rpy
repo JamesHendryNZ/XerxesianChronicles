@@ -4,6 +4,7 @@ init:
     $ renpy.music.register_channel("dynamicMusic" , 'music' , loop=True)
 
     #music time
+    define trainingMusic = "audio/music/trainigng.ogg" #James Hendry
     define sandyMusic = "audio/music/Acuresed Sands.ogg" #James Hendry
     define eeerieRuins = "audio/music/takura forest.ogg" #James Hendry
     define villageTheme = "audio/music/Yiwabis.ogg" #James Hendry
@@ -54,6 +55,10 @@ init:
     define weGotOwned = "audio/music/Defeat.ogg" #James Hendry
     define weOwnedThem = "audio/music/Victory.ogg" #James Hendry
 
+    define balatiusBattlePhase1 = "audio/music/Balatius Battle Phase1.ogg"
+    define balatiusBattle = "audio/music/Balatius Battle.ogg" #James Hendry
+    define balatiusBattleLoop = "audio/music/Balatius Battle loop.ogg" #James Hendry
+    define balatiusPalaceTheme = "audio/music/Balatius Palace.ogg" #James Hendry
 
     #ambiances
     define flameAmbiance = "audio/sound effects/gas-burning-stove-loop-123665.ogg" #Pixabay
