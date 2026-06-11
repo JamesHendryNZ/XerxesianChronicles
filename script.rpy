@@ -33,6 +33,11 @@ default headPatCounter = 0  #game will assume the more the player gives affectio
 default ahrimaniomNightmare = 0 #will cause the ahrimaniom to ressurect when it reaches a certain value
 default atoBoinks = 0
 default takuraBoinks = 0
+default balatiusBoinks = 0
+
+default tsekreiCuddles = 0
+default tsekreiDating = False
+#default tsekreiBoinks = 0 #may not need
 
 #for combat hit effects
 define hitTint = TintMatrix("#c00")
@@ -48,6 +53,7 @@ default goingEast = False
 #default sleepOversWithAtossa = 0
 
 default xerxCanOverCharge = False #This is for the SoAM
+default canJump = False #this is for jumping mechanics
 
 default projectile = None
 

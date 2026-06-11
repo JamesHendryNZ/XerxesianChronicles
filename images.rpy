@@ -216,6 +216,9 @@ transform eithSize:
 transform tenthSize:
     zoom 0.1
 
+transform sixteenthSize:
+    zoom 0.062
+
 transform twentithSize:
     zoom 0.05
 
@@ -576,6 +579,7 @@ image balaAxeriumCity = "images/map icons/Bala-Axerium.webp"
 image hekuiumCity = "images/map icons/Hekuium.webp"
 image kinosRuins = "images/map icons/kinos ruins.webp"
 image makkabiumRuins1 = "images/map icons/Makkabium Ruins1.webp"
+image makkabiumTempleOutside1 = "images/map icons/Makkabium Ruins1.webp"
 #image bardaiyaShahneh
 #image bardaiyaShahnehFlooded 
     #Imperial Core

@@ -597,7 +597,7 @@ label atazeraMeetFoz:
     play music justDaWind fadein 1.0 fadeout 1.0
     if IsDaytime:
         scene clearDayTime
-        show xartabanaEstblishing at fullFit with fade
+        show xartabanaEstblishing at fullFit
     else:
         scene starNightTime at fullFit
         show xartabanaEstblishingNight at fullFit 
@@ -784,7 +784,7 @@ label atazeraMeetFoz:
 
     #should we have a training theme?
     #simple just simple medoly and rythmn
-    play music trainingTune fadein 1.0 fadeout 1.0
+    play music trainingMusic fadein 1.0 fadeout 1.0
     
     show atazeraImg training happy at left , size2Thrid with dissolve:
         ypos 1.25
@@ -793,7 +793,7 @@ label atazeraMeetFoz:
     while not canProceed: 
         call defenceTime ( defencePattern[0] , not atazeraTrain.rangedFoe , atazeraTrain , currentParty[0] , 1.0)
         if currentParty[0].health < currentParty[0].hitpoints:
-            show atazeraImg sad O with dissolve
+            show atazeraImg sadEyes O with dissolve
             ataz "Lets try that again."
             show atazeraImg mean with dissolve
             ataz "Try to avoid getting hit by jumping over lines with the X button."
@@ -812,7 +812,7 @@ label atazeraMeetFoz:
         ataz "Try to avoid jumping into attacks"
         call defenceTime ( defencePattern[1] , not atazeraTrain.rangedFoe , atazeraTrain , currentParty[0] , 1.0)
         if currentParty[0].health < currentParty[0].hitpoints:
-            show atazeraImg sad O with dissolve
+            show atazeraImg sadEyes O with dissolve
             ataz "Lets try that again."
             $ resurrectParty( currentParty )
             $ atazeraTrain.health = atazeraTrain.hitpoints
@@ -938,6 +938,7 @@ label atazeraMeetFoz:
     show xerx34LookDownAnnoyed at right , size2Thrid:
         ypos 1.25
     show atazeraImg greet sadEyes O
+    with dissolve
     ataz "But they'll kill me on the spot as my head is worth 25,000 astartins."
 
     #atazera thinking pose - hand in fornt of chest but below face
@@ -2006,6 +2007,7 @@ label trioTurnIntoGirlsInXartabana:
     show tesipiz34Curious at center , size2Thrid , flipped:
         ypos 1.25
     show femXerx hatPoint mean O
+    with dissolve
     xerx "Focus harder."
     xerx "She'll pop out if you focus on reaching out to her."
 
@@ -2076,7 +2078,7 @@ label trioTurnIntoGirlsInXartabana:
         show volkara3quat pointy meanEyes deltaMouth with dissolve
         volk "No."
         show volkara3quat happyMouth
-        show femTesipiz yeah O nervous -blush
+        show femTesipiz clothedYeah O nervous -blush
         with dissolve
         volk "You'll be someone else's sexy girlfriend."
         #tesi's face

@@ -20,8 +20,9 @@ label mapOfDaWorldoSouthJamesia:
 label lowerJamesosRealmMap:
 
     scene map2:
-            xpos -2.5
-            ypos -1.9
+            zoom 0.75
+            xalign 1.0
+            yalign 0.4
 
     return
 

@@ -29,8 +29,66 @@ label balaAxeriumSneakyFoZ:
         zoom 0.75
         xalign 1.0
         yalign 0.4 
-        linear 3 
-    "map to balatium."
+        matrixcolor TintMatrix("fff")
+        linear 8 matrixcolor TintMatrix("#ffd2a1")
+        linear 8 matrixcolor TintMatrix("#0600bc")
+    
+    #route oorandants
+    #0.38 0.724
+    #0.352 0.696
+    #0.37 0.59
+    #0.41 0.539
+    #0.434 0.453
+    #0.484 0.442
+    #0.555 0.481
+    #0.587 0.446
+
+    show malikImg at sixteenthSize with dissolve:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.38 ypos 0.724
+        linear 2 xpos 0.352 ypos 0.696
+        linear 2 xpos 0.37 ypos 0.59
+        linear 2 xpos 0.41 ypos 0.539
+        linear 2 xpos 0.434 ypos 0.453
+        linear 2 xpos 0.484 ypos 0.442
+        linear 2 xpos 0.555 ypos 0.481
+        linear 2 xpos 0.587 ypos 0.446
+    show femXerx haremChained frown mean at sixteenthSize with dissolve:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.38 ypos 0.724
+        linear 2 xpos 0.352 ypos 0.696
+        linear 2 xpos 0.37 ypos 0.59
+        linear 2 xpos 0.41 ypos 0.539
+        linear 2 xpos 0.434 ypos 0.453
+        linear 2 xpos 0.484 ypos 0.442
+        linear 2 xpos 0.555 ypos 0.481
+        linear 2 xpos 0.587 ypos 0.446
+
+    show femTesipiz chained frown at sixteenthSize with dissolve:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.38 ypos 0.724
+        linear 2 xpos 0.352 ypos 0.696
+        linear 2 xpos 0.37 ypos 0.59
+        linear 2 xpos 0.41 ypos 0.539
+        linear 2 xpos 0.434 ypos 0.453
+        linear 2 xpos 0.484 ypos 0.442
+        linear 2 xpos 0.555 ypos 0.481
+        linear 2 xpos 0.587 ypos 0.446
+    
+    show volkara3quat haremChained sadEyebrows deltaMouth at sixteenthSize with dissolve:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.38 ypos 0.724
+        linear 2 xpos 0.352 ypos 0.696
+        linear 2 xpos 0.37 ypos 0.59
+        linear 2 xpos 0.41 ypos 0.539
+        linear 2 xpos 0.434 ypos 0.453
+        linear 2 xpos 0.484 ypos 0.442
+        linear 2 xpos 0.555 ypos 0.481
+        linear 2 xpos 0.587 ypos 0.446
+
+    pause 10
+    #"map to balatium."
+    
 
     scene starNightTime at fullFit:
         xzoom -1.0 yzoom -1.0
@@ -364,7 +422,7 @@ label checkBalaPalaceMusic:
     elif desgueFoiled:
         play music gettingAttacked fadein 1.0 fadeout 1.0 if_changed
     else:
-        play music balatiusPalaceTheme fadein 1.0 fadeout 1.o if_changed
+        play music balatiusPalaceTheme fadein 1.0 fadeout 1.0 if_changed
     return
 
 
