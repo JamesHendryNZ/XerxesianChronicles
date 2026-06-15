@@ -2092,7 +2092,7 @@ layeredimage haremMinobiteImg:
         attribute angry:
             "images/Enemies/eliete goons/Minobite Harem Great Axe Angry.webp"
         attribute frown:
-            "images/Enemies/eliete goons/Minobite Harem Great Axe Mean.webp"
+            "images/Enemies/eliete goons/Minobite Harem Great Axe Frown.webp"
 
     group eyes:
         attribute neutral default:
@@ -5058,6 +5058,7 @@ layeredimage volkara3quat:
             "images/Protagonists/Volkara/Volkara 3-4 harem Battle.webp"
     
     
+
     group eyes:
         attribute normalEyes default if_any["basic","pointy","armsFoward","harem","haremChained","haremGreet","haremPointy","haremYeah","haremArmed"]:
             "images/Protagonists/Volkara/Volkara 3quat neutral eyes.webp"
@@ -5133,7 +5134,10 @@ layeredimage volkara3quat:
             "images/Protagonists/Volkara/Volkara Delta mouth 3quat.webp"
             ypos -100 xpos 350
             
-
+    group hands:
+        attribute handFront default if_any["haremGreet"]:
+            "images/Protagonists/Volkara/Volkara 3-4 harem greet hand.webp"
+            
 
 
 

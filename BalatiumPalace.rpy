@@ -1,7 +1,7 @@
 #default balaAlerted = False 
 default desgueFoiled = False
 default sussyBakaLevel = 0
-default imposterLevel = 20
+default imposterLevel = 60
 default canGetFoodAtMessHall = True
 default foundMuwa = False
 default gotFloor2Items = False
@@ -42,6 +42,7 @@ label balaAxeriumSneakyFoZ:
     #0.484 0.442
     #0.555 0.481
     #0.587 0.446
+    with fade
 
     show malikImg at sixteenthSize with dissolve:
         xanchor 0.5 yanchor 0.5
@@ -98,39 +99,41 @@ label balaAxeriumSneakyFoZ:
     
     scene starNightTime at fullFit:
         xzoom -1.0 yzoom -1.0
-    show Balagate at left , size2Thrid , light2NightRight2Left:
+    show balagate at left , light2NightRight2Left:
         xalign 0.0
-        linear 5 xalign 1.0
+        linear 10 xalign 1.0
     with Fade( 1,1,1 )
 
     show malikImg at left , halfSize:
-        xpos -0.5 xalign 0.0 matrixcolor TintMatrix("#0600bc")
+        xpos -0.3 matrixcolor TintMatrix("#0600bc")
         linear 9 xalign 0.5 matrixcolor TintMatrix("#ffffd0")
     pause 1
-    show femXerx haremChained mean frown at left , halfSize:
-        xpos -0.6 xalign 0.0 matrixcolor TintMatrix("#0600bc")
-        linear 9 xalign 0.33 matrixcolor TintMatrix("#ffffd0")
-    show femTesipiz chained nervous frown at left , halfSize:
-        xpos -0.7 xalign 0.0 matrixcolor TintMatrix("#0600bc")
-        linear 9 xalign 0.15 matrixcolor TintMatrix("#ffffd0")
+    show femXerx haremChained mean frown at left , halfSize , flipped behind malikImg:
+        xpos -0.4 matrixcolor TintMatrix("#0600bc")
+        linear 9 xpos 0.2 matrixcolor TintMatrix("#ffffd0")
+    show femTesipiz chained nervous frown at left , halfSize , flipped:
+        xpos -0.5 matrixcolor TintMatrix("#0600bc")
+        linear 9 xpos 0.05 matrixcolor TintMatrix("#ffffd0")
     show volkara3quat haremChained lineEyes deltaMouth at left , halfSize:
-        xpos -0.8 xalign 0.0 matrixcolor TintMatrix("#0600bc")
-        linear 9 xalign 0.0 matrixcolor TintMatrix("#ffffd0")
+        xpos -0.6 ypos 1.05 matrixcolor TintMatrix("#0600bc")
+        linear 9 xpos -0.05 matrixcolor TintMatrix("#ffffd0")
 
     pause 3
     show balatianHeavySpear at right , flipped , lightCrystalLights , halfSize:
-        xpos 1.5
+        xpos 1.5 ypos 1.1
         linear 3 xpos 1.0
     pause 6
 
     hide balatianHeavySpear
-    show balatianHeavySpearGreet at right , flipped , lightCrystalLights
+    show balatianHeavySpearGreet at right , flipped , lightCrystalLights , halfSize:
+        ypos 1.1
     with dissolve
     balatianGoon "Hello Astarts"
     balatianGoon "Looks like you scored a nice victory against Atazera!"
 
     hide balatianHeavySpearGreet
-    show balatianHeavySpear at right , flipped , lightCrystalLights
+    show balatianHeavySpear at right , flipped , lightCrystalLights , halfSize:
+        ypos 1.1
     show malikImg greet happy
     with dissolve
 
@@ -141,42 +144,51 @@ label balaAxeriumSneakyFoZ:
 
     show malikImg base neutral neutralHappy
     hide balatianHeavySpear
-    show balatianHeavySpearGreet at right , flipped , lightCrystalLights
+    show balatianHeavySpearGreet at right , flipped , lightCrystalLights , halfSize:
+        ypos 1.1
     with dissolve
     balatianGoon "Exellent!!"
     balatianGoon "King Balatius will be proud!"
 
     hide balatianHeavySpearGreet
-    show balatianHeavySpearAttack
+    show balatianHeavySpearAttack at right , flipped , lightCrystalLights , halfSize:
+        ypos 1.1
     with dissolve
     balatianGoon "OPEN THE GATE!!"
 
     
     #show the trio get dragged to the placae
-    play music trainingMusic fadein 1.0 fadeout 1.0
+    play music dariusTheme fadein 1.0 fadeout 1.0
     scene starNightTime at fullFit:
         xzoom -1.0 yzoom -1.0
 
-    show oxCartDude at quatSize , lightCrystalLights , truecenter:
-        linear 6 xalign 1.0
-    show balaAxeriumInsideNight at fullFit
+    
+    show balaAxeriumInsideNight at truecenter , halfSize
+    
+    show oxCartDude at lightCrystalLights:
+        ypos 0.35 zoom 0.075
+        linear 10 ypos 0.5 xalign 0.7 zoom 0.25
+        linear 2 xalign 1.0
 
-    show balaAxeriumInsideForground at fullFit , flameLight
+    #show balaAxeriumInsideForground at flameLight , truecenter , halfSize
+    
+    show femXerx haremChained O at thridSize , lightCrystalLights , center , flipped:
+        ypos 0.8 xpos 0.35
+        linear 10 ypos 2.0 xalign 0.0 xpos -0.1 zoom 1.5
+    show femTesipiz chained nervous frown at thridSize , lightCrystalLights , flipped , center:
+        ypos 0.8
+        linear 10 ypos 2.0 xalign 0.0 zoom 1.5
+    show volkara3quat haremChained lineEyes deltaMouth at thridSize , lightCrystalLights , center:
+        ypos 0.8 xpos 0.25
+        linear 10 ypos 2.0 xalign 0.0 zoom 1.5
     show malikImg at thridSize , lightCrystalLights , center:
         ypos 1.0 xalign 0.5
-        linear 3 ypos 2.0 xalign 0.0 zoom 1.5
-    show femXerx haremChained O at thridSize , lightCrystalLights , center:
-        ypos 0.8 xpos 0.75
-        linear 3 ypos 2.0 xalign 0.0 zoom 1.5
-    show femTesipiz chained nervous frown at thridSize , lightCrystalLights , center:
-        ypos 0.8
-        linear 3 ypos 2.0 xalign 0.0 zoom 1.5
-    show volkara3quat haremChained lineEyes frown at thridSize , lightCrystalLights , center:
-        ypos 0.8 xpos 0.25
-        linear 3 ypos 2.0 xalign 0.0 zoom 1.5
+        linear 10 ypos 2.1 xalign 0.0 zoom 1.5
     #show "astart" forces and wagons move into side allays 
     with fade
+    pause 10
     #establsihg shot of palace front
+    
     scene starNightTime at fullFit
     show balatiusPalace at fullFit , light2DarkBottom2Top:
         yalign 0.0
@@ -186,27 +198,29 @@ label balaAxeriumSneakyFoZ:
 
     #lizard suit girl shows up
     play music ratThonking fadein 1.0 fadeout 1.0
-    scene balatiusPalaceEntrance at center , size2Thrid , lightCrystalLights
+    scene balatiusPalaceEntrance at center , lightCrystalLights
     show lizardSuitLadyImg greet happy at center , halfSize , lightCrystalLights
     with fade
     lizardSuit "Hello Astart commander!"
     lizardSuit "What are you doing here?"
 
-    show lizardSuitLadyImg base neutralHappy at center , halfSize , lightCrystalLights:
+    show lizardSuitLadyImg base neutralHappy at center , lightCrystalLights:
         linear 2 xalign 1.0
+    
+    show femTesipiz chained at left ,  halfSize , lightCrystalLights , flipped:
+        xpos -0.7 
+        linear 3 xpos -0.05
+    show volkara3quat haremChained lineEyes deltaMouth at left ,  halfSize , lightCrystalLights:
+        xpos -0.7 
+        linear 3 xpos 0.1
+    show femXerx mean haremChained frown at left ,  halfSize , lightCrystalLights , flipped:
+        xpos -0.7 
+        linear 3 xpos 0.2
     show malikImg at left , halfSize , lightCrystalLights:
         xpos -0.5 xanchor 0.0
         linear 3 xpos 0.5 xanchor 0.5
-    show femTesipiz chained at left ,  halfSize , lightCrystalLights:
-        xpos 0.7 
-        linear 3 xpos 0.0
-    show volkara3quat haremChained lineEyes deltaMouth at left ,  halfSize , lightCrystalLights:
-        xpos 0.7 
-        linear 3 xpos 0.2
-    show femXerx mean haremChained frown at left ,  halfSize , lightCrystalLights:
-        xpos 0.7 
-        linear 3 xpos 0.4
-    
+    with dissolve
+
     pause 3
     show malikImg greet happy with dissolve
     mali "Hello Balatian guard!"
@@ -224,54 +238,62 @@ label balaAxeriumSneakyFoZ:
     #maybe closed eyes and point
     #maybe try with the spear poiting/attacking pose but with happy face?
     #no add in the pointy
-    show lizardSuitLadyImg closedEyes happy
+    show lizardSuitLadyImg closed happy
     with dissolve
     lizardSuit "Oh goodie!!"
     show lizardSuitLadyImg pointy neutral with dissolve
-    lizardMeat "Are all three of them a gift?"
+    lizardSuit "Are all three of them a gift?"
 
     show lizardSuitLadyImg base neutralHappy
     show malikImg O
     with dissolve
     mali "No."
-    show malikImg point happy with dissolve
+    show malikImg point happy at center , halfSize , lightCrystalLights with dissolve:
+        xzoom 1.0
+        linear 1 xzoom -1.0
     mali "Just this one."
     mali "And I'm keeping the other two."
 
-    show malikImg base neutralHappy
-    show lizardSuitLadyImg closed point happy
+    show malikImg base neutralHappy at center , halfSize , lightCrystalLights:
+        xzoom -1.0
+        linear 1 xzoom 1.0
+    show lizardSuitLadyImg closed pointy happy at right , flipped , lightCrystalLights
     with dissolve
     lizardSuit "Got it."
-    show lizardSuitLadyImg neutral with dissolve
+    show lizardSuitLadyImg neutral at right , lightCrystalLights with dissolve:
+        xzoom 1.0
+        linear 1 xzoom -1.0
     lizardSuit "I'll take you to King Balatius"
 
     scene balatiusPalaceFloor1 at right , halfSize
+    
+    
+    show femXerx haremChained sad frown at flipped,  halfSize , lightCrystalLights , left:
+        xpos -0.7
+        linear 4 xpos 0.5
     show malikImg at halfSize , lightCrystalLights , left:
         xpos -0.5
         linear 4 xpos 0.6
     show lizardSuitLadyImg at halfSize , lightCrystalLights , left:
         xpos -0.3
         linear 4 xpos 0.7
-    show femXerx haremChained sad frown at halfSize , lightCrystalLights , left:
-        xpos -0.7
-        linear 4 xpos 0.5
     with fade
     pause 4
 
     scene balatiusThroneDoor at fullFit , lightCrystalLights with dissolve
     show lizardSuitLadyImg at center , lightCrystalLights , size2Thrid with dissolve:
-        xpos 0.5 ypos 0.125
+        xpos 0.5 ypos 1.25
         linear 2 xpos 0.0 xalign 0.0
     show malikImg at center , lightCrystalLights , size2Thrid with dissolve:
-        xpos 0.5 ypos 0.125
+        xpos 0.5 ypos 1.25
         linear 2 xpos 1.0 xalign 1.0
-    show femXerx haremChained mean frown at center , lightCrystalLights , size2Thrid with dissolve:
-        xpos 0.5 ypos 0.125
-    with fade
+    show femXerx haremChained mean frown at center , flipped , lightCrystalLights , size2Thrid with dissolve:
+        xpos 0.5 ypos 1.25
+    
 
     show lizardSuitLadyImg greet happy with dissolve
     lizardSuit "King Balatius!"
-    show lizardSuitLadyImg point with dissolve
+    show lizardSuitLadyImg armoredPointy with dissolve
     lizardSuit "An Astart would like to present you a gift!!"
 
     scene balatiusThroneRoom at truecenter , lightCrystalLights:
@@ -283,11 +305,11 @@ label balaAxeriumSneakyFoZ:
 
     scene balatiusThroneDoor at fullFit , lightCrystalLights
     show lizardSuitLadyImg at right , lightCrystalLights , size2Thrid:
-        ypos 0.125
+        ypos 1.25
     show malikImg greet happy at center , lightCrystalLights , size2Thrid:
-        ypos 0.125
+        ypos 1.25
     show femXerx haremChained mean frown at left , lightCrystalLights , size2Thrid:
-        ypos 0.125
+        ypos 1.25
     with dissolve
     mali "Yes!"
     show malikImg point with dissolve
@@ -325,48 +347,54 @@ label balaAxeriumSneakyFoZ:
         xzoom -1.0 yzoom -1.0
     show balaAxeriumInsideNight at fullFit
     #need to configure in testing
-    show balatiusPalaceCloumnsRepeating at flameLight , halfSize
+    show balatiusPalaceColumns at flameLight , fullFit ,  center
     show malikImg at right , lightCrystalLights , size2Thrid:
         ypos 1.25 xpos 1.5
         linear 2 xpos 1.0
-    show femTesipiz chained nervous frown at left , lightCrystalLights , size2Thrid:
+    show femTesipiz chained nervous frown at left , lightCrystalLights , size2Thrid , flipped:
         ypos 1.25 xpos 0.2
-    show volkara3quat haremChained lineEyes OmegaMouth at left , lightCrystalLights , size2Thrid:
-        ypos 1.25 xpos 0.1
+    show volkara3quat haremChained lineEyes OMegaMouth at left , lightCrystalLights , size2Thrid:
+        ypos 1.3
     with fade
     pause 2
     show malikImg point happy with dissolve
     mali "Now to my place you lovelies."
 
-    show balaAxeriumMalikHideout at fullFit , lightCrystalLights
+    scene balaAxeriumMalikHideout at fullFit , lightCrystalLights
     with fade
-    show malikImg at right , lightCrystalLights with dissolve
-    show femTesipiz at center , lightCrystalLights
-    show volkara3quat harem at left , lightCrystalLights
+    show malikImg at right , size2Thrid , lightCrystalLights , hiddenLegs125 , flipped with dissolve
+    show femTesipiz at center , size2Thrid , lightCrystalLights , flipped , hiddenLegs125
+    show volkara3quat harem at left , size2Thrid , lightCrystalLights , hiddenLegs125
     with dissolve
     show malikImg happy with dissolve
     mali "Now we need you to get you inside the palace." 
     show malikImg point with dissolve
     mali "Use this."
     show malikImg item neutralHappy with dissolve
-    show harpoonLauncherImg with dissolve
-    $ changeByAmount( inventory , harpoonLauncher , 1 ) #the zardonian harpoon launcher
+    show harpoonLauncherImg at size2Thrid with dissolve:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.85 ypos 0.63
+        xzoom -1.0
+        rotate -50
+    $ changeItemAmount( inventory , harpoonLauncher , 1 ) #the zardonian harpoon launcher
     pause 2
     show malikImg happy
     mali "You can grapple to the 2nd floor"
     mali "Then you can find the Anti-Stealth tablet piece."
     mali "You are Balatiu's slave girls, so you should try to act like them."
     hide harpoonLauncherImg 
-    show jamesossianDagger with dissolve
-    show jamesossianDagger as extraStabby with dissolve
+    show jamesossianDagger at truecenter with dissolve:
+        xpos 0.82 ypos 1.07 rotate 180
+    show jamesossianDagger at truecenter as extraStabby with dissolve:
+        xpos 0.87 ypos 1.07 rotate 180
     mali "Take these daggers and hide them, just in case."
 
     hide jamesossianDagger with dissolve
     hide extraStabby with dissolve
-    show femTesipiz point O
+    show femTesipiz point O with dissolve
     tesi "Where??"
 
-    show femTesipiz base neutralHappy
+    show femTesipiz base
     show volkara3quat closedEyes happyMouth
     with dissolve
     volk "You know where."
@@ -381,13 +409,17 @@ label balaAxeriumSneakyFoZ:
     #use punchy it's close enough
     play sound [ punchy , punchy ]
 
-
-    scene balaAxeriumInsideNight at topright
-    show malikImg mean at right , size2Thrid , lightCrystalLights
-    show femTesipiz O at center , size2Thrid , lightCrystalLights
-    show volkara3quat harem deltaMouth at left , size2Thrid , lightCrystalLights
-    show balaAxeriumInsideForground at topright , flameLight
-    with Fade[ 0.5 , 1 , 0.5 ]
+    scene starNightTime at fullFit:
+        xzoom -1.0 yzoom -1.0
+    show balaAxeriumInsideNight at topright:
+        ypos -0.2
+    show malikImg mean at center , thridSize , lightCrystalLights
+    show femTesipiz O at left , thridSize , lightCrystalLights , flipped:
+        xpos 0.25
+    show volkara3quat harem deltaMouth at left , thridSize , lightCrystalLights
+    show balaAxeriumInsideForground at topright , flameLight:
+        ypos -0.2
+    with Fade( 0.5 , 1 , 0.5 )
 
     pause 6
     show malikImg mean O with dissolve
@@ -395,11 +427,13 @@ label balaAxeriumSneakyFoZ:
     show malikImg point with dissolve
     mali "Now!" with vpunch
 
-    scene starNightTime fullFit
+    scene starNightTime at fullFit
+    play sound swooshy
     show balatiusPalace at light2DarkBottom2Top , truecenter:
-        zoom 1.0
-        easeout 6 zoom 3.0
-    pause 6
+        zoom 0.75 ypos 0.5
+        easeout 4 zoom 5.0 ypos 0.0
+    with dissolve
+    pause 3
     jump balaPalace2ndFloor
     #Tesi and Volk grapple to the 2nd floor
     #there will be servents and other slave girls
@@ -463,7 +497,7 @@ label balaPalace2ndFloor:
         call screen playerActions( "They know were imposters. Leave no witnesses!!" , False , False , True , 0 )
 
         menu:
-            "Check the Rooms":
+            "Check the rooms":
                 $ sussyBakaLevel += 2 #maybe more items more sus
                 if sussyBakaLevel > imposterLevel:
                     #Suprized ( neutral , O )
@@ -492,30 +526,32 @@ label balaPalace2ndFloor:
                     play music weOwnedThem fadein 1 fadeout 1
                     queue music sandyMusic
                     scene balatiusPalaceFloor2 at size2Thrid
-                    call showFloor2Doors
+                    call screen showFloor2Doors
             "Go to the mess hall":
                 jump balaPalaceHaremMessHall
             "Go up a floor":
                 jump balaPalace3rdFloor
     else:
         menu:
-            "Check the Rooms":
+            "Check the rooms":
                 scene balatiusPalaceFloor2 at size2Thrid
                 
                 with dissolve
-                scene balatiusPalaceHaremGirlRoom at fullFit
-                call showFloor2Doors
+                #hscene balatiusPalaceHaremGirlRoom at fullFit
+                call screen showFloor2Doors
                 
             "Go to the mess hall":
                 jump balaPalaceHaremMessHall
             "Go up a floor":
                 jump balaPalace3rdFloor
             "Go down a floor":
-                scene balatiusPalaceFloor2 at fullFit 
-                show haremMinobiteImg miniMean O at halfSize , lightCrystalLights , left
-                show haremMinobiteImg miniMean O as extraCowGirl at halfSize , lightCrystalLights , right
+                scene balatiusPalaceFloor2 at truecenter
+                show haremMinobiteImg miniMean frown at halfSize , lightCrystalLights , left:
+                    ypos 1.1
+                show haremMinobiteImg minsiMean frown as extraCowGirl at halfSize , lightCrystalLights , right:
+                    ypos 1.1
                 show haremGuardLady mean annoyed at size2Thrid , lightCrystalLights , center:
-                    ypos 1.2
+                    ypos 1.4
                 with dissolve
                 #harem guards
                 haremGuard "Balatius' slave ladies aren't allowed to leave without his permission."
@@ -567,14 +603,24 @@ label balaPalaceHaremMessHall:
             $ canGetFoodAtMessHall = False
         jump balaPalace2ndFloor
     else:
-        show orodianHaremLady at truecenter , quatSize , lightCrystalLights
+        show orodianHaremLady at truecenter , sixthSize , lightCrystalLights:
+            ypos 0.35
         show balatiusPalaceMessHallForground at fullFit
         with fade
         menu:
             "Get some food" if canGetFoodAtMessHall and sussyBakaLevel < imposterLevel:
+                scene balatiusPalaceMessHall at center:
+                    zoom 1.5 ypos 2.7
+                show orodianHaremLady at center , halfSize , lightCrystalLights
+                    #ypos 0.35
+                show balatiusPalaceMessHallForground at center:
+                    zoom 1.5 ypos 2.7
                 haremCook "You must be new here."
                 haremCook "You must be hungry."
-                haremCook "Here is some food." with fade
+                hide orodianHaremLady
+                show orodianHaremLadyItem at center , halfSize , lightCrystalLights behind balatiusPalaceMessHallForground
+                with dissolve
+                haremCook "Here is some food."
                 $ changeItemAmount( inventory , eggMeatCake , 2 )
                 $ changeItemAmount( inventory , harraFood , 2 )
                 show meatyFishCake at halfSize , lightCrystalLights, truecenter with dissolve:
@@ -585,6 +631,7 @@ label balaPalaceHaremMessHall:
                     xpos 0.6
                 show harraFruit as extraFuirt at halfSize , lightCrystalLights, truecenter with dissolve:
                     xpos 0.8
+
                 "You get 2 Egg Meat Cakes and 2 sets of Harra Fruits."
                 $ canGetFoodAtMessHall = False
 
@@ -600,7 +647,7 @@ label balaPalace3rdFloor:
     #"The floor3"
     $ sussyBakaLevel += determinSussyIncrease( )
     call checkBalaPalaceMusic
-    scene balatiusPalaceFloor3 at fullFit
+    scene balatiusPalaceFloor3 at fullFit with fade
     if checkIfHave( inventory , tabletPieceBal ):
         show haremMinobiteImg O at left , halfSize , lightCrystalLights
         show haremMinobiteImg O as extraBeef at right , halfSize , lightCrystalLights
@@ -844,7 +891,7 @@ label balaBootyRoom:
 
 
 label balaTemple:
-    scene balatiusPalaceTemple with dissolve
+    scene balatiusPalaceTemple at fullFit with dissolve
     #astart priestesss is based here
     $ sussyBakaLevel += determinSussyIncrease( )
     call checkBalaPalaceMusic
@@ -1019,16 +1066,13 @@ label balaPalaceRoof:
 #it should be 
 #screen for imagebutton
 #then a label for it's content
-screen floor2Door1():
-    imagebutton:
-        idle Transform( child="/images/Location Accessories/Floor2HubDoor1.webp" , matrixcolor=BrightnessMatrix(0.0) )
-        hover Transform( child="/images/Location Accessories/Floor2HubDoor1.webp" , matrixcolor=BrightnessMatrix(0.5) )
-        action Jump("floor2Door1Content")
+#screen floor2Door1():
+    
 
 label floor2Door1Content:
-    call hideFloor2Doors
+    #call hideFloor2Doors
     play music ratThonking fadein 1.0 fadeout 1.0
-    scene balatiusPalaceHaremGirlRoom with fade
+    scene balatiusPalaceHaremGirlRoom at fullFit with fade
     if muwaCuddleCounter > 0 and foundMuwa != False:
         show muwaHarem at right , size2Thrid , lightCrystalLights with dissolve:
             ypos 1.25
@@ -1162,7 +1206,7 @@ label floor2Door1Content:
         muwa "Oh."
         show volkara3quat deltaMouth
         show femTesipiz neutral neutralHappy
-        show muwaHarem extraHappy
+        show muwaHarem neutral extraHappy
         with dissolve
         muwa "I hope you get assigned to my room."
         show muwaHarem inviting with dissolve
@@ -1211,18 +1255,15 @@ label floor2Door1Content:
     jump balaPalace2ndFloor
 
 
-screen floor2Door2():
-    imagebutton:
-        idle Transform( child="/images/Location Accessories/Floor2HubDoor2.webp" , matrixcolor=BrightnessMatrix(0.0) )
-        hover Transform( child="/images/Location Accessories/Floor2HubDoor2.webp" , matrixcolor=BrightnessMatrix(0.5) )
-        action Jump("floor2Door2Content")
+#screen floor2Door2():
+    
 
 label floor2Door2Content:
-    call hideFloor2Doors
+    #call hideFloor2Doors
     play music deadCaves fadein 1.0 fadeout 1.0
     #should the other rooms have their own graphic??
     #it will need 2 backgrounds that are similar
-    scene balatiusPalaceHaremGirlRoom2 with fade
+    scene balatiusPalaceHaremGirlRoom2 at fullFit with fade
     show femTesipiz at right , lightCrystalLights , size2Thrid with dissolve:
         ypos 1.25
     show volkara3quat harem at left , lightCrystalLights , size2Thrid with dissolve:
@@ -1259,7 +1300,7 @@ label floor2Door2Content:
             linear 1 xzoom 1.0
         
         show femTesipiz point happy with dissolve
-        tesi "There items in the drawer."
+        tesi "There are items in the drawer."
         show femTesipiz yeah with dissolve
         tesi "Should we take them?"
         show femTesipiz neutralHappy with dissolve
@@ -1330,19 +1371,16 @@ label floor2Door2Content:
                 volk "They might get suspsious if they catch us with too much on us."
     jump balaPalace2ndFloor
 
-screen floor2Door3():
-    imagebutton:
-        idle Transform( child="/images/Location Accessories/Floor2HubDoor3.webp" , matrixcolor=BrightnessMatrix(0.0) )
-        hover Transform( child="/images/Location Accessories/Floor2HubDoor3.webp" , matrixcolor=BrightnessMatrix(0.5) )
-        action Jump("floor2Door3Content")
+#screen floor2Door3():
+    
 
 label floor2Door3Content:
     #make a background for it but use muwa's room as a placeholder?
-    call hideFloor2Doors
-    scene balatiusPalaceHaremGirlRoom3 with fade
-    show haremHealerImgMad at left , size2Thrid , lightCrystalLights
-    show orodianHaremLadyMad at center , size2Thrid , lightCrystalLights
-    show lizardbiteHaremAngry at right , size2Thrid , lightCrystalLights
+    #call hideFloor2Doors
+    scene balatiusPalaceHaremGirlRoom3 at fullFit with fade
+    show haremHealerImgMad at left , size2Thrid , lightCrystalLights , hiddenLegs125
+    show orodianHaremLadyMad at center , size2Thrid , lightCrystalLights , hiddenLegs125
+    show lizardbiteHaremAngry at right , size2Thrid , lightCrystalLights , hiddenLegs125
     with dissolve
     haremLadies "Who are you?"
     haremLadies "Are you new here?"
@@ -1352,14 +1390,29 @@ label floor2Door3Content:
     haremLadies "She'll assign you a room."
     jump balaPalace2ndFloor
 
-label hideFloor2Doors:
-    hide screen floor2Door1
-    hide screen floor2Door2
-    hide screen floor2Door3
-    return
+#label hideFloor2Doors:
+#    hide screen floor2Door1
+#    hide screen floor2Door2
+#    hide screen floor2Door3
+#    return
 
-label showFloor2Doors:
-    show screen floor2Door1
-    show screen floor2Door2
-    show screen floor2Door3
-    return
+screen showFloor2Doors():
+    imagebutton:
+        idle Transform( child="/images/Location Accessories/Floor2HubDoor3.webp" , matrixcolor=BrightnessMatrix(0.0) , zoom = 0.67 )
+        hover Transform( child="/images/Location Accessories/Floor2HubDoor3.webp" , matrixcolor=BrightnessMatrix(0.5) , zoom = 0.67 )
+        focus_mask True
+        action Jump("floor2Door3Content")
+    imagebutton:
+        idle Transform( child="/images/Location Accessories/Floor2HubDoor2.webp" , matrixcolor=BrightnessMatrix(0.0) , zoom = 0.67 )
+        hover Transform( child="/images/Location Accessories/Floor2HubDoor2.webp" , matrixcolor=BrightnessMatrix(0.5) , zoom = 0.67 )
+        focus_mask True
+        action Jump("floor2Door2Content")
+    imagebutton:
+        idle Transform( child="/images/Location Accessories/Floor2HubDoor1.webp" , matrixcolor=BrightnessMatrix(0.0) , zoom = 0.67  )
+        hover Transform( child="/images/Location Accessories/Floor2HubDoor1.webp" , matrixcolor=BrightnessMatrix(0.5) , zoom = 0.67  )
+        focus_mask True
+        action Jump("floor2Door1Content")
+    #show screen floor2Door1
+    #show screen floor2Door2
+    #show screen floor2Door3
+    #return

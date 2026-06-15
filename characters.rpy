@@ -53,6 +53,7 @@ define trim = Character("Trimdius" , color = "#007e4e")
 #Axeria/Xartabana/Atazera's Realm
 define ataz = Character("Atazera" , color = "#07553b")
 define mali = Character("Malik" , color= "#077777")
+define axCam = Character("Axerian Camel Rider" , color="#070")
 
 #need a shop for Xartabana - Axerian most likely
 
@@ -113,8 +114,14 @@ define astartFemSum1 = Character("Lukina" , color = "#000c51")
 define captainHuksosy = Character("Captain Huksos" , color = "#6c2800")
 define dido = Character( "Captain Dido" )
 define balatianGoon = Character( "Balatian Guard" , color="#444400")
-define lizardSuit = Character( "Lizard Suit Warrior" , color="#888800")
+define lizardSuit = Character( "Lizard Suit Warrior" , color="#4b4b00")
 define haremGuard = Character( "Harem Guard" , color="#aa0088")
+define haremWhip = Character( "Harem Whippa" , color="#9c8d00")
+define haremHeal = Character( "Harem Healer" , color="#c08")
+define haremCook = Character( "Harem Cook" , color = "#88004f")
+define haremSsatu = Character( "Ssatu Harem Lady" , color="#222")
+define haremLadies = Character( "Harem Ladies" , color = "#64002a")
+define haremSum = Character( "Harem Preistess" , color = "#cc008b" )
 define minotuarMan = Character( "Minobite" , color = "#550")
 define astartGoon = Character( "Astart Warrior" , color = "#cc008b")
 
