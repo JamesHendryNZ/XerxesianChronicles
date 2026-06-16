@@ -465,37 +465,50 @@ label balaPalace2ndFloor:
     call checkBalaPalaceMusic
     scene balatiusPalaceFloor2 at fullFit with fade
     if checkIfHave( inventory , tabletPieceBal ):
-        show balaAstartWhippaLady armed angry at halfSize , lightCrystalLights , center:
-            xpos 0.3
-        show haremHealerImgMad at halfSize , lightCrystalLights , center:
-            xpos 0.7
-        show haremGuardLady mean angry at halfSize , lightCrystalLights , right
-        show haremGuardLady mean angry as extraHarem at halfSize , lightCrystalLights , left
-        show lizardSuitLadyImg point mean angry at size2Thrid , lightCrystalLights , center
-        
+        scene balatiusPalaceFloor2 at center 
+        show balaAstartWhippaLady armed angry at halfSize , lightCrystalLights , left:
+            xpos -0.1
+        show haremHealerImgMad at halfSize , lightCrystalLights , right:
+            xpos 1.1
+        show haremGuardLady mean angry at halfSize , lightCrystalLights , center:
+            xpos 0.3 ypos 1.05
+        show haremGuardLady mean angry as extraHarem at halfSize , lightCrystalLights , left:
+            xpos 0.5 ypos 1.05
+        show lizardSuitLadyImg pointy mean angry at size2Thrid , lightCrystalLights , center:
+            ypos 1.25
+        with dissolve
         "They're trying to escape with that artifact!!"
+        show lizardSuitLadyImg attack with dissolve
         "Get them!!" with vpunch
         $ enemyTroopers = [ copy.copy(astartHealer) , copy.copy(haremWarrior) , copy.copy(lizardSuitF) , copy.copy(haremWarrior) , copy.copy(astartHaremWhippa) , copy.copy(haremWarrior) ]
         #battle
+        scene balatiusPalaceFloor2 at left, size2Thrid with dissolve:
+            xzoom 1.25
         call screen playerActions( "Push through King Balatius' Harem Guard!!" , False , False , True , 0 )
         jump balatiusFoz #go to Balatius
     elif desgueFoiled:
-        show balaAstartWhippaLady armed angry at halfSize , lightCrystalLights , center:
-            xpos 0.3
-        show haremHealerImgMad at halfSize , lightCrystalLights , center:
-            xpos 0.8
+        scene balatiusPalaceFloor2 at center
+        show balaAstartWhippaLady armed angry at halfSize , lightCrystalLights , left:
+            xpos -0.1
+        show haremHealerImgMad at halfSize , lightCrystalLights , right:
+            xpos 1.1
         show haremGuardLady mean angry at halfSize , lightCrystalLights , center:
-            xpos 0.4
+            xpos 0.3 ypos 1.05
         show haremGuardLady mean angry as extraHarem at halfSize , lightCrystalLights , left:
-            xpos 0.6
-        show lizardSuitLadyImg point mean angry at size2Thrid , lightCrystalLights , center:
+            xpos 0.5 ypos 1.05
+        show lizardSuitLadyImg pointy mean angry at size2Thrid , lightCrystalLights , center:
             ypos 1.25
+        with dissolve
         lizardSuit "They're making their way to where Balatius is!!"
+        show lizardSuitLadyImg attack with dissolve
         lizardSuit "Get them!!" with vpunch
         $ enemyTroopers = [ copy.copy(astartHealer) , copy.copy(haremWarrior) , copy.copy(lizardSuitF) , copy.copy(haremWarrior) , copy.copy(astartHaremWhippa) , copy.copy(haremWarrior) ]
         #battle
+        scene balatiusPalaceFloor2 at left, size2Thrid with dissolve:
+            xzoom 1.25
         call screen playerActions( "They know were imposters. Leave no witnesses!!" , False , False , True , 0 )
 
+        scene balatiusPalaceFloor2 at fullFit with dissolve
         menu:
             "Check the rooms":
                 $ sussyBakaLevel += 2 #maybe more items more sus
@@ -520,11 +533,9 @@ label balaPalace2ndFloor:
                     minotuarMan "GET THEM!!"
                     $ desgueFoiled = True
                     $ enemyTroopers = [ copy.copy( haremLizard ) , copy.copy( batbiteSpearGirl ) , copy.copy( minobiteGreatAxLady ) , copy.copy( minobiteGreatAxLady ) , copy.copy( haremLizard ) ]
-                    play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
-                    queue music fightingCommon 
+
                     call screen playerActions( "They found us out! Kill them!!" , False , False , True , 0 )
-                    play music weOwnedThem fadein 1 fadeout 1
-                    queue music sandyMusic
+
                     scene balatiusPalaceFloor2 at size2Thrid
                     call screen showFloor2Doors
             "Go to the mess hall":
@@ -548,7 +559,7 @@ label balaPalace2ndFloor:
                 scene balatiusPalaceFloor2 at truecenter
                 show haremMinobiteImg miniMean frown at halfSize , lightCrystalLights , left:
                     ypos 1.1
-                show haremMinobiteImg minsiMean frown as extraCowGirl at halfSize , lightCrystalLights , right:
+                show haremMinobiteImg miniMean frown as extraCowGirl at halfSize , lightCrystalLights , right:
                     ypos 1.1
                 show haremGuardLady mean annoyed at size2Thrid , lightCrystalLights , center:
                     ypos 1.4
@@ -577,10 +588,11 @@ label balaPalaceHaremMessHall:
             xpos 0.6
         show haremHealerImgMad at center , size2Thrid , lightCrystalLights:
             xpos 0.25 ypos 1.25
-        show balaAstartWhippaLady arms angry at center , size2Thrid , lightCrystalLights:
+        show balaAstartWhippaLady armed angry at center , size2Thrid , lightCrystalLights:
             xpos 0.75 ypos 1.25
         with fade
         haremWhip "Get those Jamesians!!" with vpunch
+        scene balatiusPalaceMessHall at center , size2Thrid
         $ enemyTroopers = [ copy.copy( haremLizard ) , copy.copy( haremLizard ) , copy.copy( haremWarrior) , copy.copy( astartHaremWhippa ) , copy.copy( haremWarrior ) , copy.copy( batbiteSpearGirl ) ]
         play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
         queue music fightingCommon 
@@ -608,7 +620,7 @@ label balaPalaceHaremMessHall:
         show balatiusPalaceMessHallForground at fullFit
         with fade
         menu:
-            "Get some food" if canGetFoodAtMessHall and sussyBakaLevel < imposterLevel:
+            "Get some food" if canGetFoodAtMessHall:
                 scene balatiusPalaceMessHall at center:
                     zoom 1.5 ypos 2.7
                 show orodianHaremLady at center , halfSize , lightCrystalLights
@@ -649,54 +661,61 @@ label balaPalace3rdFloor:
     call checkBalaPalaceMusic
     scene balatiusPalaceFloor3 at fullFit with fade
     if checkIfHave( inventory , tabletPieceBal ):
-        show haremMinobiteImg O at left , halfSize , lightCrystalLights
-        show haremMinobiteImg O as extraBeef at right , halfSize , lightCrystalLights
+        scene balatiusPalaceFloor3 at truecenter
+        show haremMinobiteImg O at left , halfSize , lightCrystalLights:
+            xpos -0.25
+        show haremMinobiteImg O as extraBeef at right , halfSize , lightCrystalLights:
+            xpos 0.9
         show lizardSuitLadyImg mean O at center , size2Thrid , lightCrystalLights:
-            ypos 1.25 xpos 0.4
+            ypos 1.25 xpos 0.25
         show lizardSuitLadyImg pointy mean O as extraScales at center , size2Thrid , lightCrystalLights:
-            ypos 1.25 xpos 0.4
+            ypos 1.25 xpos 0.5
         
         with fade
         "What's that?"
         show haremMinobiteImg mean frown
-        show extraBeef mean frown
-        show extraScales angry
+        show haremMinobiteImg mean frown as extraBeef
+        show lizardSuitLadyImg angry as extraScales
         with dissolve 
         "Why are you armed."
-        show extraScales delta with dissolve
+        show lizardSuitLadyImg delta as extraScales with dissolve
+        stop music fadeout 1.0
         "..."
-        show extraScales
-        show extraScales attack angry
+        play music tentionTime fadein 1.0 fadeout 1.0
+        show lizardSuitLadyImg attack angry as extraScales behind lizardSuitLadyImg
         with dissolve
         "JAMESIAN ASSASSINS HAVE INFILTRATED THE PALACE!!" with hpunch
         #$ balaAlerted = True this may nt be needed
-        scene balatiusPalaceFloor3 at fullFit with dissolve
+        scene balatiusPalaceFloor3 at left, size2Thrid with dissolve:
+            xzoom 1.25
         $ desgueFoiled = True
         $ enemyTroopers = [ copy.copy(minobiteGreatAxLady) , copy.copy(lizardSuitF) , copy.copy(lizardSuitF) , copy.copy(minobiteGreatAxLady) ]
-        play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
-        queue music fightingCommon 
+
         call screen playerActions( "Defeat these harem warriors!" , False , False , True , 0 )
-        play music weOwnedThem fadein 1 fadeout 1
-        queue music sandyMusic
-        scene balatiusPalaceFloor2 at size2Thrid
+
+        scene balatiusPalaceFloor3 at size2Thrid with dissolve
         #battle time
     elif desgueFoiled:
-        
-        show haremMinobiteImg mean angry
-        show haremMinobiteImg mean angry as extraBeef
-        show lizardSuitLadyImg attack mean angry
-        show lizardSuitLadyImg pointy mean angry as extraScales
+        scene balatiusPalaceFloor3 at truecenter
+        show haremMinobiteImg mean angry at left , halfSize , lightCrystalLights:
+            xpos -0.25
+        show haremMinobiteImg mean angry as extraBeef at right , halfSize , lightCrystalLights:
+            xpos 0.9
+        show lizardSuitLadyImg attack mean angry at center , size2Thrid , lightCrystalLights:
+            ypos 1.25 xpos 0.25
+        show lizardSuitLadyImg pointy mean angry as extraScales at center , size2Thrid , lightCrystalLights:
+            ypos 1.25 xpos 0.5
         with fade
         lizardSuit "It's the Jamesian spies"
-        show lizardSuitLadyImg attack with dissolve
+        show lizardSuitLadyImg attack as extraScales behind lizardSuitLadyImg with dissolve
         lizardSuit "GET THEM!!" with hpunch
-        scene balatiusPalaceFloor3 at fullFit with dissolve
-        play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
-        queue music fightingCommon 
+        scene balatiusPalaceFloor3 at left, size2Thrid with dissolve:
+            xzoom 1.25
+
+        $ enemyTroopers = [ copy.copy(minobiteGreatAxLady) , copy.copy(lizardSuitF) , copy.copy(lizardSuitF) , copy.copy(minobiteGreatAxLady) ]
         call screen playerActions( "Defeat these harem warriors!" , False , False , True , 0 )
-        play music weOwnedThem fadein 1 fadeout 1
-        queue music sandyMusic
-        scene balatiusPalaceFloor2 at size2Thrid
+
+        scene balatiusPalaceFloor3 at size2Thrid with dissolve
         #battletime
     menu:
         "Go down a level":
@@ -708,7 +727,8 @@ label balaPalace3rdFloor:
         
 
 label balaBedroom:
-    scene clearDayTime at fullFit , topShineGradient
+    scene clearDayTime at fullFit:
+        matrixcolor TintMatrix("005") * BrightnessMatrix (-0.3)
     show balatiusBedroom at fullFit
     with fade
     menu:
@@ -739,17 +759,19 @@ label balaBedroom:
 
             scene clearDayTime at fullFit , topShineGradient
             show balatiusBedroom at fullFit
-            show femTesipiz nervous O at left , size2Thrid , lightCrystalLights:
+            show femTesipiz nervous O at left , size2Thrid , lightCrystalLights , flipped:
                 ypos 1.25
             show volkara3quat harem lineEyes OMouth at right , size2Thrid , lightCrystalLights:
                 ypos 1.25 xalign 1.0
-                linear 2 xalign 0.5
-            show balaAstartWhippaLady annoyed
+                linear 2 xalign 0.5 xpos 0.33
+            show balaAstartWhippaLady annoyed at right , size2Thrid  , hiddenLegs125:
+                xpos 1.5
+                linear 2 xpos 1.2
             with dissolve
-            haremWhip "Hey."
-            show balaAstartWhippa angry with dissolve
+            haremWhip "Hey!"
+            show balaAstartWhippaLady angry with dissolve
             haremWhip "You're not supposed to be here."
-            show balaAstartWhippa armed with dissolve
+            show balaAstartWhippaLady armed with dissolve
             haremWhip "Now leave before I whip you!"
             jump balaPalace3rdFloor
             
@@ -759,9 +781,9 @@ label balaBedroom:
                 play sound littleDoorLocked
                 queue sound openLidNoHinge
                 pause 1
-                show femTesipiz happy  at left , size2Thrid , lightCrystalLights:
+                show femTesipiz happy  at center , size2Thrid , lightCrystalLights:
                     ypos 1.25
-                show volkara3quat at right , size2Thrid , lightCrystalLights:
+                show volkara3quat harem at right , size2Thrid , lightCrystalLights , flipped:
                     ypos 1.25
                 tesi "Opened"
                 show femTesipiz mean extraHappy with dissolve
@@ -773,12 +795,13 @@ label balaBedroom:
                 queue sound littleDoorLocked
                 show femTesipiz nervous at right , size2Thrid , lightCrystalLights:
                     ypos 1.25
-                show volkara3quat harem meanEyes deltaMouth at left , size2Thrid , lightCrystalLights:
+                show volkara3quat harem meanEyes deltaMouth at center, flipped , size2Thrid , lightCrystalLights:
                     ypos 1.25
                 volk "It's locked."
                 volk "We need to find the key somewhere."
                 tesi "Hopefully it isn't on Balatius."
             $ sussyBakaLevel += 3
+            jump balaPalace3rdFloor
         "Leave":
             jump balaPalace3rdFloor
 
@@ -833,24 +856,24 @@ label balaBootyRoom:
     show femTesipiz yeah extraHappy with dissolve
     tesi "Should we take it?"
     
-    show volkara34Happy haremPointy meanEyes deltaMouth
+    show volkara3quat haremPointy meanEyes deltaMouth
     show femTesipiz base O nervous
     with dissolve
     volk "No."
     show volkara3quat harem OMegaMouth with dissolve
     volk "Not yet."
 
-    show volkara3quat haremPointy neutralHappy happyMouth
+    show volkara3quat haremPointy normalEyes happyMouth
     show femTesipiz neutralHappy neutral
     with dissolve
     volk "We need to find the tablet piece first."
 
     play sound openLidNoHinge
     queue sound  [ rammage , closeLidNoHinge ]
-    with Fade( 0.5 , 2 0.5 )
+    with Fade( 0.5 , 2 , 0.5 )
     show volkara3quat OMegaMouth with dissolve
     volk "Oh.."
-    show stoneTabletBala with dissolve
+    show stoneTabletBala at truecenter with dissolve
     volk "A weird stone map."
     volk "It seems shattered."
     volk "And looks similat to artifact in the documentation."
@@ -923,7 +946,7 @@ label balaTemple:
             show haremSummonerImg blush horny -magic with dissolve
             haremSum "Prepare to become broken slaves!!"
             
-            scene balatiusPalaceTemple with dissolve
+            scene balatiusPalaceTemple at center , size2Thrid with dissolve
             $ enemyTroopers = [ copy.copy( minobiteGreatAxLady ) , copy.copy( haremSummoner ) , copy.copy( minobiteGreatAxLady ) ]
             play music "<to 4>audio/music/Xerxesian Battle1.ogg"
             queue music fightingCommon
@@ -948,86 +971,93 @@ label balaTemple:
                 "Go to the 3rd Floor Hallway.":
                     jump balaPalace3rdFloor
         else:
+            
+            pause 3    
+            scene balatiusPalaceTemple with dissolve:
+                xalign 0.0 yalign 1.0
+                linear 8 xalign 1.0
+                linear 8 xalign 0.5 yalign 0.6
+            pause 15
+            show haremSummonerImg O at center , size2Thrid , lightCrystalLights with dissolve:
+                ypos 1.25
+            haremSum "I haven't seen you two before"
+
+            show haremSummonerImg happy with dissolve
+            haremSum "You must be new slave girls."
+            show haremSummonerImg summoning horny blush with dissolve
+            haremSum "Soon you will be stuffed with the servants of Astarte's essence."
+            show haremSummonerImg neutral happy -blush with dissolve
+            haremSum "When that happens."
+            show haremSummonerImg base with dissolve
+            haremSum "I'll assign you a room."
+            
+            #they have knives in their minges, they will be discovered if they bone.
+            #malik could not have them hide daggers in there.
+            if sussyBakaLevel > imposterLevel:
+                show haremSummonerImg O with dissolve
+                stop music fadeout 0.5
+                haremSum "Wait...."
+                show haremSummonerImg mean with dissolve
+                haremSum "You have alot of items on you."
+                haremSum "..."
+                play music tentionTime fadein 1.0 fadeout 1.0
+                show haremSummonerImg angry with dissolve
+                haremSum "You're not slave girls."
+                show haremSummonerImg knife with dissolve
+                haremSum "You're theives and or assassins!!"
+                with vpunch
+
+                #"she summons minobites" #make summoning 
+                show haremSummonerImg summoning with dissolve
+                show haremSummonerImg magic with dissolve:
+                    xalign 0.5 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                    linear 2 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                    linear 1 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.25)
+                    linear 2 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                    linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                pause 1
+                play sound bigPizyu
+                show haremMinobiteImg mean angry at left , size08 behind haremSummonerImg with dissolve:
+                    xpos -0.15 zoom 0.67 ypos 1.1 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                    linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                pause 1
+                play sound bigPizyu
+                show haremMinobiteImg mean angry as extraBeef at right , size08 behind haremSummonerImg with dissolve:
+                    xpos 1.25 zoom 0.67 ypos 1.1 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
+                    linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
+                pause 2
+                show haremSummonerImg mean happy -magic with dissolve
+                haremSum "Well!"
+                show haremSummonerImg horny with dissolve
+                haremSum "Not yet anyway!"
+                show haremSummonerImg closed
+                haremSum "Khakhah!"
+                show haremMinobiteImg neutralHappy
+                show haremMinobiteImg mean neutralHappy as extraBeef at right , size08 behind haremSummonerImg:
+                    xpos 1.25 zoom 0.67 ypos 1.1 
+                show haremSummonerImg knife horny blush 
+                with dissolve 
+                haremSum "Time to get broken!!"
+                #battle happends
+                #looting happends
+                $ desgueFoiled = True
+                scene balatiusPalaceTemple at center , size2Thrid with dissolve
+                $ enemyTroopers = [ copy.copy( minobiteGreatAxLady ) , copy.copy( haremSummoner ) , copy.copy( minobiteGreatAxLady ) ]
+                play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+                queue music fightingCommon
+                call screen playerActions( "You won't make slaves out of us!" , False , False , True , 0 )
+                play music weOwnedThem fadein 1 fadeout 1
+                queue music sandyMusic
+
+                show haremSummonerImg summoning closed O at size2Thrid , angryColored , center with dissolve:
+                    ypos 1.25
+                    easeout 3 rotate -90 ypos 2.5
+                
+                pause 2
+                play extraSound bloodySlam
+                $ haremSummonerAlive = False
+                with vpunch
             menu:
-                "Investigate Objects":
-                    scene balatiusPalaceTemple with dissolve:
-                        xalign 0.0 yalign 1.0
-                        linear 5 xalign 1.0
-                        linear 5 xalign 0.5 yalign 0.6
-                    pause 10
-                    show haremSummonerImg O at center , size2Thrid , lightCrystalLights with dissolve:
-                        ypos 1.25
-                    haremSum "I haven't seen you two before"
-
-                    show haremSummonerImg happy with dissolve
-                    haremSum "You must be new slave girls."
-                    show haremSummonerImg summoning horny blush with dissolve
-                    haremSum "I guess soon you will be stuffed with the servants of Astarte's essence soon"
-                    show haremSummonerImg neutral happy -blush with dissolve
-                    haremSum "When that happens."
-                    show haremSummonerImg base with dissolve
-                    haremSum "I'll assign you a room."
-                    
-                    #they have knives in their minges, they will be discovered if they bone.
-                    #malik could not have them hide daggers in there.
-                    if sussyBakaLevel > imposterLevel:
-                        show haremSummonerImg O with dissolve
-                        haremSum "Wait...."
-                        show haremSummonerImg mean with dissolve
-                        haremSum "You have alot of items on you."
-                        haremSum ""
-                        show haremSummonerImg angry with dissolve
-                        haremSum "You're not slave girls."
-                        show haremSummonerImg knife with dissolve
-                        haremSum "You're theives and or assassins!!"
-                        with vpunch
-
-                        "she summons minobites" #make summoning 
-                        show haremSummonerImg summoning with dissolve
-                        show haremSummonerImg magic with dissolve:
-                            xalign 0.5 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
-                            linear 2 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
-                            linear 1 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.25)
-                            linear 2 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
-                            linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
-                        pause 2
-                        play sound bigPizyu
-                        show haremMinobiteImg mean angry with Dissolve:
-                            xalign 0.0 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
-                            linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
-                        pause 1
-                        play sound bigPizyu
-                        show haremMinobiteImg mean angry with Dissolve:
-                            xalign 1.0 ypos 1.25 zoom 0.67 matrixcolor TintMatrix("#ffff00") * BrightnessMatrix (0.5)
-                            linear 2 matrixcolor TintMatrix("#ffffd0") * BrightnessMatrix (0.0)
-                        pause 2
-                        show haremSummonerImg mean happy -magic with dissolve
-                        haremSum "Well!"
-                        show haremSummonerImg horny with dissolve
-                        haremSum "Not yet anyway!"
-                        show haremSummonerImg closed
-                        haremSum "Khakhah!"
-                        show haremSummonerImg knife horny blush with dissolve 
-                        haremSum "Time to get broken!!"
-                        #battle happends
-                        #looting happends
-                        $ desgueFoiled = True
-                        scene balatiusPalaceTemple with dissolve
-                        $ enemyTroopers = [ copy.copy( minobiteGreatAxLady ) , copy.copy( haremSummoner ) , copy.copy( minobiteGreatAxLady ) ]
-                        play music "<to 4>audio/music/Xerxesian Battle1.ogg"
-                        queue music fightingCommon
-                        call screen playerActions( "You won't make slaves out of us!" , False , False , True , 0 )
-                        play music weOwnedThem fadein 1 fadeout 1
-                        queue music sandyMusic
-
-                        show haremSummonerImg summoning closed O at size2Thrid , angryColored , center with dissolve:
-                            ypos 1.25
-                            easeout 5 rotate -90 ypos 1.4
-                        
-                        pause 4
-                        play extraSound bloodySlam
-                        $ haremSummonerAlive = False
-                        with vpunch
                 "Go to the roof":
                     jump balaPalaceRoof
                 "Go to the 3rd Floor Hallway.":
@@ -1152,13 +1182,13 @@ label floor2Door1Content:
         volk "But you're fluffy."
 
         show volkara3quat harem deltaMouth
-        show femTesipiz pointy sad O
+        show femTesipiz point sad O
         with dissolve
         tesi "This place is big"
         show femTesipiz neutral with dissolve
         tesi "Any hints with navigating this place."
 
-        show femtesipiz base
+        show femTesipiz base
         show muwaHarem base O 
         with dissolve
         muwa "The Harem Priesstess is on the 3rd floor."
@@ -1269,7 +1299,7 @@ label floor2Door2Content:
     show volkara3quat harem at left , lightCrystalLights , size2Thrid with dissolve:
         ypos 1.25
     if gotFloor2Items:
-        show volkara3quat haremPoint OMouth with dissolve
+        show volkara3quat haremPointy OMouth with dissolve
         "We've taken all the items here"
         show volkara3quat sadEyes with dissolve
         "I hope the other girls don't notice"
@@ -1278,7 +1308,7 @@ label floor2Door2Content:
         #the hidden weapons will help if they get caught early?
         #although I could test to see how well they can right unarmed?
         show femTesipiz point happy
-        show volkara3quat harem neutralEyes
+        show volkara3quat harem normalEyes
         with dissolve
         "This is probably our assigned room."
         show volkara3quat neutralHappyMouth

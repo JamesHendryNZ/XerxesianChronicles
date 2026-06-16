@@ -28,6 +28,10 @@ init python:
                 applied2.health += effect.effectPower
                 renpy.sound.play("audio/sound effects/PowerUp.ogg")
                 message2Say.append( f"The { effect.effectItem } heals { applied2.name } for { effect.effectPower } health." )
+                
+                if applied2.health > applied2.hitpoints:
+                    applied2.health = applied2.hitpoints
+
             elif effect.effectName == "Burning": #Fire logo
                 applied2.health -= effect.effectPower
                 renpy.sound.play("audio/sound effects/burning.ogg")

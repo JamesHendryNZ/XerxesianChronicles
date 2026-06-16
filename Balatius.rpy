@@ -3,11 +3,17 @@ default timeB4TesiAndVolk = 60
 default balatiusBonikStage = 0
 
 label disarmTheCrewBeforeBalatius:
-    "s"
+    #"s"
+    #update the characters armorsets to avoid out of Index error on saves from older versions
+    $ xerxesCharacter.armors = xerxesArmorSets
+    $ tesipizCharacter.armors = tesipizArmorSets
+    $ volkaraCharacter.armors = volkaraArmorSets
+
     $ xerxesCharacter.weapon = noMelee #too dangerous to sneak with anything and he is using the SoAM binding abiltiy to teleport it to his hand
     $ xerxesCharacter.rangedWeapon = noRanged
     $ xerxesCharacter.mount = noMount
     #change armor to harem lady form
+    $ xerxesCharacter.updateArmor(8)
     $ xerxesCharacter.updateStats()
 
 
@@ -15,12 +21,14 @@ label disarmTheCrewBeforeBalatius:
     $ tesipizCharacter.mount = noMount 
     #change armor to harem lady form
     #as tesipiz has a male arena battle outfit of the same stats
+    $ tesipizCharacter.updateArmor(8)
     $ tesipizCharacter.updateStats()
 
 
     $ volkaraCharacter.weapon = jamesianDagger
     $ volkaraCharacter.rangedWeapon = noRanged
     $ volkaraCharacter.mount = noMount
+    $ volkaraCharacter.updateArmor(8)
     #change armor to harem lady suit 
     $ volkaraCharacter.updateStats()
     return
@@ -46,9 +54,10 @@ label returnEquptment:
 
 label balatiusFoz:
 
+    $ currentParty = [ xerxesCharacter ]
     play music balatiusBattlePhase1 fadein 1.0 fadeout 1.0
-    scene balatiusThroneRoom at fullFit , lightCrystalLights with fade
-    "meanwhile"
+    scene balatiusThroneRoom at truecenter, halfSize , lightCrystalLights with fade
+    "Meanwhile"
     
     
     show balatiusPullMid at halfSize , lightCrystalLights with dissolve

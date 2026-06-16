@@ -1370,6 +1370,7 @@ image greenKey = "images/items/keysZwotiSoAM.webp"
 image yellowKey = "images/items/keyKworitxSoAM.webp"
 image redKey = "images/items/keyTakuriumSoAM.webp"
 image kwortixGenericKeyz = "images/items/keysKwortixGeneric.webp"
+image keyBalatium = "images/items/keyBalatium.webp"
 image bombChemicals = "images/items/bombKitYellow.webp"
 
 image goldRimShield = "images/weapons armor and shields/jamesian Shield Xerxes2.webp"
@@ -2109,7 +2110,7 @@ image batbiteImg = "images/Enemies/astartes goons/batbite.webp"
 image batbiteFlyImg = "images/Enemies/astartes goons/batbite flying.webp"
 
 image batbitegirlImg = "images/Enemies/astartes goons/Batbite harem spear.webp"
-image batbiteGirlMad = Composite( ( 1000, 1600 ), (0,0) , "images/Enemies/astartes goons/batbite.webp" , (0,0) , "images/Enemies/astartes goons/Batbite harem spear Angry.webp" )
+image batbiteGirlMad = Composite( ( 1000, 1600 ), (0,0) , "images/Enemies/astartes goons/Batbite harem spear.webp" , (0,0) , "images/Enemies/astartes goons/Batbite harem spear Angry.webp" )
 image batbitegirlFlyImg = "images/Enemies/astartes goons/Batbite harem spear flying.webp"
 
 #animal Monsters

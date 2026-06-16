@@ -864,20 +864,16 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                                             $ badTroopersAlive = False
                                 else:
                                     "[currentTrooper.name] gives [chosenDude.name] a [ nameOfEffectingItem ]"
-                                
+
                                 $ j+= 1
                             $ k+= 1
                     #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
                     elif ( isinstance( enemyTroopers[ i ] , SummonerFoe ) or isinstance( enemyTroopers[ i ] , PatterenFoe ) ) and len(enemyTroopers) < goonsAllowed and enemyTroopers[ i ].canSummon:
                         $ enemyTroopers[ i ].summonTroopers( goonsAllowed , enemyTroopers )
                         play sound bigPizyu
                         "[currentFoe.name] Summons new troops."
 
                     else:
-                        
-                           
-                        
                         $ targetNumber = renpy.random.randint( 0 , len(targetiblePlayers)-1)
                         $ targetPlayer = targetiblePlayers[ targetNumber ]
                         

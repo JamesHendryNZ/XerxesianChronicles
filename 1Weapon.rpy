@@ -31,6 +31,6 @@ define jamesianSword = Weapon ( False , True , 3 , 6 , "Common" , "Sword" , "ima
 define jamesianLongSword = Weapon ( False , True , 3 , 8 , "Common" , "Long Sword" , "images/weapons armor and shields/jamesian Longsword.webp")
 define pashidianAx = Weapon ( False , True , 8 , 6 , "Common" , "Pashidian Axe" , "images/weapons armor and shields/pashidian axe.webp")
 define compositeBow = Weapon ( True , True , 2 , 12 , "Bow" , "Composite Bow" , "images/weapons armor and shields/Composite Bow.webp")
-define jamesianDagger = Weapon ( False , True , 12 , 2 , "Common" , "Dagger" , "images/weapons armor and shields/jamesian Dagger.webp")
+define jamesianDagger = Weapon ( False , True , 8 , 2 , "Common" , "Dagger" , "images/weapons armor and shields/jamesian Dagger.webp")
 define swordOfAhuraMazda = Weapon ( False , True , 6 , 10 , "SoAM" , "The Sword of Ahura-Mazda" , "images/weapons armor and shields/Sword of Ahura-Mazda.webp")
 define dartShooterGun = Weapon ( True , True , 0 , 5 , "DartShooter" , "Dart Shooter" , "images/weapons armor and shields/Dart Shooter Gun.webp")
