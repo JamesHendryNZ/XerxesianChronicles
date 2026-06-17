@@ -1,6 +1,8 @@
 #the battle happends when 
 default timeB4TesiAndVolk = 60 
 default balatiusBonikStage = 0
+default spareInventory = []
+default balatiusBattleMan = copy.copy( balatiusFight )
 
 label disarmTheCrewBeforeBalatius:
     #"s"
@@ -9,7 +11,7 @@ label disarmTheCrewBeforeBalatius:
     $ tesipizCharacter.armors = tesipizArmorSets
     $ volkaraCharacter.armors = volkaraArmorSets
 
-    $ xerxesCharacter.weapon = noMelee #too dangerous to sneak with anything and he is using the SoAM binding abiltiy to teleport it to his hand
+    $ xerxesCharacter.weapon = ballAndChain #it's chained to "her" neck so it can be used as a weapon
     $ xerxesCharacter.rangedWeapon = noRanged
     $ xerxesCharacter.mount = noMount
     #change armor to harem lady form
@@ -58,7 +60,8 @@ label balatiusFoz:
     play music balatiusBattlePhase1 fadein 1.0 fadeout 1.0
     scene balatiusThroneRoom at truecenter, halfSize , lightCrystalLights with fade
     "Meanwhile"
-    
+    $ spareInventory = inventory
+    $ inventory = []
     
     show balatiusPullMid at halfSize , lightCrystalLights with dissolve
     bala "You've still have some fight in you."
@@ -73,7 +76,7 @@ label balatiusFoz:
     #a pulling minigame similar to xerxes riding modonon
 
     #maybe anther piece of muisic for him
-    play music fightingDaBoss fadein 1.0 fadeout 1.0
+    #play music fightingDaBoss fadein 1.0 fadeout 1.0
     while timeTime > 0 and rythmPoints > 0 and rythmPoints < chainDistance:
 
         hide balatiusPullMid
@@ -156,13 +159,14 @@ label balatiusFoz:
         show screen bossTitleScreen( "#fff" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
         pause 5
         hide screen bossTitleScreen with dissolve
-        call screen playerActions( "Slay this Wrected King!" , False , True , True , timeTime )
+        call screen playerActions( "Keep Him Distracted!" , False , True , True , timeTime )
 
-        jump volkTesiTime
+        $ balatiusBattleMan.health = balatiusBattleMan.hitpoints
+        jump balatiusTesiAndVolkShowUp
 
     elif timeTime <= 0:
         
-        jump volkTesiTime
+        jump balatiusTesiAndVolkShowUp
     else:
         show balatiusPullLosing at halfSize , center , lightCrystalLights:
             xpos 0.5 xzoom 1.0
@@ -312,7 +316,7 @@ label battleBalatius:
     else:
         "Balatius and his gfs pussy out!"
         $ currentParty = [ tesipizCharacter , volkaraCharacter ]
-        $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(tsanihoniFight) , balatiusBattleMan , copy.copy(janaFight) , copy.copy(lizardSuitF) ] 
+        $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(tsanihoniFight) ,balatiusBattleMan , copy.copy(janaFight) , copy.copy(lizardSuitF) ] 
 
         tesi "Suprize"
         volk "Think you could run away"
@@ -321,7 +325,7 @@ label battleBalatius:
         show screen bossTitleScreen( "#fff" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
         pause 5
         hide screen bossTitleScreen with dissolve
-        call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [ balatiusBattleMan ] , ringLeaders2Kill = 1 )
+        call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [balatiusBattleMan ] , ringLeaders2Kill = 1 )
     
     #fight for a set amount of time
     #get weapon
@@ -330,15 +334,18 @@ label battleBalatius:
     jump balatiusTesiAndVolkShowUp
 
 label balatiusTesiAndVolkShowUp:
-    "Tesipiz and Volkara show up at the door"
 
+    $ inventory = spareInventory
+    #"Tesipiz and Volkara show up at the door"
+    $ currentParty = [ tesipizCharacter , volkaraCharacter ]
     scene balatiusPalaceFloor1 at fullFit with fade
+    scene balatiusPalaceFloor1 at right , size08
     $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(balatianSpear) , copy.copy(balatianHeavyAxe) , copy.copy(lizardSuitF) , copy.copy(balatianSpear) , copy.copy(balatianSpear) ] 
     call screen playerActions( "Take out the guards protecting the King!" , False , False , True , 0 )
 
     #can use Balatius' health value as a check for if he is alive or not
     #ditto foe xerx
-    if timeTime > timeB4TesiAndVolk:
+    if timeTime > timeB4TesiAndVolk or balatiusBattleMan.health <= 0:
         $ xerxesCharacter.weapon = swordOfAhuraMazda
         $ xerxesCharacter.updateStats()
         $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ] 
@@ -430,7 +437,7 @@ label balatiusTesiAndVolkShowUp:
             pause 5
             scene balatiusPalaceFloor1 at fullFit
             hide screen bossTitleScreen with dissolve
-            call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [ balatiusBattleMan ] , ringLeaders2Kill = 1 )
+            call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [balatiusBattleMan ] , ringLeaders2Kill = 1 )
             play extraSound weOwnedThem
             call balatiusDedAnimation
              
@@ -456,7 +463,7 @@ label balatiusTesiAndVolkShowUp:
             volk "Your secrets are safe with me."
 
         elif if balatiusBattleMan.health > 0:
-            call screen playerActions( "Finish off King Balatius!" , False , False , True , 0 , ringLeaders = [ balatiusBattleMan ] , ringLeaders2Kill = 1 )
+            call screen playerActions( "Finish off King Balatius!" , False , False , True , 0 , ringLeaders = [ balatiusFight ] , ringLeaders2Kill = 1 )
             "balatius dead"
             call balatiusDedAnimation
         else:
@@ -490,42 +497,64 @@ label balatiusTesiAndVolkShowUp:
         
     else:
         play music OnDaAttack fadein 1.0 fadeout 1.0
-        show janaScared at center , halfSize , lightCrystalLights:
-            xpos 0.25
-        show tsanihoniScared at center , halfSize , lightCrystalLights:
-            xpos 0.75
-        show balatiusScared at center , halfSize , lightCrystalLights
-        show lizardSuitLadyImg attack mean angry at left , halfSize , lightCrystalLights
-        show lizardSuitLadyImg attack mean angry as extraLizard at right , halfSize , lightCrystalLights
-        bala "AHH!!"
-        bala "More ASSASSINS!!"
-        bala "KILL ALL THE JAMESIANS!!" with vpunch
-        scene balatiusPalaceFloor1 at fullFit
-        show volkara3quat haremArmed meanEyes
-        show femTesipiz armed mean happy
-        with dissolve
-        tesi "Suprize"
-        show volkara3quat happyMouth
-        show femTesipiz neutralHappy
-        with dissolve
-        volk "Think you could run away"
 
-        scene balatiusPalaceFloor1 at fullFit
-        $ currentParty = [ tesipizCharacter , volkaraCharacter ]
+        if xerxesCharacter.weapon.type == "SoAM":#if xerxes trigged the fight
+            show janaScared at center , size04 , lightCrystalLights:
+                xpos 0.4 ypos 0.8
+            show tsanihoniScared at center , size04 , lightCrystalLights:
+                xpos 0.6 ypos 0.8
+            show balatiusScared at center , halfSize , lightCrystalLights
+            show lizardSuitLadyImg attack mean angry at left , halfSize , lightCrystalLights
+            show lizardSuitLadyImg attack mean angry as extraLizard at right , halfSize , lightCrystalLights, flipped
+            bala "AHH!!"
+            bala "ASSASSINS!!"
+            bala "KILL ALL THE JAMESIANS!!" with vpunch
+            scene balatiusPalaceFloor1 at left , size08
+            show volkara3quat haremArmed meanEyes at size2Thrid , left , hiddenLegs125
+            show femTesipiz armed mean happy at size2Thrid , center , hiddenLegs125 , flipped
+            with dissolve
+            tesi "Suprize!"
+            show volkara3quat happyMouth
+            show femTesipiz neutralHappy
+            with dissolve
+            volk "Think you could run away"
+
+            scene balatiusPalaceFloor1 at center , size08
+            $ currentParty = [ tesipizCharacter , volkaraCharacter ]
+        
+        else:
+            $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ] 
+            $ xerxesCharacter.weapon = swordOfAhuraMazda
+            $ xerxesCharacter.updateStats()
+            show balatiusThroneDoor at fullFit with dissolve
+            show femTesipiz armed extraHappy mean at center , size2Thrid , hiddenLegs125 with dissolve:
+                xpos 0.5 xalign 0.5
+                linear 2 xpos 1.0 xalign 1.0
+            show volkara3quat haremArmed meanEyes happyMouth at center , size2Thrid , hiddenLegs125 with dissolve:
+                xpos 0.5 xalign 0.5
+                linear 2 xpos 0.0 xalign 0.0
+            tesi "Suprize!"
+            volk "You're trapped!!"
+            scene balatiusThroneRoom at truecenter, halfSize , lightCrystalLights
+            show femXerxSoAMAttack at left , size2Thrid , hiddenLegs125 , lightCrystalLights
+
+
         $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(tsanihoniFight) , balatiusBattleMan , copy.copy(janaFight) , copy.copy(lizardSuitF) ] 
 
         show janaBattle at center , halfSize , lightCrystalLights:
-            xpos 0.25
+            xpos 0.3
         show tsanihoniBattle at center , halfSize , lightCrystalLights:
-            xpos 0.75
-        show balatiusBattleImg at center , halfSize , lightCrystalLights
-        show lizardSuitLadyImg attack mean angry at left , halfSize , lightCrystalLights
-        show lizardSuitLadyImg attack mean angry as extraLizard at right , halfSize , lightCrystalLights
+            xpos 0.7
+        show balatiusBattleImg at center , size2Thrid , lightCrystalLights , hiddenLegs125
+        show lizardSuitLadyImg attack mean angry at left , size2Thrid , lightCrystalLights:
+            xpos -0.25 ypos 1.3
+        show lizardSuitLadyImg attack mean angry as extraLizard at right , size2Thrid , lightCrystalLights , flipped:
+            xpos 1.25 ypos 1.3
         window hide dissolve
         call startBalatiusBattleTheme
         show screen bossTitleScreen( "#fff" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
         pause 5
-        scene balatiusPalaceFloor1 at fullFit
+        scene balatiusPalaceFloor1 at center , size08
         hide screen bossTitleScreen with dissolve
         call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [ balatiusBattleMan ] , ringLeaders2Kill = 1 )
         play extraSound weOwnedThem
@@ -537,12 +566,12 @@ label balatiusTesiAndVolkShowUp:
     play music gettingAttacked fadein 1.0 fadeout 1.0
     scene balatiusPalaceFloor1 at fullFit with fade
     show volkara3quat harem deltaMouth at left , size2Thrid , lightCrystalLights , hiddenLegs125
-    show femXerx haremPointy mean frown at center , size2Thrid , lightCrystalLights , hiddenLegs125
+    show femXerx haremPoint mean frown at center , size2Thrid , lightCrystalLights , hiddenLegs125
     show femTesipiz nervous frown at right , size2Thrid , lightCrystalLights , hiddenLegs125
     
     xerx "Now we need to get out of here."
 
-    show femXerx harem neutral O
+    show femXerx haremBase neutral O
     show volkara3quat haremPointy meanEyes
     with dissolve
     volk "How are we going to do that?"
@@ -551,16 +580,22 @@ label balatiusTesiAndVolkShowUp:
     volk "Balatius' goons are all over the city."
     
     show femXerx haremPoint mean frown
-    show volkara3quat haremBase O
+    show volkara3quat harem OMouth
     with dissolve
     xerx "Have you got the Anti-Stelth Tablet piece?"
     show femTesipiz point O with dissolve
-    show stoneTabletBala at halfSize , lightCrystalLights , truecenter with dissolve
+    show stoneTabletBala at halfSize , lightCrystalLights , truecenter with dissolve:
+        xpos 0.777 ypos 0.639
     tesi "I think so."
     show femTesipiz happy with dissolve
+    show femXerx haremPoint mean frown at center , hiddenLegs125:
+        xzoom 1.0
+        linear 1 xzoom -1.0 
     tesi "This kind of looks like it"
+    hide stoneTabletBala
     show femTesipiz base
     show femXerx neutral happy
+    with dissolve
     xerx "Good enough"
 
     call malikMakesGoesExploding
@@ -620,57 +655,57 @@ label balatiusTesiAndVolkShowUp:
 
 label malikMakesGoesExploding:
 
-    stop music fadeout 10.0
-    scene balatiusPalace at truecenter , light2DarkBottom2Top
+    play music tentionTime fadein 1.0 fadeout 1.0
+    scene balatiusPalace at center , size2Thrid , light2DarkBottom2Top with fade
     show lizardSuitLadyRunBack at halfSize , lightCrystalLights , right:
-        xpos 1.5
-        linear 3 xalign 0.5 xpos 0.5
-        easeout 3 ypos 0.5 zoom 0.01 
-    pause 0.5
+        xpos 1.5 ypos 1.0
+        linear 3 xalign 0.5 xpos 0.5 ypos 1.0
+        easeout 3 ypos 0.5 zoom 0.01 ypos 0.3
+    pause 1.0
     show balatianHeavySpeatRunBack at halfSize , lightCrystalLights , left:
-        xpos -0.5
-        linear 3 xalign 0.5 xpos 0.5
-        easeout 3 ypos 0.5 zoom 0.01 
-    pause 0.5 #1.0
+        xpos -0.5 ypos 1.0
+        linear 3 xalign 0.5 xpos 0.5 ypos 1.0
+        easeout 3 ypos 0.5 zoom 0.01 ypos 0.3
+    pause 1.0 #1.0
     show balatianAmoredAxLadyRunBack at halfSize , lightCrystalLights , right:
-        xpos 1.5
-        linear 3 xalign 0.5 xpos 0.5
-        easeout 3 ypos 0.5 zoom 0.01 
-    pause 0.5 
+        xpos 1.5 ypos 1.0
+        linear 3 xalign 0.5 xpos 0.5 ypos 1.0
+        easeout 3 ypos 0.5 zoom 0.01 ypos 0.3
+    pause 1.0 
     show balatianAmoredAxLadyRunBack as extraAxeLady at halfSize , lightCrystalLights , right:
-        xpos 1.5
-        linear 3 xalign 0.5 xpos 0.5
-        easeout 3 ypos 0.5 zoom 0.01 
-    pause 0.5 #2.0
+        xpos 1.5 ypos 1.0
+        linear 3 xalign 0.5 xpos 0.5 ypos 1.0
+        easeout 3 ypos 0.5 zoom 0.01 ypos 0.3
+    pause 1.0 #2.0
     show lizardSuitLadyRunBack as extraLizard at halfSize , lightCrystalLights , left:
-        xpos -0.5
-        linear 3 xalign 0.5 xpos 0.5
-        easeout 3 ypos 0.5 zoom 0.01 
-    pause 0.5
+        xpos -0.5 ypos 1.0
+        linear 3 xalign 0.5 xpos 0.5 ypos 1.0
+        easeout 3 ypos 0.5 zoom 0.01 ypos 0.3
+    pause 1.0
     show balatianHeavySpeatRunBack as extraDude at halfSize , lightCrystalLights , right:
-        xpos 1.5
-        linear 3 xalign 0.5 xpos 0.5
-        easeout 3 ypos 0.5 zoom 0.01 
-    pause 0.5 #3.0
+        xpos 1.5 ypos 1.0
+        linear 3 xalign 0.5 xpos 0.5 ypos 1.0
+        easeout 3 ypos 0.5 zoom 0.01 ypos 0.3
+    pause 1.0 #3.0
     show balatianHeavySpeatRunBack as extraDude2 at halfSize , lightCrystalLights , left:
-        xpos -0.5
-        linear 3 xalign 0.5 xpos 0.5
-        easeout 3 ypos 0.5 zoom 0.01 
-    pause 3
+        xpos -0.5 ypos 1.0
+        linear 3 xalign 0.5 xpos 0.5 ypos 1.0
+        easeout 3 ypos 0.5 zoom 0.01 ypos 0.3
+    pause 2
     hide lizardSuitLadyRunBack with dissolve
-    pause 0.5
+    #pause 0.5
     hide balatianHeavySpeatRunBack with dissolve
-    pause 0.5 
+    #pause 0.5 
     hide balatianAmoredAxLadyRunBack with dissolve
-    pause 0.5 
+    #pause 0.5 
     hide extraAxeLady with dissolve
-    pause 0.5 
+    #pause 0.5 
     hide extraLizard with dissolve
-    pause 0.5 
+    #pause 0.5 
     hide extraDude with dissolve
-    pause 0.5 
+    #pause 0.5 
     hide extraDude2 with dissolve
-    pause 0.5 
+    #pause 0.5 
     
     show malikImg greet happy at halfSize , left , lightCrystalLights:
         xpos -0.5
@@ -684,18 +719,22 @@ label malikMakesGoesExploding:
     #he waves something that acts like a signal
     
     scene starNightTime at fullFit
-    show balatiusPalace at light2DarkBottom2Top , center , thridSize
+    show balatiusPalace at light2DarkBottom2Top , center , fullFit
     $ counter = 3
     while counter > 0:
-        show malikImg mean happy base at tenthSize , center , lightCrystalLights
+        show malikImg mean happy base at thridSize , center , lightCrystalLights
         pause 0.5
-        show malikImg mean happy greet at tenthSize , center , lightCrystalLights
+        show malikImg mean happy greet at thridSize , center , lightCrystalLights
         pause 0.5
-        $ counter
+        $ counter -= 1
     
-    show balaAxeriumEstablishingNight
-    show sabotaurusMan suprizedFace at center , lightCrystalLights , size2Thrid , hiddenLegs125
-    show balaAxeriumInsideForground at lightCrystalLights
+    scene starNightTime at fullFit:
+        xzoom -1.0 yzoom -1.0
+    show balaAxeriumInsideNight at topright:
+        ypos -0.2
+    show sabotaurusMan suprizedFace at center , lightCrystalLights , halfSize , hiddenLegs125
+    show balaAxeriumInsideForground at topright , flameLight:
+        ypos -0.2
     with dissolve
     #sabotorus
     "That is the signal." # O Mouth
@@ -807,14 +846,14 @@ label malikMakesGoesExploding:
 
 label balatiusDedAnimation:
     play music weOwnedThem noloop
-    scene balatiusThroneRoom at fullFit , lightCrystalLights
     show balatiusDead at center , size2Thrid , lightCrystalLights:
-        ypos 1.25 rotate 0
-        easeout 3 rotate 90 ypos 1.5
+        ypos 1.25 rotate 0 xpos 0.5
+        easeout 2 rotate -90 ypos 2.5 xpos -0.5
     with dissolve
-    pause 2
+    pause 1
     play sound bloodySlam
     with vpunch
+    pause 1
     return
 
 #label balaPalaceBasment: #cut out

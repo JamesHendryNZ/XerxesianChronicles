@@ -688,6 +688,7 @@ label balaPalace3rdFloor:
         #$ balaAlerted = True this may nt be needed
         scene balatiusPalaceFloor3 at left, size2Thrid with dissolve:
             xzoom 1.25
+        play music OnDaAttack fadein 1.0 fadeout 1.0
         $ desgueFoiled = True
         $ enemyTroopers = [ copy.copy(minobiteGreatAxLady) , copy.copy(lizardSuitF) , copy.copy(lizardSuitF) , copy.copy(minobiteGreatAxLady) ]
 
