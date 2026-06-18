@@ -339,7 +339,7 @@ label balatiusTesiAndVolkShowUp:
     #"Tesipiz and Volkara show up at the door"
     $ currentParty = [ tesipizCharacter , volkaraCharacter ]
     scene balatiusPalaceFloor1 at fullFit with fade
-    scene balatiusPalaceFloor1 at right , size08
+    scene balatiusPalaceFloor1 at right , size08 with dissolve
     $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(balatianSpear) , copy.copy(balatianHeavyAxe) , copy.copy(lizardSuitF) , copy.copy(balatianSpear) , copy.copy(balatianSpear) ] 
     call screen playerActions( "Take out the guards protecting the King!" , False , False , True , 0 )
 
@@ -526,18 +526,31 @@ label balatiusTesiAndVolkShowUp:
             $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ] 
             $ xerxesCharacter.weapon = swordOfAhuraMazda
             $ xerxesCharacter.updateStats()
-            show balatiusThroneDoor at fullFit with dissolve
-            show femTesipiz armed extraHappy mean at center , size2Thrid , hiddenLegs125 with dissolve:
-                xpos 0.5 xalign 0.5
-                linear 2 xpos 1.0 xalign 1.0
-            show volkara3quat haremArmed meanEyes happyMouth at center , size2Thrid , hiddenLegs125 with dissolve:
+            show balatiusThroneDoor at fullFit , lightCrystalLights with dissolve
+            show femTesipiz armed extraHappy mean at center , size2Thrid , hiddenLegs125 , lightCrystalLights with dissolve:
                 xpos 0.5 xalign 0.5
                 linear 2 xpos 0.0 xalign 0.0
+            show volkara3quat haremArmed meanEyes happyMouth at center , size2Thrid , hiddenLegs125 , lightCrystalLights with dissolve:
+                xpos 0.5 xalign 0.5
+                linear 2 xpos 1.0 xalign 1.0 
             tesi "Suprize!"
             volk "You're trapped!!"
             scene balatiusThroneRoom at truecenter, halfSize , lightCrystalLights
             show femXerxSoAMAttack at left , size2Thrid , hiddenLegs125 , lightCrystalLights
+            show balatiusBattleImg at right , size2Thrid , hiddenLegs125 , lightCrystalLights
+            with dissolve
 
+            queue sound [ PowerUp  , clearMyMind ]
+            hide femXerxSoAMAttack
+            show femXerxSoAMFight at left , size2Thrid , hiddenLegs125 , lightCrystalLights 
+            with Fade( 1, 1, 1 , color = "#dd2")
+            hide balatiusBattleImg
+            show balatiusScared at right , size2Thrid , hiddenLegs125 , lightCrystalLights
+            with dissolve
+            xerx "Time to die."
+            xerx "Servant of Astarte!"
+            scene balatiusThroneRoom at center:
+                yzoom 0.33
 
         $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(tsanihoniFight) , balatiusBattleMan , copy.copy(janaFight) , copy.copy(lizardSuitF) ] 
 
@@ -550,25 +563,30 @@ label balatiusTesiAndVolkShowUp:
             xpos -0.25 ypos 1.3
         show lizardSuitLadyImg attack mean angry as extraLizard at right , size2Thrid , lightCrystalLights , flipped:
             xpos 1.25 ypos 1.3
+        with dissolve
         window hide dissolve
         call startBalatiusBattleTheme
         show screen bossTitleScreen( "#fff" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
         pause 5
-        scene balatiusPalaceFloor1 at center , size08
+        if timeTime > timeB4TesiAndVolk:
+            scene balatiusPalaceFloor1 at center , size08
+        else:
+            scene balatiusThroneRoom at center:
+                yzoom 0.33
         hide screen bossTitleScreen with dissolve
         call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [ balatiusBattleMan ] , ringLeaders2Kill = 1 )
-        play extraSound weOwnedThem
+        #play extraSound weOwnedThem
         call balatiusDedAnimation
         
 
         $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ] 
     
     play music gettingAttacked fadein 1.0 fadeout 1.0
-    scene balatiusPalaceFloor1 at fullFit with fade
+    scene balatiusPalaceFloor1 at fullFit 
     show volkara3quat harem deltaMouth at left , size2Thrid , lightCrystalLights , hiddenLegs125
     show femXerx haremPoint mean frown at center , size2Thrid , lightCrystalLights , hiddenLegs125
     show femTesipiz nervous frown at right , size2Thrid , lightCrystalLights , hiddenLegs125
-    
+    with fade
     xerx "Now we need to get out of here."
 
     show femXerx haremBase neutral O
@@ -601,14 +619,14 @@ label balatiusTesiAndVolkShowUp:
     call malikMakesGoesExploding
 
     scene balatiusPalaceFloor1 at fullFit
-    show femXerx O at center , hiddenLegs125
-    show volkara3quat haremBase sadEyes OMegaMouth at left , flipped , hiddenLegs125
-    show femTesipiz O at right , hiddenLegs125
+    show femXerx O at center , size2Thrid , hiddenLegs125 , lightCrystalLights
+    show volkara3quat harem sadEyes OMegaMouth at left , size2Thrid , flipped , hiddenLegs125 , lightCrystalLights
+    show femTesipiz O at right , size2Thrid , hiddenLegs125 , lightCrystalLights
     with dissolve
     with vpunch
     with hpunch
     volk "Wahh!!!" 
-    show volkara3quat neutralEyes OMouth
+    show volkara3quat normalEyes OMouth
     show femTesipiz yeah mean happy
     show femXerx happy
     with dissolve
@@ -616,22 +634,33 @@ label balatiusTesiAndVolkShowUp:
     tesi "BOOM TIME!!"
 
     scene balatiusPalaceEntrance at flameLight , fullFit
-    show lizardSuitLadyImg attack mean angry at lightCrystalLights , center , size2Thrid , hiddenLegs125
-    show balatianHeavySpearAttack at lightCrystalLights , left , size2Thrid , hiddenLegs125
-    show balatianAmoredAxLady at lightCrystalLights , right , size2Thrid , hiddenLegs125
+    
+    show balatianAmoredAxLady at lightCrystalLights , right , size2Thrid:
+        ypos 1.3
+    
+    
+    show lizardSuitLadyImg attack mean angry at lightCrystalLights , center , size2Thrid:
+        ypos 1.3
+    show balatianHeavySpearAttack at lightCrystalLights , left , size2Thrid:
+        ypos 1.5 xpos -0.2
     with dissolve
     "ROUGUE ASTARTS IN THE CITY!!" with vpunch
     "REBEL SLAVE FORCES IN THE CITY!!" with hpunch
     #astart giants notice them
-    scene balatiusPalaceEntrance at flameLight , truecenter
+    scene balatiusPalaceEntrance at flameLight:
+        xalign 0.5
     show giantDude at center , lightCrystalLights , size2Thrid:
-        ypos 1.5
+        ypos 2.7
+    with dissolve
     "THERE ARE HAREM INFILTRATORS IN THE PALACE!!"
-    "GET THEM!!" with dissolve
+    "GET THEM!!" with vpunch
     #another fight
     scene starNightTime at fullFit , darkNight
-    show balaAxeriumInsideFlame at fullFit
-    show balatiusPalaceColumns at fullFit , flameLight
+    show balaAxeriumInsideFlame:
+        xalign 0.4 yzoom 0.2
+    show balatiusPalaceColumns at center , flameLight:
+        yzoom 0.7 xzoom 0.7
+    with dissolve
     play music "<to 4>audio/music/Xerxesian Battle2.ogg"
     queue music fightingDaBoss
     $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(astartGiantM) , copy.copy(astartGiantF) , copy.copy(balatianSpear) , copy.copy( balatianHeavyAxe ) ]
@@ -642,7 +671,27 @@ label balatiusTesiAndVolkShowUp:
     scene starNightTime at fullFit , darkNight
     show balaAxeriumInsideFlame at fullFit
     show balatiusPalaceColumns at fullFit , flameLight
+
+    scene starNightTime at fullFit , darkNight
+    show balaAxeriumInsideFlame:
+        xalign 0.4 yzoom 0.2
+    show balatiusPalaceColumns at center , flameLight:
+        yzoom 0.7 xzoom 0.7
+    
+    show femXerxSoAMFight at center , size2Thrid , hiddenLegs125 , flameLight , flipped
+    show femTesipiz armed happy at center , size2Thrid , hiddenLegs125 , flameLight:
+        xpos 0.75
+    show volkara3quat haremArmed happyMouth at right , size2Thrid , hiddenLegs125 , flameLight, flipped
+    with dissolve
+   
     xerx "That'll make our escape easier."
+    hide femXerxSoAMFight
+    show femXerx at center , size2Thrid , hiddenLegs125 , flameLight , flipped
+    show femTesipiz neutralHappy
+    show volkara3quat neutralHappyMouth
+    show malikImg greet happy at left , center , size2Thrid , hiddenLegs125 , flameLight:
+        xpos -0.3
+        easeout 2 xpos 0.0
     mali "There you are!"
     
 
@@ -742,7 +791,7 @@ label malikMakesGoesExploding:
     "Time for some another incident." #mean eyes
 
     #sabotaurus
-    show sabotaurusMan yeahFace with dissolve
+    show sabotaurusMan bombTime yeahFace with dissolve
     "Heheh!" 
     show sabotaurusMan chuck with dissolve
     "Kaboom time!!" #heheh
@@ -751,86 +800,110 @@ label malikMakesGoesExploding:
     #wagons go boom
     
     scene starNightTime at fullFit
-    show balatiusPalace at light2DarkBottom2Top , center , thridSize
-    show oxCartParkt at fithSize , lightCrystalLights , left
-    show oxCartParkt as extraCart at fithSize , lightCrystalLights , right
+    show balatiusPalace at light2DarkBottom2Top , center 
+    show oxCartParkt at fithSize , lightCrystalLights , left:
+        xpos -0.3
+    show oxCartParkt as extraCart at fithSize , lightCrystalLights , right, flipped:
+        xpos 1.3
     pause 1
+    #"debug pause"
     show bombImg at center , lightCrystalLights:
         ypos -0.5 zoom 1.0
-        easeout 2 xalign 0.25 ypos 1.0 zoom 0.1
+        easeout 2 xalign 0.0 ypos 0.67 zoom 0.1
     show bombImg as extraBombs at center , lightCrystalLights:
         ypos -0.5 zoom 1.0
-        easeout 2 xalign 0.75 ypos 1.0 zoom 0.1
+        easeout 2 xalign 1.0 ypos 0.67 zoom 0.1
     pause 1.5
     play sound daBOOM
-    show explosion at center:
-        xalign 0.25 zoom 0.01 matrixcolor OpacityMatrix(1.0)
-        easeout 1 zoom 0.5 
-        easein 1 zoom 1.0 matrixcolor OpacityMatrix(0.0)
-    show explosion as extraBoom at center:
-        xalign 0.75 zoom 0.01 matrixcolor OpacityMatrix(1.0)
-        easeout 1 zoom 0.5
-        easein 1 zoom 1.0 matrixcolor OpacityMatrix(0.0)
+    hide bombImg
+    hide extraBombs 
+    show explosion at truecenter:
+        xpos 1.0 yalign 0.9 zoom 0.01 matrixcolor OpacityMatrix(1.0)
+        easeout 1 zoom 0.5 yalign 1.0 ypos 1.0
+        easein 2 zoom 1.0 yalign 1.0 ypos 1.0 matrixcolor OpacityMatrix(0.0)
+    show explosion as extraBoom at truecenter:
+        xpos 0.0 yalign 0.9 zoom 0.01 matrixcolor OpacityMatrix(1.0)
+        easeout 1 zoom 0.5 yalign 1.0 ypos 1.0
+        easein 2 zoom 1.0 yalign 1.0 ypos 1.0 matrixcolor OpacityMatrix(0.0)
+    show oxCartParkt at fithSize , lightCrystalLights , left:
+        xpos -0.3
+        linear 4 xpos -1.0 rotate -720
+    show oxCartParkt as extraCart at fithSize , lightCrystalLights , right, flipped:
+        xpos 1.3
+        linear 4 xpos 2.0 rotate 720
     with dissolve
-    pause 1.0
-    hide explosion
-    hide extraBoom
-    show smokes at center , lightCrystalLights:
-        ypos -0.5 zoom 0.3 matrixcolor OpacityMatrix(1.0)
-        easeout 5 xalign 0.25 ypos 1.0 zoom 1.2 matrixcolor OpacityMatrix(0.0)
-    show smokes as extraPuff at center , lightCrystalLights:
-        ypos -0.5 zoom 1.0 matrixcolor OpacityMatrix(1.0)
-        easeout 5 xalign 0.75 ypos 1.0 zoom 1.2 matrixcolor OpacityMatrix(0.0)
+    with vpunch
+    with hpunch
+    with vpunch
     
+    show smokes at truecenter , lightCrystalLights:
+        xpos 0.0 zoom 0.5 yalign 0.9 matrixcolor OpacityMatrix(1.0)
+        easein 5 zoom 1.2 yalign 1.0 ypos 1.0 matrixcolor OpacityMatrix(0.0)
+    show smokes as extraPuff at truecenter , lightCrystalLights:
+        xpos 1.0 zoom 0.5 yalign 0.9 matrixcolor OpacityMatrix(1.0)
+        easein 5 zoom 1.2 yalign 1.0 ypos 1.0 matrixcolor OpacityMatrix(0.0)
+
+    pause 1.0
+    with dissolve
+    pause 3.0
+    #'smoked beans and fish'
     #"Malik and his troops reveal their true colors"
     play msuic OnDaAttack fadein 1.0 fadeout 1.0
     scene starNightTime
     show balaAxeriumInsideFlame at fullFit , center
 
-    show axerianHopiliteAttcking at left , halfSize , lightCrystalLights:
-        xpos 0.25
-        easein 2 xpos 0.5
-        easeout 2 xpos 0.25
-        repeat
+    
 
-    show thiaMaceFemaleAttcking at right , halfSize , lightCrystalLights:
-        xpos 0.55
-        easeout 2 xpos 0.35
-        easein 2 xpos 0.55
-        repeat
+    
 
-    show axerianSpear2Attacking at left , halfSize , lightCrystalLights:
-        xpos 0.33
-        easein 2 xpos 0.66
-        easeout 2 xpos 0.33
+    show axerianSpear2Attacking at left , halfSize , lightCrystalLights, flipped:
+        xpos 0.7 yalign 1.0 ypos 1.25
+        easein 2 xpos 0.4
+        easeout 2 xpos 0.7
         repeat
     
-    show axerianHopiliteAttcking as extraHoplite at left , halfSize , lightCrystalLights:
-        xpos 0.0
-        easeout 2 xpos 0.25
-        easein 2 xpos 0.0
+    show thiaMaceFemaleAttcking at left , halfSize , lightCrystalLights, flipped:
+        xpos -0.2 ypos 1.25
+        easeout 2 xpos 0.2
+        easein 2 xpos -0.2
         repeat
 
-    show balaAstartWhippaWhipping at right , halfSize , lightCrystalLights:
-        xpos 1.0
-        easein 2 xpos 0.7
-        easeout 2 xpos 1.0
+    show axerianHopiliteAttcking as extraHoplite at right , halfSize , lightCrystalLights, flipped:
+        xpos 1.0 ypos 1.25
+        easeout 2 xpos 0.7
+        easein 2 xpos 1.0
         repeat
+
+    
 
     show balatianHeavySpearAttacking at right , halfSize , lightCrystalLights:
-        xpos 0.75
+        xpos 0.0 ypos 1.25
         easein 2 xpos 0.5
-        easeout 2 xpos 0.75
+        easeout 2 xpos 0.0
         repeat
 
-    show axerianSpear2Attacking as extraSpear at left , halfSize , lightCrystalLights:
-        xpos 0.4
-        easein 2 xpos 0.6
-        easeout 2 xpos 0.4
+    show axerianSpear2Attacking as extraSpear at halfSize , lightCrystalLights, flipped:
+        xpos 0.5 yalign 1.0 ypos 1.25
+        easein 2 xpos 0.8
+        easeout 2 xpos 0.5
+        repeat
+    
+    show balaAstartWhippaWhipping at halfSize , lightCrystalLights:
+        yalign 1.0 xpos 0.0 ypos 1.25
+        easein 2 xpos 0.3
+        easeout 2 xpos 0.0
+        repeat
+
+    
+
+    show axerianHopiliteAttcking at left , halfSize , lightCrystalLights, flipped:
+        xpos 0.25 ypos 1.25
+        easein 2 xpos 0.5
+        easeout 2 xpos 0.25
         repeat
 
     show lizardSuitLadyFighting at right , halfSize , lightCrystalLights:
-        xpos 0.6
+        xpos 0.6 ypos 1.25
         easeout 2 xpos 0.4
         easein 2 xpos 0.6
         repeat
@@ -838,7 +911,7 @@ label malikMakesGoesExploding:
     play sound [ knockIt , foeHit , arrowHit , slashMiss , armorProtected , hackIT ] loop
     play extraSound [ arrowHit , arrowHit , hackIT , playerHit , slicey , armorProtected, armorProtected] loop
     pause 12
-    "debug pause message"
+    #"debug pause message"
     stop sound
     stop extraSound
     return

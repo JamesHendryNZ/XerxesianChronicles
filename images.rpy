@@ -6596,15 +6596,15 @@ image axerianHoplite = "images/NPCs/Axeria/Troopers/Psudo Astart Hoplite.webp"
 image axerianSpear2 = "images/NPCs/Axeria/Troopers/Psudo Astart Spear.webp"
 
 image axerianHopiliteAttcking:
-    "images/NPCs/Zarat/Troopers/Psudo Astart Hoplite.webp"
+    "images/NPCs/Axeria/Troopers/Psudo Astart Hoplite.webp"
     pause 0.5
-    "images/NPCs/Zarat/Troopers/Psudo Astart Hoplite Attack.webp"
+    "images/NPCs/Axeria/Troopers/Psudo Astart Hoplite Attack.webp"
     pause 0.5
     repeat
 image axerianSpear2Attacking:
-    "images/NPCs/Zarat/Troopers/Psudo Astart Spear.webp"
+    "images/NPCs/Axeria/Troopers/Psudo Astart Spear.webp"
     pause 0.5
-    "images/NPCs/Zarat/Troopers/Psudo Astart Spear Attack.webp"
+    "images/NPCs/Axeria/Troopers/Psudo Astart Spear Attack.webp"
     pause 0.5
     repeat
 

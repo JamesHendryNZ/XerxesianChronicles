@@ -492,8 +492,8 @@ define hoplitePeltastF = PatterenFoe( Transform( child="images/Enemies/astartes 
     #The goons on the war chariot the spawn when the chariot is destroyed
 
 #gaints
-define astartGiantF = Foe( Transform( child="images/Enemies/eliete goons/Astart Giant Femle2.webp" , zoom = 0.18 , xzoom = -1.0 ) , "Astart Giantess" , 344 , 20 , 20 , 3.0 , 20 , False , "jumpHard" )
-define astartGiantM = Foe( Transform( child="images/Enemies/eliete goons/Astart Giant Male.webp" , zoom = 0.16 ) , "Astart Giant" , 344 , 20 , 20 , 3.0 , 20 , False , "jumpHard" )
+define astartGiantF = Foe( Transform( child="images/Enemies/eliete goons/Astart Giant Femle2.webp" , zoom = 0.18 , xzoom = -1.0 ) , "Astart Giantess" , 344 , 30 , 20 , 3.0 , 20 , False , "jumpHard" )
+define astartGiantM = Foe( Transform( child="images/Enemies/eliete goons/Astart Giant Male.webp" , zoom = 0.16 ) , "Astart Giant" , 344 , 30 , 20 , 3.0 , 20 , False , "jumpHard" )
 
 #makkabians
 define makkabianAx = Foe( Transform( child="images/Enemies/Makkabians/Makkabian Axe Warrior.webp" , zoom = 0.3 ) , "Makkabian Axeman" , 80 , 15 , 11 , 3.0 , 12 , False , "hard" )
