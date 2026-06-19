@@ -71,6 +71,7 @@ label balatiusFoz:
     $ rythmPoints = chainDistance / 2
     $ timeTime = timeB4TesiAndVolk
     $ startXPos = ( chainDistance - rythmPoints ) / chainDistance
+    $ hardness = 1.0
     #develop code for the Balatius fight here, then put it back when it's tested.
     #minigame where xerx and balatius tug on xerxes' chains
     #a pulling minigame similar to xerxes riding modonon
@@ -78,6 +79,8 @@ label balatiusFoz:
     #maybe anther piece of muisic for him
     #play music fightingDaBoss fadein 1.0 fadeout 1.0
     while timeTime > 0 and rythmPoints > 0 and rythmPoints < chainDistance:
+
+        $ rythemDiffucluty = int( counter / 10 )
 
         hide balatiusPullMid
         hide balatiusPullLosing
@@ -99,8 +102,12 @@ label balatiusFoz:
         
         $ startXPos = imageXPos
         $ timeTime -= 1
-        call rythmAttack( getMeleePatterns( "jumpHard" )[ renpy.random.randint( 0, len( getMeleePatterns( "jumpHard" ) ) - 1) ] , balatiusFight , currentParty[ 0 ] , 0.75 , inBattle = False )
+        if hardness > 0.4:
+            $ hardness -= 0.025
+        
+        call rythmAttack( getMeleePatterns( "jumpHard" )[ renpy.random.randint( 0, len( getMeleePatterns( "jumpHard" ) ) - 1) ] , balatiusFight , currentParty[ 0 ] , hardness , inBattle = False )
         $ rythmPoints -= 2
+        "[str(hardness)] , [hardness > 0.3]"
 
     #if xerx wins
     hide balatiusPullMid
@@ -179,81 +186,85 @@ label balatiusFoz:
         menu:
             "Let him have his fun (Boink him)":
                 stop music fadeout 3.0
+                scene balatiusThroneRoom at truecenter, size2Thrid , lightCrystalLights
                 $ balatiusBoinks += 1
                 $ timeTime -= 3
-                show balatiusBoning start at halfSize , center , lightCrystalLights:
-                    xzoom 1.0 matrixcolor TintMatrix ("#fcc")
-                    easein 0.25 xpos 0.475 xzoom 1.05 matrixcolor TintMatrix("#fcc")
-                    easeout 0.25 xpos 0.525 xzoom 0.95 matrixcolor TintMatrix("#ff94b4")   
-                    repeat
-                pause 3
-                $ timeTime -= 3
-                $ balatiusBonikStage += 1
-                if timeTime <= 0:
-                    jump balatiusTesiAndVolkShowUp
-
-                show balatiusBoning liking at halfSize , center , lightCrystalLights:
-                    xzoom 1.0 matrixcolor TintMatrix ("#fcc") * BrightnessMatrix(0.0)
-                    easein 0.2 xpos 0.475 xzoom 1.1 matrixcolor TintMatrix("#fcc") * BrightnessMatrix(0.0)
-                    easeout 0.2 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.2)    
-                    repeat
-                pause 3
-                $ timeTime -= 3
-                $ balatiusBonikStage += 1
-                if timeTime <= 0:
-                    jump balatiusTesiAndVolkShowUp
-
-                show balatiusBoning goon at halfSize , center , lightCrystalLights:
-                    xzoom 1.0 matrixcolor TintMatrix ("#ffc0c0") * BrightnessMatrix(0.1)
-                    easein 0.25 xpos 0.475 xzoom 1.05 matrixcolor TintMatrix("#ffc0c0") * BrightnessMatrix(0.1)
-                    easeout 0.25 xpos 0.525 xzoom 0.95 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3)  
+                show balatiusBoning start at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    xpos 0.525 matrixcolor TintMatrix("#ff94b4")
+                    easein 0.5 xpos 0.475 xzoom 1.05 matrixcolor TintMatrix ("#fcc")  
+                    easeout 0.5 xpos 0.525 xzoom 0.95 matrixcolor TintMatrix("#ff94b4")
                     repeat
                 with dissolve
-                pause 3
+                pause 6
                 $ timeTime -= 3
                 $ balatiusBonikStage += 1
                 if timeTime <= 0:
                     jump balatiusTesiAndVolkShowUp
 
-                show balatiusBoning horny at halfSize , center , lightCrystalLights:
-                    xzoom 1.0 matrixcolor TintMatrix ("#ffc0c0") * BrightnessMatrix(0.4)
+                show balatiusBoning liking at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.2)  
+                    easein 0.33 xpos 0.475 xzoom 1.1 matrixcolor TintMatrix ("#fcc") * BrightnessMatrix(0.0)   
+                    easeout 0.67 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.2)    
+                    repeat
+                #with dissolve
+                pause 6
+                $ timeTime -= 3
+                $ balatiusBonikStage += 1
+                if timeTime <= 0:
+                    jump balatiusTesiAndVolkShowUp
+
+                show balatiusBoning goon at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xpos 0.525 xzoom 0.95 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3)
+                    easein 0.25 xpos 0.475 xzoom 1.05 matrixcolor TintMatrix ("#ffc0c0") * BrightnessMatrix(0.1)
+                    easeout 0.5 xpos 0.525 xzoom 0.95 matrixcolor  TintMatrix("#ff94b4") * BrightnessMatrix(0.3)
+                    repeat
+                #with dissolve
+                pause 9
+                $ timeTime -= 3
+                $ balatiusBonikStage += 1
+                if timeTime <= 0:
+                    jump balatiusTesiAndVolkShowUp
+
+                show balatiusBoning horny at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.4) 
+                    easein 0.2 xpos 0.475 xzoom 1.1 matrixcolor TintMatrix("#ffc0c0") * BrightnessMatrix(0.2)
+                    easeout 0.4 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.4)
                     easein 0.2 xpos 0.475 xzoom 1.1 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.2)
-                    easeout 0.2 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.4)
-                    easein 0.2 xpos 0.475 xzoom 1.1 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.2)
-                    easeout 0.2 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.4)    
+                    easeout 0.4 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.4)    
                     repeat
-                with dissolve
-                pause 3
+                #with dissolve
+                pause 6
                 $ timeTime -= 3
                 $ balatiusBonikStage += 1
                 if timeTime <= 0:
                     jump balatiusTesiAndVolkShowUp
 
-                show balatiusBoning coom gasm at halfSize , center , lightCrystalLights:
-                    xzoom 1.0 matrixcolor TintMatrix("#ffdee8") * BrightnessMatrix(0.4)
-                    easein 0.1 xpos 0.475 xzoom 1.025 matrixcolor TintMatrix("#ff477e") * BrightnessMatrix(0.4)
-                    easeout 0.1 xpos 0.525 xzoom 0.975 matrixcolor TintMatrix("#ffdee8") * BrightnessMatrix(0.5)    
+                show balatiusBoning coom gasm at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ffc0c0") * BrightnessMatrix(0.5) 
+                    easein 0.2 xpos 0.475 xzoom 1.2 matrixcolor TintMatrix("#ff477e") * BrightnessMatrix(0.4)
+                    easeout 0.4 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ffc0c0") * BrightnessMatrix(0.5)    
                     repeat
-                with dissolve
-                pause 3
+                #with dissolve
+                pause 6
                 $ timeTime -= 3
                 $ balatiusBonikStage += 1
                 if timeTime <= 0:
                     jump balatiusTesiAndVolkShowUp
 
-                show balatiusBoning horny at halfSize , center , lightCrystalLights:
-                    xzoom 1.25 matrixcolor TintMatrix("#ffdee8") * BrightnessMatrix(0.5)
-                    easeout 3 xpos 0.525 xzoom 1.0 TintMatrix("#ffffdd") * BrightnessMatrix(0.0)    
-                pause 3
+                show balatiusBoning horny at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xpos 0.525 xzoom 1.0 matrixcolor TintMatrix("#ffdee8") * BrightnessMatrix(0.0)
+                    easein 0.5 xzoom 0.75 matrixcolor TintMatrix("#ff8bdc") * BrightnessMatrix(0.8)
+                    easeout 6 xpos 0.525 xzoom 1.0 matrixcolor TintMatrix("#ffdee8") * BrightnessMatrix(0.0)    
+                pause 9
                 $ timeTime -= 3
                 $ balatiusBonikStage += 1
                 if timeTime <= 0:
                     jump balatiusTesiAndVolkShowUp
 
-                show balatiusBoning horny at halfSize , center , lightCrystalLights:
-                    xzoom 1.0
-                    easein 2 xpos 0.475 xzoom 1.025
-                    easeout 2 xpos 0.525 xzoom 0.975   
+                show balatiusBoning goon horny at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xzoom 1.0 xzoom 0.975 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.0) 
+                    easein 2 xpos 0.475 xzoom 1.025 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.0)
+                    easeout 2 xpos 0.525 xzoom 0.975 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.0)   
                     repeat
                 pause 8
                 $ timeTime -= 8
@@ -330,11 +341,12 @@ label battleBalatius:
     #fight for a set amount of time
     #get weapon
 
-    "the help has arrived."
+    #"the help has arrived."
     jump balatiusTesiAndVolkShowUp
 
 label balatiusTesiAndVolkShowUp:
 
+    play music OnDaAttack fadein 1.0 fadeout 1.0 if_changed
     $ inventory = spareInventory
     #"Tesipiz and Volkara show up at the door"
     $ currentParty = [ tesipizCharacter , volkaraCharacter ]
@@ -345,16 +357,17 @@ label balatiusTesiAndVolkShowUp:
 
     #can use Balatius' health value as a check for if he is alive or not
     #ditto foe xerx
-    if timeTime > timeB4TesiAndVolk or balatiusBattleMan.health <= 0:
+    if timeTime > timeB4TesiAndVolk or balatiusBattleMan.health <= 0 or balatiusBoinks > 0:
         $ xerxesCharacter.weapon = swordOfAhuraMazda
         $ xerxesCharacter.updateStats()
         $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ] 
 
         scene balatiusThroneDoor at fullFit , lightCrystalLights
-        show volkara3quat haremArmed meanEyes happyMouth at left , size2Thrid , lightCrystalLights:
+        show volkara3quat haremArmed meanEyes happyMouth at right , size2Thrid , lightCrystalLights:
             ypos 1.2
-        show femTesipiz armed mean happy at right , size2Thrid , lightCrystalLights:
+        show femTesipiz armed mean happy at left , size2Thrid , lightCrystalLights:
             ypos 1.2
+        with dissolve
         tesi "King Balatius!!"
         volk "Your end is near!!"
         if balatiusBoinks > 0:
@@ -363,67 +376,82 @@ label balatiusTesiAndVolkShowUp:
             show femTesipiz neutral O
             with fade
             "*o*"
-            scene balatiusThroneRoom at fullFit , lightCrystalLights
+            scene balatiusThroneRoom at size2Thrid , truecenter , lightCrystalLights
 
-            if balatiusBonikStage == 0:
-                show balatiusBoning start at halfSize , center , lightCrystalLights:
-                    xzoom 1.0 matrixcolor TintMatrix ("#fcc")
+            if balatiusBonikStage == 1:
+                show balatiusBoning start at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xzoom 1.0 matrixcolor TintMatrix ("#fcc")
+                    xpos 0.525
                     easein 0.25 xpos 0.475 xzoom 1.05 matrixcolor TintMatrix("#fcc")
                     easeout 0.25 xpos 0.525 xzoom 0.95 matrixcolor TintMatrix("#ff94b4")   
                     repeat
-            elif balatiusBonikStage == 1:
-                show balatiusBoning liking at halfSize , center , lightCrystalLights:
-                    xzoom 1.0 matrixcolor TintMatrix ("#fcc") * BrightnessMatrix(0.0)
+            elif balatiusBonikStage == 2:
+                show balatiusBoning liking at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xzoom 1.0 matrixcolor TintMatrix ("#fcc") * BrightnessMatrix(0.0)
+                    xpos 0.525
                     easein 0.2 xpos 0.475 xzoom 1.1 matrixcolor TintMatrix("#fcc") * BrightnessMatrix(0.0)
                     easeout 0.2 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.2)    
                     repeat
-            elif balatiusBoinkStage == 2:
-                show balatiusBoning goon liking at halfSize , center , lightCrystalLights:
+            elif balatiusBonikStage == 3:
+                show balatiusBoning goon liking at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    xpos 0.525
                     xzoom 1.0 matrixcolor TintMatrix ("#ffc0c0") * BrightnessMatrix(0.1)
                     easein 0.25 xpos 0.475 xzoom 1.05 matrixcolor TintMatrix("#ffc0c0") * BrightnessMatrix(0.1)
                     easeout 0.25 xpos 0.525 xzoom 0.95 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3)  
                     repeat
-            elif balatiusBoinkStage == 3:
-                show balatiusBoning goon liking at halfSize , center , lightCrystalLights:
+            elif balatiusBonikStage == 4:
+                show balatiusBoning goon liking at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    xpos 0.525
                     xzoom 1.0 matrixcolor TintMatrix ("#ffc0c0") * BrightnessMatrix(0.1)
                     easein 0.25 xpos 0.475 xzoom 1.05 matrixcolor TintMatrix("#ffc0c0") * BrightnessMatrix(0.1)
                     easeout 0.25 xpos 0.525 xzoom 0.95 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.3)  
                     repeat
-            elif balatiusBoinkStage == 4:
-                show balatiusBoning goon horny at halfSize , center , lightCrystalLights:
+            elif balatiusBonikStage == 5:
+                show balatiusBoning goon horny at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    xpos 0.525
                     xzoom 1.0 matrixcolor TintMatrix ("#ffc0c0") * BrightnessMatrix(0.4)
                     easein 0.2 xpos 0.475 xzoom 1.1 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.2)
                     easeout 0.2 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.4)
                     easein 0.2 xpos 0.475 xzoom 1.1 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.2)
                     easeout 0.2 xpos 0.525 xzoom 0.9 matrixcolor TintMatrix("#ff94b4") * BrightnessMatrix(0.4)    
                     repeat
-            elif balatiusBoinkStage == 5:
-                show balatiusBoning coom gasm at halfSize , center , lightCrystalLights:
+            elif balatiusBonikStage == 6:
+                show balatiusBoning coom gasm at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    xpos 0.525
                     xzoom 1.0 matrixcolor TintMatrix("#ffdee8") * BrightnessMatrix(0.4)
                     easein 0.1 xpos 0.475 xzoom 1.025 matrixcolor TintMatrix("#ff477e") * BrightnessMatrix(0.4)
                     easeout 0.1 xpos 0.525 xzoom 0.975 matrixcolor TintMatrix("#ffdee8") * BrightnessMatrix(0.5)    
                     repeat
-            elif balatiusBoinkStage == 6:
-                show balatiusBoning horny at halfSize , center , lightCrystalLights:
-                    xzoom 1.0
+            elif balatiusBonikStage == 7:
+                show balatiusBoning horny at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    xzoom 1.0 xpos 0.525
                     easein 2 xpos 0.475 xzoom 1.025
                     easeout 2 xpos 0.525 xzoom 0.975   
                     repeat
+            elif balatiusBonikStage == 8:
+                show balatiusBoning goon horny at size2Thrid , center , lightCrystalLights , hiddenLegs125:
+                    #xzoom 1.0 xzoom 0.975 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.0) 
+                    xpos 0.525
+                    easein 2 xpos 0.475 xzoom 1.025 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.0)
+                    easeout 2 xpos 0.525 xzoom 0.975 matrixcolor TintMatrix("#fff") * BrightnessMatrix(0.0) 
             else:
-                $ numba = str(balatiusBoinkStage)
+                $ numba = str(balatiusBonikStage)
                 "[numba] is not a valid boink stage for Balatius"
             
             with dissolve
             pause 3
             show balatiusBoning -start -liking -horny -gasm with dissolve
 
-            pause 3
-
-            show balatiusJumpBack at center , halfSize , lightCrystalLights:
+            
+            pause 2
+            queue sound [ PowerUp  , clearMyMind ]
+            
+            hide balatiusBoning
+            show balatiusJumpBack at center , size2Thrid , lightCrystalLights, hiddenLegs125:
                 xpos 0.5
                 easeout 0.5 xalign 0.0 xpos -0.1
                 easein 0.5 xpos -0.5
-            show xerdzaSoAMAttack at center , halfSize , lightCrystalLights:
+            show xerdzaSoAMAttack at center , size2Thrid , lightCrystalLights , hiddenLegs125:
                 matrixcolor TintMatrix("#ff0") * BrightnessMatrix (1.0)
                 linear 0.25 matrixcolor TintMatrix("#fff") * BrightnessMatrix (0.0)
             with dissolve
@@ -433,12 +461,31 @@ label balatiusTesiAndVolkShowUp:
 
             $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ]
             call startBalatiusBattleTheme
-            show screen bossTitleScreen( "#1a1818" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
+            scene balatiusThroneRoom at center:
+                yzoom 0.33
+            show janaBattle at center , halfSize , lightCrystalLights:
+                xpos 0.3
+            show tsanihoniBattle at center , halfSize , lightCrystalLights:
+                xpos 0.7
+            show balatiusBattleImg at center , size2Thrid , lightCrystalLights , hiddenLegs125
+            show lizardSuitLadyImg attack mean angry at left , size2Thrid , lightCrystalLights:
+                xpos -0.25 ypos 1.3
+            show lizardSuitLadyImg attack mean angry as extraLizard at right , size2Thrid , lightCrystalLights , flipped:
+                xpos 1.25 ypos 1.3
+            bala "Looks like I'll be having even more fun!!"
+            window hide dissolve
+            show screen bossTitleScreen( "#ffffff" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
             pause 5
-            scene balatiusPalaceFloor1 at fullFit
+
+            
             hide screen bossTitleScreen with dissolve
-            call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [balatiusBattleMan ] , ringLeaders2Kill = 1 )
-            play extraSound weOwnedThem
+            scene balatiusThroneRoom at center with dissolve:
+                yzoom 0.33
+
+            $ extraGoons = [ lizardSuitF , balatianSpear , balatianHeavyAxe , haremSummoner , astartHealer , astartHaremWhippa ]
+            $ enemyTroopers = [ copy.copy(astartHealer) ,copy.copy(lizardSuitF) , copy.copy(tsanihoniFight) , balatiusBattleMan , copy.copy(janaFight) , copy.copy(lizardSuitF) , copy.copy(astartHealer) ] 
+            call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [balatiusBattleMan ] , ringLeaders2Kill = 1 , foesLeft = 128 , goonAddPool = extraGoons , goonsAllowed = 10 )
+            #play extraSound weOwnedThem
             call balatiusDedAnimation
              
 
@@ -461,11 +508,12 @@ label balatiusTesiAndVolkShowUp:
             show volkara3quat haremPointy closedEyes happyMouth
             with dissolve
             volk "Your secrets are safe with me."
+            jump afterBalatiusDed
 
         elif if balatiusBattleMan.health > 0:
             call screen playerActions( "Finish off King Balatius!" , False , False , True , 0 , ringLeaders = [ balatiusFight ] , ringLeaders2Kill = 1 )
-            "balatius dead"
             call balatiusDedAnimation
+            jump afterBalatiusDed
         else:
             call balatiusDedAnimation
             scene balatiusThroneDoor at fullFit , lightCrystalLights
@@ -493,6 +541,7 @@ label balatiusTesiAndVolkShowUp:
             show volkara3quat haremYeah closedEyes happyMouth
             with dissolve
             volk "Look like my decision to payed off."
+            jump afterBalatiusDed
             
         
     else:
@@ -549,9 +598,28 @@ label balatiusTesiAndVolkShowUp:
             with dissolve
             xerx "Time to die."
             xerx "Servant of Astarte!"
+
+            scene balatiusThroneRoom at center:
+                yzoom 0.33
+            show janaBattle at center , halfSize , lightCrystalLights:
+                xpos 0.3
+            show tsanihoniBattle at center , halfSize , lightCrystalLights:
+                xpos 0.7
+            show balatiusBattleImg at center , size2Thrid , lightCrystalLights , hiddenLegs125
+            show lizardSuitLadyImg attack mean angry at left , size2Thrid , lightCrystalLights:
+                xpos -0.25 ypos 1.3
+            show lizardSuitLadyImg attack mean angry as extraLizard at right , size2Thrid , lightCrystalLights , flipped:
+                xpos 1.25 ypos 1.3
+            with dissolve
+            #could / should king balatius turn into a golden minotaur man using a
+            #soul piece (seen in the sequel astarte's challenge?)
+            bala "You may think that."
+            bala "But it is you who is trapped in here with me!"
             scene balatiusThroneRoom at center:
                 yzoom 0.33
 
+        #add in the goon add pool
+        $ extraGoons = [ lizardSuitF , balatianSpear , balatianHeavyAxe , haremSummoner , astartHealer , astartHaremWhippa ]
         $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(tsanihoniFight) , balatiusBattleMan , copy.copy(janaFight) , copy.copy(lizardSuitF) ] 
 
         show janaBattle at center , halfSize , lightCrystalLights:
@@ -574,13 +642,15 @@ label balatiusTesiAndVolkShowUp:
             scene balatiusThroneRoom at center:
                 yzoom 0.33
         hide screen bossTitleScreen with dissolve
-        call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [ balatiusBattleMan ] , ringLeaders2Kill = 1 )
+        call screen playerActions( "Slay this Wrected King!" , False , False , True , 0 , ringLeaders = [ balatiusBattleMan ] , ringLeaders2Kill = 1 , foesLeft = 128 , goonAddPool = extraGoons , goonsAllowed = 10)
         #play extraSound weOwnedThem
         call balatiusDedAnimation
         
 
         $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ] 
-    
+        jump afterBalatiusDed
+
+label afterBalatiusDed:
     play music gettingAttacked fadein 1.0 fadeout 1.0
     scene balatiusPalaceFloor1 at fullFit 
     show volkara3quat harem deltaMouth at left , size2Thrid , lightCrystalLights , hiddenLegs125
@@ -663,7 +733,7 @@ label balatiusTesiAndVolkShowUp:
     with dissolve
     play music "<to 4>audio/music/Xerxesian Battle2.ogg"
     queue music fightingDaBoss
-    $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(astartGiantM) , copy.copy(astartGiantF) , copy.copy(balatianSpear) , copy.copy( balatianHeavyAxe ) ]
+    $ enemyTroopers.extend( [ copy.copy(lizardSuitF) , copy.copy(astartGiantM) , copy.copy(astartGiantF) , copy.copy(balatianSpear) , copy.copy( balatianHeavyAxe ) ] )
     call screen playerActions( "Fell these giants!" , False , False , True , 0 )
 
     #malik reunites with them
@@ -678,22 +748,16 @@ label balatiusTesiAndVolkShowUp:
     show balatiusPalaceColumns at center , flameLight:
         yzoom 0.7 xzoom 0.7
     
-    show femXerxSoAMFight at center , size2Thrid , hiddenLegs125 , flameLight , flipped
     show femTesipiz armed happy at center , size2Thrid , hiddenLegs125 , flameLight:
-        xpos 0.75
+        xpos 0.7
+    show femXerxSoAMFight at center , size2Thrid , hiddenLegs125 , flameLight , flipped
+    
     show volkara3quat haremArmed happyMouth at right , size2Thrid , hiddenLegs125 , flameLight, flipped
     with dissolve
-   
+    
+    play music campfire fadein 1.0 fadeout 1.0
     xerx "That'll make our escape easier."
     hide femXerxSoAMFight
-    show femXerx at center , size2Thrid , hiddenLegs125 , flameLight , flipped
-    show femTesipiz neutralHappy
-    show volkara3quat neutralHappyMouth
-    show malikImg greet happy at left , center , size2Thrid , hiddenLegs125 , flameLight:
-        xpos -0.3
-        easeout 2 xpos 0.0
-    mali "There you are!"
-    
 
     #should we have dead giants with a sound effects and screen shake?
 
@@ -770,13 +834,15 @@ label malikMakesGoesExploding:
     scene starNightTime at fullFit
     show balatiusPalace at light2DarkBottom2Top , center , fullFit
     $ counter = 3
+    show malikImg mean happy base at thridSize , center , lightCrystalLights 
+    with dissolve
     while counter > 0:
-        show malikImg mean happy base at thridSize , center , lightCrystalLights
+        show malikImg mean happy base at thridSize , center , lightCrystalLights 
         pause 0.5
-        show malikImg mean happy greet at thridSize , center , lightCrystalLights
+        show malikImg mean happy greet at thridSize , center , lightCrystalLights 
         pause 0.5
         $ counter -= 1
-    
+        
     scene starNightTime at fullFit:
         xzoom -1.0 yzoom -1.0
     show balaAxeriumInsideNight at topright:
@@ -944,7 +1010,7 @@ label balatiusDedAnimation:
 #    jump outOfBalaAzeriumFoZ
 
 label outOfBalaAzeriumFoZ:
-    play music flameAmbiance fadein 1.0 fadeout 1.0
+    play music campfire fadein 1.0 fadeout 1.0
     #"Bala-Axerium burns!!"
     #scene
 
@@ -953,12 +1019,13 @@ label outOfBalaAzeriumFoZ:
     show balatiusPalaceColumns at fullFit , flameLight
     with fade
     #sound of burning
+    
     show malikImg greet happy at left , halfSize, lightCrystalLights:
         xpos -0.5
         easein 0.0
-    show volkara3quat haremBase at center , halfSize , lightCrystalLights, flipped:
+    show volkara3quat harem at center , halfSize , lightCrystalLights, flipped:
         xpos 0.25
-    show femXerx at center , halfSize , lightCrystalLights , flipped:
+    show femXerx at center , halfSize , lightCrystalLights:
         xpos 0.65
     show femTesipiz at right , halfSize , lightCrystalLights , flipped
     mali "There you are."
