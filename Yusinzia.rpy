@@ -20,23 +20,15 @@ label yusinziaRebels:
     #use the assets made for the battle of Yarak
     play music gettingAttacked fadein 1.0 fadeout 1.0
     play sounds [ thong , hackIT , hackIT , punchy , foeHit , armorProtected , foeHit , thong ] loop
-    play extraSound [ armorProtected , slicey , slamSound , whippingMySlaves , armorProtected , characterHit ] loop
-    show eastGateStreet at fullFit:
-        xalign 0.4 yalign 0.8
-    show gateDoorOpenOut:
-        xalign 0.45 yalign 0.25 matrixcolor TintMatrix("#c66") * BrightnessMatrix ( -0.2 )
+    play extraSound [ armorProtected , slicey , slamSound , whippingMySlaves , armorProtected , playerHit ] loop
+    scene cloudyDayTime at fullFit
+    show eastGateStreet at fullFit
+    #show gateDoorOpenOut:
+    #    xalign 0.45 yalign 0.25 matrixcolor TintMatrix("#c66") * BrightnessMatrix ( -0.2 )
     show eastGate at fullFit
 
 
-    show shataMaceLadyZarat at right , halfSize:
-        xpos 0.9
-        easein 2 xpos 0.8
-        easeout 2 xpos 0.9
-        easein 2 xpos 0.8
-        easeout 3 xpos 0.9
-        easein 1 xpos 0.8
-        easeout 2 xpos 1.3
-    show zaratianEliteSpear at right , halfSize:
+    show zaratianEliteSpear at right , halfSize , hiddenLegs125, flipped:
         xpos 1.0
         easein 2 xpos 0.9
         easeout 2 xpos 1.0
@@ -45,7 +37,7 @@ label yusinziaRebels:
         easein 1 xpos 1.0
         easeout 2 xpos 1.4
     
-    show zardonianAxeDude at left , halfSize:
+    show zardonianAxeDude at left , halfSize , hiddenLegs125:
         xpos 0.0
         easein 2 xpos 0.1
         easeout 2 xpos 0.0
@@ -53,101 +45,116 @@ label yusinziaRebels:
         easeout 3 xpos 0.3
         easein 1 xpos 0.2
         easeout 2 xpos 0.5
-    show ssatuArmoredJavelinMelee at left , halfSize:
-        xpos 0.1
-        easein 2 xpos 0.5
-        easeout 2 xpos 0.4
-        easein 2 xpos 0.5
-        easeout 3 xpos 0.7
-        easein 1 xpos 0.6
-        easeout 2 xpos 1.0
-    show zardonianAxeGirl at left , halfSize:
-        xpos -0.1
-        easein 2 xpos 0.5
-        easeout 2 xpos 0.4
-        easein 2 xpos 0.5
-        easeout 3 xpos 0.7
-        easein 1 xpos 0.6
-        easeout 2 xpos 1.0
-    show shatsetaArmoredSpearM at left , halfSize:
-        xpos -0.2
-        easein 2 xpos 0.5
-        easeout 2 xpos 0.4
-        easein 2 xpos 0.5
-        easeout 3 xpos 0.7
-        easein 1 xpos 0.6
-        easeout 2 xpos 1.0
 
-    show jamesianSparabaraDude at right , halfSize:
-        xpos 0.8
-        easein 2 xpos 0.6
-        easeout 2 xpos 0.7
+    show shataMaceLadyZarat at right , halfSize , hiddenLegs125:
+        xpos 0.9
         easein 2 xpos 0.8
-        easeout 3 xpos 0.7
+        easeout 2 xpos 1.1
+        easein 2 xpos 1.0
+        easeout 3 xpos 1.1
         easein 1 xpos 0.9
-        easeout 2 xpos 1.1
-    show ssatrotuSparabaraLady meanEyes angryMouth at right , halfSize:
-        xpos 1.0
-        easein 2 xpos 0.8
-        easeout 2 xpos 0.9
-        easein 2 xpos 0.7
-        easeout 3 xpos 0.9
-        easein 1 xpos 1.0
-        easeout 2 xpos 1.2
-
-    show zardonianSwordsManAttacking at left , halfSize:
-        xpos 0.3
-        easein 2 xpos 0.5
-        easeout 2 xpos 0.3
-        easein 2 xpos 0.6
-        easeout 3 xpos 0.8
-        easein 1 xpos 0.7
-        easeout 2 xpos 1.0
-    show zaraSsatuSpearFighting at right , halfSize:
-        xpos 0.4
-        easein 2 xpos 0.5
-        easeout 2 xpos 0.4
-        easein 2 xpos 0.5
-        easeout 3 xpos 0.7
-        easein 1 xpos 0.6
-        easeout 2 xpos 1.0
-
-
-    show zardonianSwordsWoahManAttacking at left , halfSize:
-        xpos 0.4
-        easein 2 xpos 0.6
-        easeout 2 xpos 0.4
-        easein 2 xpos 0.7
-        easeout 3 xpos 0.5
-        easein 1 xpos 0.6
-        easeout 2 xpos 1.1
-    show camelLadyFootFighting at right , halfSize:
-        xpos 0.6
-        easein 2 xpos 0.8
-        easeout 2 xpos 0.6
-        easein 2 xpos 0.8
-        easeout 3 xpos 0.7
-        easein 1 xpos 0.6
-        easeout 2 xpos 0.9
-
-
-    show ssatuGlaiveBoyAttacking at left , halfSize:
+        easeout 2 xpos 1.4
+    
+    
+    
+    show ssatuArmoredJavelinMelee at left , halfSize , hiddenLegs125:
         xpos 0.1
         easein 2 xpos 0.3
-        easeout 2 xpos 0.1
-        easein 2 xpos 0.5
-        easeout 3 xpos 0.7
-        easein 1 xpos 0.6
+        easeout 2 xpos 0.2
+        easein 2 xpos 0.1
+        easeout 3 xpos 0.5
+        easein 1 xpos 0.3
         easeout 2 xpos 0.8
+    show zardonianAxeGirl at left , halfSize , hiddenLegs125:
+        xpos -0.1
+        easein 2 xpos 0.0
+        easeout 2 xpos 0.4
+        easein 2 xpos 0.0
+        easeout 3 xpos 0.5
+        easein 1 xpos 0.2
+        easeout 2 xpos 1.0
+
+    show ssatrotuSparabaraDude at right , halfSize , hiddenLegs125, flipped:
+        xpos 1.1
+        easein 2 xpos 0.9
+        easeout 2 xpos 1.1
+        easein 2 xpos 0.8
+        easeout 3 xpos 1.0
+        easein 1 xpos 1.1
+        easeout 2 xpos 1.5
+    show shatsetaArmoredSpearM at left , halfSize , hiddenLegs125, flipped:
+        xpos -0.2
+        easein 2 xpos -0.1
+        easeout 2 xpos 0.0
+        easein 2 xpos -0.1
+        easeout 3 xpos -0.2
+        easein 1 xpos 0.0
+        easeout 2 xpos 0.5
 
     show ssatuGlaveGirlAttacking at left , halfSize:
+        xpos 0.0 ypos 1.4
+        easein 2 xpos -0.3
+        easeout 2 xpos 0.1
+        easein 2 xpos -0.4
+        easeout 3 xpos 0.6
+        easein 1 xpos 0.0
+        easeout 2 xpos 0.7
+    show ssatrotuSparabaraLady meanEyes angryMouth at right , halfSize , hiddenLegs125, flipped:
+        xpos 1.3
+        easein 2 xpos 1.0
+        easeout 2 xpos 0.9
+        easein 2 xpos 0.8
+        easeout 3 xpos 1.1
+        easein 1 xpos 1.2
+        easeout 2 xpos 1.4
+
+    show zardonianSwordsManAttacking at left , halfSize , hiddenLegs125, flipped:
         xpos 0.0
+        easein 2 xpos -0.3
+        easeout 2 xpos 0.1
+        easein 2 xpos -0.1
+        easeout 3 xpos 0.1
+        easein 1 xpos -0.1
+        easeout 2 xpos 1.0
+    show zaraSsatuSpearFighting at right , halfSize:
+        xpos 0.8 ypos 1.4
+        easein 2 xpos 0.7
+        easeout 2 xpos 0.8
+        easein 2 xpos 0.7
+        easeout 3 xpos 0.8
+        easein 1 xpos 0.6
+        easeout 2 xpos 1.4
+
+
+    
+    show zardonianSwordsWoahManAttacking at left , halfSize , hiddenLegs125, flipped:
+        xpos 0.0
+        easein 2 xpos 0.2
+        easeout 2 xpos 0.4
+        easein 2 xpos 0.3
+        easeout 3 xpos 0.2
+        easein 1 xpos 0.3
+        easeout 2 xpos 1.1
+
+
+    show camelLadyFootFighting at right , halfSize:
+        xpos 0.6 ypos 1.4
+        easein 2 xpos 0.8
+        easeout 2 xpos 0.9
+        easein 2 xpos 0.8
+        easeout 3 xpos 0.9
+        easein 1 xpos 0.7
+        easeout 2 xpos 1.5
+    show ssatuGlaiveBoyAttacking at left , halfSize:
+        xpos 0.1 ypos 1.3
         easein 2 xpos 0.3
         easeout 2 xpos 0.1
-        easein 2 xpos 0.4
-        easeout 3 xpos 0.6
-        easein 1 xpos 0.5
-        easeout 2 xpos 0.7
+        easein 2 xpos 0.3
+        easeout 3 xpos 0.1
+        easein 1 xpos 0.3
+        easeout 2 xpos 0.8
+
+    
     pause 12
     "debug pause"
     stop sounds fadeout 1.0
