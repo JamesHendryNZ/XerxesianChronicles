@@ -1249,37 +1249,37 @@ label floor2Door1Content:
         muwa "I wonder whoes that is?"
         $ foundMuwa = True
     else:
-        show ssatuSlaver harem at center , lightCrystalLights , size2Thrid with dissolve:
+        show ssatuSlavers harem at center , lightCrystalLights , size2Thrid with dissolve:
             ypos 1.25
         show femTesipiz at right , lightCrystalLights , size2Thrid with dissolve:
             ypos 1.25
         show volkara3quat harem at left , lightCrystalLights , size2Thrid with dissolve:
             ypos 1.25
-        show ssatuSlaver O with dissolve 
+        show ssatuSlavers O with dissolve 
         haremSsatu "Oh"
-        show ssatuSlaver annoyed with dissolve
+        show ssatuSlavers annoyed with dissolve
         haremSsatu "Jamesians"
-        show ssatuSlaver mean with dissolve
+        show ssatuSlavers mean with dissolve
         haremSsatu "Has she assigned you this room?"
         show femTesipiz yeah nervous O with dissolve
         tesi "Ahh.."
         show femTesipiz base
-        show volkara3quat haremGreet happy
+        show volkara3quat haremGreet happyMouth
         with dissolve
         volk "Yes actually."
         show femTesipiz neutral neutralHappy
-        show volkara3quat haremBase neutralHappy
+        show volkara3quat harem neutralHappyMouth
         with dissolve
         haremSsatu "Great."
         haremSsatu "Friends."
-        show ssatuSlaver neutralHappy with dissolve
+        show ssatuSlavers neutralHappy with dissolve
         haremSsatu "{i}I guess I can get rid of them by getting them in trouble."
-        show ssatuSlaver happy with dissolve
+        show ssatuSlavers happy with dissolve
         haremSsatu "Hey."
         haremSsatu "I've seen a key hidden on the roof."
-        show ssatuSlaver neutral with dissolve
+        show ssatuSlavers neutral with dissolve
         haremSsatu "I bet it can lead to your freedom."
-        show ssatuSlaver mean happy with dissolve
+        show ssatuSlavers mean neutralHappy with dissolve
         haremSsatu "{i}Hopefully they get caught and sent to the dungeons."
 
 

@@ -16,38 +16,50 @@ label makkabiumFoZ2:
     scene makkabiumEstblishing1 at fullFit with Fade( 2,1,3 )
     pause 8
     scene clearDayTime
-    show makkabiumRuinEntrance at left , halfSize with Fade( 2,0,1 ):
-        linear 8 xpos 0.25
+    show makkabiumRuinEntrance at left:
+        xpos 0.0
+        linear 8 xpos -1.0
+    with Fade( 2,0,1 )
     pause 10
-    show makkabiumRuinEntrance at left, halfSize with fade:
-        xpos 0.25
+    show makkabiumRuinEntrance at left with fade:
+        xpos -1.0
     show femXerx at center , halfSize with dissolve:
-        xpos 0.33
+        xpos 0.5
     show femTesipiz at center , halfSize with dissolve:
-        xpos 0.66
-    show volkara3quat haremBase at right , halfSize with dissolve
+        xpos 0.67
+    show volkara3quat harem at right , halfSize , flipped with dissolve
     show malikImg happy greet at left , halfSize with dissolve
     mali "You're awake?"
     show malikImg base with dissolve
     mali "Good"
     #a camel rider delivers xerxes and friends stuff
-    show axeriumCamelUnarmed at left , halfSize behind femXerx:
+    scene clearDayTime
+    show makkabiumRuinEntrance at left , hiddenLegs125:
+        xpos -1.0
+    show femXerx at center , halfSize, hiddenLegs125:
+        xpos 0.5
+    show femTesipiz at center , halfSize , hiddenLegs125:
+        xpos 0.67
+    show volkara3quat harem at right , halfSize , flipped , hiddenLegs125
+    show malikImg happy greet at left , halfSize , hiddenLegs125
+    show axeriumCamelUnarmed at left , thridSize , hiddenLegs125 behind femXerx:
         xpos -0.5
         easein 3 xpos 0.1
+    with dissolve
     pause 3
     hide axeriumCamelUnarmed
-    show axerianCamelGreet at left , halfSize behind femXerx:
+    show axerianCamelGreet at left , thridSize, hiddenLegs125 behind femXerx:
         xpos 0.1
     with dissolve
     axCam "Hey Xerxes"
     hide axerianCamelGreet
-    show axerianCamelPoint at left , halfSize behind femXerx: 
+    show axerianCamelPoint at left , thridSize, hiddenLegs125 behind femXerx: 
         xpos 0.1
     with dissolve
     axCam "Atazera has sent me to return your stuff"
 
     hide axerianCamelPoint
-    show axeriumCamelUnarmed at left , halfSize behind femXerx:
+    show axeriumCamelUnarmed at left , thridSize, hiddenLegs125 behind femXerx:
         xpos 0.1
     show femXerx haremYeah mean happy
     with dissolve
@@ -56,53 +68,50 @@ label makkabiumFoZ2:
     call returnEquptment
 
     scene clearDayTime
-    show makkabiumRuinEntrance at left , halfSize:
-        xpos 0.25
+    show makkabiumRuinEntrance at left:
+        xpos -1.0
     show malikImg at left, halfSize
-    show makkabiumRuinEntrance at left, halfSize:
-        xpos 0.25
-    show xerx3quatYeah at center , halfSize:
-        xpos 0.33
-    show femTesipiz clothedBase O
-    hide volkara3quat
-    show volkara3quatArmored at right , halfSize
+    show xerx3quatYeah at center , halfSize
+    show femTesipiz clothedBase O at center , halfSize:
+        xpos 0.67
+    show volkara3quat at right , halfSize , flipped
     with fade
     xerx "Back to being a dude again."
 
     hide xerx3quatYeah
-    show xerx3quatHappyArmored at center , halfSize:
-        xpos 0.33
-    show volkara3quatArmored happyMouth
+    show xerx3quatHappyArmored at center , halfSize
+
+    hide volkara3quat
+    show volkara3quatArmored happyMouth at right , halfSize , flipped
     with dissolve
     volk "These clothes fit me more"
 
     show volkara3quatArmored OMouth
     hide xerx3quatHappyArmored
-    show xerx3quatMiniSuprizedArmored at center , halfSize:
-        xpos 0.33
+    show xerx3quatMiniSuprizedArmored at center , halfSize
     show femTesipiz clothedFeeling nervous
     with dissolve
     tesi "How do you do the spell again."
     tesi "I forgot."
 
     hide xerx3quatMiniSuprizedArmored
-    show xerx3quatPointHappyArmored at center , halfSize , flipped:
-        xpos 0.33
+    show xerx3quatPointHappyArmored at center , halfSize , flipped
     with dissolve
     xerx "Like this."
+    play sound magicAttackUnchmabered  
     hide xerx3quatPointHappyArmored
     hide femTesipiz
     show tesipiz34MiniHappyArmored at center , halfSize:
-        xpos 0.66
-    with fade
+        xpos 0.67
+    show xerx3quatHappyArmored at center , halfSize , flipped
+    with Fade( 0.5 , 0.5 , 0.5 , color="#ff0")
     tesi "Thank you."
 
     hide tesipiz34MiniHappyArmored
     show tesipiz34MiniHappyArmored at center , halfSize:
-        xpos 0.66
-    hide xerx3quatPointHappyArmored
-    show xerx3quatHappyArmored at center , halfSize:
-        xpos 0.33
+        xpos 0.67
+    hide xerx3quatHappyArmored
+    show xerx3quatHappyArmored at center , halfSize
     show volkara3quatArmored neutralHappyMouth
     show malikImg happy greet
     with dissolve
@@ -113,11 +122,11 @@ label makkabiumFoZ2:
 
 
     scene clearDayTime
-    show makkabiumRuinEntrance at left , halfSize:
-        xpos 0.4
+    show makkabiumRuinEntrance at left:
+        xpos -1.8
         linear 60 xpos 1.0 xalign 1.0
     show xerx3quatPointHappyArmored at left , size2Thrid , hiddenLegs125 , flipped
-    show volkara3quatArmored OMouth at medium , size2Thrid , hiddenLegs125
+    show volkara3quatArmored OMouth at center , size2Thrid , hiddenLegs125
     show tesipiz34MiniHappyArmored at right , size2Thrid , hiddenLegs125 , flipped
     with fade
 
@@ -155,7 +164,7 @@ label makkabiumFoZ2:
     #check for food items
     #they go ontop of the little sand hill covering a ruined building
     
-    hide xerxNoWeGoodArmored
+    hide xerxArmsOutHappyArmored
     show xerx3quatPointHappyArmored at left , size2Thrid , hiddenLegs125 , flipped
     with dissolve
     xerx "The main temple should be accross the river."
@@ -167,13 +176,14 @@ label makkabiumFoZ2:
     #volkara does scared face
     xerx "Don't worry Volkara"
     hide xerx3quatHappyerArmored
-    show xerxMarchFowardSoAMYeah at left , size2Thrid , hiddenLegs125 , flipped
+    show xerxMarchFowardSoAMYeah at left , size2Thrid , flipped:
+        ypos 1.3
     with dissolve
     xerx "We'll be here for you."
-    show volkara34Happy basic normalEyes happyMouth with dissolve
+    show volkara3quatArmored basic normalEyes happyMouth with dissolve
     volk "O.K"
 
-    "{b}Next Part will be released in Version 0.2.5"
+    "{b}The Next Part will be released in Version 0.2.5"
     return
 
 label makkabiumAST1:

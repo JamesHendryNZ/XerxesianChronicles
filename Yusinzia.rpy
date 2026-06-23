@@ -156,7 +156,7 @@ label yusinziaRebels:
 
     
     pause 12
-    "debug pause"
+    #"debug pause"
     stop sounds fadeout 1.0
     stop extraSound fadeout 1.0
     stop music fadeout 1.0
@@ -165,28 +165,28 @@ label yusinziaRebels:
     scene clearDayTime
     show yimiaRoadCampEast at right , size2Thrid
     with Fade ( 0.5 , 0 , 1 )
-    show versaniz meanEyes meanHappyMouth angryPose at left , size2Thrid , hiddenLegs125:
-        xpos -0.5
+    show versaniz meanEyes meanHappyMouth angryPose at left , size2Thrid:
+        xpos -0.5 ypos 1.3
         easein 2 xpos 0.5 xalign 0.5
     vers "Victory!!"
-    show siayusi back meanEyes happyMouth at left , size2Thrid , hiddenLegs125:
-        xpos -0.5
+    show siayusi back meanEyes happyMouth at left , size2Thrid:
+        xpos -0.5 ypos 1.3
         easein 2 xpos 0.0
     siay "Gilgamoria is free!!"
 
     show zagzhino twoFists happyMouth at right , size2Thrid , hiddenLegs125:
         xpos 1.5
         easein 2 xpos 1.0
-    show siayusi neutralEyes with dissolve
+    show siayusi -meanEyes with dissolve
     show versaniz armoredPointy 
-    show zagzhino forward
+    show zagzhino front
     with dissolve
     play music dariusTheme fadein 1.0 fadeout 1.0
     vers "King Zagzhino!"
     vers "Stay here and hold out."
     show versaniz angryPose with dissolve
     vers "I'm going to Yusidziu myself."
-    show versaniz armored -meanHappyMouth
+    show versaniz meanEyes -meanHappyMouth armored
     show siayusi xEyes happyMouth
     with dissolve
     siay "He'll certanly join if he sees Zardonians at his gates!"
@@ -198,34 +198,44 @@ label yusinziaRebels:
     show zagzhino twoFists meanEyes with dissolve
     zagz "Soon the Zaratians will be forced to concide!"
 
-    show zagzhino front frown:
+    show zagzhino front frown at right , size2Thrid , hiddenLegs125:
         xpos 1.0
-        easein 2 xpos 0.75
-    show lakatinuFront armored angryEyes OMouth at right , size2Thrid , hiddenLegs125:
-        xpos 1.5
-        easein xpos 1.0
+        easein 2 xpos 0.6
+    show versaniz armored at center , size2Thrid:
+        xpos 0.5 ypos 1.3
+        easein 2 xpos 0.25
+    show siayusi at left , size2Thrid:
+        ypos 1.3
+        easein 2 xpos -0.15    
+    show lakatinuFront armored angryEyes OMouth at right , size2Thrid behind zagzhino , versaniz:
+        xpos 1.6 ypos 1.3
+        easein 2 xpos 1.2
     with dissolve
     laki "Can I get the Anti-Stealth Tablet piece now?"
     show lakatinuFront angryMouth
-    show zagzhino pointies angryMouth
+    show zagzhino pointies angryMouth at flipped , right , size2Thrid , hiddenLegs125:
+        xpos 0.6
     with dissolve
     zagz "You'll get it when the Yusinzians join us."
     zagz "Because I know you'll just fly off as soon as you get it."
-    show zagzhino frown with dissolve
-    show lakatinu OMouth with dissolve
+    show zagzhino front frown with dissolve
+    show lakatinuFront OMouth with dissolve
     laki "Nyargh!!"
     #they go to Yusidziu
     scene clearDayTime
-    show yusidziuEstablishing at fullFit
+    show yusidziuEstablishing at fullFit:
+        yalign 0.0
+        linear 5 yalign 1.0
     with fade
     pause 5
     scene clearDayTime
-    show yusidziuGate at center , halfSize
-    show ssatuGlaiveGirl at halfSize , left
+    show yusidziuGate at right , thridSize
+    show ssatuGlaiveGirl at quatSize , center:
+        xpos 0.25
     with fade
-    show versanizOnLuna at halfSize , right:
+    show versanizOnLuna at quatSize , right, flipped:
         xpos 1.5
-        easein 4 xpos 0.5
+        easein 4 xpos 1.1
     
     pause 3
     show ssatuGlaiveGirl O with dissolve
@@ -233,17 +243,17 @@ label yusinziaRebels:
     yusiTrop "ZARDONIANS ON SPIDER-CENTAURS?!"
 
     show ssatuGlaiveGirl neutralHappy
-    show siayusi onSpooda happyMouth at halfSize , right:
+    show siayusi onSpooda happyMouth at quatSize , flipped , right behind ssatuGlaiveGirl , versanizOnLuna:
         xpos 2.0
-        easein 2 xpos 1.0
+        easein 2 xpos 0.8
     with dissolve
     siay "Not just Zardonians."
     show siayusi meanEyes with dissolve
     siay "But free ssatu too."
-    show siayusi neutralEars -happyMouth
+    show siayusi -happyMouth
     show versanizOnLuna VmeanHappyMouth VmeanEyes
     with dissolve
-    vers "I'm the Mighty Prince Versaniz III of Zardonia!"
+    vers "I'm the mighty Prince Versaniz III of Zardonia!"
     vers "I want to talk to King Yunigzho of Yusinzia!"
     show versanizOnLuna -VmeanHappyMouth -VmeanEyes
     show ssatuGlaiveGirl mean O
@@ -252,9 +262,11 @@ label yusinziaRebels:
 
     #they go to royal entrance
     scene clearDayTime
-    show yusidziuInnerWalls at halfSize
-    show yunigzhoImg pointies meanEyes sadMouth at halfSize , left
-    show versanizOnLuna at halfSize , right
+    show yusidziuInnerWalls at thridSize , center
+    show yunigzhoImg pointies meanEyes sadMouth at thridSize , left , flipped
+    show versanizOnLuna at thridSize , right , flipped:
+        ypos 1.1
+    with fade
     yuni "Why do you seek me Zardonian?"
     show versanizOnLuna VmeanEyes VhappyMouth
     show yunigzhoImg frown front
@@ -273,9 +285,9 @@ label yusinziaRebels:
     #versaniz likes this as he is getting annoyed with Lakatinu.
     #it should end here to build up tention
     play music bardaiyaBeMad fadein 1.0 fadeout 1.0
-    scene yunigzhoRoom
-    show yunigzhoImg happy greet at left , size2Thrid , hiddenLegs125
-    show versaniz at right , size2Thrid , hiddenLegs125
+    scene yunigzhoRoom at center , size2Thrid
+    show yunigzhoImg happyMouth greet at left , size2Thrid , hiddenLegs125, flipped
+    show versaniz at right , size2Thrid , hiddenLegs125 , flipped
     with fade
     yuni "Well. You have made it here with a land force."
     show yunigzhoImg meanEyes pointies with dissolve
@@ -287,27 +299,27 @@ label yusinziaRebels:
     show versaniz meanEyes angryPose with dissolve
     vers "I have a couple of Junatu ladies that would love to be royality."
     
-    show versaniz armored -meanEyes -angryPose 
+    show versaniz -happyMouth -meanEyes -angryPose  
     show yunigzhoImg neutralEyes frown pointies
     with dissolve
     yuni "I also need funds to hire many haapitu mercanries."
     show yunigzhoImg neutralEyes miniHappyMouth
-    show versaniz pointies happyMouth
+    show versaniz armoredPointy happyMouth
     with dissolve
     vers "I can also do that."
-    show versaniz -pointies with dissolve
+    show versaniz -armoredPointy -happyMouth with dissolve
     vers "{i}The Haapitu mercs will be alot better than that annoying ryuutu lady."
     vers "{i}I can tell Zagzhino to give Lakatinu the Anti-Stealth Tablet piece so she can fly away."
     show versaniz armoredPointy OMouth with dissolve
     vers "How much for the alliance and haapitu?"
-    show versaniz armored -OMouth
+    show versaniz -armoredPointy -OMouth
     show yunigzhoImg pointies meanEyes sadMouth
     with dissolve
     yuni "20,000 Zardons."
     show yunigzhoImg front frown 
     show versaniz angryPose frowning
     with dissolve
-    vers "I a bit much."
+    vers "It's a bit much."
 
     show versaniz armoredPointy happyMouth
     show yunigzhoImg twoFists miniHappyMouth
@@ -316,7 +328,7 @@ label yusinziaRebels:
     vers "We'll target the cities of Zoakshaa and Chiazhu as well as drive out the Ssazarat-ri'in."
     vers "That will allow the Ksha and Fwimgyoka rivers to guard our Kingdoms."
     
-    show versaniz armored -happyMouth
+    show versaniz -armoredPointy -happyMouth
     show yunigzhoImg happyMouth
     with dissolve
     yuni "Understood."

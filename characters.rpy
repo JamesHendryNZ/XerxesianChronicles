@@ -149,6 +149,7 @@ define junaJav = Character("Junatu Javelin Dude" , color= "#3d5579")
 define junaWar = Character("Junatu Warrior" , color= "#3d5579")
 define junatus = Character("Junatu Warriors" , color= "#3d5579")
 define yuni = Character("King Yunigzho" , color = "#222")
+define yusiTrop = Character("Yusinzian Trooper" , color = "#311")
 
 #Banditos
 define chwitaza = Character("Chwitaza" , color = "#000" )

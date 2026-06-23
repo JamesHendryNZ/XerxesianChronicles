@@ -50,7 +50,7 @@ label returnEquptment:
 
     $ volkaraCharacter.weapon = jamesianDagger
     $ volkaraCharacter.rangedWeapon = compositeBow
-    $ volkaraArmorSets.updateArmor(1)
+    $ volkaraCharacter.updateArmor(1)
     $ volkaraCharacter.updateStats()
     return
 
@@ -1133,11 +1133,11 @@ label outOfBalaAzeriumFoZ:
     if checkIfHave( inventory , tabletPieceMak ): #will do when it version 0.2.5
         mali "We'll return to Xartabana"
         jump winXartabanaFoZ
-        jump makkabiumFoZ2
     else:
         mali "We'll go to Makkabium."
         mali "You can get some sleep before we drop you off there."
         call yusinziaRebels
+        jump makkabiumFoZ2
    
     #they go back
     #they arrive at South Makkabium entrance.
