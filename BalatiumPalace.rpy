@@ -627,6 +627,7 @@ label balaPalaceHaremMessHall:
                     #ypos 0.35
                 show balatiusPalaceMessHallForground at center:
                     zoom 1.5 ypos 2.7
+                with dissolve
                 haremCook "You must be new here."
                 haremCook "You must be hungry."
                 hide orodianHaremLady
@@ -758,7 +759,8 @@ label balaBedroom:
             with dissolve
             volk "Nothing of interest here"
 
-            scene clearDayTime at fullFit , topShineGradient
+            scene clearDayTime at fullFit:
+                matrixcolor TintMatrix("005") * BrightnessMatrix (-0.3)
             show balatiusBedroom at fullFit
             show femTesipiz nervous O at left , size2Thrid , lightCrystalLights , flipped:
                 ypos 1.25

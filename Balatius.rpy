@@ -160,13 +160,15 @@ label balatiusFoz:
             ypos 1.25
         bala "Hahah!"
         bala "I hadn't had this much fun in ages!"
-        hide balatiusBattleImg
-        window hide dissolve
+        
         $ enemyTroopers = [ balatiusBattleMan ]
         show screen bossTitleScreen( "#fff" , "#555700" , 35 , "The King of Bala-Axeria" , "BALATIUS" , 55 , 0.5 , 0.9 ) with dissolve
         pause 5
-        hide screen bossTitleScreen with dissolve
+        hide balatiusBattleImg
+        window hide dissolve
+        hide screen bossTitleScreen 
         call screen playerActions( "Keep Him Distracted!" , False , True , True , timeTime )
+        with dissolve
 
         $ balatiusBattleMan.health = balatiusBattleMan.hitpoints
         jump balatiusTesiAndVolkShowUp
@@ -805,6 +807,7 @@ label afterBalatiusDed:
     show volkara3quat haremArmed happyMouth at right , size2Thrid , hiddenLegs125 , flameLight, flipped
     with dissolve
     
+    play sound weOwnedThem
     play music campfire fadein 1.0 fadeout 1.0
     xerx "That'll make our escape easier."
     hide femXerxSoAMFight

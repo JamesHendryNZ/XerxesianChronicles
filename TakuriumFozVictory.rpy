@@ -1940,7 +1940,7 @@ label leaveTakuriumFoz:
         taku "And come back to me Tesipiz."
         show ladyTakura hornyEyes blush with dissolve
         taku "I've got a treat for you."
-    "{b}Next part will come in version 0.2.3"
+    jump toXartabanaFoz
     return
     
 

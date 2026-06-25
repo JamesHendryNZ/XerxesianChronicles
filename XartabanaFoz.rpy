@@ -1247,7 +1247,7 @@ label atazeraMeetFoz:
             with dissolve
             ataz "And I'll get dancing slave costumes for the three of you."
 
-            show atazeraImg base neutral
+            show atazeraImg basic neutral
             show volkara3quat pointy sadEyes OMouth at center , size2Thrid:
                 ypos 1.25 xpos 0.75
                 linear 1 xpos 0.65

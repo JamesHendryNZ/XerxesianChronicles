@@ -1991,7 +1991,7 @@ label battleOfLakeTakuraFoz: #do after yemehFoZ is done
     play music windAmbiance fadein 1.0 fadeout 1.0 if_changed
     scene clearDayTime
     show takuriumOutOfArena at fullFit
-    show jamesianHeavyArcherTelescopeSee at  middleStand , size2Thrid  , flipped
+    show jamesianHeavyArcherTelescopeSee at  middleStand , size2Thrid 
     with fade
     pause 2.0
 
@@ -2084,11 +2084,11 @@ label battleOfLakeTakuraFoz: #do after yemehFoZ is done
     play music "<from 0 to 5.82>audio/music/Under Attack.ogg" fadein 1.0
     scene clearDayTime
     show takuriumOutOfArena at fullFit
-    show jamesianHeavyArcherTelescope at middleStand , size2Thrid , flipped
+    show jamesianHeavyArcherTelescope at middleStand , size2Thrid
     with dissolve
     hvyArchM "ASTART FORCES APPROCHING FROM THE LAKE!"
     hide jamesianHeavyArcherTelescope
-    show jamesianHeavyArcherAlerted at middleStand , size2Thrid  , flipped
+    show jamesianHeavyArcherAlerted at middleStand , size2Thrid 
     with dissolve
     hvyArchM "THEY HAVE BOATS AND AQUATICS!!"
     #they prepare for battle
@@ -2450,8 +2450,8 @@ label battleOfLakeTakuraFoz: #do after yemehFoZ is done
     call screen playerActions( "The Astarts have broken into the city. Recapture the gates!! ( Slay 12 of them )" , False , False , False , 1 , foesLeft = 12 , winWhenFoeAmountKilled=True , goonAddPool = extraGoonPool , goonsAllowed = 6 )    
     #fight mwejya ouside the gates
     $ haveKnockedOutBoats = False
-    $ goonSlots = len(enemyTroopers) - 5
-    if goonSlots < 0:
+    $ goonSlots = 5 - len(enemyTroopers)
+    if goonSlots > 0:
         $ fillEnemyPartyRandom( goonSlots , extraGoonPool , enemyTroopers )
     menu:
         "Deal with the Astarts who made it inside.":
