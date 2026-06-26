@@ -32,11 +32,16 @@ init python:
 
     def rythmAttacking ( targetTrooper , character , attackFactor ):
 
+        
         character.weaponUsed( False )
 
         #check for attack boosting
         if check4Effect( "BoostedAttack" , character.effects  ):
             attackFactor *= 1.5
+        if check4Effect( "Charged" , character.effects ):
+            attackFactor *= 2.0
+        elif check4Effect( "OverCharged" , character.effects ):
+            attackFactor *= 3.0
 
         armorReduction = targetTrooper.armor - character.armorPen
 

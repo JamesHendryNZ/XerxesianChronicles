@@ -1510,7 +1510,7 @@ screen quick_menu():
 
 style window:
     variant "small"
-    background "gui/textbox_xerx.png"
+    background "gui/textbox_Xerx.png"
 
 style radio_button:
     variant "small"

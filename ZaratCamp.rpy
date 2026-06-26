@@ -682,7 +682,7 @@ label zaratCampShoppings:
     show shopZaratShopCounter at truecenter , size08
     with dissolve
     
-    call shopBasic( royalZaratShopItems , ifUsedShop , isAngryShopRoyalZarat ) 
+    call shopBasic( royalZaratShopItems , ifUsedShop , isAngryShopRoyalZarat ) from _call_shopBasic_10 
 
     if _return == 0:
         show chyaazi OMouth sadEyes with dissolve
@@ -716,7 +716,7 @@ label zaratCampShoppings:
 
             show chyaazi item 
             #show dyonisisngwaArmOver at middleStand , size2Thrid , duskLights
-            show screen showItemImage( theresAnImage ,  horizontalPos = 0.5 , verticlePos = 0.45 , zoomies = 0.5) #TODO reconfigure to appaer on chyaazi's hand/ the bench
+            show screen showItemImage( theresAnImage ,  horizontalPos = 0.5 , verticlePos = 0.45 , zoomies = 0.5) 
             with dissolve
             pause 0.5
             hide screen showItemImage
@@ -2961,7 +2961,7 @@ label dateWithTsekrei1:
     tsek "The ground being so soft."
     show tsekrei armsForward34 meanEyes OMouth with dissolve
     tsek "Expecially when it rains."
-    show tsekrei -meanEyes
+    show tsekrei -meanEyes OMicronMouth
     hide tesipiz34NeutralHappy
     show tesipiz34Commanding at center , flipped , size3quat behind tsekrei:
         ypos 1.25
@@ -2980,6 +2980,7 @@ label dateWithTsekrei1:
     hide tesipiz34Curious
     show tesipizPointingUp at center , flipped , size3quat behind tsekrei:
         ypos 1.25
+    show tsekrei OMicronMouth
     with dissolve
     tesi "We have secret weapon."
     show tsekrei -meanEyes with dissolve
@@ -2987,12 +2988,14 @@ label dateWithTsekrei1:
     hide tesipizPointingUp
     show tesipiz34NeutralHappy at center , flipped , size3quat behind tsekrei:
         ypos 1.25
-    show tsekrei armsForward34 meanEyes 
+    show tsekrei armsForward34 meanEyes madMouth
     with dissolve
     tsek "Why havent you used it yet?"
     hide tesipiz34NeutralHappy
     show tesipiz34LookingDownSad at center , flipped , size3quat behind tsekrei:
         ypos 1.25
+    show tsekrei OMicronMouth
+    with dissolve
     tesi "There is still hope that the Zardonians can be redeemed."
     tesi "If we use it now."
     show tsekrei base34 sadEyes with dissolve
@@ -3006,7 +3009,7 @@ label dateWithTsekrei1:
     hide tesipiz34LookingDownSad
     show tesipiz34CommandingPoting at center , flipped , size3quat behind tsekrei:
         ypos 1.25
-    show tsekrei OMouth
+    show tsekrei OMicronMouth
     with dissolve
     tesi "If they try, the trap will be triggered."
     
@@ -3015,11 +3018,12 @@ label dateWithTsekrei1:
         ypos 1.25
     with dissolve
     tesi "They won't let themselves be purged."
-    show tsekrei armsForward34 sadEyes with dissolve
+    show tsekrei armsForward34 sadEyes OMouth with dissolve
     tsek "But we should still."
     hide tesipizAnnoyed
     show tesipiz34CommandingPoting at center , flipped , size3quat behind tsekrei:
         ypos 1.25
+    show tsekrei OMicronMouth
     with dissolve
     tesi "We'll only do it when we have no other choice."
     hide tesipiz34CommandingPoting
@@ -3046,7 +3050,7 @@ label dateWithTsekrei1:
     hide tesipiz34HappyCommandingPoting
     show tesipiz3Fingers at center , flipped , size3quat behind tsekrei:
         ypos 1.25
-    show tsekrei handChest34 -sadEyes
+    show tsekrei handChest34 -sadEyes OMicronMouth
     with dissolve
     tesi "It's only a small group of greedy tossers at the top doing this."
     menu:

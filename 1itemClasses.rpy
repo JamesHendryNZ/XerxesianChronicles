@@ -66,10 +66,13 @@ define redPotion = Item("Healing Potion (Red)" , "images/items/bottlePotionRed.w
 define bluePotion = Item("Healing Potion (Blue)" , "images/items/bottlePotionBlue.webp" , "potion" , 80 , 2 , "Heals" , 0 , "Magic potion that replenisihes a lot of lifeforce to keep the auto-heal going. Heals 80 for 2 turns" , 50)
 define yellowBombMakitKit = Item( "Yellow Bomb Kit" , "images/items/bombKitYellow.webp" , "preKit" , 0 , 0 , "preBomb" , 0 , "Random Chemicals needed to make yellow bombs. Needs Tesipiz and time to convert it to bombs." , 25 )
 define tanBombMakitKit = Item( "Strong Bomb Kit" , "images/items/bombKitTan.webp" , "preKit" , 0 , 0 , "preBomb" , 0 , "Random Chemicals needed to make the strong tan bombs. Needs Tesipiz and time to convert it to bombs." , 50 )
+
 define zwotiKey = Item( "Zwoti Sword Key" , "images/items/keysZwotiSoAM.webp" , "quest" , 6 , 0 , "questKey" , 3 , "A key needed to access the Sword of Ahura-Mazda. Found in the Zwoti Shrine." , 4 )
 define kwortixKey = Item( "Kworitx Sword Key" , "images/items/keyKworitxSoAM.webp" , "quest" , 6 , 0 , "questKey" , 3 , "A key needed to access the Sword of Ahura-Mazda. Found in the Abandoned Mines." , 4 )
 define kwortixGenericKey = Item("Kwortix Access Key" , "images/items/keysKwortixGeneric.webp" , "quest" , 6 , 0 , "OpenDoorKwortix" , 3 , "A key used to open doors in the Kwortix Mine." , 4) 
 define TakuriumKey = Item( "Takurium Sword Key" , "images/items/keyTakuriumSoAM.webp" , "quest" , 6 , 0 , "questKey" , 3 , "A key needed to access the Sword of Ahura-Mazda. Found in the ruins of Takurium." , 4 )
+define balatiumKey = Item( "Balatium Key" , "images/items/keyBalatium.webp" , "quest" , 6 , 0 , "questKey" , 3 , "A key found lying around somewhere. I wonder what it opens." , 4 )
+
 define cheesyCheese = Item( "Cheese" , "images/items/cheese.webp" , "potion" , 25 , 4 , "Heals" , 0 , "A cheesy food made out of cheesy cheese, Heals 25 hitpoints for 4 turns." , 5 )
 define smellyCheese = Item( "Smelly Cheese" , "images/items/smeally cheese.webp" , "reviver" , 25 , 4 , "Revives" , 0 , "A cheesy food so skinky it can revive people and heal them 25 hitpoints for 4 turns." , 70  )
 define baitFish = Item( "Bait Fish" , "images/items/bait fish.webp" , "potion" , 10 , 3 , "Heals" , 0 , "A smiple fish used to catch bigger fish. Can be eaten. Heals 10 for 3 turns." , 4 )
@@ -79,7 +82,7 @@ define cookedcrayfish = Item( "Cooked Crayfish" , "images/items/cave crayfish co
 define spicycrayfish = Item( "Spicy Crayfish" , "images/items/cave crayfish cooked spicy.webp" ,"potion" , 30 , 2 , "BoostedAttack" , 0 , "Spicy crayfish is very tasty. Heals 30 and gives you a breif boost in attack." , 20 )
 define cookedfish = Item( "Cooked Fish" , "images/items/jamesosian flood fish cooked.webp" , "potion" , 40 , 4 , "Heals" , 0 , "Yummy yummy cooked fried fish. Heals 40 per turn for 2 turns.", 20) 
 define redSpice = Item("Red Spice" , "images/items/red spice.webp" , "chemical" , 0 , 0 , "chemical" , 0 , "Can make food spicy" , 10 )
-define spicycookedfish = Item( "Spicy Fish" , "images/items/jamesosian flood fish cooked Spicy.webp" , "BoostedAttack" , 30 , 2 , "Heals" , 0 , "Yummy yummy spciy fried fish. Heals 50 and gives you a breif boost in attack.", 20 )
+define spicycookedfish = Item( "Spicy Fish" , "images/items/jamesosian flood fish cooked Spicy.webp" , "potion" , 30 , 2 , "BoostedAttack" , 0 , "Yummy yummy spciy fried fish. Heals 50 and gives you a breif boost in attack.", 20 )
 define cookedMeatItem = Item("Cooked Meat" , "images/items/Cooked Meat.webp" , "potion" , 25 , 3 , "Heals" , 0 , "Fried Monsters and other animals, much better than raw. Heals 25 per turn from 3 turns." , 5 )
 define spicyMeat = Item( "Spicy meat" , "images/items/Cooked Meat Spicy.webp" , "potion" , 30 , 3 , "BoostedAttack" , 0 , "Spicy adds to the flavour of monster and animal bits. Heals 30 and makes gives you a boost in attack.", 15 )
 #define reviver = Item( "Reviver Fang" , "Images/Items/reviver fang.webp", "reviver" , 420 , 1 , "reviver" , 0 , "Delivers health potion to someone who can't drink. Revives a fallen hero.", 100)

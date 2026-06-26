@@ -14,7 +14,6 @@
 
 define config.name = _("Xerxesian Chronicles: The Sword of Ahura-Mazda")
 
-
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
@@ -23,7 +22,7 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "0.2.2"
+define config.version = "0.2.3"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -183,7 +182,8 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
-
+    build.archive("game_assets", "all")
+    build.classify("game/images/**", "game_assets")
     ## To archive files, classify them as 'archive'.
 
     # build.classify('game/**.png', 'archive')

@@ -6102,6 +6102,21 @@ layeredimage tsekrei:
         attribute OMouth if_any['battle34']:
             "images/Protagonists/Tsekrei/Tsekrei 34 OMouth.webp"
             xpos 700 ypos 200
+        
+        attribute OMicronMouth if_any['armed']:
+            "images/Protagonists/Tsekrei/Tsekrei 34 OmicronMouth.webp"
+            ypos 200 xpos 100
+        attribute OMicronMouth if_any['base','frontArmsArmored']:
+            "images/Protagonists/Tsekrei/Tsekrei 34 OmicronMouth.webp"
+        attribute OMicronMouth if_any['greet']:
+            "images/Protagonists/Tsekrei/Tsekrei 34 OmicronMouth.webp"
+            ypos 200 xpos 100  
+
+        attribute OMicronMouth if_any['base34','yeah34','handChest34','armed34','armoredYeah34','frontArmsArmored34','handChestArmored34','itemArmored','armored34','armsForward34','item']:
+            "images/Protagonists/Tsekrei/Tsekrei 34 OmicronMouth.webp"
+        attribute OMicronMouth if_any['battle34']:
+            "images/Protagonists/Tsekrei/Tsekrei 34 OmicronMouth.webp"
+            xpos 700 ypos 200
             
         attribute madMouth if_any['armed']:
             "images/Protagonists/Tsekrei/Tsekrei Mad Mouth.webp"

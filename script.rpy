@@ -63,6 +63,9 @@ default freedTakura = False
 
 default zaratiansHelped = False
 default versanizAlive = True
+default lunaAlive = True
+default muibaAlive = True
+default siayusiAlive = True
 default jemesisAlive = True
 default yusinziaLoyal = True
 

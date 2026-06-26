@@ -689,6 +689,7 @@ label battleAttackLoop ( isTimed , winOnTimeOut , turns , ringLeaders = [] , foe
                             $ currentPlayer.health -= 40
                             play sound PowerUp
                             "[currentPlayer.name] starts charging up the Sword of Ahura-Mazda costing them 40 health points." # 20+10 = 30 so 40 gives the player at least 10 points
+
                             
                         #--------------------------------------------------------------------------------
                         "Unlesh the Power!" if currentPlayer.weapon.type == "SoAM" and check4Effect( "OverCharged" , currentPlayer.effects ):

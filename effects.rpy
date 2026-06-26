@@ -16,7 +16,11 @@ init python:
 
         return
 
-
+    #remove effect type
+    def removeEffectType( type , effects ):
+        for effect in effects:
+            if effect.effectName == type:
+                effects.remove(effect)  
     #apply Effects
     def applyEffect( currenteEffects , applied2 ): #for applaying effects in battle
         #run through a list of 
@@ -38,6 +42,22 @@ init python:
                 message2Say.append( f"The { effect.effectItem } burns { effect.effectPower } health off of { applied2.name }." )
                 if applied2.health <= 0:
                     message2Say.append( f"{ applied2.name } has been incinerated." )
+            
+            elif effect.effectName == "Charged":
+                renpy.sound.play("audio/sound effects/Power.ogg" , fadeout=5.0)
+                effect.effectName = "OverCharged"
+                effect.effectLenght = 3 
+                effect.effectPower = 10 
+                message2Say.append( f"The { effect.effectItem } is now overcharged and is getting too hot to handle." )
+                #applied2.effects.remove( effect )
+
+            elif effect.effectName == "OverCharged":
+                applied2.health -= effect.effectPower
+                renpy.sound.play("audio/sound effects/burning.ogg") #replace with sizzle sound
+                message2Say.append( f"The { effect.effectItem } burns { effect.effectPower } health off of { applied2.name }." )
+                message2Say.append( f"{ applied2.name }: Ow ow ow ow ow! I gotta unlesh this power!" )
+                if applied2.health <= 0:
+                    message2Say.append( f"{ applied2.name } Couldn't handle the power of { effect.effectItem }." )
                 #case "Possesion":
                     #swap sides- Purple shading on person              
                 #case "BoostedAttack":
@@ -60,8 +80,8 @@ init python:
                 #case "SoftSkinned":
                     # curse hardskinned
                     # change hp to yellow with black outlines 
-                #case "Overcharged":
-                    # glows bright yellow
+            #elif "Charged":
+            #    "the overcharge is here"    
                 #case "Charged":
                     # glows yellow
                 #case "Stunned":
@@ -76,7 +96,7 @@ init python:
                 renpy.play("audio/sound effects/whip-123738.ogg")
                 message2Say.append( f"The { effect.effectItem } has entangled { applied2.name } and prevents them from moving." )       
 
-            effect.effectLenght -= 1
+
             if effect.effectLenght <= 0:
                 applied2.effects.remove( effect )
 
