@@ -6,6 +6,12 @@ init python:
     #ShopSystem
     #BattleSystem
     #EctabanaAssult1
+
+    def updateItemStats( item2Update , inventory ):
+        for itemSlot in inventory:
+            if itemSlot.item.name == item2Update.name:
+                itemSlot.item = item2Update
+
     class ItemSlot:
 
         item = None
@@ -86,7 +92,7 @@ define spicycookedfish = Item( "Spicy Fish" , "images/items/jamesosian flood fis
 define cookedMeatItem = Item("Cooked Meat" , "images/items/Cooked Meat.webp" , "potion" , 25 , 3 , "Heals" , 0 , "Fried Monsters and other animals, much better than raw. Heals 25 per turn from 3 turns." , 5 )
 define spicyMeat = Item( "Spicy meat" , "images/items/Cooked Meat Spicy.webp" , "potion" , 30 , 3 , "BoostedAttack" , 0 , "Spicy adds to the flavour of monster and animal bits. Heals 30 and makes gives you a boost in attack.", 15 )
 #define reviver = Item( "Reviver Fang" , "Images/Items/reviver fang.webp", "reviver" , 420 , 1 , "reviver" , 0 , "Delivers health potion to someone who can't drink. Revives a fallen hero.", 100)
-define salt = Item( "Salt" , "Images/Items/Salt.webp", "chemical" , 0, 0 , "chemical" , 0 , "Used for food falvor and presurvation" , 3)
+define salt = Item( "Salt" , "images/items/Salt.webp", "chemical" , 0, 0 , "chemical" , 0 , "Used for food falvor and presurvation" , 3)
 define isopod = Item( "Domestic Isopod" , "images/items/domestic isopod.webp" , "potion" , 10 , 3 , "Heals" , 0 , "A tasty chunchy snack and a cheep sorce of food. Heals 10 for 3 turns." , 4 )
 define lizardMeat = Item( "Meat" , "images/items/meat.webp" , "potion" , 10 , 3 , "Heals" , 0 , "Giblets of the remains of Dead monsters, best to cook and salt it before eating. Heals 10 for 3." , 4 )
 define saltyMeat = Item( "Salted Meat" , "images/items/salty meat.webp" , "potion" , 30 , 4 , "Heals" , 0 , "Salted meat is tasty and lasts longer. It heals 30 hitpoints for 4 turns." , 20)

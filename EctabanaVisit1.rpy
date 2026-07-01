@@ -1391,11 +1391,19 @@ label dinnerTimeDairus:
                 zoom 1.5
             with dissolve
 
-            "Queen Tastsurra (399-465). The first monarch of the Kambuzid Dynasty. The Knights of Ahura-Mazda were getting pissy with the Pashids."
-            "Some of the Grandmasters wanted to recreate the Ahurraist Republic of Old. The balance between powers was beginning to favor The Knights of Ahura-Mazda."
-            "She married one of the Grandmasters, Xerxes the Elder and allied with the Zaratians to make thier plans unwise."
-            "We couldn't be having civil wars when the Astarts and at the time Katanians are at our doorstep."
-            "Queen Tastsurra handled the administration while Xerxes the Elder guided the Knights of Ahura-Mazda against the real enemies now the Pashids were removed from power."
+            if renpy.mobile:
+                "Queen Tastsurra (399-465). The first monarch of the Kambuzid Dynasty. The Knights of Ahura-Mazda were getting pissy with the Pashids."
+                "Some of the Grandmasters wanted to recreate the Ahurraist Republic of Old. The balance between powers was beginning to favor The Knights of Ahura-Mazda."
+                "She married one of the Grandmasters, Xerxes the Elder and allied with the Zaratians to make thier plans unwise."
+                "We couldn't be having civil wars when the Astarts and at the time Katanians are at our doorstep."
+                "Queen Tastsurra handled the administration." 
+                "While Xerxes the Elder guided the Knights of Ahura-Mazda against the real enemies now the Pashids were removed from power."
+            else:
+                "Queen Tastsurra (399-465). The first monarch of the Kambuzid Dynasty. The Knights of Ahura-Mazda were getting pissy with the Pashids."
+                "Some of the Grandmasters wanted to recreate the Ahurraist Republic of Old. The balance between powers was beginning to favor The Knights of Ahura-Mazda."
+                "She married one of the Grandmasters, Xerxes the Elder and allied with the Zaratians to make thier plans unwise."
+                "We couldn't be having civil wars when the Astarts and at the time Katanians are at our doorstep."
+                "Queen Tastsurra handled the administration while Xerxes the Elder guided the Knights of Ahura-Mazda against the real enemies now the Pashids were removed from power."
 
             hide tastsurraFigue with dissolve
 
@@ -1421,9 +1429,16 @@ label dinnerTimeDairus:
                 zoom 2.0
             with dissolve
 
-            "Queen Jyenna (221-298). King Tazaranno's Wife, was quite 'agressive' around him and pooped out 22 children. She fought alongside King Tazaranno and helped to Liberate Harrata from the Astarts."
-            "She was able to train her children to run the Jamesian Kingdom which gave the Pashid Dynasty unbalanced power, as well as more time to do Tazaranno."
-            "The power base she set up helped Tazaranno defeat the Saffrids and focus on the Astarts, but put the Pashids at odds with the Knights of Ahura-Mazda by getting too powerful. Starting a centry long rivalry."
+            if renpy.mobile:
+                "Queen Jyenna (221-298). King Tazaranno's Wife, was quite 'agressive' around him and pooped out 22 children." 
+                "She fought alongside King Tazaranno and helped to Liberate Harrata from the Astarts."
+                "She was able to train her children to run the Jamesian Kingdom which gave the Pashid Dynasty unbalanced power, as well as more time to do Tazaranno."
+                "The power base she set up helped Tazaranno defeat the Saffrids and focus on the Astarts" 
+                "However, this put the Pashids at odds with the Knights of Ahura-Mazda by getting too powerful. Starting a centry long rivalry."
+            else:
+                "Queen Jyenna (221-298). King Tazaranno's Wife, was quite 'agressive' around him and pooped out 22 children. She fought alongside King Tazaranno and helped to Liberate Harrata from the Astarts."
+                "She was able to train her children to run the Jamesian Kingdom which gave the Pashid Dynasty unbalanced power, as well as more time to do Tazaranno."
+                "The power base she set up helped Tazaranno defeat the Saffrids and focus on the Astarts, but put the Pashids at odds with the Knights of Ahura-Mazda by getting too powerful. Starting a centry long rivalry."
         
             hide jyennaFigue with dissolve
 

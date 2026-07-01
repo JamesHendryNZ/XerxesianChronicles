@@ -94,4 +94,22 @@ label start:
 
     return
 
+label after_load:
+    #fix the armorsets for the characters
+    #fix the case miss match causing bugs in the android version
+    #add in their harem battle armors
+    $ xerxesCharacter.armors = xerxesArmorSets
+    $ tesipizCharacter.armors = tesipizArmorSets
+    $ atossaCharacter.armors = atossaArmorSets
+    $ volkaraCharacter.armors = volkaraArmorSets
+
+    #add in any new resipies
+
+    #add in any items
+
+    #change values on the values themselves
+    $ updateItemStats( salt , inventory )
+    #add in changes to item balance for items already in the inventory
+    return
+
 

@@ -494,8 +494,8 @@ screen showItemOptions( useableItems , showMoney , hasBackButton = False ):
                     frame:
                         
                         if renpy.mobile:
-                            xminimum 300
-                            yminimum 300
+                            xminimum 250
+                            yminimum 250
                         else:
                             xminimum 200
                             yminimum 180
