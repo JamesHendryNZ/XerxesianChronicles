@@ -96,7 +96,7 @@ init python:
                 renpy.play("audio/sound effects/whip-123738.ogg")
                 message2Say.append( f"The { effect.effectItem } has entangled { applied2.name } and prevents them from moving." )       
 
-
+            effect.effectLenght -= 1
             if effect.effectLenght <= 0:
                 applied2.effects.remove( effect )
 

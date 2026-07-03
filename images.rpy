@@ -2001,7 +2001,7 @@ image zardonianSwordsWoahManAttacking:
 
 image zardonianDartBoy = "images/Enemies/Zardonians/Plumbata Peltast Duude.webp"
 
-image zardonianDartGirl = "images/Enemies/Zardonians/Plumbata Peltast lady.webp"
+image zardonianDartGirl = "images/Enemies/Zardonians/Plumbata Peltast Lady.webp"
 image zardonianDartGirlLeave = "images/Enemies/Zardonians/Plumbata Peltast lady back fleeing.webp"
 
 image zardonianHarpoonDude = "images/Enemies/Zardonians/Tastsetrotu Harpooneer.webp"
