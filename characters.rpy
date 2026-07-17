@@ -49,6 +49,10 @@ define chya = Character("Chyaazi" , color = "#5a8a00")
 
 #assiria
 define trim = Character("Trimdius" , color = "#007e4e")
+define assGuard = Character("Assiria Guard" , color = "#327a32")
+
+#azagara
+define dagn = Character("Dagno" , color = "#005a75")
 
 #Axeria/Xartabana/Atazera's Realm
 define ataz = Character("Atazera" , color = "#07553b")
@@ -133,6 +137,7 @@ define cultist = Character( "Ahrite Cultist" , color="#9227c0")
 
 #zardossatu - Zardonians and ssatu
 define jeme = Character("King Jemesis" , color= "#a5009d")
+define taru = Character("Queen Taruhira" , color="#460088")
 define vers = Character("Prince Versaniz III" , color= "#0000a5")
 define zagz = Character("King Zagzhino" , color="#005564")
 define tuks = Character("Tuksoi" , color="#20545e" )
@@ -150,6 +155,8 @@ define junaWar = Character("Junatu Warrior" , color= "#3d5579")
 define junatus = Character("Junatu Warriors" , color= "#3d5579")
 define yuni = Character("King Yunigzho" , color = "#222")
 define yusiTrop = Character("Yusinzian Trooper" , color = "#311")
+define paetorCap = Character("Paetorian Captain." , color= "#7e00a5")
+define paetor = Character("Paetorian" , color= "#9700a5")
 
 #Banditos
 define chwitaza = Character("Chwitaza" , color = "#000" )
