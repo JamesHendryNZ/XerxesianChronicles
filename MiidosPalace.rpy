@@ -41,7 +41,47 @@ label MiidosPalaceWaiting:
 
 label justWait:
     "........"
-    jump meetKingJemesis
+    volk "Are we sure we should just wait?"
+    trim "Yes."
+    trim "I've have the evidence here."
+    trim "He wouldn't try anything brash at the moment."
+    
+    #cut to jemesis and astarte
+    astar "Sorry about your loss."
+    astar "But you're still winning."
+    jeme "There were reports of jamesians aiding the Zaratians."
+    astar "Is there now?"
+    paetorCap "King Jemesis!"
+    paetorCap "Trimdius wants to talk to you about a traitor in your ranks."
+    paetorCap "He is with some jamesians, who want to return Versaniz's posessions."
+
+    astar "The Jamesians are afraid."
+    jeme "Trimdius can wait."
+
+    jeme "Those acursed jamesians, killed my son and now they're here to mock me?"
+    astar "Well."
+    astar "Send them away."
+    astar "Have them return tomorrow."
+
+    astar "I'll deal with them."
+    astar "I'll dirty my hands to keep yours clean."
+    astar "Speaking of dirty."
+    #maybe boning time?
+
+    #later
+    jeme "Tell Trimdius he can see me tomorrow evening."
+    jeme "I want some time to relax."
+
+    #in the waiting room
+    paetorCap "Trimdius."
+    paetorCap "King Jemesis doesn't want to see you today."
+    paetorCap "He'll see you tomorrow evening."
+
+    trim "Oh well."
+    trim "Xerxes. I'll have you sleep in the Assiria Embassy."
+
+    jump streetAssAssination
+    #jump meetKingJemesis
 
 label MiidosSneakyBreaky:
     "Sneaky Breaky iv damkeh"

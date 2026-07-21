@@ -4,8 +4,8 @@
 label ToMiidos:
     $ enteringFrom = "MiidosStartATS"
     $ IsDayTime = True
-    "Go 2 Miidos"
-    "Miidos establishing"
+    #Go 2 Miidos
+    #Miidos establishing
 
     xerx "Trimdius"
     xerx "Are you sure that Jemesis will abducate without a fight?"
@@ -29,8 +29,10 @@ label ToMiidos:
         trim "I've got a new trick to teach you."
         call MiidosLearn2Jump
 
-label MiidosShop:
-    "Kachigga! Kachigga! Kachigga!"
+#label MiidosShop:
+    # will this be nessassary?
+    # they are never get the oppertunity to use it since this section is very railroaded
+#    "Kachigga! Kachigga! Kachigga!"
 
 label MiidosLearn2Jump:
     #this happends in assiria embassy gardens 
@@ -56,11 +58,12 @@ label MiidosLearn2Jump:
 label MiidosMenu:
 
     menu:
-        "Shop for items":
-            "got items"
+        #shop and craft maybe removed due to the plot railroading the protagonists
+#        "Shop for items":
+#            "got items"
         
-        "Craft Items":
-            "Mein Kraft"
+#        "Craft Items":
+#            "Mein Kraft"
 
         "Go to the Palace" if not enteringFrom == "LastDayInMiidos":
             "Palace Time"
@@ -77,7 +80,22 @@ label MiidosMenu:
 # the wait desision "
 # the assassination time
 label streetAssAssination:
-    "Assassins kreed time"
+    #they are going down the street
+
+    #assassins see Xerxes and co.
+    #assassins creed time.
+    trim "Assassins!?"
+    trim "{i}Does he know where on to him?"
+    trim "We need to get to the embassy. {b}NOW!"
+
+    assGuard "Hello Trimdius and jamesians."
+    assGuard "What happened!?"
+
+    trim "I've been trying to reveal a traitor in King Jemesis' ranks."
+    trim "Looks like he's trying to take us out before we reveal him."
+
+    assGuard "Oh boy."
+    assGuard "We'll keep you safe until this imposter is sussed out."
 
 label jemesisBlackMail:
     "we got dirt on you Jemesis"
@@ -179,4 +197,61 @@ label nextMorningAssiriaEmbassy:
 label taruhiraTalk:
     dagn "Trimdius and jamesians."
     dagn "Let me do that talking."
+    dagn "You've made my position hard enough as it is."
+    
+    paetorCap "Taruhira is waiting for you."
+    paetorCap "She will trail you."
 
+    dagn "Can I, Dagngo of Azagara, represent Trimdius and the Jamesians?"
+    taru "I don't need you Dagno."
+    taru "I just need their memories."
+
+    taru "Begone for the day Dagngo."
+    taru "That crystal vision mus be true."
+    taru "Or else."
+
+    #head read
+    taru "...."
+    taru "Uuuahh!!!"
+    taru "{i}That many times!?"
+    taru "{i}Why did I trust him?"
+
+    taru "You want that purple slate map my late Jemesis had?"
+
+    taru "I'll get it before that mega-whore Astarte steals it."
+    taru "I'll go to King Urlius and stop this before more live are uselessly lost."
+
+    taru "Begone!!"
+    taru "I don't want to see you at the moment."
+    taru "I banish you all for half a year."
+
+    taru "That includes you Trimdius!"
+    taru "You are to go and stay in the realms of Assiria and Azagara."
+
+    taru "Take your purple plate and go!"
+
+    taru "{i}I kind of wished you didn't reveal the truth."
+    taru "{i}I don't want you revealing any other truths."
+
+    #talk with dagngo
+
+    trim "We're banished."
+    trim "I won't be seeing you in half a year Dagngo."
+    dagn "It could have been a lot worse."
+
+    trim "But I got the war ended though."
+    trim "Taruhira's just sad."
+    trim "She probably wants some space to herself."
+    trim "You can still represent me Dagngo so it's not that bad."
+
+    #final leaving due to banishment
+
+    xerx "See you later Trimdius."
+    trim "See you later Xerxes, Tesipiz and Volkara."
+    dagn "Hopefully you don't need to visit Zardonia again."
+    dagn "Sorry for the bad impressions."
+
+    #they leave
+
+    astar "{i}Good."
+    astar "{i}Lets see what these Jamesians are made of."

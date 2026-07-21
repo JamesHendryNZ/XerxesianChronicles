@@ -93,6 +93,7 @@ define horsAcha = Character( "Horse Archer" , color="#8a3333")
 #Astarts
     #Imperial Core
 define astar = Character("Astarte" , color = "#cc008b")
+define astarClone = Character("Astarte Copy" , color = "#940051")
     #Bardaiya's Realm
 define bardy = Character("Bardaiya" , color = "#6f2500")
 define laki = Character("Lakatinu" , color = "#004e44")
@@ -157,6 +158,7 @@ define yuni = Character("King Yunigzho" , color = "#222")
 define yusiTrop = Character("Yusinzian Trooper" , color = "#311")
 define paetorCap = Character("Paetorian Captain." , color= "#7e00a5")
 define paetor = Character("Paetorian" , color= "#9700a5")
+define zardjun = Character( "Zardonian Juntatu Rider" , color="#0f0fa0")
 
 #Banditos
 define chwitaza = Character("Chwitaza" , color = "#000" )
