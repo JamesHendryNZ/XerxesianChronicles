@@ -29,10 +29,11 @@ label ToMiidos:
         trim "I've got a new trick to teach you."
         call MiidosLearn2Jump
 
-#label MiidosShop:
+label MiidosShop:
     # will this be nessassary?
     # they are never get the oppertunity to use it since this section is very railroaded
-#    "Kachigga! Kachigga! Kachigga!"
+    # yes for the wait options
+    "Kachigga! Kachigga! Kachigga!"
 
 label MiidosLearn2Jump:
     #this happends in assiria embassy gardens 
@@ -59,14 +60,15 @@ label MiidosMenu:
 
     menu:
         #shop and craft maybe removed due to the plot railroading the protagonists
-#        "Shop for items":
-#            "got items"
+        "Shop for items":
+            "got items"
         
-#        "Craft Items":
-#            "Mein Kraft"
+        "Craft Items":
+            "Mein Kraft"
 
         "Go to the Palace" if not enteringFrom == "LastDayInMiidos":
             "Palace Time"
+            if enteringFrom == "evidenceWaitZardonia"
         
         "Leave Miidos" if enteringFrom == "LastDayInMiidos":
             "Bye. Have a great time."
@@ -97,7 +99,83 @@ label streetAssAssination:
     assGuard "Oh boy."
     assGuard "We'll keep you safe until this imposter is sussed out."
 
+    #to the roof or the room'
+
+    xerx "Does Jemesis know were on to him."
+    trim "Maybe?"
+    trim "There are elites who want to attack the jamesians after defeating the Zaratians."
+    trim "But their plan is to take over Lake Gilgamorium to bypass the jamesians and Astarte's embargo on them."
+
+    volk "We can also out them as traitors if you have evidence on them as well."
+
+    trim "I have suspisions but nothing to pin anyboby on."
+
+    tesi "Maybe Astarte is behind it?"
+    tesi "She has the most to benifit from the Zardonians and Jamesians fighting."
+    trim "Makes sense."
+
+    xerx "We'll need to take turns on night watch then."
+    xerx "Who ever is behind this will most likely try again."
+
+    #maybe a menu no who takes watch out of the four
+
+    #assassination attmept 2
+
+    assGuard "Are you o.k?"
+
+    xerx "Yes."
+    trim "We need to get the evidence to Jemesis as soon as possible."
+    "Why would they attack the embassy."
+    "Do they want us to join the Jamesians?"
+    #trimidus lookes for the evidence
+    trim "Where is it."
+    trim "Where is it."
+    #maybe a find it game?
+    trim "There it is."
+
+    #maybe something before they leave for the day.
+
+    #maybe intro assiria due
+    $ enteringFrom = "evidenceWaitZardonia"
+    jump MiidosMenu
+
+
 label jemesisBlackMail:
+
+    #enter into a hallway with battle statues
+    #they active
+    #they attack
+    #astarte shows up
+    #a battle happends
+    #the paetorians show up.
+    #maybe some of the elites do has well
+    #trimdius tries to  explain the situation
+    #trimdius shows the evidence
+
+    astar "That's cute."
+    astar "What are you going to do about that?"
+
+    xerx "We're going to get rid of your puppet Astarte."
+    xerx "And then you and your curse."
+
+    astar "Well."
+    astar "You can try."
+
+    astar "But I think you won't"
+    #the charm reisiting minigame
+    #mini battle against Astarte
+
+    #jemesis shows up with royal guards
+    #so does Taruhira
+    astar "Looks like you need to explain yourselves."
+
+    trim "Queen Taruhira."
+    trim "Your husband is a cheater."
+    trim "Look."
+
+    #astarte might knock it out of his hand
+    #or snatch it
+
     "we got dirt on you Jemesis"
 
 # jemsis got dead again
