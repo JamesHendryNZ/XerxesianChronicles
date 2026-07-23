@@ -176,7 +176,73 @@ label jemesisBlackMail:
     #astarte might knock it out of his hand
     #or snatch it
 
+
+    jeme "TRIMDIUS!!"
+    jeme "What are you doning!?"
+
+    trim "There is a traitor in your ranks."
+    trim "Astarte is trying to hide him!"
+
+    
+    #does trimdius have 
+    jeme "Why would she do that!?"
+
+    trim "Because she is involved."
+
+    xerx "I also want to offer Versaniz's posessions for a special artifact."
+    astar "Speical artifact?"
+
+    xerx "I'm not telling you Astarte."
+    tesi "You won't like our plans."
+    volk "Leave! Sea Sand Whore!!"
+
+    astar "Oh my."
+    astar "Very rude."
+    astar "I can have that evidence crystal if I give you this artifact?"
+    
+    astar "{i}The jamesians won't tell us."
+    astar "{i}But they'll tell Jemesis."
+
+
+    #astarte dissapears
+
+    jeme "What is this artifact?"
+
+    xerx "It's a fractured purple slate."
+    xerx "It's got part of a map on it."
+    #volkara shows the anti-stealth tablet piece they had
+    volk "It looks like this."
+
+    jeme "So you went throigh all this trouble to get an old clay map?"
+    jeme "...."
+
+    #jemesis grabs his piece
+    jeme "Fine"
+    jeme "Give me the crystal evidence and Versaniz's, I'll end the traitors myself."
+
+
+    menu:
+        "Give Jemesis the Image Crystal for the Anti-Stelath Tablet Piece":
+            "give and take"
+        "Show Taruhira and the elites Jemesis' Treaterous and Adulterous ways":
+            "Taruhira is betrayed."
+
     "we got dirt on you Jemesis"
+
+label jemesisArtOfDaDeal:
+    "Jemesis takes the crystal piece"
+    "tells trimdius and jamesians to leave by tomorrow evening."
+    "goes into his room"
+    "Astarte shows up"
+    "Taruhira finds them both."
+    "She wants to see the evidence"
+    "Jemesis and Astarte try to get her to change her mind. saying somthing about being targetted or something."
+
+label taruhiraRebellion:
+    "Taruhira feeling betrayed orders forces and elites loyal to her to kill jemesis."
+    "Long as fight that lasts the night"
+    "chaos in the palace and the streets."
+
 
 # jemsis got dead again
 label assiriaEmbassyKill:
