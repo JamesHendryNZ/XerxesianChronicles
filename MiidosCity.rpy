@@ -223,25 +223,56 @@ label jemesisBlackMail:
 
     menu:
         "Give Jemesis the Image Crystal for the Anti-Stelath Tablet Piece":
-            "give and take"
+            #"give and take"
+            trim "Are you sure about this?"
+            xerx "Yes."
+            xerx "The Zaratians will beat them and push them out."
+            tesi "Are you sure?"
+            xerx "Yes."
+            xerx "we can help them out when we need to or done."
+            #Jemesis shows his piece of the anti-stealth tablet
+            #trimdius and Jemsis exchange at the same time.
+            volk "It's the right piece alright."
+            jeme "It's what you want."
+            jeme "Now begone from my palace."
+            jeme "I want you out of Miidos by next evening."
+            jump jemesisArtOfDaDeal
+
         "Show Taruhira and the elites Jemesis' Treaterous and Adulterous ways":
-            "Taruhira is betrayed."
+            trim "You need to see the who traitor is now!"
+            #"Taruhira is betrayed."
+            #taruhira is distraught
+            taru "Noo."
+            taru "Noo.."
+            jeme "That evidence is false"
+            jeme "Trimdius is just looking to drive a wedge between us!"
+            trim "Taruhira."
+            trim "Jemesis has been seduced by Astarte."
+            xerx "The War against the Astarts was for Astarte's benifit!"
+            xerx "Astarte wants us both weakened so she take us both out."
+            jeme "Astarte brought us prosperity, and the oppertunity to connect Ssayan Vally to Lake Gilgamorium!"
 
-    "we got dirt on you Jemesis"
+            taru "But, but...."
+            taru "You.."
+            taru "You.."
+            taru "How could you..."
+            taru "..."
+            taru "Trimdius and Jamesians!!"
+            taru "Get behind me!"
+            taru "That cheating traitor needs to be punished."
 
-label jemesisArtOfDaDeal:
-    "Jemesis takes the crystal piece"
-    "tells trimdius and jamesians to leave by tomorrow evening."
-    "goes into his room"
-    "Astarte shows up"
-    "Taruhira finds them both."
-    "She wants to see the evidence"
-    "Jemesis and Astarte try to get her to change her mind. saying somthing about being targetted or something."
+            astar "Oh my."
+            astar "Looks like your wife was the traitor after all."
+            #astarte uses charm magic
+            astar "You know what to do."
 
-label taruhiraRebellion:
-    "Taruhira feeling betrayed orders forces and elites loyal to her to kill jemesis."
-    "Long as fight that lasts the night"
-    "chaos in the palace and the streets."
+            jeme "Sorry Taruhira."
+            jeme "Her alure is too strong."
+            jeme "And Zardonia's Prosperity is more important."
+            jump taruhiraRebellion
+
+    #"we got dirt on you Jemesis"
+
 
 
 # jemsis got dead again

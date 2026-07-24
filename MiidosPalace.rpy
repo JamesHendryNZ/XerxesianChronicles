@@ -114,3 +114,39 @@ label miidosMiniboss:
 
     tesi "It's been nice cuddling with you."
     tesi "Bye."
+
+
+label jemesisArtOfDaDeal:
+
+    #"goes into his room"
+    jeme "I wonder who this traitor is?"
+    astar "Why would you trust a friend of those stinky sandy jamesians?"
+    taru "Well I want to know?"
+    taru "They jamesians are trying to salvage what's left of their relations with us."
+    taru "They would have attacked us otherwise"
+    astar ""
+    #"Astarte shows up"
+    #"Taruhira finds them both."
+    #"She wants to see the evidence"
+    #"Jemesis and Astarte try to get her to change her mind. saying somthing about being targetted or something."
+    #"Taruhira insists and she tries snatching it"
+    #"Taruhira gets it and sees the truth"
+    #"Jemesis tries explaining himself."
+    #"Taruhira runs with it and gets slain by Astarte."
+    #"Jemesis is mortified by this."
+    #"Astarte uses seduction magic to un-mortify him"
+    #"Astarte clone talks to Astarte about this."
+    #"Astarte gets Jemesis to deal with his rivals using Taruhira's murder."
+
+
+
+label taruhiraRebellion:
+    "Taruhira feeling betrayed orders forces and elites loyal to her to kill jemesis."
+    "Long as fight that lasts the night"
+    "chaos in the palace and the streets."
+    "Fight Jemesis"
+    "Kill him"
+    "Get Anti-Stealth tablet piece."
+    "Go back to embassy"
+    "Astarte talks about this"
+    "Xerxes and friends leave tomorrow"
