@@ -26,6 +26,21 @@ label astarteInMiidos:
 
     return
 
+label astarteAfterKillingTaruhira:
+
+    #different
+    astar "So Jemesis found out and you killed his wife."
+    astar "Well my charming magic works on him so no biggy."
+
+    astarClone "But the Jamesians now know."
+    astar "Well we can use this tighting our grip over Zardonia."
+    astar "Soon our plans will fully blossom."
+    astarClone "I'm going to get Jemesis to slay everybody against the war."
+    astar "Try to focus on Elites from Assiria and Azagara."
+    astar "But let Trimdius live."
+    astar "We need the rebellion to happen."
+    return
+
 
 label astarteBattleInField:
 
@@ -48,7 +63,7 @@ label astarteBattleInField:
     astarClone "{i}I'll let you have the pleasure of breaking him yourself."
 
     astar "I'll beat you next time nose biter!!"
-    astar "{b}"I PROMISE!!
+    astar "{b}I PROMISE!!"
 
     xerx "I'M GONNA SLICE YOU {b}ALL{/b} IN HALF!!"
 
