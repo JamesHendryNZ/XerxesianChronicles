@@ -37,8 +37,13 @@ label astarteAfterKillingTaruhira:
     astar "Soon our plans will fully blossom."
     astarClone "I'm going to get Jemesis to slay everybody against the war."
     astar "Try to focus on Elites from Assiria and Azagara."
-    astar "But let Trimdius live."
+    astar "But let Trimdius and a few others live."
     astar "We need the rebellion to happen."
+    astar "We need to get them to make the first move."
+    astarClone "Understood Astarte."
+    astarClone "And the Jamesians?"
+    astar "Remove them."
+    astar "We only need Trimdius alive."
     return
 
 

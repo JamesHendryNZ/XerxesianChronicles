@@ -430,3 +430,68 @@ label taruhiraTalk:
 
     astar "{i}Good."
     astar "{i}Lets see what these Jamesians are made of."
+
+label assiriaEmbassyTrade:
+    #trimidus and Jamesians walking back.
+    #trimdius is annoyed about the trade.
+    trim "Why did you do that!?"
+    trim "We could have ended both Jemesis' rule and the war."
+    xerx "The war is against the Astarts."
+    xerx "When we complete this artifact, we will take out Lord Bardaiya and push the Astarts into the sea."
+    tesi "And we defeated the Zardonians in Zarat."
+    trim "You could of saved more Zaratians which could of helped you if you let me show the evidence instead of trading it."
+    volk "At least I get to keep this."#volkara show magicannon she kept
+    trim "You'll still have kept it if you let me showed it."
+
+    xerx "There is still Taruhira."
+    xerx "She'll find out soon."
+    trim "I'm not shore."
+
+    #dagno shows up
+    dagn "Hello Trimdius and jamesian friends."
+    dagn "What are you talking about?"
+    trim "Xerxes, traded in the evidence to get rid of King Jemesis for a silly purple map fragment."
+    volk "It's not a silly map fragment."
+    volk "It's a Anti-Stealth Tablet."
+    volk "It'll force Lord Bardaiya and the Astarts out of hiding."
+    volk "It will give us {b}more{b/} evidence."
+    trim "I think you should keep quiet about that."
+    dagn "Focusing on your own war against the Astarts?"
+
+    xerx "Yes."
+    xerx "Also helping the Zaratians a bit."
+    dagn "Still going down the dipomatic route?"
+    dagn "I guess it's working so far."
+    dagn "I'm Dagngo of Azagara."
+    dagn "Who are you?"
+    xerx "I'm Xerxes"
+    tesi "I'm Tesipiz"
+    volk "And I'm Volkara."
+
+    #intro assiria embassy
+
+    assGuard "Hey Trimdius, Dagngo and Jamesians."
+    assGuard "What's going on?"
+    trim "Xerxes thought it was a good idea to trade my evidence for a part of a magic artifact."
+    assGuard "Really Xerxes?"
+    xerx "It'll pay off in the long term."
+    assGuard "I hope so."
+    dagn "Well."
+    dagn "See you later."
+
+    #sleepy time.
+
+    #next morning.
+    #Trimdius and Xerxes discuss there next move.
+
+    #Jemesis' goons show up and ask for some of the Assiria Elites.
+    #they tell trimdius to stay and the Jamesians to leave.
+    #trimdius and Jamesians hide and sneaky where Jemesis is about to exicute some elites
+    #including dagngo.
+
+    #does trimdius and jamesians act or do they watch then leave
+    #do they try to save him or do they escape
+    #does dagngo slip out like an eel and snekay breakies out
+    #some die causing an evacuation 
+
+

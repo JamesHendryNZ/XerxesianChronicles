@@ -177,7 +177,7 @@ label jemesisArtOfDaDeal:
     astar "It's not your fault."
     astar "Kheheh!"
     call astarteAfterKillingTaruhira
-
+    jump assiriaEmbassyTrade
 
 label taruhiraRebellion:
     "Taruhira feeling betrayed orders forces and elites loyal to her to kill jemesis."
