@@ -159,6 +159,7 @@ define yusiTrop = Character("Yusinzian Trooper" , color = "#311")
 define paetorCap = Character("Paetorian Captain." , color= "#7e00a5")
 define paetor = Character("Paetorian" , color= "#9700a5")
 define zardjun = Character( "Zardonian Juntatu Rider" , color="#0f0fa0")
+define zardCapt = Character( "Zardonian Captain" , color="#0f0fa0")
 
 #Banditos
 define chwitaza = Character("Chwitaza" , color = "#000" )

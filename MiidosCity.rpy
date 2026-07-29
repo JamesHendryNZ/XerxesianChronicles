@@ -483,8 +483,26 @@ label assiriaEmbassyTrade:
 
     #next morning.
     #Trimdius and Xerxes discuss there next move.
+    xerx "Sorry for what I did Trimdius."
+    xerx "But we really need to defat the Astarts."
+    trim "You could have done that by getting rid of Jemesis."
+    tesi "Well it was a quick trip."
+    volk "We should sneak out before Jemesis and Astarte alter the deal."
+    volk "I'm sure you can find more evidence."
+    trim "That's going to be a lot harder now they are aware."
+    xerx "Well I'm sure the Zaratians will defeat his forces."
 
+    #dagngo pops up
+    tesi "Hello Dagngo."
+    tesi "What are you doing here."
+    dagn "You're all in trouble."
+    dagn "Jemesis' goons are arresting /"traitors/" for killing Queen Taruhira."
+    trim "WHAT!?"
+    trim "Told you!"
+    volk "That's not going to get us out of this mess."
     #Jemesis' goons show up and ask for some of the Assiria Elites.
+    
+    zardCapt "I'm here to arest this list of traitors involved in the death of Queen Taruhira."
     #they tell trimdius to stay and the Jamesians to leave.
     #trimdius and Jamesians hide and sneaky where Jemesis is about to exicute some elites
     #including dagngo.
