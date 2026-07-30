@@ -50,6 +50,7 @@ define chya = Character("Chyaazi" , color = "#5a8a00")
 #assiria
 define trim = Character("Trimdius" , color = "#007e4e")
 define assGuard = Character("Assiria Guard" , color = "#327a32")
+define amet = Character("Ametrissa" , color = "#327a64")
 
 #azagara
 define dagn = Character("Dagno" , color = "#005a75")
@@ -160,6 +161,7 @@ define paetorCap = Character("Paetorian Captain." , color= "#7e00a5")
 define paetor = Character("Paetorian" , color= "#9700a5")
 define zardjun = Character( "Zardonian Juntatu Rider" , color="#0f0fa0")
 define zardCapt = Character( "Zardonian Captain" , color="#0f0fa0")
+define zardTroop = Character( "Zardonian Trooper" , color="#0f0fa0")
 
 #Banditos
 define chwitaza = Character("Chwitaza" , color = "#000" )

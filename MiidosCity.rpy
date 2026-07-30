@@ -497,12 +497,24 @@ label assiriaEmbassyTrade:
     tesi "What are you doing here."
     dagn "You're all in trouble."
     dagn "Jemesis' goons are arresting /"traitors/" for killing Queen Taruhira."
+    dagn "They tried to arrest me but I'm fast and big."
     trim "WHAT!?"
     trim "Told you!"
     volk "That's not going to get us out of this mess."
     #Jemesis' goons show up and ask for some of the Assiria Elites.
     
     zardCapt "I'm here to arest this list of traitors involved in the death of Queen Taruhira."
+    assGuard "Are you sure they're here?"
+    zardCapt "Yes."
+    zardCapt "One of the traitors has jumped into the embassy."
+    assGuard "Oh."
+    assGuard "Come right in."
+
+    trim "Shit!"
+    trim "They're going to get you."
+    xerx "They won't."
+    xerx "I won't let them."
+
     #they tell trimdius to stay and the Jamesians to leave.
     #trimdius and Jamesians hide and sneaky where Jemesis is about to exicute some elites
     #including dagngo.
@@ -512,4 +524,69 @@ label assiriaEmbassyTrade:
     #does dagngo slip out like an eel and snekay breakies out
     #some die causing an evacuation 
 
+    #The guards try getting Assiria member, Xerxes confronts jemesis' goons.
+    #they get into a fight causing an emergancy evacuation
+    zardCapt "You're under arrest for killing Queen Taruhira."
+    xerx "He is obviously not Queen Taruhira's murderer." 
+    zardCapt "Jamesian!"
+    zardCapt "Dagngo is to be exicuted for treason!"
+    zardCapt "And you are to leave Zardonia by sundown."
+    xerx "Not happening."
 
+    #battle happening
+    #guard get massercared
+
+    trim "You have to make things {i}better{i/} didn't you Xerxes."
+    dagn "Those guards were going to kill me."
+    xerx "We need to save the others."
+    #assiria embassy leader 
+    amet "What manure pool have you gotten us into now."
+    tesi "Umm"
+    tesi "Here is a list of people they after."
+    #ametrissa sees it
+    amet "What did I do!?"
+    amet "We need to leave. NOW!"
+    amet "Prepare evcauation."
+    dagn "The Azagara embassy is also in danger."
+    amet "Trimdius and jamesians."
+    amet "Go and help with the evacuation of the Azagara Embassy."
+
+    amet "I'll escape out the South Gate"
+    xerx "O.K."
+    #this might create a fall of zardonia/anti-stealth tablet hybrid ending.
+    jump azagaraEmbassy
+
+label azagaraEmbassy:
+    #xerxes and group go to the Assiria emabssy.
+    #they encounter some goons with a "traitor"
+    #they fight them
+    "Help."
+    "They've got the others!"
+    
+
+    #they get to the Azagara Embassy to find it ransacked.
+    trim "Curses!"
+    trim "They've taken them already."
+    trim "This is going to end badly."
+    tesi "We need to get the survivors out and save anyone we can."
+    tesi "We might run into them if we go to the south gate directly."
+    #they saved some of them
+    xerx "Follow me!"
+    xerx "We're getting you out of here."
+    #they try to save others by running to the south gate.
+    #they fight though the angora and fornt gate
+    zardTroop "So the Jamesians are behind this!"
+    zardTroop "That explains everthrythng!"
+    zardTroop "Slay them all!!"
+    #battle at angora
+    #then at gate.
+
+    jeme "Slay all the prisoners {b}NOW!"
+    #jemesis' goons slays all the prisoniers
+
+    #characters might be able to see this but they are too busy fighting
+    #they might react then keep going
+    #they get shot by arrows as they flee.
+
+    #jump 2 escape with ecapees
+    
