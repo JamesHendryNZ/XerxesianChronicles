@@ -37,4 +37,47 @@ label escapeDaAttack:
     zardjun "Now you and your backward and your camel tribes and these rebellious hill savages will soon taste the glory of Zardonia and the Astart Empire!"
 
     #battle time
+
+
+#it's a little maze that should end with a fight agaist the kizharyuutu form of the Astarte clone sent to end Xerxes and friends
+
+label villageIntercept:
+    "village time"
+
+
+    menu:
+        "Quick go left!":
+            jump spoodaRoad
+        "Push though the Cataphracts!":
+            jump alongDaWoods
+        "Blast through the Barricade!":
+            jump pushTroughDaVillage
+
+label spoodaRoad:
+    "Road of the spider"
+
+    menu:
+        "Fight the Junatu":
+            "Fight da spooda"
+            jump toDaMountains
+        "Escpae into the field":
+            jump goatFieldEscape
+
+label toDaMountains:
+    "Escape to the mountains"
+
+
+label pushTroughDaVillage:
+    "Pushing through the barracade"
+
+label alongDaWoods:
+    "Chasing along the woods"
+
+label goatFieldEscape:
+    "Goats"
+
+label woodenEscape:
+    "Esape through the woods."
+
+
     

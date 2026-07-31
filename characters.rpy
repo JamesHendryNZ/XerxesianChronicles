@@ -162,6 +162,7 @@ define paetor = Character("Paetorian" , color= "#9700a5")
 define zardjun = Character( "Zardonian Juntatu Rider" , color="#0f0fa0")
 define zardCapt = Character( "Zardonian Captain" , color="#0f0fa0")
 define zardTroop = Character( "Zardonian Trooper" , color="#0f0fa0")
+define zardCat = Character( "Zardonian Cataphract" , color="#0f0fa0")
 
 #Banditos
 define chwitaza = Character("Chwitaza" , color = "#000" )
