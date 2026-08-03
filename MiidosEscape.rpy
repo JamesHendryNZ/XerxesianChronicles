@@ -43,7 +43,8 @@ label escapeDaAttack:
 
 label villageIntercept:
     "village time"
-
+    zardCat "FOR KING JEMESIS!!"
+    zardCat "FOR PRINCE VERSANIZ III!!"
 
     menu:
         "Quick go left!":
@@ -65,19 +66,45 @@ label spoodaRoad:
 
 label toDaMountains:
     "Escape to the mountains"
-
+    jump astarteBattleInField
 
 label pushTroughDaVillage:
     "Pushing through the barracade"
+    jump astarteBattleInField
 
 label alongDaWoods:
     "Chasing along the woods"
 
 label goatFieldEscape:
     "Goats"
+    jump astarteBattleInField
 
 label woodenEscape:
     "Esape through the woods."
+    jump astarteBattleInField
 
+
+label escapeWithAssiriaAndAzagara:
+    #"They get harassed out the gates of Miidos"
+    
+    zardjun "Their is no escape for you traitorous scum!"
+    zardCapt "Take them all out!"
+    #"They get attacked in the woods"
+    zardCat "Close in on them!!"
+    zardjun "Kill as many we you can!!"
+    #"They punch through the blockade in the village"
+    trim "They knew we would try to escape."
+    trim "The ambush and the barricades would take too long to set up it they were reacting."
+    trim "This was planned."
+
+    xerx "We should head to Zarat."
+    trim "There is an unfortified bridge to the north-west of here."
+    trim "Although we will be expected there."
+    xerx "Well."
+    xerx "The quicker we punch through."
+    xerx "The less time they have to form a response."
+
+    #"They make it to the village"
+    jump astarteBridgeGuard
 
     
