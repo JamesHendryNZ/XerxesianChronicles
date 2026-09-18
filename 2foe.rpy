@@ -529,10 +529,13 @@ define zardonianPeltastM = Foe ( Transform( "images/Enemies/Zardonians/Plumbata 
 define zardonianPeltastF = Foe ( Transform( "images/Enemies/Zardonians/Plumbata Peltast Lady.webp" , zoom = 0.25) , "Plumbata Peltast" , 48 , 6 , 4, 2.5 , 10 , True , "3width2")
 define zardonainLegionaryM = Foe ( Transform( child="images/Enemies/Zardonians/zardonian legionier mail.webp" , zoom = 0.25 ), "Zardonian Legionary" , 88 , 13 , 10 , 2.5 , 8 , False , "hard")
 define zardonainLegionaryF = Foe ( Transform( child="images/Enemies/Zardonians/zardonian legionier pheemail.webp" , zoom = 0.25 ), "Zardonian Legionary" , 88 , 13 , 10 , 2.5 , 8 , False , "hard")
-#define zardonianPalaceGuardM = PatterenFoe
-#define zardonianPalaceGuardF = PatterenFoe
+define zardonianPalaceGuardM = PatterenFoe( Transform( child = "images/Enemies/Zardonians/Tastsetrotu Harpooneer.webp" , zoom = 0.25), "Zardonian Harpooneer" , 112 , 10 , 10 , 2.2 , 6 , False , "mixed4" , ["h"] ,  { "h" : [ Transform( child="images/Enemies/Zardonians/Tastsetrotu Harpooneer.webp" , zoom = 0.25 ) , 10 , 2.6 , 10 , "mixed4" , False , [ False ] , [ [] , 0 , False ] , [ False , "Nothing" , 0 , False , False ] , [ [ "Entangled" , "Roped Harpoon" , 0 , 1 ] ] ] })
+define zardonianPalaceGuardF = PatterenFoe( Transform( child = "images/Enemies/Zardonians/Tastsetrotu Harpooneer.webp" , zoom = 0.25), "Zardonian Harpooneer" , 112 , 10 , 10 , 2.2 , 6 , False , "mixed4" , ["h"] ,  { "h" : [ Transform( child="images/Enemies/Zardonians/Tastsetrotu Harpooneer.webp" , zoom = 0.25 ) , 10 , 2.6 , 10 , "mixed4" , False , [ False ] , [ [] , 0 , False ] , [ False , "Nothing" , 0 , False , False ] , [ [ "Entangled" , "Roped Harpoon" , 0 , 1 ] ] ] })
 
-#define zardonianMinobite
+define zardonianFootLancer = Foe ( Transform( child="images/Enemies/Zardonians/Zardondian Foot Lancer.webp" , zoom = 0.25 ), "Zardonian Foot Lancer" , 75 , 15 , 12 , 2.5 , 8 , False , "jumpMedium")
+
+define zardonianMinobite = Foe( Transform( child="images/Enemies/eliete goons/Zardonian Armored Minobite.webp", zoom=0.25 ) , "Armored Minobite Great Ax", 150 , 18 , 12 , 2.5 , 12 , False , "medium6" )
+define zardoKorkeriaHypaspists = PatterenFoe( Transform( child="images/Enemies/Zardonians/Zardonian Hyspaspist Melee.webp" , zoom = 0.25 ), "Zardo-Kokerian Hypaspist" , 82 , 12 , 12 , 3.5 , 14 , True , "3width2" , ["r","m","r"] , { "r" : [ Transform( child= "images/Enemies/Zardonians/Zardonian Hyspaspist.webp", zoom = 0.25 ), 14 , 3.5 , 10 , "3width2" , True ] , "m" : [ Transform( child ="images/Enemies/Zardonians/Zardonian Hyspaspist Melee.webp" , zoom = 0.25)  , 8 , 3.7 , 15 , "hard" , False ] } )
 #define zardoKorkinArcher
 #define StoneCaster = PatterenFoe
 
@@ -549,7 +552,6 @@ define zardonianCataphractM = Foe( Transform ( child = "images/Enemies/eliete go
 define zardonianCataphractF = Foe( Transform ( child = "images/Enemies/eliete goons/Zardonian Cataphract Lady.webp" , zoom = 0.2 ) , "Zardonain Cataphract" , 96 , 16 , 12 , 3.2 , 12 , False , "medium6" )
 #define royalCataphract
 
-
 #A bad case of Arachnophillia
 
 define junatuLegion = PatterenFoe( Transform( child="images/Enemies/Zardonians/Junatu Javelin.webp" , zoom = 0.25 ), "Junatu Legionary" , 123 , 12 , 12 , 3.5 , 14 , True , "3width2" , ["r","m","r"] , { "r" : [ Transform( child= "images/Enemies/Zardonians/Junatu Javelin Commandinf.webp", zoom = 0.25 ), 12 , 3.5 , 14 , "3width2" , True ] , "m" : [ Transform( child ="images/Enemies/Zardonians/Junatu Sword.webp" , zoom = 0.25)  , 16 , 3.6 , 10 , "hard" , False ] } )
@@ -557,19 +559,21 @@ define junatuSlinger = Foe ( Transform( child="images/Enemies/Zardonians/Junatu 
 # junatuCataphract
 define junatuCatapharct = Foe( Transform ( child = "images/Enemies/eliete goons/Junatu Cataphract.webp" , zoom = 0.2 ), "Junatu Cataphract" , 188 , 12 , 15 , 2.8 , 12 , False , "mixed5" ) #maybe mixed5
 define junatuSwordKnight = Foe( Transform ( child = "images/Enemies/eliete goons/Junatu Sword Cataphract.webp" , zoom = 0.2 ), "Junatu Knight" , 188 , 10 , 15 , 3.6 , 10 , False , "medium6" ) #mabe haidra7
-# junatuWarriowithBoy
+# junatuWarriowithBoys
+define junatuMounted = ChariotFoe( Transform ( child ="images/Enemies/Zardonians/Junatu Sword Mounted.webp" , zoom=0.2 ), "Mounted Junatu Legion" , 142 , 12 , 12 , 3.4 , 12 , False , "jumpMediumMixed" , [ junatuLegion , zardoKorkeriaHypaspists ])
 
-# junatuPartHopliteM
-# junatuPartHopliteF
+define junatuPartHopliteM = Foe( Transform ( child = "images/Enemies/Zardonians/Half Junatu Warrior Man.webp" , zoom = 0.2 ), "Half-Junatu Hoplite" , 96 , 12 , 15 , 2.8 , 12 , False , "mixed5" )
+define junatuPartHopliteF = Foe( Transform ( child = "images/Enemies/Zardonians/Half Junatu Warrior.webp" , zoom = 0.2 ), "Half-Junatu Hoplite" , 96 , 12 , 15 , 2.8 , 12 , False , "mixed5" )
+define junatuPartMounted = ChariotFoe( Transform ( child ="images/Enemies/Zardonians/Half Junatu Warrior Mounted.webp", zoom=0.2 ), "Mounted Half-Junatu" , 108 , 12 , 12 , 3.8 , 12 , False , "jumpHard" , [ junatuPartHopliteF , zardonianFootLancer ])
 
 
 #statues shouldn't move
 
-#define korkinStatueM = PatterenFoe
-#define korkinStatueF = PatterenFoe
+define korkinStatueM = Foe( Transform ( child = Composite( ( 1000 , 1600 ) , (0,0) , "images/Enemies/Zardonians/Battle StatueM.webp" , (0,0) , "images/Enemies/Zardonians/Battle StatueM Hostile lights.webp" ) , zoom = 0.2 ), "Battle Statue" , 88 , 12 , 16 , 2.8 , 12 , False , "mixed5" )
+define korkinStatueF = Foe( Transform ( child = Composite( ( 1200 , 1500 ) , (0,0) , "images/Enemies/Zardonians/Battle Statue.webp" , (0,0) , "images/Enemies/Zardonians/Battle Statue HostileLights.webp" ) , zoom = 0.2 ), "Battle Statue" , 88 , 12 , 16 , 2.8 , 12 , False , "mixed5" )
 #define madDoll 
 #define facehuggingDoll
-#define korkinBattleStatue = 
+define korkinBattleStatue = Foe( Transform ( child = "images/antagonists/Mini-Bosses/Big Battle Statue Attack.webp" , zoom = 0.2 ), "Big Battle Statue" , 330 , 20 , 16 , 2.5 , 22 , False , "jumpMediumMixed" )
 
 #swimboiz
 
@@ -726,6 +730,16 @@ define muibaJunatu = ChariotFoe( Transform ( child = "images/antagonists/Versani
 define siayusiFoot = Foe( Transform ( child = Composite ( ( 1200 , 1700 ) , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 battle.webp" , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 battle Mean Eyes.webp" , (299 , 13) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 back O Mouth.webp" ) , zoom = 0.25 ), "Princess Siayusi" , 224 , 8 , 12 , 3.8 , 12 , False , "mixed4" )
 define siayusiJunatu = ChariotFoe( Transform ( child = Composite( (2600 , 2600) , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi Mounted.webp" , (269 , 277) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 battle Mean Eyes.webp" , (569 , 289) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 Happy Mouth.webp" ), zoom = 0.2 ) , "Princess Siayusi" , 240 , 20 , 30 , 3.0 , 30 , False , "mixed4" , [ siayusiFoot , junatuSwordKnight ] )
 
+#Jemsis
+define jemesisFight = PatterenFoe( Transform( child = Composite( ( 1300, 1600 ) , ( 0,0 ) ,"images/antagonists/King Jemesis/Jemesis Armored Battle Enegized.webp" , ( 150 , 0) , "images/antagonists/King Jemesis/Jemesis Angry Mouth.webp" , ( 150 , 0 ) , "images/antagonists/King Jemesis/Jemesis Mean Eyes.webp" ), zoom=0.25 ) , "King Jemesis." , 400 , 15 , 8 , 4 , 50 , False , "jumpHard" , ["m"] , { "m" : [ Transform( child = "images/antagonists/King Jemesis/Jemesis Armored Battle Enegized.webp", zoom=0.25 ) , 15 , 2.6 , 15 , "jumpHard" , False ,  [ False ] , [ [ ] , 0 , False ] , [ ] , [ False , "Nothing" , 0 , False , False  ] , [ [ "Burning" , "Magic Sword" , 10 , 3 ] ]  ] })
+
+#astarte1
+define astarteCopyFight = PatterenFoe( Transform( child = "images/antagonists/Astarte/Astarte Standing Battle Energized.webp", zoom=0.25 ) , "Astarte" , 400 , 15 , 8 , 4 , 50 , False , "jumpHardMixed" , ["c","m"] , { "m" : [ Transform( child = "images/antagonists/Astarte/Astarte Standing Battle Energized.webp", zoom=0.25 ) , 15 , 2.6 , 15 , "jumpHardMixed" , False ,  [ False ] , [ [ ] , 0 , False ] , [ False , "Nothing" , 0 , False , False  ] , [ [ "Burning" , "Magic Sword" , 10 , 3 ] ] ] , "c" : [ Transform( child = Composite( ( 900 , 1800 ) , (0,0) , "images/antagonists/Astarte/Astarte Holding booba.webp" , ( 240 , 450 ) , "images/antagonists/Astarte/Charm Shot.webp" ), zoom=0.25 ) , 15 , 2.6 , 15 , "jumpHardMixed" , False ,  [ False ] , [ [ ] , 0 , False ] , [ False , "Nothing" , 0 , False , False  ] , [ [ "Entangled" , "Astarte's Charms" , 10 , 3 ] ] ] })
+
+#astarte kizharyuutu
+define astarteKizharyuutuFight = PatterenFoe( Transform( child = "images/antagonists/Astarte/Kizharyuutu Astarte Attack Ground Energized.webp", zoom=0.25 ) , "Astarte" , 400 , 15 , 8 , 4 , 50 , False , "jumpHardMixed" , ["m"] , { "m" : [ Transform( child = "images/antagonists/Astarte/Kizharyuutu Astarte Attack Ground Energized.webp", zoom=0.25 ) , 15 , 2.6 , 15 , "jumpHardMixed" , False ,  [ True , Transform( child = "images/antagonists/Astarte/Kizharyuutu Astarte Attack Air Energized.webp", zoom=0.25 ), Transform( child = "images/antagonists/Astarte/Kizharyuutu Astarte Attack Ground Energized.webp", zoom=0.25 ) ] , [ [ ] , 3 , True ] ] , "c" : [ Transform( child = Composite ( ( 1200 , 1800) , ( 0,0 ) , "images/antagonists/Astarte/Kizharyuutu Astarte Attack Air Energized.webp" , ( 240, 450 ) , "images/antagonists/Astarte/Charm Shot.webp" ), zoom=0.25 ) , 15 , 2.6 , 15 , "jumpHardMixed" , False ,  [ True , Transform( child = Composite ( ( 3000 , 1800 ) , ( 0,0 ) , "images/antagonists/Astarte/Kizharyuutu Astarte Attack Ground Energized.webp" , ( 240, 450 ) , "images/antagonists/Astarte/Charm Shot.webp" ), zoom=0.25 ), Transform( child = Composite ( ( 1200 , 1800) , ( 0,0 ) , "images/antagonists/Astarte/Kizharyuutu Astarte Attack Ground Energized.webp" , ( 240, 450 ) , "images/antagonists/Astarte/Charm Shot.webp" ), zoom=0.25 ) ] , [ [ ] , 0 , False ] , [ False , "Nothing" , 0 , False , False  ] , [ [ "Entangled" , "Astarte's Charms" , 10 , 3 ] ] ] })
+
 #chariots
 define OrodianChariot = ChariotFoe( Transform ( child = Composite( ( 3100 , 2000 ), (500,0) , "images/Enemies/astartes goons/Balato-Astart Slaver Whip up.webp" ,( 0,0 ), "images/Enemies/astartes goons/Orodian Archer.webp" , ( -500,400 ) , "images/animals/Astart chariot.webp" ), zoom=0.2 ), "Chariot Archer" , 80 , 15 , 12 , 2.8 , 12 , False , "mixed4" , [ orodianArcher , astartWhipWarrior ])
 define mwejyaOnChariot = EffectingChariotFoe( Transform ( child = Composite( ( 3100 , 2000 ), (500,0) , "images/Enemies/astartes goons/Balato-Astart Slaver Whip up.webp" ,( -500,0 ), "images/antagonists/Astart Officers/Astarto-Suzumite Hyspaspist Throwing.webp" , ( -500,400 ) , "images/animals/Astart chariot.webp" ), zoom=0.2 ), "Commander Mwejya" , 120 , 15 , 12 , 3.0 , 12 , False , "mixed4" , [ commanderMwejya , astartWhipWarrior ] , [ [ "Burning" , "Flaming Spear" , 16 , 4 , 40 ] ] )
+

@@ -86,6 +86,38 @@ label justWait:
 label MiidosSneakyBreaky:
     "Sneaky Breaky iv damkeh"
 
+label miidosDungeon:
+    "Dugeons and dragonz"
+
+label miidosAttic:
+    "Top storage"
+
+label columBalcony:
+    "Outside time"
+
+label miidosBarracks:
+    "Troopers. Aw man."
+
+label miidosGuardHouse:
+    "more troopers"
+
+label miidosHallArena:
+    "More arenas"
+
+label yatagarasuSpiralRamp:
+    "rampy"
+
+label miidosHallConnection:
+    "Hall way 2 connect"
+
+label miidosStorageRoom:
+    "Little rooms"
+
+label miidosCloset:
+    "Hah GAYYYY!!"
+
+label miidosEscapeTunnel:
+    "Jemesis is running like a PUSSY!!"
 
 label miidosMiniboss:
     #the statue estbaliihing shot

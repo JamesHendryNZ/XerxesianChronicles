@@ -58,6 +58,7 @@ init python:
                 message2Say.append( f"{ applied2.name }: Ow ow ow ow ow! I gotta unlesh this power!" )
                 if applied2.health <= 0:
                     message2Say.append( f"{ applied2.name } Couldn't handle the power of { effect.effectItem }." )
+                
                 #case "Possesion":
                     #swap sides- Purple shading on person              
                 #case "BoostedAttack":

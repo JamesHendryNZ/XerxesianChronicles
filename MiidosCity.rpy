@@ -68,7 +68,7 @@ label MiidosMenu:
 
         "Go to the Palace" if not enteringFrom == "LastDayInMiidos":
             "Palace Time"
-            if enteringFrom == "evidenceWaitZardonia"
+            #if enteringFrom == "evidenceWaitZardonia"
         
         "Leave Miidos" if enteringFrom == "LastDayInMiidos":
             "Bye. Have a great time."
@@ -496,7 +496,7 @@ label assiriaEmbassyTrade:
     tesi "Hello Dagngo."
     tesi "What are you doing here."
     dagn "You're all in trouble."
-    dagn "Jemesis' goons are arresting /"traitors/" for killing Queen Taruhira."
+    dagn "Jemesis' goons are arresting \"traitors\" for killing Queen Taruhira."
     dagn "They tried to arrest me but I'm fast and big."
     trim "WHAT!?"
     trim "Told you!"
