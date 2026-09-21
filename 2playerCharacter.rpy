@@ -176,6 +176,9 @@ default atossaCharacter = PlayerCharacter("Ato'ssa" , 70 , 4 , 4 , atossaArmorSe
 #and Volkara doesn't get added to the party until after this event so her stats start updated
 default volkaraCharacter = PlayerCharacter("Volkara" , 86 , 7 , 7 , volkaraArmorSets, 3 , 1)
 
+#need a trimdius charcter
+default trimdiusCharacter = PlayerCharacter("Trimdius" , 92 , 7 , 2 , trimdiusArmorSets, 3 , 1)
+
 #-------------------------------------------------------------------------------------
 
 label sleepyTimeReset: #

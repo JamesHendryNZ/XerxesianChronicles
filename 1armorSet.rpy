@@ -104,12 +104,21 @@ Transform( child ="images/Protagonists/Volkara/Volkara 3-4 harem 00.webp" , zoom
 )
 
 define volkaraArmorSets = [ volkaraUnarmored , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraScaleMail , volkaraHaremSuit ]
+
     #Trimdius
+define trimdiusUnarmored = ArmorSet( Transform( child ="images/Protagonists/Trimdius/Trimdius 3-4.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Trimdius/Trimdius 069-30.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Trimdius/Trimdius 029-001.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Trimdius/Trimdius 00.webp" , zoom=0.3 , xzoom =-1.0 )
+)
 
-    #Xerdza
+define trimdiusScaleMail = ArmorSet( Transform( child ="images/Protagonists/Trimdius/Trimdius 3-4 Armored.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Trimdius/Trimdius 3-4 Armored 069-30.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Trimdius/Trimdius 3-4 Armored 029-001.webp" , zoom=0.3 , xzoom =-1.0 ) ,
+Transform( child ="images/Protagonists/Trimdius/Trimdius 3-4 Armored 00.webp" , zoom=0.3 , xzoom =-1.0 )
+)
 
-    #Trimdia
-
+define trimdiusArmorSets = [ trimdiusUnarmored , trimdiusScaleMail , trimdiusScaleMail , trimdiusScaleMail , trimdiusScaleMail , trimdiusScaleMail , trimdiusScaleMail , trimdiusScaleMail ]
     #Chonzuka
 
     #Miruki

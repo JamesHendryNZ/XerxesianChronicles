@@ -448,4 +448,128 @@ label testVersanizFight:
             $ versanizAlive = False
             $ inDaVersanizBossFight = False
             "Versaniz is ded lol."
-        
+
+label testHaremNoWeapons:
+
+    $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ]
+    $ enemyTroopers = [ copy.copy(lizardSuitF) , copy.copy(batbiteSpearGirl) , copy.copy(haremSummoner) , copy.copy(haremLizard ) , copy.copy(minobiteGreatAxLady) , copy.copy( astartHealer ) , copy.copy( haremWarrior ) , copy.copy( astartHaremWhippa )]
+    $ xerxesCharacter.weapon = noMelee
+    $ xerxesCharacter.rangedWeapon = noRanged
+    $ xerxesCharacter.currentArmor = 8
+    $ xerxesCharacter.updateStats()
+
+    $ tesipizCharacter.weapon = noMelee
+    $ tesipizCharacter.rangedWeapon = noRanged
+    $ tesipizCharacter.currentArmor = 8
+    $ tesipizCharacter.updateStats()
+
+    $ volkaraCharacter.weapon = noMelee
+    $ volkaraCharacter.rangedWeapon = noRanged
+    $ volkaraCharacter.currentArmor = 8
+    $ volkaraCharacter.updateStats()
+
+    scene clearDayTime at fullFit , topShineGradient
+    show balatiusBedroom at fullFit
+    with fade
+    play music "<to 4>audio/music/Xerxesian Battle1.ogg" noloop
+    queue music fightingCommon 
+    call screen playerActions( "Can we beat them without weapons??" , False , False , True , 0 )
+    play music weOwnedThem fadein 1 fadeout 1
+    queue music sandyMusic
+    "test completed"
+
+
+label testJemesisAndHisGoons:
+    $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter , trimdiusCharacter ]
+    $ canJump = True
+    $ xerxCanOverCharge = True
+
+    #we need trimdius
+
+    scene seriniumMountains at fullFit with fade
+    "time to test the new goons"
+    $ enemyTroopers = [ copy.copy(korkinStatueM) , copy.copy(korkinStatueF) , copy.copy(zardonianFootLancer) , copy.copy(zardoKorkeriaHypaspists) , copy.copy(zardonianMinobite) ]
+    call screen playerActions( "Fight the new foes" , False , False , True , 0 )
+    #this is the usual.
+    
+    "Timr for mini boose the goose"
+    $ enemyTroopers = [ copy.copy( korkinBattleStatue ) ]
+    call screen playerActions( "Big statue time." , False , False , True , 0 )
+
+    scene jemesisThroneRoom at size2Thrid , center with fade
+    "Jemesis Fight"
+    $ enemyTroopers = [ copy.copy( jemesisThroneRoom ) ]
+    call screen playerActions( "Beat Jemesis for his Adultery!" , False , False , True , 0 )
+    #charm is just entangled at the moment, maybe have entangled but no defence
+    #or like defeated but auto-reserect
+
+    #this is a minigame ment to align with the comic
+    "Charm Test"
+    #design the Astarte charm xerxes test here, then plonk it into astarte.rpy
+    $ astarteFighting = copy.copy( astarteCopyFight )
+    $ target = volkaraCharacter
+    if xerxesCharacter.health > 0:
+        $ target = xerxesCharacter:
+    elif tesipizCharacter.health > 0:
+        $ target = trimdiusCharacter
+    elif trimdiusCharacter.health > 0:
+        $ target = trimdiusCharacter
+    #should astarte beable to charm volkara?
+    #maybe be, it would be less work.
+    #or i could have if not in girlCharacters( volkara and atossa )
+    #but what about female froms of xerxes and trimdius??
+    $ enemyTroopers = [ astarteFighting ]
+    
+    show astarte boobaHold hornyEyes charming with dissolve
+
+    show screen dodgeOrGetHit( rythmPoints , 2 , numbered = True)
+    
+    $ rythmPoints = 0
+    $ rythmPattern = []
+    $ count = 0
+    while count < 3:
+        $ rythmPattern.extend( getMeleePatterns( astarteFighting.diffculty ) )
+        $ count += 1
+    
+    call rythmAttack (rythmPattern[renpy.random.randint(0, len(rythmPattern)-1)] , astarteFighting , target , 1.0 , inBattle = False) from _call_rythmAttack
+    pause 0.5
+    $ renpy.block_rollback()
+    hide screen dodgeOrGetHit
+
+    if rythmPoints > 5:
+        "No charms for Astarte"
+        "in the comic xerxes bites Astarte on the nose."
+        "this could be done by going up to Astarte and making a cartoon bite sound"
+        "maybe even a translusent bite teeth animation like in some games where a melee mosnter bites the player"
+        "that could allow for the resist animation to apply to all characters."
+    else:
+        "Get chamred"
+        if target == xerxesCharacter:
+            "xerxes charmed"
+        elif target == tesipizCharacter:
+            "Tesipiz chamred"
+        elif target == trimdiusCharacter:
+            "trimdius charmed"
+        else:
+            "volkara charmed"
+
+    #the battle as usuall
+    "Battle Astarte"
+    $ enemyTroopers = [ copy.copy( astarteCopyFight ) ]
+    call screen playerActions( "Finally! ASTARTE!!" , False , False , True , 0 )
+
+
+
+    $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter ]
+    scene clearDayTime
+    show keudbisRoadAway at center , size2Thrid
+    with fade
+    "Goons on Goons test"
+    $ enemyTroopers = [ copy.copy( junatuMounted ) , copy.copy( junatuPartMounted ) ]
+    call screen playerActions( "These twats think we're AssAssIns!?" , False , False , True , 0 )
+
+    
+    "Battle furry winged Astarte."
+    $ enemyTroopers = copy.copy[ copy.copy( astarteKizharyuutuFight ) ]
+    call screen playerActions( "More Astarte!?" , False , False , True , 0 )
+    "The test is over."
