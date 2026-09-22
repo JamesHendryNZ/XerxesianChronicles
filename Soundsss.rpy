@@ -150,3 +150,5 @@ init:
     define flameSlice ="audio/sound effects/Flame Slice.ogg"
     define PowerDown = "audio/sound effects/PowerDown.ogg"
     define grinder = "audio/sound effects/stoneblockdragwoodgrind-82327 Long.ogg" #pixabay
+
+    define chompAttack = "audio/sound effects/Crunchy Chomp.ogg" #pixabay a mix of janbezouska and yodguard that's slowed and pitched down

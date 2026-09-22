@@ -520,7 +520,7 @@ label testJemesisAndHisGoons:
     #but what about female froms of xerxes and trimdius??
     $ enemyTroopers = [ astarteFighting ]
     
-    show astarte boobaHold hornyEyes charming with dissolve
+    show astarte boobaHold hornyEyes charming at size2Thrid , center , hiddenLegs125 with dissolve
 
     show screen dodgeOrGetHit( rythmPoints , 2 , numbered = True)
     
@@ -542,17 +542,42 @@ label testJemesisAndHisGoons:
         "this could be done by going up to Astarte and making a cartoon bite sound"
         "maybe even a translusent bite teeth animation like in some games where a melee mosnter bites the player"
         "that could allow for the resist animation to apply to all characters."
+        show astarte at size2Thrid , center , hiddenLegs125:
+            linear 3 zoom 2.0 ypos 3.0
+        pause 5
+        #sound effect
+        #the animation
+        scene clearDayTime:
+            matrixcolor TintMatrix("#000") * BrightnessMatrix (-1.0)
+        play sound chompAttack
+        #the bite animation
+        scene jemesisThroneRoom at size2Thrid , center
+        show astarte boobaHold hornyEyes charming at size2Thrid , center , hiddenLegs125 with dissolve
+        with dissolve
+
     else:
+        hide astarte
         "Get chamred"
         if target == xerxesCharacter:
             "xerxes charmed"
+            show happyXerxArmored at hornyAura , size2Thrid , center , hiddenLegs125
+
         elif target == tesipizCharacter:
             "Tesipiz chamred"
+            show tesipizHappyArmored at hornyAura , size2Thrid , center , hiddenLegs125
+
         elif target == trimdiusCharacter:
             "trimdius charmed"
+            show trimdius armored happyMouth at hornyAura , size2Thrid , center , hiddenLegs125
+            
         else:
             "volkara charmed"
+            show volkaraArmored happyMouth at hornyAura , size2Thrid , center , hiddenLegs125
 
+        with dissolve
+        pause 0.5
+
+        $ addEffects( "Entangled" , target , 2 , 0 , "Astarte's Charms" )
     #the battle as usuall
     "Battle Astarte"
     $ enemyTroopers = [ copy.copy( astarteCopyFight ) ]
