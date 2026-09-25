@@ -483,20 +483,25 @@ label testJemesisAndHisGoons:
     $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter , trimdiusCharacter ]
     $ canJump = True
     $ xerxCanOverCharge = True
+    $ trimdiusCharacter.weapon = jamesianSword
+    $ trimdiusCharacter.updateStats()
 
     #we need trimdius
 
     scene seriniumMountains at fullFit with fade
+    play music zarodnianBattle fadein 1.0 fadeout 1.0
     "time to test the new goons"
     $ enemyTroopers = [ copy.copy(korkinStatueM) , copy.copy(korkinStatueF) , copy.copy(zardonianFootLancer) , copy.copy(zardoKorkeriaHypaspists) , copy.copy(zardonianMinobite) ]
     call screen playerActions( "Fight the new foes" , False , False , True , 0 )
     #this is the usual.
     
-    "Timr for mini boose the goose"
+    play music fightingDaBoss fadein 1.0 fadeout 1.0
+    "Time for mini boose the goose"
     $ enemyTroopers = [ copy.copy( korkinBattleStatue ) ]
     call screen playerActions( "Big statue time." , False , False , True , 0 )
 
     scene jemesisThroneRoom at size2Thrid , center with fade
+    play music fightVersaniz fadein 1.0 fadeout 1.0
     "Jemesis Fight"
     $ enemyTroopers = [ copy.copy( jemesisThroneRoom ) ]
     call screen playerActions( "Beat Jemesis for his Adultery!" , False , False , True , 0 )
@@ -505,11 +510,12 @@ label testJemesisAndHisGoons:
 
     #this is a minigame ment to align with the comic
     "Charm Test"
+    #should their be a charm test for Astarte?
     #design the Astarte charm xerxes test here, then plonk it into astarte.rpy
     $ astarteFighting = copy.copy( astarteCopyFight )
     $ target = volkaraCharacter
     if xerxesCharacter.health > 0:
-        $ target = xerxesCharacter:
+        $ target = xerxesCharacter
     elif tesipizCharacter.health > 0:
         $ target = trimdiusCharacter
     elif trimdiusCharacter.health > 0:
@@ -519,9 +525,10 @@ label testJemesisAndHisGoons:
     #or i could have if not in girlCharacters( volkara and atossa )
     #but what about female froms of xerxes and trimdius??
     $ enemyTroopers = [ astarteFighting ]
-    
+    #maybe a little short tune for this
+    play music astarteCharming fadein 1.0 fadeout 1.0
     show astarte boobaHold hornyEyes charming at size2Thrid , center , hiddenLegs125 with dissolve
-
+    pause 2
     show screen dodgeOrGetHit( rythmPoints , 2 , numbered = True)
     
     $ rythmPoints = 0
@@ -537,11 +544,7 @@ label testJemesisAndHisGoons:
     hide screen dodgeOrGetHit
 
     if rythmPoints > 5:
-        "No charms for Astarte"
-        "in the comic xerxes bites Astarte on the nose."
-        "this could be done by going up to Astarte and making a cartoon bite sound"
-        "maybe even a translusent bite teeth animation like in some games where a melee mosnter bites the player"
-        "that could allow for the resist animation to apply to all characters."
+        play music AstarteWrath fadein 1.0 fadeout 1.0
         show astarte at size2Thrid , center , hiddenLegs125:
             linear 3 zoom 2.0 ypos 3.0
         pause 5
@@ -550,14 +553,19 @@ label testJemesisAndHisGoons:
         scene clearDayTime:
             matrixcolor TintMatrix("#000") * BrightnessMatrix (-1.0)
         play sound chompAttack
+        show biteAttack at truecenter
         #the bite animation
+        pause 0.5
         scene jemesisThroneRoom at size2Thrid , center
-        show astarte boobaHold hornyEyes charming at size2Thrid , center , hiddenLegs125 with dissolve
+        show astarte boobaHold hornyEyes charming at center with dissolve:
+            ypos 2.0 zoom 1.5
+            linear 1 ypos 1.25 zoom 0.75  
         with dissolve
-
+        astart "SO YOU RESIST MY CHARMS!!"
     else:
         hide astarte
         "Get chamred"
+        play sound charmed
         if target == xerxesCharacter:
             "xerxes charmed"
             show happyXerxArmored at hornyAura , size2Thrid , center , hiddenLegs125
@@ -579,6 +587,7 @@ label testJemesisAndHisGoons:
 
         $ addEffects( "Entangled" , target , 2 , 0 , "Astarte's Charms" )
     #the battle as usuall
+    play music fightingAstarteLoop fadein 1.0 fadeout 1.0
     "Battle Astarte"
     $ enemyTroopers = [ copy.copy( astarteCopyFight ) ]
     call screen playerActions( "Finally! ASTARTE!!" , False , False , True , 0 )

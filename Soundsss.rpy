@@ -46,6 +46,8 @@ init:
     define fightingYourMegaCrabs = "audio/music/hydrasyonBattle Tense.ogg"
     define theCrabsAttack = "audio/music/hydrasyonTenttion.ogg"
     define fightingDaSwords = "audio/music/Binding.ogg" #James Hendry
+    define fightingAstarte = "audio/music/AstarteBattle.ogg" #James Hendry
+    define fightingAstarteLoop = "audio/music/AstarteBattle Loop.ogg" #james hendry
 
     define alertTime = "audio/music/Under Attack.ogg" #James Hendry
     define gettingAttacked = "audio/music/Under Attack loop.ogg" #James Hendry
@@ -71,6 +73,9 @@ init:
     define nightAmbiance = "audio/sound effects/night-ambience-17064.ogg" #pixabay
     define steaming = "audio/sound effects/steam-2-36231.ogg"
     #sound effectsss
+
+    define astarteCharming = "audio/music/Astarte charm attack.ogg" #james hendry
+    define charmed = "audio/sound effects/Charmed by Astarte.ogg" #james hendry
 
     define spoosh = "audio/sound effects/water-blast.ogg" #Wesnoth version 1.16 under Attribution-ShareAlike 4.0 International - pitched down by an octive 
     define horseGallop = "audio/sound effects/Horse Gallop.ogg" #James Hendry - the classic coconut apporch
