@@ -569,11 +569,11 @@ define junatuPartMounted = ChariotFoe( Transform ( child ="images/Enemies/Zardon
 
 #statues shouldn't move
 
-define korkinStatueM = Foe( Transform ( child = Composite( ( 1000 , 1600 ) , (0,0) , "images/Enemies/Zardonians/Battle StatueM.webp" , (0,0) , "images/Enemies/Zardonians/Battle StatueM Hostile lights.webp" ) , zoom = 0.2 ), "Battle Statue" , 88 , 12 , 16 , 2.8 , 12 , False , "mixed5" )
-define korkinStatueF = Foe( Transform ( child = Composite( ( 1200 , 1500 ) , (0,0) , "images/Enemies/Zardonians/Battle Statue.webp" , (0,0) , "images/Enemies/Zardonians/Battle Statue HostileLights.webp" ) , zoom = 0.2 ), "Battle Statue" , 88 , 12 , 16 , 2.8 , 12 , False , "mixed5" )
+define korkinStatueM = Foe( Transform ( child = Composite( ( 1000 , 1600 ) , (0,0) , "images/Enemies/Zardonians/Battle StatueM.webp" , (0,0) , "images/Enemies/Zardonians/Battle StatueM Hostile lights.webp" ) , zoom = 0.2 ), "Battle Statue" , 88 , 12 , 20 , 2.8 , 12 , False , "mixed5" )
+define korkinStatueF = Foe( Transform ( child = Composite( ( 1200 , 1500 ) , (0,0) , "images/Enemies/Zardonians/Battle Statue.webp" , (0,0) , "images/Enemies/Zardonians/Battle Statue HostileLights.webp" ) , zoom = 0.2 ), "Battle Statue" , 88 , 12 , 20 , 2.8 , 12 , False , "mixed5" )
 #define madDoll 
 #define facehuggingDoll
-define korkinBattleStatue = Foe( Transform ( child = "images/antagonists/Mini-Bosses/Big Battle Statue Attack.webp" , zoom = 0.2 ), "Big Battle Statue" , 330 , 20 , 16 , 2.5 , 22 , False , "jumpMediumMixed" )
+define korkinBattleStatue = Foe( Transform ( child = "images/antagonists/Mini-Bosses/Big Battle Statue Attack.webp" , zoom = 0.2 ), "Big Battle Statue" , 330 , 20 , 20 , 2.5 , 22 , False , "jumpMediumMixed" )
 
 #swimboiz
 
@@ -731,7 +731,7 @@ define siayusiFoot = Foe( Transform ( child = Composite ( ( 1200 , 1700 ) , (0,0
 define siayusiJunatu = ChariotFoe( Transform ( child = Composite( (2600 , 2600) , (0,0) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi Mounted.webp" , (269 , 277) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 battle Mean Eyes.webp" , (569 , 289) , "images/antagonists/Versaniz III/Vasanizs gfs/Siayusi 34 Happy Mouth.webp" ), zoom = 0.2 ) , "Princess Siayusi" , 240 , 20 , 30 , 3.0 , 30 , False , "mixed4" , [ siayusiFoot , junatuSwordKnight ] )
 
 #Jemsis
-define jemesisFight = PatterenFoe( Transform( child = Composite( ( 1300, 1600 ) , ( 0,0 ) ,"images/antagonists/King Jemesis/Jemesis Armored Battle Enegized.webp" , ( 150 , 0) , "images/antagonists/King Jemesis/Jemesis Angry Mouth.webp" , ( 150 , 0 ) , "images/antagonists/King Jemesis/Jemesis Mean Eyes.webp" ), zoom=0.25 ) , "King Jemesis." , 400 , 15 , 8 , 4 , 50 , False , "jumpHard" , ["m"] , { "m" : [ Transform( child = "images/antagonists/King Jemesis/Jemesis Armored Battle Enegized.webp", zoom=0.25 ) , 15 , 2.6 , 15 , "jumpHard" , False ,  [ False ] , [ [ ] , 0 , False ] , [ ] , [ False , "Nothing" , 0 , False , False  ] , [ [ "Burning" , "Magic Sword" , 10 , 3 ] ]  ] })
+define jemesisFight = PatterenFoe( Transform( child = Composite( ( 1300, 1600 ) , ( 0,0 ) ,"images/antagonists/King Jemesis/Jemesis Armored Battle Enegized.webp" , ( 150 , 0) , "images/antagonists/King Jemesis/Jemesis Angry Mouth.webp" , ( 150 , 0 ) , "images/antagonists/King Jemesis/Jemesis Mean Eyes.webp" ), zoom=0.25 ) , "King Jemesis." , 400 , 15 , 13 , 4 , 50 , False , "jumpHard" , ["m"] , { "m" : [ Transform( child = Composite( ( 1300, 1600 ) , ( 0,0 ) ,"images/antagonists/King Jemesis/Jemesis Armored Battle Enegized.webp" , ( 150 , 0) , "images/antagonists/King Jemesis/Jemesis Angry Mouth.webp" , ( 150 , 0 ) , "images/antagonists/King Jemesis/Jemesis Mean Eyes.webp" ), zoom=0.25 ) , 15 , 3.6 , 15 , "jumpHard" , False ,  [ False ] , [ [ ] , 0 , False ] , [ False , "Nothing" , 0 , False , False  ] , [ [ "Burning" , "Magic Sword" , 10 , 3 ] ]  ] })
 
 #astarte1
 define astarteCopyFight = PatterenFoe( Transform( child = "images/antagonists/Astarte/Astarte Standing Battle Energized.webp", zoom=0.25 ) , "Astarte" , 400 , 15 , 8 , 4 , 50 , False , "jumpHardMixed" , ["c","m"] , { "m" : [ Transform( child = "images/antagonists/Astarte/Astarte Standing Battle Energized.webp", zoom=0.25 ) , 15 , 2.6 , 15 , "jumpHardMixed" , False ,  [ False ] , [ [ ] , 0 , False ] , [ False , "Nothing" , 0 , False , False  ] , [ [ "Burning" , "Magic Sword" , 10 , 3 ] ] ] , "c" : [ Transform( child = Composite( ( 900 , 1800 ) , (0,0) , "images/antagonists/Astarte/Astarte Holding booba.webp" , ( 240 , 450 ) , "images/antagonists/Astarte/Charm Shot.webp" ), zoom=0.25 ) , 15 , 2.6 , 15 , "jumpHardMixed" , False ,  [ False ] , [ [ ] , 0 , False ] , [ False , "Nothing" , 0 , False , False  ] , [ [ "Entangled" , "Astarte's Charms" , 0 , 3 ] ] ] })

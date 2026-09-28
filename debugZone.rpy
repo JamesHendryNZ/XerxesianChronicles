@@ -110,6 +110,13 @@ label addAtossa:
         "Ato'ssa already in the party."
     return
 
+label addTrimdius:
+    if trimdiusCharacter not in currentParty:
+        $ currentParty.append( trimdiusCharacter )
+    else:
+        "Trimdius is already in the party."
+    return
+
 #Trimdius will get his when he is added
 
 label debugBattles:
@@ -170,6 +177,10 @@ label debugBattles:
         "Xerxes, Volkara and Tesipiz":
             call addTesipiz from _call_addTesipiz_1
             call addVolkara from _call_addVolkara
+        "Xerxes, Volkara, Tesipiz and Trimdius.":
+            call addTesipiz
+            call addVolkara
+            call addTrimdius
 
     "Now your stats are set."
     "You can now go to the label you wish to test."
@@ -480,11 +491,12 @@ label testHaremNoWeapons:
 
 
 label testJemesisAndHisGoons:
-    $ currentParty = [ xerxesCharacter , tesipizCharacter , volkaraCharacter , trimdiusCharacter ]
     $ canJump = True
     $ xerxCanOverCharge = True
     $ trimdiusCharacter.weapon = jamesianSword
     $ trimdiusCharacter.updateStats()
+    #maybe have trimdius chuck javelins instead of knives since i currently cannnot think of a way to make knives balaced at the moment.
+    $ changeItemAmount( inventory , javelinIron , 20 )
 
     #we need trimdius
 
@@ -503,7 +515,7 @@ label testJemesisAndHisGoons:
     scene jemesisThroneRoom at size2Thrid , center with fade
     play music fightVersaniz fadein 1.0 fadeout 1.0
     "Jemesis Fight"
-    $ enemyTroopers = [ copy.copy( jemesisThroneRoom ) ]
+    $ enemyTroopers = [ copy.copy( jemesisFight ) ]
     call screen playerActions( "Beat Jemesis for his Adultery!" , False , False , True , 0 )
     #charm is just entangled at the moment, maybe have entangled but no defence
     #or like defeated but auto-reserect
@@ -528,23 +540,37 @@ label testJemesisAndHisGoons:
     #maybe a little short tune for this
     play music astarteCharming fadein 1.0 fadeout 1.0
     show astarte boobaHold hornyEyes charming at size2Thrid , center , hiddenLegs125 with dissolve
-    pause 2
-    show screen dodgeOrGetHit( rythmPoints , 2 , numbered = True)
-    
+
     $ rythmPoints = 0
-    $ rythmPattern = []
+    $ rythmPattern = ""
     $ count = 0
+    $ charmResistThreshold = 7
+    "before while"
     while count < 3:
-        $ rythmPattern.extend( getMeleePatterns( astarteFighting.diffculty ) )
+        $ pickedPattern = getMeleePatterns( astarteFighting.diffculty )
+        $ rythmPattern = rythmPattern + ( pickedPattern[ renpy.random.randint(0 , len( pickedPattern)-1 )] )
         $ count += 1
-    
-    call rythmAttack (rythmPattern[renpy.random.randint(0, len(rythmPattern)-1)] , astarteFighting , target , 1.0 , inBattle = False) from _call_rythmAttack
+        "during while"
+        "[rythmPattern] and [count]"
+
+    "[rythmPattern] and done"
+    if xerxesCharacter.health > 0:
+        $ target == xerxesCharacter
+    elif tesipizCharacter.health > 0:
+        $ target == tesipizCharacter
+    elif trimdiusCharacter.health > 0:
+        $ target == trimdiusCharacter
+    else:
+        $ target == volkaraCharacter
+    pause 2
+    show screen dodgeOrGetHit( rythmPoints , charmResistThreshold , numbered = True)
+    call rythmAttack (rythmPattern , astarteFighting , target , 1.0 , inBattle = False) from _call_rythmAttack
     pause 0.5
     $ renpy.block_rollback()
     hide screen dodgeOrGetHit
 
-    if rythmPoints > 5:
-        play music AstarteWrath fadein 1.0 fadeout 1.0
+    if rythmPoints >= charmResistThreshold:
+        play music astartesWrath fadein 1.0 fadeout 1.0
         show astarte at size2Thrid , center , hiddenLegs125:
             linear 3 zoom 2.0 ypos 3.0
         pause 5
@@ -557,11 +583,11 @@ label testJemesisAndHisGoons:
         #the bite animation
         pause 0.5
         scene jemesisThroneRoom at size2Thrid , center
-        show astarte boobaHold hornyEyes charming at center with dissolve:
+        show astarte meanEyes angryMouth  at center:
             ypos 2.0 zoom 1.5
             linear 1 ypos 1.25 zoom 0.75  
         with dissolve
-        astart "SO YOU RESIST MY CHARMS!!"
+        astar "SO YOU RESIST MY CHARMS!!"
     else:
         hide astarte
         "Get chamred"
@@ -587,6 +613,7 @@ label testJemesisAndHisGoons:
 
         $ addEffects( "Entangled" , target , 2 , 0 , "Astarte's Charms" )
     #the battle as usuall
+    scene jemesisThroneRoom at size2Thrid , center with dissolve
     play music fightingAstarteLoop fadein 1.0 fadeout 1.0
     "Battle Astarte"
     $ enemyTroopers = [ copy.copy( astarteCopyFight ) ]
