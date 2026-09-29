@@ -4,9 +4,28 @@
 label ToMiidos:
     $ enteringFrom = "MiidosStartATS"
     $ IsDayTime = True
+    #map animation, zaratian camp 2 miidos city
     #Go 2 Miidos
     #Miidos establishing
+    call jamesosWestSide from _call_jamesosWestSide
+    #xerx and crew
+    #it always starts from morning so
+    show xerxHorseWithSoAM at centerAnchor:
+        zoom 0.05
+    show junatuCataphractSwordSad at centerAnchor:
+        zoom 0.05
+    show zardonianSwordsMan at centerAnchor:
+        zoom 0.05
+    show chiazhuShortSword at centerAnchor:
+        zoom 0.05
+    show zaratianEliteSpear attackCamel at centerAnchor:
+        zoom 0.05
+    show chuwos onCamel at centerAnchor:
+        zoom 0.05
 
+    #miidos city
+    #miidos cortyard/ gate
+    
     xerx "Trimdius"
     xerx "Are you sure that Jemesis will abducate without a fight?"
     trim "No."

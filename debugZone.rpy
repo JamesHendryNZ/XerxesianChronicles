@@ -539,7 +539,11 @@ label testJemesisAndHisGoons:
     $ enemyTroopers = [ astarteFighting ]
     #maybe a little short tune for this
     play music astarteCharming fadein 1.0 fadeout 1.0
-    show astarte boobaHold hornyEyes charming at size2Thrid , center , hiddenLegs125 with dissolve
+    show astarte boobaHold hornyEyes charming at size2Thrid , center , hiddenLegs125 with dissolve:
+        zoom 1.0 ypos 1.25
+        linear 1 zoom 1.25 ypos 1.5
+        linear 1 zoom 1.0 ypos 1.25
+        repeat
 
     $ rythmPoints = 0
     $ rythmPattern = ""
@@ -572,8 +576,8 @@ label testJemesisAndHisGoons:
     if rythmPoints >= charmResistThreshold:
         play music astartesWrath fadein 1.0 fadeout 1.0
         show astarte at size2Thrid , center , hiddenLegs125:
-            linear 3 zoom 2.0 ypos 3.0
-        pause 5
+            linear 3 zoom 3.0 ypos 3.5
+        pause 3
         #sound effect
         #the animation
         scene clearDayTime:
@@ -581,11 +585,11 @@ label testJemesisAndHisGoons:
         play sound chompAttack
         show biteAttack at truecenter
         #the bite animation
-        pause 0.5
+        pause 1
         scene jemesisThroneRoom at size2Thrid , center
         show astarte meanEyes angryMouth  at center:
-            ypos 2.0 zoom 1.5
-            linear 1 ypos 1.25 zoom 0.75  
+            ypos 2.5 zoom 1.5
+            linear 1 ypos 1.4 zoom 0.75  
         with dissolve
         astar "SO YOU RESIST MY CHARMS!!"
     else:
@@ -631,6 +635,6 @@ label testJemesisAndHisGoons:
 
     
     "Battle furry winged Astarte."
-    $ enemyTroopers = copy.copy[ copy.copy( astarteKizharyuutuFight ) ]
+    $ enemyTroopers = [ copy.copy( astarteKizharyuutuFight ) ]
     call screen playerActions( "More Astarte!?" , False , False , True , 0 )
     "The test is over."

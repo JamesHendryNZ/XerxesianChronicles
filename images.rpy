@@ -1102,7 +1102,7 @@ image jemesisThroneRoom = "images/Locations/Miidos/Jemesis Throne Room.webp"
 image ahriteCave = "images/Locations/Ahrite Bases/ahrite cave.webp"
 image ahriteBaseCenter = "images/Locations/Ahrite Bases/Ahrite Base Hub.webp"
 image ahriteLair4 = "images/Locations/Ahrite Bases/Ahrimaniom mk4 Lair Entrance.webp"
-image ahriteLair4Now = "images/Locations/Ahrite bases/Ahrimaniom mk4 Lair Flooded Ruin.webp"
+image ahriteLair4Now = "images/Locations/Ahrite Bases/Ahrimaniom mk4 Lair Flooded Ruin.webp"
 image ahriteRoom = "images/Locations/Ahrite Bases/Ahrite Base Room.webp"
 image ahriteWastland = "images/Locations/Ahrite Bases/Ahrite Wasterland FlahsBack.webp"
 image secondSubversionBaseRuins = "images/Locations/Ahrite Bases/Second Subversion Ruins.webp"
@@ -1466,7 +1466,18 @@ image deadVelsosDude = "images/items/Dead VelosoraptorM.webp"
 image deadVelsosLady = "images/items/Dead VelosoraptorF.webp"
 
 
+#attack animations
+image biteAttack:
+    "images/teeth attack open.webp"
+    pause 0.5
+    "images/teeth attack closed.webp"
 
+image quickBiting:
+    "images/teeth attack open.webp"
+    pause 0.2
+    "images/teeth attack closed.webp"
+    pause 0.2
+    repeat
 
 #The tablet
 
@@ -2266,9 +2277,9 @@ layeredimage astarte:
             xpos 100
 
         attribute angryMouth if_not['holdingSword']:
-            "images/antagonists/Astarte/Astarte Standing Annoyed Mouth.webp"
+            "images/antagonists/Astarte/Astarte Standing Angry Mouth.webp"
         attribute angryMouth if_any['holdingSword']:
-            "images/antagonists/Astarte/Astarte Standing Annoyed Mouth.webp"
+            "images/antagonists/Astarte/Astarte Standing Angry Mouth.webp"
             xpos 100
 
     group blushes:
