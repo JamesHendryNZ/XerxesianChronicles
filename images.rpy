@@ -1097,6 +1097,20 @@ image versanizsBedTowards = "images/Locations/Mizheium/Versaniz Room Bed.webp"
 
     #Miidos
 image jemesisThroneRoom = "images/Locations/Miidos/Jemesis Throne Room.webp"
+image miidosEstablishing = "images/Locations/Miidos/Miidos Establishing.webp"
+image miidosEstablishingNight = "images/Locations/Miidos/Miidos Establishing Nightime.webp"
+image miidosStreet = "images/Locations/Miidos/Miidos Street.webp"
+image miidosStreetNight = "images/Locations/Miidos/Miidos Street Night.webp"
+image miidosGateInside = "images/Locations/Miidos/Miidos Gate Inside.webp"
+
+image miidosPalaceFront = "images/Locations/Miidos/Miidos Palace Front.webp"
+image miidosPalaceFrontNight = "images/Locations/Miidos/Miidos Establishing Nightime.webp"
+image miidosPalaceWaitingRoom = "images/Locations/Miidos/Palace Waiting room.webp"
+image miidosPalaceEntranceDoor = "images/Locations/Miidos/Miidos Palace Entrance and meeting room.webp"
+
+    #Assiria Emabssy in Miidos
+image assiriaEmbassyEstablishing = "images/Locations/Miidos/Assiria Emabassy estabishing.webp"
+image assiriaEmbassyEstablishingNight = "images/Locations/Miidos/Assiria Emabassy estabishing night.webp"
 
 #Ahrite Zones
 image ahriteCave = "images/Locations/Ahrite Bases/ahrite cave.webp"
@@ -1351,6 +1365,8 @@ image arrows = "images/items/arrow.webp"
 image metalArrows = "images/items/arrowBoltShort.webp"
 image javelins = "images/items/javelinBasic.webp"
 image ironJavelins = "images/items/javelinIron.webp"
+image plumbataDart = "image/items/plumbata.webp"
+
 image daricCoin = "images/items/daric.webp"
 image potionzRed = "images/items/bottlePotionRed.webp"
 image potionzBlue = "images/items/bottlePotionBlue.webp"
@@ -4148,6 +4164,7 @@ image tesipizGreeting = "images/Protagonists/Tesipiz/Tesipiz Greeting.webp"
 image tesipizGreetingArmored = "images/Protagonists/Tesipiz/Tesipiz Greeting Armored.webp"
 
 image tesipizSuprized = "images/Protagonists/Tesipiz/Tesipiz Suprized.webp"
+image tesipizMiniSuprized = "images/Protagonists/Tesipiz/Little Suprized Tesipiz.webp"
 image tesipizSuprizedArmored = "images/Protagonists/Tesipiz/Tesipiz Suprized Armored.webp"
 image tesipizSuprizedArmed = "images/Protagonists/Tesipiz/Tesipiz Suprized Armed v1.webp"
 image tesipizSuprizedArmedAmored = "images/Protagonists/Tesipiz/Tesipiz Suprized Armored Armed v1.webp"

@@ -7,7 +7,7 @@ label ToMiidos:
     #map animation, zaratian camp 2 miidos city
     #Go 2 Miidos
     #Miidos establishing
-    call jamesosWestSide from _call_jamesosWestSide
+    call jamesosWestSide
     #xerx and crew
     #it always starts from morning so
     show xerxHorseWithSoAM at centerAnchor:
@@ -22,17 +22,80 @@ label ToMiidos:
         zoom 0.05
     show chuwos onCamel at centerAnchor:
         zoom 0.05
+    show zardonianAxeGirl at centerAnchor:
+        zoom 0.05
+    show wioxaJavelin at centerAnchor:
+        zoom 0.05
 
     #miidos city
     #miidos cortyard/ gate
+    #we need a city and palace music themes
     
+    if IsDayTime:
+        scene miidosEstablishing at fullFit with Fade( 2,0,2 )
+    else:
+        scene miidosEstablishingNight at fullFit with Fade( 2,0,2 )
+    pause 8
+
+    if IsDayTime:
+        scene cloudyDayTime at fullFit , movingSky
+        show miidosGateInside at center , size2Thrid
+        #xerxes, Tesipiz , Volkara and tesipiz are in this shot
+        show xerx3quatPoint at left , halfSize
+        show trimdius base34 frown at center , halfSize , flipped:
+            xpos 0.33
+        show tesipiz34NeutralHappy at center , halfSize , flipped:
+            xpos 0.67
+        show volkara3quat at right , halfSize , flipped
+    else:
+        scene cloudyNightTime at fullFit , movingSky
+        show miidosGateInside at center , size2Thrid , nightLights
+        #xerxes, Tesipiz , Volkara and tesipiz are in this shot
+        show xerx3quatPoint at left , halfSize  , flameLight
+        show trimdius base34 frown at center , halfSize , flipped , flameLight:
+            xpos 0.33
+        show tesipiz34NeutralHappy at center , halfSize , flipped , flameLight:
+            xpos 0.67
+        show volkara3quat at right , halfSize , flipped , flameLight
+    with fade
+
     xerx "Trimdius"
     xerx "Are you sure that Jemesis will abducate without a fight?"
+    
+    hide xerx3quatPoint
+    if IsDayTime:
+        show xerx3quatConsurnd at left , halfSize
+    else:
+        show xerx3quatConsurnd at left , halfSize , flameLight
+    show trimdius pointy OMouth 
+    with dissolve
+    
     trim "No."
+    show trimdius base34 happyMouth meanEyes with dissolve
     trim "But I belive his guards will side with me."
+    show trimdius pointy with dissolve
     trim "He'll have no choice."
-    trim "Plus I have knives."
 
+    show trimdius -meanEyes
+    if IsDayTime:
+        show plumbataDart at halfSize
+        show plumbataDart as extraDart at halfSize , truecenter
+        show plumbataDart as thridDart at halfSize , truecenter
+    else:
+        show plumbataDart at halfSize , flameLight
+        show plumbataDart as extraDart at halfSize , truecenter , flameLight
+        show plumbataDart as thridDart at halfSize , truecenter , flameLight
+    with dissolve
+    trim "Plus I have plumbata." #change from original script as i don't see a reason to add throwable knives when javelins and darts already exist
+
+    hide xerx3quatPoint
+    show xerxNeutralSuprizedUnarmored
+    show trimuds OMouth base
+    hide tesipiz34NeutralHappy
+    show tesipizMiniSuprized at halfSize , center:
+        xpos 0.67
+    show volkara3quat pointy OMouth
+    with dissolve
     volk "Jemesis' Palace is huge"
     volk "I can see it from here."
 
@@ -55,7 +118,7 @@ label MiidosShop:
     "Kachigga! Kachigga! Kachigga!"
 
 label MiidosLearn2Jump:
-    #this happends in assiria embassy gardens 
+    #this happends in assiria embassy gardens on the roof to save time making graphics
     $ canJump = True
     "Jump Street jumping"
     trim "I seen what Jemesis' goons can do."
