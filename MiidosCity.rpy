@@ -89,25 +89,48 @@ label ToMiidos:
     trim "Plus I have plumbata." #change from original script as i don't see a reason to add throwable knives when javelins and darts already exist
 
     hide xerx3quatPoint
-    show xerxNeutralSuprizedUnarmored
-    show trimuds OMouth base
+    
+    show trimdius OMouth base
     hide tesipiz34NeutralHappy
-    show tesipizMiniSuprized at halfSize , center:
-        xpos 0.67
+
+    if IsDayTime:
+        show xerxNeutralSuprizedUnarmored at halfSize , left
+        show tesipizMiniSuprized at halfSize , center:
+            xpos 0.67
+    else:
+        show xerxNeutralSuprizedUnarmored at halfSize , flameLight , left
+        show tesipizMiniSuprized at halfSize , center , flameLight:
+            xpos 0.67
     show volkara3quat pointy OMouth
     with dissolve
     volk "Jemesis' Palace is huge"
     volk "I can see it from here."
 
+    hide xerxNeutralSuprizedUnarmored
+    hide tesipizMiniSuprized
+
     if IsDayTime:
-        "got to palace"
+        #"got to palace"
+        show happyXerx at halfSize , left
+        show tesipizNeutralHappy at halfSize , center:
+            xpos 0.67
+        show trimdius happyMouth
+        show volkara3quat basic normalEyes
+        with dissolve
         trim "Before we visit King Jemesis"
+        show trimdius pointy with dissolve
         trim "I've got a new trick to teach you."
         call MiidosLearn2Jump
     else:
-        "go to embassy."
-        "sleeps"
+        #"go to embassy."
+        #"sleeps"
+        show happyXerx at halfSize , left , flameLight
+        show tesipizNeutralHappy at halfSize , center , flameLight:
+            xpos 0.67
+        show trimdius happyMouth
+        show volkara3quat basic normalEyes
         trim "Before we go and visit Jemesis"
+        show trimdius pointy with dissolve
         trim "I've got a new trick to teach you."
         call MiidosLearn2Jump
 
@@ -119,6 +142,7 @@ label MiidosShop:
 
 label MiidosLearn2Jump:
     #this happends in assiria embassy gardens on the roof to save time making graphics
+    
     $ canJump = True
     "Jump Street jumping"
     trim "I seen what Jemesis' goons can do."
