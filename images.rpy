@@ -474,6 +474,8 @@ image tastsetuVsZardonians = "images/Zardonians vs ZaraTastsetu.webp"
 image underwaterBattle1 = "images/Underwater battle.webp"
 image gilgamoriumParty = "images/Gilgamorium Party.webp"
 
+image miidosSleep = "images/Assiria Embassy bedroom Sleeps.webp"
+
 image takuraFreedAST = "images/Freeing Takura AST Version.webp"
 image takuraFreedFoZ = "images/Freeing Takura FoZ Version.webp"
 image takuraFreedFoZ2 = "images/Freeing Takura FoZ Version2.webp"
@@ -1111,6 +1113,8 @@ image miidosPalaceEntranceDoor = "images/Locations/Miidos/Miidos Palace Entrance
     #Assiria Emabssy in Miidos
 image assiriaEmbassyEstablishing = "images/Locations/Miidos/Assiria Emabassy estabishing.webp"
 image assiriaEmbassyEstablishingNight = "images/Locations/Miidos/Assiria Emabassy estabishing night.webp"
+image assiriaEmabssyRoof = "images/Locations/Miidos/Assiria Emabassy Roof.webp"
+image assiriaEmbassyBedroom = "images/Locations/Miidos/Assiria Embassy bedroom.webp"
 
 #Ahrite Zones
 image ahriteCave = "images/Locations/Ahrite Bases/ahrite cave.webp"

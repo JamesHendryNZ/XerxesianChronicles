@@ -140,10 +140,31 @@ label MiidosShop:
     # yes for the wait options
     "Kachigga! Kachigga! Kachigga!"
 
+
+label assiriaEmbassySleeps:
+
+    stop music fadeout 5.0
+    scene miidosSleep with Fade(2,0,2)
+    play sound sleepss
+    pause 5
+    $ IsDayTime = True
+    return
+
 label MiidosLearn2Jump:
     #this happends in assiria embassy gardens on the roof to save time making graphics
     
+    #if it's night time, do the sleepy
+    #need a sleepy graphic
+    #and a room for the sleepy
+    if not IsDayTime:
+        call assiriaEmbassySleeps
+
     $ canJump = True
+    scene cloudyDayTime at fullFit
+    show assiriaEmabssyRoof at center , size2Thrid
+    #should we have trimdius hold a stick of staff like with atazera?
+    #we'll also need a training emey version of trimidus like with atazera
+    
     "Jump Street jumping"
     trim "I seen what Jemesis' goons can do."
     trim "They've made attacks that cover entire rows."
