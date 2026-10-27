@@ -2,34 +2,75 @@
 
 label MiidosPalaceWaiting:
     #korkin ladies show up
+    #need a background (it can also be a battle screen in the chaos civil-war coup sub-plot)
+    #need 2 ladies, a korkin ( could reuse a jamesian one or any short snake korkin ) and a zardonian tyettu
+    scene cloudyDayTime at fullFit
+    show miidosApartment at left , halfSize
+    show zardoninaKorkin at left , size2Thrid , hiddenLegs125
+    show zardonianTyettu at right , size2Thrid , hiddenLegs125
+    with fade
+    pause 2
+    scene cloudyDayTime at fullFit
+    show miidosApartment at right , halfSize
+    show tesipizPointingUp at left , size2Thrid  , hiddenLegs125
+    show trimdius at right , size2Thrid  , flipped , hiddenLegs125
+    with dissolve
     tesi "Hey Trimidus"
+    hide tesipizPointingUp
+    show tesipiz34HappyCommandingPoting at left , size2Thrid  , hiddenLegs125
+    with dissolve
     tesi "You only need Xerxes?"
+    hide tesipiz34HappyCommandingPoting 
+    show tesipiz2FingersPointyAway at left , size2Thrid 
+    show trimdius frown meanEyes
+    with dissolve
     tesi "I want to hang out with some korkin girls."
 
+    hide tesipiz2FingersPointyAway
+    show tesipiz34Curious at left , size2Thrid  , hiddenLegs125
+    show trimdius pointy OMouth 
+    with dissolve
     trim "No Tesipiz."
+    show trimdius madMouth with dissolve
     trim "I need all of you."
+    show trimuds OMouth base with dissolve
     trim "Astarte might be with him."
 
-    #TODO add logic to tesipiz's thoughs based on with lady (if any) he 
+    show trimdius frown
+
+    #TODO add logic to tesipiz's thoughs based on with lady (if any) he has been with
+    #how would that go
+    #what's the most optimal way of doing this??
+    #so we have 3 ladies, takura, muwa and tsekrei
+    #they all have their own counters
+    #so what is the best way to 
+    #i need to draw this out a bit
 
     tesi "{i}I I live through this."
 
+    scene miidosPalaceFront at fullFit with fade
     trim "Don't mind the moving statues."
     trim "They're old korkin tech."
 
     paetorCap "Trimdius and Jamesians!"
+    #halt/greet for male praetorian
     paetorCap "State your business!"
 
     trim "I'm here to imform Jemesis about a traitor in his ranks."
     xerx "I want to return Versaniz's possesions."
     xerx "He died in battle."
 
+    #more emotions and a point away for the male praetorian unit
+    #mouths - angry (default), delta , o and frown
+    #eyes - mean and sligthly mean/default
     paetorCap "....."
     paetorCap "Got it!"
     paetorCap "Unfortunatly."
     paetorCap "Jemesis is having a private meeting."
     paetorCap "You'll have to wait."
     
+    scene blackBackground at fullFit
+    show miidosPalaceWaitingRoom at fullFit
 
     menu:
         "Catch Jemesis with his pants down":

@@ -120,7 +120,6 @@ label ToMiidos:
         trim "Before we visit King Jemesis"
         show trimdius pointy with dissolve
         trim "I've got a new trick to teach you."
-        call MiidosLearn2Jump
     else:
         #"go to embassy."
         #"sleeps"
@@ -132,13 +131,16 @@ label ToMiidos:
         trim "Before we go and visit Jemesis"
         show trimdius pointy with dissolve
         trim "I've got a new trick to teach you."
-        call MiidosLearn2Jump
+    
+    call MiidosLearn2Jump
+    jump MiidosPalaceWaiting
 
-label MiidosShop:
+#cut due to story structure
+#label MiidosShop:
     # will this be nessassary?
     # they are never get the oppertunity to use it since this section is very railroaded
     # yes for the wait options
-    "Kachigga! Kachigga! Kachigga!"
+    #"Kachigga! Kachigga! Kachigga!"
 
 
 label assiriaEmbassySleeps:
@@ -160,48 +162,123 @@ label MiidosLearn2Jump:
         call assiriaEmbassySleeps
 
     $ canJump = True
+    $ rythmPoints = 0
+    $ trimdiusTrain = copy.copy( trimdiusTutorial )
+    $ defencePattern = getMeleeDefencePatterns( trimdiusTrain.diffculty )
+    $ resurrectParty( currentParty )
+    $ canProceed = False
     scene cloudyDayTime at fullFit
     show assiriaEmabssyRoof at center , size2Thrid
     #should we have trimdius hold a stick of staff like with atazera?
     #we'll also need a training emey version of trimidus like with atazera
+    show trimdius baseTraining34 lookAtYou happyMouth at size2Thrid , center , hiddenLegs125
+    with fade
+    play music trainingMusic fadein 1.0 fadeout 1.0
     
     "Jump Street jumping"
     trim "I seen what Jemesis' goons can do."
     trim "They've made attacks that cover entire rows."
     trim "You'll need to jump over them."
+    trim "Jump over them with the X button."
 
     #jumpy
+    while not canProceed: 
+        call defenceTime ( defencePattern[0] , not trimdiusTrain.rangedFoe , trimdiusTrain , currentParty[0] , 1.0)
+        if currentParty[0].health < currentParty[0].hitpoints:
+            show trimdius sadEyes OMouth with dissolve
+            trim "Lets try that again."
+            show trimdius meanEyes with dissolve
+            trim "Avoid getting hit by jumping over lines with the X button."
+            $ resurrectParty( currentParty )
+            $ trimdiusTrain.health = trimdiusTrain.hitpoints
+            $ defencePattern = getMeleeDefencePatterns( trimdiusTrain.diffculty )
+            $ canProceed = False
+        else:
+            $ canProceed = True
 
-    trim "You still need to block ranged attacks."
+    $ canProceed = False
+    $ trimdiusTrain.health = trimdiusTrain.hitpoints
 
-    #jumpy
+    while not canProceed: 
+        show trimdius meanEyes frown with dissolve
+        trim "Don't jump into their attacks"
+        call defenceTime ( defencePattern[1] , not trimdiusTrain.rangedFoe , trimdiusTrain , currentParty[0] , 1.0)
+        if currentParty[0].health < currentParty[0].hitpoints:
+            show trimdius sadEyes OMouth with dissolve
+            trim "Lets try that again."
+            $ resurrectParty( currentParty )
+            $ trimdiusTrain.health = trimdiusTrain.hitpoints
+            $ defencePattern = getMeleeDefencePatterns( trimdiusTrain.diffculty )
+            $ canProceed = False
+        else:
+            $ canProceed = True
+    
+    $ canProceed = False
+    $ trimdiusTrain.health = trimdiusTrain.hitpoints
 
-    trim "Try not to jump over the counterattacks."
+    while not canProceed: 
+        show trimdius meanEyes frown with dissolve
+        trim "You still need to block ranged attacks."
+        show trimdius OMouth with dissolve
+        trim "You'll still block arrows while jumping."
+        call defenceTime ( defencePattern[2] , not trimdiusTrain.rangedFoe , trimdiusTrain , currentParty[0] , 1.0)
+        if currentParty[0].health < currentParty[0].hitpoints:
+            trim "Lets try that again."
+            $ resurrectParty( currentParty )
+            $ defencePattern = getMeleeDefencePatterns( trimdiusTrain.diffculty )
+            $ trimdiusTrain.health = trimdiusTrain.hitpoints
+            $ canProceed = False
+        else:
+            $ canProceed = True
+    
+    $ canProceed = False
+    $ trimdiusTrain.health = trimdiusTrain.hitpoints
 
-    #jumpy
-
+    while not canProceed: 
+        show trimdius neutralEyes OMouth with dissolve
+        trim "Try not to jump over the counterattacks."
+        call defenceTime ( defencePattern[3] , not trimdiusTrain.rangedFoe , trimdiusTrain , currentParty[0] , 1.0)
+        if currentParty[0].health < currentParty[0].hitpoints:
+            show trimdius meanEyes frown with dissolve
+            trim "Lets try that again."
+            $ resurrectParty( currentParty )
+            $ defencePattern = getMeleeDefencePatterns( trimdiusTrain.diffculty )
+            $ trimdiusTrain.health = trimdiusTrain.hitpoints
+            $ canProceed = False
+        else:
+            $ canProceed = True
+    
+    play music villageTheme fadein 1.0 fadeout 1.0
+    show trimdius neutralEyes happyMouth with dissolve
     trim "That should help deal with any of Jemesis' connections."
     return
 
 label MiidosMenu:
 
+    if IsDayTime:
+        scene miidosEstablishing at fullFit with fade
+    else:
+        scene miidosEstablishing 
     menu:
         #shop and craft maybe removed due to the plot railroading the protagonists
-        "Shop for items":
-            "got items"
+        #"Shop for items":
+        #    "got items"
         
-        "Craft Items":
-            "Mein Kraft"
+        #"Craft Items":
+        #    "Mein Kraft"
+        #caft and shop cut due to story railroading the group
 
         "Go to the Palace" if not enteringFrom == "LastDayInMiidos":
-            "Palace Time"
-            #if enteringFrom == "evidenceWaitZardonia"
+            jump MiidosPalaceWaiting
         
         "Leave Miidos" if enteringFrom == "LastDayInMiidos":
             "Bye. Have a great time."
+            
+            jump zardonianWoodsAmbush
         
         "Rest at the Embassy":
-            "Embassy Rest time"
+            call assiriaEmbassySleeps
+            jump MiidosMenu
 
 
     
@@ -213,6 +290,7 @@ label streetAssAssination:
 
     #assassins see Xerxes and co.
     #assassins creed time.
+    
     trim "Assassins!?"
     trim "{i}Does he know where on to him?"
     trim "We need to get to the embassy. {b}NOW!"

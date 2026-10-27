@@ -1105,6 +1105,8 @@ image miidosStreet = "images/Locations/Miidos/Miidos Street.webp"
 image miidosStreetNight = "images/Locations/Miidos/Miidos Street Night.webp"
 image miidosGateInside = "images/Locations/Miidos/Miidos Gate Inside.webp"
 
+image miidosApartment = "images/Locations/Miidos/Miidos Apartment and fountain.webp"
+
 image miidosPalaceFront = "images/Locations/Miidos/Miidos Palace Front.webp"
 image miidosPalaceFrontNight = "images/Locations/Miidos/Miidos Establishing Nightime.webp"
 image miidosPalaceWaitingRoom = "images/Locations/Miidos/Palace Waiting room.webp"
@@ -2005,6 +2007,10 @@ image ssatuGlaiveBoyAttacking:
 image ssatuOstrichFighter = "images/Enemies/Shata and Ssatu/Ssatu Ostrich FIghter.webp"
 
 #Zardonians
+
+image zardoninaKorkin = "images/NPCs/zardonia/Korkin lady.webp"
+image zardonianTyettu = "images/NPCs/zardonia/tyettu lady.webp"
+
 image zardonianAxeDude = "images/Enemies/Zardonians/Zardonian AxeMAN.webp"
 
 image zardonianAxeGirl = "images/Enemies/Zardonians/Zardonian Axe WoahMAN.webp"
@@ -2045,6 +2051,33 @@ image zardonianCataphractDude = "images/Enemies/eliete goons/Zardonian Cataphrac
 image zardonianCataphractDudeFlee = "images/Enemies/eliete goons/Zardonian Cataphract Dude Flee.webp"
 image zardonianCataphractLady = "images/Enemies/eliete goons/Zardonian Cataphract Lady.webp"
 image zardonianCataphractLadyFlee = "images/Enemies/eliete goons/Zardonian Cataphract Lady Fleeing.webp"
+
+
+layeredimage praetorianMan:
+    group poses:
+        attribute guarded default:
+            "images/Enemies/eliete goons/PaetorianGuardM sword down.webp"
+        attribute standing:
+            "images/Enemies/eliete goons/PaetorianGuardM.webp"
+        attribute bowDrawing:
+            "images/Enemies/eliete goons/PaetorianGuardMBow.webp"
+    
+    group eyes:
+        attribute neutral default:
+            "images/Enemies/eliete goons/PaetorianGuardM neutral eyes.webp"
+        attribute mean:
+            "images/Enemies/eliete goons/PaetorianGuardM mean eyes.webp"
+    
+    group mouths:
+        attribute frown default:
+            "images/Enemies/eliete goons/PaetorianGuardM frown.webp"
+        attribute delta:
+            "images/Enemies/eliete goons/PaetorianGuardM delta mouth.webp"
+        attribute O:
+            "images/Enemies/eliete goons/PaetorianGuardM OMouth.webp"
+        attribute angry:
+            "images/Enemies/eliete goons/PaetorianGuardM angry mouth.webp"
+
     #Korkins
     #Junatu
 image junatuWebRocka = "images/Enemies/Zardonians/Junatu Web Rocka.webp"
@@ -6177,6 +6210,8 @@ layeredimage trimdius:
             "images/Protagonists/Trimdius/Trimdius 3-4 Item.webp"
         attribute base34:
             "images/Protagonists/Trimdius/Trimdius 3-4.webp"
+        attribute baseTraining34:
+            "images/Protagonists/Trimdius/Trimdius Training.webp"
         attribute pointy:
             "images/Protagonists/Trimdius/Trimdius 3-4 Pointy.webp"
         attribute talk2DaHand:
@@ -6202,7 +6237,7 @@ layeredimage trimdius:
         attribute neutralEyes default if_any['armored','armoredGreet']:
             "images/Protagonists/Trimdius/Trimdius Neutral Eyes.webp"
             ypos 300
-        attribute neutralEyes default if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute neutralEyes default if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 Neutral Eyes.webp"
 
         attribute meanEyes if_any['base','greet']:
@@ -6210,10 +6245,10 @@ layeredimage trimdius:
         attribute meanEyes if_any['armored','armoredGreet']:
             "images/Protagonists/Trimdius/Trimdius Mean Eyes.webp"
             ypos 300
-        attribute meanEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute meanEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 Mean Eyes.webp"
         
-        attribute xEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute xEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 X Eyes.webp"
 
         attribute sadEyes if_any['base','greet']:
@@ -6221,8 +6256,12 @@ layeredimage trimdius:
         attribute sadEyes if_any['armored','armoredGreet']:
             "images/Protagonists/Trimdius/Trimdius Sad Eyes.webp"
             ypos 300
-        attribute sadEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute sadEyes if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 Sad Eyes.webp"     
+
+    group eyeDirection:
+        attribute lookAtYou if_any[ 'item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34'  ]:
+            "images/Protagonists/Trimdius/Trimdius 3-4 Look at you.webp"
 
     group mouths:
         attribute neutralHappyMouth default if_any['base','greet']:
@@ -6230,7 +6269,7 @@ layeredimage trimdius:
         attribute neutralHappyMouth default if_any['armored','armoredGreet']:
             "images/Protagonists/Trimdius/Trimdius Neutral Happy Mouth.webp"
             ypos 300
-        attribute neutralHappyMouth default if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute neutralHappyMouth default if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 Neutral Happy Mouth.webp"
 
         attribute happyMouth if_any['base','greet']:
@@ -6238,7 +6277,7 @@ layeredimage trimdius:
         attribute happyMouth if_any['armored','armoredGreet']:
             "images/Protagonists/Trimdius/Trimdius Happy Mouth.webp"
             ypos 300
-        attribute happyMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute happyMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 Happy Mouth.webp"
         
         attribute frown if_any['base','greet']:
@@ -6246,11 +6285,11 @@ layeredimage trimdius:
         attribute frown if_any['armored','armoredGreet']:
             "images/Protagonists/Trimdius/Trimdius Frown.webp"
             ypos 300
-        attribute frown if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute frown if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 Frown.webp"
 
 
-        attribute madMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute madMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 Angry Teeth.webp"
 
         attribute OMouth if_any['base','greet']:
@@ -6258,10 +6297,10 @@ layeredimage trimdius:
         attribute OMouth if_any['armored','armoredGreet']:
             "images/Protagonists/Trimdius/Trimdius OMouth.webp"
             ypos 300
-        attribute OMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute OMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 OMouth.webp"
         
-        attribute ahMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy']:
+        attribute ahMouth if_any['item','base34','pointy','talk2DaHand','greet34','armored34','armoredGreet34','armoredItem','armoredPointy' , 'baseTraining34' ]:
             "images/Protagonists/Trimdius/Trimdius 3-4 Ah Mouthwebp"
 
 layeredimage femdius: #female form trimdius
@@ -6290,6 +6329,8 @@ layeredimage femdius: #female form trimdius
             "images/Protagonists/Trimdius/Trimdius 3-4 Female Frown.webp"
         attribute OMouth:
             "images/Protagonists/Trimdius/Trimdius 3-4 Female OMouth.webp"
+
+#image trimdiusTraining = "images/Protagonists/Trimdius/Trimdius Training.webp"
 
 #NPCs
 
