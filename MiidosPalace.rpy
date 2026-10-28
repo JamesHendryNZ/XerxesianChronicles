@@ -37,33 +37,78 @@ label MiidosPalaceWaiting:
     trim "Astarte might be with him."
 
     show trimdius frown
-
-    #TODO add logic to tesipiz's thoughs based on with lady (if any) he has been with
+    show tesipiz34LookingDownSad at left , size2Thrid  , hiddenLegs125
+    with dissolve
     #how would that go
     #what's the most optimal way of doing this??
     #so we have 3 ladies, takura, muwa and tsekrei
     #they all have their own counters
     #so what is the best way to 
     #i need to draw this out a bit
+    if tsekreiDating > 0:
+        tesi "{i}At least I can hang out with Tsekrei after this."
+        tesi "{i}If I live through this."
+    elif takuraBoinks > 0:
+        tesi "{i}At least I got to cream in that Takura Lady."
+        tesi "{i}If I live through this."
+    elif muwaCuddleCounter > 0 or takuraCuddles > 0:
+        if takuraCuddles >= muwaCuddleCounter:
+            tesi "{i}At least I got to cuddle up with Lady Takura."
+            tesi "{i}If I live through this."
+        else:
+            tesi "{i}At least I got to snuggle with that furball."
+            tesi "{i}If I live through this."
+    elif tsekreiCuddles > 0:
+        tesi "{i}Hopefully I might get to visit that Tsekrei lady again."
+        tesi "{i}If I live through this."
+    else:
+        tesi "Ooah."
 
-    tesi "{i}I I live through this."
+    
 
     scene miidosPalaceFront at fullFit with fade
+    pause 2.0
+    scene miidosPalaceFront at center , size2Thrid
+    show xerxNeutralSuprizedUnarmored at left , size2Thrid , hiddenLegs125
+    show tesipizMiniSuprized at right , size2Thrid , hiddenLegs125
+    show trimdius greet happyMouth at center , size2Thrid , hiddenLegs125
+    with fade
     trim "Don't mind the moving statues."
+    hide xerxNeutralSuprizedUnarmored
+    hide tesipizMiniSuprized
+    show tesipiz34NeutralHappy at right , size2Thrid , hiddenLegs125
+    show xerx3quatHappy at left , size2Thrid , hiddenLegs125 , flipped
+    show trimdius item
+    with dissolve
     trim "They're old korkin tech."
 
+    scene blackBackground at fullFit
+    show miidosPalaceEntranceDoor at center , size2Thrid
+    show praetorianMan mean delta at center , size2Thrid , hiddenLegs125
+    with fade
     paetorCap "Trimdius and Jamesians!"
     #halt/greet for male praetorian
+    show praetorianMan angry with dissolve
     paetorCap "State your business!"
 
+    show praetorianMan frown at center , size2Thrid , hiddenLegs125:
+        xpos 0.5
+        linaer 2 xpos 0.0 xalign 0.0
+    show trimdius greet frown at right , size2Thrid , hiddenLegs125:
+        xpos 1.5
+        easeout 2 xpos 1.0
+    with dissolve
     trim "I'm here to imform Jemesis about a traitor in his ranks."
+    show trimdius sadEyes pointy OMouth with dissolve
     xerx "I want to return Versaniz's possesions."
+    show trimdius base34 frown with dissolve
     xerx "He died in battle."
 
     #more emotions and a point away for the male praetorian unit
     #mouths - angry (default), delta , o and frown
     #eyes - mean and sligthly mean/default
     paetorCap "....."
+    
     paetorCap "Got it!"
     paetorCap "Unfortunatly."
     paetorCap "Jemesis is having a private meeting."
