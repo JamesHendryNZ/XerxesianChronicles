@@ -108,35 +108,90 @@ label MiidosPalaceWaiting:
     #mouths - angry (default), delta , o and frown
     #eyes - mean and sligthly mean/default
     paetorCap "....."
-    
+    show praetorianMan standing neutral delta 
+    show trimdius neutralHappyMouth neutralEyes
+    with dissolve
     paetorCap "Got it!"
+    show praetorianMan O
     paetorCap "Unfortunatly."
+    show praetorianMan delta with dissolve
     paetorCap "Jemesis is having a private meeting."
+    show praetorianMan guarded mean
+    show trimdius OMouth sadEyes
     paetorCap "You'll have to wait."
     
     scene blackBackground at fullFit
     show miidosPalaceWaitingRoom at fullFit
 
+    show xerx3quatHappy at left , size2Thrid:
+        xpos 0.25
+    show trimdius base34 at left , size2Thrid
+    
+    show tesipiz34HappyCommandingPoting at right , size2Thrid:
+        xpos 0.75
+    show volkara3quat at right , size2Thrid
+    with fade
+
+
     menu:
         "Catch Jemesis with his pants down":
+            scene blackBackground at fullFit
+            show miidosPalaceWaitingRoom at truecenter
+            show trimdius lookAtYou happyMouth pointy at center , size2Thrid , hiddenLegs125:
+                xpos 0.35
+            with dissolve
             trim "Jemesis is probably boinking Astarte, or is talking to the elites."
+            show trimdius meanEyes
             trim "Lets give him a suprise visit."
             jump MiidosSneakyBreaky
         "Just Wait":
             jump justWait
 
 label justWait:
+
     "........"
+    hide tesipiz34HappyCommandingPoting
+    show tesipiz34NeutralHappy at right , size2Thrid:
+        xpos 0.75
+    show volkara3quat armsFoward lineEyes OMouth
+    with dissolve
     volk "Are we sure we should just wait?"
+
+
+    show trimdius pointy happyMouth
+    show volkara3quat basic deltaMouth
+    with dissolve
     trim "Yes."
+    show trimdius item
+    show imageCrystalItem at halfSize:
+        rotate -45
+    with dissolve
     trim "I've have the evidence here."
+    show trimdius pointy meanEyes
+    hide imageCrystalItem
+    with dissolve
     trim "He wouldn't try anything brash at the moment."
     
     #cut to jemesis and astarte
+    screen jemesisThroneRoom at center , size2Thrid
+    show jemesis sadEyes frown at left , size2Thrid , hiddenLegs125
+    show astarte OMouth at right , size2Thrid , hiddenLegs125
+    with fade
     astar "Sorry about your loss."
+    show astarte hornyEyes neutralHappyMouth with dissolve
     astar "But you're still winning."
+
+    show astarte neutralEyes
+    show jemesis yeah meanEyes
+    with dissolve
     jeme "There were reports of jamesians aiding the Zaratians."
+    show astarte happyMouth with dissolve
     astar "Is there now?"
+
+    screen jemesisThroneRoom at right , size2Thrid:
+        xalign 0.75
+    #maybe no weapon or shield version
+    show praetorianMan standing
     paetorCap "King Jemesis!"
     paetorCap "Trimdius wants to talk to you about a traitor in your ranks."
     paetorCap "He is with some jamesians, who want to return Versaniz's posessions."
