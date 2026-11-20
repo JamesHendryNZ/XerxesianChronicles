@@ -1112,6 +1112,20 @@ image miidosPalaceFrontNight = "images/Locations/Miidos/Miidos Establishing Nigh
 image miidosPalaceWaitingRoom = "images/Locations/Miidos/Palace Waiting room.webp"
 image miidosPalaceEntranceDoor = "images/Locations/Miidos/Miidos Palace Entrance and meeting room.webp"
 
+image miidosBigStatueRoom = "images/Locations/Miidos/Big Statue Room.webp"
+image miidosGuardRoom = "images/Locations/Miidos/Miidos Guard Room.webp"
+image miidosMainHall = "images/Locations/Miidos/Miidos Main Hall facing throne room.webp"
+image miidosAttic = "images/Locations/Miidos/Miidos Palace Attack.webp"
+image miidosBarracks = "images/Locations/Miidos/Miidos Palace Barracks.webp"
+image miidosNorthPalace = "images/Locations/Miidos/Miidos Palace North Columns.webp"
+image miidosRampBottom = "images/Locations/Miidos/Miidos Palace Spiral Ramp Bottom.webp"
+image miidosCloset = "images/Locations/Miidos/Miidos Stoarge room.webp"
+image miidosDungeon = "images/Locations/Miidos/Palace dungeon.webp"
+image miidosHallway = "images/Locations/Miidos/Palace Hallway.webp"
+image miidosHallwayJunction = "images/Locations/Miidos/Pallace hallway junction.webp"
+
+
+
     #Assiria Emabssy in Miidos
 image assiriaEmbassyEstablishing = "images/Locations/Miidos/Assiria Emabassy estabishing.webp"
 image assiriaEmbassyEstablishingNight = "images/Locations/Miidos/Assiria Emabassy estabishing night.webp"
@@ -2061,6 +2075,8 @@ layeredimage praetorianMan:
             "images/Enemies/eliete goons/PaetorianGuardM.webp"
         attribute bowDrawing:
             "images/Enemies/eliete goons/PaetorianGuardMBow.webp"
+        attribute noWeapon:
+            "images/Enemies/eliete goons/PaetorianGuardM No Weapon.webp"
     
     group eyes:
         attribute neutral default:
@@ -2309,6 +2325,12 @@ layeredimage astarte:
             "images/antagonists/Astarte/Astarte Standing Happy Mouth.webp"
         attribute happyMouth if_any['holdingSword']:
             "images/antagonists/Astarte/Astarte Standing Happy Mouth.webp"
+            xpos 100
+        
+        attribute miniHappyMouth if_not['holdingSword']:
+            "images/antagonists/Astarte/Astarte mini happy.webp"
+        attribute miniHappyMouth if_any['holdingSword']:
+            "images/antagonists/Astarte/Astarte mini happy.webp"
             xpos 100
 
         attribute hornyMouth if_not['holdingSword']:
@@ -3088,6 +3110,12 @@ layeredimage jemesis:
             "images/antagonists/King Jemesis/Jemesis Frown.webp"
         attribute frown if_any['yeahSword']:
             "images/antagonists/King Jemesis/Jemesis Frown.webp"
+            ypos 200
+        
+        attribute deltaMouth if_any['based','yeah','armored']:
+            "images/antagonists/King Jemesis/Jemesis delta mouth.webp"
+        attribute deltaMouth if_any['yeahSword']:
+            "images/antagonists/King Jemesis/Jemesis delta mouth.webp"
             ypos 200
 
         attribute angryMouth if_any['based','yeah','armored']:

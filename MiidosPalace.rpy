@@ -93,7 +93,7 @@ label MiidosPalaceWaiting:
 
     show praetorianMan frown at center , size2Thrid , hiddenLegs125:
         xpos 0.5
-        linaer 2 xpos 0.0 xalign 0.0
+        linear 2 xpos 0.0 xalign 0.0
     show trimdius greet frown at right , size2Thrid , hiddenLegs125:
         xpos 1.5
         easeout 2 xpos 1.0
@@ -173,7 +173,7 @@ label justWait:
     trim "He wouldn't try anything brash at the moment."
     
     #cut to jemesis and astarte
-    screen jemesisThroneRoom at center , size2Thrid
+    scene jemesisThroneRoom at center , size2Thrid
     show jemesis sadEyes frown at left , size2Thrid , hiddenLegs125
     show astarte OMouth at right , size2Thrid , hiddenLegs125
     with fade
@@ -188,37 +188,85 @@ label justWait:
     show astarte happyMouth with dissolve
     astar "Is there now?"
 
-    screen jemesisThroneRoom at right , size2Thrid:
+    scene jemesisThroneRoom at right , size2Thrid:
         xalign 0.75
     #maybe no weapon or shield version
-    show praetorianMan standing
+    show praetorianMan noWeapon mean O
+    with dissolve
     paetorCap "King Jemesis!"
+    show praetorianMan deltaMouth with dissolve
     paetorCap "Trimdius wants to talk to you about a traitor in your ranks."
     paetorCap "He is with some jamesians, who want to return Versaniz's posessions."
 
+    scene jemesisThroneRoom at center , size2Thrid
+    show jemesis meanEyes frown at left , size2Thrid , hiddenLegs125
+    show astarte meanEyes miniHappyMouth at right , size2Thrid , hiddenLegs125
+    with dissolve
     astar "The Jamesians are afraid."
+    show astarte neutralHappyMouth
+    show jemesis deltaMouth
+    with dissolve
     jeme "Trimdius can wait."
 
+    show jemesis yeah angryMouth with dissolve
     jeme "Those acursed jamesians, killed my son and now they're here to mock me?"
+    show jemesis based frown
+    show astarte meanEyes miniHappyMouth
+    with dissolve
     astar "Well."
+    show astarte happyMouth with dissolve
     astar "Send them away."
+    show astarte hornyEyes miniHappyMouth with dissolve
     astar "Have them return tomorrow."
 
+    show astarte meanEyes happyMouth with dissolve
     astar "I'll deal with them."
+    show astarte miniHappyMouth with dissolve
     astar "I'll dirty my hands to keep yours clean."
-    astar "Speaking of dirty."
-    #maybe boning time?
 
+    show astarte boobaHold hornyEyes blush with dissolve
+    astar "Speaking of dirty."
+    show astarte halfNekked2Side leaking with dissolve
+    pause 1.0
+    show astarte halfNekkedBooba charming with dissolve
+    pause 2.0
+
+    #maybe boning time?
+    #maybe for the reveal of  
+    scene jemesisThroneRoom at center , size2Thrid
+    show jemesis meanEyes happyMouth at left , size2Thrid , hiddenLegs125
+    show astarte halfNekked at right , size2Thrid , hiddenLegs125
+    with fade
     #later
     jeme "Tell Trimdius he can see me tomorrow evening."
+    show jemesis neutralHappyMouth with dissolve
     jeme "I want some time to relax."
 
     #in the waiting room
+    scene blackBackground at fullFit
+    show miidosPalaceWaitingRoom at fullFit
+
+    show xerx3quatHappy at left , size2Thrid:
+        xpos 0.25
+    show trimdius base34 at left , size2Thrid
+    
+    show tesipiz34HappyCommandingPoting at right , size2Thrid:
+        xpos 0.75
+    show volkara3quat at right , size2Thrid
+    with fade
+    pause 2.0
+    show praetorianMan noWeapon delta with dissolve
     paetorCap "Trimdius."
+    show praetorianMan O with dissolve
     paetorCap "King Jemesis doesn't want to see you today."
+    show praetorianMan guarded delta with dissolve
     paetorCap "He'll see you tomorrow evening."
 
+    show praetorianMan frown
+    show trimdius xEyes OMouth 
+    with dissolve
     trim "Oh well."
+    show trimdius pointy neutralEyes happyMouth with dissolve
     trim "Xerxes. I'll have you sleep in the Assiria Embassy."
 
     jump streetAssAssination
@@ -226,41 +274,107 @@ label justWait:
 
 label MiidosSneakyBreaky:
     "Sneaky Breaky iv damkeh"
+    scene blackBackground at fullFit
+    show miidosHallwayJunction at halfSize , truecenter , flameLight:
+        blur 10
+    show miidosHallway at fullFit , flameLight
+    with fade
+    pause 2
+    $ enteringFrom = "WaitingRoom"
+    jump miidosHallConnection
 
 label miidosDungeon:
     "Dugeons and dragonz"
+    scene miidosDungeon at fullFit with fade
+    #underground with cells
 
 label miidosAttic:
     "Top storage"
+    scene miidosAtticImg at fullFit with fade
+    #wooden floors, stroage and beds
+    #they get items here
+
 
 label columBalcony:
     "Outside time"
+    scene blackBackground at fullFit
+    show miidosNorthPalace at fullFit
+    with fade
+    #colums and the city view maybe
 
 label miidosBarracks:
     "Troopers. Aw man."
+    scene blackBackground at fullFit
+    show miidosBarracks at fullFit
+    #weapons and beds
 
 label miidosGuardHouse:
     "more troopers"
+    scene miidosGuardHouse at fullFit with fade
+    #more weapons and supplies
 
 label miidosHallArena:
     "More arenas"
+    scene miidosMainHall at fullFit with fade
+    #a big hallway with coloums
 
 label yatagarasuSpiralRamp:
     "rampy"
+    scene miidosRampBottom at fullFit with fade
+    # a spiral ramp both top
+    # and bottom
 
 label miidosHallConnection:
+
+    #should their be a t junction for 3 way junctions
+    #probably.
+    if enteringFrom == "WaitingRoom" or enteringFrom == "DaAttic" or enteringFrom == "Barracks2Attic":
+        $ enteringFrom = "EasternJunction"
+        menu:
+            "Go to the attic":
+                "attic time"
+                $ enteringFrom = "Barracks2Attic"
+                jump miidosAttic
+            "Go to the Barracks":
+                "ten huts"
+                jump miidosBarracks
+            "Go to the side room":
+                "side hoe lives here"
+                jump miidosStorageRoom
+
     "Hall way 2 connect"
+    # a basic 4 way hallway intersection
+    #will have many versions
+    scene blackBackground at fullFit
+    show miidosHallConnection at fullFit
+    with fade
 
 label miidosStorageRoom:
     "Little rooms"
+    if enteringFrom == "EasternJunction":
+        "the one from the estaern junction"
+    scene miidosCloset at fullFit with fade
+    "da stuff is based on which room you senter on."
+    #a dark room with storage boxes and vases
+    
 
-label miidosCloset:
-    "Hah GAYYYY!!"
+#label miidosCloset:
+#    "Hah GAYYYY!!"
+    #same as stoarage room will probably be removed for optimization stages 
 
 label miidosEscapeTunnel:
     "Jemesis is running like a PUSSY!!"
+    scene miidosRampBottom at fullFit
+    show miidosHallway at fullFit
+    with fade
+    #this is a tunnel with light crystals
+    #or use the already exisitng palace hallway image
 
 label miidosMiniboss:
+    scene blackBackground at fullFit
+    show miidosBigStatueRoom at fullFit
+    with fade
+    #circular room
     #the statue estbaliihing shot
     #the screen
     #battle start
