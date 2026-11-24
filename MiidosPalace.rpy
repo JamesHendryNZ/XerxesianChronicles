@@ -287,53 +287,113 @@ label miidosDungeon:
     "Dugeons and dragonz"
     scene miidosDungeon at fullFit with fade
     #underground with cells
+    menu:
+        "Go to the North Outside":
+            "north outside"
+            jump columBalcony
+        "Go to the Guard house":
+            "the guards"
+            jump miidosGuardHouse
 
 label miidosAttic:
     "Top storage"
     scene miidosAtticImg at fullFit with fade
     #wooden floors, stroage and beds
     #they get items here
+    "go back to the room"
+    $ enteringFrom = "attic"
+    jump miidosHallConnection
 
 
 label columBalcony:
     "Outside time"
+    $ enteringFrom = "NorthOutside"
     scene blackBackground at fullFit
     show miidosNorthPalace at fullFit
     with fade
+
+    menu:
+        "Got to the Barracks":
+            "barraks"
+            jump miidosBarracks
+        "Go to the Dungeon":
+            "dragons"
+            jump miidosDungeon
     #colums and the city view maybe
 
 label miidosBarracks:
     "Troopers. Aw man."
     scene blackBackground at fullFit
     show miidosBarracks at fullFit
+    $ enteringFrom = "Barracks"
+    menu:
+        "Go to the main hall":
+            "da hallway"
+            jump miidosHallArena
+        "Go down the hallway to the attic":
+            "da attaic hallway"
+            $ enteringFrom = "Barracks2Attic"
+            jump miidosHallConnection
+        "Go, OUTSIDE!!":
+            "da OUTSIDE!!"
+            jump columBalcony
     #weapons and beds
 
 label miidosGuardHouse:
     "more troopers"
+    $ enteringFrom = "GuardHouse"
     scene miidosGuardHouse at fullFit with fade
     #more weapons and supplies
+    menu:
+        "Go to the Dungeon":
+            "the dungdon of dagons"
+            jump miidosDungeon
+        "Go to the Main Hall":
+            "the main hallway"
+            jump miidosHallConnection
 
 label miidosHallArena:
     "More arenas"
+    $ enteringFrom = "MainHallway"
     scene miidosMainHall at fullFit with fade
+    menu:
+        "Try entering the throne room":
+            "Nope, can't enter"
+            jump miidosHallArena
+        "Go to the barracks":
+            "back to the barracks"
+            jump miidosBarracks
+        "Go to the Guard Room":
+            jump miidosHallConnection
     #a big hallway with coloums
 
 label yatagarasuSpiralRamp:
     "rampy"
+    $ enteringFrom == "BottomRamp"
     scene miidosRampBottom at fullFit with fade
     # a spiral ramp both top
     # and bottom
+    menu:
+        "Go to Guard Room":
+            "the halls"
+            jump miidosHallConnection
+        "Go to the Barracks":
+            $ enteringFrom = "West2North"
+            "the barracks hall"
+            jump miidosHallConnection
+        "Go up the ramp?":
+            "rampy??"
+
 
 label miidosHallConnection:
 
     #should their be a t junction for 3 way junctions
     #probably.
-    if enteringFrom == "WaitingRoom" or enteringFrom == "DaAttic" or enteringFrom == "Barracks2Attic":
+    if enteringFrom == "WaitingRoom" or enteringFrom == "DaAttic" or enteringFrom == "Barracks" or enteringFrom == "EasternJunction":
         $ enteringFrom = "EasternJunction"
         menu:
             "Go to the attic":
                 "attic time"
-                $ enteringFrom = "Barracks2Attic"
                 jump miidosAttic
             "Go to the Barracks":
                 "ten huts"
@@ -341,6 +401,40 @@ label miidosHallConnection:
             "Go to the side room":
                 "side hoe lives here"
                 jump miidosStorageRoom
+
+    elif enteringFrom == "MainHallway" or enteringFrom == "BottomRamp" or enteringFrom == "GuardHouse" or enteringFrom == "CentralJunction":
+        $ enteringFrom = "CentralJunction"
+        menu:
+            "Go to main hallway":
+                "To the main hallway"
+                jump miidosHallArena
+            "Go to the Guard Room":
+                "to the guard room"
+                jump miidosGuardHouse
+            "Go to ramp room.":
+                "go to the ramps"
+                jump yatagarasuSpiralRamp
+            "Go to the right room":
+                $ enteringFrom = "WesternJunction"
+                "right room"
+                jump miidosStorageRoom
+    
+    elif enteringFrom == "West2North" or enteringFrom == "NorthOutside" or enteringFrom == "NorthJunction":
+        $ enteringFrom = "NorthJunction"
+        menu:
+            "Go to the Spiral Ramp Room":
+                "spiral ramp"
+                jump yatagarasuSpiralRamp
+            "Go to the north-west storage room":
+                "rooms"
+                jump miidosStorageRoom
+            "Go to the barracks":
+                "ten hutts"
+                jump miidosBarracks
+            "Go to the back room":
+                "da back doors"
+                jump miidosMiniboss
+
 
     "Hall way 2 connect"
     # a basic 4 way hallway intersection
@@ -351,12 +445,19 @@ label miidosHallConnection:
 
 label miidosStorageRoom:
     "Little rooms"
-    if enteringFrom == "EasternJunction":
-        "the one from the estaern junction"
     scene miidosCloset at fullFit with fade
     "da stuff is based on which room you senter on."
+    if enteringFrom == "EasternJunction":
+        "the one from the estaern junction"
+
+    elif enteringFrom == "WesternJunction":
+        "the one from the hallway left (main hall and guard house)"
+
+    elif enteringFrom == "NorthJunction":
+        "the one from the hallway north (ramp room and barraks)"
     #a dark room with storage boxes and vases
     
+    jump miidosHallConnection
 
 #label miidosCloset:
 #    "Hah GAYYYY!!"
@@ -369,11 +470,37 @@ label miidosEscapeTunnel:
     with fade
     #this is a tunnel with light crystals
     #or use the already exisitng palace hallway image
+    #he goes up the ramp
+    #to the temple on the mountain
+    #does he jump or fly?
+    #or gets lost??
 
 label miidosMiniboss:
+
     scene blackBackground at fullFit
-    show miidosBigStatueRoom at fullFit
+    show miidosBigStatueRoom  at fullFit
+    
+
+    scene blackBackground at fullFit , angryColored
+    show miidosBigStatueRoom at size08 , angryColored:
+        xalign 0.5
+        yalign 0.35
     with fade
+    show tesipizNeutralHappy at center , halfSize , redLightDistrict
+    show volkaraFeety at center , halfSize , redLightDistrict
+    show happyXerx at center , halfSize , redLightDistrict
+    show trimdius at center , size2Thrid , hiddenLegs125 , redLightDistrict
+
+    pause 2
+    show targeter:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.5 ypos 0.5 zoom 1.5
+        linear 1.5 rotate 180 clockwise
+        linear 1.5 rotate 180 clockwise
+    with dissolve
+    pause 3
+    with dissolve
+
     #circular room
     #the statue estbaliihing shot
     #the screen

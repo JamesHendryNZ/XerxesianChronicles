@@ -1115,7 +1115,7 @@ image miidosPalaceEntranceDoor = "images/Locations/Miidos/Miidos Palace Entrance
 image miidosBigStatueRoom = "images/Locations/Miidos/Big Statue Room.webp"
 image miidosGuardRoom = "images/Locations/Miidos/Miidos Guard Room.webp"
 image miidosMainHall = "images/Locations/Miidos/Miidos Main Hall facing throne room.webp"
-image miidosAttic = "images/Locations/Miidos/Miidos Palace Attack.webp"
+image miidosAtticImg = "images/Locations/Miidos/Miidos Palace Attack.webp"
 image miidosBarracks = "images/Locations/Miidos/Miidos Palace Barracks.webp"
 image miidosNorthPalace = "images/Locations/Miidos/Miidos Palace North Columns.webp"
 image miidosRampBottom = "images/Locations/Miidos/Miidos Palace Spiral Ramp Bottom.webp"
@@ -2095,6 +2095,40 @@ layeredimage praetorianMan:
             "images/Enemies/eliete goons/PaetorianGuardM angry mouth.webp"
 
     #Korkins
+        #korkin statues
+layeredimage bigKorkinStatue:
+    group poses:
+        attribute base default:
+            "images/antagonists/Mini-Bosses/Big Battle Statue.webp"
+        attribute angry:
+            "images/antagonists/Mini-Bosses/Big Battle Statue Attack.webp"
+    group eyes:
+        attribute active:
+            "images/antagonists/Mini-Bosses/Big Battle Statue active eyes.webp"
+    group weapons:
+        attribute attacking:
+            "images/antagonists/Mini-Bosses/Big Battle Statue Attack Lazerz.webp"
+
+layeredimage battleStatueMan:
+    group poses:
+        attribute base default:
+            "images/Enemies/Zardonians/Battle StatueM.webp"
+    group eyes:
+        attribute active:
+            "images/Enemies/Zardonians/Battle StatueM activeLights.webp"
+        attribute angry:
+            "images/Enemies/Zardonians/Battle StatueM Hostile lights.webp"
+
+layeredimage battleStatueLady:
+    group poses:
+        attribute base default:
+            "images/Enemies/Zardonians/Battle Statue.webp"
+    group eyes:
+        attribute active:
+            "images/Enemies/Zardonians/Battle Statue ActiveLights.webp"
+        attribute angry:
+            "images/Enemies/Zardonians/Battle Statue HostileLights.webp"
+
     #Junatu
 image junatuWebRocka = "images/Enemies/Zardonians/Junatu Web Rocka.webp"
 image junatuWebRockaSad = "images/Enemies/eliete goons/Junatu Web Rocka Sad Scared.webp"
