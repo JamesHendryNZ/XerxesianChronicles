@@ -478,18 +478,22 @@ label miidosEscapeTunnel:
 label miidosMiniboss:
 
     scene blackBackground at fullFit
-    show miidosBigStatueRoom  at fullFit
+    show miidosBigStatueRoom  at fullFit , lightCrystalLights
     
-
+    show bigKorkinStatue at size2Thrid , lightCrystalLights , hiddenLegs125
     scene blackBackground at fullFit , angryColored
     show miidosBigStatueRoom at size08 , angryColored:
         xalign 0.5
         yalign 0.35
     with fade
-    show tesipizNeutralHappy at center , halfSize , redLightDistrict
-    show volkaraFeety at center , halfSize , redLightDistrict
-    show happyXerx at center , halfSize , redLightDistrict
-    show trimdius at center , size2Thrid , hiddenLegs125 , redLightDistrict
+    show tesipizNeutralHappy at center , halfSize , redLightDistrict:
+        xalign 0.6
+    show volkaraFeety at center , halfSize , redLightDistrict:
+        xalign 0.5
+    show happyXerx at center , halfSize , redLightDistrict:
+        xalign 0.3
+    show trimdius at center , size2Thrid , hiddenLegs125 , redLightDistrict:
+        xalign 0.7
 
     pause 2
     show targeter:
@@ -504,20 +508,66 @@ label miidosMiniboss:
     #circular room
     #the statue estbaliihing shot
     #the screen
+    scene blackBackground at fullFit
+    show miidosBigStatueRoom  at fullFit , lightCrystalLights
+    show bigKorkinStatue active at size2Thrid , lightCrystalLights , hiddenLegs125
+    with dissolve
+    pause 1.0
+    show bigKorkinStatue angry with dissolve
+    pause 1.0
+    show bigKorkinStatue attacking with dissolve
     #battle start
     #dodge the first laser attack
+
+    scene blackBackground at fullFit
+    show miidosBigStatueRoom at size08 , lightCrystalLights:
+        xalign 0.5
+        yalign 0.35
+    with fade
+    show tesipizJump at center , halfSize , lightCrystalLights:
+        xalign 0.6
+        linear 0.25 xalign 0.6
+        easeout 2 xpos 1.5
+    show volkara3quat closedEyes OMegaMouth at center , halfSize , lightCrystalLights:
+        xalign 0.5
+        linear 0.2 xalign 0.5
+        easeout 2 xpos 1.5
+    show xerxJumpUp at center , halfSize , lightCrystalLights:
+        xalign 0.3
+        linear 0.1 xalign 0.3
+        easeout 2 xpos -0.5
+    show trimdius base34 xEyes ahMouth at center , size2Thrid , hiddenLegs125 , lightCrystalLights:
+        xalign 0.7
+        easeout 2 xpos -0.5
+    with dissolve
+    show magicShot at angryColored:
+        ypos -0.3 yanchor 0.0 xanchor 0.5 xalign 0.5
+        yzoom 0.5
+        linear 1 yzoom 6.0
     #battle time
+    #need a arms up trimidus
     trim "Hey Battle Statue!"
     trim "These are friends of Timdius!"
     trim "They are not foes!!"
 
+    show tesipizYeah at center , lightCrystalLights , hiddenLegs125 , size2Thrid
     tesi "{i}A giant korkin lady."
     tesi "{i}I don't want to miss this oppertunity."
 
     #minigame to defeat it
     #or just fight it normally
-
+    scene blackBackground at fullFit
+    show miidosBigStatueRoom  at fullFit , lightCrystalLights
+    $ enemyTroopers = [ copy.copy( korkinBattleStatue ) ]
+    play music "<to 4>audio/music/Xerxesian Battle1.ogg"
+    queue music fightingCommon
+    call screen playerActions( "Neutralize the battle statue!" , False , False , True , 0 )
     #the statue gets defeated
+    #maybe tesipiz gets on the statue after a minigame after 5 turns?
+    scene blackBackground at fullFit
+    show miidosBigStatueRoom at size08 , lightCrystalLights:
+        xalign 0.5
+        yalign 0.35
     trim "{i}Jemesis Knows."
     trim "Armor up everybody."
     trim "And expect a fight."
@@ -526,9 +576,11 @@ label miidosMiniboss:
     xerx "Tesipiz!"
     xerx "Stop loving that statue and put your armor on."
 
+    #tesipiz with battle statue
     tesi "It's been nice cuddling with you."
     tesi "Bye."
 
+    jump beforeFightJemesis
 
 label jemesisArtOfDaDeal:
 
